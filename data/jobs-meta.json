@@ -1,0 +1,75 @@
+{
+  "_comment": "Per-job site metadata. defaultRate = actions/hour guess for hand actions (players can edit it); Smelt and Brew use the machine setup instead. defaultItem = Action/Item preselected in the calculator. confidence: confirmed = scaling checked against in-game readings at two+ levels for this job; assumed = uses the shared formulas without a per-job check yet.",
+  "jobs": {
+    "Alchemist": {
+      "icon": "brewing_stand",
+      "defaultRate": 600,
+      "rateNote": "hand actions",
+      "confidence": "assumed",
+      "defaultItem": "Brew/Nether Wart"
+    },
+    "Blacksmith": {
+      "icon": "anvil",
+      "defaultRate": 600,
+      "rateNote": "crafting gear",
+      "confidence": "assumed",
+      "defaultItem": "Smelt/Iron Ingot"
+    },
+    "Builder": {
+      "icon": "bricks",
+      "defaultRate": 2000,
+      "rateNote": "sustained block placing",
+      "confidence": "assumed",
+      "defaultItem": "Place/Cobblestone"
+    },
+    "Cook": {
+      "icon": "smoker",
+      "defaultRate": 2000,
+      "rateNote": "hand crafting",
+      "confidence": "confirmed",
+      "defaultItem": "Smelt/Baked Potato"
+    },
+    "Digger": {
+      "icon": "diamond_shovel",
+      "defaultRate": 2000,
+      "rateNote": "shovel with Efficiency",
+      "confidence": "assumed",
+      "defaultItem": "Break/Dirt"
+    },
+    "Farmer": {
+      "icon": "wheat",
+      "defaultRate": 3000,
+      "rateNote": "harvesting a large crop field",
+      "confidence": "confirmed",
+      "defaultItem": "Break/Wheat"
+    },
+    "Fisherman": {
+      "icon": "fishing_rod",
+      "defaultRate": 150,
+      "rateNote": "Lure III rod",
+      "confidence": "assumed",
+      "defaultItem": "Fish/Cod"
+    },
+    "Hunter": {
+      "icon": "diamond_sword",
+      "defaultRate": 600,
+      "rateNote": "mob farm kills",
+      "confidence": "assumed",
+      "defaultItem": "Kill/Zombie"
+    },
+    "Lumberjack": {
+      "icon": "diamond_axe",
+      "defaultRate": 1500,
+      "rateNote": "logs, with mcMMO Tree Feller",
+      "confidence": "assumed",
+      "defaultItem": "Break/Oak Log"
+    },
+    "Miner": {
+      "icon": "diamond_pickaxe",
+      "defaultRate": 1500,
+      "rateNote": "stone/ore mining",
+      "confidence": "assumed",
+      "defaultItem": "Break/Stone"
+    }
+  }
+}

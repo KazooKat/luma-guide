@@ -1,0 +1,30 @@
+# job: Blacksmith
+# level: 7
+# source: latest.log 06:46:09 (2 pages)
+Craft:
+  Iron Sword ->  1.85$ 0.71xp
+  Iron Boots ->  3.55$ 1.42xp
+  Iron Chestplate ->  7.11$ 2.83xp
+  Iron Helmet ->  4.44$ 1.77xp
+  Iron Leggings ->  6.23$ 2.48xp
+  Golden Sword ->  2.97$ 1.42xp
+  Golden Boots ->  5.93$ 2.83xp
+  Golden Chestplate ->  11.86$ 5.66xp
+  Golden Helmet ->  7.42$ 3.54xp
+  Golden Leggings ->  10.38$ 4.96xp
+  Diamond Sword ->  5.18$ 2.48xp
+  Diamond Pickaxe ->  7.78$ 3.72xp
+  Diamond Axe ->  7.78$ 3.72xp
+  Diamond Helmet ->  12.97$ 6.19xp
+  Diamond Chestplate ->  20.76$ 9.91xp
+  Diamond Leggings ->  18.17$ 8.67xp
+  Diamond Boots ->  10.38$ 4.96xp
+  Turtle Helmet ->  15.94$ 8.67xp
+  Shield ->  1.78$ 0.71xp
+  Lightning Rod ->  1.04$ 3.78xp
+Smelt:
+  Iron Ingot ->  6.91$ 1.42xp
+  Gold Ingot ->  14.83$ 1.65xp
+  Diamond ->  21.01$ 2.24xp
+  Copper Ingot ->  3.16$ 1.30xp
+  Netherite Scrap ->  24.72$ 2.60xp

@@ -1,0 +1,121 @@
+# job: Miner
+# level: 19
+# source: latest.log 06:47:35 (8 pages)
+Break:
+  Andesite ->  1.48$ 1.43xp
+  Stone ->  1.48$ 1.43xp
+  Deepslate ->  1.48$ 1.43xp
+  Granite ->  1.48$ 1.43xp
+  Diorite ->  1.48$ 1.43xp
+  Calcite ->  1.66$ 1.43xp
+  Sandstone ->  1.48$ 1.43xp
+  Chiseled Sandstone ->  1.48$ 1.43xp
+  Cut Sandstone ->  1.48$ 1.43xp
+  Ice ->  1.66$ 1.43xp
+  Packed Ice ->  1.66$ 1.43xp
+  Blue Ice ->  1.66$ 1.43xp
+  Amethyst Block ->  2.22$ 1.43xp
+  Budding Amethyst ->  2.40$ 1.43xp
+  Amethyst Cluster ->  5.91$ 9.15xp
+  Basalt ->  1.48$ 0.57xp
+  Smooth Basalt ->  1.48$ 0.57xp
+  Blackstone ->  1.48$ 0.57xp
+  Magma Block ->  2.59$ 0.57xp
+  Glowstone ->  3.88$ 0.57xp
+  Pointed Dripstone ->  1.29$ 0.57xp
+  Dripstone Block ->  1.29$ 0.57xp
+  Sulfur ->  1.29$ 0.57xp
+  Cinnabar ->  1.29$ 0.57xp
+  Coal Ore ->  4.44$ 6.86xp
+  Deepslate Coal Ore ->  8.87$ 9.15xp
+  Redstone Ore ->  4.44$ 6.86xp
+  Deepslate Redstone Ore ->  8.87$ 9.15xp
+  Copper Ore ->  4.44$ 9.15xp
+  Deepslate Copper Ore ->  8.87$ 13.73xp
+  Iron Ore ->  5.91$ 9.15xp
+  Deepslate Iron Ore ->  10.35$ 11.44xp
+  Gold Ore ->  10.35$ 16.02xp
+  Deepslate Gold Ore ->  14.78$ 18.30xp
+  Lapis Ore ->  11.83$ 18.30xp
+  Deepslate Lapis Ore ->  17.74$ 18.30xp
+  Diamond Ore ->  14.78$ 22.88xp
+  Deepslate Diamond Ore ->  17.74$ 27.46xp
+  Emerald Ore ->  14.78$ 22.88xp
+  Deepslate Emerald Ore ->  17.74$ 27.46xp
+  Nether Quartz Ore ->  4.44$ 3.43xp
+  Nether Gold Ore ->  4.44$ 3.43xp
+  Ancient Debris ->  17.74$ 9.15xp
+  Raw Copper Block ->  8.87$ 2.29xp
+  Raw Gold Block ->  8.87$ 2.29xp
+  Raw Iron Block ->  8.87$ 2.29xp
+  Obsidian ->  11.83$ 5.72xp
+  Crying Obsidian ->  12.38$ 6.29xp
+  Prismarine ->  1.85$ 2.86xp
+  Prismarine Bricks ->  4.62$ 2.86xp
+  Dark Prismarine ->  1.85$ 2.86xp
+  Netherrack ->  1.48$ 1.14xp
+  Crimson Nylium ->  1.85$ 1.14xp
+  Warped Nylium ->  1.85$ 1.14xp
+  Nether Bricks ->  1.85$ 1.72xp
+  Nether Brick Stairs ->  1.85$ 1.72xp
+  Nether Brick Fence ->  1.85$ 1.72xp
+  End Stone ->  2.96$ 1.43xp
+  Cobblestone Wall ->  1.85$ 1.43xp
+  Mossy Cobblestone Wall ->  1.85$ 1.43xp
+TNTBreak:
+  Andesite ->  0.18$ 0.14xp
+  Stone ->  0.18$ 0.14xp
+  Deepslate ->  0.30$ 0.14xp
+  Granite ->  0.18$ 0.14xp
+  Diorite ->  0.18$ 0.14xp
+  Sandstone ->  0.18$ 0.14xp
+  Chiseled Sandstone ->  0.18$ 0.14xp
+  Cut Sandstone ->  0.18$ 0.14xp
+  Ice ->  0.18$ 0.14xp
+  Packed Ice ->  0.18$ 0.14xp
+  Blue Ice ->  0.18$ 0.14xp
+  Amethyst Block ->  0.22$ 0.14xp
+  Budding Amethyst ->  0.18$ 0.14xp
+  Amethyst Cluster ->  0.59$ 0.92xp
+  Basalt ->  0.04$ 0.06xp
+  Smooth Basalt ->  0.04$ 0.06xp
+  Blackstone ->  0.04$ 0.06xp
+  Magma Block ->  0.04$ 0.06xp
+  Glowstone ->  0.04$ 0.06xp
+  Pointed Dripstone ->  0.04$ 0.06xp
+  Dripstone Block ->  0.04$ 0.06xp
+  Coal Ore ->  0.44$ 0.69xp
+  Deepslate Coal Ore ->  0.89$ 0.92xp
+  Redstone Ore ->  0.44$ 0.69xp
+  Deepslate Redstone Ore ->  0.89$ 0.92xp
+  Copper Ore ->  0.44$ 0.92xp
+  Deepslate Copper Ore ->  0.89$ 1.37xp
+  Iron Ore ->  0.59$ 0.92xp
+  Deepslate Iron Ore ->  1.03$ 1.14xp
+  Gold Ore ->  1.03$ 1.60xp
+  Deepslate Gold Ore ->  1.48$ 1.83xp
+  Lapis Ore ->  1.18$ 1.83xp
+  Deepslate Lapis Ore ->  1.77$ 1.83xp
+  Diamond Ore ->  1.48$ 2.29xp
+  Deepslate Diamond Ore ->  1.77$ 2.75xp
+  Emerald Ore ->  1.48$ 2.29xp
+  Deepslate Emerald Ore ->  1.77$ 2.75xp
+  Nether Quartz Ore ->  0.44$ 0.34xp
+  Nether Gold Ore ->  0.44$ 0.34xp
+  Ancient Debris ->  1.77$ 0.92xp
+  Raw Copper Block ->  0.89$ 0.23xp
+  Raw Gold Block ->  0.89$ 0.23xp
+  Raw Iron Block ->  0.89$ 0.23xp
+  Obsidian ->  1.18$ 0.57xp
+  Crying Obsidian ->  1.24$ 0.63xp
+  Prismarine ->  0.18$ 0.29xp
+  Prismarine Bricks ->  0.46$ 0.29xp
+  Dark Prismarine ->  0.18$ 0.29xp
+  Netherrack ->  0.10$ 0.07xp
+  Crimson Nylium ->  0.18$ 0.11xp
+  Warped Nylium ->  0.18$ 0.11xp
+  Nether Bricks ->  0.18$ 0.17xp
+  Nether Brick Stairs ->  0.18$ 0.17xp
+  Nether Brick Fence ->  0.18$ 0.17xp
+  Cobblestone Wall ->  0.18$ 0.14xp
+  Mossy Cobblestone Wall ->  0.18$ 0.14xp

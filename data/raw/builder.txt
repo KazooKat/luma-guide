@@ -1,0 +1,902 @@
+# job: Builder
+# level: 32
+# source: latest.log 06:43:47 (60 pages)
+Place:
+  Cobblestone ->  4.55$ 3.98xp
+  Cobblestone Slab ->  4.55$ 3.98xp
+  Cobblestone Stairs ->  4.55$ 3.98xp
+  Cobblestone Wall ->  4.55$ 3.98xp
+  Mossy Cobblestone ->  5.68$ 11.70xp
+  Mossy Cobblestone Slab ->  3.99$ 11.70xp
+  Mossy Cobblestone Stairs ->  5.68$ 11.70xp
+  Mossy Cobblestone Wall ->  3.99$ 11.70xp
+  Stone ->  4.55$ 3.98xp
+  Stone Slab ->  3.42$ 3.98xp
+  Stone Stairs ->  4.55$ 3.98xp
+  Stone Bricks ->  4.55$ 7.96xp
+  Cracked Stone Bricks ->  5.12$ 7.96xp
+  Chiseled Stone Bricks ->  5.12$ 7.96xp
+  Stone Brick Slab ->  4.55$ 7.96xp
+  Stone Brick Stairs ->  5.12$ 7.96xp
+  Stone Brick Wall ->  5.12$ 7.96xp
+  Mossy Stone Bricks ->  5.68$ 11.70xp
+  Mossy Stone Brick Slab ->  4.55$ 11.70xp
+  Mossy Stone Brick Stairs ->  5.68$ 11.70xp
+  Mossy Stone Brick Wall ->  5.68$ 11.70xp
+  Smooth Stone ->  5.12$ 11.70xp
+  Smooth Stone Slab ->  5.12$ 11.70xp
+  Cobbled Deepslate ->  6.25$ 3.98xp
+  Cobbled Deepslate Slab ->  6.25$ 3.98xp
+  Cobbled Deepslate Stairs ->  6.25$ 3.98xp
+  Cobbled Deepslate Wall ->  6.25$ 3.98xp
+  Polished Deepslate ->  9.10$ 7.96xp
+  Polished Deepslate Slab ->  9.10$ 7.96xp
+  Polished Deepslate Stairs ->  9.10$ 7.96xp
+  Polished Deepslate Wall ->  9.10$ 7.96xp
+  Deepslate Bricks ->  9.10$ 7.96xp
+  Cracked Deepslate Bricks ->  9.67$ 7.96xp
+  Deepslate Brick Slab ->  9.10$ 7.96xp
+  Deepslate Brick Stairs ->  9.10$ 7.96xp
+  Deepslate Brick Wall ->  9.10$ 7.96xp
+  Deepslate Tiles ->  9.10$ 7.96xp
+  Cracked Deepslate Tiles ->  9.10$ 7.96xp
+  Deepslate Tile Slab ->  9.10$ 7.96xp
+  Deepslate Tile Stairs ->  9.10$ 7.96xp
+  Deepslate Tile Wall ->  9.10$ 7.96xp
+  Deepslate ->  5.68$ 3.98xp
+  Chiseled Deepslate ->  5.68$ 3.98xp
+  Andesite ->  6.81$ 3.98xp
+  Polished Andesite ->  6.81$ 3.98xp
+  Andesite Slab ->  6.81$ 3.98xp
+  Polished Andesite Slab ->  6.81$ 3.98xp
+  Andesite Stairs ->  6.81$ 3.98xp
+  Polished Andesite Stairs ->  6.81$ 3.98xp
+  Andesite Wall ->  6.81$ 3.98xp
+  Diorite ->  6.81$ 3.98xp
+  Polished Diorite ->  6.81$ 3.98xp
+  Diorite Slab ->  6.81$ 3.98xp
+  Polished Diorite Slab ->  6.81$ 3.98xp
+  Diorite Stairs ->  6.81$ 3.98xp
+  Polished Diorite Stairs ->  6.81$ 3.98xp
+  Diorite Wall ->  6.81$ 3.98xp
+  Granite ->  6.81$ 3.98xp
+  Polished Granite ->  6.81$ 3.98xp
+  Granite Slab ->  6.81$ 3.98xp
+  Polished Granite Slab ->  6.81$ 3.98xp
+  Granite Stairs ->  6.81$ 3.98xp
+  Polished Granite Stairs ->  6.81$ 3.98xp
+  Granite Wall ->  6.81$ 3.98xp
+  Amethyst Block ->  10.23$ 11.70xp
+  Small Amethyst Bud ->  4.55$ 6.55xp
+  Medium Amethyst Bud ->  4.55$ 6.55xp
+  Large Amethyst Bud ->  4.55$ 6.55xp
+  Amethyst Cluster ->  4.55$ 6.55xp
+  Calcite ->  13.04$ 11.70xp
+  Tuff ->  5.68$ 3.98xp
+  Tuff Slab ->  5.68$ 3.98xp
+  Tuff Stairs ->  5.68$ 3.98xp
+  Tuff Wall ->  5.68$ 3.98xp
+  Tuff Bricks ->  5.68$ 3.98xp
+  Tuff Brick Slab ->  5.68$ 3.98xp
+  Tuff Brick Stairs ->  5.68$ 3.98xp
+  Tuff Brick Wall ->  5.68$ 3.98xp
+  Chiseled Tuff ->  5.68$ 3.98xp
+  Chiseled Tuff Bricks ->  5.68$ 3.98xp
+  Polished Tuff ->  5.68$ 3.98xp
+  Polished Tuff Slab ->  5.68$ 3.98xp
+  Polished Tuff Stairs ->  5.68$ 3.98xp
+  Polished Tuff Wall ->  5.68$ 3.98xp
+  Dripstone Block ->  5.68$ 7.96xp
+  Pointed Dripstone ->  5.68$ 7.96xp
+  Coal Ore ->  5.68$ 3.98xp
+  Deepslate Coal Ore ->  5.68$ 3.98xp
+  Iron Ore ->  5.68$ 3.98xp
+  Deepslate Iron Ore ->  5.68$ 3.98xp
+  Copper Ore ->  5.68$ 3.98xp
+  Deepslate Copper Ore ->  5.68$ 3.98xp
+  Gold Ore ->  5.68$ 3.98xp
+  Deepslate Gold Ore ->  5.68$ 3.98xp
+  Redstone Ore ->  5.68$ 3.98xp
+  Deepslate Redstone Ore ->  5.68$ 3.98xp
+  Emerald Ore ->  5.68$ 3.98xp
+  Deepslate Emerald Ore ->  5.68$ 3.98xp
+  Lapis Ore ->  5.68$ 3.98xp
+  Deepslate Lapis Ore ->  5.68$ 3.98xp
+  Diamond Ore ->  5.68$ 3.98xp
+  Deepslate Diamond Ore ->  5.68$ 3.98xp
+  Nether Gold Ore ->  5.68$ 3.98xp
+  Nether Quartz Ore ->  5.68$ 3.98xp
+  Ancient Debris ->  5.68$ 3.98xp
+  Gravel ->  2.85$ 3.98xp
+  Clay ->  6.81$ 3.98xp
+  Mud ->  6.81$ 3.98xp
+  Packed Mud ->  9.10$ 5.15xp
+  Grass Block ->  6.81$ 3.98xp
+  Dirt ->  6.81$ 3.98xp
+  Rooted Dirt ->  6.81$ 3.98xp
+  Coarse Dirt ->  13.63$ 11.70xp
+  Podzol ->  6.81$ 11.70xp
+  Mycelium ->  7.38$ 11.70xp
+  Oak Log ->  9.67$ 11.70xp
+  Spruce Log ->  9.67$ 11.70xp
+  Birch Log ->  9.67$ 11.70xp
+  Jungle Log ->  9.67$ 11.70xp
+  Acacia Log ->  9.67$ 11.70xp
+  Dark Oak Log ->  9.67$ 11.70xp
+  Mangrove Log ->  9.67$ 11.70xp
+  Pale Oak Log ->  9.67$ 11.70xp
+  Cherry Log ->  9.67$ 11.70xp
+  Crimson Stem ->  13.63$ 11.70xp
+  Warped Stem ->  13.63$ 11.70xp
+  Stripped Oak Log ->  9.67$ 11.70xp
+  Stripped Spruce Log ->  9.67$ 11.70xp
+  Stripped Birch Log ->  9.67$ 11.70xp
+  Stripped Jungle Log ->  9.67$ 11.70xp
+  Stripped Acacia Log ->  9.67$ 11.70xp
+  Stripped Dark Oak Log ->  9.67$ 11.70xp
+  Stripped Mangrove Log ->  9.67$ 11.70xp
+  Stripped Cherry Log ->  9.67$ 11.70xp
+  Stripped Crimson Stem ->  13.63$ 11.70xp
+  Stripped Warped Stem ->  13.63$ 11.70xp
+  Oak Wood ->  11.37$ 11.70xp
+  Spruce Wood ->  11.37$ 11.70xp
+  Birch Wood ->  11.37$ 11.70xp
+  Jungle Wood ->  11.37$ 11.70xp
+  Acacia Wood ->  11.37$ 11.70xp
+  Dark Oak Wood ->  11.37$ 11.70xp
+  Mangrove Wood ->  11.37$ 11.70xp
+  Pale Oak Wood ->  11.37$ 11.70xp
+  Cherry Wood ->  11.37$ 11.70xp
+  Crimson Hyphae ->  15.92$ 11.70xp
+  Warped Hyphae ->  15.92$ 11.70xp
+  Stripped Oak Wood ->  11.37$ 11.70xp
+  Stripped Spruce Wood ->  11.37$ 11.70xp
+  Stripped Birch Wood ->  11.37$ 11.70xp
+  Stripped Jungle Wood ->  11.37$ 11.70xp
+  Stripped Acacia Wood ->  11.37$ 11.70xp
+  Stripped Dark Oak Wood ->  11.37$ 11.70xp
+  Stripped Mangrove Wood ->  11.37$ 11.70xp
+  Stripped Cherry Wood ->  11.37$ 11.70xp
+  Stripped Crimson Hyphae ->  15.92$ 11.70xp
+  Stripped Warped Hyphae ->  15.92$ 11.70xp
+  Oak Planks ->  7.95$ 7.96xp
+  Spruce Planks ->  7.95$ 7.96xp
+  Birch Planks ->  7.95$ 7.96xp
+  Jungle Planks ->  7.95$ 7.96xp
+  Acacia Planks ->  7.95$ 7.96xp
+  Dark Oak Planks ->  7.95$ 7.96xp
+  Mangrove Planks ->  7.95$ 7.96xp
+  Pale Oak Planks ->  7.95$ 7.96xp
+  Cherry Planks ->  7.95$ 7.96xp
+  Crimson Planks ->  10.23$ 7.96xp
+  Warped Planks ->  10.23$ 7.96xp
+  Oak Slab ->  7.95$ 3.98xp
+  Spruce Slab ->  7.95$ 3.98xp
+  Birch Slab ->  7.95$ 3.98xp
+  Jungle Slab ->  7.95$ 3.98xp
+  Acacia Slab ->  7.95$ 3.98xp
+  Dark Oak Slab ->  7.95$ 3.98xp
+  Mangrove Slab ->  7.95$ 3.98xp
+  Pale Oak Slab ->  7.95$ 3.98xp
+  Cherry Slab ->  7.95$ 3.98xp
+  Crimson Slab ->  5.68$ 3.98xp
+  Warped Slab ->  5.68$ 3.98xp
+  Oak Stairs ->  7.95$ 3.98xp
+  Spruce Stairs ->  7.95$ 3.98xp
+  Birch Stairs ->  7.95$ 3.98xp
+  Jungle Stairs ->  7.95$ 3.98xp
+  Acacia Stairs ->  7.95$ 3.98xp
+  Dark Oak Stairs ->  7.95$ 3.98xp
+  Mangrove Stairs ->  7.95$ 3.98xp
+  Pale Oak Stairs ->  7.95$ 3.98xp
+  Cherry Stairs ->  7.95$ 3.98xp
+  Crimson Stairs ->  5.68$ 3.98xp
+  Warped Stairs ->  5.68$ 3.98xp
+  Oak Fence ->  7.95$ 7.96xp
+  Spruce Fence ->  7.95$ 7.96xp
+  Birch Fence ->  7.95$ 7.96xp
+  Jungle Fence ->  7.95$ 7.96xp
+  Acacia Fence ->  7.95$ 7.96xp
+  Dark Oak Fence ->  7.95$ 7.96xp
+  Mangrove Fence ->  7.95$ 7.96xp
+  Pale Oak Fence ->  7.95$ 7.96xp
+  Cherry Fence ->  7.95$ 7.96xp
+  Crimson Fence ->  9.10$ 7.96xp
+  Warped Fence ->  9.10$ 7.96xp
+  Iron Door ->  11.37$ 11.70xp
+  Oak Door ->  7.95$ 7.96xp
+  Spruce Door ->  7.95$ 7.96xp
+  Birch Door ->  7.95$ 7.96xp
+  Jungle Door ->  7.95$ 7.96xp
+  Acacia Door ->  7.95$ 7.96xp
+  Dark Oak Door ->  7.95$ 7.96xp
+  Mangrove Door ->  7.95$ 7.96xp
+  Pale Oak Door ->  7.95$ 7.96xp
+  Cherry Door ->  7.95$ 7.96xp
+  Crimson Door ->  9.10$ 7.96xp
+  Warped Door ->  9.10$ 7.96xp
+  Oak Trapdoor ->  7.95$ 7.96xp
+  Spruce Trapdoor ->  7.95$ 7.96xp
+  Birch Trapdoor ->  7.95$ 7.96xp
+  Jungle Trapdoor ->  7.95$ 7.96xp
+  Acacia Trapdoor ->  7.95$ 7.96xp
+  Dark Oak Trapdoor ->  7.95$ 7.96xp
+  Mangrove Trapdoor ->  7.95$ 7.96xp
+  Pale Oak Trapdoor ->  7.95$ 7.96xp
+  Cherry Trapdoor ->  7.95$ 7.96xp
+  Crimson Trapdoor ->  9.10$ 7.96xp
+  Warped Trapdoor ->  9.10$ 7.96xp
+  Oak Fence Gate ->  7.95$ 7.96xp
+  Spruce Fence Gate ->  7.95$ 7.96xp
+  Birch Fence Gate ->  7.95$ 7.96xp
+  Jungle Fence Gate ->  7.95$ 7.96xp
+  Acacia Fence Gate ->  7.95$ 7.96xp
+  Dark Oak Fence Gate ->  7.95$ 7.96xp
+  Mangrove Fence Gate ->  7.95$ 7.96xp
+  Pale Oak Fence Gate ->  7.95$ 7.96xp
+  Cherry Fence Gate ->  7.95$ 7.96xp
+  Crimson Fence Gate ->  9.10$ 7.96xp
+  Warped Fence Gate ->  9.10$ 7.96xp
+  Sign ->  4.55$ 7.96xp
+  Spruce Sign ->  4.55$ 7.96xp
+  Birch Sign ->  4.55$ 7.96xp
+  Jungle Sign ->  4.55$ 7.96xp
+  Acacia Sign ->  4.55$ 7.96xp
+  Dark Oak Sign ->  4.55$ 7.96xp
+  Mangrove Sign ->  4.55$ 7.96xp
+  Pale Oak Sign ->  4.55$ 7.96xp
+  Cherry Sign ->  4.55$ 7.96xp
+  Crimson Sign ->  4.55$ 7.96xp
+  Warped Sign ->  4.55$ 7.96xp
+  Oak Hanging Sign ->  5.17$ 7.96xp
+  Spruce Hanging Sign ->  5.17$ 7.96xp
+  Birch Hanging Sign ->  5.17$ 7.96xp
+  Jungle Hanging Sign ->  5.17$ 7.96xp
+  Acacia Hanging Sign ->  5.17$ 7.96xp
+  Dark Oak Hanging Sign ->  5.17$ 7.96xp
+  Mangrove Hanging Sign ->  5.17$ 7.96xp
+  Pale Oak Hanging Sign ->  5.17$ 7.96xp
+  Cherry Hanging Sign ->  5.17$ 7.96xp
+  Crimson Hanging Sign ->  5.17$ 7.96xp
+  Warped Hanging Sign ->  5.17$ 7.96xp
+  White Bed ->  9.10$ 7.96xp
+  Orange Bed ->  9.10$ 7.96xp
+  Magenta Bed ->  9.10$ 7.96xp
+  Light Blue Bed ->  9.10$ 7.96xp
+  Yellow Bed ->  9.10$ 7.96xp
+  Lime Bed ->  9.10$ 7.96xp
+  Pink Bed ->  9.10$ 7.96xp
+  Gray Bed ->  9.10$ 7.96xp
+  Light Gray Bed ->  9.10$ 7.96xp
+  Cyan Bed ->  9.10$ 7.96xp
+  Purple Bed ->  9.10$ 7.96xp
+  Blue Bed ->  9.10$ 7.96xp
+  Brown Bed ->  9.10$ 7.96xp
+  Green Bed ->  9.10$ 7.96xp
+  Red Bed ->  9.10$ 7.96xp
+  Black Bed ->  9.10$ 7.96xp
+  Oak Leaves ->  7.95$ 7.96xp
+  Spruce Leaves ->  7.95$ 7.96xp
+  Birch Leaves ->  7.95$ 7.96xp
+  Jungle Leaves ->  7.95$ 7.96xp
+  Acacia Leaves ->  7.95$ 7.96xp
+  Dark Oak Leaves ->  7.95$ 7.96xp
+  Mangrove Leaves ->  7.95$ 7.96xp
+  Pale Oak Leaves ->  7.95$ 7.96xp
+  Cherry Leaves ->  7.95$ 7.96xp
+  Nether Wart Block ->  9.10$ 7.96xp
+  Warped Wart Block ->  9.10$ 7.96xp
+  Mangrove Roots ->  7.95$ 7.96xp
+  Pale Hanging Moss ->  7.95$ 7.96xp
+  Muddy Mangrove Roots ->  7.95$ 7.96xp
+  Sand ->  4.55$ 3.98xp
+  Red Sand ->  4.55$ 3.98xp
+  Sandstone ->  7.95$ 3.98xp
+  Sandstone Slab ->  6.81$ 3.98xp
+  Sandstone Stairs ->  7.95$ 3.98xp
+  Sandstone Wall ->  7.95$ 3.98xp
+  Smooth Sandstone ->  9.10$ 7.96xp
+  Smooth Sandstone Slab ->  7.95$ 7.96xp
+  Smooth Sandstone Stairs ->  9.10$ 7.96xp
+  Chiseled Sandstone ->  9.10$ 7.96xp
+  Cut Sandstone ->  6.52$ 7.96xp
+  Cut Sandstone Slab ->  7.95$ 7.96xp
+  Red Sandstone ->  7.95$ 3.98xp
+  Red Sandstone Slab ->  6.81$ 3.98xp
+  Red Sandstone Stairs ->  7.95$ 3.98xp
+  Red Sandstone Wall ->  7.95$ 3.98xp
+  Smooth Red Sandstone ->  9.10$ 7.96xp
+  Smooth Red Sandstone Slab ->  7.95$ 7.96xp
+  Smooth Red Sandstone Stairs ->  9.10$ 7.96xp
+  Chiseled Red Sandstone ->  9.10$ 7.96xp
+  Cut Red Sandstone ->  6.52$ 7.96xp
+  Cut Red Sandstone Slab ->  7.95$ 7.96xp
+  Beacon ->  13.63$ 15.68xp
+  Netherite Block ->  13.63$ 15.68xp
+  Emerald Block ->  13.63$ 15.68xp
+  Diamond Block ->  13.63$ 15.68xp
+  Gold Block ->  13.63$ 15.68xp
+  Iron Block ->  13.63$ 15.68xp
+  Redstone Block ->  13.63$ 15.68xp
+  Lapis Block ->  13.63$ 15.68xp
+  Coal Block ->  13.63$ 15.68xp
+  Copper Trapdoor ->  6.81$ 6.55xp
+  Exposed Copper Trapdoor ->  6.81$ 6.55xp
+  Weathered Copper Trapdoor ->  6.81$ 6.55xp
+  Oxidized Copper Trapdoor ->  6.81$ 6.55xp
+  Waxed Copper Trapdoor ->  6.81$ 6.55xp
+  Waxed Exposed Copper Trapdoor ->  6.81$ 6.55xp
+  Waxed Weathered Copper Trapdoor ->  6.81$ 6.55xp
+  Waxed Oxidized Copper Trapdoor ->  6.81$ 6.55xp
+  Copper Door ->  6.81$ 6.55xp
+  Exposed Copper Door ->  6.81$ 6.55xp
+  Weathered Copper Door ->  6.81$ 6.55xp
+  Oxidized Copper Door ->  6.81$ 6.55xp
+  Waxed Copper Door ->  6.81$ 6.55xp
+  Waxed Exposed Copper Door ->  6.81$ 6.55xp
+  Waxed Weathered Copper Door ->  6.81$ 6.55xp
+  Waxed Oxidized Copper Door ->  6.81$ 6.55xp
+  Chiseled Copper ->  6.81$ 6.55xp
+  Exposed Chiseled Copper ->  6.81$ 6.55xp
+  Weathered Chiseled Copper ->  6.81$ 6.55xp
+  Oxidized Chiseled Copper ->  6.81$ 6.55xp
+  Waxed Chiseled Copper ->  6.81$ 6.55xp
+  Waxed Exposed Chiseled Copper ->  6.81$ 6.55xp
+  Waxed Weathered Chiseled Copper ->  6.81$ 6.55xp
+  Waxed Oxidized Chiseled Copper ->  6.81$ 6.55xp
+  Copper Bulb ->  6.81$ 6.55xp
+  Exposed Copper Bulb ->  6.81$ 6.55xp
+  Weathered Copper Bulb ->  6.81$ 6.55xp
+  Oxidized Copper Bulb ->  6.81$ 6.55xp
+  Waxed Copper Bulb ->  6.81$ 6.55xp
+  Waxed Exposed Copper Bulb ->  6.81$ 6.55xp
+  Waxed Weathered Copper Bulb ->  6.81$ 6.55xp
+  Waxed Oxidized Copper Bulb ->  6.81$ 6.55xp
+  Copper Block ->  6.81$ 6.55xp
+  Exposed Copper ->  9.10$ 11.70xp
+  Weathered Copper ->  9.10$ 11.70xp
+  Oxidized Copper ->  9.10$ 11.70xp
+  Copper Grate ->  9.10$ 11.70xp
+  Waxed Copper Grate ->  9.10$ 11.70xp
+  Cut Copper ->  9.10$ 11.70xp
+  Exposed Cut Copper ->  9.10$ 11.70xp
+  Weathered Cut Copper ->  9.10$ 11.70xp
+  Oxidized Cut Copper ->  9.10$ 11.70xp
+  Exposed Cut Copper Slab ->  5.68$ 7.96xp
+  Weathered Cut Copper Slab ->  5.68$ 7.96xp
+  Oxidized Cut Copper Slab ->  5.68$ 7.96xp
+  Cut Copper Stairs ->  9.10$ 11.70xp
+  Exposed Cut Copper Stairs ->  9.10$ 11.70xp
+  Exposed Copper Grate ->  9.10$ 11.70xp
+  Waxed Exposed Copper Grate ->  9.10$ 11.70xp
+  Weathered Cut Copper Stairs ->  9.10$ 11.70xp
+  Weathered Copper Grate ->  9.10$ 11.70xp
+  Waxed Weathered Copper Grate ->  9.10$ 11.70xp
+  Oxidized Cut Copper Stairs ->  9.10$ 11.70xp
+  Oxidized Copper Grate ->  9.10$ 11.70xp
+  Waxed Oxidized Copper Grate ->  9.10$ 11.70xp
+  Waxed Copper Block ->  13.63$ 11.70xp
+  Waxed Exposed Copper ->  13.63$ 11.70xp
+  Waxed Weathered Copper ->  13.63$ 11.70xp
+  Waxed Oxidized Copper ->  13.63$ 11.70xp
+  Waxed Cut Copper ->  13.63$ 11.70xp
+  Waxed Exposed Cut Copper ->  13.63$ 11.70xp
+  Waxed Weathered Cut Copper ->  13.63$ 11.70xp
+  Waxed Oxidized Cut Copper ->  13.63$ 11.70xp
+  Waxed Cut Copper Slab ->  9.10$ 9.83xp
+  Waxed Exposed Cut Copper Slab ->  9.10$ 9.83xp
+  Waxed Weathered Cut Copper Slab ->  9.10$ 9.83xp
+  Waxed Oxidized Cut Copper Slab ->  9.10$ 9.83xp
+  Waxed Cut Copper Stairs ->  13.63$ 11.70xp
+  Waxed Exposed Cut Copper Stairs ->  13.63$ 11.70xp
+  Waxed Weathered Cut Copper Stairs ->  13.63$ 11.70xp
+  Waxed Oxidized Cut Copper Stairs ->  13.63$ 11.70xp
+  Copper Bars ->  6.52$ 11.70xp
+  Exposed Copper Bars ->  6.52$ 11.70xp
+  Weathered Copper Bars ->  6.52$ 11.70xp
+  Oxidized Copper Bars ->  6.52$ 11.70xp
+  Waxed Copper Bars ->  6.52$ 11.70xp
+  Waxed Exposed Copper Bars ->  6.52$ 11.70xp
+  Waxed Weathered Copper Bars ->  6.52$ 11.70xp
+  Waxed Oxidized Copper Bars ->  6.52$ 11.70xp
+  Copper Chest ->  6.81$ 6.55xp
+  Exposed Copper Chest ->  6.81$ 6.55xp
+  Weathered Copper Chest ->  6.81$ 6.55xp
+  Oxidized Copper Chest ->  6.81$ 6.55xp
+  Waxed Copper Chest ->  6.81$ 6.55xp
+  Waxed Exposed Copper Chest ->  6.81$ 6.55xp
+  Waxed Weathered Copper Chest ->  6.81$ 6.55xp
+  Waxed Oxidized Copper Chest ->  6.81$ 6.55xp
+  Glass ->  11.37$ 11.70xp
+  Tinted Glass ->  18.18$ 11.70xp
+  White Stained Glass ->  11.37$ 11.70xp
+  Orange Stained Glass ->  11.37$ 11.70xp
+  Magenta Stained Glass ->  11.37$ 11.70xp
+  Light Blue Stained Glass ->  11.37$ 11.70xp
+  Yellow Stained Glass ->  11.37$ 11.70xp
+  Lime Stained Glass ->  11.37$ 11.70xp
+  Pink Stained Glass ->  11.37$ 11.70xp
+  Gray Stained Glass ->  11.37$ 11.70xp
+  Light Gray Stained Glass ->  11.37$ 11.70xp
+  Cyan Stained Glass ->  11.37$ 11.70xp
+  Purple Stained Glass ->  11.37$ 11.70xp
+  Blue Stained Glass ->  11.37$ 11.70xp
+  Brown Stained Glass ->  11.37$ 11.70xp
+  Green Stained Glass ->  11.37$ 11.70xp
+  Red Stained Glass ->  11.37$ 11.70xp
+  Black Stained Glass ->  11.37$ 11.70xp
+  Glass Pane ->  6.81$ 7.96xp
+  White Stained Glass Pane ->  6.81$ 7.96xp
+  Orange Stained Glass Pane ->  6.81$ 7.96xp
+  Magenta Stained Glass Pane ->  6.81$ 7.96xp
+  Light Blue Stained Glass Pane ->  6.81$ 7.96xp
+  Yellow Stained Glass Pane ->  6.81$ 7.96xp
+  Lime Stained Glass Pane ->  6.81$ 7.96xp
+  Pink Stained Glass Pane ->  6.81$ 7.96xp
+  Gray Stained Glass Pane ->  6.81$ 7.96xp
+  Light Gray Stained Glass Pane ->  6.81$ 7.96xp
+  Cyan Stained Glass Pane ->  6.81$ 7.96xp
+  Purple Stained Glass Pane ->  6.81$ 7.96xp
+  Blue Stained Glass Pane ->  6.81$ 7.96xp
+  Brown Stained Glass Pane ->  6.81$ 7.96xp
+  Green Stained Glass Pane ->  6.81$ 7.96xp
+  Red Stained Glass Pane ->  6.81$ 7.96xp
+  Black Stained Glass Pane ->  6.81$ 7.96xp
+  White Wool ->  13.63$ 11.70xp
+  Orange Wool ->  13.63$ 11.70xp
+  Magenta Wool ->  13.63$ 11.70xp
+  Light Blue Wool ->  13.63$ 11.70xp
+  Yellow Wool ->  13.63$ 11.70xp
+  Lime Wool ->  13.63$ 11.70xp
+  Pink Wool ->  13.63$ 11.70xp
+  Gray Wool ->  13.63$ 11.70xp
+  Light Gray Wool ->  13.63$ 11.70xp
+  Cyan Wool ->  13.63$ 11.70xp
+  Purple Wool ->  13.63$ 11.70xp
+  Blue Wool ->  13.63$ 11.70xp
+  Brown Wool ->  13.63$ 11.70xp
+  Green Wool ->  13.63$ 11.70xp
+  Red Wool ->  13.63$ 11.70xp
+  Black Wool ->  13.63$ 11.70xp
+  White Carpet ->  18.18$ 7.96xp
+  Orange Carpet ->  18.18$ 7.96xp
+  Magenta Carpet ->  18.18$ 7.96xp
+  Light Blue Carpet ->  18.18$ 7.96xp
+  Yellow Carpet ->  18.18$ 7.96xp
+  Lime Carpet ->  18.18$ 7.96xp
+  Pink Carpet ->  18.18$ 7.96xp
+  Gray Carpet ->  18.18$ 7.96xp
+  Light Gray Carpet ->  18.18$ 7.96xp
+  Cyan Carpet ->  18.18$ 7.96xp
+  Purple Carpet ->  18.18$ 7.96xp
+  Blue Carpet ->  18.18$ 7.96xp
+  Brown Carpet ->  18.18$ 7.96xp
+  Green Carpet ->  18.18$ 7.96xp
+  Red Carpet ->  18.18$ 7.96xp
+  Black Carpet ->  18.18$ 7.96xp
+  Prismarine ->  10.23$ 11.70xp
+  Prismarine Bricks ->  11.93$ 11.70xp
+  Dark Prismarine ->  11.93$ 11.70xp
+  Prismarine Slab ->  9.67$ 7.96xp
+  Prismarine Brick Slab ->  10.23$ 11.70xp
+  Dark Prismarine Slab ->  10.23$ 11.70xp
+  Prismarine Stairs ->  11.37$ 11.70xp
+  Prismarine Brick Stairs ->  13.63$ 11.70xp
+  Dark Prismarine Stairs ->  13.63$ 11.70xp
+  Prismarine Wall ->  10.23$ 15.68xp
+  Sea Lantern ->  27.28$ 15.68xp
+  Purpur Block ->  21.03$ 11.70xp
+  Purpur Pillar ->  21.03$ 11.70xp
+  Purpur Slab ->  15.35$ 11.70xp
+  Purpur Stairs ->  21.03$ 11.70xp
+  End Stone ->  6.81$ 3.98xp
+  End Stone Bricks ->  10.80$ 7.96xp
+  End Stone Brick Stairs ->  10.80$ 7.96xp
+  End Stone Brick Slab ->  9.67$ 7.96xp
+  End Stone Brick Wall ->  10.80$ 7.96xp
+  End Rod ->  18.18$ 11.70xp
+  End Portal Frame ->  22.73$ 11.70xp
+  Ice ->  11.37$ 11.70xp
+  Packed Ice ->  17.05$ 11.70xp
+  Blue Ice ->  29.54$ 11.70xp
+  Snow ->  5.68$ 3.98xp
+  Snow Block ->  6.81$ 3.98xp
+  Netherrack ->  5.68$ 3.98xp
+  Crimson Nylium ->  9.10$ 3.98xp
+  Warped Nylium ->  11.37$ 3.98xp
+  Resin Block ->  12.92$ 11.70xp
+  Nether Bricks ->  14.78$ 11.70xp
+  Resin Bricks ->  14.78$ 11.70xp
+  Cracked Nether Bricks ->  14.78$ 11.70xp
+  Chiseled Nether Bricks ->  14.78$ 11.70xp
+  Chiseled Resin Bricks ->  14.78$ 11.70xp
+  Nether Brick Slab ->  11.93$ 11.70xp
+  Resin Brick Slab ->  11.93$ 11.70xp
+  Nether Brick Stairs ->  14.78$ 11.70xp
+  Resin Brick Stairs ->  14.78$ 11.70xp
+  Nether Brick Fence ->  13.63$ 11.70xp
+  Nether Brick Wall ->  14.78$ 11.70xp
+  Resin Brick Wall ->  14.78$ 11.70xp
+  Red Nether Bricks ->  18.75$ 11.70xp
+  Red Nether Brick Slab ->  13.63$ 11.70xp
+  Red Nether Brick Stairs ->  18.75$ 11.70xp
+  Red Nether Brick Wall ->  18.75$ 11.70xp
+  Soul Sand ->  6.25$ 3.98xp
+  Soul Soil ->  7.95$ 3.98xp
+  Basalt ->  5.68$ 3.98xp
+  Polished Basalt ->  5.68$ 3.98xp
+  Smooth Basalt ->  5.68$ 3.98xp
+  Glowstone ->  18.18$ 15.68xp
+  Shroomlight ->  18.18$ 15.68xp
+  Pearlescent Froglight ->  13.63$ 13.10xp
+  Verdant Froglight ->  13.63$ 13.10xp
+  Ochre Froglight ->  13.63$ 13.10xp
+  Blackstone ->  7.95$ 7.96xp
+  Blackstone Slab ->  7.38$ 7.96xp
+  Blackstone Stairs ->  7.95$ 7.96xp
+  Blackstone Wall ->  7.95$ 7.96xp
+  Polished Blackstone ->  7.95$ 7.96xp
+  Chiseled Polished Blackstone ->  7.95$ 7.96xp
+  Polished Blackstone Slab ->  7.38$ 7.96xp
+  Polished Blackstone Stairs ->  7.95$ 7.96xp
+  Polished Blackstone Wall ->  7.95$ 7.96xp
+  Polished Blackstone Bricks ->  7.95$ 7.96xp
+  Cracked Polished Blackstone Bricks ->  7.95$ 7.96xp
+  Polished Blackstone Brick Slab ->  7.38$ 7.96xp
+  Polished Blackstone Brick Stairs ->  7.95$ 7.96xp
+  Polished Blackstone Brick Wall ->  7.95$ 7.96xp
+  Gilded Blackstone ->  15.92$ 15.68xp
+  Quartz Block ->  18.18$ 11.70xp
+  Chiseled Quartz Block ->  18.18$ 11.70xp
+  Quartz Bricks ->  18.18$ 11.70xp
+  Quartz Pillar ->  18.18$ 11.70xp
+  Quartz Slab ->  13.63$ 11.70xp
+  Quartz Stairs ->  18.18$ 11.70xp
+  Smooth Quartz ->  18.18$ 11.70xp
+  Smooth Quartz Slab ->  13.63$ 11.70xp
+  Smooth Quartz Stairs ->  18.18$ 11.70xp
+  White Concrete ->  8.73$ 5.15xp
+  Orange Concrete ->  8.73$ 5.15xp
+  Magenta Concrete ->  8.73$ 5.15xp
+  Light Blue Concrete ->  8.73$ 5.15xp
+  Yellow Concrete ->  8.73$ 5.15xp
+  Lime Concrete ->  8.73$ 5.15xp
+  Pink Concrete ->  8.73$ 5.15xp
+  Gray Concrete ->  8.73$ 5.15xp
+  Light Gray Concrete ->  8.73$ 5.15xp
+  Cyan Concrete ->  8.73$ 5.15xp
+  Purple Concrete ->  8.73$ 5.15xp
+  Blue Concrete ->  8.73$ 5.15xp
+  Brown Concrete ->  8.73$ 5.15xp
+  Green Concrete ->  8.73$ 5.15xp
+  Red Concrete ->  8.73$ 5.15xp
+  Black Concrete ->  8.73$ 5.15xp
+  White Concrete Powder ->  8.73$ 5.15xp
+  Orange Concrete Powder ->  8.73$ 5.15xp
+  Magenta Concrete Powder ->  8.73$ 5.15xp
+  Light Blue Concrete Powder ->  8.73$ 5.15xp
+  Yellow Concrete Powder ->  8.73$ 5.15xp
+  Lime Concrete Powder ->  8.73$ 5.15xp
+  Pink Concrete Powder ->  8.73$ 5.15xp
+  Gray Concrete Powder ->  8.73$ 5.15xp
+  Light Gray Concrete Powder ->  8.73$ 5.15xp
+  Cyan Concrete Powder ->  8.73$ 5.15xp
+  Purple Concrete Powder ->  8.73$ 5.15xp
+  Blue Concrete Powder ->  8.73$ 5.15xp
+  Brown Concrete Powder ->  8.73$ 5.15xp
+  Green Concrete Powder ->  8.73$ 5.15xp
+  Red Concrete Powder ->  8.73$ 5.15xp
+  Black Concrete Powder ->  8.73$ 5.15xp
+  Bricks ->  18.18$ 11.70xp
+  Brick Slab ->  11.37$ 11.70xp
+  Brick Stairs ->  18.18$ 11.70xp
+  Brick Wall ->  18.18$ 11.70xp
+  Mud Bricks ->  18.18$ 11.70xp
+  Mud Brick Slab ->  11.37$ 11.70xp
+  Mud Brick Stairs ->  18.18$ 11.70xp
+  Mud Brick Wall ->  18.18$ 11.70xp
+  Terracotta ->  10.23$ 7.96xp
+  White Terracotta ->  10.23$ 7.96xp
+  Orange Terracotta ->  10.23$ 7.96xp
+  Magenta Terracotta ->  10.23$ 7.96xp
+  Light Blue Terracotta ->  10.23$ 7.96xp
+  Yellow Terracotta ->  10.23$ 7.96xp
+  Lime Terracotta ->  10.23$ 7.96xp
+  Pink Terracotta ->  10.23$ 7.96xp
+  Gray Terracotta ->  10.23$ 7.96xp
+  Light Gray Terracotta ->  10.23$ 7.96xp
+  Cyan Terracotta ->  10.23$ 7.96xp
+  Purple Terracotta ->  10.23$ 7.96xp
+  Blue Terracotta ->  10.23$ 7.96xp
+  Brown Terracotta ->  10.23$ 7.96xp
+  Green Terracotta ->  10.23$ 7.96xp
+  Red Terracotta ->  10.23$ 7.96xp
+  Black Terracotta ->  11.37$ 7.96xp
+  White Glazed Terracotta ->  10.80$ 7.96xp
+  Orange Glazed Terracotta ->  10.80$ 7.96xp
+  Magenta Glazed Terracotta ->  10.80$ 7.96xp
+  Light Blue Glazed Terracotta ->  10.80$ 7.96xp
+  Yellow Glazed Terracotta ->  10.80$ 7.96xp
+  Lime Glazed Terracotta ->  10.80$ 7.96xp
+  Pink Glazed Terracotta ->  10.80$ 7.96xp
+  Gray Glazed Terracotta ->  10.80$ 7.96xp
+  Light Gray Glazed Terracotta ->  10.80$ 7.96xp
+  Cyan Glazed Terracotta ->  10.80$ 7.96xp
+  Purple Glazed Terracotta ->  10.80$ 7.96xp
+  Blue Glazed Terracotta ->  10.80$ 7.96xp
+  Brown Glazed Terracotta ->  10.80$ 7.96xp
+  Green Glazed Terracotta ->  10.80$ 7.96xp
+  Red Glazed Terracotta ->  10.80$ 7.96xp
+  Black Glazed Terracotta ->  11.93$ 7.96xp
+  Obsidian ->  22.73$ 11.70xp
+  Crying Obsidian ->  22.73$ 11.70xp
+  Scaffolding ->  2.85$ 1.64xp
+  Lantern ->  5.68$ 3.98xp
+  Soul Lantern ->  5.68$ 3.98xp
+  Copper Lantern ->  5.68$ 3.98xp
+  Exposed Copper Lantern ->  5.68$ 3.98xp
+  Weathered Copper Lantern ->  5.68$ 3.98xp
+  Oxidized Copper Lantern ->  5.68$ 3.98xp
+  Waxed Copper Lantern ->  5.68$ 3.98xp
+  Waxed Exposed Copper Lantern ->  5.68$ 3.98xp
+  Waxed Weathered Copper Lantern ->  5.68$ 3.98xp
+  Waxed Oxidized Copper Lantern ->  5.68$ 3.98xp
+  Melon ->  5.68$ 3.98xp
+  Pumpkin ->  5.68$ 3.98xp
+  Carved Pumpkin ->  6.25$ 3.98xp
+  Jack O Lantern ->  6.52$ 3.98xp
+  Bookshelf ->  9.10$ 11.70xp
+  Chiseled Bookshelf ->  9.10$ 11.70xp
+  Magma Block ->  9.10$ 11.70xp
+  Bone Block ->  12.50$ 11.70xp
+  Azalea Leaves ->  7.95$ 7.96xp
+  Flowering Azalea Leaves ->  7.95$ 7.96xp
+  Flowering Azalea ->  5.68$ 3.98xp
+  Azalea ->  5.68$ 3.98xp
+  Cobweb ->  5.68$ 3.98xp
+  Grass ->  5.68$ 3.98xp
+  Fern ->  5.68$ 3.98xp
+  Large Fern ->  5.68$ 3.98xp
+  Dead Bush ->  5.68$ 3.98xp
+  Seagrass ->  5.68$ 3.98xp
+  Sea Pickle ->  5.68$ 3.98xp
+  Lily Pad ->  5.68$ 3.98xp
+  Sunflower ->  5.68$ 3.98xp
+  Lilac ->  5.68$ 3.98xp
+  Rose Bush ->  5.68$ 3.98xp
+  Peony ->  5.68$ 3.98xp
+  Dandelion ->  5.68$ 3.98xp
+  Poppy ->  5.68$ 3.98xp
+  Blue Orchid ->  5.68$ 3.98xp
+  Allium ->  5.68$ 3.98xp
+  Azure Bluet ->  5.68$ 3.98xp
+  Red Tulip ->  5.68$ 3.98xp
+  Orange Tulip ->  5.68$ 3.98xp
+  White Tulip ->  5.68$ 3.98xp
+  Pink Tulip ->  5.68$ 3.98xp
+  Flower Pot ->  5.68$ 3.98xp
+  Oxeye Daisy ->  5.68$ 3.98xp
+  Cornflower ->  5.68$ 3.98xp
+  Lily Of The Valley ->  5.68$ 3.98xp
+  Wither Rose ->  5.68$ 3.98xp
+  Spore Blossom ->  5.68$ 3.98xp
+  Pitcher Plant ->  5.68$ 3.98xp
+  Crimson Roots ->  5.68$ 3.98xp
+  Warped Roots ->  5.68$ 3.98xp
+  Kelp ->  5.68$ 3.98xp
+  Moss Block ->  5.68$ 3.98xp
+  Moss Carpet ->  5.68$ 3.98xp
+  Pale Moss Block ->  5.68$ 3.98xp
+  Pale Moss Carpet ->  5.68$ 3.98xp
+  Bamboo ->  5.68$ 3.98xp
+  Bamboo Block ->  6.20$ 4.21xp
+  Stripped Bamboo Block ->  6.20$ 4.21xp
+  Bamboo Stairs ->  5.68$ 3.98xp
+  Bamboo Slab ->  5.68$ 3.98xp
+  Bamboo Fence ->  5.68$ 3.98xp
+  Bamboo Mosaic ->  6.72$ 3.98xp
+  Bamboo Mosaic Stairs ->  6.72$ 3.98xp
+  Bamboo Mosaic Slab ->  6.72$ 3.98xp
+  Nether Sprouts ->  5.68$ 3.98xp
+  Weeping Vines ->  5.68$ 3.98xp
+  Twisting Vines ->  5.68$ 3.98xp
+  Hanging Roots ->  5.68$ 3.98xp
+  Big Dripleaf ->  5.68$ 3.98xp
+  Small Dripleaf ->  5.68$ 3.98xp
+  Chorus Plant ->  5.68$ 3.98xp
+  Chorus Flower ->  5.68$ 3.98xp
+  Ladder ->  5.68$ 3.98xp
+  Torch ->  5.68$ 3.98xp
+  Soul Torch ->  5.68$ 3.98xp
+  Copper Torch ->  5.68$ 3.98xp
+  Brown Mushroom Block ->  9.10$ 11.70xp
+  Red Mushroom Block ->  9.10$ 11.70xp
+  Mushroom Stem ->  9.10$ 11.70xp
+  Iron Bars ->  9.10$ 11.70xp
+  Iron Chain ->  9.10$ 11.70xp
+  Copper Chain ->  9.10$ 11.70xp
+  Exposed Copper Chain ->  9.10$ 11.70xp
+  Weathered Copper Chain ->  9.10$ 11.70xp
+  Oxidized Copper Chain ->  9.10$ 11.70xp
+  Waxed Copper Chain ->  9.10$ 11.70xp
+  Waxed Exposed Copper Chain ->  9.10$ 11.70xp
+  Waxed Weathered Copper Chain ->  9.10$ 11.70xp
+  Waxed Oxidized Copper Chain ->  9.10$ 11.70xp
+  Vine ->  9.10$ 11.70xp
+  Glow Lichen ->  9.10$ 11.70xp
+  Tall Grass ->  5.68$ 3.98xp
+  Candle ->  5.68$ 3.98xp
+  White Candle ->  5.68$ 3.98xp
+  Orange Candle ->  5.68$ 3.98xp
+  Magenta Candle ->  5.68$ 3.98xp
+  Light Blue Candle ->  5.68$ 3.98xp
+  Yellow Candle ->  5.68$ 3.98xp
+  Lime Candle ->  5.68$ 3.98xp
+  Pink Candle ->  5.68$ 3.98xp
+  Gray Candle ->  5.68$ 3.98xp
+  Light Gray Candle ->  5.68$ 3.98xp
+  Cyan Candle ->  5.68$ 3.98xp
+  Purple Candle ->  5.68$ 3.98xp
+  Blue Candle ->  5.68$ 3.98xp
+  Brown Candle ->  5.68$ 3.98xp
+  Green Candle ->  5.68$ 3.98xp
+  Red Candle ->  5.68$ 3.98xp
+  Black Candle ->  5.68$ 3.98xp
+  Raw Iron Block ->  9.10$ 11.70xp
+  Raw Copper Block ->  9.10$ 11.70xp
+  Raw Gold Block ->  9.10$ 11.70xp
+  Sponge ->  6.81$ 7.96xp
+  Wet Sponge ->  6.81$ 7.96xp
+  Hay Block ->  4.55$ 6.55xp
+  Dried Kelp Block ->  9.10$ 6.55xp
+  Crafting Table ->  6.81$ 6.55xp
+  Loom ->  6.81$ 6.55xp
+  Composter ->  6.81$ 6.55xp
+  Chest ->  6.81$ 6.55xp
+  Barrel ->  6.81$ 6.55xp
+  Furnace ->  6.81$ 6.55xp
+  Smoker ->  6.81$ 6.55xp
+  Blast Furnace ->  6.81$ 6.55xp
+  Cartography Table ->  6.81$ 6.55xp
+  Fletching Table ->  6.81$ 6.55xp
+  Grindstone ->  6.81$ 6.55xp
+  Smithing Table ->  6.81$ 6.55xp
+  Stonecutter ->  6.81$ 6.55xp
+  Bell ->  6.81$ 6.55xp
+  Campfire ->  6.81$ 6.55xp
+  Soul Campfire ->  6.81$ 6.55xp
+  Armor Stand ->  6.81$ 6.55xp
+  Painting ->  6.81$ 6.55xp
+  Jukebox ->  6.81$ 6.55xp
+  Note Block ->  6.81$ 6.55xp
+  Enchanting Table ->  6.81$ 6.55xp
+  Lodestone ->  6.81$ 6.55xp
+  Respawn Anchor ->  6.81$ 6.55xp
+  Honeycomb Block ->  6.81$ 6.55xp
+  Ender Chest ->  6.81$ 6.55xp
+  Anvil ->  6.81$ 6.55xp
+  Bee Nest ->  6.81$ 6.55xp
+  Beehive ->  6.81$ 6.55xp
+  Dead Tube Coral Block ->  6.81$ 9.13xp
+  Dead Brain Coral Block ->  6.81$ 9.13xp
+  Dead Bubble Coral Block ->  6.81$ 9.13xp
+  Dead Fire Coral Block ->  6.81$ 9.13xp
+  Dead Horn Coral Block ->  6.81$ 9.13xp
+  Tube Coral Block ->  6.81$ 9.13xp
+  Brain Coral Block ->  6.81$ 9.13xp
+  Bubble Coral Block ->  6.81$ 9.13xp
+  Fire Coral Block ->  6.81$ 9.13xp
+  Horn Coral Block ->  6.81$ 9.13xp
+  Tube Coral ->  6.81$ 9.13xp
+  Brain Coral ->  6.81$ 9.13xp
+  Bubble Coral ->  6.81$ 9.13xp
+  Fire Coral ->  6.81$ 9.13xp
+  Horn Coral ->  6.81$ 9.13xp
+  Dead Tube Coral ->  6.81$ 9.13xp
+  Dead Brain Coral ->  6.81$ 9.13xp
+  Dead Bubble Coral ->  6.81$ 9.13xp
+  Dead Fire Coral ->  6.81$ 9.13xp
+  Dead Horn Coral ->  6.81$ 9.13xp
+  Tube Coral Fan ->  6.81$ 9.13xp
+  Brain Coral Fan ->  6.81$ 9.13xp
+  Bubble Coral Fan ->  6.81$ 9.13xp
+  Fire Coral Fan ->  6.81$ 9.13xp
+  Horn Coral Fan ->  6.81$ 9.13xp
+  Dead Tube Coral Fan ->  6.81$ 9.13xp
+  Dead Brain Coral Fan ->  6.81$ 9.13xp
+  Dead Bubble Coral Fan ->  6.81$ 9.13xp
+  Dead Fire Coral Fan ->  6.81$ 9.13xp
+  Dead Horn Coral Fan ->  6.81$ 9.13xp
+  Redstone Torch ->  4.55$ 6.55xp
+  Repeater ->  4.55$ 6.55xp
+  Comparator ->  4.55$ 6.55xp
+  Rail ->  4.55$ 6.55xp
+  Powered Rail ->  4.97$ 6.55xp
+  Detector Rail ->  4.97$ 6.55xp
+  Activator Rail ->  4.97$ 6.55xp
+  Piston ->  4.55$ 6.55xp
+  Sticky Piston ->  4.55$ 6.55xp
+  Slime Block ->  4.55$ 6.55xp
+  Honey Block ->  4.55$ 6.55xp
+  Observer ->  4.55$ 6.55xp
+  Hopper ->  4.55$ 6.55xp
+  Dispenser ->  4.55$ 6.55xp
+  Dropper ->  4.55$ 6.55xp
+  Lectern ->  4.55$ 6.55xp
+  Target ->  4.55$ 6.55xp
+  Lever ->  4.55$ 6.55xp
+  Lightning Rod ->  16.48$ 11.70xp
+  Daylight Detector ->  4.55$ 6.55xp
+  Tripwire Hook ->  4.55$ 6.55xp
+  Trapped Chest ->  4.55$ 6.55xp
+  Tnt ->  4.55$ 6.55xp
+  Redstone Lamp ->  4.55$ 6.55xp
+  Stone Button ->  4.55$ 6.55xp
+  Polished Blackstone Button ->  4.55$ 6.55xp
+  Oak Button ->  4.55$ 6.55xp
+  Spruce Button ->  4.55$ 6.55xp
+  Birch Button ->  4.55$ 6.55xp
+  Jungle Button ->  4.55$ 6.55xp
+  Acacia Button ->  4.55$ 6.55xp
+  Dark Oak Button ->  4.55$ 6.55xp
+  Mangrove Button ->  4.55$ 6.55xp
+  Pale Oak Button ->  4.55$ 6.55xp
+  Cherry Button ->  4.55$ 6.55xp
+  Crimson Button ->  4.55$ 6.55xp
+  Warped Button ->  4.55$ 6.55xp
+  Stone Pressure Plate ->  4.55$ 6.55xp
+  Polished Blackstone Pressure Plate ->  4.55$ 6.55xp
+  Light Weighted Pressure Plate ->  4.55$ 6.55xp
+  Heavy Weighted Pressure Plate ->  4.55$ 6.55xp
+  Oak Pressure Plate ->  4.55$ 6.55xp
+  Spruce Pressure Plate ->  4.55$ 6.55xp
+  Birch Pressure Plate ->  4.55$ 6.55xp
+  Jungle Pressure Plate ->  4.55$ 6.55xp
+  Acacia Pressure Plate ->  4.55$ 6.55xp
+  Dark Oak Pressure Plate ->  4.55$ 6.55xp
+  Mangrove Pressure Plate ->  4.55$ 6.55xp
+  Pale Oak Pressure Plate ->  4.55$ 6.55xp
+  Cherry Pressure Plate ->  4.55$ 6.55xp
+  Crimson Pressure Plate ->  4.55$ 6.55xp
+  Warped Pressure Plate ->  4.55$ 6.55xp
+  Wither Skeleton Skull ->  4.55$ 6.55xp
+  Player Head ->  4.55$ 6.55xp
+  Dragon Head ->  4.55$ 6.55xp
+  White Banner ->  4.55$ 6.55xp
+  Orange Banner ->  4.55$ 6.55xp
+  Magenta Banner ->  4.55$ 6.55xp
+  Light Blue Banner ->  4.55$ 6.55xp
+  Yellow Banner ->  4.55$ 6.55xp
+  Lime Banner ->  4.55$ 6.55xp
+  Pink Banner ->  4.55$ 6.55xp
+  Gray Banner ->  4.55$ 6.55xp
+  Light Gray Banner ->  4.55$ 6.55xp
+  Cyan Banner ->  4.55$ 6.55xp
+  Purple Banner ->  4.55$ 6.55xp
+  Blue Banner ->  4.55$ 6.55xp
+  Brown Banner ->  4.55$ 6.55xp
+  Green Banner ->  4.55$ 6.55xp
+  Red Banner ->  4.55$ 6.55xp
+  Black Banner ->  4.55$ 6.55xp
+  Shulker Box ->  4.55$ 6.55xp
+  White Shulker Box ->  4.55$ 6.55xp
+  Orange Shulker Box ->  4.55$ 6.55xp
+  Magenta Shulker Box ->  4.55$ 6.55xp
+  Light Blue Shulker Box ->  4.55$ 6.55xp
+  Yellow Shulker Box ->  4.55$ 6.55xp
+  Lime Shulker Box ->  4.55$ 6.55xp
+  Pink Shulker Box ->  4.55$ 6.55xp
+  Gray Shulker Box ->  4.55$ 6.55xp
+  Light Gray Shulker Box ->  4.55$ 6.55xp
+  Cyan Shulker Box ->  4.55$ 6.55xp
+  Purple Shulker Box ->  4.55$ 6.55xp
+  Blue Shulker Box ->  4.55$ 6.55xp
+  Brown Shulker Box ->  4.55$ 6.55xp
+  Green Shulker Box ->  4.55$ 6.55xp
+  Red Shulker Box ->  4.55$ 6.55xp
+  Black Shulker Box ->  4.55$ 6.55xp
+  Sculk ->  4.55$ 6.55xp
+  Sculk Catalyst ->  6.81$ 6.55xp
+  Sculk Vein ->  4.55$ 6.55xp
+  Sculk Shrieker ->  9.10$ 7.96xp
+  Sculk Sensor ->  9.10$ 6.55xp

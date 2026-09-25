@@ -1,0 +1,35 @@
+# job: Alchemist
+# level: 1
+# source: latest.log 06:45:27 (3 pages)
+Brew:
+  Stone ->  4.19$ 0.34xp
+  Nether Wart ->  5.28$ 0.68xp
+  Slime Block ->  5.28$ 0.68xp
+  Redstone ->  4.22$ 0.41xp
+  Glowstone Dust ->  5.28$ 0.54xp
+  Fermented Spider Eye ->  5.28$ 0.41xp
+  Gunpowder ->  5.28$ 0.41xp
+  Dragon Breath ->  10.56$ 0.41xp
+  Sugar ->  4.22$ 0.54xp
+  Rabbit Foot ->  6.86$ 1.09xp
+  Glistering Melon Slice ->  8.45$ 1.36xp
+  Spider Eye ->  5.81$ 0.68xp
+  Pufferfish ->  10.56$ 1.36xp
+  Magma Cream ->  7.39$ 0.95xp
+  Golden Carrot ->  8.45$ 1.36xp
+  Blaze Powder ->  6.34$ 0.82xp
+  Breeze Rod ->  6.34$ 0.82xp
+  Ghast Tear ->  13.20$ 1.09xp
+  Cobweb ->  13.20$ 1.09xp
+  Turtle Helmet ->  7.39$ 1.09xp
+  Phantom Membrane ->  7.39$ 1.09xp
+  Rotten Flesh ->  4.22$ 0.41xp
+  Fern ->  4.22$ 0.41xp
+  Poisonous Potato ->  4.22$ 0.41xp
+  Apple ->  4.22$ 0.41xp
+  Golden Apple ->  10.56$ 1.63xp
+  Ink Sac ->  4.22$ 0.27xp
+  Brown Mushroom ->  4.22$ 0.41xp
+  Red Mushroom ->  4.22$ 0.41xp
+  Quartz ->  4.22$ 0.41xp
+  Carrot ->  4.22$ 0.41xp

@@ -1,0 +1,57 @@
+# job: Digger
+# level: 30
+# source: latest.log 06:46:38 (4 pages)
+Break:
+  Red Sand ->  2.06$ 2.64xp
+  Coarse Dirt ->  2.06$ 2.64xp
+  Dirt ->  2.06$ 2.64xp
+  Grass Block ->  2.06$ 2.64xp
+  Gravel ->  2.06$ 2.64xp
+  Mud ->  2.06$ 2.64xp
+  Muddy Mangrove Roots ->  2.06$ 2.64xp
+  Sand ->  2.06$ 2.64xp
+  Clay ->  2.06$ 2.64xp
+  Farmland ->  2.06$ 2.64xp
+  Mycelium ->  2.06$ 2.64xp
+  Podzol ->  2.06$ 2.64xp
+  Dirt Path ->  2.06$ 2.64xp
+  Rooted Dirt ->  2.06$ 2.64xp
+  Terracotta ->  2.39$ 1.98xp
+  White Terracotta ->  2.39$ 1.98xp
+  Orange Terracotta ->  2.39$ 1.98xp
+  Magenta Terracotta ->  2.39$ 1.98xp
+  Light Blue Terracotta ->  2.39$ 1.98xp
+  Lime Terracotta ->  2.39$ 1.98xp
+  Pink Terracotta ->  2.39$ 1.98xp
+  Gray Terracotta ->  2.39$ 1.98xp
+  Light Gray Terracotta ->  2.39$ 1.98xp
+  Cyan Terracotta ->  2.39$ 1.98xp
+  Purple Terracotta ->  2.39$ 1.98xp
+  Blue Terracotta ->  2.39$ 1.98xp
+  Brown Terracotta ->  2.39$ 1.98xp
+  Green Terracotta ->  2.39$ 1.98xp
+  Red Terracotta ->  2.39$ 1.98xp
+  Black Terracotta ->  2.39$ 1.98xp
+  Soul Sand ->  2.06$ 2.64xp
+  Soul Soil ->  2.06$ 2.64xp
+Smelt:
+  Glass ->  7.21$ 5.28xp
+  Brick ->  6.18$ 4.40xp
+  Resin Brick ->  6.18$ 4.40xp
+  Terracotta ->  13.38$ 11.44xp
+  White Glazed Terracotta ->  2.06$ 3.52xp
+  Orange Glazed Terracotta ->  2.06$ 3.52xp
+  Magenta Glazed Terracotta ->  2.06$ 3.52xp
+  Light Blue Glazed Terracotta ->  2.06$ 3.52xp
+  Yellow Glazed Terracotta ->  2.06$ 3.52xp
+  Lime Glazed Terracotta ->  2.06$ 3.52xp
+  Pink Glazed Terracotta ->  2.06$ 3.52xp
+  Gray Glazed Terracotta ->  2.06$ 3.52xp
+  Light Gray Glazed Terracotta ->  2.06$ 3.52xp
+  Cyan Glazed Terracotta ->  2.06$ 3.52xp
+  Purple Glazed Terracotta ->  2.06$ 3.52xp
+  Blue Glazed Terracotta ->  2.06$ 3.52xp
+  Brown Glazed Terracotta ->  2.06$ 3.52xp
+  Green Glazed Terracotta ->  2.06$ 3.52xp
+  Red Glazed Terracotta ->  2.06$ 3.52xp
+  Black Glazed Terracotta ->  2.06$ 3.52xp

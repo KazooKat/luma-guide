@@ -1,0 +1,25 @@
+# job: Cook
+# level: 41
+# source: latest.log 06:42:19 (2 pages)
+Craft:
+  Bread ->  6.66$ 1.48xp
+  Glistering Melon Slice ->  20.34$ 2.65xp
+  Golden Carrot ->  20.34$ 2.65xp
+  Golden Apple ->  116.16$ 16.38xp
+  Cake ->  34.86$ 6.55xp
+  Cookie ->  6.66$ 1.48xp
+  Pumpkin Pie ->  10.17$ 1.95xp
+  Mushroom Stew ->  14.52$ 6.55xp
+  Beetroot Soup ->  13.08$ 6.55xp
+  Rabbit Stew ->  34.86$ 6.55xp
+Smelt:
+  Cooked Beef ->  17.82$ 1.33xp
+  Cooked Porkchop ->  17.82$ 1.33xp
+  Cooked Cod ->  17.82$ 1.33xp
+  Cooked Salmon ->  17.82$ 1.33xp
+  Cooked Chicken ->  17.82$ 1.33xp
+  Cooked Mutton ->  17.82$ 1.33xp
+  Cooked Rabbit ->  21.39$ 1.33xp
+  Baked Potato ->  14.25$ 1.01xp
+  Popped Chorus Fruit ->  6.24$ 1.01xp
+  Dried Kelp ->  6.24$ 1.01xp

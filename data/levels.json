@@ -1,0 +1,13 @@
+{
+  "_comment": "Job level the player was at when each /jobs browse dump was taken (from /jobs stats in the same log, 2026-09-25).",
+  "Alchemist": 1,
+  "Blacksmith": 7,
+  "Builder": 32,
+  "Cook": 41,
+  "Digger": 30,
+  "Farmer": 54,
+  "Fisherman": 46,
+  "Hunter": 23,
+  "Lumberjack": 37,
+  "Miner": 19
+}

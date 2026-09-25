@@ -1,0 +1,100 @@
+# job: Lumberjack
+# level: 37
+# source: latest.log 06:48:15 (7 pages)
+Break:
+  Oak Log ->  5.33$ 5.65xp
+  Spruce Log ->  4.36$ 4.84xp
+  Birch Log ->  5.33$ 5.65xp
+  Jungle Log ->  4.86$ 5.11xp
+  Acacia Log ->  5.33$ 5.65xp
+  Dark Oak Log ->  4.36$ 4.84xp
+  Mangrove Log ->  5.33$ 5.65xp
+  Pale Oak Log ->  5.33$ 5.65xp
+  Cherry Log ->  5.33$ 5.65xp
+  Warped Stem ->  6.29$ 5.92xp
+  Crimson Stem ->  6.29$ 5.92xp
+  Stripped Oak Log ->  5.33$ 5.65xp
+  Stripped Spruce Log ->  4.36$ 4.84xp
+  Stripped Birch Log ->  5.33$ 5.65xp
+  Stripped Jungle Log ->  4.86$ 5.11xp
+  Stripped Acacia Log ->  5.33$ 5.65xp
+  Stripped Dark Oak Log ->  4.36$ 4.84xp
+  Stripped Mangrove Log ->  5.33$ 5.65xp
+  Stripped Pale Oak Log ->  5.33$ 5.65xp
+  Stripped Cherry Log ->  5.33$ 5.65xp
+  Stripped Warped Stem ->  6.29$ 5.92xp
+  Stripped Crimson Stem ->  6.29$ 5.92xp
+  Oak Leaves ->  1.68$ 2.15xp
+  Spruce Leaves ->  1.68$ 2.15xp
+  Birch Leaves ->  1.68$ 2.15xp
+  Jungle Leaves ->  1.68$ 2.15xp
+  Acacia Leaves ->  1.68$ 2.15xp
+  Dark Oak Leaves ->  1.68$ 2.15xp
+  Mangrove Leaves ->  1.68$ 2.15xp
+  Pale Oak Leaves ->  1.68$ 2.15xp
+  Cherry Leaves ->  1.68$ 2.15xp
+  Warped Wart Block ->  1.68$ 2.15xp
+  Nether Wart Block ->  1.68$ 2.15xp
+  Azalea Leaves ->  1.68$ 2.15xp
+  Flowering Azalea Leaves ->  1.82$ 2.42xp
+  Mangrove Roots ->  3.64$ 3.77xp
+  Red Mushroom Block ->  4.36$ 3.23xp
+  Brown Mushroom Block ->  4.36$ 3.23xp
+  Mushroom Stem ->  4.72$ 3.23xp
+Strip logs:
+  Stripped Oak Log ->  1.82$ 1.61xp
+  Stripped Spruce Log ->  1.82$ 1.61xp
+  Stripped Birch Log ->  1.82$ 1.61xp
+  Stripped Jungle Log ->  1.82$ 1.61xp
+  Stripped Acacia Log ->  1.82$ 1.61xp
+  Stripped Dark Oak Log ->  1.82$ 1.61xp
+  Stripped Mangrove Log ->  1.82$ 1.61xp
+  Stripped Cherry Log ->  1.82$ 1.61xp
+  Stripped Warped Stem ->  1.82$ 1.61xp
+  Stripped Crimson Stem ->  1.82$ 1.61xp
+  Stripped Pale Oak Log ->  1.82$ 1.61xp
+Place:
+  Oak Sapling ->  3.64$ 3.23xp
+  Spruce Sapling ->  3.64$ 3.23xp
+  Birch Sapling ->  3.64$ 3.23xp
+  Jungle Sapling ->  3.64$ 3.23xp
+  Acacia Sapling ->  3.64$ 3.23xp
+  Dark Oak Sapling ->  3.64$ 3.23xp
+  Cherry Sapling ->  3.64$ 3.23xp
+  Pale Oak Sapling ->  3.64$ 3.23xp
+  Mangrove Propagule ->  3.64$ 3.23xp
+  Warped Fungus ->  3.64$ 3.23xp
+  Crimson Fungus ->  3.64$ 3.23xp
+Craft:
+  Oak Door ->  5.58$ 3.77xp
+  Spruce Door ->  5.58$ 3.77xp
+  Birch Door ->  5.58$ 3.77xp
+  Acacia Door ->  5.58$ 3.77xp
+  Dark Oak Door ->  5.58$ 3.77xp
+  Crimson Door ->  5.58$ 3.77xp
+  Warped Door ->  5.58$ 3.77xp
+  Mangrove Door ->  5.58$ 3.77xp
+  Pale Oak Door ->  5.58$ 3.77xp
+  Cherry Door ->  5.58$ 3.77xp
+  Oak Fence ->  4.36$ 3.23xp
+  Spruce Fence ->  4.36$ 3.23xp
+  Birch Fence ->  4.36$ 3.23xp
+  Acacia Fence ->  4.36$ 3.23xp
+  Dark Oak Fence ->  4.36$ 3.23xp
+  Crimson Fence ->  4.36$ 3.23xp
+  Warped Fence ->  4.36$ 3.23xp
+  Mangrove Fence ->  4.36$ 3.23xp
+  Pale Oak Fence ->  4.36$ 3.23xp
+  Cherry Fence ->  4.36$ 3.23xp
+  Oak Trapdoor ->  5.58$ 3.77xp
+  Spruce Trapdoor ->  5.58$ 3.77xp
+  Birch Trapdoor ->  5.58$ 3.77xp
+  Acacia Trapdoor ->  5.58$ 3.77xp
+  Dark Oak Trapdoor ->  5.58$ 3.77xp
+  Crimson Trapdoor ->  5.58$ 3.77xp
+  Warped Trapdoor ->  5.58$ 3.77xp
+  Mangrove Trapdoor ->  5.58$ 3.77xp
+  Pale Oak Trapdoor ->  5.58$ 3.77xp
+  Cherry Trapdoor ->  5.58$ 3.77xp
+Smelt:
+  Charcoal ->  9.77$ 4.84xp

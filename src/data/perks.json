@@ -1,0 +1,365 @@
+{
+ "source": "LumaLibre/JobsAddons@2981afe PerksFile.kt",
+ "perks": {
+  "Alchemist": [
+   {
+    "level": 20,
+    "kind": "unlock",
+    "text": "Elixirian tag"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "/absorption command"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "/bottle command"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "/blaze command"
+   },
+   {
+    "level": 45,
+    "kind": "reward",
+    "text": "500 mcMMO levels of Alchemy"
+   },
+   {
+    "level": 70,
+    "kind": "unlock",
+    "text": "Brewsmith tag"
+   },
+   {
+    "level": 80,
+    "kind": "reward",
+    "text": "Increased your max warehouse stock by 70,000"
+   }
+  ],
+  "Blacksmith": [
+   {
+    "level": 20,
+    "kind": "unlock",
+    "text": "Artisan tag"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "/fireresistance command"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "Weller tag"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "/triad command"
+   },
+   {
+    "level": 70,
+    "kind": "unlock",
+    "text": "Ironsmith tag"
+   },
+   {
+    "level": 80,
+    "kind": "unlock",
+    "text": "Click to Deposit warehouse mode"
+   }
+  ],
+  "Builder": [
+   {
+    "level": 20,
+    "kind": "unlock",
+    "text": "Carpenter tag"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "/top command"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "/bottom command"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "Auto Replenish warehouse mode"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "/concrete command"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "/powder command"
+   },
+   {
+    "level": 55,
+    "kind": "unlock",
+    "text": "/stripcolor command"
+   },
+   {
+    "level": 70,
+    "kind": "unlock",
+    "text": "Architect tag"
+   },
+   {
+    "level": 80,
+    "kind": "unlock",
+    "text": "/recolor command"
+   }
+  ],
+  "Cook": [
+   {
+    "level": 20,
+    "kind": "unlock",
+    "text": "Baker tag"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "/feed command"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "/heal command"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "Chef tag"
+   },
+   {
+    "level": 70,
+    "kind": "unlock",
+    "text": "Caterer tag"
+   },
+   {
+    "level": 80,
+    "kind": "unlock",
+    "text": "Click to Deposit warehouse mode"
+   }
+  ],
+  "Digger": [
+   {
+    "level": 20,
+    "kind": "unlock",
+    "text": "Graveler tag"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "/grass command"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "/dirt command"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "/concrete command"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "/powder command"
+   },
+   {
+    "level": 70,
+    "kind": "unlock",
+    "text": "Excavator tag"
+   },
+   {
+    "level": 80,
+    "kind": "unlock",
+    "text": "Auto Store warehouse mode"
+   }
+  ],
+  "Farmer": [
+   {
+    "level": 20,
+    "kind": "unlock",
+    "text": "Gardener tag"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "Craft mob balls"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "Auto Replenish warehouse mode"
+   },
+   {
+    "level": 45,
+    "kind": "reward",
+    "text": "500 mcMMO levels of Herbalism"
+   },
+   {
+    "level": 70,
+    "kind": "unlock",
+    "text": "Harvester tag"
+   },
+   {
+    "level": 80,
+    "kind": "reward",
+    "text": "Received 12 reusable mob balls"
+   }
+  ],
+  "Fisherman": [
+   {
+    "level": 20,
+    "kind": "unlock",
+    "text": "Fisher tag"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "/luck command"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "Castaway tag"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "/dolphinsgrace command"
+   },
+   {
+    "level": 70,
+    "kind": "unlock",
+    "text": "Reller tag"
+   },
+   {
+    "level": 80,
+    "kind": "unlock",
+    "text": "/autosellfish command"
+   }
+  ],
+  "Hunter": [
+   {
+    "level": 20,
+    "kind": "unlock",
+    "text": "Sniper tag"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "/strength command"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "Archer tag"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "/speed command"
+   },
+   {
+    "level": 70,
+    "kind": "unlock",
+    "text": "Slayer tag"
+   },
+   {
+    "level": 80,
+    "kind": "unlock",
+    "text": "/itemfilter command"
+   }
+  ],
+  "Lumberjack": [
+   {
+    "level": 20,
+    "kind": "unlock",
+    "text": "Lumberer tag"
+   },
+   {
+    "level": 30,
+    "kind": "unlock",
+    "text": "Tree Feller ability"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "/top command"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "Axemaster tag"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "/haste command"
+   },
+   {
+    "level": 55,
+    "kind": "unlock",
+    "text": "/strip command"
+   },
+   {
+    "level": 70,
+    "kind": "unlock",
+    "text": "Arborist tag"
+   },
+   {
+    "level": 80,
+    "kind": "unlock",
+    "text": "Tree feller auto-replant"
+   }
+  ],
+  "Miner": [
+   {
+    "level": 20,
+    "kind": "unlock",
+    "text": "Dredger tag"
+   },
+   {
+    "level": 35,
+    "kind": "unlock",
+    "text": "/top command"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "Gemologist tag"
+   },
+   {
+    "level": 45,
+    "kind": "unlock",
+    "text": "/nightvision command"
+   },
+   {
+    "level": 65,
+    "kind": "unlock",
+    "text": "/haste command"
+   },
+   {
+    "level": 70,
+    "kind": "unlock",
+    "text": "Caverner tag"
+   },
+   {
+    "level": 80,
+    "kind": "unlock",
+    "text": "Auto Store warehouse mode"
+   }
+  ]
+ }
+}

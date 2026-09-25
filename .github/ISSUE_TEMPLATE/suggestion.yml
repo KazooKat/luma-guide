@@ -1,0 +1,27 @@
+name: Suggest an addition
+description: Something the Luma Guide should cover or fix
+title: "[Suggestion] "
+labels: [suggestion]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the guide?
+      options:
+        - Jobs
+        - Items / mechanics
+        - Something new
+        - A mistake to fix
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What should be added or changed?
+      description: The more specific the better, e.g. "relic drop rates" or "Farmer wheat pay looks wrong at level 60".
+    validations:
+      required: true
+  - type: input
+    id: ign
+    attributes:
+      label: Your in-game name (optional)

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.log
+.playwright-mcp/
+# Upstream LumaLibre sources are CC BY-NC-ND 4.0: used locally to build data, not redistributed.
+data/PerksFile.kt
+src/lib/__fixtures__/Bloom.java
+__pycache__/
