@@ -7,6 +7,7 @@ relics (where they drop, what's inside them, disassembly odds).
 Live site: https://kazookat.github.io/luma-guide/ · Design canvas: https://claude.ai/artifact/P1tHzLmUEceQpNcXqmzEn8
 
 Fan-made; not affiliated with LumaMC. Minecraft icons © Mojang (via the `minecraft-textures` package).
+The sapling-box icon (`data/custom-icons/sapling_box.png`) is a render of the `BoxMan01234` head that CustomSaplings uses, via mc-heads.net.
 Mechanics and perk facts are described from LumaLibre's public repositories (CC BY-NC-ND 4.0), credited on the pages that use them.
 
 ## How the numbers are made

@@ -17,6 +17,8 @@ RAW_DIR = ROOT / "data" / "raw"
 META_FILE = ROOT / "data" / "jobs-meta.json"
 OUT = ROOT / "src" / "data" / "jobs.json"
 ICON_DIR = ROOT / "public" / "icons"
+# Icons that aren't vanilla items (e.g. Luma's sapling box head). Copied into public/icons/ as-is.
+CUSTOM_ICON_DIR = ROOT / "data" / "custom-icons"
 TEX = ROOT / "node_modules" / "minecraft-textures" / "dist" / "textures"
 MC_VERSION = "26.2"
 
@@ -114,7 +116,7 @@ EXTRA_ICONS = ["furnace", "smoker", "blast_furnace", "brewing_stand", "netherite
                # relics page
                "netherite_chestplate", "diamond_chestplate", "golden_sword", "iron_pickaxe", "chainmail_helmet",
                "crossbow", "coal_block", "iron_ingot", "gold_ingot", "diamond", "netherite_scrap", "prismarine_shard",
-               "ender_eye", "amethyst_cluster", "charcoal", "zombie_head", "writable_book", "experience_bottle", "emerald"]
+               "ender_eye", "amethyst_cluster", "charcoal", "zombie_head", "firework_star", "writable_book", "experience_bottle", "emerald"]
 
 
 def slug(name):
@@ -156,6 +158,8 @@ class Icons:
         ICON_DIR.mkdir(parents=True)
         for item_id, texture in self.used.items():
             shutil.copyfile(TEX / "assets" / texture, ICON_DIR / f"{item_id}.png")
+        for custom in sorted(CUSTOM_ICON_DIR.glob("*.png")):
+            shutil.copyfile(custom, ICON_DIR / custom.name)
 
 
 def parse_file(path):

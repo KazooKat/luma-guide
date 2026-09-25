@@ -66,7 +66,7 @@ export function rejectionOdds(weights: number[]): number[] {
 export interface Reward {
   weight: number;
   label: string;
-  /** Vanilla item icon; null for server-only rewards (tokens, points, crate boxes). */
+  /** Icon id in public/icons; null when we don't know what the reward looks like in game. */
   icon: string | null;
   note?: string;
 }
@@ -76,16 +76,16 @@ export const DISASSEMBLY_REWARDS: Reward[] = [
   { weight: 60, label: '16 Bottles o’ Enchanting', icon: 'experience_bottle' },
   { weight: 50, label: '4 Coal Blocks', icon: 'coal_block' },
   { weight: 48, label: '5 Iron Ingots', icon: 'iron_ingot' },
-  { weight: 47, label: 'Repair Token I', icon: null },
-  { weight: 45, label: 'Repair Token II', icon: null },
+  { weight: 47, label: 'Repair Token I', icon: 'firework_star' },
+  { weight: 45, label: 'Repair Token II', icon: 'firework_star' },
   { weight: 44, label: '4 Relic Shards', icon: 'amethyst_shard' },
   { weight: 43, label: '5 Gold Ingots', icon: 'gold_ingot' },
   { weight: 42, label: '3 Diamonds', icon: 'diamond' },
-  { weight: 41, label: 'Common Box', icon: null, note: 'crate box' },
-  { weight: 39, label: 'Repair Token III', icon: null },
+  { weight: 41, label: 'Common Sapling Box', icon: 'sapling_box' },
+  { weight: 39, label: 'Repair Token III', icon: 'firework_star' },
   { weight: 38, label: '1 Netherite Scrap', icon: 'netherite_scrap' },
-  { weight: 29, label: '5 Points', icon: null },
-  { weight: 20, label: 'Rare Box', icon: null, note: 'crate box' },
+  { weight: 29, label: '5 Lumins', icon: null },
+  { weight: 20, label: 'Rare Sapling Box', icon: 'sapling_box' },
   { weight: 5, label: 'Lunar Core', icon: 'prismarine_shard' },
 ];
 /** Added only when the disassembled relic is Astral. */
