@@ -269,10 +269,46 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
 .more-card { border: 1px dashed var(--input-border); border-radius: 16px; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 .more-card p { flex: 1; font-size: 15px; color: var(--text-2); }
 
+/* ---------- relics ---------- */
+.kv { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 14px; margin: 0; font-size: 14px; }
+.kv dt { color: var(--muted); font-weight: 600; }
+.kv dd { margin: 0; color: var(--text-2); }
+.facts.plain li { display: list-item; margin-left: 18px; list-style: disc; }
+.rarity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.rarity-card { border: 1px solid var(--border); border-top: 3px solid; border-radius: 12px; padding: 14px 16px; display: grid; gap: 10px; align-content: start; background: var(--surface-2); }
+.rarity-head { display: flex; align-items: center; gap: 10px; }
+.rarity-head b { font-family: var(--display); font-weight: 800; font-size: 20px; }
+.rarity-card .kv { font-size: 14px; gap: 4px 12px; }
+.rarity-name { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; white-space: nowrap; }
+.swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.source-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.source { border: 1px solid var(--border); border-radius: 14px; padding: 18px; display: grid; gap: 10px; align-content: start; font-size: 15px; color: var(--text-2); }
+.source-head { display: flex; align-items: center; gap: 10px; }
+.source-head h4 { margin: 0; font-size: 17px; color: var(--text); }
+.big-odds { font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1; color: var(--hero); letter-spacing: -0.02em; }
+.facts.compact { gap: 6px; font-size: 14.5px; }
+.facts.compact li { display: list-item; margin-left: 18px; list-style: disc; }
+.facts.compact li img { vertical-align: -4px; }
+.estimate { border-left: 3px solid var(--warn); padding-left: 10px; }
+.mini-odds { display: grid; gap: 4px; }
+.mini-odds [role='row'] { display: flex; justify-content: space-between; padding: 5px 10px; border-radius: 8px; background: var(--surface-2); font-size: 14px; }
+.explain-line { font-size: 15px; color: var(--text-2); max-width: 900px; }
+.odds-table { display: grid; gap: 2px; }
+.odds-row { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 100px; align-items: center; gap: 12px; padding: 8px 12px; border-top: 1px solid var(--grid); min-height: 44px; }
+.odds-row.head { border-top: 0; padding-block: 0; min-height: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+.odds-row .item-name b { font-weight: 500; }
+.odds-cell { display: flex; align-items: center; gap: 10px; }
+.odds-cell .mono { width: 54px; text-align: right; flex: none; }
+.odds-bar { flex: 1; height: 8px; border-radius: 4px; background: var(--grid); overflow: hidden; }
+.odds-bar i { display: block; height: 100%; background: var(--chart); border-radius: 4px; }
+.facts sup { color: var(--warn); }
+.facts li b { color: var(--text); }
+
 /* ---------- responsive ---------- */
 @media (max-width: 1000px) {
   .job-grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
-  .job-layout, .pair, .bloom-grid { grid-template-columns: 1fr; }
+  .job-layout, .pair, .bloom-grid, .source-grid { grid-template-columns: 1fr; }
+  .rarity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .plan-col { position: static; order: -1; }
   .controls { margin-left: 0; }
 }
@@ -297,4 +333,8 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
   .item-head, .item-row { grid-template-columns: minmax(0, 1fr) 86px 64px; padding-inline: 8px; }
   .bloom-now .big { font-size: 36px; }
   .item-card-head h2 { font-size: 28px; }
+  .rarity-grid { grid-template-columns: 1fr; }
+  .odds-row { grid-template-columns: minmax(0, 1fr) 110px; }
+  .odds-row > :last-child { display: none; }
+  .odds-bar { display: none; }
 }

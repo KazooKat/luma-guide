@@ -4,6 +4,7 @@ import { Icon } from '../../components/Icon';
 import { fmt2, fmtCompact, fmtDays, fmtInt, fmtMoney } from '../../lib/format';
 import { machineRate, machinesFor, type Machine } from '../../lib/machines';
 import { moneyAt, xpAt, type Plan as PlanResult } from '../../lib/scaling';
+import { GRUBBY_PER_ACTION } from '../../lib/relics';
 
 export interface Rate {
   perHour: number;
@@ -122,6 +123,12 @@ export function Plan({ job, item, from, to, hoursPerDay, rate, plan, prefs, set 
         <div class="tile"><span class="label">XP still needed</span><span class="value">{fmtCompact(plan.totalXp)}</span></div>
         <div class="tile"><span class="label">Next level ({from + 1}) in</span><span class="value">{heroTime(next.hours)}</span></div>
       </div>
+      {job.job !== 'Hunter' && (
+        <p class="note">
+          Along the way you'd expect about <b>{fmtInt(plan.totalActions * GRUBBY_PER_ACTION)}</b> Grubby Relic{Math.round(plan.totalActions * GRUBBY_PER_ACTION) === 1 ? '' : 's'}
+          {' '}(a 0.015% chance per paid action). <a href="#/relics">What's inside a Grubby Relic?</a>
+        </p>
+      )}
       {item.dupe && (
         <p class="note flag">The server lists {item.item.replace(/ \(\d+\)$/, '')} more than once under {item.action} with different pay. Which entry applies isn't known.</p>
       )}

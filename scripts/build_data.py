@@ -110,7 +110,11 @@ DYE_COLORS = {"white", "orange", "magenta", "light_blue", "yellow", "lime", "pin
 
 
 EXTRA_ICONS = ["furnace", "smoker", "blast_furnace", "brewing_stand", "netherite_helmet", "clock",
-               "amethyst_shard", "wheat_seeds", "oak_sapling", "beetroot", "cocoa_beans", "wheat", "writable_book", "experience_bottle", "emerald"]
+               "amethyst_shard", "wheat_seeds", "oak_sapling", "beetroot", "cocoa_beans", "wheat",
+               # relics page
+               "netherite_chestplate", "diamond_chestplate", "golden_sword", "iron_pickaxe", "chainmail_helmet",
+               "crossbow", "coal_block", "iron_ingot", "gold_ingot", "diamond", "netherite_scrap", "prismarine_shard",
+               "ender_eye", "amethyst_cluster", "charcoal", "zombie_head", "writable_book", "experience_bottle", "emerald"]
 
 
 def slug(name):
