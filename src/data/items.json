@@ -3906,33 +3906,6 @@
    "cls": "WonderlandCharmItem"
   },
   {
-   "id": "hello",
-   "section": "CARNIVAL_2024",
-   "material": "FISHING_ROD",
-   "icon": "fishing_rod",
-   "glint": true,
-   "name": "hello",
-   "enchants": [
-    "<gray>Lure III"
-   ],
-   "lore": [
-    "<gray>Unbreakable",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><#8EC4F7>C<#B4B7E8>a<#D9A9DA>r<#FF9CCB>n<#F2BAB6>i<#E4D7A2>v<#D7F58D>a<#E4F88C>l <#FFFE8A>2<#FFF07E>0<#FFE171>2<#FFD365>4</b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<gray>Unbreakable"
-   ],
-   "enchantList": [
-    "Lure III"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/playground/TestInventoryItem.kt",
-   "cls": "TestInventoryItem"
-  },
-  {
    "id": "belovedfallow",
    "section": "VALENTIDE_2025",
    "material": "NETHERITE_HOE",

@@ -919,6 +919,10 @@
     "addSpace": true
    },
    "tierKey": "COLLECTIBLE"
+  },
+  "items/playground/TestInventoryItem.kt#0": {
+   "skip": true,
+   "note": "test item (\"hello\" fishing rod in the playground package) that carries the Carnival 2024 tier; removed at the owner's request"
   }
  },
  "extraItems": [
