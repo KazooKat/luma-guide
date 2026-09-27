@@ -134,7 +134,7 @@ export function RelicsTab() {
             <p>Craft 8 <b>Relic Shards</b> around a core, then right-click the orb:</p>
             <ul class="facts compact">
               <li><Icon id="prismarine_shard" size={20} /> <b>Lunar Core</b> → Lunar Orb → a <RarityName id="lunar" /> relic (diamond gear, 3–7 enchants).</li>
-              <li><Icon id="prismarine_shard" size={20} /> <b>Astral Core</b> → Astral Orb → one piece of an Astral set (odds below). Everyone online sees the reveal.</li>
+              <li><Icon id="prismarine_shard" size={20} /> <b>Astral Core</b> → Astral Orb → one piece of an <a href="#/items/astral">Astral set</a> (odds below). Everyone online sees the reveal.</li>
               <li><Icon id="amethyst_cluster" size={20} /> 8 shards in a ring (empty middle) make an <b>Astral Upgrade Core</b>.</li>
             </ul>
             <p class="note">
@@ -186,7 +186,7 @@ export function RelicsTab() {
         <div class="odds-table" role="table" aria-label="Astral Orb odds">
           {orb.map(({ set, chance }) => (
             <div class="odds-row" role="row" key={set}>
-              <span role="cell"><b>{set}</b>{set === 'Magmatic' && <sup>*</sup>}</span>
+              <span role="cell"><a href={`#/items/astral/${set.toLowerCase()}-set`}><b>{set}</b></a>{set === 'Magmatic' && <sup>*</sup>}</span>
               <span role="cell" class="odds-cell"><Bar p={chance} max={orbMax} /><span class="mono">{pct(chance)}</span></span>
               <span role="cell" class="r mono muted">{oneIn(chance)}</span>
             </div>

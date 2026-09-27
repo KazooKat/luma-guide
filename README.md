@@ -25,6 +25,24 @@ The server's Jobs config isn't public, so the guide is built from in-game readin
   which works out to `(n + 1) / Σ(n + 1)`; a seeded simulation of that loop is in the tests. Mob relic *drop* odds
   use vanilla equipment-drop rules and are labelled as an estimate on the page.
 
+- **Item glossary** (`src/data/items.json`): `scripts/build-items.mjs` evaluates every `ItemFactory.builder()` chain in
+  LumaItems with a small Kotlin reader (`scripts/lib/kotlin-lite.mjs`) and rebuilds each tooltip in `ItemFactory`'s line
+  order. Items it can't evaluate (random colour variants, builders shared by several items) and all Astral set pieces
+  are transcribed by hand in `data/items-overrides.json`; the build fails if an item is neither. Vanilla enchant lines
+  follow Minecraft 26.2 data (tooltip order, names, max levels) from misode/mcmeta.
+
+## Refreshing the item glossary
+
+```sh
+git -c core.longpaths=true clone https://github.com/LumaLibre/LumaItems.git data/LumaItems   # not committed (CC BY-NC-ND)
+git -C data/LumaItems checkout "$(cat data/LumaItems.commit)"                                   # or a newer commit: update the .commit file too
+npm run items        # writes src/data/items.json; lists skipped items and anything needing an override
+npm run data         # copies the item icons into public/icons/
+```
+
+After moving to a newer commit, re-check the hand-written entries in `data/items-overrides.json` against the source
+(the build flags overrides whose builder no longer exists, but not ones whose values changed).
+
 ## Refreshing job data after a server change
 
 1. In game, for each job: `/jobs stats` (so the log has your level), then `/jobs browse` for that job and page

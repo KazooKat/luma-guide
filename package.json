@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "items": "node scripts/build-items.mjs",
     "data": "python scripts/build_data.py && node scripts/build-perks.mjs",
     "extract-log": "python scripts/extract_log.py",
     "potions": "python scripts/build_potions.py",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.10.6",
+    "@south-paw/typeface-minecraft": "^1.0.0",
     "@types/node": "^22.20.4",
     "minecraft-textures": "^26.3.0",
     "typescript": "^7.0.2",

@@ -1,166 +1,185 @@
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { Icon } from '../components/Icon';
+import { McTooltip } from '../components/McTooltip';
 import { SuggestButton } from '../components/SuggestButton';
-import { bloomStatus, etParts, schedule, SERVER_TZ, type BloomWindow } from '../lib/bloom';
+import type { GlossaryItem } from '../data/types';
+import { indexItem, matches, type SearchField } from '../lib/itemSearch';
+import { plain } from '../lib/minimessage';
+import { DATA, ITEMS, SECTIONS, sectionGradient, TierChip } from './items/common';
+import { ItemDetail } from './items/ItemDetail';
 
-const LOCAL_TZ = (() => {
-  try {
-    return Intl.DateTimeFormat().resolvedOptions().timeZone;
-  } catch {
-    return SERVER_TZ;
-  }
-})();
-const SAME_TZ = new Date().toLocaleString('en-US', { timeZone: LOCAL_TZ }) === new Date().toLocaleString('en-US', { timeZone: SERVER_TZ });
+const INDEX = new Map(ITEMS.map((it) => [it.id, indexItem(it, SECTIONS.get(it.section))]));
 
-const localTime = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' });
-const localDay = new Intl.DateTimeFormat(undefined, { weekday: 'short', hour: 'numeric', minute: '2-digit' });
-const dayLabel = new Intl.DateTimeFormat('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
-const pad = (n: number) => String(n).padStart(2, '0');
+const FIELDS: [SearchField, string][] = [['all', 'Everything'], ['name', 'Name'], ['event', 'Event'], ['effect', 'Effect'], ['enchant', 'Enchant']];
 
-function until(ms: number): string {
-  const mins = Math.max(0, Math.ceil(ms / 60_000));
-  if (mins < 60) return `${mins} min`;
-  const h = Math.floor(mins / 60);
-  return `${h} h ${pad(mins % 60)} min`;
+type Tip = { item: GlossaryItem; x: number; y: number; anchored: boolean };
+
+/** Minecraft-style tooltip that follows the pointer, flipping to stay on screen. */
+function HoverTip({ tip }: { tip: Tip | null }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState<{ left: number; top: number } | null>(null);
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!tip || !el) { setPos(null); return; }
+    const { width, height } = el.getBoundingClientRect();
+    const vw = document.documentElement.clientWidth;
+    const vh = document.documentElement.clientHeight;
+    let left = tip.x + 14;
+    let top = tip.anchored ? tip.y + 8 : tip.y - 14;
+    if (left + width > vw - 8) left = Math.max(8, tip.x - width - 14);
+    if (top + height > vh - 8) top = Math.max(8, vh - height - 8);
+    if (top < 8) top = 8;
+    setPos({ left, top });
+  }, [tip?.item.id, tip?.x, tip?.y]);
+  if (!tip) return null;
+  return (
+    <div ref={ref} class="hover-tip" aria-hidden="true" style={{ left: pos?.left ?? -9999, top: pos?.top ?? -9999 }}>
+      <McTooltip item={tip.item} />
+    </div>
+  );
 }
 
-function relDay(date: string, today: string): string {
-  const diff = (Date.parse(date) - Date.parse(today)) / 864e5;
-  if (diff === 0) return 'Today';
-  if (diff === 1) return 'Tomorrow';
-  return dayLabel.format(Date.parse(date)).split(',')[0];
+function ItemTile({ item, onTip }: { item: GlossaryItem; onTip: (t: Tip | null) => void }) {
+  const label = plain(item.name);
+  return (
+    <a
+      class="item-tile"
+      href={`#/items/${item.id}`}
+      aria-label={label}
+      onMouseMove={(e) => onTip({ item, x: e.clientX, y: e.clientY, anchored: false })}
+      onMouseLeave={() => onTip(null)}
+      onFocus={(e) => {
+        const r = (e.currentTarget as HTMLElement).getBoundingClientRect();
+        onTip({ item, x: r.right - 10, y: r.bottom, anchored: true });
+      }}
+      onBlur={() => onTip(null)}
+    >
+      <span class={item.glint ? 'tile-icon glint' : 'tile-icon'} style={item.glint ? { '--icon': `url(${import.meta.env.BASE_URL}icons/${item.icon}.png)` } : undefined}>
+        <Icon id={item.icon} size={40} lazy />
+      </span>
+    </a>
+  );
 }
 
-function useNow(stepMs: number) {
-  const [now, setNow] = useState(Date.now());
+function Grid({ items, onTip }: { items: GlossaryItem[]; onTip: (t: Tip | null) => void }) {
+  return <div class="item-grid">{items.map((it) => <ItemTile key={it.id} item={it} onTip={onTip} />)}</div>;
+}
+
+function Glossary({ focusSet }: { focusSet?: string }) {
+  const [query, setQuery] = useState('');
+  const [field, setField] = useState<SearchField>('all');
+  const [tip, setTip] = useState<Tip | null>(null);
+
+  const shown = useMemo(() => ITEMS.filter((it) => matches(INDEX.get(it.id)!, query, field)), [query, field]);
+  const bySection = useMemo(() => {
+    const m = new Map<string, GlossaryItem[]>();
+    for (const it of shown) m.set(it.section, [...(m.get(it.section) ?? []), it]);
+    return m;
+  }, [shown]);
+  const searching = query.trim() !== '';
+
   useEffect(() => {
-    const t = setInterval(() => setNow(Date.now()), stepMs);
-    return () => clearInterval(t);
-  }, [stepMs]);
-  return now;
-}
-
-const Check = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--good)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M5 12l5 5 9-10" />
-  </svg>
-);
-
-// Facts below are read from LumaLibre/LumaItems KamorisGlasses.kt @ 3c5a717 and PassiveListeners.kt.
-const FACTS = [
-  'Every 1.5 seconds it checks an 11 × 7 × 11 box around you: 5 blocks out each way, 3 up and 3 down.',
-  'Grows up to 8 plants per check, one every 3 ticks, so at most about 5 plants a second.',
-  'Works on crops, saplings, nether wart, cocoa and other plants with growth stages.',
-  'Skips sweet berry bushes, chorus flowers and two-block-tall plants such as the pitcher plant.',
-  'When more than 8 plants are waiting, the ones on the west (−X) side of the box go first.',
-  "Plants that are already at the target are skipped, so they don't use up the 8 slots.",
-];
-
-const GROWTH: [string, string, string][] = [
-  ['Wheat, carrots, potatoes', 'wheat', 'Stage 4 of 7 (57%)'],
-  ['Beetroot, nether wart', 'beetroot', 'Stage 2 of 3'],
-  ['Cocoa', 'cocoa_beans', 'Stage 1 of 2'],
-  ['Saplings', 'oak_sapling', 'Ready to grow'],
-];
-
-function windowText(w: BloomWindow) {
-  const twice = w.end - w.start > 3_600_000;
-  const et = `${pad(w.hour)}:00–${pad(w.hour)}:59 server time (ET)`;
-  const local = SAME_TZ ? '' : ` · ${localTime.format(w.start)} your time`;
-  return `${et}${local}${twice ? ' · runs twice as clocks fall back' : ''}`;
-}
-
-export function ItemsTab() {
-  const now = useNow(10_000);
-  const { active, next } = bloomStatus(now);
-  const today = etParts(now).date;
-  const days = schedule(today, 7);
-  const soon = !active && next.start - now < 3 * 3_600_000;
+    if (!focusSet) return;
+    const el = document.getElementById(`set-${focusSet}`);
+    el?.scrollIntoView({ block: 'start' });
+  }, [focusSet]);
+  useEffect(() => {
+    const hide = () => setTip(null);
+    addEventListener('scroll', hide, { passive: true });
+    return () => removeEventListener('scroll', hide);
+  }, []);
 
   return (
     <>
       <section class="intro">
-        <h1>Item mechanics</h1>
-        <p>How Luma's custom items actually behave, read from the plugin's source code.</p>
-      </section>
-
-      <section class="card" id="kamoris-glasses" aria-label="Kamori's Glasses" style={{ gap: '24px', padding: '28px' }}>
-        <div class="item-card-head">
-          <div class="item-frame"><Icon id="netherite_helmet" size={48} /></div>
-          <div>
-            <h2>Kamori's Glasses</h2>
-            <div class="stripe" aria-hidden="true">
-              {['#D8F3DC', '#B7E4C7', '#95D5B2', '#A9DEF9', '#CDB4DB'].map((c) => <i key={c} style={{ background: c }} />)}
-            </div>
-            <p class="small" style={{ color: 'var(--text-2)' }}>Netherite Helmet · Unbreaking X · Protection VI · Mending · Lumarine 2026 · “Blessing”</p>
-          </div>
-        </div>
-
-        <div class="bloom-grid">
-          <div class={`bloom-now${active ? ' active' : soon ? ' soon' : ''}`} aria-live="polite">
-            <span class="kicker"><Icon id="clock" size={20} />{active ? 'Bloom hour is on now' : 'Next bloom hour'}</span>
-            <span class="big">{active ? `${until(active.end - now)} left` : `in ${until(next.start - now)}`}</span>
-            <span class="when">
-              {active
-                ? `Ends at ${localTime.format(active.end)}${SAME_TZ ? '' : ' your time'}`
-                : `${relDay(next.date, today)}, ${windowText(next)}`}
-            </span>
-            <span class="hint">
-              During the bloom hour plants grow all the way. Listen for the chime: a higher pitch (1.8) means bloom, 1.4 means a normal hour.
-            </span>
-          </div>
-          <div class="days">
-            <span class="sub-label">Next 7 days (server time, ET)</span>
-            {days.map((d) => (
-              <div key={d.date} class={`row${d.date === today ? ' today' : ''}`}>
-                <b>{dayLabel.format(Date.parse(d.date))}</b>
-                <span class="mono">{d.start === null ? 'skipped' : `${pad(d.hour)}:00`}</span>
-                <span class="small muted">
-                  {d.start === null ? 'clocks spring forward' : SAME_TZ ? (d.date === today ? 'today' : '') : localDay.format(d.start)}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div class="pair">
-          <div style={{ display: 'grid', gap: '12px', alignContent: 'start' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 600 }}>What it does while worn</h3>
-            <ul class="facts">
-              {FACTS.map((f) => <li key={f}><Check /><span>{f}</span></li>)}
-            </ul>
-          </div>
-          <div class="growth" style={{ display: 'grid', gap: '12px', alignContent: 'start' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 600 }}>How far plants grow</h3>
-            <div class="item-list" role="table" aria-label="Growth per hour type">
-              <div class="item-head" role="row">
-                <span role="columnheader">Plant</span><span role="columnheader">Normal hour</span><span role="columnheader">Bloom hour</span>
-              </div>
-              {GROWTH.map(([name, icon, normal]) => (
-                <div class="grow-row" role="row" key={name}>
-                  <span class="item-name" role="cell"><Icon id={icon} size={24} />{name}</span>
-                  <span role="cell">{normal}</span>
-                  <span role="cell" class="full">Fully grown</span>
-                </div>
-              ))}
-            </div>
-            <p class="note">
-              It only ever raises a plant's stage. Sugar cane, cactus, kelp and vines also count, but for them the stage is a hidden
-              growth timer, so what you see will differ. That part is from vanilla rules and hasn't been tested in-game.
-            </p>
-          </div>
-        </div>
-
-        <p class="note">
-          Source: <a href="https://github.com/LumaLibre/LumaItems/blob/3c5a717/src/main/java/dev/lumas/lumaitems/items/armor/helmet/KamorisGlasses.kt" target="_blank" rel="noopener noreferrer">LumaLibre/LumaItems · KamorisGlasses.kt @ 3c5a717</a>.
-          The bloom hour comes from a fixed formula per day, so this schedule is exact, not a prediction. It assumes the server clock runs on US Eastern time.
+        <h1>Custom items</h1>
+        <p>
+          Every LumaItems custom item, grouped by the event it came from. Hover an item to see its in-game tooltip, or open it
+          for the details. Read from the plugin's source code.
         </p>
       </section>
 
-      <section class="more-card">
-        <p>More items are on the way. Want one covered next?</p>
-        <SuggestButton label="Suggest an item" outline />
+      <section class="card search-card" aria-label="Search items">
+        <div class="search-row">
+          <input
+            class="search"
+            type="search"
+            placeholder="Search by name, event, effect or enchant"
+            aria-label="Search items"
+            value={query}
+            onInput={(e) => setQuery((e.currentTarget as HTMLInputElement).value)}
+          />
+          <span class="small muted" aria-live="polite">
+            {searching ? `${shown.length} of ${ITEMS.length} items` : `${ITEMS.length} items`}
+          </span>
+        </div>
+        <div class="chips" role="group" aria-label="Search in">
+          {FIELDS.map(([f, label]) => (
+            <button key={f} class="chip" aria-pressed={field === f} onClick={() => setField(f)}>{label}</button>
+          ))}
+        </div>
+        {!searching && (
+          <nav class="jump" aria-label="Jump to an event">
+            {DATA.sections.map((s) => (
+              <button key={s.key} class="jump-link" onClick={() => document.getElementById(`sec-${s.key}`)?.scrollIntoView({ block: 'start' })}>
+                <i style={{ background: sectionGradient(s) }} />{s.name}
+              </button>
+            ))}
+          </nav>
+        )}
       </section>
+
+      {shown.length === 0 && (
+        <section class="card empty"><p>No items match “{query}”{field !== 'all' ? ` in ${FIELDS.find(([f]) => f === field)![1].toLowerCase()}` : ''}.</p></section>
+      )}
+
+      {DATA.sections.map((s) => {
+        const list = bySection.get(s.key);
+        if (!list) return null;
+        const sets = s.kind === 'astral' ? [...new Set(list.map((i) => i.set!))] : [];
+        return (
+          <section key={s.key} id={`sec-${s.key}`} class="card item-section" style={{ '--sec': sectionGradient(s) }} aria-label={s.name}>
+            <div class="section-head">
+              <TierChip section={s} />
+              <span class="small muted">{list.length} item{list.length === 1 ? '' : 's'}</span>
+              {s.kind === 'astral' && <a class="small" href="#/relics">How to get Astral gear</a>}
+            </div>
+            {s.kind === 'astral'
+              ? sets.map((set) => {
+                  const pieces = list.filter((i) => i.set === set);
+                  return (
+                    <div key={set} id={`set-${set}`} class={`astral-set${focusSet === set ? ' focus' : ''}`}>
+                      <h3>
+                        {pieces[0].setName}{' '}
+                        <span class="small muted">
+                          set · {pieces.length} piece{pieces.length === 1 ? '' : 's'}
+                          {set !== `${pieces[0].setName!.toLowerCase()}-set` && ` · “${set[0].toUpperCase()}${set.slice(1).replace(/-set$/, '')}” in the orb odds`}
+                        </span>
+                      </h3>
+                      <Grid items={pieces} onTip={setTip} />
+                    </div>
+                  );
+                })
+              : <Grid items={list} onTip={setTip} />}
+          </section>
+        );
+      })}
+
+      <section class="more-card">
+        <p>Spotted a wrong tooltip, or know how an item works? Tell us and it'll get a write-up.</p>
+        <SuggestButton label="Suggest a fix" outline />
+      </section>
+      <p class="note">
+        Source: <a href={`https://github.com/LumaLibre/LumaItems/tree/${DATA.source.commit.slice(0, 7)}`} target="_blank" rel="noopener noreferrer">
+          LumaLibre/LumaItems @ {DATA.source.commit.slice(0, 7)}</a> (CC BY-NC-ND 4.0, © LumaMC). Items the plugin ignores, staff and test items are left out.
+      </p>
+      <HoverTip tip={tip} />
     </>
   );
 }
+
+export function ItemsTab({ sub, extra }: { sub?: string; extra?: string }) {
+  if (sub && sub !== 'astral') return <ItemDetail id={sub} />;
+  return <Glossary focusSet={sub === 'astral' ? extra : undefined} />;
+}
+

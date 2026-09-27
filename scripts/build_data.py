@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = ROOT / "data" / "raw"
 META_FILE = ROOT / "data" / "jobs-meta.json"
 OUT = ROOT / "src" / "data" / "jobs.json"
+# The Items glossary (built by scripts/build-items.mjs); each item's material icon is copied too.
+ITEMS_FILE = ROOT / "src" / "data" / "items.json"
 ICON_DIR = ROOT / "public" / "icons"
 # Icons that aren't vanilla items (e.g. Luma's sapling box head). Copied into public/icons/ as-is.
 CUSTOM_ICON_DIR = ROOT / "data" / "custom-icons"
@@ -219,6 +221,11 @@ def main():
         if extra not in icons.by_id:
             raise SystemExit(f"unknown UI icon id: {extra}")
         icons.used[extra] = icons.by_id[extra]
+    if ITEMS_FILE.exists():
+        for item in json.loads(ITEMS_FILE.read_text(encoding="utf-8"))["items"]:
+            if item["icon"] not in icons.by_id:
+                raise SystemExit(f"unknown item icon id: {item['icon']} ({item['id']})")
+            icons.used[item["icon"]] = icons.by_id[item["icon"]]
     icons.copy()
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"mcVersion": MC_VERSION, "jobs": jobs}, indent=1), encoding="utf-8")

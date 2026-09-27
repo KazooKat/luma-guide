@@ -25,6 +25,7 @@
   --warn: #f3c46b;
   --warn-soft: #3a2f17;
   --kamori: #e3f3ea;
+  --mc-px: 2px; /* one Minecraft GUI pixel at GUI scale 2 */
   --display: 'Bricolage Grotesque', system-ui, sans-serif;
   --sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
@@ -33,33 +34,32 @@
   -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light;
-    --bg: #f6f4fb;
-    --bar: #fbfaff;
-    --surface: #ffffff;
-    --surface-2: #f0edf8;
-    --selected: #ece6ff;
-    --border: #e2ddef;
-    --input-border: #d4cde6;
-    --grid: #ebe7f4;
-    --axis: #c9c1dc;
-    --text: #1c1830;
-    --text-2: #4a4462;
-    --muted: #6a6385;
-    --accent: #6246c8;
-    --accent-strong: #4f35b0;
-    --accent-ink: #ffffff;
-    --hero: #3b2a8a;
-    --chart: #7152d9;
-    --good: #1d7a4f;
-    --good-text: #185c3c;
-    --good-soft: #e1f5ea;
-    --warn: #8a5a00;
-    --warn-soft: #fff2d6;
-    --kamori: #2f6b4f;
-  }
+/* Light theme: opt-in via the top-bar toggle (index.html sets data-theme before paint; dark is the default). */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f6f4fb;
+  --bar: #fbfaff;
+  --surface: #ffffff;
+  --surface-2: #f0edf8;
+  --selected: #ece6ff;
+  --border: #e2ddef;
+  --input-border: #d4cde6;
+  --grid: #ebe7f4;
+  --axis: #c9c1dc;
+  --text: #1c1830;
+  --text-2: #4a4462;
+  --muted: #6a6385;
+  --accent: #6246c8;
+  --accent-strong: #4f35b0;
+  --accent-ink: #ffffff;
+  --hero: #3b2a8a;
+  --chart: #7152d9;
+  --good: #1d7a4f;
+  --good-text: #185c3c;
+  --good-soft: #e1f5ea;
+  --warn: #8a5a00;
+  --warn-soft: #fff2d6;
+  --kamori: #2f6b4f;
 }
 
 * { box-sizing: border-box; }
@@ -323,10 +323,102 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
 .facts sup { color: var(--warn); }
 .facts li b { color: var(--text); }
 
+/* ---------- theme toggle ---------- */
+.theme-toggle {
+  width: 44px; height: 44px; flex: none; border-radius: 999px; border: 1px solid var(--border); background: transparent;
+  color: var(--text-2); display: grid; place-items: center; cursor: pointer;
+}
+.theme-toggle:hover { background: var(--surface-2); color: var(--text); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---------- Minecraft tooltip ---------- */
+/* "Minecraft" typeface by Craftron Gaming (dafont, 100% free), packaged by @south-paw/typeface-minecraft.
+   Only the .woff: the package's .woff2 has a broken cmap table that Firefox's font sanitizer rejects. */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('../node_modules/@south-paw/typeface-minecraft/files/minecraft.woff') format('woff');
+  font-display: swap;
+}
+.mc { font-family: 'Minecraft', var(--mono); font-size: calc(var(--mc-px) * 8); line-height: calc(var(--mc-px) * 10); -webkit-font-smoothing: none; }
+/* Vanilla tooltip: #100010 at 94% with notched corners and a 1px violet frame (#5000FF -> #28007F at 31%). */
+.mc-tip {
+  --n: var(--mc-px);
+  position: relative; display: inline-block; min-width: 0; color: #fff; text-align: left;
+  font-family: 'Minecraft', var(--mono); font-size: calc(var(--mc-px) * 8); line-height: calc(var(--mc-px) * 10); -webkit-font-smoothing: none;
+  padding: calc(var(--mc-px) * 4) calc(var(--mc-px) * 4) calc(var(--mc-px) * 3);
+  background: rgb(16 0 16 / 0.94);
+  clip-path: polygon(0 var(--n), var(--n) var(--n), var(--n) 0, calc(100% - var(--n)) 0, calc(100% - var(--n)) var(--n), 100% var(--n),
+    100% calc(100% - var(--n)), calc(100% - var(--n)) calc(100% - var(--n)), calc(100% - var(--n)) 100%, var(--n) 100%,
+    var(--n) calc(100% - var(--n)), 0 calc(100% - var(--n)));
+}
+.mc-tip::before {
+  content: ''; position: absolute; inset: var(--mc-px); pointer-events: none;
+  border: var(--mc-px) solid transparent;
+  border-image: linear-gradient(rgb(80 0 255 / 0.31), rgb(40 0 127 / 0.31)) 1;
+}
+.mc-line { display: block; white-space: pre; min-height: calc(var(--mc-px) * 10); }
+.mc-title { margin-bottom: calc(var(--mc-px) * 2); }
+.mc-obf { filter: blur(1px); }
+.hover-tip { position: fixed; z-index: 50; pointer-events: none; }
+.tier-chip {
+  --mc-px: 2px; display: inline-flex; padding: 4px 12px 2px; border-radius: 10px; background: #17151f; border: 1px solid #34304a;
+  font-family: 'Minecraft', var(--mono); font-size: 16px; line-height: 20px; -webkit-font-smoothing: none;
+}
+
+/* ---------- item glossary ---------- */
+.search-card { gap: 12px; }
+.search-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.search-row .search { font-family: var(--sans); }
+.jump { display: flex; flex-wrap: wrap; gap: 6px; }
+.jump-link {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 12px; border-radius: 999px;
+  border: 1px solid var(--border); background: transparent; color: var(--text-2); font-size: 13.5px; font-weight: 600; cursor: pointer;
+}
+.jump-link:hover { border-color: var(--accent); color: var(--text); }
+.jump-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.jump-link i { width: 18px; height: 8px; border-radius: 4px; flex: none; }
+.item-section, .item-detail { position: relative; overflow: hidden; scroll-margin-top: 84px; }
+.item-section::before, .item-detail::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 4px; background: var(--sec); }
+.section-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 8px; }
+.item-tile {
+  aspect-ratio: 1; display: grid; place-items: center; border-radius: 10px; background: var(--surface-2);
+  border: 1px solid var(--border); text-decoration: none;
+}
+.item-tile:hover { border-color: var(--accent); background: var(--selected); }
+.item-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tile-icon { position: relative; display: grid; }
+/* Enchantment glint: a violet sheen masked to the icon's own pixels. */
+.tile-icon.glint::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  -webkit-mask: var(--icon) center / contain no-repeat; mask: var(--icon) center / contain no-repeat;
+  background: linear-gradient(115deg, transparent 35%, rgb(190 130 255 / 0.6) 47%, rgb(230 200 255 / 0.45) 52%, transparent 65%) 0 0 / 300% 100%;
+  mix-blend-mode: screen; animation: glint 3.2s linear infinite;
+}
+@keyframes glint { from { background-position: 150% 0; } to { background-position: -150% 0; } }
+@media (prefers-reduced-motion: reduce) { .tile-icon.glint::after { animation: none; background-position: 50% 0; } }
+.astral-set { display: grid; gap: 10px; scroll-margin-top: 90px; }
+.astral-set h3 { font-size: 16px; font-weight: 600; }
+.astral-set.focus { outline: 2px solid var(--accent); outline-offset: 8px; border-radius: 12px; }
+.empty p { color: var(--text-2); }
+
+/* ---------- item detail ---------- */
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; font-size: 14px; font-weight: 600; }
+.crumbs a { text-decoration: none; }
+.item-detail .item-card-head h2 { color: var(--text); }
+.item-title { min-width: 0; }
+.detail-grid { display: grid; grid-template-columns: minmax(0, auto) minmax(0, 1fr); gap: 28px; align-items: start; }
+.tip-col, .facts-col { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.tip-scroll { overflow-x: auto; max-width: 100%; }
+.variant-note { max-width: 440px; }
+.writeup { display: grid; gap: 24px; border-top: 1px solid var(--border); padding-top: 24px; }
+.no-writeup { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; border-top: 1px solid var(--border); padding-top: 20px; }
+.no-writeup p { flex: 1 1 320px; color: var(--text-2); font-size: 15px; }
+
 /* ---------- responsive ---------- */
 @media (max-width: 1000px) {
   .job-grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
-  .job-layout, .pair, .bloom-grid, .source-grid { grid-template-columns: 1fr; }
+  .job-layout, .pair, .bloom-grid, .source-grid, .detail-grid { grid-template-columns: 1fr; }
   .rarity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .plan-col { position: static; order: -1; }
   .controls { margin-left: 0; }
@@ -356,4 +448,6 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
   .odds-row { grid-template-columns: minmax(0, 1fr) 110px; }
   .odds-row > :last-child { display: none; }
   .odds-bar { display: none; }
+  .item-grid { grid-template-columns: repeat(auto-fill, minmax(54px, 1fr)); gap: 6px; }
+  .crumbs .spacer { flex-basis: 100%; height: 0; }
 }

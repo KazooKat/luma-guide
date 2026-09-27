@@ -1,0 +1,3032 @@
+{
+ "_about": "Hand-checked values for items scripts/build-items.mjs cannot evaluate statically (LumaItems @ 19587d5). items: builder key -> complete builder fields (or skip). extraItems: registered items made from one abstract builder. astralSets: every piece of each Astral set with its final enchant map.",
+ "items": {
+  "items/armor/ClownMaskItem.kt#0": {
+   "fields": {
+    "name": "<b><#FA909D>C<#F8C2AE>l<#F6F4BE>o<#F7CED4>w<#F7A8E9>n <#EBC1C9>M<#DDFF92>a<#C2ECC9>s<#A7D9FF>k</b>",
+    "customEnchants": [
+     "<gray>Unbreakable",
+     "<dark_gray>Fortitude"
+    ],
+    "lore": [
+     "Disguise yourself in this",
+     "neat mask!",
+     "",
+     "Wearing this mask grants",
+     "an extra <#FA909D>3</#FA909D> hearts.",
+     "",
+     "<red>Same stats as Netherite</red>"
+    ],
+    "taglines": [],
+    "material": "PLAYER_HEAD",
+    "id": "clownmask",
+    "vanillaEnchants": [
+     [
+      "protection",
+      7
+     ],
+     [
+      "respiration",
+      4
+     ],
+     [
+      "aqua_affinity",
+      2
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "CARNIVAL_2024",
+   "note": "Head texture varies: one of the clownMasks base64 textures from HeadsYml is picked at random when the item is made; all other fields are fixed."
+  },
+  "items/armor/helmet/PalomasVeilItemNest.kt#1": {
+   "fields": {
+    "name": "<b><gradient:#911025:#c44a58:#f2cbb8:#DD9FC7:#E081CE>Paloma's Veil</gradient></b>",
+    "customEnchants": [
+     "<#DD9FC7>Kazkan"
+    ],
+    "lore": [
+     "With empty hands, press",
+     "your <#DD9FC7>swap key (F)</#DD9FC7> to",
+     "summon <#DD9FC7>5</#DD9FC7> orbs displays.",
+     "",
+     "<#DD9FC7>Left-click</#DD9FC7> to fire one",
+     "at a time or <#DD9FC7>left-click</#DD9FC7>",
+     "while <#DD9FC7>sneaking</#DD9FC7> to fire",
+     "all orbs at once.",
+     "",
+     "<red>Cooldown: 4s"
+    ],
+    "taglines": [],
+    "material": "NETHERITE_HELMET",
+    "id": "palomas-veil",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ],
+     [
+      "protection",
+      4
+     ],
+     [
+      "looting",
+      7
+     ],
+     [
+      "mending",
+      1
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "WONDERLAND_2026",
+   "note": "Colour varies: one of 4 variants (Red, Lime, Light Blue, Yellow) is picked at random when the item is made, changing the name gradient, the accent colour used in the enchant and lore (#DD9FC7 / #CF9CFA / #F3C7F6 / #F6C7EB) and the Dune armour trim material (redstone / emerald / diamond / gold); Red is shown."
+  },
+  "items/misc/ChikosCharmItem.kt#1": {
+   "fields": {
+    "name": "<b><gradient:#90D13E:#FFE854:#F98C4C:#F68C86:#C45973>Chiko's Charm</gradient></b>",
+    "customEnchants": [
+     "<#C45973>Valet"
+    ],
+    "lore": [
+     "A charm perfect fit",
+     "for small utilities.",
+     "",
+     "<#C45973>Right-click</#C45973> to execute",
+     "a single pre-defined",
+     "command.",
+     "",
+     "While sneaking, press",
+     "your <#C45973>swap key (F)</#C45973> to",
+     "change the pre-defined",
+     "command in this charm."
+    ],
+    "taglines": [],
+    "material": "WHITE_DYE",
+    "id": "chikos-charm",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "WONDERLAND_2026",
+   "note": "Material varies: a random dye from the minecraft:dyes item tag (any of the 16 dye colours) is picked when the item is made; White Dye is shown."
+  },
+  "items/misc/collectible/PaintballCollectibleItemNest.kt#0": {
+   "skip": true,
+   "note": "abstract base builder; its registered items are listed in extraItems"
+  },
+  "items/misc/LodestarCompassItem.kt#0": {
+   "fields": {
+    "name": "<b><gradient:#FFBCE2:#FAEDCB:#DBCDF0>Lodestar Compass</gradient></b>",
+    "customEnchants": [
+     "<#DBCDF0>Climate Point"
+    ],
+    "lore": [
+     "<#DBCDF0>Left-click</#DBCDF0> to scan biomes",
+     "within <#DBCDF0>1,000</#DBCDF0> blocks.",
+     "",
+     "<#DBCDF0>Right-click</#DBCDF0> to read the",
+     "next biome found.",
+     "",
+     "<dark_gray>No biomes scanned yet."
+    ],
+    "taglines": [],
+    "material": "COMPASS",
+    "id": "lodestar-compass",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "LUMARINE_2026",
+   "note": "Fresh (unscanned) state shown; after scanning, the last line is replaced by \"Watching <biome>\", an optional \"Charted by <origin>\" line and \"N of M scanned\". SCAN_RADIUS = 1000 formatted with \"%,d\" (assumes an English-style default locale)."
+  },
+  "items/misc/nests/InfiniteBucketsItemNest.kt#3": {
+   "fields": {
+    "name": "<b><gradient:#4498DB:#F5A623:#F5A623:#E94F37>Infinite Fish Bucket</gradient></b>",
+    "customEnchants": [
+     "<#0098de>Bottomless"
+    ],
+    "lore": [
+     "This bucket never",
+     "runs out of <#F5A623>fish</#F5A623>",
+     "or <#0098de>water</#0098de> to place!"
+    ],
+    "taglines": [],
+    "material": "TROPICAL_FISH_BUCKET",
+    "id": "infinite-tropical-fish-bucket",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "LUMARINE_2026"
+  },
+  "items/misc/nests/ReformationPouchItemNest.kt#1": {
+   "skip": true,
+   "note": "abstract base builder; its registered items are listed in extraItems"
+  },
+  "items/misc/nests/SuperAbsorbentSpongeItemNest.kt#0": {
+   "skip": true,
+   "note": "abstract base builder; its registered items are listed in extraItems"
+  },
+  "items/misc/VerdigrisIdolItem.kt#0": {
+   "fields": {
+    "name": "<b><gradient:#57C78A:#42BFB8:#2E9FD4>Verdigris Idol</gradient></b>",
+    "customEnchants": [
+     "<gradient:#57C78A:#2E9FD4>Mineral Attunement</gradient>"
+    ],
+    "lore": [
+     "Forged in an age of living metal.",
+     "Its duty has not yet faded away.",
+     "",
+     "<#42BFB8>Hold</#42BFB8> to transmute mined Stone",
+     "and Deepslate to Raw Copper.",
+     "",
+     "<red>Oxidizes as its power is used.</red>",
+     "<gray> ┗ Deoxidize with Fire Charges.</gray>",
+     "",
+     "<#57C78A>✦ Unoxidized <gray>(50% efficiency)"
+    ],
+    "taglines": [],
+    "material": "COPPER_GOLEM_STATUE",
+    "id": "verdigris-idol",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "WONDERLAND_2026",
+   "note": "Changes with use: the item is created at the Unoxidized stage (shown) and oxidises through Exposed (25%, EXPOSED_COPPER_GOLEM_STATUE), Weathered (10%, WEATHERED_COPPER_GOLEM_STATUE) and Fully Oxidized (0%, OXIDIZED_COPPER_GOLEM_STATUE), which swaps the material and the last lore line."
+  },
+  "items/playground/event/ValentideCharmItemNest.kt#baseCharm@HeartBreakersValentideCharmItem": {
+   "fields": {
+    "name": "<b><gradient:#F33A71:#F8A5BE>Heart</gradient><gradient:#ABD9F8:#50B6FC>Breakers</gradient></b> <!b><#EEE1D5>Charm</#EEE1D5></!b>",
+    "customEnchants": [
+     "<gradient:#954381:#ED68B5>Charm</gradient>"
+    ],
+    "lore": [
+     "A neat little charm you",
+     "earned for participating",
+     "in various minigames.",
+     "",
+     "You wonder what it does...",
+     "Maybe you should keep it",
+     "around for a while."
+    ],
+    "taglines": [],
+    "material": "RED_DYE",
+    "id": "valentide-charm-heartbreakers",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ],
+     [
+      "knockback",
+      4
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2025"
+  },
+  "items/playground/event/ValentideCharmItemNest.kt#baseCharm@RosethornValentideCharmItem": {
+   "fields": {
+    "name": "<b><gradient:#FB124F:#F97BA2:#E34949>Rosethorn</gradient></b> <!b><#EEE1D5>Charm</#EEE1D5></!b>",
+    "customEnchants": [
+     "<gradient:#954381:#ED68B5>Charm</gradient>"
+    ],
+    "lore": [
+     "A neat little charm you",
+     "earned for participating",
+     "in various minigames.",
+     "",
+     "You wonder what it does...",
+     "Maybe you should keep it",
+     "around for a while."
+    ],
+    "taglines": [],
+    "material": "RED_DYE",
+    "id": "valentide-charm-rosethorn",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ],
+     [
+      "knockback",
+      4
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2025"
+  },
+  "items/playground/event/ValentideCharmItemNest.kt#baseCharm@SweetHeartsValentideCharmItem": {
+   "fields": {
+    "name": "<b><gradient:#ffa0bc:#ffdaee:#ff9b9a:#ffe9e9>Sweethearts</gradient></b> <!b><#EEE1D5>Charm</#EEE1D5></!b>",
+    "customEnchants": [
+     "<gradient:#954381:#ED68B5>Charm</gradient>"
+    ],
+    "lore": [
+     "A neat little charm you",
+     "earned for participating",
+     "in various minigames.",
+     "",
+     "You wonder what it does...",
+     "Maybe you should keep it",
+     "around for a while."
+    ],
+    "taglines": [],
+    "material": "RED_DYE",
+    "id": "valentide-charm-sweethearts",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ],
+     [
+      "knockback",
+      4
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2025"
+  },
+  "items/tools/HorizonsToolkitItem.kt#0": {
+   "fields": {
+    "name": "<b><gradient:#DE5264:#E27589:#F1A767:#ECC075:#A7A8D9:#414F86>Horizon's Toolkit</gradient></b>",
+    "customEnchants": [
+     "<#DE5264>Mix"
+    ],
+    "lore": [
+     "A <#DE5264>multitool</#DE5264> with the",
+     "malleable ability to",
+     "be combined with other",
+     "items to gain their",
+     "abilities.",
+     "",
+     "<#DE5264>Mix</#DE5264> this tool with",
+     "any other item to in-",
+     "herit its abilities.",
+     "",
+     "<red>Mixing is irreversible."
+    ],
+    "taglines": [],
+    "material": "NETHERITE_PICKAXE",
+    "id": "horizons-toolkit",
+    "vanillaEnchants": [
+     [
+      "efficiency",
+      6
+     ],
+     [
+      "unbreaking",
+      6
+     ],
+     [
+      "sharpness",
+      5
+     ],
+     [
+      "looting",
+      4
+     ],
+     [
+      "mending",
+      1
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "WONDERLAND_2026",
+   "tierAlt": true
+  },
+  "items/tools/nests/AxiomItemNest.kt#1": {
+   "skip": true,
+   "note": "abstract base builder; its registered items are listed in extraItems"
+  },
+  "items/tools/nests/SoulBoundSeekerItemNest.kt#1": {
+   "fields": {
+    "name": "<b><#B54476>S<#BB4C7B>o<#C15481>u<#C75C86>l<#CD648B>b<#D36C90>o<#D97496>u<#DF7C9B>n<#E584A0>d <#DE7591>S<#DA6E89>e<#D66781>e<#D26079>k<#CF5872>e<#CB516A>r",
+    "customEnchants": [
+     "<#B54476>Lover's Bond"
+    ],
+    "lore": [
+     "Each mattock is intended to",
+     "be held onto by another player.",
+     "",
+     "Whilst your partner has the other",
+     "mattock in their inventory, <#B54476>mined",
+     "ore veins will be broken instantly.",
+     "",
+     "While holding this mattock,",
+     "<#B54476>sneak <white>& press your <#B54476>swap key (F)",
+     "to teleport to your partner."
+    ],
+    "taglines": [],
+    "material": "NETHERITE_PICKAXE",
+    "id": "lovers-bond-mattock",
+    "vanillaEnchants": [
+     [
+      "efficiency",
+      8
+     ],
+     [
+      "unbreaking",
+      10
+     ],
+     [
+      "fortune",
+      5
+     ],
+     [
+      "mending",
+      1
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2026",
+   "note": "Style varies: one of 2 styles (Style 1, pink #B54476; Style 2, purple #5951E2) sets the name gradient and accent colour; the capsule gives one of each as a linked pair, and Style 1 is shown."
+  },
+  "items/tools/nests/SplitSoulMultiToolItemNest.kt#1": {
+   "fields": {
+    "name": "<b><#FB0843>S<#EB2A70>p<#DB4D9C>l<#CB6FC9>i<#BB91F5>t<#C19CE8>S<#C6A7DB>o<#CCB2CE>u<#D2BDC1>l <#DDD4A8>M<#E3DF9B>u<#E8EA8E>l<#EEF581>t<#C9E596>i<#A4D5AB>-<#80C5C0>T<#5BB4D4>o<#36A4E9>o<#1194FE>l",
+    "customEnchants": [
+     "<#BB91F5>Personality",
+     "<dark_gray>Multi-Tool"
+    ],
+    "lore": [
+     "This item can swap between all tool",
+     "types. Left-click any block to swap",
+     "to the preferred tool type.",
+     "",
+     "Press your <#BB91F5>swap key (F)</#BB91F5> to switch",
+     "between silk touch and fortune."
+    ],
+    "taglines": [
+     "<#BB91F5>\"Don't listen to the voices...\""
+    ],
+    "material": "NETHERITE_PICKAXE",
+    "id": "splitsoul-multi-tool",
+    "vanillaEnchants": [
+     [
+      "efficiency",
+      8
+     ],
+     [
+      "silk_touch",
+      1
+     ],
+     [
+      "unbreaking",
+      10
+     ],
+     [
+      "sharpness",
+      8
+     ],
+     [
+      "looting",
+      4
+     ],
+     [
+      "mending",
+      1
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "EASTER_2025",
+   "note": "Personality varies: one of 4 personalities (Pleasant #BB91F5, Lazy #EEF581, Sad #1194FE, Upset #FB0843) is picked at random when the item is made and sets the accent colour of the enchant, tagline and lore; Pleasant is shown."
+  },
+  "items/tools/spade/MontanaireSpadeItemNest.kt#1": {
+   "fields": {
+    "name": "<b><gradient:#EC4D4D:#F69B27:#FAF252:#70F36B:#5780F1>Montanaire Spade</gradient></b>",
+    "customEnchants": [
+     "<#dcdede>Binder"
+    ],
+    "lore": [
+     "A spade great for",
+     "gathering colorful",
+     "types of concrete",
+     "powder.",
+     "",
+     "Breaking sand with",
+     "this spade will yield",
+     "concrete powder of",
+     "the spade's <#dcdede>color</#dcdede>."
+    ],
+    "taglines": [],
+    "material": "NETHERITE_SHOVEL",
+    "id": "montanaire-spade",
+    "vanillaEnchants": [
+     [
+      "silk_touch",
+      1
+     ],
+     [
+      "unbreaking",
+      10
+     ],
+     [
+      "mending",
+      1
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "CHRISTMAS_2025",
+   "note": "Colour varies: one of 16 concrete-powder colours (White, Light Gray, Gray, Black, Brown, Red, Orange, Yellow, Lime, Green, Cyan, Light Blue, Blue, Purple, Magenta, Pink) is picked at random when the item is made; it tints the enchant and lore and sets which powder sand turns into. White is shown."
+  },
+  "items/weapons/bow/StraszBowItemNest.kt#baseBow@StraszLongBow": {
+   "fields": {
+    "name": "<b><#A36CA7>S<#B173AF>t<#BE7AB7>r<#CC81BF>a<#CC78AD>s<#CC6E9B>z <#E187A2>L<#EB94A6>o<#F1ADB2>n<#F6C5BD>g<#F6C5BD>b<#F6C5BD>o<#F6C5BD>w",
+    "customEnchants": [
+     "<gradient:#cc6e9b:#eb94a6>Replication"
+    ],
+    "lore": [
+     "Projectiles from this bow",
+     "will travel faster and deal",
+     "more damage.",
+     "",
+     "Hit entities will spawn",
+     "duplicate arrows that will",
+     "seek out nearby entities."
+    ],
+    "taglines": [],
+    "material": "BOW",
+    "id": "strasz-longbow",
+    "vanillaEnchants": [
+     [
+      "power",
+      8
+     ],
+     [
+      "looting",
+      4
+     ],
+     [
+      "unbreaking",
+      4
+     ],
+     [
+      "mending",
+      1
+     ],
+     [
+      "infinity",
+      1
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2025"
+  },
+  "items/weapons/bow/StraszBowItemNest.kt#baseBow@StraszArcBowItem": {
+   "fields": {
+    "name": "<b><#AA68A9>S<#C072B5>t<#D67BC1>r<#DD7CB6>a<#E57EAB>s<#EC7FA0>z <#FAA7AF>A<#FAACB1>r<#FBB1B3>c<#FBB7B5>b<#FCBCB7>o<#FCC1B9>w",
+    "customEnchants": [
+     "<gradient:#cc6e9b:#eb94a6>Replication"
+    ],
+    "lore": [
+     "Projectiles from this bow",
+     "will travel faster and deal",
+     "more damage.",
+     "",
+     "Hit entities will spawn",
+     "duplicate arrows that will",
+     "seek out nearby entities."
+    ],
+    "taglines": [],
+    "material": "CROSSBOW",
+    "id": "strasz-arc-bow",
+    "vanillaEnchants": [
+     [
+      "piercing",
+      7
+     ],
+     [
+      "quick_charge",
+      3
+     ],
+     [
+      "looting",
+      4
+     ],
+     [
+      "unbreaking",
+      7
+     ],
+     [
+      "mending",
+      1
+     ],
+     [
+      "infinity",
+      1
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2025"
+  },
+  "items/weapons/incursion/IncursionEggItem.kt#0": {
+   "skip": true,
+   "note": "abstract base builder; its registered items are listed in extraItems"
+  },
+  "items/weapons/scythe/HeavyPrismSickleItemNest.kt#1": {
+   "fields": {
+    "name": "<b><gradient:#ff6666:#ffbd54:#ffff67:#9de24f:#87cefa:#EA87FA:#FAEDCB>Heavy Prism Sickle</gradient></b>",
+    "customEnchants": [
+     "<#ff6666>Glass Cannon"
+    ],
+    "lore": [
+     "<#ff6666>Right-click</#ff6666> to summon",
+     "<#ff6666>six</#ff6666> prism orbs that will",
+     "seek out and damage",
+     "nearby entities.",
+     "",
+     "Lock on to an entity",
+     "by directly looking at",
+     "it before firing.",
+     "",
+     "Taking damage of any",
+     "kind will stop your",
+     "orbs from firing.",
+     "",
+     "<red>Cooldown: 35s"
+    ],
+    "taglines": [],
+    "material": "NETHERITE_HOE",
+    "id": "heavy-prism-sickle",
+    "vanillaEnchants": [
+     [
+      "sharpness",
+      10
+     ],
+     [
+      "looting",
+      5
+     ],
+     [
+      "unbreaking",
+      4
+     ],
+     [
+      "mending",
+      1
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "SUMMER_2025",
+   "note": "Colour varies: one of 7 colour kits (Red #ff6666, Orange #ffbd54, Yellow #ffff67, Green #9de24f, Blue #87cefa, Purple #EA87FA, Prismatic #FAEDCB) is picked at random when the item is made; it tints the enchant and the first two lore lines and sets the orb colours. Red is shown."
+  },
+  "items/misc/collectible/FishingCollectibleItemNest.kt#0": {
+   "fields": {
+    "name": "<gradient:#B7E4FB:#89AEFF><b>Echo Pearl",
+    "customEnchants": [],
+    "lore": [
+     "<gray>A pearl left as the last",
+     "<gray>echo was heard in the sea."
+    ],
+    "taglines": [],
+    "material": "GHAST_TEAR",
+    "id": "echo-pearl",
+    "vanillaEnchants": [
+     [
+      "luck_of_the_sea",
+      1
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "COLLECTIBLE"
+  },
+  "items/misc/collectible/FishingCollectibleItemNest.kt#1": {
+   "fields": {
+    "name": "<gradient:#7DFB9C:#428266><b>Leviathan Scale",
+    "customEnchants": [],
+    "lore": [
+     "<gray>They say the scales are infused",
+     "<gray>with the Leviathan's envy."
+    ],
+    "taglines": [],
+    "material": "PRISMARINE_SHARD",
+    "id": "leviathan-scale",
+    "vanillaEnchants": [
+     [
+      "luck_of_the_sea",
+      1
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "COLLECTIBLE"
+  },
+  "items/misc/collectible/FishingCollectibleItemNest.kt#2": {
+   "fields": {
+    "name": "<gradient:#CEB7FB:#FDAEA7><b>Whispering Conch",
+    "customEnchants": [],
+    "lore": [
+     "<gray>If you listen close enough,",
+     "<gray>you can still hear them."
+    ],
+    "taglines": [],
+    "material": "NAUTILUS_SHELL",
+    "id": "whispering-conch",
+    "vanillaEnchants": [
+     [
+      "luck_of_the_sea",
+      1
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "COLLECTIBLE"
+  },
+  "items/misc/collectible/FishingCollectibleItemNest.kt#3": {
+   "fields": {
+    "name": "<gradient:#78E7FB:#49A1FD><b>Fishers Boots",
+    "customEnchants": [],
+    "lore": [
+     "<gray>Worn once by a promising fisher,",
+     "<gray>never to be seen again."
+    ],
+    "taglines": [],
+    "material": "LEATHER_BOOTS",
+    "id": "fishers-boots",
+    "vanillaEnchants": [
+     [
+      "luck_of_the_sea",
+      1
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "COLLECTIBLE"
+  },
+  "items/misc/collectible/FishingCollectibleItemNest.kt#4": {
+   "fields": {
+    "name": "<gradient:#F0FBCD:#FDCA95><b>Frostweave Fur",
+    "customEnchants": [],
+    "lore": [
+     "<gray>A furry sea creature?"
+    ],
+    "taglines": [],
+    "material": "QUARTZ",
+    "id": "frostweave-fur",
+    "vanillaEnchants": [
+     [
+      "luck_of_the_sea",
+      1
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "COLLECTIBLE"
+  },
+  "items/misc/collectible/FishingCollectibleItemNest.kt#5": {
+   "fields": {
+    "name": "<gradient:#6CEBA3:#9DE3C3><b>Guardian Glaive",
+    "customEnchants": [],
+    "lore": [
+     "<gray>As the last guardian fell, his",
+     "<gray>trident was lost at sea."
+    ],
+    "taglines": [],
+    "material": "TRIDENT",
+    "id": "guardian-glaive",
+    "vanillaEnchants": [
+     [
+      "luck_of_the_sea",
+      1
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "COLLECTIBLE"
+  },
+  "items/misc/collectible/FishingCollectibleItemNest.kt#6": {
+   "fields": {
+    "name": "<gradient:#FB2F66:#FF5A2E><b>Pirate's Buried Map",
+    "customEnchants": [],
+    "lore": [
+     "<gray>Did somebody say ahoy?"
+    ],
+    "taglines": [],
+    "material": "MAP",
+    "id": "pirates-buried-map",
+    "vanillaEnchants": [
+     [
+      "luck_of_the_sea",
+      1
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "COLLECTIBLE"
+  },
+  "items/misc/collectible/FishingCollectibleItemNest.kt#7": {
+   "fields": {
+    "name": "<gradient:#7B60FD:#5D8EFB><b>Lost Lantern",
+    "customEnchants": [],
+    "lore": [
+     "<gray>A light source supported by the sirens."
+    ],
+    "taglines": [],
+    "material": "SOUL_LANTERN",
+    "id": "lost-lantern",
+    "vanillaEnchants": [
+     [
+      "luck_of_the_sea",
+      1
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "COLLECTIBLE"
+  },
+  "items/misc/collectible/FishingCollectibleItemNest.kt#8": {
+   "fields": {
+    "name": "<gradient:#F0C2B6:#B8CAE1><b>Coral Quill",
+    "customEnchants": [],
+    "lore": [
+     "<gray>I wonder what words were written..."
+    ],
+    "taglines": [],
+    "material": "FEATHER",
+    "id": "coral-quill",
+    "vanillaEnchants": [
+     [
+      "luck_of_the_sea",
+      1
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "COLLECTIBLE"
+  },
+  "items/misc/collectible/FishingCollectibleItemNest.kt#9": {
+   "fields": {
+    "name": "<gradient:#FB9191:#CC62B2><b>Ghostfish Essence",
+    "customEnchants": [],
+    "lore": [
+     "<gray>A ghost was caught and trapped,",
+     "<gray>but at what cost?"
+    ],
+    "taglines": [],
+    "material": "DRAGON_BREATH",
+    "id": "ghostfish-essence",
+    "vanillaEnchants": [
+     [
+      "luck_of_the_sea",
+      1
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "COLLECTIBLE"
+  },
+  "items/misc/collectible/FishingCollectibleItemNest.kt#10": {
+   "fields": {
+    "name": "<gradient:#FBBCBC:#92FD93><b>Aqua Lotus",
+    "customEnchants": [],
+    "lore": [
+     "<gray>A flower normally found on the sea bed."
+    ],
+    "taglines": [],
+    "material": "WHITE_TULIP",
+    "id": "aqua-lotus",
+    "vanillaEnchants": [
+     [
+      "luck_of_the_sea",
+      1
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "COLLECTIBLE"
+  }
+ },
+ "extraItems": [
+  {
+   "cls": "BluePaintballCollectibleItem",
+   "file": "items/misc/collectible/PaintballCollectibleItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#669CFF:#0D4AEF>Blue Paintball</gradient></b>",
+    "customEnchants": [],
+    "lore": [
+     "<gray>A pristine vial of paint,",
+     "<gray>fresh from the Paintball",
+     "<gray>battlegrounds."
+    ],
+    "taglines": [],
+    "material": "SNOWBALL",
+    "id": "blue-paintball-collectible",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true,
+    "icon": "minecraft:blue_dye"
+   },
+   "tierKey": "SUMMER_2025"
+  },
+  {
+   "cls": "RedPaintballCollectibleItem",
+   "file": "items/misc/collectible/PaintballCollectibleItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#ff6666:#EF0D0D>Red Paintball</gradient></b>",
+    "customEnchants": [],
+    "lore": [
+     "<gray>The ultimate red. Embodies",
+     "<gray>every fierce splat from",
+     "<gray>the paintball minigame."
+    ],
+    "taglines": [],
+    "material": "SNOWBALL",
+    "id": "red-paintball-collectible",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true,
+    "icon": "minecraft:red_dye"
+   },
+   "tierKey": "SUMMER_2025"
+  },
+  {
+   "cls": "OakReformationPouchItem",
+   "file": "items/misc/nests/ReformationPouchItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#9E7637:#D59F4A:#9E7637:#D59F4A>Reformation Pouch</gradient></b>",
+    "customEnchants": [
+     "<#BA8B41>Conversion"
+    ],
+    "lore": [
+     "Timber placed inside",
+     "finds new lineage.",
+     "",
+     "Rough-cut or refined,",
+     "all kindred wood."
+    ],
+    "taglines": [],
+    "material": "BROWN_BUNDLE",
+    "id": "reformation-pouch-oak",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      5
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2026"
+  },
+  {
+   "cls": "SpruceReformationPouchItem",
+   "file": "items/misc/nests/ReformationPouchItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#6E4B21:#95662C:#6E4B21:#95662C>Reformation Pouch</gradient></b>",
+    "customEnchants": [
+     "<#825927>Conversion"
+    ],
+    "lore": [
+     "Timber placed inside",
+     "finds new lineage.",
+     "",
+     "Rough-cut or refined,",
+     "all kindred wood."
+    ],
+    "taglines": [],
+    "material": "BUNDLE",
+    "id": "reformation-pouch-spruce",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      5
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2026"
+  },
+  {
+   "cls": "BirchReformationPouchItem",
+   "file": "items/misc/nests/ReformationPouchItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#AE9B58:#EBD277:#AE9B58:#EBD277>Reformation Pouch</gradient></b>",
+    "customEnchants": [
+     "<#CDB768>Conversion"
+    ],
+    "lore": [
+     "Timber placed inside",
+     "finds new lineage.",
+     "",
+     "Rough-cut or refined,",
+     "all kindred wood."
+    ],
+    "taglines": [],
+    "material": "LIGHT_GRAY_BUNDLE",
+    "id": "reformation-pouch-birch",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      5
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2026"
+  },
+  {
+   "cls": "JungleReformationPouchItem",
+   "file": "items/misc/nests/ReformationPouchItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#9A653C:#D18851:#9A653C:#D18851>Reformation Pouch</gradient></b>",
+    "customEnchants": [
+     "<#B67747>Conversion"
+    ],
+    "lore": [
+     "Timber placed inside",
+     "finds new lineage.",
+     "",
+     "Rough-cut or refined,",
+     "all kindred wood."
+    ],
+    "taglines": [],
+    "material": "BROWN_BUNDLE",
+    "id": "reformation-pouch-jungle",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      5
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2026"
+  },
+  {
+   "cls": "AcaciaReformationPouchItem",
+   "file": "items/misc/nests/ReformationPouchItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#A44B1C:#DD6625:#A44B1C:#DD6625>Reformation Pouch</gradient></b>",
+    "customEnchants": [
+     "<#C15921>Conversion"
+    ],
+    "lore": [
+     "Timber placed inside",
+     "finds new lineage.",
+     "",
+     "Rough-cut or refined,",
+     "all kindred wood."
+    ],
+    "taglines": [],
+    "material": "ORANGE_BUNDLE",
+    "id": "reformation-pouch-acacia",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      5
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2026"
+  },
+  {
+   "cls": "DarkOakReformationPouchItem",
+   "file": "items/misc/nests/ReformationPouchItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#44270C:#5C3411:#44270C:#5C3411>Reformation Pouch</gradient></b>",
+    "customEnchants": [
+     "<#502E0F>Conversion"
+    ],
+    "lore": [
+     "Timber placed inside",
+     "finds new lineage.",
+     "",
+     "Rough-cut or refined,",
+     "all kindred wood."
+    ],
+    "taglines": [],
+    "material": "BLACK_BUNDLE",
+    "id": "reformation-pouch-dark-oak",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      5
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2026"
+  },
+  {
+   "cls": "MangroveReformationPouchItem",
+   "file": "items/misc/nests/ReformationPouchItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#712D27:#9A3C36:#712D27:#9A3C36>Reformation Pouch</gradient></b>",
+    "customEnchants": [
+     "<#86352F>Conversion"
+    ],
+    "lore": [
+     "Timber placed inside",
+     "finds new lineage.",
+     "",
+     "Rough-cut or refined,",
+     "all kindred wood."
+    ],
+    "taglines": [],
+    "material": "RED_BUNDLE",
+    "id": "reformation-pouch-mangrove",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      5
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2026"
+  },
+  {
+   "cls": "CherryReformationPouchItem",
+   "file": "items/misc/nests/ReformationPouchItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#CE9C95:#FFD3CA:#CE9C95:#FFD3CA>Reformation Pouch</gradient></b>",
+    "customEnchants": [
+     "<#F3B8B0>Conversion"
+    ],
+    "lore": [
+     "Timber placed inside",
+     "finds new lineage.",
+     "",
+     "Rough-cut or refined,",
+     "all kindred wood."
+    ],
+    "taglines": [],
+    "material": "PINK_BUNDLE",
+    "id": "reformation-pouch-cherry",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      5
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2026"
+  },
+  {
+   "cls": "PaleOakReformationPouchItem",
+   "file": "items/misc/nests/ReformationPouchItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#C5C0BE:#FFFFFF:#C5C0BE:#FFFFFF>Reformation Pouch</gradient></b>",
+    "customEnchants": [
+     "<#E8E3E0>Conversion"
+    ],
+    "lore": [
+     "Timber placed inside",
+     "finds new lineage.",
+     "",
+     "Rough-cut or refined,",
+     "all kindred wood."
+    ],
+    "taglines": [],
+    "material": "WHITE_BUNDLE",
+    "id": "reformation-pouch-pale-oak",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      5
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "VALENTIDE_2026"
+  },
+  {
+   "cls": "SuperAbsorbentWaterSpongeItem",
+   "file": "items/misc/nests/SuperAbsorbentSpongeItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#0098de:#718bf8:#145fdc>Absorbent Sponge</gradient></b>",
+    "customEnchants": [
+     "<#0098de>Super Absorbent"
+    ],
+    "lore": [
+     "This sponge is capable of",
+     "soaking up any amount of",
+     "<#0098de>water</#0098de> without needing to",
+     "be dried out.",
+     "",
+     "Place in any body of <#0098de>water</#0098de>",
+     "to start absorbing."
+    ],
+    "taglines": [],
+    "material": "SPONGE",
+    "id": "absorbent-water-sponge",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "SUMMER_2025"
+  },
+  {
+   "cls": "SuperAbsorbentLavaSpongeItem",
+   "file": "items/misc/nests/SuperAbsorbentSpongeItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#f4521c:#e9910d:#e42800>Absorbent Sponge</gradient></b>",
+    "customEnchants": [
+     "<#FF4500>Super Absorbent"
+    ],
+    "lore": [
+     "This sponge is capable of",
+     "soaking up any amount of",
+     "<#FF4500>lava</#FF4500> without needing to",
+     "be dried out.",
+     "",
+     "Place in any body of <#FF4500>lava</#FF4500>",
+     "to start absorbing."
+    ],
+    "taglines": [],
+    "material": "SPONGE",
+    "id": "absorbent-lava-sponge",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "SUMMER_2025"
+  },
+  {
+   "cls": "UnionAxiomMattockItem",
+   "file": "items/tools/nests/AxiomItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#D8B9FB:#C08EFF:#E07DFF>Axiom Mattock</gradient></b>",
+    "customEnchants": [
+     "<gray>Reach II",
+     "<#ED70BB>Union"
+    ],
+    "lore": [
+     "A special mattock that",
+     "allows reaching farther",
+     "when targeting blocks.",
+     "",
+     "<#ED70BB>Right-click</#ED70BB> to unleash",
+     "a paradoxical beam that",
+     "breaks nearby blocks in",
+     "its enclosed radius.",
+     "",
+     "<red>Cooldown: 3m"
+    ],
+    "taglines": [],
+    "material": "NETHERITE_PICKAXE",
+    "id": "union-paradox-mattock",
+    "vanillaEnchants": [
+     [
+      "efficiency",
+      8
+     ],
+     [
+      "silk_touch",
+      1
+     ],
+     [
+      "unbreaking",
+      6
+     ],
+     [
+      "mending",
+      1
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "LUMARINE_2026"
+  },
+  {
+   "cls": "FluxAxiomMattockItem",
+   "file": "items/tools/nests/AxiomItemNest.kt",
+   "fields": {
+    "name": "<b><gradient:#D8B9FB:#AC8EFF:#7D9AFF>Axiom Mattock</gradient></b>",
+    "customEnchants": [
+     "<gray>Reach II",
+     "<#5FE8FF>Flux"
+    ],
+    "lore": [
+     "A special mattock that",
+     "allows reaching farther",
+     "when targeting blocks.",
+     "",
+     "<#5FE8FF>Right-click</#5FE8FF> to unleash",
+     "a paradoxical beam that",
+     "breaks nearby blocks in",
+     "its enclosed radius.",
+     "",
+     "<red>Cooldown: 3m"
+    ],
+    "taglines": [],
+    "material": "NETHERITE_PICKAXE",
+    "id": "flux-paradox-mattock",
+    "vanillaEnchants": [
+     [
+      "efficiency",
+      8
+     ],
+     [
+      "silk_touch",
+      1
+     ],
+     [
+      "unbreaking",
+      6
+     ],
+     [
+      "mending",
+      1
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "LUMARINE_2026"
+  },
+  {
+   "cls": "CryoEggItem",
+   "file": "items/weapons/incursion/CryoEggItem.kt",
+   "fields": {
+    "name": "<b><gradient:#8fd0ea:#9dd9e2:#aedcd0>Cryo Egg</gradient></b>",
+    "customEnchants": [
+     "<#9be4df>Cold Snap"
+    ],
+    "lore": [
+     "Best before: several",
+     "weeks ago, arguably.",
+     "",
+     "Best served chilled, which",
+     "it insists on doing itself.",
+     "",
+     "Press your <#9be4df>swap key</#9be4df>",
+     "<#9be4df>(F)</#9be4df> to cycle variants.",
+     "",
+     "<red>Cooldown: 3.5s"
+    ],
+    "taglines": [],
+    "material": "BLUE_EGG",
+    "id": "incursion-cryo-egg",
+    "vanillaEnchants": [
+     [
+      "infinity",
+      10
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "LUMARINE_2026"
+  },
+  {
+   "cls": "IncendiaryEggItem",
+   "file": "items/weapons/incursion/IncendiaryEggItem.kt",
+   "fields": {
+    "name": "<b><gradient:#e08a6a:#e6a05f:#e9b673>Incendiary Egg</gradient></b>",
+    "customEnchants": [
+     "<#EDB172>Scorch"
+    ],
+    "lore": [
+     "Best before: several",
+     "weeks ago, arguably.",
+     "",
+     "Do not preheat! It has",
+     "handled that already.",
+     "",
+     "Press your <#EDB172>swap key</#EDB172>",
+     "<#EDB172>(F)</#EDB172> to cycle variants.",
+     "",
+     "<red>Cooldown: 3.5s"
+    ],
+    "taglines": [],
+    "material": "BROWN_EGG",
+    "id": "incursion-incendiary-egg",
+    "vanillaEnchants": [
+     [
+      "infinity",
+      10
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "LUMARINE_2026"
+  },
+  {
+   "cls": "UnstableEggItem",
+   "file": "items/weapons/incursion/UnstableEggItem.kt",
+   "fields": {
+    "name": "<b><gradient:#cdd6de:#d6d2c8:#c9d9d2>Unstable Egg</gradient></b>",
+    "customEnchants": [
+     "<#cfd6dd>Volatile"
+    ],
+    "lore": [
+     "Best before: several",
+     "weeks ago, arguably.",
+     "",
+     "Press your <#cfd6dd>swap key</#cfd6dd>",
+     "<#cfd6dd>(F)</#cfd6dd> to cycle variants.",
+     "",
+     "<red>Cooldown: 3.5s"
+    ],
+    "taglines": [],
+    "material": "EGG",
+    "id": "incursion-unstable-egg",
+    "vanillaEnchants": [
+     [
+      "infinity",
+      10
+     ]
+    ],
+    "hideEnchants": false,
+    "spoofEnchants": false,
+    "addSpace": true
+   },
+   "tierKey": "LUMARINE_2026"
+  }
+ ],
+ "astralSets": [
+  {
+   "id": "archael-set",
+   "name": "Archael",
+   "cls": "ArchaelSet",
+   "file": "items/astral/sets/ArchaelSet.kt",
+   "style": "legacy",
+   "customEnchants": [],
+   "pieces": [
+    {
+     "material": "ELYTRA",
+     "lore": [],
+     "enchants": [
+      [
+       "protection",
+       6
+      ],
+      [
+       "projectile_protection",
+       5
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "feather_falling",
+       4
+      ]
+     ],
+     "name": "&#AC87FB&lArchael &fWings"
+    }
+   ]
+  },
+  {
+   "id": "avalon-set",
+   "name": "Avalon",
+   "cls": "AvalonSet",
+   "file": "items/astral/sets/AvalonSet.kt",
+   "style": "legacy",
+   "customEnchants": [
+    "&#AC87FBSwift"
+   ],
+   "pieces": [
+    {
+     "material": "IRON_HELMET",
+     "lore": [
+      "&6Set Bonus:&7 Speed I"
+     ],
+     "enchants": [
+      [
+       "protection",
+       4
+      ],
+      [
+       "projectile_protection",
+       5
+      ],
+      [
+       "unbreaking",
+       7
+      ]
+     ]
+    },
+    {
+     "material": "IRON_CHESTPLATE",
+     "lore": [
+      "&6Set Bonus:&7 Speed I"
+     ],
+     "enchants": [
+      [
+       "protection",
+       4
+      ],
+      [
+       "projectile_protection",
+       5
+      ],
+      [
+       "unbreaking",
+       7
+      ]
+     ]
+    },
+    {
+     "material": "IRON_LEGGINGS",
+     "lore": [
+      "&6Set Bonus:&7 Speed I"
+     ],
+     "enchants": [
+      [
+       "protection",
+       4
+      ],
+      [
+       "projectile_protection",
+       5
+      ],
+      [
+       "unbreaking",
+       7
+      ]
+     ]
+    },
+    {
+     "material": "IRON_BOOTS",
+     "lore": [
+      "&6Set Bonus:&7 Speed I"
+     ],
+     "enchants": [
+      [
+       "protection",
+       4
+      ],
+      [
+       "projectile_protection",
+       5
+      ],
+      [
+       "feather_falling",
+       5
+      ],
+      [
+       "unbreaking",
+       7
+      ]
+     ]
+    },
+    {
+     "material": "IRON_SWORD",
+     "lore": [
+      "Grants extra speed",
+      "while being held."
+     ],
+     "enchants": [
+      [
+       "sharpness",
+       6
+      ],
+      [
+       "unbreaking",
+       7
+      ],
+      [
+       "sweeping_edge",
+       4
+      ]
+     ]
+    },
+    {
+     "material": "IRON_PICKAXE",
+     "lore": [
+      "Grants extra speed",
+      "while being held."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       7
+      ],
+      [
+       "efficiency",
+       6
+      ],
+      [
+       "silk_touch",
+       1
+      ]
+     ]
+    },
+    {
+     "material": "FISHING_ROD",
+     "lore": [
+      "Grants extra speed",
+      "while being held."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       7
+      ],
+      [
+       "lure",
+       4
+      ],
+      [
+       "luck_of_the_sea",
+       4
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "blitz-set",
+   "name": "Blitz",
+   "cls": "BlitzSet",
+   "file": "items/astral/sets/BlitzSet.kt",
+   "style": "legacy",
+   "customEnchants": [
+    "&#AC87FBSwift"
+   ],
+   "pieces": [
+    {
+     "material": "DIAMOND_AXE",
+     "lore": [
+      "Grants haste while",
+      "being held."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "efficiency",
+       5
+      ],
+      [
+       "fortune",
+       3
+      ]
+     ]
+    },
+    {
+     "material": "ELYTRA",
+     "lore": [
+      "Grants extra speed",
+      "while boosting midair."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "feather_falling",
+       4
+      ],
+      [
+       "blast_protection",
+       3
+      ]
+     ],
+     "name": "&#AC87FB&lBlitz &fWings"
+    }
+   ]
+  },
+  {
+   "id": "falter-set",
+   "name": "Falter",
+   "cls": "FalterSet",
+   "file": "items/astral/sets/FalterSet.kt",
+   "style": "legacy",
+   "customEnchants": [
+    "&#AC87FBFoster"
+   ],
+   "pieces": [
+    {
+     "material": "DIAMOND_PICKAXE",
+     "lore": [
+      "Damage dealt to enemies scales",
+      "with Miner Job level."
+     ],
+     "enchants": [
+      [
+       "sharpness",
+       7
+      ],
+      [
+       "smite",
+       7
+      ],
+      [
+       "unbreaking",
+       8
+      ],
+      [
+       "mending",
+       1
+      ],
+      [
+       "efficiency",
+       8
+      ],
+      [
+       "fortune",
+       5
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_HOE",
+     "lore": [
+      "Damage dealt to enemies scales",
+      "with Farmer Job level."
+     ],
+     "enchants": [
+      [
+       "sharpness",
+       7
+      ],
+      [
+       "smite",
+       7
+      ],
+      [
+       "unbreaking",
+       8
+      ],
+      [
+       "mending",
+       1
+      ],
+      [
+       "efficiency",
+       8
+      ],
+      [
+       "fortune",
+       5
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_AXE",
+     "lore": [
+      "Damage dealt to enemies scales",
+      "with Lumberjack Job level."
+     ],
+     "enchants": [
+      [
+       "sharpness",
+       7
+      ],
+      [
+       "smite",
+       7
+      ],
+      [
+       "unbreaking",
+       8
+      ],
+      [
+       "mending",
+       1
+      ],
+      [
+       "efficiency",
+       8
+      ],
+      [
+       "fortune",
+       4
+      ],
+      [
+       "looting",
+       6
+      ]
+     ]
+    },
+    {
+     "material": "FISHING_ROD",
+     "lore": [
+      "Damage dealt to enemies scales",
+      "with Fisherman Job level."
+     ],
+     "enchants": [
+      [
+       "sharpness",
+       7
+      ],
+      [
+       "smite",
+       7
+      ],
+      [
+       "unbreaking",
+       8
+      ],
+      [
+       "mending",
+       1
+      ],
+      [
+       "lure",
+       5
+      ],
+      [
+       "luck_of_the_sea",
+       6
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "harbinger-set",
+   "name": "Harbinger",
+   "cls": "HarbingerSet",
+   "file": "items/astral/sets/HarbingerSet.kt",
+   "style": "modern",
+   "customEnchants": [
+    "Night Vision I"
+   ],
+   "pieces": [
+    {
+     "material": "COPPER_HELMET",
+     "lore": [
+      "Allows the <#AC87FB>wearer</#AC87FB> to",
+      "see in the dark."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       6
+      ],
+      [
+       "respiration",
+       1
+      ]
+     ]
+    },
+    {
+     "material": "COPPER_CHESTPLATE",
+     "lore": [
+      "Allows the <#AC87FB>wearer</#AC87FB> to",
+      "see in the dark."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       6
+      ]
+     ]
+    },
+    {
+     "material": "COPPER_LEGGINGS",
+     "lore": [
+      "Allows the <#AC87FB>wearer</#AC87FB> to",
+      "see in the dark."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       6
+      ],
+      [
+       "swift_sneak",
+       1
+      ]
+     ]
+    },
+    {
+     "material": "COPPER_BOOTS",
+     "lore": [
+      "Allows the <#AC87FB>wearer</#AC87FB> to",
+      "see in the dark."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       6
+      ],
+      [
+       "feather_falling",
+       2
+      ]
+     ]
+    },
+    {
+     "material": "ELYTRA",
+     "lore": [
+      "Allows the <#AC87FB>wearer</#AC87FB> to",
+      "see in the dark."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       6
+      ],
+      [
+       "feather_falling",
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kazkan-set",
+   "name": "Kazkan",
+   "cls": "KazkanSet",
+   "file": "items/astral/sets/KazkanSet.kt",
+   "style": "legacy",
+   "customEnchants": [
+    "&#AC87FBInvigorated"
+   ],
+   "pieces": [
+    {
+     "material": "IRON_AXE",
+     "lore": [
+      "Right-click and hold to begin",
+      "charging up this weapon's",
+      "power.",
+      "",
+      "Attack damage increases",
+      "with time spent charging."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       7
+      ],
+      [
+       "sharpness",
+       6
+      ],
+      [
+       "looting",
+       3
+      ],
+      [
+       "bane_of_arthropods",
+       5
+      ]
+     ]
+    },
+    {
+     "material": "CROSSBOW",
+     "lore": [
+      "Arrows launched from this bow",
+      "will be frozen in place.",
+      "",
+      "Left-click to launch them in",
+      "the direction you're looking."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       7
+      ],
+      [
+       "quick_charge",
+       2
+      ],
+      [
+       "piercing",
+       4
+      ]
+     ],
+     "customEnchants": [
+      "&#AC87FBTime Dilation"
+     ]
+    },
+    {
+     "material": "BLAZE_ROD",
+     "lore": [
+      "&7Right-click &fon entities",
+      "slow them down for a short",
+      "period of time.",
+      "",
+      "&7Left-click &fto cast a spell",
+      "that will damage enemies.",
+      "",
+      "&c13 Lapis per spell"
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       7
+      ]
+     ],
+     "name": "&#AC87FB&lKazkan &fStaff"
+    },
+    {
+     "material": "SHIELD",
+     "lore": [],
+     "enchants": [
+      [
+       "unbreaking",
+       7
+      ],
+      [
+       "mending",
+       1
+      ],
+      [
+       "fire_aspect",
+       4
+      ],
+      [
+       "sharpness",
+       5
+      ]
+     ],
+     "customEnchants": []
+    }
+   ]
+  },
+  {
+   "id": "magmatic-set",
+   "name": "Magmatic",
+   "cls": "MagmaticSet",
+   "file": "items/astral/sets/MagmaticSet.kt",
+   "style": "legacy",
+   "customEnchants": [
+    "&#AC87FBVolcanic"
+   ],
+   "pieces": [
+    {
+     "material": "DIAMOND_HELMET",
+     "lore": [],
+     "enchants": [
+      [
+       "protection",
+       5
+      ],
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "thorns",
+       3
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_CHESTPLATE",
+     "lore": [],
+     "enchants": [
+      [
+       "protection",
+       5
+      ],
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "thorns",
+       3
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_LEGGINGS",
+     "lore": [],
+     "enchants": [
+      [
+       "protection",
+       5
+      ],
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "thorns",
+       3
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_BOOTS",
+     "lore": [],
+     "enchants": [
+      [
+       "protection",
+       5
+      ],
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "feather_falling",
+       4
+      ],
+      [
+       "thorns",
+       3
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_SWORD",
+     "lore": [
+      "Right-click to send out flames",
+      "and ignite entities",
+      "",
+      "&cCooldown: 10s"
+     ],
+     "enchants": [
+      [
+       "sharpness",
+       6
+      ],
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "sweeping_edge",
+       4
+      ],
+      [
+       "fire_aspect",
+       3
+      ],
+      [
+       "looting",
+       3
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_PICKAXE",
+     "lore": [
+      "Breaking ores with this",
+      "tool will automatically",
+      "smelt them"
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "efficiency",
+       5
+      ],
+      [
+       "fortune",
+       3
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_SHOVEL",
+     "lore": [
+      "Breaking sand with this",
+      "tool will automatically",
+      "convert it to glass"
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "efficiency",
+       5
+      ],
+      [
+       "fortune",
+       3
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "meluka-set",
+   "name": "Meluka",
+   "cls": "MelukaSet",
+   "file": "items/astral/sets/MelukaSet.kt",
+   "style": "legacy",
+   "customEnchants": [
+    "&#AC87FBMarine"
+   ],
+   "pieces": [
+    {
+     "material": "GOLDEN_HELMET",
+     "lore": [
+      "Grants the wearer dolphin's",
+      "grace while in water."
+     ],
+     "enchants": [
+      [
+       "protection",
+       5
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "aqua_affinity",
+       2
+      ],
+      [
+       "respiration",
+       3
+      ]
+     ]
+    },
+    {
+     "material": "GOLDEN_CHESTPLATE",
+     "lore": [
+      "Grants the wearer dolphin's",
+      "grace while in water."
+     ],
+     "enchants": [
+      [
+       "protection",
+       5
+      ],
+      [
+       "unbreaking",
+       5
+      ]
+     ]
+    },
+    {
+     "material": "GOLDEN_LEGGINGS",
+     "lore": [
+      "Grants the wearer dolphin's",
+      "grace while in water."
+     ],
+     "enchants": [
+      [
+       "protection",
+       5
+      ],
+      [
+       "unbreaking",
+       5
+      ]
+     ]
+    },
+    {
+     "material": "GOLDEN_BOOTS",
+     "lore": [
+      "Grants the wearer dolphin's",
+      "grace while in water."
+     ],
+     "enchants": [
+      [
+       "protection",
+       5
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "depth_strider",
+       3
+      ]
+     ]
+    },
+    {
+     "material": "GOLDEN_PICKAXE",
+     "lore": [
+      "Breaking blocks underwater will",
+      "automatically teleport them",
+      "to the user's inventory."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "efficiency",
+       4
+      ],
+      [
+       "silk_touch",
+       1
+      ]
+     ]
+    },
+    {
+     "material": "GOLDEN_SHOVEL",
+     "lore": [
+      "Breaking blocks underwater will",
+      "automatically teleport them",
+      "to the user's inventory."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "efficiency",
+       4
+      ],
+      [
+       "silk_touch",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "reforged-set",
+   "name": "Reforged",
+   "cls": "ReforgedSet",
+   "file": "items/astral/sets/ReforgedSet.kt",
+   "style": "legacy",
+   "customEnchants": [
+    "&#AC87FBUnwavering"
+   ],
+   "pieces": [
+    {
+     "material": "NETHERITE_HELMET",
+     "lore": [
+      "Increases max amount",
+      "of health while worn."
+     ],
+     "enchants": [
+      [
+       "mending",
+       1
+      ],
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       7
+      ],
+      [
+       "respiration",
+       3
+      ]
+     ]
+    },
+    {
+     "material": "NETHERITE_CHESTPLATE",
+     "lore": [
+      "Increases max amount",
+      "of health while worn."
+     ],
+     "enchants": [
+      [
+       "mending",
+       1
+      ],
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       7
+      ]
+     ]
+    },
+    {
+     "material": "NETHERITE_LEGGINGS",
+     "lore": [
+      "Increases max amount",
+      "of health while worn."
+     ],
+     "enchants": [
+      [
+       "mending",
+       1
+      ],
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       7
+      ]
+     ]
+    },
+    {
+     "material": "NETHERITE_BOOTS",
+     "lore": [
+      "Increases max amount",
+      "of health while worn."
+     ],
+     "enchants": [
+      [
+       "mending",
+       1
+      ],
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       7
+      ],
+      [
+       "feather_falling",
+       4
+      ],
+      [
+       "depth_strider",
+       3
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "valley-set",
+   "name": "Valley",
+   "cls": "ValleySet",
+   "file": "items/astral/sets/ValleySet.kt",
+   "style": "legacy",
+   "customEnchants": [
+    "&#AC87FBIlk"
+   ],
+   "pieces": [
+    {
+     "material": "GOLDEN_SHOVEL",
+     "lore": [
+      "Has the ability to remove",
+      "water from the direction the",
+      "user is looking."
+     ],
+     "enchants": [
+      [
+       "mending",
+       1
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "efficiency",
+       6
+      ],
+      [
+       "fortune",
+       5
+      ]
+     ]
+    },
+    {
+     "material": "GOLDEN_SWORD",
+     "lore": [
+      "Grants the user potion buffs",
+      "upon damaging an enemy."
+     ],
+     "enchants": [
+      [
+       "mending",
+       1
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "sharpness",
+       6
+      ],
+      [
+       "smite",
+       6
+      ],
+      [
+       "sweeping_edge",
+       4
+      ]
+     ]
+    },
+    {
+     "material": "GOLDEN_AXE",
+     "lore": [],
+     "enchants": [
+      [
+       "mending",
+       1
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "efficiency",
+       6
+      ],
+      [
+       "fortune",
+       5
+      ]
+     ]
+    },
+    {
+     "material": "GOLDEN_HOE",
+     "lore": [
+      "Has a chance to drop rare",
+      "crops when breaking blocks."
+     ],
+     "enchants": [
+      [
+       "mending",
+       1
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "efficiency",
+       6
+      ],
+      [
+       "fortune",
+       5
+      ]
+     ]
+    },
+    {
+     "material": "FISHING_ROD",
+     "lore": [],
+     "enchants": [
+      [
+       "mending",
+       1
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "lure",
+       4
+      ],
+      [
+       "luck_of_the_sea",
+       4
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "venom-set",
+   "name": "Viper",
+   "cls": "VenomSet",
+   "file": "items/astral/sets/VenomSet.kt",
+   "style": "legacy",
+   "customEnchants": [
+    "&#AC87FBVenom"
+   ],
+   "pieces": [
+    {
+     "material": "DIAMOND_HELMET",
+     "lore": [
+      "Upon being struck, your",
+      "attacker will be poisoned",
+      "for a short duration."
+     ],
+     "enchants": [
+      [
+       "protection",
+       5
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "thorns",
+       4
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_CHESTPLATE",
+     "lore": [
+      "Upon being struck, your",
+      "attacker will be poisoned",
+      "for a short duration."
+     ],
+     "enchants": [
+      [
+       "protection",
+       5
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "thorns",
+       4
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_LEGGINGS",
+     "lore": [
+      "Upon being struck, your",
+      "attacker will be poisoned",
+      "for a short duration."
+     ],
+     "enchants": [
+      [
+       "protection",
+       5
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "thorns",
+       4
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_BOOTS",
+     "lore": [
+      "Upon being struck, your",
+      "attacker will be poisoned",
+      "for a short duration."
+     ],
+     "enchants": [
+      [
+       "protection",
+       5
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "thorns",
+       4
+      ],
+      [
+       "feather_falling",
+       4
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_SWORD",
+     "lore": [
+      "Upon striking an enemy,",
+      "they will be poisoned",
+      "for a short duration."
+     ],
+     "enchants": [
+      [
+       "sharpness",
+       6
+      ],
+      [
+       "unbreaking",
+       5
+      ],
+      [
+       "sweeping_edge",
+       4
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_AXE",
+     "lore": [
+      "Upon striking an enemy,",
+      "they will be poisoned",
+      "for a short duration."
+     ],
+     "enchants": [
+      [
+       "sharpness",
+       6
+      ],
+      [
+       "unbreaking",
+       5
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "verdant-set",
+   "name": "Verdant",
+   "cls": "VerdantSet",
+   "file": "items/astral/sets/VerdantSet.kt",
+   "style": "modern",
+   "customEnchants": [
+    "Nature's Grasp"
+   ],
+   "pieces": [
+    {
+     "material": "DIAMOND_PICKAXE",
+     "lore": [
+      "<#AC87FB>Breaking blocks</#AC87FB> with this",
+      "tool will restore hunger",
+      "and saturation over time."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "efficiency",
+       5
+      ],
+      [
+       "fortune",
+       2
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_AXE",
+     "lore": [
+      "<#AC87FB>Breaking blocks</#AC87FB> with this",
+      "tool will restore hunger",
+      "and saturation over time."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "efficiency",
+       5
+      ],
+      [
+       "fortune",
+       2
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_HOE",
+     "lore": [
+      "<#AC87FB>Breaking blocks</#AC87FB> with this",
+      "tool will restore hunger",
+      "and saturation over time."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "efficiency",
+       5
+      ],
+      [
+       "fortune",
+       2
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_SHOVEL",
+     "lore": [
+      "<#AC87FB>Breaking blocks</#AC87FB> with this",
+      "tool will restore hunger",
+      "and saturation over time."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "efficiency",
+       5
+      ],
+      [
+       "fortune",
+       2
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_HELMET",
+     "lore": [
+      "Grants regeneration",
+      "while <#AC87FB>worn</#AC87FB>."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       4
+      ],
+      [
+       "fire_protection",
+       3
+      ],
+      [
+       "blast_protection",
+       3
+      ],
+      [
+       "aqua_affinity",
+       1
+      ],
+      [
+       "respiration",
+       2
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_CHESTPLATE",
+     "lore": [
+      "Grants regeneration",
+      "while <#AC87FB>worn</#AC87FB>."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       4
+      ],
+      [
+       "fire_protection",
+       3
+      ],
+      [
+       "blast_protection",
+       3
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_LEGGINGS",
+     "lore": [
+      "Grants regeneration",
+      "while <#AC87FB>worn</#AC87FB>."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       4
+      ],
+      [
+       "fire_protection",
+       3
+      ],
+      [
+       "blast_protection",
+       3
+      ]
+     ]
+    },
+    {
+     "material": "DIAMOND_BOOTS",
+     "lore": [
+      "Grants regeneration",
+      "while <#AC87FB>worn</#AC87FB>."
+     ],
+     "enchants": [
+      [
+       "unbreaking",
+       6
+      ],
+      [
+       "protection",
+       4
+      ],
+      [
+       "fire_protection",
+       3
+      ],
+      [
+       "blast_protection",
+       3
+      ],
+      [
+       "feather_falling",
+       4
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Dark by default; the toggle stores {"mode":"light"} under luma-guide:theme. Set before paint to avoid a flash.
+      try {
+        document.documentElement.dataset.theme = JSON.parse(localStorage.getItem('luma-guide:theme') || '{}').mode === 'light' ? 'light' : 'dark';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    </script>
     <title>Luma Guide</title>
-    <meta name="description" content="LumaMC player guide: job scaling, time-to-level calculator, and item mechanics." />
+    <meta name="description" content="LumaMC player guide: job scaling, time-to-level calculator, custom item glossary with in-game tooltips, and relic odds." />
     <link rel="icon" type="image/png" href="./icons/amethyst_shard.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
