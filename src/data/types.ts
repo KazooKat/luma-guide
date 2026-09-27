@@ -67,10 +67,48 @@ export interface GlossaryItem {
   cls: string | null;
   /** Set when the item varies in game (colour variants, stages); the tooltip shows one of them. */
   note?: string;
+  /** Astral pieces: the piece at every upgrade tier, and the config lines the tiers come from. */
+  upgrades?: { path: UpgradeStep[]; source: string };
 }
 
 export interface ItemsData {
   source: { repo: string; commit: string };
   sections: ItemSection[];
   items: GlossaryItem[];
+}
+
+/** One Astral piece at one upgrade tier (tier 1 = as it drops). */
+export interface UpgradeStep {
+  tier: number;
+  material: string;
+  enchants: string[];
+  /** What this tier changed, e.g. "diamond_sword → netherite_sword", "Mending 0 → 1". */
+  changed: string[];
+  stats: { armor?: number; toughness?: number; knockbackResistance?: number; attackDamage?: number; attackSpeed?: number; durability?: number } | null;
+}
+
+/** A cited line of a mechanics write-up. `src` is "items/x/File.kt:12" or ":12-30", comma-separated. */
+export interface WriteupLine {
+  text?: string;
+  label?: string;
+  value?: string;
+  src: string;
+}
+
+/** Hand-checked mechanics for one item or a family of items (data/writeups/*.json, merged by scripts/check-writeups.mjs). */
+export interface Writeup {
+  key: string;
+  items: string[];
+  summary: string;
+  use?: WriteupLine[];
+  numbers?: WriteupLine[];
+  details?: WriteupLine[];
+  quirks?: WriteupLine[];
+  config?: WriteupLine[];
+}
+
+export interface WriteupsData {
+  commit: string;
+  writeups: Record<string, Writeup>;
+  byItem: Record<string, string>;
 }

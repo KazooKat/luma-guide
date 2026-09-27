@@ -4,6 +4,7 @@ import { ASTRAL_ORB_SETS } from '../lib/relics';
 import { plain } from '../lib/minimessage';
 import atlas from './items-atlas.json';
 import data from './items.json';
+import writeups from './writeups.json';
 import type { ItemsData } from './types';
 
 const DATA = data as ItemsData;
@@ -45,6 +46,23 @@ describe('items.json', () => {
   it('has a glossary set for every set in the Astral Orb odds (the Relics page links to them)', () => {
     const sets = new Set(DATA.items.map((i) => i.set).filter(Boolean));
     for (const { set } of ASTRAL_ORB_SETS) expect(sets.has(`${set.toLowerCase()}-set`), set).toBe(true);
+  });
+
+  it('gives every item a mechanics write-up, and every write-up points at real items and source lines', () => {
+    const w = writeups as { byItem: Record<string, string>; writeups: Record<string, { items: string[]; summary: string }> };
+    for (const it of DATA.items) if (it.id !== 'kamoris-glasses') expect(w.writeups[w.byItem[it.id]], it.id).toBeDefined();
+    const ids = new Set(DATA.items.map((i) => i.id));
+    for (const [key, entry] of Object.entries(w.writeups)) {
+      expect(entry.summary.length, key).toBeGreaterThan(20);
+      for (const id of entry.items) expect(ids.has(id), `${key}: ${id}`).toBe(true);
+    }
+  });
+
+  it('gives every Astral piece an upgrade path that starts as it drops', () => {
+    for (const it of DATA.items.filter((i) => i.section === 'ASTRAL')) {
+      expect(it.upgrades!.path[0], it.id).toMatchObject({ tier: 1, material: it.material });
+      expect(it.upgrades!.path.length, it.id).toBeGreaterThan(1);
+    }
   });
 
   it("keeps Kamori's Glasses at its old deep link, in Lumarine 2026", () => {

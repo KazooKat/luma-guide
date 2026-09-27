@@ -8958,7 +8958,44 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/ArchaelSet.kt",
-   "cls": "ArchaelSet"
+   "cls": "ArchaelSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "ELYTRA",
+      "enchants": [
+       "Protection VI",
+       "Projectile Protection V",
+       "Feather Falling IV",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "durability": 432
+      }
+     },
+     {
+      "tier": 2,
+      "material": "ELYTRA",
+      "enchants": [
+       "Protection VI",
+       "Projectile Protection V",
+       "Feather Falling IV",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "Mending 0 → 1",
+       "Unbreaking 5 → 6"
+      ],
+      "stats": {
+       "durability": 432
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L110"
+   }
   },
   {
    "id": "avalon-set-iron-helmet",
@@ -8993,7 +9030,67 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/AvalonSet.kt",
-   "cls": "AvalonSet"
+   "cls": "AvalonSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "IRON_HELMET",
+      "enchants": [
+       "Protection IV",
+       "Projectile Protection V",
+       "Unbreaking VII"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 2,
+       "durability": 165
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_HELMET",
+      "enchants": [
+       "Protection VI",
+       "Projectile Protection VII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "iron_helmet → diamond_helmet",
+       "Protection 4 → 6",
+       "Projectile Protection 5 → 7",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 2,
+       "durability": 363
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_HELMET",
+      "enchants": [
+       "Protection VI",
+       "Projectile Protection VII",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_helmet → netherite_helmet",
+       "Unbreaking 7 → 8"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 407
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L121"
+   }
   },
   {
    "id": "avalon-set-iron-chestplate",
@@ -9028,7 +9125,67 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/AvalonSet.kt",
-   "cls": "AvalonSet"
+   "cls": "AvalonSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "IRON_CHESTPLATE",
+      "enchants": [
+       "Protection IV",
+       "Projectile Protection V",
+       "Unbreaking VII"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 6,
+       "durability": 240
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_CHESTPLATE",
+      "enchants": [
+       "Protection VI",
+       "Projectile Protection VII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "iron_chestplate → diamond_chestplate",
+       "Protection 4 → 6",
+       "Projectile Protection 5 → 7",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "armor": 8,
+       "toughness": 2,
+       "durability": 528
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_CHESTPLATE",
+      "enchants": [
+       "Protection VI",
+       "Projectile Protection VII",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_chestplate → netherite_chestplate",
+       "Unbreaking 7 → 8"
+      ],
+      "stats": {
+       "armor": 8,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 592
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L121"
+   }
   },
   {
    "id": "avalon-set-iron-leggings",
@@ -9063,7 +9220,67 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/AvalonSet.kt",
-   "cls": "AvalonSet"
+   "cls": "AvalonSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "IRON_LEGGINGS",
+      "enchants": [
+       "Protection IV",
+       "Projectile Protection V",
+       "Unbreaking VII"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 5,
+       "durability": 225
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_LEGGINGS",
+      "enchants": [
+       "Protection VI",
+       "Projectile Protection VII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "iron_leggings → diamond_leggings",
+       "Protection 4 → 6",
+       "Projectile Protection 5 → 7",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "armor": 6,
+       "toughness": 2,
+       "durability": 495
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_LEGGINGS",
+      "enchants": [
+       "Protection VI",
+       "Projectile Protection VII",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_leggings → netherite_leggings",
+       "Unbreaking 7 → 8"
+      ],
+      "stats": {
+       "armor": 6,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 555
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L121"
+   }
   },
   {
    "id": "avalon-set-iron-boots",
@@ -9100,7 +9317,70 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/AvalonSet.kt",
-   "cls": "AvalonSet"
+   "cls": "AvalonSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "IRON_BOOTS",
+      "enchants": [
+       "Protection IV",
+       "Projectile Protection V",
+       "Feather Falling V",
+       "Unbreaking VII"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 2,
+       "durability": 195
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_BOOTS",
+      "enchants": [
+       "Protection VI",
+       "Projectile Protection VII",
+       "Feather Falling V",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "iron_boots → diamond_boots",
+       "Protection 4 → 6",
+       "Projectile Protection 5 → 7",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 2,
+       "durability": 429
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_BOOTS",
+      "enchants": [
+       "Protection VI",
+       "Projectile Protection VII",
+       "Feather Falling V",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_boots → netherite_boots",
+       "Unbreaking 7 → 8"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 481
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L121"
+   }
   },
   {
    "id": "avalon-set-iron-sword",
@@ -9136,7 +9416,66 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/AvalonSet.kt",
-   "cls": "AvalonSet"
+   "cls": "AvalonSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "IRON_SWORD",
+      "enchants": [
+       "Sharpness VI",
+       "Sweeping Edge IV",
+       "Unbreaking VII"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 6,
+       "attackSpeed": 1.6,
+       "durability": 250
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_SWORD",
+      "enchants": [
+       "Sharpness VII",
+       "Sweeping Edge IV",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "iron_sword → diamond_sword",
+       "Sharpness 6 → 7",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "attackDamage": 7,
+       "attackSpeed": 1.6,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_SWORD",
+      "enchants": [
+       "Sharpness VII",
+       "Sweeping Edge IV",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_sword → netherite_sword",
+       "Unbreaking 7 → 8"
+      ],
+      "stats": {
+       "attackDamage": 8,
+       "attackSpeed": 1.6,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L121"
+   }
   },
   {
    "id": "avalon-set-iron-pickaxe",
@@ -9172,7 +9511,67 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/AvalonSet.kt",
-   "cls": "AvalonSet"
+   "cls": "AvalonSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "IRON_PICKAXE",
+      "enchants": [
+       "Silk Touch",
+       "Efficiency VI",
+       "Unbreaking VII"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 4,
+       "attackSpeed": 1.2,
+       "durability": 250
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_PICKAXE",
+      "enchants": [
+       "Silk Touch",
+       "Efficiency VII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "iron_pickaxe → diamond_pickaxe",
+       "Efficiency 6 → 7",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "attackDamage": 5,
+       "attackSpeed": 1.2,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_PICKAXE",
+      "enchants": [
+       "Silk Touch",
+       "Efficiency VIII",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_pickaxe → netherite_pickaxe",
+       "Unbreaking 7 → 8",
+       "Efficiency 7 → 8"
+      ],
+      "stats": {
+       "attackDamage": 6,
+       "attackSpeed": 1.2,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L121"
+   }
   },
   {
    "id": "avalon-set-fishing-rod",
@@ -9208,7 +9607,58 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/AvalonSet.kt",
-   "cls": "AvalonSet"
+   "cls": "AvalonSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "FISHING_ROD",
+      "enchants": [
+       "Luck of the Sea IV",
+       "Lure IV",
+       "Unbreaking VII"
+      ],
+      "changed": [],
+      "stats": {
+       "durability": 64
+      }
+     },
+     {
+      "tier": 2,
+      "material": "FISHING_ROD",
+      "enchants": [
+       "Luck of the Sea IV",
+       "Lure IV",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "durability": 64
+      }
+     },
+     {
+      "tier": 3,
+      "material": "FISHING_ROD",
+      "enchants": [
+       "Luck of the Sea V",
+       "Lure IV",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "Unbreaking 7 → 8",
+       "Luck of the Sea 4 → 5"
+      ],
+      "stats": {
+       "durability": 64
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L121"
+   }
   },
   {
    "id": "blitz-set-diamond-axe",
@@ -9244,7 +9694,49 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/BlitzSet.kt",
-   "cls": "BlitzSet"
+   "cls": "BlitzSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_AXE",
+      "enchants": [
+       "Fortune III",
+       "Efficiency V",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 9,
+       "attackSpeed": 1,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_AXE",
+      "enchants": [
+       "Fortune IV",
+       "Efficiency VI",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_axe → netherite_axe",
+       "Mending 0 → 1",
+       "Unbreaking 6 → 7",
+       "Efficiency 5 → 6",
+       "Fortune 3 → 4"
+      ],
+      "stats": {
+       "attackDamage": 10,
+       "attackSpeed": 1,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L181"
+   }
   },
   {
    "id": "blitz-set-elytra",
@@ -9280,7 +9772,44 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/BlitzSet.kt",
-   "cls": "BlitzSet"
+   "cls": "BlitzSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "ELYTRA",
+      "enchants": [
+       "Blast Protection III",
+       "Feather Falling IV",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "durability": 432
+      }
+     },
+     {
+      "tier": 2,
+      "material": "ELYTRA",
+      "enchants": [
+       "Blast Protection IV",
+       "Feather Falling V",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "Mending 0 → 1",
+       "Unbreaking 6 → 7",
+       "Feather Falling 4 → 5",
+       "Blast Protection 3 → 4"
+      ],
+      "stats": {
+       "durability": 432
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L181"
+   }
   },
   {
    "id": "falter-set-diamond-pickaxe",
@@ -9322,7 +9851,52 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/FalterSet.kt",
-   "cls": "FalterSet"
+   "cls": "FalterSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_PICKAXE",
+      "enchants": [
+       "Sharpness VII",
+       "Smite VII",
+       "Fortune V",
+       "Efficiency VIII",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 5,
+       "attackSpeed": 1.2,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_PICKAXE",
+      "enchants": [
+       "Sharpness VII",
+       "Smite VII",
+       "Fortune V",
+       "Efficiency X",
+       "Unbreaking X",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_pickaxe → netherite_pickaxe",
+       "Efficiency 8 → 10",
+       "Unbreaking 8 → 10"
+      ],
+      "stats": {
+       "attackDamage": 6,
+       "attackSpeed": 1.2,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L142"
+   }
   },
   {
    "id": "falter-set-diamond-hoe",
@@ -9364,7 +9938,52 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/FalterSet.kt",
-   "cls": "FalterSet"
+   "cls": "FalterSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_HOE",
+      "enchants": [
+       "Sharpness VII",
+       "Smite VII",
+       "Fortune V",
+       "Efficiency VIII",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 1,
+       "attackSpeed": 4,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_HOE",
+      "enchants": [
+       "Sharpness VII",
+       "Smite VII",
+       "Fortune V",
+       "Efficiency X",
+       "Unbreaking X",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_hoe → netherite_hoe",
+       "Efficiency 8 → 10",
+       "Unbreaking 8 → 10"
+      ],
+      "stats": {
+       "attackDamage": 1,
+       "attackSpeed": 4,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L142"
+   }
   },
   {
    "id": "falter-set-diamond-axe",
@@ -9408,7 +10027,54 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/FalterSet.kt",
-   "cls": "FalterSet"
+   "cls": "FalterSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_AXE",
+      "enchants": [
+       "Sharpness VII",
+       "Smite VII",
+       "Fortune IV",
+       "Looting VI",
+       "Efficiency VIII",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 9,
+       "attackSpeed": 1,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_AXE",
+      "enchants": [
+       "Sharpness VII",
+       "Smite VII",
+       "Fortune IV",
+       "Looting VI",
+       "Efficiency X",
+       "Unbreaking X",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_axe → netherite_axe",
+       "Efficiency 8 → 10",
+       "Unbreaking 8 → 10"
+      ],
+      "stats": {
+       "attackDamage": 10,
+       "attackSpeed": 1,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L142"
+   }
   },
   {
    "id": "falter-set-fishing-rod",
@@ -9450,7 +10116,46 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/FalterSet.kt",
-   "cls": "FalterSet"
+   "cls": "FalterSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "FISHING_ROD",
+      "enchants": [
+       "Sharpness VII",
+       "Smite VII",
+       "Luck of the Sea VI",
+       "Lure V",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "durability": 64
+      }
+     },
+     {
+      "tier": 2,
+      "material": "FISHING_ROD",
+      "enchants": [
+       "Sharpness VII",
+       "Smite VII",
+       "Luck of the Sea VI",
+       "Lure V",
+       "Unbreaking X",
+       "Mending"
+      ],
+      "changed": [
+       "Unbreaking 8 → 10"
+      ],
+      "stats": {
+       "durability": 64
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L142"
+   }
   },
   {
    "id": "harbinger-set-copper-helmet",
@@ -9486,7 +10191,72 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/HarbingerSet.kt",
-   "cls": "HarbingerSet"
+   "cls": "HarbingerSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "COPPER_HELMET",
+      "enchants": [
+       "Protection VI",
+       "Respiration I",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 2,
+       "durability": 121
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_HELMET",
+      "enchants": [
+       "Protection VIII",
+       "Respiration II",
+       "Aqua Affinity",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "copper_helmet → diamond_helmet",
+       "Mending 0 → 1",
+       "Protection 6 → 8",
+       "Respiration 1 → 2",
+       "Aqua Affinity 0 → 1"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 2,
+       "durability": 363
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_HELMET",
+      "enchants": [
+       "Protection X",
+       "Respiration III",
+       "Aqua Affinity",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_helmet → netherite_helmet",
+       "Unbreaking 6 → 8",
+       "Protection 8 → 10",
+       "Respiration 2 → 3"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 407
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L224"
+   }
   },
   {
    "id": "harbinger-set-copper-chestplate",
@@ -9520,7 +10290,64 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/HarbingerSet.kt",
-   "cls": "HarbingerSet"
+   "cls": "HarbingerSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "COPPER_CHESTPLATE",
+      "enchants": [
+       "Protection VI",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 4,
+       "durability": 176
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_CHESTPLATE",
+      "enchants": [
+       "Protection VIII",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "copper_chestplate → diamond_chestplate",
+       "Mending 0 → 1",
+       "Protection 6 → 8"
+      ],
+      "stats": {
+       "armor": 8,
+       "toughness": 2,
+       "durability": 528
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_CHESTPLATE",
+      "enchants": [
+       "Protection X",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_chestplate → netherite_chestplate",
+       "Unbreaking 6 → 8",
+       "Protection 8 → 10"
+      ],
+      "stats": {
+       "armor": 8,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 592
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L224"
+   }
   },
   {
    "id": "harbinger-set-copper-leggings",
@@ -9556,7 +10383,69 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/HarbingerSet.kt",
-   "cls": "HarbingerSet"
+   "cls": "HarbingerSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "COPPER_LEGGINGS",
+      "enchants": [
+       "Protection VI",
+       "Swift Sneak I",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 3,
+       "durability": 165
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_LEGGINGS",
+      "enchants": [
+       "Protection VIII",
+       "Swift Sneak II",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "copper_leggings → diamond_leggings",
+       "Mending 0 → 1",
+       "Protection 6 → 8",
+       "Swift Sneak 1 → 2"
+      ],
+      "stats": {
+       "armor": 6,
+       "toughness": 2,
+       "durability": 495
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_LEGGINGS",
+      "enchants": [
+       "Protection X",
+       "Swift Sneak III",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_leggings → netherite_leggings",
+       "Unbreaking 6 → 8",
+       "Protection 8 → 10",
+       "Swift Sneak 2 → 3"
+      ],
+      "stats": {
+       "armor": 6,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 555
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L224"
+   }
   },
   {
    "id": "harbinger-set-copper-boots",
@@ -9592,7 +10481,73 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/HarbingerSet.kt",
-   "cls": "HarbingerSet"
+   "cls": "HarbingerSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "COPPER_BOOTS",
+      "enchants": [
+       "Protection VI",
+       "Feather Falling II",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 1,
+       "durability": 143
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_BOOTS",
+      "enchants": [
+       "Protection VIII",
+       "Feather Falling IV",
+       "Soul Speed II",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "copper_boots → diamond_boots",
+       "Mending 0 → 1",
+       "Protection 6 → 8",
+       "Feather Falling 2 → 4",
+       "Soul Speed 0 → 2"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 2,
+       "durability": 429
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_BOOTS",
+      "enchants": [
+       "Protection X",
+       "Feather Falling VI",
+       "Soul Speed III",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_boots → netherite_boots",
+       "Unbreaking 6 → 8",
+       "Protection 8 → 10",
+       "Feather Falling 4 → 6",
+       "Soul Speed 2 → 3"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 481
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L224"
+   }
   },
   {
    "id": "harbinger-set-elytra",
@@ -9628,7 +10583,59 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/HarbingerSet.kt",
-   "cls": "HarbingerSet"
+   "cls": "HarbingerSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "ELYTRA",
+      "enchants": [
+       "Protection VI",
+       "Feather Falling II",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "durability": 432
+      }
+     },
+     {
+      "tier": 2,
+      "material": "ELYTRA",
+      "enchants": [
+       "Protection VI",
+       "Feather Falling IV",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "Mending 0 → 1",
+       "Feather Falling 2 → 4"
+      ],
+      "stats": {
+       "durability": 432
+      }
+     },
+     {
+      "tier": 3,
+      "material": "ELYTRA",
+      "enchants": [
+       "Protection VI",
+       "Feather Falling VI",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "Unbreaking 6 → 8",
+       "Feather Falling 4 → 6"
+      ],
+      "stats": {
+       "durability": 432
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L224"
+   }
   },
   {
    "id": "kazkan-set-iron-axe",
@@ -9670,7 +10677,75 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/KazkanSet.kt",
-   "cls": "KazkanSet"
+   "cls": "KazkanSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "IRON_AXE",
+      "enchants": [
+       "Sharpness VI",
+       "Bane of Arthropods V",
+       "Looting III",
+       "Unbreaking VII"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 9,
+       "attackSpeed": 0.9,
+       "durability": 250
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_AXE",
+      "enchants": [
+       "Sharpness VII",
+       "Bane of Arthropods VI",
+       "Looting IV",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "iron_axe → diamond_axe",
+       "Unbreaking 7 → 8",
+       "Mending 0 → 1",
+       "Sharpness 6 → 7",
+       "Looting 3 → 4",
+       "Bane of Arthropods 5 → 6"
+      ],
+      "stats": {
+       "attackDamage": 9,
+       "attackSpeed": 1,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_AXE",
+      "enchants": [
+       "Sharpness VIII",
+       "Bane of Arthropods VII",
+       "Looting V",
+       "Unbreaking IX",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_axe → netherite_axe",
+       "Unbreaking 8 → 9",
+       "Sharpness 7 → 8",
+       "Looting 4 → 5",
+       "Bane of Arthropods 6 → 7"
+      ],
+      "stats": {
+       "attackDamage": 10,
+       "attackSpeed": 1,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L195"
+   }
   },
   {
    "id": "kazkan-set-crossbow",
@@ -9709,7 +10784,62 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/KazkanSet.kt",
-   "cls": "KazkanSet"
+   "cls": "KazkanSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "CROSSBOW",
+      "enchants": [
+       "Piercing IV",
+       "Quick Charge II",
+       "Unbreaking VII"
+      ],
+      "changed": [],
+      "stats": {
+       "durability": 465
+      }
+     },
+     {
+      "tier": 2,
+      "material": "CROSSBOW",
+      "enchants": [
+       "Piercing V",
+       "Quick Charge III",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "Unbreaking 7 → 8",
+       "Mending 0 → 1",
+       "Quick Charge 2 → 3",
+       "Piercing 4 → 5"
+      ],
+      "stats": {
+       "durability": 465
+      }
+     },
+     {
+      "tier": 3,
+      "material": "CROSSBOW",
+      "enchants": [
+       "Piercing VI",
+       "Quick Charge IV",
+       "Unbreaking IX",
+       "Mending"
+      ],
+      "changed": [
+       "Unbreaking 8 → 9",
+       "Quick Charge 3 → 4",
+       "Piercing 5 → 6"
+      ],
+      "stats": {
+       "durability": 465
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L195"
+   }
   },
   {
    "id": "kazkan-set-blaze-rod",
@@ -9747,7 +10877,51 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/KazkanSet.kt",
-   "cls": "KazkanSet"
+   "cls": "KazkanSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "BLAZE_ROD",
+      "enchants": [
+       "Unbreaking VII"
+      ],
+      "changed": [],
+      "stats": {}
+     },
+     {
+      "tier": 2,
+      "material": "BLAZE_ROD",
+      "enchants": [
+       "Fire Aspect III",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "Unbreaking 7 → 8",
+       "Mending 0 → 1",
+       "Fire Aspect 0 → 3"
+      ],
+      "stats": {}
+     },
+     {
+      "tier": 3,
+      "material": "BLAZE_ROD",
+      "enchants": [
+       "Fire Aspect V",
+       "Knockback III",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "Fire Aspect 3 → 5",
+       "Knockback 0 → 3"
+      ],
+      "stats": {}
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L195"
+   }
   },
   {
    "id": "kazkan-set-shield",
@@ -9779,7 +10953,58 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/KazkanSet.kt",
-   "cls": "KazkanSet"
+   "cls": "KazkanSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "SHIELD",
+      "enchants": [
+       "Sharpness V",
+       "Fire Aspect IV",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "durability": 336
+      }
+     },
+     {
+      "tier": 2,
+      "material": "SHIELD",
+      "enchants": [
+       "Sharpness V",
+       "Fire Aspect IV",
+       "Unbreaking VIII",
+       "Mending"
+      ],
+      "changed": [
+       "Unbreaking 7 → 8"
+      ],
+      "stats": {
+       "durability": 336
+      }
+     },
+     {
+      "tier": 3,
+      "material": "SHIELD",
+      "enchants": [
+       "Sharpness V",
+       "Fire Aspect IV",
+       "Unbreaking IX",
+       "Mending"
+      ],
+      "changed": [
+       "Unbreaking 8 → 9"
+      ],
+      "stats": {
+       "durability": 336
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L195"
+   }
   },
   {
    "id": "magmatic-set-diamond-helmet",
@@ -9812,7 +11037,47 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MagmaticSet.kt",
-   "cls": "MagmaticSet"
+   "cls": "MagmaticSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_HELMET",
+      "enchants": [
+       "Protection V",
+       "Thorns III",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 3,
+       "toughness": 2,
+       "durability": 363
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_HELMET",
+      "enchants": [
+       "Protection V",
+       "Thorns III",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_helmet → netherite_helmet",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 407
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L51"
+   }
   },
   {
    "id": "magmatic-set-diamond-chestplate",
@@ -9845,7 +11110,47 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MagmaticSet.kt",
-   "cls": "MagmaticSet"
+   "cls": "MagmaticSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_CHESTPLATE",
+      "enchants": [
+       "Protection V",
+       "Thorns III",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 8,
+       "toughness": 2,
+       "durability": 528
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_CHESTPLATE",
+      "enchants": [
+       "Protection V",
+       "Thorns III",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_chestplate → netherite_chestplate",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "armor": 8,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 592
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L51"
+   }
   },
   {
    "id": "magmatic-set-diamond-leggings",
@@ -9878,7 +11183,47 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MagmaticSet.kt",
-   "cls": "MagmaticSet"
+   "cls": "MagmaticSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_LEGGINGS",
+      "enchants": [
+       "Protection V",
+       "Thorns III",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 6,
+       "toughness": 2,
+       "durability": 495
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_LEGGINGS",
+      "enchants": [
+       "Protection V",
+       "Thorns III",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_leggings → netherite_leggings",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "armor": 6,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 555
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L51"
+   }
   },
   {
    "id": "magmatic-set-diamond-boots",
@@ -9913,7 +11258,49 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MagmaticSet.kt",
-   "cls": "MagmaticSet"
+   "cls": "MagmaticSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_BOOTS",
+      "enchants": [
+       "Protection V",
+       "Feather Falling IV",
+       "Thorns III",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 3,
+       "toughness": 2,
+       "durability": 429
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_BOOTS",
+      "enchants": [
+       "Protection V",
+       "Feather Falling IV",
+       "Thorns III",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_boots → netherite_boots",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 481
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L51"
+   }
   },
   {
    "id": "magmatic-set-diamond-sword",
@@ -9955,7 +11342,50 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MagmaticSet.kt",
-   "cls": "MagmaticSet"
+   "cls": "MagmaticSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_SWORD",
+      "enchants": [
+       "Sharpness VI",
+       "Sweeping Edge IV",
+       "Fire Aspect III",
+       "Looting III",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 7,
+       "attackSpeed": 1.6,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_SWORD",
+      "enchants": [
+       "Sharpness VI",
+       "Sweeping Edge IV",
+       "Fire Aspect III",
+       "Looting III",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_sword → netherite_sword",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "attackDamage": 8,
+       "attackSpeed": 1.6,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L51"
+   }
   },
   {
    "id": "magmatic-set-diamond-pickaxe",
@@ -9992,7 +11422,46 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MagmaticSet.kt",
-   "cls": "MagmaticSet"
+   "cls": "MagmaticSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_PICKAXE",
+      "enchants": [
+       "Fortune III",
+       "Efficiency V",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 5,
+       "attackSpeed": 1.2,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_PICKAXE",
+      "enchants": [
+       "Fortune III",
+       "Efficiency V",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_pickaxe → netherite_pickaxe",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "attackDamage": 6,
+       "attackSpeed": 1.2,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L51"
+   }
   },
   {
    "id": "magmatic-set-diamond-shovel",
@@ -10029,7 +11498,46 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MagmaticSet.kt",
-   "cls": "MagmaticSet"
+   "cls": "MagmaticSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_SHOVEL",
+      "enchants": [
+       "Fortune III",
+       "Efficiency V",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 5.5,
+       "attackSpeed": 1,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_SHOVEL",
+      "enchants": [
+       "Fortune III",
+       "Efficiency V",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_shovel → netherite_shovel",
+       "Mending 0 → 1"
+      ],
+      "stats": {
+       "attackDamage": 6.5,
+       "attackSpeed": 1,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L51"
+   }
   },
   {
    "id": "meluka-set-golden-helmet",
@@ -10067,7 +11575,91 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MelukaSet.kt",
-   "cls": "MelukaSet"
+   "cls": "MelukaSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "GOLDEN_HELMET",
+      "enchants": [
+       "Protection V",
+       "Respiration III",
+       "Aqua Affinity II",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 2,
+       "durability": 77
+      }
+     },
+     {
+      "tier": 2,
+      "material": "IRON_HELMET",
+      "enchants": [
+       "Protection VI",
+       "Respiration IV",
+       "Aqua Affinity II",
+       "Unbreaking V"
+      ],
+      "changed": [
+       "golden_helmet → iron_helmet",
+       "Respiration 3 → 4",
+       "Protection 5 → 6"
+      ],
+      "stats": {
+       "armor": 2,
+       "durability": 165
+      }
+     },
+     {
+      "tier": 3,
+      "material": "DIAMOND_HELMET",
+      "enchants": [
+       "Protection VI",
+       "Respiration V",
+       "Aqua Affinity II",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "iron_helmet → diamond_helmet",
+       "Mending 0 → 1",
+       "Unbreaking 5 → 6",
+       "Respiration 4 → 5"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 2,
+       "durability": 363
+      }
+     },
+     {
+      "tier": 4,
+      "material": "NETHERITE_HELMET",
+      "enchants": [
+       "Protection VII",
+       "Respiration VI",
+       "Aqua Affinity II",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_helmet → netherite_helmet",
+       "Unbreaking 6 → 7",
+       "Respiration 5 → 6",
+       "Protection 6 → 7"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 407
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L79"
+   }
   },
   {
    "id": "meluka-set-golden-chestplate",
@@ -10101,7 +11693,80 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MelukaSet.kt",
-   "cls": "MelukaSet"
+   "cls": "MelukaSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "GOLDEN_CHESTPLATE",
+      "enchants": [
+       "Protection V",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 5,
+       "durability": 112
+      }
+     },
+     {
+      "tier": 2,
+      "material": "IRON_CHESTPLATE",
+      "enchants": [
+       "Protection VI",
+       "Unbreaking V"
+      ],
+      "changed": [
+       "golden_chestplate → iron_chestplate",
+       "Protection 5 → 6"
+      ],
+      "stats": {
+       "armor": 6,
+       "durability": 240
+      }
+     },
+     {
+      "tier": 3,
+      "material": "DIAMOND_CHESTPLATE",
+      "enchants": [
+       "Protection VI",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "iron_chestplate → diamond_chestplate",
+       "Mending 0 → 1",
+       "Unbreaking 5 → 6"
+      ],
+      "stats": {
+       "armor": 8,
+       "toughness": 2,
+       "durability": 528
+      }
+     },
+     {
+      "tier": 4,
+      "material": "NETHERITE_CHESTPLATE",
+      "enchants": [
+       "Protection VII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_chestplate → netherite_chestplate",
+       "Unbreaking 6 → 7",
+       "Protection 6 → 7"
+      ],
+      "stats": {
+       "armor": 8,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 592
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L79"
+   }
   },
   {
    "id": "meluka-set-golden-leggings",
@@ -10135,7 +11800,80 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MelukaSet.kt",
-   "cls": "MelukaSet"
+   "cls": "MelukaSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "GOLDEN_LEGGINGS",
+      "enchants": [
+       "Protection V",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 3,
+       "durability": 105
+      }
+     },
+     {
+      "tier": 2,
+      "material": "IRON_LEGGINGS",
+      "enchants": [
+       "Protection VI",
+       "Unbreaking V"
+      ],
+      "changed": [
+       "golden_leggings → iron_leggings",
+       "Protection 5 → 6"
+      ],
+      "stats": {
+       "armor": 5,
+       "durability": 225
+      }
+     },
+     {
+      "tier": 3,
+      "material": "DIAMOND_LEGGINGS",
+      "enchants": [
+       "Protection VI",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "iron_leggings → diamond_leggings",
+       "Mending 0 → 1",
+       "Unbreaking 5 → 6"
+      ],
+      "stats": {
+       "armor": 6,
+       "toughness": 2,
+       "durability": 495
+      }
+     },
+     {
+      "tier": 4,
+      "material": "NETHERITE_LEGGINGS",
+      "enchants": [
+       "Protection VII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_leggings → netherite_leggings",
+       "Unbreaking 6 → 7",
+       "Protection 6 → 7"
+      ],
+      "stats": {
+       "armor": 6,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 555
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L79"
+   }
   },
   {
    "id": "meluka-set-golden-boots",
@@ -10171,7 +11909,85 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MelukaSet.kt",
-   "cls": "MelukaSet"
+   "cls": "MelukaSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "GOLDEN_BOOTS",
+      "enchants": [
+       "Protection V",
+       "Depth Strider III",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 1,
+       "durability": 91
+      }
+     },
+     {
+      "tier": 2,
+      "material": "IRON_BOOTS",
+      "enchants": [
+       "Protection VI",
+       "Depth Strider IV",
+       "Unbreaking V"
+      ],
+      "changed": [
+       "golden_boots → iron_boots",
+       "Depth Strider 3 → 4",
+       "Protection 5 → 6"
+      ],
+      "stats": {
+       "armor": 2,
+       "durability": 195
+      }
+     },
+     {
+      "tier": 3,
+      "material": "DIAMOND_BOOTS",
+      "enchants": [
+       "Protection VI",
+       "Depth Strider IV",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "iron_boots → diamond_boots",
+       "Mending 0 → 1",
+       "Unbreaking 5 → 6"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 2,
+       "durability": 429
+      }
+     },
+     {
+      "tier": 4,
+      "material": "NETHERITE_BOOTS",
+      "enchants": [
+       "Protection VII",
+       "Depth Strider IV",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_boots → netherite_boots",
+       "Unbreaking 6 → 7",
+       "Protection 6 → 7"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 481
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L79"
+   }
   },
   {
    "id": "meluka-set-golden-pickaxe",
@@ -10208,7 +12024,86 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MelukaSet.kt",
-   "cls": "MelukaSet"
+   "cls": "MelukaSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "GOLDEN_PICKAXE",
+      "enchants": [
+       "Silk Touch",
+       "Efficiency IV",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 2,
+       "attackSpeed": 1.2,
+       "durability": 32
+      }
+     },
+     {
+      "tier": 2,
+      "material": "IRON_PICKAXE",
+      "enchants": [
+       "Silk Touch",
+       "Efficiency V",
+       "Unbreaking V"
+      ],
+      "changed": [
+       "golden_pickaxe → iron_pickaxe",
+       "Efficiency 4 → 5"
+      ],
+      "stats": {
+       "attackDamage": 4,
+       "attackSpeed": 1.2,
+       "durability": 250
+      }
+     },
+     {
+      "tier": 3,
+      "material": "DIAMOND_PICKAXE",
+      "enchants": [
+       "Silk Touch",
+       "Efficiency VI",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "iron_pickaxe → diamond_pickaxe",
+       "Efficiency 5 → 6",
+       "Mending 0 → 1",
+       "Unbreaking 5 → 6"
+      ],
+      "stats": {
+       "attackDamage": 5,
+       "attackSpeed": 1.2,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 4,
+      "material": "NETHERITE_PICKAXE",
+      "enchants": [
+       "Silk Touch",
+       "Efficiency VII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_pickaxe → netherite_pickaxe",
+       "Efficiency 6 → 7",
+       "Unbreaking 6 → 7"
+      ],
+      "stats": {
+       "attackDamage": 6,
+       "attackSpeed": 1.2,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L79"
+   }
   },
   {
    "id": "meluka-set-golden-shovel",
@@ -10245,7 +12140,86 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/MelukaSet.kt",
-   "cls": "MelukaSet"
+   "cls": "MelukaSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "GOLDEN_SHOVEL",
+      "enchants": [
+       "Silk Touch",
+       "Efficiency IV",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 2.5,
+       "attackSpeed": 1,
+       "durability": 32
+      }
+     },
+     {
+      "tier": 2,
+      "material": "IRON_SHOVEL",
+      "enchants": [
+       "Silk Touch",
+       "Efficiency V",
+       "Unbreaking V"
+      ],
+      "changed": [
+       "golden_shovel → iron_shovel",
+       "Efficiency 4 → 5"
+      ],
+      "stats": {
+       "attackDamage": 4.5,
+       "attackSpeed": 1,
+       "durability": 250
+      }
+     },
+     {
+      "tier": 3,
+      "material": "DIAMOND_SHOVEL",
+      "enchants": [
+       "Silk Touch",
+       "Efficiency VI",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "iron_shovel → diamond_shovel",
+       "Efficiency 5 → 6",
+       "Mending 0 → 1",
+       "Unbreaking 5 → 6"
+      ],
+      "stats": {
+       "attackDamage": 5.5,
+       "attackSpeed": 1,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 4,
+      "material": "NETHERITE_SHOVEL",
+      "enchants": [
+       "Silk Touch",
+       "Efficiency VII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_shovel → netherite_shovel",
+       "Efficiency 6 → 7",
+       "Unbreaking 6 → 7"
+      ],
+      "stats": {
+       "attackDamage": 6.5,
+       "attackSpeed": 1,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L79"
+   }
   },
   {
    "id": "reforged-set-netherite-helmet",
@@ -10283,7 +12257,51 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/ReforgedSet.kt",
-   "cls": "ReforgedSet"
+   "cls": "ReforgedSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "NETHERITE_HELMET",
+      "enchants": [
+       "Protection VII",
+       "Respiration III",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 407
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_HELMET",
+      "enchants": [
+       "Protection VIII",
+       "Respiration III",
+       "Aqua Affinity",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "Protection 7 → 8",
+       "Aqua Affinity 0 → 1",
+       "Unbreaking 6 → 7"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 407
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L152"
+   }
   },
   {
    "id": "reforged-set-netherite-chestplate",
@@ -10319,7 +12337,47 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/ReforgedSet.kt",
-   "cls": "ReforgedSet"
+   "cls": "ReforgedSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "NETHERITE_CHESTPLATE",
+      "enchants": [
+       "Protection VII",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 8,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 592
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_CHESTPLATE",
+      "enchants": [
+       "Protection VIII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "Protection 7 → 8",
+       "Unbreaking 6 → 7"
+      ],
+      "stats": {
+       "armor": 8,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 592
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L152"
+   }
   },
   {
    "id": "reforged-set-netherite-leggings",
@@ -10355,7 +12413,47 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/ReforgedSet.kt",
-   "cls": "ReforgedSet"
+   "cls": "ReforgedSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "NETHERITE_LEGGINGS",
+      "enchants": [
+       "Protection VII",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 6,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 555
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_LEGGINGS",
+      "enchants": [
+       "Protection VIII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "Protection 7 → 8",
+       "Unbreaking 6 → 7"
+      ],
+      "stats": {
+       "armor": 6,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 555
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L152"
+   }
   },
   {
    "id": "reforged-set-netherite-boots",
@@ -10395,7 +12493,53 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/ReforgedSet.kt",
-   "cls": "ReforgedSet"
+   "cls": "ReforgedSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "NETHERITE_BOOTS",
+      "enchants": [
+       "Protection VII",
+       "Feather Falling IV",
+       "Depth Strider III",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 481
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_BOOTS",
+      "enchants": [
+       "Protection VIII",
+       "Feather Falling IV",
+       "Soul Speed III",
+       "Depth Strider III",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "Protection 7 → 8",
+       "Soul Speed 0 → 3",
+       "Unbreaking 6 → 7"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 481
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L152"
+   }
   },
   {
    "id": "valley-set-golden-shovel",
@@ -10434,7 +12578,67 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/ValleySet.kt",
-   "cls": "ValleySet"
+   "cls": "ValleySet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "GOLDEN_SHOVEL",
+      "enchants": [
+       "Fortune V",
+       "Efficiency VI",
+       "Unbreaking V",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 2.5,
+       "attackSpeed": 1,
+       "durability": 32
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_SHOVEL",
+      "enchants": [
+       "Fortune V",
+       "Efficiency VII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "golden_shovel → diamond_shovel",
+       "Efficiency 6 → 7",
+       "Unbreaking 5 → 7"
+      ],
+      "stats": {
+       "attackDamage": 5.5,
+       "attackSpeed": 1,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_SHOVEL",
+      "enchants": [
+       "Fortune V",
+       "Efficiency VIII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_shovel → netherite_shovel",
+       "Efficiency 7 → 8"
+      ],
+      "stats": {
+       "attackDamage": 6.5,
+       "attackSpeed": 1,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L164"
+   }
   },
   {
    "id": "valley-set-golden-sword",
@@ -10474,7 +12678,68 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/ValleySet.kt",
-   "cls": "ValleySet"
+   "cls": "ValleySet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "GOLDEN_SWORD",
+      "enchants": [
+       "Sharpness VI",
+       "Smite VI",
+       "Sweeping Edge IV",
+       "Unbreaking V",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 4,
+       "attackSpeed": 1.6,
+       "durability": 32
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_SWORD",
+      "enchants": [
+       "Sharpness VI",
+       "Smite VI",
+       "Sweeping Edge IV",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "golden_sword → diamond_sword",
+       "Unbreaking 5 → 7"
+      ],
+      "stats": {
+       "attackDamage": 7,
+       "attackSpeed": 1.6,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_SWORD",
+      "enchants": [
+       "Sharpness VI",
+       "Smite VI",
+       "Sweeping Edge IV",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_sword → netherite_sword"
+      ],
+      "stats": {
+       "attackDamage": 8,
+       "attackSpeed": 1.6,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L164"
+   }
   },
   {
    "id": "valley-set-golden-axe",
@@ -10509,7 +12774,67 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/ValleySet.kt",
-   "cls": "ValleySet"
+   "cls": "ValleySet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "GOLDEN_AXE",
+      "enchants": [
+       "Fortune V",
+       "Efficiency VI",
+       "Unbreaking V",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 7,
+       "attackSpeed": 1,
+       "durability": 32
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_AXE",
+      "enchants": [
+       "Fortune V",
+       "Efficiency VII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "golden_axe → diamond_axe",
+       "Efficiency 6 → 7",
+       "Unbreaking 5 → 7"
+      ],
+      "stats": {
+       "attackDamage": 9,
+       "attackSpeed": 1,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_AXE",
+      "enchants": [
+       "Fortune V",
+       "Efficiency VIII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_axe → netherite_axe",
+       "Efficiency 7 → 8"
+      ],
+      "stats": {
+       "attackDamage": 10,
+       "attackSpeed": 1,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L164"
+   }
   },
   {
    "id": "valley-set-golden-hoe",
@@ -10547,7 +12872,67 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/ValleySet.kt",
-   "cls": "ValleySet"
+   "cls": "ValleySet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "GOLDEN_HOE",
+      "enchants": [
+       "Fortune V",
+       "Efficiency VI",
+       "Unbreaking V",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 1,
+       "attackSpeed": 1,
+       "durability": 32
+      }
+     },
+     {
+      "tier": 2,
+      "material": "DIAMOND_HOE",
+      "enchants": [
+       "Fortune V",
+       "Efficiency VII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "golden_hoe → diamond_hoe",
+       "Efficiency 6 → 7",
+       "Unbreaking 5 → 7"
+      ],
+      "stats": {
+       "attackDamage": 1,
+       "attackSpeed": 4,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 3,
+      "material": "NETHERITE_HOE",
+      "enchants": [
+       "Fortune V",
+       "Efficiency VIII",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_hoe → netherite_hoe",
+       "Efficiency 7 → 8"
+      ],
+      "stats": {
+       "attackDamage": 1,
+       "attackSpeed": 4,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L164"
+   }
   },
   {
    "id": "valley-set-fishing-rod",
@@ -10582,7 +12967,58 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/ValleySet.kt",
-   "cls": "ValleySet"
+   "cls": "ValleySet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "FISHING_ROD",
+      "enchants": [
+       "Luck of the Sea IV",
+       "Lure IV",
+       "Unbreaking V",
+       "Mending"
+      ],
+      "changed": [],
+      "stats": {
+       "durability": 64
+      }
+     },
+     {
+      "tier": 2,
+      "material": "FISHING_ROD",
+      "enchants": [
+       "Luck of the Sea IV",
+       "Lure IV",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "Unbreaking 5 → 7"
+      ],
+      "stats": {
+       "durability": 64
+      }
+     },
+     {
+      "tier": 3,
+      "material": "FISHING_ROD",
+      "enchants": [
+       "Luck of the Sea IV",
+       "Lure V",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "Lure 4 → 5"
+      ],
+      "stats": {
+       "durability": 64
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L164"
+   }
   },
   {
    "id": "venom-set-diamond-helmet",
@@ -10619,7 +13055,50 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VenomSet.kt",
-   "cls": "VenomSet"
+   "cls": "VenomSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_HELMET",
+      "enchants": [
+       "Protection V",
+       "Thorns IV",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 3,
+       "toughness": 2,
+       "durability": 363
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_HELMET",
+      "enchants": [
+       "Protection VI",
+       "Thorns V",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_helmet → netherite_helmet",
+       "Mending 0 → 1",
+       "Protection 5 → 6",
+       "Unbreaking 5 → 6",
+       "Thorns 4 → 5"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 407
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L66"
+   }
   },
   {
    "id": "venom-set-diamond-chestplate",
@@ -10656,7 +13135,50 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VenomSet.kt",
-   "cls": "VenomSet"
+   "cls": "VenomSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_CHESTPLATE",
+      "enchants": [
+       "Protection V",
+       "Thorns IV",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 8,
+       "toughness": 2,
+       "durability": 528
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_CHESTPLATE",
+      "enchants": [
+       "Protection VI",
+       "Thorns V",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_chestplate → netherite_chestplate",
+       "Mending 0 → 1",
+       "Protection 5 → 6",
+       "Unbreaking 5 → 6",
+       "Thorns 4 → 5"
+      ],
+      "stats": {
+       "armor": 8,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 592
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L66"
+   }
   },
   {
    "id": "venom-set-diamond-leggings",
@@ -10693,7 +13215,50 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VenomSet.kt",
-   "cls": "VenomSet"
+   "cls": "VenomSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_LEGGINGS",
+      "enchants": [
+       "Protection V",
+       "Thorns IV",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 6,
+       "toughness": 2,
+       "durability": 495
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_LEGGINGS",
+      "enchants": [
+       "Protection VI",
+       "Thorns V",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_leggings → netherite_leggings",
+       "Mending 0 → 1",
+       "Protection 5 → 6",
+       "Unbreaking 5 → 6",
+       "Thorns 4 → 5"
+      ],
+      "stats": {
+       "armor": 6,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 555
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L66"
+   }
   },
   {
    "id": "venom-set-diamond-boots",
@@ -10732,7 +13297,52 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VenomSet.kt",
-   "cls": "VenomSet"
+   "cls": "VenomSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_BOOTS",
+      "enchants": [
+       "Protection V",
+       "Feather Falling IV",
+       "Thorns IV",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 3,
+       "toughness": 2,
+       "durability": 429
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_BOOTS",
+      "enchants": [
+       "Protection VI",
+       "Feather Falling IV",
+       "Thorns V",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_boots → netherite_boots",
+       "Mending 0 → 1",
+       "Protection 5 → 6",
+       "Unbreaking 5 → 6",
+       "Thorns 4 → 5"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 481
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L66"
+   }
   },
   {
    "id": "venom-set-diamond-sword",
@@ -10769,7 +13379,48 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VenomSet.kt",
-   "cls": "VenomSet"
+   "cls": "VenomSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_SWORD",
+      "enchants": [
+       "Sharpness VI",
+       "Sweeping Edge IV",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 7,
+       "attackSpeed": 1.6,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_SWORD",
+      "enchants": [
+       "Sharpness VII",
+       "Sweeping Edge IV",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_sword → netherite_sword",
+       "Mending 0 → 1",
+       "Sharpness 6 → 7",
+       "Unbreaking 5 → 6"
+      ],
+      "stats": {
+       "attackDamage": 8,
+       "attackSpeed": 1.6,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L66"
+   }
   },
   {
    "id": "venom-set-diamond-axe",
@@ -10804,7 +13455,46 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VenomSet.kt",
-   "cls": "VenomSet"
+   "cls": "VenomSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_AXE",
+      "enchants": [
+       "Sharpness VI",
+       "Unbreaking V"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 9,
+       "attackSpeed": 1,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_AXE",
+      "enchants": [
+       "Sharpness VII",
+       "Unbreaking VI",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_axe → netherite_axe",
+       "Mending 0 → 1",
+       "Sharpness 6 → 7",
+       "Unbreaking 5 → 6"
+      ],
+      "stats": {
+       "attackDamage": 10,
+       "attackSpeed": 1,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L66"
+   }
   },
   {
    "id": "verdant-set-diamond-pickaxe",
@@ -10841,7 +13531,49 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VerdantSet.kt",
-   "cls": "VerdantSet"
+   "cls": "VerdantSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_PICKAXE",
+      "enchants": [
+       "Fortune II",
+       "Efficiency V",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 5,
+       "attackSpeed": 1.2,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_PICKAXE",
+      "enchants": [
+       "Fortune III",
+       "Efficiency VI",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_pickaxe → netherite_pickaxe",
+       "Mending 0 → 1",
+       "Unbreaking 6 → 7",
+       "Efficiency 5 → 6",
+       "Fortune 2 → 3"
+      ],
+      "stats": {
+       "attackDamage": 6,
+       "attackSpeed": 1.2,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L251"
+   }
   },
   {
    "id": "verdant-set-diamond-axe",
@@ -10878,7 +13610,49 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VerdantSet.kt",
-   "cls": "VerdantSet"
+   "cls": "VerdantSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_AXE",
+      "enchants": [
+       "Fortune II",
+       "Efficiency V",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 9,
+       "attackSpeed": 1,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_AXE",
+      "enchants": [
+       "Fortune III",
+       "Efficiency VI",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_axe → netherite_axe",
+       "Mending 0 → 1",
+       "Unbreaking 6 → 7",
+       "Efficiency 5 → 6",
+       "Fortune 2 → 3"
+      ],
+      "stats": {
+       "attackDamage": 10,
+       "attackSpeed": 1,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L251"
+   }
   },
   {
    "id": "verdant-set-diamond-hoe",
@@ -10915,7 +13689,49 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VerdantSet.kt",
-   "cls": "VerdantSet"
+   "cls": "VerdantSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_HOE",
+      "enchants": [
+       "Fortune II",
+       "Efficiency V",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 1,
+       "attackSpeed": 4,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_HOE",
+      "enchants": [
+       "Fortune III",
+       "Efficiency VI",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_hoe → netherite_hoe",
+       "Mending 0 → 1",
+       "Unbreaking 6 → 7",
+       "Efficiency 5 → 6",
+       "Fortune 2 → 3"
+      ],
+      "stats": {
+       "attackDamage": 1,
+       "attackSpeed": 4,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L251"
+   }
   },
   {
    "id": "verdant-set-diamond-shovel",
@@ -10952,7 +13768,49 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VerdantSet.kt",
-   "cls": "VerdantSet"
+   "cls": "VerdantSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_SHOVEL",
+      "enchants": [
+       "Fortune II",
+       "Efficiency V",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "attackDamage": 5.5,
+       "attackSpeed": 1,
+       "durability": 1561
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_SHOVEL",
+      "enchants": [
+       "Fortune III",
+       "Efficiency VI",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_shovel → netherite_shovel",
+       "Mending 0 → 1",
+       "Unbreaking 6 → 7",
+       "Efficiency 5 → 6",
+       "Fortune 2 → 3"
+      ],
+      "stats": {
+       "attackDamage": 6.5,
+       "attackSpeed": 1,
+       "durability": 2031
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L251"
+   }
   },
   {
    "id": "verdant-set-diamond-helmet",
@@ -10994,7 +13852,58 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VerdantSet.kt",
-   "cls": "VerdantSet"
+   "cls": "VerdantSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_HELMET",
+      "enchants": [
+       "Protection IV",
+       "Blast Protection III",
+       "Fire Protection III",
+       "Respiration II",
+       "Aqua Affinity",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 3,
+       "toughness": 2,
+       "durability": 363
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_HELMET",
+      "enchants": [
+       "Protection V",
+       "Blast Protection IV",
+       "Fire Protection IV",
+       "Respiration III",
+       "Aqua Affinity",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_helmet → netherite_helmet",
+       "Mending 0 → 1",
+       "Unbreaking 6 → 7",
+       "Protection 4 → 5",
+       "Fire Protection 3 → 4",
+       "Blast Protection 3 → 4",
+       "Respiration 2 → 3"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 407
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L251"
+   }
   },
   {
    "id": "verdant-set-diamond-chestplate",
@@ -11032,7 +13941,53 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VerdantSet.kt",
-   "cls": "VerdantSet"
+   "cls": "VerdantSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_CHESTPLATE",
+      "enchants": [
+       "Protection IV",
+       "Blast Protection III",
+       "Fire Protection III",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 8,
+       "toughness": 2,
+       "durability": 528
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_CHESTPLATE",
+      "enchants": [
+       "Protection V",
+       "Blast Protection IV",
+       "Fire Protection IV",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_chestplate → netherite_chestplate",
+       "Mending 0 → 1",
+       "Unbreaking 6 → 7",
+       "Protection 4 → 5",
+       "Fire Protection 3 → 4",
+       "Blast Protection 3 → 4"
+      ],
+      "stats": {
+       "armor": 8,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 592
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L251"
+   }
   },
   {
    "id": "verdant-set-diamond-leggings",
@@ -11070,7 +14025,53 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VerdantSet.kt",
-   "cls": "VerdantSet"
+   "cls": "VerdantSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_LEGGINGS",
+      "enchants": [
+       "Protection IV",
+       "Blast Protection III",
+       "Fire Protection III",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 6,
+       "toughness": 2,
+       "durability": 495
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_LEGGINGS",
+      "enchants": [
+       "Protection V",
+       "Blast Protection IV",
+       "Fire Protection IV",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_leggings → netherite_leggings",
+       "Mending 0 → 1",
+       "Unbreaking 6 → 7",
+       "Protection 4 → 5",
+       "Fire Protection 3 → 4",
+       "Blast Protection 3 → 4"
+      ],
+      "stats": {
+       "armor": 6,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 555
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L251"
+   }
   },
   {
    "id": "verdant-set-diamond-boots",
@@ -11110,7 +14111,56 @@
    ],
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/astral/sets/VerdantSet.kt",
-   "cls": "VerdantSet"
+   "cls": "VerdantSet",
+   "upgrades": {
+    "path": [
+     {
+      "tier": 1,
+      "material": "DIAMOND_BOOTS",
+      "enchants": [
+       "Protection IV",
+       "Blast Protection III",
+       "Fire Protection III",
+       "Feather Falling IV",
+       "Unbreaking VI"
+      ],
+      "changed": [],
+      "stats": {
+       "armor": 3,
+       "toughness": 2,
+       "durability": 429
+      }
+     },
+     {
+      "tier": 2,
+      "material": "NETHERITE_BOOTS",
+      "enchants": [
+       "Protection V",
+       "Blast Protection IV",
+       "Fire Protection IV",
+       "Feather Falling V",
+       "Unbreaking VII",
+       "Mending"
+      ],
+      "changed": [
+       "diamond_boots → netherite_boots",
+       "Mending 0 → 1",
+       "Unbreaking 6 → 7",
+       "Protection 4 → 5",
+       "Fire Protection 3 → 4",
+       "Blast Protection 3 → 4",
+       "Feather Falling 4 → 5"
+      ],
+      "stats": {
+       "armor": 3,
+       "toughness": 3,
+       "knockbackResistance": 1,
+       "durability": 481
+      }
+     }
+    ],
+    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L251"
+   }
   }
  ]
 }

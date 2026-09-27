@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "items": "node scripts/build-items.mjs",
+    "writeups": "node scripts/check-writeups.mjs --write",
     "data": "python scripts/build_data.py && node scripts/build-perks.mjs",
     "extract-log": "python scripts/extract_log.py",
     "potions": "python scripts/build_potions.py",

@@ -1,0 +1,429 @@
+[
+  {
+    "key": "bubble-board-boots",
+    "items": ["bubble-board-boots"],
+    "summary": "Boots that let you walk up single blocks, jump a bit higher, and launch yourself high into the air by holding sneak on the ground and then letting go.",
+    "use": [
+      { "text": "Stand on the ground and hold sneak. After 1 second bubbles start popping at your feet; at 1.75 seconds a bell chimes. Let go of sneak after the chime to launch.", "src": "items/armor/boots/BubbleBoardBootsItem.kt:60-89" },
+      { "text": "The launch throws you strongly upward and a little in the direction you're looking.", "src": "items/armor/boots/BubbleBoardBootsItem.kt:83-85" }
+    ],
+    "numbers": [
+      { "label": "Charge time", "value": "1.75 s of sneaking (35 ticks); bubbles show from 1 s", "src": "items/armor/boots/BubbleBoardBootsItem.kt:73-81" },
+      { "label": "Launch speed", "value": "2.5 straight up, plus 1.5× the level (sideways) part of your look direction", "src": "items/armor/boots/BubbleBoardBootsItem.kt:84-85" },
+      { "label": "Step height", "value": "+1 block while worn", "src": "items/armor/boots/BubbleBoardBootsItem.kt:33" },
+      { "label": "Jump strength", "value": "+0.2 while worn", "src": "items/armor/boots/BubbleBoardBootsItem.kt:34" },
+      { "label": "Cooldown", "value": "None", "src": "items/armor/boots/BubbleBoardBootsItem.kt:60-90" }
+    ],
+    "details": [
+      { "text": "The charge is lost if you leave the ground, or if you let go of sneak before the chime. Nothing happens then; just try again.", "src": "items/armor/boots/BubbleBoardBootsItem.kt:67-69" }
+    ],
+    "quirks": [
+      { "text": "The sneak launch doesn't check that the boots are on your feet. Holding them in your main hand or off-hand works too. The step-height and jump bonuses only count while they're worn.", "src": "events/item/Listeners.kt:305-310, util/extensions/PlayerUtil.kt:171-186, items/armor/boots/BubbleBoardBootsItem.kt:33-34" }
+    ]
+  },
+  {
+    "key": "hellstriders",
+    "items": ["hellstriders"],
+    "summary": "Frost Walker for lava: walking at the edge of a lava pool turns the still lava around you into temporary obsidian, which slowly crumbles back into lava.",
+    "use": [
+      { "text": "Walk while standing on a solid block that has lava next to it. Each time you step onto a new block, still lava within 3 blocks at that level becomes obsidian, as long as the space above it is empty.", "src": "items/armor/boots/HellStridersItem.kt:71-92, shapes/ShapeUtil.java:32-47" }
+    ],
+    "numbers": [
+      { "label": "Freeze radius", "value": "3 blocks around the block under you", "src": "items/armor/boots/HellStridersItem.kt:86, shapes/ShapeUtil.java:35" },
+      { "label": "Decay check", "value": "Every 1.5 s (30 ticks)", "src": "LumaItems.java:88, events/item/PassiveListeners.kt:20" },
+      { "label": "Leash", "value": "Obsidian picked in a decay check that is more than 10 blocks from you (or in another world) turns straight back to lava", "src": "items/armor/boots/HellStridersItem.kt:112-119" }
+    ],
+    "details": [
+      { "text": "Only still lava (source blocks) freezes. Flowing lava doesn't, and neither does lava with a block on top of it. It won't start while you're flying or while you're swimming in lava with nothing solid under you.", "src": "items/armor/boots/HellStridersItem.kt:72, items/armor/boots/HellStridersItem.kt:87" },
+      { "text": "The obsidian decays over time: obsidian turns into crying obsidian, then back into lava. Each check moves up to 18 randomly picked blocks one step along, and once 40 or more of these blocks exist, a quarter of them also move a step every check.", "src": "items/armor/boots/HellStridersItem.kt:94-139" },
+      { "text": "If you try to mine the obsidian, the break is cancelled and the block turns straight back into lava.", "src": "items/armor/boots/HellStridersItem.kt:59-63, events/item/Listeners.kt:226-234" },
+      { "text": "All of your obsidian turns back into lava at once when you take the boots off your feet, teleport, or log out.", "src": "items/armor/boots/HellStridersItem.kt:65-69, items/armor/boots/HellStridersItem.kt:141-153, items/armor/boots/HellStridersItem.kt:166-172" },
+      { "text": "It works in every world; no world switches it off.", "src": "items/armor/boots/HellStridersItem.kt:34-36" }
+    ],
+    "quirks": [
+      { "text": "The lava-freezing doesn't check that the boots are on your feet, so it also happens while you hold them in either hand.", "src": "items/armor/boots/HellStridersItem.kt:71-92, events/item/Listeners.kt:327-332" }
+    ]
+  },
+  {
+    "key": "tropicleaf-gliders",
+    "items": ["tropicleaf-gliders"],
+    "summary": "An elytra that cuts 15% off every hit of damage you take while it's in your chest slot, whether or not you're flying.",
+    "numbers": [
+      { "label": "Damage reduction", "value": "15% of each hit", "src": "items/armor/elytra/TropicleafGlidersItem.kt:45-46" },
+      { "label": "Durability cost", "value": "1 durability point on the elytra each time you take damage", "src": "items/armor/elytra/TropicleafGlidersItem.kt:50-51" }
+    ],
+    "details": [
+      { "text": "It has to be worn in the chest slot. Holding it does nothing.", "src": "items/armor/elytra/TropicleafGlidersItem.kt:44" },
+      { "text": "It applies to every kind of damage (falls, fire, mobs, and so on), not only damage taken while gliding.", "src": "items/armor/elytra/TropicleafGlidersItem.kt:43-52" }
+    ]
+  },
+  {
+    "key": "neptunes-crown",
+    "items": ["neptunes-crown"],
+    "summary": "A wearable crown (an amethyst cluster) that gives Water Breathing while you're in water and keeps clearing Mining Fatigue off you the whole time you wear it.",
+    "use": [
+      { "text": "Right-click it in your main hand to put it on, if your helmet slot is empty. You can also click it into the helmet slot in your inventory. Right-clicking with it never places the cluster as a block.", "src": "items/armor/helmet/NeptunesCrownItem.kt:27, events/GeneralListeners.kt:101-119, events/GeneralListeners.kt:152-162" }
+    ],
+    "numbers": [
+      { "label": "Water Breathing", "value": "15 s (300 ticks), re-applied every 3.5 s while you're in water", "src": "items/armor/helmet/NeptunesCrownItem.kt:19, items/armor/helmet/NeptunesCrownItem.kt:41-43, LumaItems.java:87, events/item/PassiveListeners.kt:19" },
+      { "label": "Mining Fatigue clear", "value": "Every 3.5 s (70 ticks)", "src": "items/armor/helmet/NeptunesCrownItem.kt:40, LumaItems.java:87" }
+    ],
+    "details": [
+      { "text": "Mining Fatigue is removed whenever you wear the crown, in or out of water, not only while submerged as the tooltip suggests. That includes the curse from Elder Guardians.", "src": "items/armor/helmet/NeptunesCrownItem.kt:38-45" },
+      { "text": "The removal runs every 3.5 seconds, so a fresh dose of Mining Fatigue can stay on you for up to that long before it's cleared.", "src": "items/armor/helmet/NeptunesCrownItem.kt:40, LumaItems.java:87" },
+      { "text": "Both effects need the crown in your head slot. Holding it does nothing.", "src": "items/armor/helmet/NeptunesCrownItem.kt:39" }
+    ]
+  },
+  {
+    "key": "sunbrellahat",
+    "items": ["sunbrellahat"],
+    "summary": "A helmet with three abilities: sneak while falling to glide down slowly, sprint-hits that knock enemies much further, and arrows that turn into invisible, gravity-free wind slashes.",
+    "use": [
+      { "text": "Tailwind: while falling, hold sneak. Your fall slows, you drift in the direction you're looking, and your fall distance keeps being reset.", "src": "items/armor/helmet/SunbrellaHatItem.kt:65-81" },
+      { "text": "Trailblazer: hit something while sprinting (not a critical hit) and it gets launched away from you.", "src": "items/armor/helmet/SunbrellaHatItem.kt:84-98" },
+      { "text": "WindTye: any arrow you fire flies in a straight line with no gravity, shown only as sweep and cloud particles.", "src": "items/armor/helmet/SunbrellaHatItem.kt:100-131" }
+    ],
+    "numbers": [
+      { "label": "Glide fall speed", "value": "Downward speed halved on every movement step", "src": "items/armor/helmet/SunbrellaHatItem.kt:29, items/armor/helmet/SunbrellaHatItem.kt:78" },
+      { "label": "Glide drift", "value": "0.25× your look direction", "src": "items/armor/helmet/SunbrellaHatItem.kt:77-78" },
+      { "label": "Glide fall distance", "value": "Reset to 0.5 blocks on every step", "src": "items/armor/helmet/SunbrellaHatItem.kt:79" },
+      { "label": "Trailblazer launch", "value": "1.5× the distance between you and the target, plus a small lift, capped at 3 per direction", "src": "items/armor/helmet/SunbrellaHatItem.kt:90-95" },
+      { "label": "Wind slash lifetime", "value": "About 6.6 s (133 ticks), then the arrow is removed", "src": "items/armor/helmet/SunbrellaHatItem.kt:113-129" }
+    ],
+    "details": [
+      { "text": "The glide switches off when there's a non-air block (including water) within 2 blocks below you, so the last couple of blocks are a normal fall.", "src": "items/armor/helmet/SunbrellaHatItem.kt:69-74" },
+      { "text": "The Trailblazer push scales with how far the target is from you, so targets hit from further away get launched harder, up to the cap.", "src": "items/armor/helmet/SunbrellaHatItem.kt:90-94" },
+      { "text": "Wind-slash arrows are hidden from you and from every player within 100 blocks when fired. They're removed the moment they hit anything and aren't saved with the world, so you can't pick them back up.", "src": "items/armor/helmet/SunbrellaHatItem.kt:102-110, items/armor/helmet/SunbrellaHatItem.kt:133-135" },
+      { "text": "Only normal and tipped arrows count; other projectiles (tridents, snowballs, spectral arrows) aren't changed. This includes arrows from crossbows.", "src": "items/armor/helmet/SunbrellaHatItem.kt:101" }
+    ],
+    "quirks": [
+      { "text": "None of the three abilities checks that the hat is on your head. Holding it in either hand gives you the glide, the sprint-hit launch and the wind-slash arrows too.", "src": "events/item/Listeners.kt:111-116, events/item/Listeners.kt:165-180, events/item/Listeners.kt:327-332, util/extensions/PlayerUtil.kt:171-186" },
+      { "text": "Trailblazer also fires when one of your arrows or other projectiles hits something while you happen to be sprinting.", "src": "events/item/Listeners.kt:167-179, items/armor/helmet/SunbrellaHatItem.kt:88" }
+    ]
+  },
+  {
+    "key": "crimson-rune",
+    "items": ["crimson-rune-item"],
+    "summary": "Hold it in either hand to keep Fire Resistance on you.",
+    "numbers": [
+      { "label": "Fire Resistance", "value": "12.5 s (250 ticks), re-applied every 3.5 s while held", "src": "items/misc/CrimsonRuneItem.kt:16, items/misc/CrimsonRuneItem.kt:36-38, LumaItems.java:87" }
+    ],
+    "details": [
+      { "text": "It works from your main hand or off-hand. Anywhere else in your inventory it does nothing.", "src": "events/item/PassiveListeners.kt:43-55, util/extensions/PlayerUtil.kt:216-226" },
+      { "text": "The effect has no particles but shows its icon. It stays on for up to 12.5 seconds after you stop holding the rune.", "src": "items/misc/CrimsonRuneItem.kt:16" }
+    ]
+  },
+  {
+    "key": "hearty-shroom",
+    "items": ["hearty-shroom"],
+    "summary": "Hold it in either hand for 2 extra hearts of max health. It can't be placed as a mushroom.",
+    "numbers": [
+      { "label": "Max health", "value": "+4 (2 hearts) while held", "src": "items/misc/HeartyShroomItem.kt:26" }
+    ],
+    "details": [
+      { "text": "Trying to place it is always cancelled, so it can't be planted by accident.", "src": "items/misc/HeartyShroomItem.kt:37-39" }
+    ]
+  },
+  {
+    "key": "infinite-buckets",
+    "items": ["infinite-water-bucket", "infinite-lava-bucket"],
+    "summary": "Buckets that place water or lava without ever emptying. They respect claims and copy most normal bucket behaviour.",
+    "use": [
+      { "text": "Empty the bucket as usual, from your main hand or off-hand. The fluid is placed and the bucket stays full.", "src": "items/misc/nests/InfiniteBucketsItemNest.kt:66-69, items/misc/nests/InfiniteBucketsItemNest.kt:98-101, events/item/Listeners.kt:542-552" }
+    ],
+    "details": [
+      { "text": "Nothing is placed where you aren't allowed to build (claims and regions are respected).", "src": "items/misc/nests/InfiniteBucketsItemNest.kt:288, util/extensions/PlayerUtil.kt:255-264" },
+      { "text": "The water bucket fills waterloggable blocks (slabs, stairs and so on). In dimensions where water evaporates, like the Nether, it just fizzles.", "src": "items/misc/nests/InfiniteBucketsItemNest.kt:295-311" },
+      { "text": "Replaceable blocks like grass or flowers are broken (and drop) to make room for the fluid. Anything else blocks the placement.", "src": "items/misc/nests/InfiniteBucketsItemNest.kt:313-317" },
+      { "text": "Block changes are logged to the server's block-logging plugins under your name.", "src": "util/extensions/BlockUtil.kt:50-59" }
+    ],
+    "quirks": [
+      { "text": "The Infinite Water Bucket can't scoop up fish or axolotls. Trying is simply cancelled.", "src": "items/misc/nests/InfiniteBucketsItemNest.kt:71-73" }
+    ],
+    "config": [
+      { "text": "The plugin has code for filling cauldrons (a full water cauldron, or a lava cauldron unless water is directly above it), but whether using the bucket on a cauldron actually reaches that code depends on the server software. Test it before relying on it.", "src": "items/misc/nests/InfiniteBucketsItemNest.kt:291-293, items/misc/nests/InfiniteBucketsItemNest.kt:323-336" }
+    ]
+  },
+  {
+    "key": "sweet-summer-honey",
+    "items": ["sweet-summer-honey"],
+    "summary": "Hold it for Haste I and Speed I. Drink it for a big Absorption boost every 7 minutes, and the bottle is never used up.",
+    "use": [
+      { "text": "Hold it in your main hand or off-hand for Haste I and Speed I.", "src": "items/misc/SweetSummerHoneyItem.kt:36-39, events/item/PassiveListeners.kt:43-55" },
+      { "text": "Drink it for Absorption IV. You keep the bottle.", "src": "items/misc/SweetSummerHoneyItem.kt:41-47" }
+    ],
+    "numbers": [
+      { "label": "Haste I + Speed I", "value": "17.5 s (350 ticks), re-applied every 3.5 s while held", "src": "items/misc/SweetSummerHoneyItem.kt:37-38, LumaItems.java:87" },
+      { "label": "Absorption", "value": "Level IV (8 extra hearts) for 60 s (1200 ticks)", "src": "items/misc/SweetSummerHoneyItem.kt:45" },
+      { "label": "Drink cooldown", "value": "7 min (8400 ticks)", "src": "items/misc/SweetSummerHoneyItem.kt:44" }
+    ],
+    "details": [
+      { "text": "Drinking it during the cooldown does nothing and shows no message.", "src": "items/misc/SweetSummerHoneyItem.kt:42-46" }
+    ],
+    "quirks": [
+      { "text": "While the honey is in either hand, you can't eat or drink anything else. The honey cancels every food or drink you finish, and if it's off cooldown it gives its Absorption instead. Keep it out of your off-hand when you need to eat.", "src": "items/misc/SweetSummerHoneyItem.kt:41-47, events/item/Listeners.kt:365-369" },
+      { "text": "Its Haste turns off the Big Swing Pickaxe's wide swing: that pickaxe strips Haste and refuses to area-mine while you have it.", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:72-76" }
+    ]
+  },
+  {
+    "key": "lumalympics-charm",
+    "items": ["lumalympics-charm"],
+    "summary": "A participation keepsake from the Lumalympics. Despite the teasing lore, the plugin gives it no ability at all; nothing else in the code refers to it.",
+    "details": [
+      { "text": "The item class defines only its name, lore and enchant (Unbreaking X), with no ability hooks.", "src": "items/playground/event/LumalympicsCharmItem.kt:10-31" }
+    ],
+    "config": [
+      { "text": "If the charm ever does something (for example, it gets checked by another plugin or a later event), that logic isn't in LumaItems at this commit.", "src": "items/playground/event/LumalympicsCharmItem.kt:10-31" }
+    ]
+  },
+  {
+    "key": "bobble-blower",
+    "items": ["bobble-blower"],
+    "summary": "Swing it at full charge to lob three slow bubbles that bounce along the ground, knocking out any crops they pass over with Fortune V drops.",
+    "use": [
+      { "text": "Left-click (swing at the air or a block) when your swing is fully charged. It fires 3 bubbles: one straight ahead and one 6° to each side.", "src": "items/tools/harrow/BobbleBlowerHoeItem.kt:89-106" }
+    ],
+    "numbers": [
+      { "label": "Cooldown", "value": "5 s (100 ticks)", "src": "items/tools/harrow/BobbleBlowerHoeItem.kt:91" },
+      { "label": "Spread", "value": "3 bubbles, ±6°", "src": "items/tools/harrow/BobbleBlowerHoeItem.kt:101-102" },
+      { "label": "Throw speed", "value": "35% of a normal snowball throw", "src": "items/tools/harrow/BobbleBlowerHoeItem.kt:96" },
+      { "label": "Bounce", "value": "Keeps 85% of its speed per bounce; stops when slower than 0.2, more than 20 blocks from you, or in liquid", "src": "items/tools/harrow/BobbleBlowerHoeItem.kt:113-118, items/tools/harrow/BobbleBlowerHoeItem.kt:160, items/tools/harrow/BobbleBlowerHoeItem.kt:173" },
+      { "label": "Crop reach", "value": "Up to about 6 blocks below each bubble (the check starts 1 block above it and looks 7 down), every 0.1 s", "src": "items/tools/harrow/BobbleBlowerHoeItem.kt:143-149, items/tools/harrow/BobbleBlowerHoeItem.kt:159" },
+      { "label": "Durability", "value": "1 per crop broken", "src": "items/tools/harrow/BobbleBlowerHoeItem.kt:152-153" }
+    ],
+    "details": [
+      { "text": "Crops are broken as if by a Fortune V netherite hoe, so they drop extra.", "src": "items/tools/harrow/BobbleBlowerHoeItem.kt:40-42, items/tools/harrow/BobbleBlowerHoeItem.kt:154" },
+      { "text": "Growth stage isn't checked. Unripe crops are broken too. 'Crops' means the game's crop list plus nether wart.", "src": "items/tools/harrow/BobbleBlowerHoeItem.kt:149, util/tags/Kind.java:43" },
+      { "text": "Crops in claims where you can't build are left alone.", "src": "items/tools/harrow/BobbleBlowerHoeItem.kt:151" },
+      { "text": "Swinging before the charge bar is full does nothing and doesn't start the cooldown.", "src": "items/tools/harrow/BobbleBlowerHoeItem.kt:90" }
+    ],
+    "quirks": [
+      { "text": "It also fires from the off-hand: with the hoe in your off-hand, any fully charged left-click lobs bubbles. Watch out: the durability for broken crops is always taken from whatever is in your main hand, not from the hoe.", "src": "events/item/Listeners.kt:125-137, util/extensions/PlayerUtil.kt:171-186, items/tools/harrow/BobbleBlowerHoeItem.kt:152-153" }
+    ]
+  },
+  {
+    "key": "big-swing-pickaxe",
+    "items": ["big-swing-pickaxe"],
+    "summary": "A Silk Touch pickaxe that breaks a wide oval of blocks around every block you mine and gives you 2 extra blocks of reach, but mines much more slowly.",
+    "use": [
+      { "text": "Mine a block with it in your main hand. Every solid block in an oval around it breaks too, wider to your sides than in front and behind.", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:63-89" }
+    ],
+    "numbers": [
+      { "label": "Area", "value": "Oval about 4 blocks to each side, 2.5 forward/back, 2 up/down from the mined block", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:79-83" },
+      { "label": "Mining speed", "value": "−0.75 block break speed", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:54" },
+      { "label": "Attack speed", "value": "−3.4", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:55" },
+      { "label": "Reach", "value": "+2 blocks for blocks and for hitting mobs (main hand only)", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:56-57" }
+    ],
+    "details": [
+      { "text": "The extra blocks drop as if mined by this pickaxe, so Silk Touch applies. They don't cost extra durability.", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:86-88" },
+      { "text": "It skips container and utility blocks (chests, barrels, shulker boxes, furnaces, hoppers, spawners, signs, farmland, bedrock and similar) and anything non-solid.", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:83-85, util/tags/Kind.java:48" },
+      { "text": "It can't be combined with Haste. If you have Haste when you mine, the Haste effect is removed, the wide swing is skipped, and you get a 'Cannot be used with Haste.' message.", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:72-76" },
+      { "text": "It's switched off in the piñata world, where you can't even equip it.", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:24, enums/WorldKey.kt:23, events/item/Listeners.kt:473-488, events/item/Listeners.kt:566-576" }
+    ],
+    "quirks": [
+      { "text": "The mining-speed and attack-speed penalties apply in any hand, including the off-hand, even though the wide swing and reach only work from the main hand.", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:54-57" }
+    ],
+    "config": [
+      { "text": "How slow −0.75 break speed feels depends on your base mining speed, which the game sets, not this plugin. On a default server the base is 1, which would leave about a quarter of normal speed.", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:54" },
+      { "text": "The wide swing is skipped when the game reports an unlimited break speed for the block you mined. That should mean blocks with no hardness at all (flowers, torches and the like), not blocks you mine instantly thanks to Efficiency. Not tested in game.", "src": "items/tools/mattock/BigSwingPickaxeItem.kt:68-70" }
+    ]
+  },
+  {
+    "key": "blobble-hammer",
+    "items": ["blobble-hammer"],
+    "summary": "A Fortune V pickaxe. Mining an ore sprays out bouncing coloured bubbles, and each block a bubble touches is broken with Fortune V drops.",
+    "use": [
+      { "text": "Mine an ore (coal, iron, copper, gold incl. nether gold, redstone, emerald, lapis, diamond, or nether quartz) with it in your main hand. Bubbles spray out from the ore.", "src": "items/tools/mattock/BlobbleHammerItem.kt:81-91, util/tags/Kind.java:25-31" }
+    ],
+    "numbers": [
+      { "label": "Bubbles per ore", "value": "Half of a Fortune V drop roll, rounded down, max 5 per drop type", "src": "items/tools/mattock/BlobbleHammerItem.kt:86-89" },
+      { "label": "Bubble lifetime", "value": "About 1.5 s (30 ticks) of bouncing, or until more than 20 blocks from you", "src": "items/tools/mattock/BlobbleHammerItem.kt:107-110, items/tools/mattock/BlobbleHammerItem.kt:145" },
+      { "label": "Durability", "value": "1 per block a bubble breaks", "src": "items/tools/mattock/BlobbleHammerItem.kt:100-101" }
+    ],
+    "details": [
+      { "text": "Blocks hit by bubbles break as if mined by a Fortune V netherite pickaxe and drop experience. Ores caught by a bubble get Fortune V drops too.", "src": "items/tools/mattock/BlobbleHammerItem.kt:50-52, items/tools/mattock/BlobbleHammerItem.kt:102" },
+      { "text": "Bubbles only break blocks a pickaxe is the right tool for. They skip containers and other protected blocks, and anything in a claim where you can't build.", "src": "items/tools/mattock/BlobbleHammerItem.kt:99" },
+      { "text": "Blocks broken by bubbles don't spawn more bubbles.", "src": "items/tools/mattock/BlobbleHammerItem.kt:81-91, items/tools/mattock/BlobbleHammerItem.kt:102" },
+      { "text": "Ancient debris isn't counted as an ore.", "src": "util/tags/Kind.java:28-31" }
+    ],
+    "quirks": [
+      { "text": "The bubble count comes from its own separate Fortune V roll, halved and rounded down. So when an ore rolls a single item (common for diamond, emerald, coal or quartz), no bubbles come out.", "src": "items/tools/mattock/BlobbleHammerItem.kt:86-89" },
+      { "text": "Bubble durability is taken from whatever is in your main hand when the bubble lands, even if you've switched away from the hammer.", "src": "items/tools/mattock/BlobbleHammerItem.kt:100-101" }
+    ]
+  },
+  {
+    "key": "seaside-surf-rod",
+    "items": ["seasidesurfrod"],
+    "summary": "A fishing rod that sometimes gambles your catch. A win turns it into 2–3 of the item with double XP; a loss deletes it. Your odds improve with your lifetime fish-caught stat.",
+    "use": [
+      { "text": "Fish normally, with the rod in either hand. Each catch has a small chance to become a wager.", "src": "items/tools/rod/SeasideSurfRodItem.kt:52-58, events/item/Listeners.kt:269-294" }
+    ],
+    "numbers": [
+      { "label": "Chance a catch is wagered", "value": "11 in 101 (~10.9%), +1 per 1,000 fish caught, capped at 16 in 101 (~15.8%)", "src": "items/tools/rod/SeasideSurfRodItem.kt:57-58" },
+      { "label": "Chance a wager wins", "value": "71 in 101 (~70.3%), +1 per 1,000 fish caught, no cap", "src": "items/tools/rod/SeasideSurfRodItem.kt:64" },
+      { "label": "Win", "value": "Catch becomes 2 or 3 of the item; XP doubled", "src": "items/tools/rod/SeasideSurfRodItem.kt:69-72" },
+      { "label": "Loss", "value": "The caught item is deleted", "src": "items/tools/rod/SeasideSurfRodItem.kt:74-79" }
+    ],
+    "details": [
+      { "text": "'Fish caught' is your vanilla Fish Caught statistic, counted in whole thousands.", "src": "items/tools/rod/SeasideSurfRodItem.kt:57" },
+      { "text": "A win only changes items that stack. For unstackable catches (enchanted books, bows, rods and the like) you get the win effects but the item and XP stay as they were.", "src": "items/tools/rod/SeasideSurfRodItem.kt:69-72" },
+      { "text": "A loss only removes the item; the catch's XP is untouched. Purple and light-blue particles with a firework sound mean a win; red particles with a witch laugh mean a loss.", "src": "items/tools/rod/SeasideSurfRodItem.kt:64-79" }
+    ],
+    "quirks": [
+      { "text": "The wager chance is capped at 5,000 fish caught, but the win chance keeps rising. At 30,000 fish caught every wager wins.", "src": "items/tools/rod/SeasideSurfRodItem.kt:58, items/tools/rod/SeasideSurfRodItem.kt:64" }
+    ]
+  },
+  {
+    "key": "hailstorm-shovel",
+    "items": ["hailstorm-shovel"],
+    "summary": "Right-click to lob a seed that grows into a drifting storm cloud. For about 10 seconds it rains hail that digs up shovel blocks with Silk Touch, pushes the drops toward you, and hurts mobs.",
+    "use": [
+      { "text": "Right-click while standing somewhere the sky light reaches. A slow seed is thrown; where it lands, a column of cloud rises 11 blocks, and then the storm starts about 10 blocks above the landing spot.", "src": "items/tools/spade/HailstormShovelItem.kt:86-97, items/tools/spade/HailstormShovelItem.kt:130-165, items/tools/spade/HailstormShovelItem.kt:167-168" }
+    ],
+    "numbers": [
+      { "label": "Cooldown", "value": "3 min (3600 ticks), starting when you throw", "src": "items/tools/spade/HailstormShovelItem.kt:90" },
+      { "label": "Storm length", "value": "About 10 s (201 hailstones, one per tick)", "src": "items/tools/spade/HailstormShovelItem.kt:174-178, items/tools/spade/HailstormShovelItem.kt:213-218" },
+      { "label": "Storm area", "value": "Hail falls anywhere in a 12×12 square centred on the cloud (up to 6 blocks out each way)", "src": "items/tools/spade/HailstormShovelItem.kt:198" },
+      { "label": "Cloud drift", "value": "Up to 0.1 blocks per tick (about 20 blocks over the whole storm) in the direction you face when the storm starts; looking up or down makes it drift slower and off to one side", "src": "items/tools/spade/HailstormShovelItem.kt:169, items/tools/spade/HailstormShovelItem.kt:181-187" },
+      { "label": "Hail damage", "value": "5 (2.5 hearts) per hailstone to mobs", "src": "items/tools/spade/HailstormShovelItem.kt:111-112" }
+    ],
+    "details": [
+      { "text": "It won't fire when no sky light reaches your feet (for example deep underground or in a closed room). The cooldown isn't used up then.", "src": "items/tools/spade/HailstormShovelItem.kt:87-89" },
+      { "text": "Any right-click counts, including opening a door or chest while holding the shovel, so it's easy to launch a storm by accident.", "src": "items/tools/spade/HailstormShovelItem.kt:86-96, events/item/Listeners.kt:125-137" },
+      { "text": "Hail breaks blocks a shovel is the right tool for (dirt, sand, gravel, snow and so on) as if mined with a Silk Touch shovel. It skips protected blocks like farmland and paths, and anything in a claim where you can't build. It costs the shovel no durability.", "src": "items/tools/spade/HailstormShovelItem.kt:42-44, items/tools/spade/HailstormShovelItem.kt:115-121, util/tags/Kind.java:48" },
+      { "text": "Items dropped near a broken block are flung toward you.", "src": "items/tools/spade/HailstormShovelItem.kt:122-127, items/tools/spade/HailstormShovelItem.kt:222-242" },
+      { "text": "Hail passes harmlessly through players, and mobs you aren't allowed to hurt are skipped.", "src": "items/tools/spade/HailstormShovelItem.kt:109-113" }
+    ],
+    "quirks": [
+      { "text": "It also fires from the off-hand: with the shovel in your off-hand, right-clicking with anything, even placing a block, launches a storm.", "src": "events/item/Listeners.kt:125-137, util/extensions/PlayerUtil.kt:171-186" },
+      { "text": "The code tries to move the storm to the surface when the seed lands in water, but that step does nothing. The storm always forms from where the seed landed.", "src": "items/tools/spade/HailstormShovelItem.kt:132-144, items/tools/spade/HailstormShovelItem.kt:103" }
+    ],
+    "config": [
+      { "text": "Whether a world has sky light at all is a world setting, not part of this plugin. On a default server the Nether and the End have none, so the shovel likely can't be used there.", "src": "items/tools/spade/HailstormShovelItem.kt:87-89" }
+    ]
+  },
+  {
+    "key": "trishear-rigger",
+    "items": ["trishear-rigger"],
+    "summary": "A bow that fires three arrows at once. They spread sideways on the ground and up/down in the air, and on a full draw each arrow that hits a block explodes a second later.",
+    "use": [
+      { "text": "Shoot normally. On the ground (or while hovering in flight) the two extra arrows spread left and right; while jumping or falling they spread up and down.", "src": "items/weapons/bow/TrishearRiggerItem.kt:117-137" },
+      { "text": "Draw to at least 80% power and every arrow that sticks into a block glows, then explodes 1 second later.", "src": "items/weapons/bow/TrishearRiggerItem.kt:121, items/weapons/bow/TrishearRiggerItem.kt:153-191" }
+    ],
+    "numbers": [
+      { "label": "Spread", "value": "±5° from the centre arrow", "src": "items/weapons/bow/TrishearRiggerItem.kt:43, items/weapons/bow/TrishearRiggerItem.kt:50, items/weapons/bow/TrishearRiggerItem.kt:59, items/weapons/bow/TrishearRiggerItem.kt:72" },
+      { "label": "Explosion draw", "value": "At least 80% draw", "src": "items/weapons/bow/TrishearRiggerItem.kt:121" },
+      { "label": "Explosion delay", "value": "1 s (20 ticks) after hitting a block", "src": "items/weapons/bow/TrishearRiggerItem.kt:176" },
+      { "label": "Explosion reach", "value": "Living things within about 2.5 blocks of the arrow", "src": "items/weapons/bow/TrishearRiggerItem.kt:180" },
+      { "label": "Explosion damage", "value": "6 minus the target's distance from the arrow in blocks (6 right on top of it, less further out)", "src": "items/weapons/bow/TrishearRiggerItem.kt:183-185" }
+    ],
+    "details": [
+      { "text": "When an arrow hits a mob, the mob's short hit-immunity is reset, so all three arrows can land on the same target.", "src": "items/weapons/bow/TrishearRiggerItem.kt:154-158" },
+      { "text": "Only arrows that hit a block explode. An arrow that hits a mob doesn't. The blast never hurts you.", "src": "items/weapons/bow/TrishearRiggerItem.kt:154-166, items/weapons/bow/TrishearRiggerItem.kt:182" },
+      { "text": "The two extra arrows don't use up ammo and can't be picked up. They copy the centre arrow's speed, Piercing level and colour.", "src": "items/weapons/bow/TrishearRiggerItem.kt:193-212" }
+    ],
+    "quirks": [
+      { "text": "Arrows from this bow never crit. The centre arrow's critical flag is switched off before the copies are made, so a full draw doesn't give the usual bonus damage.", "src": "items/weapons/bow/TrishearRiggerItem.kt:122, items/weapons/bow/TrishearRiggerItem.kt:199" }
+    ],
+    "config": [
+      { "text": "The explosion counts as damage dealt by you, so the server's usual PvP and protection rules decide whether it can hurt other players or their animals.", "src": "items/weapons/bow/TrishearRiggerItem.kt:180-187" }
+    ]
+  },
+  {
+    "key": "heavy-blob-wand",
+    "items": ["heavy-blob-wand"],
+    "summary": "A Sharpness X sword that fires a stream of bouncing bubbles when you swing. A full-charge swing fires 4, and each bubble deals a flat 13 damage.",
+    "use": [
+      { "text": "Left-click (swing at the air or a block). The more charged your swing, the more bubbles: one every 0.1 s, fired wherever you're looking at that moment.", "src": "items/weapons/cutlass/HeavyBlobWandItem.kt:82-109" }
+    ],
+    "numbers": [
+      { "label": "Bubbles per swing", "value": "1 at 45–49% charge, 2 at 50–74%, 3 at 75–89%, 4 at 90%+", "src": "items/weapons/cutlass/HeavyBlobWandItem.kt:83-88" },
+      { "label": "Damage", "value": "13 (6.5 hearts) per bubble, before armor", "src": "items/weapons/cutlass/HeavyBlobWandItem.kt:115" },
+      { "label": "Bounce", "value": "Keeps 88% of its speed; stops when slower than 0.3 or more than 20 blocks from you", "src": "items/weapons/cutlass/HeavyBlobWandItem.kt:125-130" },
+      { "label": "Attack speed", "value": "−3.35", "src": "items/weapons/cutlass/HeavyBlobWandItem.kt:54" },
+      { "label": "Durability", "value": "1 per bubble that hits a mob", "src": "items/weapons/cutlass/HeavyBlobWandItem.kt:118-119" }
+    ],
+    "details": [
+      { "text": "A bubble that hits a mob cancels its knockback (the target stops dead) and resets its hit-immunity, so a full stream can land every bubble.", "src": "items/weapons/cutlass/HeavyBlobWandItem.kt:115-117" },
+      { "text": "Bubble damage is a flat 13; Sharpness and critical hits don't change it. It skips anything you aren't allowed to hurt.", "src": "items/weapons/cutlass/HeavyBlobWandItem.kt:113-115" },
+      { "text": "Swinging below 45% charge fires nothing. There's no cooldown beyond the swing charge.", "src": "items/weapons/cutlass/HeavyBlobWandItem.kt:86" }
+    ],
+    "quirks": [
+      { "text": "It also fires from the off-hand: with the wand there, left-clicking with anything lobs bubbles based on your main-hand swing charge. Durability is taken from whatever is in your main hand when a bubble lands.", "src": "events/item/Listeners.kt:125-137, util/extensions/PlayerUtil.kt:171-186, items/weapons/cutlass/HeavyBlobWandItem.kt:118-119" }
+    ]
+  },
+  {
+    "key": "heavy-prism-sickle",
+    "items": ["heavy-prism-core", "heavy-prism-sickle"],
+    "summary": "The Heavy Prism Core opens into a Heavy Prism Sickle with a random colour theme. The sickle summons six orbs behind your head that fire sweeping beams at nearby mobs or at a target you lock on to.",
+    "use": [
+      { "text": "Core: right-click while holding it. The core is used up and a Heavy Prism Sickle goes into your inventory.", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:88-94" },
+      { "text": "Sickle: right-click with it in your main hand. Look straight at a mob first to lock all orbs onto it; otherwise the orbs pick their own targets.", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:159-171, items/weapons/scythe/HeavyPrismSickleItemNest.kt:210" }
+    ],
+    "numbers": [
+      { "label": "Orbs", "value": "6", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:106" },
+      { "label": "Lock-on range", "value": "25 blocks", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:102, items/weapons/scythe/HeavyPrismSickleItemNest.kt:210" },
+      { "label": "Firing delay", "value": "Locked on: all orbs after 0.75 s. Otherwise in pairs at 2.5 s, 3.25 s and 4 s", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:304-308" },
+      { "label": "Auto-target range", "value": "20 blocks from each orb, nearest to you first, max 2 orbs per target", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:103, items/weapons/scythe/HeavyPrismSickleItemNest.kt:522-526" },
+      { "label": "Beam damage", "value": "8 per hit; passes through up to 8 targets in a line", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:399, items/weapons/scythe/HeavyPrismSickleItemNest.kt:589-613" },
+      { "label": "Beam length", "value": "25 blocks, sweeping toward the target at 0.45 blocks/tick (faster when far off)", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:396-397, items/weapons/scythe/HeavyPrismSickleItemNest.kt:550-575" },
+      { "label": "Max duration", "value": "17 s (340 ticks)", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:107, items/weapons/scythe/HeavyPrismSickleItemNest.kt:219-223" },
+      { "label": "Cooldown", "value": "35 s if any orb has fired within the first 5 s; otherwise only 5 s", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:173-178" },
+      { "label": "Attack speed", "value": "−3.3 (main hand)", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:152-154" }
+    ],
+    "details": [
+      { "text": "Each sickle gets a random colour theme when it's created: red, orange, yellow, green, blue, purple, or prismatic (six different colours). The theme sets the orb, beam and glow colours and the colour of the Glass Cannon enchant. It's purely cosmetic.", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:118-123, items/weapons/scythe/HeavyPrismSickleItemNest.kt:619-668, items/weapons/scythe/HeavyPrismSickleItemNest.kt:93" },
+      { "text": "Auto-targeting ignores players, villagers, tamed pets, armor stands and anything you aren't allowed to hurt. A lock-on can still pick any living thing you look at.", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:401-416, items/weapons/scythe/HeavyPrismSickleItemNest.kt:522-526" },
+      { "text": "Auto-targeting and beams ignore walls: orbs can pick targets you have no line of sight to, and beams pass through blocks.", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:401-416, items/weapons/scythe/HeavyPrismSickleItemNest.kt:522-526, items/weapons/scythe/HeavyPrismSickleItemNest.kt:592" },
+      { "text": "If a beam crosses something you aren't allowed to hurt, that orb disappears.", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:598-602" },
+      { "text": "An orb with no target left vanishes. When every orb is gone, the volley ends early.", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:527-531, items/weapons/scythe/HeavyPrismSickleItemNest.kt:219-223" },
+      { "text": "Taking any damage cancels your orbs, but only while the sickle is in your hand (or another equipped slot) at the moment you're hurt.", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:182-185, events/item/Listeners.kt:197-203" },
+      { "text": "The sickle's ability is switched off at spawn and in the piñata world; you get an action-bar notice instead.", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:98, enums/WorldKey.kt:23-25, model/item/CustomItem.kt:84-100" }
+    ],
+    "quirks": [
+      { "text": "The code gives orbs a 30-damage hit when they touch a mob, but the orbs have no owner, so that hit never happens. Only the beams deal damage.", "src": "items/weapons/scythe/HeavyPrismSickleItemNest.kt:187-190, items/weapons/scythe/HeavyPrismSickleItemNest.kt:439-450, events/item/Listeners.kt:118-123" }
+    ]
+  },
+  {
+    "key": "paintball-collectibles",
+    "items": ["blue-paintball-collectible", "red-paintball-collectible"],
+    "summary": "Souvenir paintballs from the Lumalympics paintball game. Throw one and the block it hits turns into blue or red wool, but only on your own screen.",
+    "use": [
+      { "text": "Throw it like a snowball. The block it hits shows as blue or red wool to you only.", "src": "items/misc/collectible/PaintballCollectibleItemNest.kt:57-77" }
+    ],
+    "numbers": [
+      { "label": "Block reach while held", "value": "−4.5 blocks (either hand)", "src": "items/misc/collectible/PaintballCollectibleItemNest.kt:51-53" }
+    ],
+    "details": [
+      { "text": "The paint is only a visual on your own screen. Nobody else sees it and the real block never changes.", "src": "items/misc/collectible/PaintballCollectibleItemNest.kt:75-76" },
+      { "text": "Paintballs pass through players and mobs with no effect.", "src": "items/misc/collectible/PaintballCollectibleItemNest.kt:70-73" },
+      { "text": "Paintballs are switched off at spawn, in one of the event worlds and in the piñata world: you can't even equip them there.", "src": "items/misc/collectible/PaintballCollectibleItemNest.kt:25, enums/WorldKey.kt:21-25, events/item/Listeners.kt:473-488, events/item/Listeners.kt:566-576" }
+    ],
+    "quirks": [
+      { "text": "Holding a paintball in your off-hand turns anything you launch (arrows from a bow, snowballs, eggs, ender pearls, tridents) into a paintball. The code swaps out every projectile you fire, not just the paintball itself.", "src": "events/item/Listeners.kt:111-116, util/extensions/PlayerUtil.kt:171-186, items/misc/collectible/PaintballCollectibleItemNest.kt:57-67" }
+    ],
+    "config": [
+      { "text": "Holding one lowers your block reach by 4.5 blocks. The normal survival reach is set by the game, not this plugin; on a default server it's 4.5, which would leave you unable to break or place blocks while a paintball is in either hand.", "src": "items/misc/collectible/PaintballCollectibleItemNest.kt:51-53" }
+    ]
+  },
+  {
+    "key": "absorbent-sponges",
+    "items": ["absorbent-water-sponge", "absorbent-lava-sponge"],
+    "summary": "Reusable sponges. Place one into water (or lava, for the lava sponge) and every block of that fluid within 3 blocks disappears. The sponge never gets placed or used up.",
+    "use": [
+      { "text": "Place the sponge into a water block (water sponge) or lava block (lava sponge). The placement is cancelled, the sponge stays in your hand, and the fluid around that spot is removed.", "src": "items/misc/nests/SuperAbsorbentSpongeItemNest.kt:22-32" }
+    ],
+    "numbers": [
+      { "label": "Radius", "value": "3 blocks (sphere)", "src": "items/misc/nests/SuperAbsorbentSpongeItemNest.kt:31, items/misc/nests/SuperAbsorbentSpongeItemNest.kt:56-57, shapes/Sphere.java:71-90" },
+      { "label": "Uses", "value": "Unlimited; no cooldown", "src": "items/misc/nests/SuperAbsorbentSpongeItemNest.kt:22-32" }
+    ],
+    "details": [
+      { "text": "Both source and flowing fluid are removed.", "src": "items/misc/nests/SuperAbsorbentSpongeItemNest.kt:63-64" },
+      { "text": "Placing it anywhere that isn't the matching fluid (on dry ground, or a water sponge into lava) does nothing, and the sponge can't be placed as a block.", "src": "items/misc/nests/SuperAbsorbentSpongeItemNest.kt:23-26" },
+      { "text": "Removals are logged to the server's block-logging plugins under your name.", "src": "items/misc/nests/SuperAbsorbentSpongeItemNest.kt:64, util/extensions/BlockUtil.kt:40-44" }
+    ],
+    "quirks": [
+      { "text": "Waterlogged blocks (slabs, stairs, leaves and so on) keep their water. The code meant to drain them checks the wrong thing and never runs.", "src": "items/misc/nests/SuperAbsorbentSpongeItemNest.kt:60-62" }
+    ]
+  }
+]

@@ -1,0 +1,890 @@
+{
+ "version": "26.2",
+ "items": {
+  "netherite_helmet": {
+   "attributes": {
+    "armor": 3,
+    "armor_toughness": 3,
+    "knockback_resistance": 0.10000000149011612
+   },
+   "durability": 407
+  },
+  "netherite_chestplate": {
+   "attributes": {
+    "armor": 8,
+    "armor_toughness": 3,
+    "knockback_resistance": 0.10000000149011612
+   },
+   "durability": 592
+  },
+  "netherite_leggings": {
+   "attributes": {
+    "armor": 6,
+    "armor_toughness": 3,
+    "knockback_resistance": 0.10000000149011612
+   },
+   "durability": 555
+  },
+  "netherite_boots": {
+   "attributes": {
+    "armor": 3,
+    "armor_toughness": 3,
+    "knockback_resistance": 0.10000000149011612
+   },
+   "durability": 481
+  },
+  "netherite_sword": {
+   "attributes": {
+    "attack_damage": 7,
+    "attack_speed": -2.4000000953674316
+   },
+   "durability": 2031
+  },
+  "netherite_pickaxe": {
+   "attributes": {
+    "attack_damage": 5,
+    "attack_speed": -2.799999952316284
+   },
+   "durability": 2031
+  },
+  "netherite_axe": {
+   "attributes": {
+    "attack_damage": 9,
+    "attack_speed": -3
+   },
+   "durability": 2031
+  },
+  "netherite_shovel": {
+   "attributes": {
+    "attack_damage": 5.5,
+    "attack_speed": -3
+   },
+   "durability": 2031
+  },
+  "netherite_hoe": {
+   "attributes": {
+    "attack_damage": 0,
+    "attack_speed": 0
+   },
+   "durability": 2031
+  },
+  "diamond_helmet": {
+   "attributes": {
+    "armor": 3,
+    "armor_toughness": 2
+   },
+   "durability": 363
+  },
+  "diamond_chestplate": {
+   "attributes": {
+    "armor": 8,
+    "armor_toughness": 2
+   },
+   "durability": 528
+  },
+  "diamond_leggings": {
+   "attributes": {
+    "armor": 6,
+    "armor_toughness": 2
+   },
+   "durability": 495
+  },
+  "diamond_boots": {
+   "attributes": {
+    "armor": 3,
+    "armor_toughness": 2
+   },
+   "durability": 429
+  },
+  "diamond_sword": {
+   "attributes": {
+    "attack_damage": 6,
+    "attack_speed": -2.4000000953674316
+   },
+   "durability": 1561
+  },
+  "diamond_pickaxe": {
+   "attributes": {
+    "attack_damage": 4,
+    "attack_speed": -2.799999952316284
+   },
+   "durability": 1561
+  },
+  "diamond_axe": {
+   "attributes": {
+    "attack_damage": 8,
+    "attack_speed": -3
+   },
+   "durability": 1561
+  },
+  "diamond_shovel": {
+   "attributes": {
+    "attack_damage": 4.5,
+    "attack_speed": -3
+   },
+   "durability": 1561
+  },
+  "diamond_hoe": {
+   "attributes": {
+    "attack_damage": 0,
+    "attack_speed": 0
+   },
+   "durability": 1561
+  },
+  "iron_helmet": {
+   "attributes": {
+    "armor": 2,
+    "armor_toughness": 0
+   },
+   "durability": 165
+  },
+  "iron_chestplate": {
+   "attributes": {
+    "armor": 6,
+    "armor_toughness": 0
+   },
+   "durability": 240
+  },
+  "iron_leggings": {
+   "attributes": {
+    "armor": 5,
+    "armor_toughness": 0
+   },
+   "durability": 225
+  },
+  "iron_boots": {
+   "attributes": {
+    "armor": 2,
+    "armor_toughness": 0
+   },
+   "durability": 195
+  },
+  "iron_sword": {
+   "attributes": {
+    "attack_damage": 5,
+    "attack_speed": -2.4000000953674316
+   },
+   "durability": 250
+  },
+  "iron_pickaxe": {
+   "attributes": {
+    "attack_damage": 3,
+    "attack_speed": -2.799999952316284
+   },
+   "durability": 250
+  },
+  "iron_axe": {
+   "attributes": {
+    "attack_damage": 8,
+    "attack_speed": -3.0999999046325684
+   },
+   "durability": 250
+  },
+  "iron_shovel": {
+   "attributes": {
+    "attack_damage": 3.5,
+    "attack_speed": -3
+   },
+   "durability": 250
+  },
+  "iron_hoe": {
+   "attributes": {
+    "attack_damage": 0,
+    "attack_speed": -1
+   },
+   "durability": 250
+  },
+  "golden_helmet": {
+   "attributes": {
+    "armor": 2,
+    "armor_toughness": 0
+   },
+   "durability": 77
+  },
+  "golden_chestplate": {
+   "attributes": {
+    "armor": 5,
+    "armor_toughness": 0
+   },
+   "durability": 112
+  },
+  "golden_leggings": {
+   "attributes": {
+    "armor": 3,
+    "armor_toughness": 0
+   },
+   "durability": 105
+  },
+  "golden_boots": {
+   "attributes": {
+    "armor": 1,
+    "armor_toughness": 0
+   },
+   "durability": 91
+  },
+  "golden_sword": {
+   "attributes": {
+    "attack_damage": 3,
+    "attack_speed": -2.4000000953674316
+   },
+   "durability": 32
+  },
+  "golden_pickaxe": {
+   "attributes": {
+    "attack_damage": 1,
+    "attack_speed": -2.799999952316284
+   },
+   "durability": 32
+  },
+  "golden_axe": {
+   "attributes": {
+    "attack_damage": 6,
+    "attack_speed": -3
+   },
+   "durability": 32
+  },
+  "golden_shovel": {
+   "attributes": {
+    "attack_damage": 1.5,
+    "attack_speed": -3
+   },
+   "durability": 32
+  },
+  "golden_hoe": {
+   "attributes": {
+    "attack_damage": 0,
+    "attack_speed": -3
+   },
+   "durability": 32
+  },
+  "copper_helmet": {
+   "attributes": {
+    "armor": 2,
+    "armor_toughness": 0
+   },
+   "durability": 121
+  },
+  "copper_chestplate": {
+   "attributes": {
+    "armor": 4,
+    "armor_toughness": 0
+   },
+   "durability": 176
+  },
+  "copper_leggings": {
+   "attributes": {
+    "armor": 3,
+    "armor_toughness": 0
+   },
+   "durability": 165
+  },
+  "copper_boots": {
+   "attributes": {
+    "armor": 1,
+    "armor_toughness": 0
+   },
+   "durability": 143
+  },
+  "copper_sword": {
+   "attributes": {
+    "attack_damage": 4,
+    "attack_speed": -2.4000000953674316
+   },
+   "durability": 190
+  },
+  "copper_pickaxe": {
+   "attributes": {
+    "attack_damage": 2,
+    "attack_speed": -2.799999952316284
+   },
+   "durability": 190
+  },
+  "copper_axe": {
+   "attributes": {
+    "attack_damage": 8,
+    "attack_speed": -3.200000047683716
+   },
+   "durability": 190
+  },
+  "copper_shovel": {
+   "attributes": {
+    "attack_damage": 2.5,
+    "attack_speed": -3
+   },
+   "durability": 190
+  },
+  "copper_hoe": {
+   "attributes": {
+    "attack_damage": 0,
+    "attack_speed": -2
+   },
+   "durability": 190
+  },
+  "elytra": {
+   "attributes": {},
+   "durability": 432
+  },
+  "fishing_rod": {
+   "attributes": {},
+   "durability": 64
+  },
+  "shield": {
+   "attributes": {},
+   "durability": 336
+  },
+  "crossbow": {
+   "attributes": {},
+   "durability": 465
+  },
+  "blaze_rod": {
+   "attributes": {},
+   "durability": null
+  },
+  "bow": {
+   "attributes": {},
+   "durability": 384
+  },
+  "trident": {
+   "attributes": {
+    "attack_damage": 8,
+    "attack_speed": -2.9000000953674316
+   },
+   "durability": 250
+  },
+  "mace": {
+   "attributes": {
+    "attack_damage": 5,
+    "attack_speed": -3.4000000953674316
+   },
+   "durability": 500
+  }
+ },
+ "supports": {
+  "binding_curse": [
+   "netherite_helmet",
+   "netherite_chestplate",
+   "netherite_leggings",
+   "netherite_boots",
+   "diamond_helmet",
+   "diamond_chestplate",
+   "diamond_leggings",
+   "diamond_boots",
+   "iron_helmet",
+   "iron_chestplate",
+   "iron_leggings",
+   "iron_boots",
+   "golden_helmet",
+   "golden_chestplate",
+   "golden_leggings",
+   "golden_boots",
+   "copper_helmet",
+   "copper_chestplate",
+   "copper_leggings",
+   "copper_boots",
+   "elytra"
+  ],
+  "vanishing_curse": [
+   "netherite_helmet",
+   "netherite_chestplate",
+   "netherite_leggings",
+   "netherite_boots",
+   "netherite_sword",
+   "netherite_pickaxe",
+   "netherite_axe",
+   "netherite_shovel",
+   "netherite_hoe",
+   "diamond_helmet",
+   "diamond_chestplate",
+   "diamond_leggings",
+   "diamond_boots",
+   "diamond_sword",
+   "diamond_pickaxe",
+   "diamond_axe",
+   "diamond_shovel",
+   "diamond_hoe",
+   "iron_helmet",
+   "iron_chestplate",
+   "iron_leggings",
+   "iron_boots",
+   "iron_sword",
+   "iron_pickaxe",
+   "iron_axe",
+   "iron_shovel",
+   "iron_hoe",
+   "golden_helmet",
+   "golden_chestplate",
+   "golden_leggings",
+   "golden_boots",
+   "golden_sword",
+   "golden_pickaxe",
+   "golden_axe",
+   "golden_shovel",
+   "golden_hoe",
+   "copper_helmet",
+   "copper_chestplate",
+   "copper_leggings",
+   "copper_boots",
+   "copper_sword",
+   "copper_pickaxe",
+   "copper_axe",
+   "copper_shovel",
+   "copper_hoe",
+   "elytra",
+   "fishing_rod",
+   "shield",
+   "crossbow",
+   "bow",
+   "trident",
+   "mace"
+  ],
+  "riptide": [
+   "trident"
+  ],
+  "channeling": [
+   "trident"
+  ],
+  "wind_burst": [
+   "mace"
+  ],
+  "frost_walker": [
+   "netherite_boots",
+   "diamond_boots",
+   "iron_boots",
+   "golden_boots",
+   "copper_boots"
+  ],
+  "lunge": [],
+  "sharpness": [
+   "netherite_sword",
+   "netherite_axe",
+   "diamond_sword",
+   "diamond_axe",
+   "iron_sword",
+   "iron_axe",
+   "golden_sword",
+   "golden_axe",
+   "copper_sword",
+   "copper_axe"
+  ],
+  "smite": [
+   "netherite_sword",
+   "netherite_axe",
+   "diamond_sword",
+   "diamond_axe",
+   "iron_sword",
+   "iron_axe",
+   "golden_sword",
+   "golden_axe",
+   "copper_sword",
+   "copper_axe",
+   "mace"
+  ],
+  "bane_of_arthropods": [
+   "netherite_sword",
+   "netherite_axe",
+   "diamond_sword",
+   "diamond_axe",
+   "iron_sword",
+   "iron_axe",
+   "golden_sword",
+   "golden_axe",
+   "copper_sword",
+   "copper_axe",
+   "mace"
+  ],
+  "impaling": [
+   "trident"
+  ],
+  "power": [
+   "bow"
+  ],
+  "density": [
+   "mace"
+  ],
+  "breach": [
+   "mace"
+  ],
+  "piercing": [
+   "crossbow"
+  ],
+  "sweeping_edge": [
+   "netherite_sword",
+   "diamond_sword",
+   "iron_sword",
+   "golden_sword",
+   "copper_sword"
+  ],
+  "multishot": [
+   "crossbow"
+  ],
+  "fire_aspect": [
+   "netherite_sword",
+   "diamond_sword",
+   "iron_sword",
+   "golden_sword",
+   "copper_sword",
+   "mace"
+  ],
+  "flame": [
+   "bow"
+  ],
+  "knockback": [
+   "netherite_sword",
+   "diamond_sword",
+   "iron_sword",
+   "golden_sword",
+   "copper_sword"
+  ],
+  "punch": [
+   "bow"
+  ],
+  "protection": [
+   "netherite_helmet",
+   "netherite_chestplate",
+   "netherite_leggings",
+   "netherite_boots",
+   "diamond_helmet",
+   "diamond_chestplate",
+   "diamond_leggings",
+   "diamond_boots",
+   "iron_helmet",
+   "iron_chestplate",
+   "iron_leggings",
+   "iron_boots",
+   "golden_helmet",
+   "golden_chestplate",
+   "golden_leggings",
+   "golden_boots",
+   "copper_helmet",
+   "copper_chestplate",
+   "copper_leggings",
+   "copper_boots"
+  ],
+  "blast_protection": [
+   "netherite_helmet",
+   "netherite_chestplate",
+   "netherite_leggings",
+   "netherite_boots",
+   "diamond_helmet",
+   "diamond_chestplate",
+   "diamond_leggings",
+   "diamond_boots",
+   "iron_helmet",
+   "iron_chestplate",
+   "iron_leggings",
+   "iron_boots",
+   "golden_helmet",
+   "golden_chestplate",
+   "golden_leggings",
+   "golden_boots",
+   "copper_helmet",
+   "copper_chestplate",
+   "copper_leggings",
+   "copper_boots"
+  ],
+  "fire_protection": [
+   "netherite_helmet",
+   "netherite_chestplate",
+   "netherite_leggings",
+   "netherite_boots",
+   "diamond_helmet",
+   "diamond_chestplate",
+   "diamond_leggings",
+   "diamond_boots",
+   "iron_helmet",
+   "iron_chestplate",
+   "iron_leggings",
+   "iron_boots",
+   "golden_helmet",
+   "golden_chestplate",
+   "golden_leggings",
+   "golden_boots",
+   "copper_helmet",
+   "copper_chestplate",
+   "copper_leggings",
+   "copper_boots"
+  ],
+  "projectile_protection": [
+   "netherite_helmet",
+   "netherite_chestplate",
+   "netherite_leggings",
+   "netherite_boots",
+   "diamond_helmet",
+   "diamond_chestplate",
+   "diamond_leggings",
+   "diamond_boots",
+   "iron_helmet",
+   "iron_chestplate",
+   "iron_leggings",
+   "iron_boots",
+   "golden_helmet",
+   "golden_chestplate",
+   "golden_leggings",
+   "golden_boots",
+   "copper_helmet",
+   "copper_chestplate",
+   "copper_leggings",
+   "copper_boots"
+  ],
+  "feather_falling": [
+   "netherite_boots",
+   "diamond_boots",
+   "iron_boots",
+   "golden_boots",
+   "copper_boots"
+  ],
+  "fortune": [
+   "netherite_pickaxe",
+   "netherite_axe",
+   "netherite_shovel",
+   "netherite_hoe",
+   "diamond_pickaxe",
+   "diamond_axe",
+   "diamond_shovel",
+   "diamond_hoe",
+   "iron_pickaxe",
+   "iron_axe",
+   "iron_shovel",
+   "iron_hoe",
+   "golden_pickaxe",
+   "golden_axe",
+   "golden_shovel",
+   "golden_hoe",
+   "copper_pickaxe",
+   "copper_axe",
+   "copper_shovel",
+   "copper_hoe"
+  ],
+  "looting": [
+   "netherite_sword",
+   "diamond_sword",
+   "iron_sword",
+   "golden_sword",
+   "copper_sword"
+  ],
+  "silk_touch": [
+   "netherite_pickaxe",
+   "netherite_axe",
+   "netherite_shovel",
+   "netherite_hoe",
+   "diamond_pickaxe",
+   "diamond_axe",
+   "diamond_shovel",
+   "diamond_hoe",
+   "iron_pickaxe",
+   "iron_axe",
+   "iron_shovel",
+   "iron_hoe",
+   "golden_pickaxe",
+   "golden_axe",
+   "golden_shovel",
+   "golden_hoe",
+   "copper_pickaxe",
+   "copper_axe",
+   "copper_shovel",
+   "copper_hoe"
+  ],
+  "luck_of_the_sea": [
+   "fishing_rod"
+  ],
+  "efficiency": [
+   "netherite_pickaxe",
+   "netherite_axe",
+   "netherite_shovel",
+   "netherite_hoe",
+   "diamond_pickaxe",
+   "diamond_axe",
+   "diamond_shovel",
+   "diamond_hoe",
+   "iron_pickaxe",
+   "iron_axe",
+   "iron_shovel",
+   "iron_hoe",
+   "golden_pickaxe",
+   "golden_axe",
+   "golden_shovel",
+   "golden_hoe",
+   "copper_pickaxe",
+   "copper_axe",
+   "copper_shovel",
+   "copper_hoe"
+  ],
+  "quick_charge": [
+   "crossbow"
+  ],
+  "lure": [
+   "fishing_rod"
+  ],
+  "respiration": [
+   "netherite_helmet",
+   "diamond_helmet",
+   "iron_helmet",
+   "golden_helmet",
+   "copper_helmet"
+  ],
+  "aqua_affinity": [
+   "netherite_helmet",
+   "diamond_helmet",
+   "iron_helmet",
+   "golden_helmet",
+   "copper_helmet"
+  ],
+  "soul_speed": [
+   "netherite_boots",
+   "diamond_boots",
+   "iron_boots",
+   "golden_boots",
+   "copper_boots"
+  ],
+  "swift_sneak": [
+   "netherite_leggings",
+   "diamond_leggings",
+   "iron_leggings",
+   "golden_leggings",
+   "copper_leggings"
+  ],
+  "depth_strider": [
+   "netherite_boots",
+   "diamond_boots",
+   "iron_boots",
+   "golden_boots",
+   "copper_boots"
+  ],
+  "thorns": [
+   "netherite_helmet",
+   "netherite_chestplate",
+   "netherite_leggings",
+   "netherite_boots",
+   "diamond_helmet",
+   "diamond_chestplate",
+   "diamond_leggings",
+   "diamond_boots",
+   "iron_helmet",
+   "iron_chestplate",
+   "iron_leggings",
+   "iron_boots",
+   "golden_helmet",
+   "golden_chestplate",
+   "golden_leggings",
+   "golden_boots",
+   "copper_helmet",
+   "copper_chestplate",
+   "copper_leggings",
+   "copper_boots"
+  ],
+  "loyalty": [
+   "trident"
+  ],
+  "unbreaking": [
+   "netherite_helmet",
+   "netherite_chestplate",
+   "netherite_leggings",
+   "netherite_boots",
+   "netherite_sword",
+   "netherite_pickaxe",
+   "netherite_axe",
+   "netherite_shovel",
+   "netherite_hoe",
+   "diamond_helmet",
+   "diamond_chestplate",
+   "diamond_leggings",
+   "diamond_boots",
+   "diamond_sword",
+   "diamond_pickaxe",
+   "diamond_axe",
+   "diamond_shovel",
+   "diamond_hoe",
+   "iron_helmet",
+   "iron_chestplate",
+   "iron_leggings",
+   "iron_boots",
+   "iron_sword",
+   "iron_pickaxe",
+   "iron_axe",
+   "iron_shovel",
+   "iron_hoe",
+   "golden_helmet",
+   "golden_chestplate",
+   "golden_leggings",
+   "golden_boots",
+   "golden_sword",
+   "golden_pickaxe",
+   "golden_axe",
+   "golden_shovel",
+   "golden_hoe",
+   "copper_helmet",
+   "copper_chestplate",
+   "copper_leggings",
+   "copper_boots",
+   "copper_sword",
+   "copper_pickaxe",
+   "copper_axe",
+   "copper_shovel",
+   "copper_hoe",
+   "elytra",
+   "fishing_rod",
+   "shield",
+   "crossbow",
+   "bow",
+   "trident",
+   "mace"
+  ],
+  "infinity": [
+   "bow"
+  ],
+  "mending": [
+   "netherite_helmet",
+   "netherite_chestplate",
+   "netherite_leggings",
+   "netherite_boots",
+   "netherite_sword",
+   "netherite_pickaxe",
+   "netherite_axe",
+   "netherite_shovel",
+   "netherite_hoe",
+   "diamond_helmet",
+   "diamond_chestplate",
+   "diamond_leggings",
+   "diamond_boots",
+   "diamond_sword",
+   "diamond_pickaxe",
+   "diamond_axe",
+   "diamond_shovel",
+   "diamond_hoe",
+   "iron_helmet",
+   "iron_chestplate",
+   "iron_leggings",
+   "iron_boots",
+   "iron_sword",
+   "iron_pickaxe",
+   "iron_axe",
+   "iron_shovel",
+   "iron_hoe",
+   "golden_helmet",
+   "golden_chestplate",
+   "golden_leggings",
+   "golden_boots",
+   "golden_sword",
+   "golden_pickaxe",
+   "golden_axe",
+   "golden_shovel",
+   "golden_hoe",
+   "copper_helmet",
+   "copper_chestplate",
+   "copper_leggings",
+   "copper_boots",
+   "copper_sword",
+   "copper_pickaxe",
+   "copper_axe",
+   "copper_shovel",
+   "copper_hoe",
+   "elytra",
+   "fishing_rod",
+   "shield",
+   "crossbow",
+   "bow",
+   "trident",
+   "mace"
+  ]
+ }
+}

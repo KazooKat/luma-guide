@@ -1,0 +1,512 @@
+[
+  {
+    "key": "liquorice-lorica",
+    "items": ["liquorice-lorica"],
+    "summary": "A netherite chestplate that makes you walk a little faster and fly 25% faster (creative or /fly flight) while you wear it.",
+    "numbers": [
+      { "label": "Walking speed", "value": "+0.025 movement speed while worn in the chest slot", "src": "items/armor/chestplate/LiquoriceLoricaItem.kt:28-30" },
+      { "label": "Flight speed", "value": "0.125 while worn (normal is 0.1), so 25% faster", "src": "items/armor/chestplate/LiquoriceLoricaItem.kt:44-50" }
+    ],
+    "details": [
+      { "text": "The flight speed is set when you put the chestplate on or take it off.", "src": "items/armor/chestplate/LiquoriceLoricaItem.kt:44-50, events/item/Listeners.kt:387-395" }
+    ],
+    "quirks": [
+      { "text": "Taking it off always resets your flight speed to the default 0.1, even if something else had given you a different flight speed.", "src": "items/armor/chestplate/LiquoriceLoricaItem.kt:47-48" }
+    ],
+    "config": [
+      { "text": "The speed it changes is the game's creative-style flying speed, so it should only matter when flying in creative or with /fly, not when gliding with an elytra. This depends on the game, not tested.", "src": "items/armor/chestplate/LiquoriceLoricaItem.kt:46-48" }
+    ]
+  },
+  {
+    "key": "harewear-glasses",
+    "items": ["harewear-glasses"],
+    "summary": "A netherite helmet that lets you look inside a shulker box without placing it. Sneak and right-click while holding the box.",
+    "use": [
+      { "text": "Sneak and right-click with a shulker box in either hand. The box's contents open in a window titled with the box's name (or \"Shulker Box\" if it has none), and the box is not placed.", "src": "items/armor/helmet/HareweaverGlassesItem.kt:49-58, guis/SnapshotShulkerBoxInventory.kt:18-23" }
+    ],
+    "details": [
+      { "text": "The window is view-only. Every click inside it is cancelled, so you can't take items out or put items in.", "src": "guis/SnapshotShulkerBoxInventory.kt:25-27, events/GeneralListeners.kt:142-147" }
+    ],
+    "quirks": [
+      { "text": "The glasses don't have to be on your head. The right-click check also runs for items in your hands, so holding the glasses in your off-hand and the box in your main hand works too.", "src": "events/item/Listeners.kt:125-137, util/extensions/PlayerUtil.kt:171-186, items/armor/helmet/HareweaverGlassesItem.kt:49-58" }
+    ]
+  },
+  {
+    "key": "pride-crown",
+    "items": ["pridecrown"],
+    "summary": "A crown you wear on your head. It gives 3 extra hearts and shows rainbow sparkles above you.",
+    "use": [
+      { "text": "Right-click while holding it in your main hand to put it on. This only works if your helmet slot is empty. You can also click it into the helmet slot in your inventory.", "src": "items/armor/PrideCrownItem.kt:48, events/GeneralListeners.kt:101-118, events/GeneralListeners.kt:150-162" }
+    ],
+    "numbers": [
+      { "label": "Max health", "value": "+6 (3 hearts) while on your head", "src": "items/armor/PrideCrownItem.kt:50-54" },
+      { "label": "Sparkle interval", "value": "Every 3.5 s (70 ticks) while worn", "src": "items/armor/PrideCrownItem.kt:58-70, events/item/PassiveListeners.kt:19, LumaItems.java:87" }
+    ],
+    "details": [
+      { "text": "The sparkles only show while the crown is on your head. Holding it doesn't show them.", "src": "items/armor/PrideCrownItem.kt:59-61" }
+    ]
+  },
+  {
+    "key": "bouquet-trousers",
+    "items": ["bouquet-trousers"],
+    "summary": "Netherite leggings with a mid-air double jump. Start sneaking while you're in the air to launch forward and up. This works once per trip into the air, and landing from that jump is safe if you fell less than 10 blocks.",
+    "use": [
+      { "text": "While you're about a block or more above solid ground, start sneaking to boost in the direction you're looking.", "src": "items/armor/trousers/BouquetTrousersItem.kt:52-57, util/extensions/PlayerUtil.kt:100-124" }
+    ],
+    "numbers": [
+      { "label": "Boost", "value": "0.6 × your look direction, with 0.7 upward speed", "src": "items/armor/trousers/BouquetTrousersItem.kt:57" },
+      { "label": "Walking speed", "value": "+0.025 movement speed while worn as leggings", "src": "items/armor/trousers/BouquetTrousersItem.kt:46-48" },
+      { "label": "Fall protection", "value": "Fall damage cancelled if the fall was under 10 blocks (only after a double jump)", "src": "items/armor/trousers/BouquetTrousersItem.kt:67-71" }
+    ],
+    "details": [
+      { "text": "You get one double jump each time you're in the air. It comes back when you touch the ground again.", "src": "items/armor/trousers/BouquetTrousersItem.kt:53-56, items/armor/trousers/BouquetTrousersItem.kt:60-65" },
+      { "text": "It doesn't work in water or while flying.", "src": "items/armor/trousers/BouquetTrousersItem.kt:53" }
+    ],
+    "quirks": [
+      { "text": "The tooltip says \"while falling\", but the code only checks that you're off the ground. It also works on the way up from a normal jump.", "src": "items/armor/trousers/BouquetTrousersItem.kt:52-55" },
+      { "text": "The double jump and the fall protection aren't tied to wearing the leggings. Holding them in either hand works too. The speed bonus only counts while they're worn.", "src": "events/item/Listeners.kt:305-310, events/item/Listeners.kt:197-207, util/extensions/PlayerUtil.kt:171-186, items/armor/trousers/BouquetTrousersItem.kt:46-48" }
+    ]
+  },
+  {
+    "key": "fishing-collectibles",
+    "items": ["echo-pearl", "leviathan-scale", "whispering-conch", "fishers-boots", "frostweave-fur", "guardian-glaive", "pirates-buried-map", "lost-lantern", "coral-quill", "ghostfish-essence", "aqua-lotus"],
+    "summary": "Fishing-themed collectibles with no special ability. Each one has a hidden Luck of the Sea I enchant and otherwise works like its base item. For example, the Fishers Boots are ordinary leather boots and the Guardian Glaive is an ordinary trident.",
+    "details": [
+      { "text": "They all share one simple template: the base item, a name, a line of lore, hidden Luck of the Sea I, and the Collectible tier. The code gives them no abilities.", "src": "items/misc/collectible/FishingCollectibleItemNest.kt:11-22, items/misc/collectible/FishingCollectibleItemNest.kt:25-161" },
+      { "text": "The Lost Lantern and Aqua Lotus can't be placed as blocks. The plugin blocks placing any of its custom items.", "src": "events/item/Listeners.kt:254-258, util/extensions/ItemUtil.kt:151-164, model/item/ItemFactory.kt:142" }
+    ]
+  },
+  {
+    "key": "pride-2025-tokens",
+    "items": ["pride-maze-token", "pride-token"],
+    "summary": "Pride 2025 event tokens with no ability of their own. The Maze Token marks that you finished the Pride 2025 maze. The Pride Token is the event's currency, and whatever it buys is handled somewhere else, not in the item's code.",
+    "details": [
+      { "text": "Both have a hidden Unbreaking I enchant and no special behaviour in the code.", "src": "items/misc/collectible/Pride2025ItemNest.kt:16-22, items/misc/collectible/Pride2025ItemNest.kt:24-53" }
+    ]
+  },
+  {
+    "key": "radiant-charm",
+    "items": ["radiant-charm"],
+    "summary": "Hold it in either hand to get 10 seconds of hidden Regeneration II about every 31.5 seconds. The tooltip doesn't mention this.",
+    "numbers": [
+      { "label": "Effect", "value": "Regeneration II for 10 s (200 ticks)", "src": "items/misc/collectible/Pride2025ItemNest.kt:58" },
+      { "label": "Cooldown", "value": "30 s (600 ticks)", "src": "items/misc/collectible/Pride2025ItemNest.kt:74-80" },
+      { "label": "Real gap", "value": "About 31.5 s while you keep holding it. The check only runs every 3.5 s (70 ticks), and the 9th check is the first one after the 30 s cooldown ends.", "src": "events/item/PassiveListeners.kt:19, LumaItems.java:87, util/extensions/Executors.kt:75-82, model/item/CustomItemCooldown.kt:20-25" }
+    ],
+    "details": [
+      { "text": "It only works in your main hand or off-hand. The periodic check looks at your worn armor and both hands, not the rest of your inventory.", "src": "events/item/PassiveListeners.kt:43-55, util/extensions/PlayerUtil.kt:216-226" },
+      { "text": "The effect shows no particles and no effect icon.", "src": "items/misc/collectible/Pride2025ItemNest.kt:58" }
+    ]
+  },
+  {
+    "key": "pride-shard-lantern",
+    "items": ["pride-shard-lantern"],
+    "summary": "Hold it in either hand for constant hidden Night Vision. It can't be placed as a block.",
+    "numbers": [
+      { "label": "Night Vision", "value": "15 s (300 ticks), reapplied every 3.5 s (70 ticks) while held", "src": "items/misc/collectible/Pride2025ItemNest.kt:87, items/misc/collectible/Pride2025ItemNest.kt:113-115, events/item/PassiveListeners.kt:19" }
+    ],
+    "details": [
+      { "text": "Night Vision lasts up to 15 seconds after you stop holding it. It shows no particles or icon.", "src": "items/misc/collectible/Pride2025ItemNest.kt:87" },
+      { "text": "It works in your main hand or off-hand, not from elsewhere in your inventory.", "src": "events/item/PassiveListeners.kt:43-55, util/extensions/PlayerUtil.kt:216-226" },
+      { "text": "Placing it is blocked.", "src": "items/misc/collectible/Pride2025ItemNest.kt:105-111, events/item/Listeners.kt:254-258" }
+    ]
+  },
+  {
+    "key": "st-patricks-helmet",
+    "items": ["st-patricks-helmet"],
+    "summary": "A collectible turtle shell with no special ability and no extra enchantments. It works like a normal turtle shell.",
+    "details": [
+      { "text": "The item only sets a name, lore and a Collectible tier. There is no ability code.", "src": "items/misc/collectible/StPatricksItemNest.kt:11-23" }
+    ]
+  },
+  {
+    "key": "mini-poppy",
+    "items": ["mini-poppy"],
+    "summary": "Holding this poppy in either hand, or wearing it on your head, shrinks you to half size. It can't be placed or composted.",
+    "use": [
+      { "text": "Right-click while holding it in your main hand to wear it on your head. This only works if your helmet slot is empty.", "src": "items/misc/scale/MiniPoppyItem.kt:50, events/GeneralListeners.kt:101-118" }
+    ],
+    "numbers": [
+      { "label": "Size", "value": "−0.5 scale (normal is 1.0, so half size) in your main hand, off-hand or head slot", "src": "items/misc/scale/MiniPoppyItem.kt:28, items/misc/scale/MiniPoppyItem.kt:47-49, util/SharedContainers.java:9, model/item/AttributeContainer.java:28-32, model/item/AttributeContainer.java:90" }
+    ],
+    "details": [
+      { "text": "Placing it and putting it in a composter are both blocked.", "src": "items/misc/scale/MiniPoppyItem.kt:55-66" },
+      { "text": "Hard-disabled in the event_new world. There you can't move it into your hotbar or armor slots or scroll to it.", "src": "items/misc/scale/MiniPoppyItem.kt:23, events/item/Listeners.kt:473-488, events/item/Listeners.kt:564-576" }
+    ]
+  },
+  {
+    "key": "easter-charm",
+    "items": ["easter-charm"],
+    "summary": "A reward for completing Explorer Miles. The tooltip hints it might do something if you keep it, but the code gives it no ability. It's a rabbit's foot with Knockback IV and Unbreaking X.",
+    "details": [
+      { "text": "The item only sets a name, lore and enchants. There is no ability code.", "src": "items/playground/event/EasterCharmItem.kt:10-31" }
+    ]
+  },
+  {
+    "key": "valentide-charms",
+    "items": ["valentide-charm-heartbreakers", "valentide-charm-rosethorn", "valentide-charm-sweethearts"],
+    "summary": "The three Valentide 2025 team charms (HeartBreakers, Rosethorn and Sweethearts) have no ability. Like the other charms, each has Knockback IV and Unbreaking X.",
+    "details": [
+      { "text": "A comment in the code says the author may add functionality to these charms \"someday\". For now there is none.", "src": "items/playground/event/ValentideCharmItemNest.kt:11-12" },
+      { "text": "All three charms are the same item underneath. Only the name and a stored team tag tell them apart.", "src": "items/playground/event/ValentideCharmItemNest.kt:35-36, items/playground/event/ValentideCharmItemNest.kt:40-56" }
+    ]
+  },
+  {
+    "key": "beloved-fallow",
+    "items": ["belovedfallow"],
+    "summary": "A netherite hoe that puts nearby adult animals into love mode on right-click, the same as feeding them, so they breed without food.",
+    "use": [
+      { "text": "Right-click while holding it (either hand). Every animal around you that can breed right now gets hearts and goes into love mode.", "src": "items/tools/harrow/BelovedFallowItem.kt:35-53, events/item/Listeners.kt:125-137" }
+    ],
+    "numbers": [
+      { "label": "Area", "value": "5 blocks in every direction from you (a 10×10×10 box centred on you)", "src": "items/tools/harrow/BelovedFallowItem.kt:40" },
+      { "label": "Love mode", "value": "30 s (600 ticks)", "src": "items/tools/harrow/BelovedFallowItem.kt:50" },
+      { "label": "Cooldown", "value": "2 min (2400 ticks)", "src": "items/tools/harrow/BelovedFallowItem.kt:58" }
+    ],
+    "details": [
+      { "text": "Animals the game says can't breed right now are skipped.", "src": "items/tools/harrow/BelovedFallowItem.kt:44-47" },
+      { "text": "The cooldown only starts if at least one animal was affected. While on cooldown, right-clicking does nothing and shows no message.", "src": "items/tools/harrow/BelovedFallowItem.kt:36-38, items/tools/harrow/BelovedFallowItem.kt:55-58" },
+      { "text": "Claims and regions aren't checked. It works on any animals in range, including other players' animals.", "src": "items/tools/harrow/BelovedFallowItem.kt:39-53" }
+    ],
+    "quirks": [
+      { "text": "The tooltip says \"5x5\", but the search reaches 5 blocks out in every direction, so it covers a 10×10 area centred on you (and 5 blocks up and down).", "src": "items/tools/harrow/BelovedFallowItem.kt:40" }
+    ],
+    "config": [
+      { "text": "Which animals count as able to breed is decided by the game. That should mean adults that aren't on a breeding cooldown, so babies are skipped. This depends on the game, not tested.", "src": "items/tools/harrow/BelovedFallowItem.kt:45" }
+    ]
+  },
+  {
+    "key": "blooming-bunny-rake",
+    "items": ["blooming-bunny-rake"],
+    "summary": "A netherite hoe with a \"crop of the day\". When you break that crop with it, there's a 15% chance the drops are doubled.",
+    "use": [
+      { "text": "Break the day's crop with the rake in your main hand.", "src": "items/tools/harrow/BloomingBunnyRakeItem.kt:79-98, events/item/Listeners.kt:217-224" },
+      { "text": "Switching hotbar slots while holding the rake shows the crop of the day in your action bar.", "src": "items/tools/harrow/BloomingBunnyRakeItem.kt:73-76, events/item/Listeners.kt:564-578" }
+    ],
+    "numbers": [
+      { "label": "Bonus chance", "value": "15% per crop block broken", "src": "items/tools/harrow/BloomingBunnyRakeItem.kt:81" },
+      { "label": "Crop by day of month", "value": "1, 8, 15, 22, 29: Potatoes · 2, 9, 16, 23, 30: Carrots · 3, 10, 17, 24, 31: Wheat · 4, 11, 18, 25: Beetroots · 5, 12, 19, 26: Nether Wart · 6, 13, 20, 27: Sugar Cane · 7, 14, 21, 28: Mushrooms (red and brown)", "src": "items/tools/harrow/BloomingBunnyRakeItem.kt:29-47" }
+    ],
+    "details": [
+      { "text": "When the bonus triggers, the drops are worked out again for the rake in your hand and then doubled. If the block drops one or two stacks, all of them are doubled. With more stacks, only the first half (rounded down) plus one are doubled.", "src": "items/tools/harrow/BloomingBunnyRakeItem.kt:85-97" },
+      { "text": "Crop growth isn't checked, so unripe crops can trigger it too. The bonus just doubles whatever they would drop.", "src": "items/tools/harrow/BloomingBunnyRakeItem.kt:79-83" }
+    ],
+    "quirks": [
+      { "text": "The crop of the day is picked from the server's date once, when the plugin starts up, not at midnight. It only changes after a restart, so it can be out of date on a server that has been running for more than a day.", "src": "items/tools/harrow/BloomingBunnyRakeItem.kt:41-47" },
+      { "text": "The action-bar message also shows on every scroll while the rake is in your off-hand.", "src": "events/item/Listeners.kt:564-578, util/extensions/PlayerUtil.kt:171-186, items/tools/harrow/BloomingBunnyRakeItem.kt:73-76" }
+    ],
+    "config": [
+      { "text": "The scroll check looks at what you're holding at the moment you scroll. The game most likely runs it before the switch happens, which would mean the message shows when you scroll away from the rake rather than onto it. This depends on the game, not tested.", "src": "events/item/Listeners.kt:564-578, items/tools/harrow/BloomingBunnyRakeItem.kt:73-76" }
+    ]
+  },
+  {
+    "key": "heartstring-hatchet",
+    "items": ["heartstring-hatchet"],
+    "summary": "A netherite axe that gives extra reach while it's in your main hand. Sneak and right-click to start a vacuum that swirls nearby dropped items toward you for about 25 seconds.",
+    "use": [
+      { "text": "Sneak and right-click (hatchet in either hand) to start the vacuum.", "src": "items/tools/hatchet/HeartstringHatchetItem.kt:66-68, events/item/Listeners.kt:125-137" }
+    ],
+    "numbers": [
+      { "label": "Extra reach", "value": "+4.5 blocks for both blocks and entities, in the main hand only", "src": "items/tools/hatchet/HeartstringHatchetItem.kt:31, items/tools/hatchet/HeartstringHatchetItem.kt:50-53" },
+      { "label": "Vacuum cooldown", "value": "40 s (800 ticks)", "src": "items/tools/hatchet/HeartstringHatchetItem.kt:67-68" },
+      { "label": "Vacuum area", "value": "10 blocks in every direction, moving with you", "src": "items/tools/hatchet/HeartstringHatchetItem.kt:73" },
+      { "label": "Vacuum duration", "value": "About 25 s (one push every 5 ticks, 102 pushes)", "src": "items/tools/hatchet/HeartstringHatchetItem.kt:71, items/tools/hatchet/HeartstringHatchetItem.kt:79-82" }
+    ],
+    "details": [
+      { "text": "Items are pushed toward your eyes with a sideways twist, so they swirl around you rather than flying straight in.", "src": "items/tools/hatchet/HeartstringHatchetItem.kt:84-93" },
+      { "text": "It pulls every dropped item in range.", "src": "items/tools/hatchet/HeartstringHatchetItem.kt:73-94" },
+      { "text": "The cooldown starts even if there were no items nearby.", "src": "items/tools/hatchet/HeartstringHatchetItem.kt:67-68" },
+      { "text": "Hard-disabled in the pinata world. There you can't move it into your hotbar or armor slots or scroll to it.", "src": "items/tools/hatchet/HeartstringHatchetItem.kt:22, events/item/Listeners.kt:473-488, events/item/Listeners.kt:564-576" }
+    ],
+    "quirks": [
+      { "text": "To decide whether an item still needs pushing, the code adds the three distance offsets (x, y, z) together instead of measuring the real distance. So an item can stop being pulled while it's still far from you, if its offsets happen to cancel out.", "src": "items/tools/hatchet/HeartstringHatchetItem.kt:85-92" },
+      { "text": "On the last round the code tries to stop every item in range, but then gives them one more push straight away, so items don't actually stop when the vacuum ends.", "src": "items/tools/hatchet/HeartstringHatchetItem.kt:79-94" }
+    ]
+  },
+  {
+    "key": "spring-hatchet",
+    "items": ["spring-hatchet"],
+    "summary": "A netherite axe with Silk Touch that breaks any glass instantly when you left-click it.",
+    "use": [
+      { "text": "Left-click glass with the hatchet in your main hand. This covers glass, tinted glass, all stained glass, glass panes and stained glass panes.", "src": "items/tools/hatchet/SpringHatchetItem.kt:37-46, util/tags/Kind.java:33" }
+    ],
+    "config": [
+      { "text": "The glass is broken as if you had mined it yourself with the hatchet. That should mean its Silk Touch lets you keep the glass and claim or region protection still applies. This depends on the game and the server's protection plugins, not tested.", "src": "items/tools/hatchet/SpringHatchetItem.kt:26, items/tools/hatchet/SpringHatchetItem.kt:45" }
+    ]
+  },
+  {
+    "key": "ballistic-bunny-nouveau",
+    "items": ["ballistic-bunny-nouveau"],
+    "summary": "A netherite pickaxe that charges up as you mine. Each block you break adds one charge. Press your swap-hands key (F) to set off an explosion where you stand, and the more you've mined, the bigger it is.",
+    "use": [
+      { "text": "Break blocks with it in your main hand to build charge.", "src": "items/tools/mattock/BallisticBunnyNouveauItem.kt:62-69, events/item/Listeners.kt:217-224" },
+      { "text": "Press F with it in either hand to explode. The blast goes off 0.25 s later at your position, with no fire.", "src": "items/tools/mattock/BallisticBunnyNouveauItem.kt:71-96, events/item/Listeners.kt:139-144" }
+    ],
+    "numbers": [
+      { "label": "Minimum charge", "value": "100 blocks (explosion power 4, the same as TNT)", "src": "items/tools/mattock/BallisticBunnyNouveauItem.kt:81-85, items/tools/mattock/BallisticBunnyNouveauItem.kt:108-116" },
+      { "label": "Power curve", "value": "100 − 96 × e^(−0.0000199 × (blocks − 100)): about 5.7 at 1,000 blocks, 12.9 at 5,000 and 21.2 at 10,000", "src": "items/tools/mattock/BallisticBunnyNouveauItem.kt:108-116" },
+      { "label": "Max power", "value": "40, reached at about 23,700 blocks", "src": "items/tools/mattock/BallisticBunnyNouveauItem.kt:26, items/tools/mattock/BallisticBunnyNouveauItem.kt:99-106" },
+      { "label": "Cooldown", "value": "1 min (1200 ticks)", "src": "items/tools/mattock/BallisticBunnyNouveauItem.kt:92" },
+      { "label": "Delay", "value": "0.25 s (5 ticks) from pressing F to the blast", "src": "items/tools/mattock/BallisticBunnyNouveauItem.kt:94-96" }
+    ],
+    "details": [
+      { "text": "Charge belongs to you, not to the pickaxe, so it carries over to any copy you use. It isn't saved and is lost when the server restarts.", "src": "items/tools/mattock/BallisticBunnyNouveauItem.kt:27, items/tools/mattock/BallisticBunnyNouveauItem.kt:62-69" },
+      { "text": "A successful explosion resets your charge to 0. If you press F while it's on cooldown or below 100 charge, you get an action-bar message and keep your charge.", "src": "items/tools/mattock/BallisticBunnyNouveauItem.kt:76-92" },
+      { "text": "Pressing F with it in either hand never swaps your hands.", "src": "items/tools/mattock/BallisticBunnyNouveauItem.kt:71-74" }
+    ],
+    "quirks": [
+      { "text": "Charge stops at 32,767. The next block you break after that sets off a max-power (40) blast on its own, even during the cooldown, and resets your charge to 0.", "src": "items/tools/mattock/BallisticBunnyNouveauItem.kt:63-68, items/tools/mattock/BallisticBunnyNouveauItem.kt:76-92, items/tools/mattock/BallisticBunnyNouveauItem.kt:99-106" }
+    ],
+    "config": [
+      { "text": "The item itself doesn't check claims or regions before exploding. Whether the blast breaks blocks in a given place depends on the game and the server's protection and explosion settings, not tested.", "src": "items/tools/mattock/BallisticBunnyNouveauItem.kt:94-96" }
+    ]
+  },
+  {
+    "key": "peep-plushy-mattock",
+    "items": ["peepplushymattock"],
+    "summary": "A netherite pickaxe (Fortune VI) that gambles on ores. Each ore you mine has an 18% chance to drop 7 times as much, a 7% chance to drop nothing, and otherwise drops normally.",
+    "numbers": [
+      { "label": "7× drops", "value": "18% per ore", "src": "items/tools/mattock/PeepPlushyMattockItem.kt:66-75" },
+      { "label": "No drops", "value": "7% per ore", "src": "items/tools/mattock/PeepPlushyMattockItem.kt:66-72, items/tools/mattock/PeepPlushyMattockItem.kt:82-84" },
+      { "label": "Normal drops", "value": "75% per ore", "src": "items/tools/mattock/PeepPlushyMattockItem.kt:66-69" }
+    ],
+    "details": [
+      { "text": "It counts every coal, copper, iron, gold, redstone, emerald, lapis and diamond ore (deepslate versions and nether gold ore included) plus nether quartz ore. Ancient debris doesn't count.", "src": "util/tags/Kind.java:26-31, items/tools/mattock/PeepPlushyMattockItem.kt:65" },
+      { "text": "On a 7× roll, the drops are worked out for the pickaxe in your hand, then multiplied by 7. Only item drops change. XP is untouched.", "src": "items/tools/mattock/PeepPlushyMattockItem.kt:71-75" },
+      { "text": "It must be in your main hand. The ability is off in the event_new world.", "src": "events/item/Listeners.kt:217-224, items/tools/mattock/PeepPlushyMattockItem.kt:20" }
+    ],
+    "quirks": [
+      { "text": "On a 7× roll, the first kind of drop is repeated once for each stack the ore would drop. If an ore ever dropped two different items, you'd get two helpings of the first one and none of the second.", "src": "items/tools/mattock/PeepPlushyMattockItem.kt:74-78" }
+    ]
+  },
+  {
+    "key": "twin-flame-pickaxe",
+    "items": ["twin-flame-pickaxe"],
+    "summary": "A netherite pickaxe that switches between Fortune V and Silk Touch when you press your swap-hands key (F).",
+    "use": [
+      { "text": "Press F with it in your main hand. It switches between Fortune V and Silk Touch, and the action bar shows which one is active.", "src": "items/tools/mattock/TwinFlamePickaxeItem.kt:42-60" }
+    ],
+    "details": [
+      { "text": "It starts with Fortune V.", "src": "items/tools/mattock/TwinFlamePickaxeItem.kt:31-37" },
+      { "text": "It only works in your main hand. If it's in your off-hand, F swaps your hands as normal.", "src": "items/tools/mattock/TwinFlamePickaxeItem.kt:43-47, items/tools/mattock/TwinFlamePickaxeItem.kt:59" }
+    ]
+  },
+  {
+    "key": "splitsoul-multi-tool",
+    "items": ["splitsoul-multi-tool-bag", "splitsoul-multi-tool"],
+    "summary": "Right-click the SplitSoul Bag to get a SplitSoul Multi-Tool with a random personality. The Multi-Tool becomes whichever tool mines a block fastest when you left-click it, turns into a sword when you hit something, and switches between Silk Touch and Fortune with F. Very rarely, its personality acts up.",
+    "use": [
+      { "text": "Bag: hold it in your main hand and right-click to use it up and receive a Multi-Tool.", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:70-76" },
+      { "text": "Left-click a block with the Multi-Tool in your main hand. It becomes whichever of netherite pickaxe, shovel, axe, hoe, shears or sword breaks that block fastest.", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:85-92, items/tools/nests/SplitSoulMultiToolItemNest.kt:182-203" },
+      { "text": "Hit a mob with it in your main hand and it becomes a netherite sword.", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:175-180" },
+      { "text": "Press F with it in your main hand to switch between Silk Touch I and Fortune IV. It starts with Silk Touch.", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:107-114, items/tools/nests/SplitSoulMultiToolItemNest.kt:154-173" }
+    ],
+    "numbers": [
+      { "label": "Personality", "value": "Pleasant, Lazy, Sad or Upset, 25% each, fixed on each tool", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:98-99, items/tools/nests/SplitSoulMultiToolItemNest.kt:126-128, items/tools/nests/SplitSoulMultiToolItemNest.kt:263-268" },
+      { "label": "Mood event", "value": "1 in 25,000 per block left-click or hit", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:83, items/tools/nests/SplitSoulMultiToolItemNest.kt:144-145" },
+      { "label": "Random chatter", "value": "1 in 9,000 per block left-click or hit (only talk)", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:84, items/tools/nests/SplitSoulMultiToolItemNest.kt:146-150" },
+      { "label": "Refusal length", "value": "5 minutes", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:429-436" }
+    ],
+    "details": [
+      { "text": "A mood event is one of four, picked at random. Each starts with lines of dialogue in the tool's voice.", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:214-221, items/tools/nests/SplitSoulMultiToolItemNest.kt:414-428" },
+      { "text": "Refuse to work: for 5 minutes, every block left-click and hit with it is cancelled, with a message telling you to give it some space.", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:323-334, items/tools/nests/SplitSoulMultiToolItemNest.kt:233-253" },
+      { "text": "Effects, all lasting 60 s. Upset gives Darkness. Sad gives Nausea and Slowness III. Lazy gives Slowness XXI. Pleasant gives Haste III and Speed III instead.", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:335-351" },
+      { "text": "Teleport. Lazy moves you 1 to 29 blocks along each axis and Upset 1 to 99 blocks, always east, up and south. There's no check on where you land. Pleasant and Sad only talk.", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:357-367" },
+      { "text": "Explosion at your feet. Lazy and Sad make a power 4 blast (TNT strength) and Upset a power 10 blast. Pleasant only talks. The blast only breaks blocks and starts fires if you're allowed to build where you're standing.", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:374-383, util/AbilityUtil.kt:27, util/extensions/PlayerUtil.kt:255-264" },
+      { "text": "When it turns into shears, it gets netherite-level durability (2031).", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:199-201" }
+    ],
+    "quirks": [
+      { "text": "The 5-minute refusal is tied to you, not to the tool, so switching to another Multi-Tool doesn't get around it. The tool still changes shape during the refusal. Only your click is cancelled.", "src": "items/tools/nests/SplitSoulMultiToolItemNest.kt:94, items/tools/nests/SplitSoulMultiToolItemNest.kt:139-152, items/tools/nests/SplitSoulMultiToolItemNest.kt:182-203" }
+    ]
+  },
+  {
+    "key": "hearthook-lure",
+    "items": ["hearthook-lure"],
+    "summary": "An unbreakable fishing rod with Lure VI. Casts fly out faster. Hooking a mob and reeling in pulls the mob straight to you, or pulls you to the mob if you're sneaking.",
+    "use": [
+      { "text": "Hook a living mob and reel in. The mob is teleported to you. Sneak while reeling in to teleport yourself to the mob instead.", "src": "items/tools/rod/HeartHookLureItem.kt:45-56" }
+    ],
+    "numbers": [
+      { "label": "Cast speed", "value": "1.8× normal", "src": "items/tools/rod/HeartHookLureItem.kt:41-44" }
+    ],
+    "details": [
+      { "text": "The pull doesn't work on mobs you aren't allowed to damage (WorldGuard or Towny). Players count as mobs here, so it also works on players where you're allowed to hurt them.", "src": "items/tools/rod/HeartHookLureItem.kt:47, util/AbilityUtil.kt:26, util/extensions/PlayerUtil.kt:32-35, util/extensions/PlayerUtil.kt:244-253" },
+      { "text": "The rod works in either hand. On a successful pull, the hook is removed and the normal reel-in is cancelled.", "src": "events/item/Listeners.kt:269-294, items/tools/rod/HeartHookLureItem.kt:54-55" }
+    ],
+    "quirks": [
+      { "text": "If you hold another custom item in your other hand, only one of the two items' fishing abilities runs (whichever the plugin checks first). The lure's pull may not trigger.", "src": "events/item/Listeners.kt:269-294" }
+    ],
+    "config": [
+      { "text": "When you cast, the rod switches off the game's sky check for the hook, which should mean bite times aren't slowed when the hook can't see the sky. This depends on the game, not tested.", "src": "items/tools/rod/HeartHookLureItem.kt:41-42" }
+    ]
+  },
+  {
+    "key": "prismatic-pruners",
+    "items": ["prismaticpruners"],
+    "summary": "Shears that get 1 to 2 white wool from almost any mob you right-click, once per mob.",
+    "use": [
+      { "text": "Right-click a mob while holding the shears in either hand.", "src": "items/tools/shears/PrismaticPrunerItem.kt:41-51, events/item/Listeners.kt:405-408, util/extensions/PlayerUtil.kt:188-199" }
+    ],
+    "numbers": [
+      { "label": "Wool", "value": "1 to 2 white wool per mob", "src": "items/tools/shears/PrismaticPrunerItem.kt:48" },
+      { "label": "Limit", "value": "Once per mob, ever (the mob is marked after shearing)", "src": "items/tools/shears/PrismaticPrunerItem.kt:43-47" }
+    ],
+    "details": [
+      { "text": "Sheep and players are skipped. Any other living mob works, including armor stands.", "src": "items/tools/shears/PrismaticPrunerItem.kt:42-45" },
+      { "text": "It doesn't hurt the mob and has no cooldown. Claims aren't checked.", "src": "items/tools/shears/PrismaticPrunerItem.kt:41-51" }
+    ],
+    "config": [
+      { "text": "The right-click isn't cancelled, so the mob's normal right-click action (such as a villager's trade window) should still happen too. This depends on the game, not tested.", "src": "items/tools/shears/PrismaticPrunerItem.kt:41-51" }
+    ]
+  },
+  {
+    "key": "rainbow-shears",
+    "items": ["rainbowshears"],
+    "summary": "Shears that add 1 to 4 extra wool blocks in random colours every time they shear something.",
+    "numbers": [
+      { "label": "Bonus wool", "value": "1 to 4 blocks per shear, each one of the 16 colours at random", "src": "items/tools/shears/RainbowShearsItem.kt:18-21, items/tools/shears/RainbowShearsItem.kt:45-51" }
+    ],
+    "details": [
+      { "text": "Players have to hold them in the main hand.", "src": "events/item/Listeners.kt:420-426" },
+      { "text": "It also works when a dispenser holding the shears does the shearing.", "src": "items/tools/shears/RainbowShearsItem.kt:53-60, events/item/Listeners.kt:428-433" },
+      { "text": "The mob type isn't checked, so anything the shears can shear gets the bonus wool, not just sheep.", "src": "items/tools/shears/RainbowShearsItem.kt:45-60" }
+    ]
+  },
+  {
+    "key": "hare-howitzer",
+    "items": ["hare-howitzer"],
+    "summary": "A bow that fires a rabbit instead of an arrow. The rabbit explodes as soon as anything other than air is right beside it (a wall, a plant, water).",
+    "numbers": [
+      { "label": "Fire rate", "value": "1 shot per second (20 ticks). Shots during the cooldown are cancelled.", "src": "items/weapons/bow/HareHowitzerItem.kt:42-47" },
+      { "label": "Explosion", "value": "Power 2.4, with no fire and no block damage", "src": "items/weapons/bow/HareHowitzerItem.kt:62" }
+    ],
+    "details": [
+      { "text": "The rabbit flies with the arrow's speed and direction. Every tick it checks the blocks directly north, south, east and west of it, and explodes if any of them isn't air. The block underneath doesn't count, so landing on open flat ground doesn't set it off by itself.", "src": "items/weapons/bow/HareHowitzerItem.kt:49-65, items/weapons/bow/HareHowitzerItem.kt:73-83" },
+      { "text": "The rabbit drops nothing and gives no XP.", "src": "items/weapons/bow/HareHowitzerItem.kt:53, items/weapons/bow/HareHowitzerItem.kt:68-71, events/item/Listeners.kt:146-157" }
+    ],
+    "quirks": [
+      { "text": "The \"no drops, no XP\" rule also applies to every mob you kill while holding the bow in either hand, including melee kills with the bow in your off-hand. Those mobs drop nothing and give no XP.", "src": "items/weapons/bow/HareHowitzerItem.kt:68-71, events/item/Listeners.kt:146-157, util/extensions/PlayerUtil.kt:171-186" },
+      { "text": "The rabbit starts where the arrow would. If you shoot while standing right against a wall, it can blow up immediately in front of you.", "src": "items/weapons/bow/HareHowitzerItem.kt:49, items/weapons/bow/HareHowitzerItem.kt:58-65, items/weapons/bow/HareHowitzerItem.kt:73-83" }
+    ],
+    "config": [
+      { "text": "The rabbit is launched as if it had already fallen 100 blocks, so it should die when it lands. The code also tries to explode a rabbit that has died, but it stops watching any rabbit the game no longer counts as valid first, so a rabbit that dies this way most likely vanishes without exploding. This depends on the game, not tested.", "src": "items/weapons/bow/HareHowitzerItem.kt:52, items/weapons/bow/HareHowitzerItem.kt:58-65, items/weapons/bow/HareHowitzerItem.kt:74-76" }
+    ]
+  },
+  {
+    "key": "strasz-bows",
+    "items": ["strasz-longbow", "strasz-arc-bow"],
+    "summary": "A bow (Longbow) and a crossbow (Arcbow) with the same ability. Your shots become fast red bolts that fly straight. A hit deals heavy damage that grows with the target's health, and the first hit fires copies at up to 21 nearby mobs.",
+    "numbers": [
+      { "label": "Bolt speed", "value": "1.5× the arrow's speed, with no drop for 5.5 s (110 ticks)", "src": "items/weapons/bow/StraszBowItemNest.kt:62-68, items/weapons/bow/StraszBowItemNest.kt:106-113" },
+      { "label": "Hit damage", "value": "10 + 10% of the target's current health", "src": "items/weapons/bow/StraszBowItemNest.kt:72-74" },
+      { "label": "Copies", "value": "Up to 21, one per mob within 20 blocks (in each direction) of the one you hit", "src": "items/weapons/bow/StraszBowItemNest.kt:33, items/weapons/bow/StraszBowItemNest.kt:81-87" }
+    ],
+    "details": [
+      { "text": "Copies are fired once in a straight line from the hit mob toward each other mob it can see. They don't steer, and gravity pulls them down. They deal the same damage but don't make more copies.", "src": "items/weapons/bow/StraszBowItemNest.kt:70-87, items/weapons/bow/StraszBowItemNest.kt:91-104" },
+      { "text": "Endermen take no damage from it.", "src": "items/weapons/bow/StraszBowItemNest.kt:73-74" },
+      { "text": "The damage is always the formula above. Draw strength and the Power enchant don't change it, because the arrow is replaced.", "src": "items/weapons/bow/StraszBowItemNest.kt:62-74" },
+      { "text": "The ability is off in the pinata world.", "src": "items/weapons/bow/StraszBowItemNest.kt:122, items/weapons/bow/StraszBowItemNest.kt:137" }
+    ],
+    "quirks": [
+      { "text": "Every projectile you launch while holding either bow in either hand is swapped for a red bolt, not just arrows from the bow. That includes things thrown from your other hand.", "src": "items/weapons/bow/StraszBowItemNest.kt:62-68, events/item/Listeners.kt:111-116, util/extensions/PlayerUtil.kt:171-186" },
+      { "text": "Copies target every living thing except players, including your pets, villagers, iron golems and armor stands.", "src": "items/weapons/bow/StraszBowItemNest.kt:82-83" }
+    ]
+  },
+  {
+    "key": "rosethorn-rapier",
+    "items": ["rosethorn-rapier"],
+    "summary": "A netherite sword. Right-click any entity to draw a magic circle where you're standing. For 10 seconds, mobs you kill inside it drop bigger stacks.",
+    "use": [
+      { "text": "Right-click any entity with the rapier in either hand. The circle stays where you were standing.", "src": "items/weapons/cutlass/RosethornRapierItem.kt:58-79, items/weapons/cutlass/RosethornRapierItem.kt:120-125, events/item/Listeners.kt:405-408" }
+    ],
+    "numbers": [
+      { "label": "Cooldown", "value": "35 s (700 ticks)", "src": "items/weapons/cutlass/RosethornRapierItem.kt:59-62" },
+      { "label": "Circle", "value": "5-block radius around where you stood", "src": "items/weapons/cutlass/RosethornRapierItem.kt:124, shapes/Sphere.java:152-157" },
+      { "label": "Duration", "value": "10 s (200 ticks)", "src": "items/weapons/cutlass/RosethornRapierItem.kt:69-75" },
+      { "label": "Loot bonus", "value": "Each drop stack gains 1/3 of its size (rounded down). This becomes 1/2 once the circle's kill tally passes 130.", "src": "items/weapons/cutlass/RosethornRapierItem.kt:98, items/weapons/cutlass/RosethornRapierItem.kt:102-112" }
+    ],
+    "details": [
+      { "text": "The kill tally adds each killed mob's max health (a zombie adds 20) until it reaches 200. Each new circle starts again at 0.", "src": "items/weapons/cutlass/RosethornRapierItem.kt:87-95, items/weapons/cutlass/RosethornRapierItem.kt:120-125" },
+      { "text": "The kill has to be yours, the mob has to die inside the circle, and the rapier has to be in your hand when it dies. XP isn't changed.", "src": "items/weapons/cutlass/RosethornRapierItem.kt:81-86, events/item/Listeners.kt:146-153" }
+    ],
+    "quirks": [
+      { "text": "Because the bonus is rounded down, a drop of a single item never increases. A stack of 2 only gains in the second tier. A line that would have added +1 to every stack is switched off in the code.", "src": "items/weapons/cutlass/RosethornRapierItem.kt:102-111" }
+    ]
+  },
+  {
+    "key": "yolkplaid-yataghan",
+    "items": ["yolkplaidyataghan"],
+    "summary": "A netherite sword. Right-click while looking at a mob up to 35 blocks away to trap it in a giant egg for 12 seconds. The trapped mob can't move or act, glows, and takes 4 damage every second.",
+    "use": [
+      { "text": "Look at a mob and right-click with the sword in either hand.", "src": "items/weapons/cutlass/YolkPlaidYataghanItem.kt:62-71, events/item/Listeners.kt:125-137" }
+    ],
+    "numbers": [
+      { "label": "Range", "value": "35 blocks", "src": "items/weapons/cutlass/YolkPlaidYataghanItem.kt:63" },
+      { "label": "Charges", "value": "2 eggs at a time. Each recharges 20 s (400 ticks) after it's used.", "src": "items/weapons/cutlass/YolkPlaidYataghanItem.kt:123-141" },
+      { "label": "Trap time", "value": "12 s (240 ticks)", "src": "items/weapons/cutlass/YolkPlaidYataghanItem.kt:97, items/weapons/cutlass/YolkPlaidYataghanItem.kt:100-120" },
+      { "label": "Damage", "value": "4 per second, 13 hits in all (52 before armor)", "src": "items/weapons/cutlass/YolkPlaidYataghanItem.kt:102-119" }
+    ],
+    "details": [
+      { "text": "Players can't be targeted, and neither can mobs you aren't allowed to damage (WorldGuard or Towny).", "src": "items/weapons/cutlass/YolkPlaidYataghanItem.kt:65-67, util/AbilityUtil.kt:26" },
+      { "text": "While trapped, the mob can't act on its own and glows in a random colour. The damage counts as yours. The egg disappears early if the mob dies.", "src": "items/weapons/cutlass/YolkPlaidYataghanItem.kt:95-98, items/weapons/cutlass/YolkPlaidYataghanItem.kt:103, items/weapons/cutlass/YolkPlaidYataghanItem.kt:111-118" },
+      { "text": "When both eggs are recharging, right-clicking does nothing and shows no message.", "src": "items/weapons/cutlass/YolkPlaidYataghanItem.kt:123-127" }
+    ],
+    "quirks": [
+      { "text": "There's code meant to stop trapped mobs from teleporting, but it never runs, because trapped mobs are never marked for it.", "src": "items/weapons/cutlass/YolkPlaidYataghanItem.kt:73-75, events/item/Listeners.kt:397-403" }
+    ]
+  },
+  {
+    "key": "dazzling-hearts-scythe",
+    "items": ["dazzling-hearts-scythe"],
+    "summary": "A netherite hoe. Right-click to strike the mob you're looking at, or a spot in front of you, with 7 rapid waves of slashes over about 2 seconds. The first wave also slows targets heavily.",
+    "use": [
+      { "text": "Right-click with it in your main hand. It aims at the mob you're looking at (up to 50 blocks), otherwise the block you're looking at (up to 10 blocks), otherwise a point 10 blocks ahead.", "src": "items/weapons/scythe/DazzlingHeartsScytheItem.kt:59-72" }
+    ],
+    "numbers": [
+      { "label": "Cooldown", "value": "8 s (160 ticks)", "src": "items/weapons/scythe/DazzlingHeartsScytheItem.kt:70" },
+      { "label": "Hit area", "value": "2 blocks to each side and 2.5 blocks up and down from the target point", "src": "items/weapons/scythe/DazzlingHeartsScytheItem.kt:76, items/weapons/scythe/DazzlingHeartsScytheItem.kt:102" },
+      { "label": "Damage", "value": "14 per wave, 7 waves: one right away, then one every 0.35 s (7 ticks)", "src": "items/weapons/scythe/DazzlingHeartsScytheItem.kt:81-82, items/weapons/scythe/DazzlingHeartsScytheItem.kt:100-113" },
+      { "label": "Slow", "value": "Slowness IV for 2.8 s (56 ticks), first wave only", "src": "items/weapons/scythe/DazzlingHeartsScytheItem.kt:81-85" }
+    ],
+    "details": [
+      { "text": "The first wave also cancels the targets' current momentum.", "src": "items/weapons/scythe/DazzlingHeartsScytheItem.kt:83" },
+      { "text": "It hits every living thing in the area except you. The ability itself doesn't check claims or regions.", "src": "items/weapons/scythe/DazzlingHeartsScytheItem.kt:76-80, items/weapons/scythe/DazzlingHeartsScytheItem.kt:102-107" },
+      { "text": "The ability is off in the pinata world.", "src": "items/weapons/scythe/DazzlingHeartsScytheItem.kt:29" }
+    ],
+    "quirks": [
+      { "text": "Once a mob is caught, every later wave hits it, even if it has left the area. Each wave also adds the mobs it finds to the list again, so the code damages a mob that stays in the area more than once in the same wave.", "src": "items/weapons/scythe/DazzlingHeartsScytheItem.kt:100-110" }
+    ],
+    "config": [
+      { "text": "Whether hits on other players or pets actually land depends on the server's PvP and protection rules.", "src": "items/weapons/scythe/DazzlingHeartsScytheItem.kt:76-82" },
+      { "text": "Waves come every 0.35 s, which is faster than the game's usual short hit immunity after a mob is hurt, and repeat hits in the same wave land at the same moment. So some of those hits may deal less or nothing. This depends on the game, not tested.", "src": "items/weapons/scythe/DazzlingHeartsScytheItem.kt:100-110" }
+    ]
+  },
+  {
+    "key": "springtide-scythe",
+    "items": ["wooly-scythe"],
+    "summary": "A netherite hoe whose right-click changes with the time of day. By day, Downpour slows everything around the target and rains stars on it for about 7.5 seconds. By night, Starcrossers sends two homing stars that burst on impact.",
+    "use": [
+      { "text": "Right-click with it in either hand. By day it aims at the mob you're looking at, or the top of the block you're looking at. By night it aims at the entity or block you're looking at. The range is 45 blocks in both cases.", "src": "items/weapons/scythe/SpringtideScytheItem.kt:97-113, events/item/Listeners.kt:125-137" }
+    ],
+    "numbers": [
+      { "label": "Cooldown", "value": "8 s (160 ticks), shared by both modes", "src": "items/weapons/scythe/SpringtideScytheItem.kt:98-101" },
+      { "label": "Downpour slow", "value": "Slowness III for 7.5 s (150 ticks) on everything within 3 blocks of the target", "src": "items/weapons/scythe/SpringtideScytheItem.kt:51, items/weapons/scythe/SpringtideScytheItem.kt:203-207" },
+      { "label": "Downpour stars", "value": "About 151 stars over about 7.5 s, falling from 9 to 11 blocks up, within 3 blocks of the target", "src": "items/weapons/scythe/SpringtideScytheItem.kt:210-234" },
+      { "label": "Downpour damage", "value": "20 per direct hit. A star that lands on a block deals 10 to a mob right next to that block.", "src": "items/weapons/scythe/SpringtideScytheItem.kt:134-143" },
+      { "label": "Starcrossers stars", "value": "2 stars that start 10 blocks above you (up to 8 blocks to the side), fly at 1 block per tick and steer for about 4 s (81 ticks)", "src": "items/weapons/scythe/SpringtideScytheItem.kt:148-168, items/weapons/scythe/SpringtideScytheItem.kt:184" },
+      { "label": "Starcrossers damage", "value": "25 to the first mob within 3 blocks of the impact, then 1 less for each mob after it", "src": "items/weapons/scythe/SpringtideScytheItem.kt:119-132" }
+    ],
+    "details": [
+      { "text": "Star damage skips you and mobs you aren't allowed to damage (WorldGuard or Towny). Downpour's slow only skips you, not protected mobs.", "src": "items/weapons/scythe/SpringtideScytheItem.kt:127, items/weapons/scythe/SpringtideScytheItem.kt:141, items/weapons/scythe/SpringtideScytheItem.kt:203-207" },
+      { "text": "Day or night is decided by the game's own daytime check for your world.", "src": "items/weapons/scythe/SpringtideScytheItem.kt:104" },
+      { "text": "The ability is off in the pinata world.", "src": "items/weapons/scythe/SpringtideScytheItem.kt:38" }
+    ],
+    "quirks": [
+      { "text": "Starcrossers stops dealing damage as soon as it reaches you or a protected mob in its list of nearby mobs. Anything checked after that takes nothing, so standing near your own impact can cancel some or all of the damage.", "src": "items/weapons/scythe/SpringtideScytheItem.kt:126-132" },
+      { "text": "When Starcrossers is aimed at a mob, the stars only steer while both are still flying. Once one lands, the other stops steering and flies on without aiming.", "src": "items/weapons/scythe/SpringtideScytheItem.kt:164-179" }
+    ],
+    "config": [
+      { "text": "Downpour drops a star every 0.05 s, faster than the game's usual short hit immunity after a mob is hurt, so a mob hit by several stars in quick succession may not take the full damage from each. This depends on the game, not tested.", "src": "items/weapons/scythe/SpringtideScytheItem.kt:210-234, items/weapons/scythe/SpringtideScytheItem.kt:134-143" }
+    ]
+  }
+]

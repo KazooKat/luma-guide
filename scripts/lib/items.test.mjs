@@ -120,3 +120,49 @@ describe('helpers', () => {
     expect(tierColors('<b><gradient:#1e8abf:#9be4df>L</gradient></b>')).toEqual(['#1E8ABF', '#9BE4DF']);
   });
 });
+
+import { parseUpgrades, upgradePath, stats, toolType } from './astral-upgrades.mjs';
+
+describe('astral upgrades', () => {
+  const tiers = parseUpgrades(`
+        buildTiers("x-set") {
+            tier(2) {
+                material(AstralMaterial.NETHERITE)
+                enchants(
+                    PairedEnchantment(Enchantment.MENDING, 1),
+                    PairedEnchantment(Enchantment.EFFICIENCY, 5),
+                    PairedEnchantment(Enchantment.PROTECTION, 8),
+                    PairedEnchantment(Enchantment.FEATHER_FALLING, 4, ToolType.BOOTS, ToolType.ELYTRA),
+                    PairedEnchantment(Enchantment.SHARPNESS, 3, ToolType.AXE)
+                )
+            }
+        }`)['x-set'];
+
+  it('parses tiers with their material, enchants and ToolType lists', () => {
+    expect(tiers).toHaveLength(1);
+    expect(tiers[0]).toMatchObject({ tier: 2, material: 'NETHERITE' });
+    expect(tiers[0].enchants[3]).toEqual({ key: 'feather_falling', level: 4, apply: ['BOOTS', 'ELYTRA'] });
+  });
+
+  it('swaps the material of swords, armor and tools and adds only enchants the new item accepts', () => {
+    const [t1, t2] = upgradePath({ material: 'DIAMOND_SWORD', enchants: [['sharpness', 6], ['unbreaking', 6]] }, tiers);
+    expect(t1.material).toBe('DIAMOND_SWORD');
+    expect(t2.material).toBe('NETHERITE_SWORD');
+    // Mending fits a sword; Efficiency, Protection and Feather Falling don't; Sharpness 3 (listed for axes) still
+    // lands because a sword can carry Sharpness, and it replaces the higher level.
+    expect(t2.enchants).toEqual(['Sharpness III', 'Unbreaking VI', 'Mending']);
+    expect(t2.stats).toMatchObject({ attackDamage: 8, attackSpeed: 1.6, durability: 2031 });
+  });
+
+  it('keeps elytra as elytra and only adds what an elytra can take or the tier names for it', () => {
+    const [, t2] = upgradePath({ material: 'ELYTRA', enchants: [['protection', 6]] }, tiers);
+    expect(t2.material).toBe('ELYTRA');
+    expect(t2.enchants).toEqual(['Protection VI', 'Feather Falling IV', 'Mending']);
+  });
+
+  it('knows the plugin tool types and vanilla stats', () => {
+    expect(toolType('GOLDEN_PICKAXE')).toBe('PICKAXE');
+    expect(toolType('BLAZE_ROD')).toBe('MAGICAL');
+    expect(stats('NETHERITE_HELMET')).toEqual({ armor: 3, toughness: 3, knockbackResistance: 1, durability: 407 });
+  });
+});

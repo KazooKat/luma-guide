@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { lex, evaluate, collectVals, matchClose, splitArgs, Unresolved, show } from './lib/kotlin-lite.mjs';
 import { buildTooltip, enchantLine, enchantInfo } from './lib/tooltip.mjs';
 import { legacyToMini } from './lib/legacy.mjs';
+import { parseUpgrades, upgradePath } from './lib/astral-upgrades.mjs';
 import { enchantKey, gearType, eventName, tierColors } from './lib/items-util.mjs';
 
 const ROOT = new URL('../', import.meta.url);
@@ -355,6 +356,12 @@ if (failures.length || unusedOverrides.length) {
   process.exit(1);
 }
 
+// ---------- Astral upgrades ----------
+const UPGRADES = parseUpgrades(readFileSync(join(PKG, 'configuration/files/AstralYml.kt'), 'utf8'));
+for (const it of items.filter((i) => i.section === 'ASTRAL')) {
+  if (!UPGRADES[it.set]) throw new Error(`no astral-upgrades tiers for ${it.set}`);
+}
+
 // ---------- output ----------
 const ids = new Set();
 const out = items.map((it) => {
@@ -381,6 +388,12 @@ const out = items.map((it) => {
     source: `${SOURCE_URL}/src/main/java/dev/lumas/lumaitems/${it.file}`,
     cls: it.cls,
     ...(it.note ? { note: it.note } : {}),
+    ...(it.section === 'ASTRAL' ? {
+      upgrades: {
+        path: upgradePath({ material: it.material, enchants: it.vanillaEnchants }, UPGRADES[it.set]),
+        source: `${SOURCE_URL}/src/main/java/dev/lumas/lumaitems/configuration/files/AstralYml.kt#L${UPGRADES[it.set][0].line}`,
+      },
+    } : {}),
   };
 });
 

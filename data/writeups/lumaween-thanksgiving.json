@@ -1,0 +1,1079 @@
+[
+ {
+  "key": "witching-boots",
+  "items": [
+   "witching-boots"
+  ],
+  "summary": "While worn, these boots keep Jump Boost II on you and make you walk faster. The effect comes off the moment the boots leave your feet.",
+  "use": [
+   {
+    "text": "Wear them in the boots slot. Jump Boost II is topped up every 3.5 seconds while they're on your feet.",
+    "src": "items/armor/boots/WitchingBootsItem.kt:64-68, events/item/PassiveListeners.kt:19, LumaItems.java:87"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Jump Boost",
+    "value": "Level II, 17 s per refresh (340 ticks), refreshed every 3.5 s",
+    "src": "items/armor/boots/WitchingBootsItem.kt:24, items/armor/boots/WitchingBootsItem.kt:64-68, events/item/PassiveListeners.kt:19"
+   },
+   {
+    "label": "Movement speed",
+    "value": "+0.025 (feet slot only)",
+    "src": "items/armor/boots/WitchingBootsItem.kt:52-60"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "Taking the boots off removes every Jump Boost effect you have, including one from a potion or beacon.",
+    "src": "items/armor/boots/WitchingBootsItem.kt:70-76"
+   }
+  ]
+ },
+ {
+  "key": "witching-stocks",
+  "items": [
+   "witching-stocks"
+  ],
+  "summary": "Gives you one mid-air double jump: press sneak while you're off the ground and you're flung up and forward. You get the jump back when you land. The leggings also double your safe fall distance.",
+  "use": [
+   {
+    "text": "Press sneak while airborne (at least about 1 block above solid ground) to launch in the direction you're looking.",
+    "src": "items/armor/trousers/WitchingStocksItem.kt:60-66, util/extensions/PlayerUtil.kt:100-124"
+   },
+   {
+    "text": "The double jump recharges once you're standing on a solid block again.",
+    "src": "items/armor/trousers/WitchingStocksItem.kt:68-73, util/extensions/PlayerUtil.kt:130-132"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Launch",
+    "value": "0.6 × your look direction forward, 0.7 upward (replaces your current momentum)",
+    "src": "items/armor/trousers/WitchingStocksItem.kt:65"
+   },
+   {
+    "label": "Uses per jump",
+    "value": "1 until you land",
+    "src": "items/armor/trousers/WitchingStocksItem.kt:61-64"
+   },
+   {
+    "label": "Safe fall distance",
+    "value": "+100% of base (leg slot)",
+    "src": "items/armor/trousers/WitchingStocksItem.kt:34-42"
+   }
+  ],
+  "details": [
+   {
+    "text": "Doesn't work in water or while using creative-style flight.",
+    "src": "items/armor/trousers/WitchingStocksItem.kt:61"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "The tooltip says \"while falling\", but the code only checks that you're off the ground. It works on the way up too.",
+    "src": "items/armor/trousers/WitchingStocksItem.kt:61"
+   },
+   {
+    "text": "The double jump doesn't check the leggings slot. Holding the Stocks in your main hand or off-hand also gives you the double jump, though the safe-fall bonus only applies when they're worn.",
+    "src": "items/armor/trousers/WitchingStocksItem.kt:60-66, events/item/Listeners.kt:305-310, util/extensions/PlayerUtil.kt:171-186"
+   }
+  ]
+ },
+ {
+  "key": "devourers-apron",
+  "items": [
+   "devourers-apron"
+  ],
+  "summary": "When you kill a creature, a soul orb floats where it died for 5 seconds. Press your swap-hands key (F) in time to pull the orb into you for Regeneration plus Absorption and Health Boost that scale with the victim's max health.",
+  "use": [
+   {
+    "text": "Kill any creature while wearing the apron (holding it in either hand also counts). A soul orb appears at the victim's eye height.",
+    "src": "items/armor/elytra/DevourersApronItem.kt:63-71, events/item/Listeners.kt:146-157"
+   },
+   {
+    "text": "Press F within 5 seconds while within 70 blocks of the orb, with the apron still on you (worn or in either hand). The orb streaks into you and the buffs land when it reaches you. The hand swap is cancelled.",
+    "src": "items/armor/elytra/DevourersApronItem.kt:73-79, items/armor/elytra/DevourersApronItem.kt:125-142, items/armor/elytra/DevourersApronItem.kt:152-175, events/item/Listeners.kt:139-144"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Orb lifetime",
+    "value": "5 s (100 ticks)",
+    "src": "items/armor/elytra/DevourersApronItem.kt:87, items/armor/elytra/DevourersApronItem.kt:114-122"
+   },
+   {
+    "label": "Max pickup distance",
+    "value": "70 blocks, same world",
+    "src": "items/armor/elytra/DevourersApronItem.kt:89, items/armor/elytra/DevourersApronItem.kt:126"
+   },
+   {
+    "label": "Absorption / Health Boost level",
+    "value": "1 + (victim's max health ÷ 16, rounded down), capped at level 51. A 20-HP zombie gives level II.",
+    "src": "items/armor/elytra/DevourersApronItem.kt:131-138"
+   },
+   {
+    "label": "Absorption / Health Boost duration",
+    "value": "3 min (3600 ticks)",
+    "src": "items/armor/elytra/DevourersApronItem.kt:88, items/armor/elytra/DevourersApronItem.kt:134-137"
+   },
+   {
+    "label": "Regeneration",
+    "value": "Level VI for 5 s",
+    "src": "items/armor/elytra/DevourersApronItem.kt:93, items/armor/elytra/DevourersApronItem.kt:139"
+   }
+  ],
+  "details": [
+   {
+    "text": "Health Boost is only given if the victim had more than 4 max health, so chickens and similar tiny mobs give Absorption only.",
+    "src": "items/armor/elytra/DevourersApronItem.kt:135-138"
+   },
+   {
+    "text": "Only one orb at a time: a new kill replaces any orb still waiting.",
+    "src": "items/armor/elytra/DevourersApronItem.kt:64, items/armor/elytra/DevourersApronItem.kt:96-98"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "Eating an orb replaces any Absorption you already have (and any Health Boost, if the victim had more than 4 max health), so an orb from a weak mob can replace a stronger effect (like a golden apple's).",
+    "src": "items/armor/elytra/DevourersApronItem.kt:133-138"
+   },
+   {
+    "text": "If you press F while too far away or in another world, the orb is lost anyway. You get no buffs, it can't be retried, and your hand swap is still cancelled.",
+    "src": "items/armor/elytra/DevourersApronItem.kt:73-79, items/armor/elytra/DevourersApronItem.kt:126"
+   }
+  ]
+ },
+ {
+  "key": "foliagewings",
+  "items": [
+   "foliagewings"
+  ],
+  "summary": "An elytra that makes you glow while you wear it. Apart from that, its value is the enchantments.",
+  "use": [
+   {
+    "text": "Wear it in the chest slot. Glowing is topped up every 3.5 seconds.",
+    "src": "items/armor/elytra/FoliageWingsItem.kt:34-38, events/item/PassiveListeners.kt:19"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Glowing",
+    "value": "17 s per refresh (340 ticks), refreshed every 3.5 s",
+    "src": "items/armor/elytra/FoliageWingsItem.kt:36, events/item/PassiveListeners.kt:19"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "Taking the wings off removes every Glowing effect you have, including one from a spectral arrow.",
+    "src": "items/armor/elytra/FoliageWingsItem.kt:40-46"
+   }
+  ]
+ },
+ {
+  "key": "marigold-sun-hat",
+  "items": [
+   "marigold-sun-hat"
+  ],
+  "summary": "Every 1.5 seconds, the hat pulls nearby dropped items toward you. It reaches 5 blocks at low light levels and up to 8.5 blocks at light level 15.",
+  "use": [
+   {
+    "text": "Wear it (holding it in either hand also works). Loose items between 3 blocks and the reach limit get pulled toward your head until one of them is close to you.",
+    "src": "items/armor/helmet/MarigoldSunHatItem.kt:48-76, events/item/PassiveListeners.kt:20, util/extensions/PlayerUtil.kt:216-227"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Check interval",
+    "value": "every 1.5 s (30 ticks)",
+    "src": "events/item/PassiveListeners.kt:20, LumaItems.java:88"
+   },
+   {
+    "label": "Reach",
+    "value": "light level at your eyes ÷ 1.76, rounded down to the nearest 0.5. 5 blocks at light 9 or lower, 8.5 blocks at light 15.",
+    "src": "items/armor/helmet/MarigoldSunHatItem.kt:50-53"
+   },
+   {
+    "label": "Ignored if closer than",
+    "value": "3 blocks",
+    "src": "items/armor/helmet/MarigoldSunHatItem.kt:54"
+   },
+   {
+    "label": "Pull duration",
+    "value": "up to 7.5 s (150 ticks), or until any item gets within 1.9 blocks of your eyes",
+    "src": "items/armor/helmet/MarigoldSunHatItem.kt:60-73"
+   }
+  ],
+  "details": [
+   {
+    "text": "Pulls any dropped item, including other players' drops. It skips a cycle if any item in range is already moving quickly (for example, still falling or already being pulled).",
+    "src": "items/armor/helmet/MarigoldSunHatItem.kt:53-57"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "The pull stops for every item as soon as one item reaches you, so items farther out may stop short until the next cycle.",
+    "src": "items/armor/helmet/MarigoldSunHatItem.kt:66-73"
+   }
+  ]
+ },
+ {
+  "key": "magicwand",
+  "items": [
+   "magicwand"
+  ],
+  "summary": "A wand with three spells: Boost (a burst of Speed, Jump Boost and Haste), Launch (throws and hurts creatures near where the spell lands) and Clear (blasts a ball of blocks out where it lands). Right-click to cast. Sneak and right-click to switch spells.",
+  "use": [
+   {
+    "text": "Sneak and right-click to cycle Boost → Launch → Clear. Chat calls them \"Boost Effects\", \"Launch\" and \"Explosion Sphere\".",
+    "src": "items/misc/magical/MagicWandItem.kt:35-39, items/misc/magical/MagicWandItem.kt:72-75, items/misc/magical/MagicWandItem.kt:133-144"
+   },
+   {
+    "text": "Right-click to cast. Boost applies straight away. Launch and Clear fire a straight-flying spell orb that goes off where it hits a block or creature.",
+    "src": "items/misc/magical/MagicWandItem.kt:77-101, items/misc/magical/MagicWandItem.kt:120-127, model/spell/SpellCaster.kt:36-41"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Boost",
+    "value": "Speed III, Jump Boost III, Haste III for 25 s (500 ticks)",
+    "src": "items/misc/magical/MagicWandItem.kt:148-153"
+   },
+   {
+    "label": "Launch radius",
+    "value": "5 blocks around the impact",
+    "src": "items/misc/magical/MagicWandItem.kt:156"
+   },
+   {
+    "label": "Launch damage",
+    "value": "5 damage (2.5 hearts) and a fling, repeated 4 times 0.1 s apart",
+    "src": "items/misc/magical/MagicWandItem.kt:164-173"
+   },
+   {
+    "label": "Clear size",
+    "value": "a patchy ball up to about 3 blocks in radius (the pattern leaves gaps)",
+    "src": "items/misc/magical/MagicWandItem.kt:180-183, shapes/Sphere.java:51-58, shapes/Sphere.java:178-197"
+   },
+   {
+    "label": "Cooldowns",
+    "value": "Boost 30 s, Launch 10 s, Clear 60 s (each separate)",
+    "src": "items/misc/magical/MagicWandItem.kt:35-39, items/misc/magical/MagicWandItem.kt:79-81"
+   },
+   {
+    "label": "Spell orb lifetime",
+    "value": "7.5 s (150 ticks)",
+    "src": "items/misc/magical/MagicWandItem.kt:122, model/spell/SpellCaster.kt:65-70"
+   }
+  ],
+  "details": [
+   {
+    "text": "Launch skips creatures you aren't allowed to hurt there (WorldGuard/Towny). Clear only fires if you can build where the spell lands.",
+    "src": "items/misc/magical/MagicWandItem.kt:162, items/misc/magical/MagicWandItem.kt:178, util/AbilityUtil.kt:26-27, util/extensions/PlayerUtil.kt:32-35"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "Launch and Clear only start their cooldown when the spell actually does something: Launch needs a creature within 5 blocks, Clear needs build permission. Orbs that miss cost nothing, so you can fire them again right away.",
+    "src": "items/misc/magical/MagicWandItem.kt:155-159, items/misc/magical/MagicWandItem.kt:177-179"
+   },
+   {
+    "text": "Cooldowns are only cleared by a check that runs every 1.5 s while someone is holding a Magic Wand, so a spell can stay locked a little past its listed time.",
+    "src": "items/misc/magical/MagicWandItem.kt:103-112, events/item/PassiveListeners.kt:20"
+   },
+   {
+    "text": "Launch damage is plain damage with no attacker attached, not an attack from you.",
+    "src": "items/misc/magical/MagicWandItem.kt:172"
+   }
+  ],
+  "config": [
+   {
+    "text": "Clear breaks each block through the server's normal \"player breaks a block\" action. What drops then follows the game's usual rules for the item in your main hand. The wand is a blaze rod, so blocks that need a pickaxe probably drop nothing. That part is server behaviour, not this plugin's code.",
+    "src": "items/misc/magical/MagicWandItem.kt:181-183"
+   },
+   {
+    "text": "Launch's 4 hits land very close together. Minecraft briefly protects a creature after it's hurt, so the repeat hits probably add little or no damage beyond the first. That depends on the game, not this plugin.",
+    "src": "items/misc/magical/MagicWandItem.kt:164-173"
+   }
+  ]
+ },
+ {
+  "key": "magnitude-wand",
+  "items": [
+   "magnitude-wand"
+  ],
+  "summary": "Left-click to fire a spell orb. The first creature it hits is resized to a random scale between 0.3× and 2.2×, and hitting a resized creature again returns it to normal. Each successful hit costs 13 lapis.",
+  "use": [
+   {
+    "text": "Left-click with at least 13 lapis lazuli in your inventory to cast.",
+    "src": "items/misc/magical/MagnitudeWandItem.kt:56-64"
+   },
+   {
+    "text": "If the orb hits a creature that's already been resized, the resize is removed instead.",
+    "src": "items/misc/magical/MagnitudeWandItem.kt:73-77"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Cost",
+    "value": "13 lapis, taken only when the orb hits a valid creature",
+    "src": "items/misc/magical/MagnitudeWandItem.kt:57, items/misc/magical/MagnitudeWandItem.kt:69"
+   },
+   {
+    "label": "New size",
+    "value": "random, from −70% to +120% of normal (0.3× to 2.2×)",
+    "src": "items/misc/magical/MagnitudeWandItem.kt:26-27, items/misc/magical/MagnitudeWandItem.kt:79-83"
+   },
+   {
+    "label": "Spell orb lifetime",
+    "value": "5 s (100 ticks)",
+    "src": "items/misc/magical/MagnitudeWandItem.kt:61, model/spell/SpellCaster.kt:65-70"
+   }
+  ],
+  "details": [
+   {
+    "text": "Doesn't work on players, the Ender Dragon or the Wither, or on creatures you aren't allowed to hurt there (WorldGuard/Towny). Those hits cost no lapis.",
+    "src": "items/misc/magical/MagnitudeWandItem.kt:30, items/misc/magical/MagnitudeWandItem.kt:69-71"
+   },
+   {
+    "text": "No cooldown.",
+    "src": "items/misc/magical/MagnitudeWandItem.kt:56-85"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "Restoring a resized creature to normal size still costs 13 lapis.",
+    "src": "items/misc/magical/MagnitudeWandItem.kt:69-77"
+   },
+   {
+    "text": "Any left-click fires an orb, including hitting a block, and it works with the wand in your off-hand too.",
+    "src": "items/misc/magical/MagnitudeWandItem.kt:56-64, events/item/Listeners.kt:125-137, util/extensions/PlayerUtil.kt:171-186"
+   }
+  ]
+ },
+ {
+  "key": "big-dandelion",
+  "items": [
+   "big-dandelion"
+  ],
+  "summary": "Holding or wearing the Big Dandelion makes you bigger and makes you jump higher. Right-click to wear it as a hat.",
+  "use": [
+   {
+    "text": "Hold it in either hand or wear it on your head. Right-clicking with it in your main hand puts it on your head if your helmet slot is empty. You can also place it in the helmet slot from your inventory.",
+    "src": "items/misc/scale/BigDandelionItem.kt:53-57, events/GeneralListeners.kt:98-119, events/GeneralListeners.kt:150-162, model/item/AttributeContainer.java:90"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Size",
+    "value": "+0.3 scale",
+    "src": "items/misc/scale/BigDandelionItem.kt:33, items/misc/scale/BigDandelionItem.kt:54"
+   },
+   {
+    "label": "Jump strength",
+    "value": "+0.1",
+    "src": "items/misc/scale/BigDandelionItem.kt:55"
+   }
+  ],
+  "details": [
+   {
+    "text": "It can't be placed as a flower or put in a composter.",
+    "src": "items/misc/scale/BigDandelionItem.kt:62-73"
+   },
+   {
+    "text": "Hard-disabled in the new event world and the Piñata world: you can't switch to it in your hotbar or equip it there.",
+    "src": "items/misc/scale/BigDandelionItem.kt:27, enums/WorldKey.kt:21-23, events/item/Listeners.kt:474-488, events/item/Listeners.kt:564-578"
+   }
+  ]
+ },
+ {
+  "key": "sticky-taffy",
+  "items": [
+   "sticky-taffy"
+  ],
+  "summary": "While you hold the taffy and your inventory is too full for an item on the ground, it stuffs that item into a shulker box you're carrying.",
+  "use": [
+   {
+    "text": "Hold it in your main hand or off-hand and carry at least one shulker box. Walk over items that don't fit in your inventory at all.",
+    "src": "items/misc/StickyTaffyItem.kt:44-56, events/item/Listeners.kt:554-562, util/extensions/PlayerUtil.kt:171-186"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Shulker boxes used",
+    "value": "1: the one in your inventory holding the most items",
+    "src": "items/misc/StickyTaffyItem.kt:23, items/misc/StickyTaffyItem.kt:58-64"
+   }
+  ],
+  "details": [
+   {
+    "text": "It only steps in when none of the item fits in your inventory. Shulker boxes themselves are never packed. Whatever doesn't fit in the box stays on the ground.",
+    "src": "items/misc/StickyTaffyItem.kt:52, items/misc/StickyTaffyItem.kt:79-102"
+   },
+   {
+    "text": "It isn't instant: the server only runs the check on about one in eleven pickup attempts (counted across all players), so items may take a moment to get packed.",
+    "src": "enums/Action.kt:89, events/item/ItemListener.kt:196-208, events/item/Listeners.kt:554-562"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "Only your fullest shulker box is ever tried. If that box can't take the item, nothing happens, even if you're carrying an emptier box.",
+    "src": "items/misc/StickyTaffyItem.kt:58-77"
+   }
+  ]
+ },
+ {
+  "key": "sweet-lollipop",
+  "items": [
+   "sweet-lollipop"
+  ],
+  "summary": "Hold the lollipop in either hand to keep Haste II on you.",
+  "use": [
+   {
+    "text": "Hold it in your main hand or off-hand. Haste II is topped up every 3.5 seconds.",
+    "src": "items/misc/SweetLollipopItem.kt:41-43, events/item/PassiveListeners.kt:19, util/extensions/PlayerUtil.kt:216-227"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Haste",
+    "value": "Level II, 13 s per refresh (260 ticks), refreshed every 3.5 s",
+    "src": "items/misc/SweetLollipopItem.kt:20, events/item/PassiveListeners.kt:19"
+   }
+  ],
+  "details": [
+   {
+    "text": "It can't be placed as a flower.",
+    "src": "items/misc/SweetLollipopItem.kt:45-50"
+   },
+   {
+    "text": "Haste isn't removed when you put it away. It just runs out, within 13 s.",
+    "src": "items/misc/SweetLollipopItem.kt:20, items/misc/SweetLollipopItem.kt:41-54"
+   }
+  ]
+ },
+ {
+  "key": "lumaween-charm",
+  "items": [
+   "lumaween-charm"
+  ],
+  "summary": "A collectible from the Halloween minigames. It has no ability, so its value is the lore and Unbreaking X.",
+  "details": [
+   {
+    "text": "The item has no ability code, and nothing else in the plugin refers to it.",
+    "src": "items/playground/event/LumaweenCharmItem.kt:10-30"
+   }
+  ],
+  "config": [
+   {
+    "text": "The tooltip hints that keeping it around might pay off. Nothing in this plugin does that, so any such reward would come from another plugin or a staff event.",
+    "src": "items/playground/event/LumaweenCharmItem.kt:14-22"
+   }
+  ]
+ },
+ {
+  "key": "tahlura-hoe",
+  "items": [
+   "tahlura-hoe"
+  ],
+  "summary": "Right-click to throw a seed that grows into a rain cloud for 15 seconds. Each raindrop ages nearby crops and saplings by one stage. One raindrop in ten is a lightning strike that damages whatever it hits and harvests (then replants) fully grown crops.",
+  "use": [
+   {
+    "text": "Right-click to lob a slow seed. Where it lands, a column rises 11 blocks and forms the cloud.",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:82-87, items/tools/harrow/TahluraHoeItem.kt:89-99, items/tools/harrow/TahluraHoeItem.kt:120-135, items/tools/harrow/TahluraHoeItem.kt:149-169"
+   },
+   {
+    "text": "The cloud drifts in the direction you're facing, so you can steer it by turning.",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:186-192"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Cooldown",
+    "value": "3 min (3600 ticks)",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:83-84"
+   },
+   {
+    "label": "Cloud duration",
+    "value": "15 s (300 ticks), 1 raindrop per tick",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:95, items/tools/harrow/TahluraHoeItem.kt:177-209"
+   },
+   {
+    "label": "Rain area",
+    "value": "within 6 blocks of the cloud centre (square)",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:198"
+   },
+   {
+    "label": "Cloud drift",
+    "value": "up to 1.5 blocks/s (0.075 per tick), slower the further up or down you look",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:186-192"
+   },
+   {
+    "label": "Growth per raindrop",
+    "value": "+1 growth stage to plants within 2 blocks",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:116, items/tools/harrow/TahluraHoeItem.kt:244-278"
+   },
+   {
+    "label": "Lightning chance",
+    "value": "10% per raindrop",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:103-114"
+   },
+   {
+    "label": "Lightning damage",
+    "value": "5 (2.5 hearts) to creatures in a thin column up to the cloud",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:215-239"
+   },
+   {
+    "label": "Lightning harvest",
+    "value": "fully grown crops within 1 block of the strike, dropped as if by a Fortune VIII hoe, then reset to a fresh crop (the same raindrop's growth then usually adds one stage back)",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:42-44, items/tools/harrow/TahluraHoeItem.kt:111-114, items/tools/harrow/TahluraHoeItem.kt:280-292"
+   }
+  ],
+  "details": [
+   {
+    "text": "Growth needs build permission where the raindrop lands (WorldGuard/Towny). Sugar cane gets an extra growth tick instead of a stage. Saplings advance a stage and get a growth tick, which can grow them into a tree.",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:248-273, util/extensions/PlayerUtil.kt:255-264"
+   },
+   {
+    "text": "Lightning skips creatures you aren't allowed to hurt there. Otherwise it can hit players and pets, and the damage counts as yours.",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:233-239"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "The tooltip says crops grow \"instantly\", but each raindrop only adds one stage. A crop reaches full growth only after several drops land near it.",
+    "src": "items/tools/harrow/TahluraHoeItem.kt:256-259"
+   }
+  ]
+ },
+ {
+  "key": "autumns-mattock",
+  "items": [
+   "autumns-mattock"
+  ],
+  "summary": "When you mine an ore, there's a 12% chance it drops 2–5 times its usual loot and a 13% chance it drops nothing. The other 75% of the time it drops normally.",
+  "use": [
+   {
+    "text": "Mine ores with it in your main hand: any overworld ore (including deepslate), nether gold ore or nether quartz ore. Ancient debris doesn't count.",
+    "src": "items/tools/mattock/AutumnsMattockItem.kt:54-56, util/tags/Kind.java:26-31, events/item/Listeners.kt:217-224"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Normal drops",
+    "value": "75%",
+    "src": "items/tools/mattock/AutumnsMattockItem.kt:58-59"
+   },
+   {
+    "label": "No drops",
+    "value": "13%",
+    "src": "items/tools/mattock/AutumnsMattockItem.kt:58, items/tools/mattock/AutumnsMattockItem.kt:64-66"
+   },
+   {
+    "label": "Surplus drops",
+    "value": "12%: each drop multiplied by a random 2–5 (Fortune still applies first), up to 72 items per drop type",
+    "src": "items/tools/mattock/AutumnsMattockItem.kt:67-79"
+   }
+  ],
+  "details": [
+   {
+    "text": "Only fires on blocks you're actually allowed to break. If protection cancels the break, nothing happens.",
+    "src": "events/item/Listeners.kt:217-224"
+   },
+   {
+    "text": "Surplus drops spill out one item at a time and don't merge on the ground for about a second.",
+    "src": "items/tools/mattock/AutumnsMattockItem.kt:76-78, items/tools/mattock/AutumnsMattockItem.kt:83-94"
+   },
+   {
+    "text": "The ability is disabled in the new event world.",
+    "src": "items/tools/mattock/AutumnsMattockItem.kt:24, enums/WorldKey.kt:21"
+   }
+  ]
+ },
+ {
+  "key": "holidayham",
+  "items": [
+   "holidayham"
+  ],
+  "summary": "Eat the ham to clear out a ball of blocks around you and get Haste III for 30 seconds. It has a 3-minute cooldown and isn't used up.",
+  "use": [
+   {
+    "text": "Eat it (hold right-click). Solid blocks in a ball around your feet break and drop, and you get Haste III.",
+    "src": "items/tools/mattock/HolidayHamItem.kt:68-79, items/tools/mattock/HolidayHamItem.kt:81-95"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Cooldown",
+    "value": "3 min (3600 ticks)",
+    "src": "items/tools/mattock/HolidayHamItem.kt:70-74"
+   },
+   {
+    "label": "Blast size",
+    "value": "a ball roughly 5 blocks in radius",
+    "src": "items/tools/mattock/HolidayHamItem.kt:86, shapes/Sphere.java:51-58"
+   },
+   {
+    "label": "Haste",
+    "value": "Level III for 30 s (600 ticks)",
+    "src": "items/tools/mattock/HolidayHamItem.kt:76"
+   }
+  ],
+  "details": [
+   {
+    "text": "Nothing breaks unless you can build at the spot you're standing on (WorldGuard/Towny).",
+    "src": "items/tools/mattock/HolidayHamItem.kt:82-85"
+   },
+   {
+    "text": "Never breaks chests, barrels, shulker boxes, signs, furnaces, hoppers, brewing stands, droppers, dispensers, spawners, bedrock, portals, farmland, dirt paths and a few other special blocks, and it skips non-solid blocks.",
+    "src": "items/tools/mattock/HolidayHamItem.kt:86-88, util/tags/Kind.java:48"
+   },
+   {
+    "text": "Blocks are broken without a tool, so the ham's own Fortune isn't used for their drops.",
+    "src": "items/tools/mattock/HolidayHamItem.kt:90, util/extensions/BlockUtil.kt:30-34"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "Despite the \"self-destruct\" wording, the ham isn't used up and doesn't restore any hunger. Eating is always cancelled.",
+    "src": "items/tools/mattock/HolidayHamItem.kt:68-69"
+   },
+   {
+    "text": "The cooldown and Haste apply even when protection stops the blast.",
+    "src": "items/tools/mattock/HolidayHamItem.kt:74-76, items/tools/mattock/HolidayHamItem.kt:82-85"
+   },
+   {
+    "text": "While the ham is in either hand you can't eat or drink anything else: other food and potions are cancelled.",
+    "src": "items/tools/mattock/HolidayHamItem.kt:68-69, events/item/Listeners.kt:365-369, util/extensions/PlayerUtil.kt:171-186"
+   }
+  ]
+ },
+ {
+  "key": "kindlingbaton",
+  "items": [
+   "kindlingbaton"
+  ],
+  "summary": "Auto-smelts iron, gold and copper ores, ancient debris and sand as you mine them. Press the swap-hands key (F) to flip it between pickaxe and shovel form.",
+  "use": [
+   {
+    "text": "Press F with it in your main hand to switch between netherite pickaxe and netherite shovel. The hand swap is cancelled.",
+    "src": "items/tools/mattock/KindlingBatonItem.kt:46-55"
+   },
+   {
+    "text": "Mine with it in your main hand. Smeltable blocks drop their smelted result instead.",
+    "src": "items/tools/mattock/KindlingBatonItem.kt:58-72, events/item/Listeners.kt:217-224"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Smelts",
+    "value": "iron/copper/gold ore (incl. deepslate) → ingots, ancient debris → netherite scrap, sand → glass, red sand → red stained glass",
+    "src": "items/tools/mattock/KindlingBatonItem.kt:19-30"
+   }
+  ],
+  "details": [
+   {
+    "text": "Fortune still multiplies the drops before they're smelted, so a Fortune roll of 3 raw iron becomes 3 iron ingots.",
+    "src": "items/tools/mattock/KindlingBatonItem.kt:64-67"
+   },
+   {
+    "text": "Only fires on blocks you're allowed to break. The ability is disabled in the new event world.",
+    "src": "events/item/Listeners.kt:217-224, items/tools/mattock/KindlingBatonItem.kt:15"
+   }
+  ]
+ },
+ {
+  "key": "vigilance-mattock",
+  "items": [
+   "vigilance-mattock"
+  ],
+  "summary": "While the mattock is in your main hand, ores within 3 blocks glow in their ore colour (only you can see this). You're also blinded and most sounds are muted for you.",
+  "use": [
+   {
+    "text": "Hold it in your main hand. Every tick it checks a 7×7×7 area around you and outlines any ore it finds.",
+    "src": "items/tools/mattock/VigilanceMattockItem.kt:105-120, items/tools/mattock/VigilanceMattockItem.kt:173-186, events/item/PassiveListeners.kt:21"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Ore search",
+    "value": "3 blocks in every direction from your feet",
+    "src": "items/tools/mattock/VigilanceMattockItem.kt:48, items/tools/mattock/VigilanceMattockItem.kt:174-175"
+   },
+   {
+    "label": "Highlight kept until",
+    "value": "you're more than 5 blocks away, change world, or the block is gone",
+    "src": "items/tools/mattock/VigilanceMattockItem.kt:205, items/tools/mattock/VigilanceMattockItem.kt:237-240"
+   },
+   {
+    "label": "Blindness",
+    "value": "15 s per refresh (300 ticks), refreshed every 3.5 s",
+    "src": "items/tools/mattock/VigilanceMattockItem.kt:44, items/tools/mattock/VigilanceMattockItem.kt:122-124, events/item/PassiveListeners.kt:19"
+   }
+  ],
+  "details": [
+   {
+    "text": "Counts any overworld ore (including deepslate), nether gold ore and nether quartz ore. Ancient debris doesn't count.",
+    "src": "items/tools/mattock/VigilanceMattockItem.kt:179, util/tags/Kind.java:26-31"
+   },
+   {
+    "text": "The glow is only visible to you.",
+    "src": "items/tools/mattock/VigilanceMattockItem.kt:207, util/PacketGlowColors.kt:92-117"
+   },
+   {
+    "text": "Switching slots, swapping it out of your main hand or logging out clears the highlights and removes Blindness.",
+    "src": "items/tools/mattock/VigilanceMattockItem.kt:90-103, items/tools/mattock/VigilanceMattockItem.kt:126-149"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "The tooltip mentions reduced movement, but the only effect the mattock applies is Blindness.",
+    "src": "items/tools/mattock/VigilanceMattockItem.kt:72-78, items/tools/mattock/VigilanceMattockItem.kt:164-166"
+   },
+   {
+    "text": "Blindness doesn't check which hand the mattock is in. In your off-hand you still get blinded, but no ores are highlighted.",
+    "src": "items/tools/mattock/VigilanceMattockItem.kt:113, items/tools/mattock/VigilanceMattockItem.kt:122-124, util/extensions/PlayerUtil.kt:216-227"
+   }
+  ],
+  "config": [
+   {
+    "text": "The sound muting and the you-only glow both rely on the ProtocolLib plugin. Muting blocks the server's positioned and entity sound effects while the mattock is in your main hand.",
+    "src": "items/tools/mattock/VigilanceMattockItem.kt:52-62, util/PacketGlowColors.kt:92-117"
+   }
+  ]
+ },
+ {
+  "key": "equinox-tools",
+  "items": [
+   "equinox-hatchet",
+   "equinox-harrower"
+  ],
+  "summary": "Right-click to scatter 3 geyser seeds around you. Each seed turns into a geyser that fires 5 volleys of balls, and every ball breaks the tool's kind of block where it lands (tree blocks for the Hatchet, shovel blocks for the Spade). The drops fly to you.",
+  "use": [
+   {
+    "text": "Right-click (works from either hand) to launch 3 seeds outward in random directions.",
+    "src": "items/tools/nests/EquinoxItemNest.kt:55-81, events/item/Listeners.kt:125-137"
+   },
+   {
+    "text": "Each seed that lands becomes a geyser. A geyser fires a volley, waits for every ball to land, pauses about 1 second, and repeats 5 times.",
+    "src": "items/tools/nests/EquinoxItemNest.kt:93-97, items/tools/nests/EquinoxItemNest.kt:144-195"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Cooldown (Hatchet)",
+    "value": "2 min (2400 ticks)",
+    "src": "items/tools/nests/EquinoxItemNest.kt:294-296, items/tools/nests/EquinoxItemNest.kt:56-57"
+   },
+   {
+    "label": "Cooldown (Spade)",
+    "value": "3 min (3600 ticks)",
+    "src": "items/tools/nests/EquinoxItemNest.kt:359-361, items/tools/nests/EquinoxItemNest.kt:56-57"
+   },
+   {
+    "label": "Seeds",
+    "value": "3 per use",
+    "src": "items/tools/nests/EquinoxItemNest.kt:59"
+   },
+   {
+    "label": "Volleys",
+    "value": "5 per geyser, 7–11 balls each",
+    "src": "items/tools/nests/EquinoxItemNest.kt:94, items/tools/nests/EquinoxItemNest.kt:164"
+   },
+   {
+    "label": "Break radius",
+    "value": "1.5 blocks around each ball's landing spot",
+    "src": "items/tools/nests/EquinoxItemNest.kt:99-105"
+   },
+   {
+    "label": "Hit damage",
+    "value": "5 (2.5 hearts) to a creature hit by a seed or ball",
+    "src": "items/tools/nests/EquinoxItemNest.kt:84-87"
+   },
+   {
+    "label": "Drop magnet",
+    "value": "drops fly to you for up to 10 s (200 ticks)",
+    "src": "items/tools/nests/EquinoxItemNest.kt:47, items/tools/nests/EquinoxItemNest.kt:116-129"
+   }
+  ],
+  "details": [
+   {
+    "text": "Hatchet: breaks blocks whose name contains LOG, WOOD, STEM, HYPHAE, LEAVES, WART_BLOCK or SHROOM. That covers logs, wood, leaves, nether stems, wart blocks, mushroom blocks and shroomlights, and also pumpkin/melon stems and small mushrooms. Drops are rolled with Fortune V.",
+    "src": "items/tools/nests/EquinoxItemNest.kt:233-235, items/tools/nests/EquinoxItemNest.kt:268-274"
+   },
+   {
+    "text": "Spade: breaks concrete powder, all dirt types (including dirt paths), farmland, grass blocks, gravel, mud, muddy mangrove roots, mycelium, podzol, all sand types (including soul sand), snow and soul soil. Clay isn't included. Drops are rolled with Fortune V.",
+    "src": "items/tools/nests/EquinoxItemNest.kt:304-308, items/tools/nests/EquinoxItemNest.kt:341-348"
+   },
+   {
+    "text": "Every block is checked for build permission separately (WorldGuard/Towny). The seeds and balls never damage you, or creatures you aren't allowed to hurt.",
+    "src": "items/tools/nests/EquinoxItemNest.kt:85, items/tools/nests/EquinoxItemNest.kt:269, items/tools/nests/EquinoxItemNest.kt:342"
+   },
+   {
+    "text": "The Hatchet and Spade have separate cooldowns.",
+    "src": "util/extensions/QuickTasks.kt:13-21"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "The Hatchet's tooltip says \"Cooldown: 3m\", but its real cooldown is 2 minutes.",
+    "src": "items/tools/nests/EquinoxItemNest.kt:262, items/tools/nests/EquinoxItemNest.kt:294-296"
+   },
+   {
+    "text": "Each block a ball breaks costs 1 durability from whatever is in your main hand at that moment, so if you've switched items, that item takes the wear.",
+    "src": "items/tools/nests/EquinoxItemNest.kt:285, items/tools/nests/EquinoxItemNest.kt:351"
+   }
+  ]
+ },
+ {
+  "key": "vigilance-driver",
+  "items": [
+   "vigilance-driver"
+  ],
+  "summary": "While you hold this crossbow, every creature within 80 blocks glows for you through walls, but you're blinded and most sounds are muted. Each shot also instantly deals 11 damage to the first creature in your line of aim, walls or not.",
+  "use": [
+   {
+    "text": "Hold it in your main hand or off-hand. Every 3.5 seconds, living things within 80 blocks get a glowing outline that only you see, and you get Blindness.",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:106-108, items/weapons/bow/VigilanceDriverItem.kt:183-202, events/item/PassiveListeners.kt:19"
+   },
+   {
+    "text": "Fire it. When the shot leaves, the first creature along your aim within 90 blocks takes 11 damage right away, ignoring blocks in between. The arrow itself flies through blocks.",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:110-117"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Reveal range",
+    "value": "80 blocks",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:44, items/weapons/bow/VigilanceDriverItem.kt:185"
+   },
+   {
+    "label": "Instant hit",
+    "value": "11 damage (5.5 hearts), aim range 90 blocks, counts as your attack",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:112, items/weapons/bow/VigilanceDriverItem.kt:117"
+   },
+   {
+    "label": "Arrow lifetime",
+    "value": "removed after about 0.5 s or 80 blocks",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:121-126"
+   },
+   {
+    "label": "Blindness",
+    "value": "15 s per refresh (300 ticks), refreshed every 3.5 s",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:42, events/item/PassiveListeners.kt:19"
+   }
+  ],
+  "details": [
+   {
+    "text": "Mobs get a random outline colour. Players get a plain outline. Anything that's already glowing isn't given a second outline.",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:195-200"
+   },
+   {
+    "text": "Loot from anything you kill appears at your eyes instead of where it died.",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:147-154"
+   },
+   {
+    "text": "Putting it away (neither hand, checked every second) or switching to another hotbar slot removes the glow and Blindness.",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:89-98, items/weapons/bow/VigilanceDriverItem.kt:129-145, events/item/PassiveListeners.kt:22"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "You get no experience from anything you kill while the Driver is in either hand, with any weapon. The experience is removed and an empty orb appears instead.",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:147-158, events/item/Listeners.kt:146-154"
+   },
+   {
+    "text": "Throwing a trident or ender pearl while the Driver is in either hand deletes it after about half a second: the trident is lost, and a pearl still in the air by then vanishes without teleporting you.",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:110-127, events/item/Listeners.kt:111-116"
+   },
+   {
+    "text": "The tooltip mentions reduced movement, but the only effect applied is Blindness.",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:77-82, items/weapons/bow/VigilanceDriverItem.kt:183-184"
+   }
+  ],
+  "config": [
+   {
+    "text": "The item does no claim or PvP check of its own before the 11-damage hit. Whether it can hurt players or protected mobs depends on the server's protection plugins.",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:112-117"
+   },
+   {
+    "text": "The sound muting (main hand only) and the you-only glow rely on the ProtocolLib plugin.",
+    "src": "items/weapons/bow/VigilanceDriverItem.kt:47-57, util/PacketGlowColors.kt:92-117"
+   }
+  ]
+ },
+ {
+  "key": "midnight-claymore",
+  "items": [
+   "midnight-claymore"
+  ],
+  "summary": "A slow, heavy two-handed sword. Each melee hit also strikes up to 20 creatures around you and your target, and the bonus damage grows with the number of creatures caught.",
+  "use": [
+   {
+    "text": "Melee-hit something with the Claymore in your main hand and your off-hand empty or holding something that isn't a weapon or tool (a shield is fine).",
+    "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:71-81, enums/GenericToolType.kt:6-9"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Area",
+    "value": "creatures within 3 blocks of you plus those within 5 blocks of your target, up to 20",
+    "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:31, items/weapons/cutlass/MidnightClaymoreItem.kt:86-92"
+   },
+   {
+    "label": "Extra damage per creature",
+    "value": "your hit × (1 + 0.19 × N) for the first, where N is the number caught. Each next creature gets 0.095 less multiplier (max ×4.8 with 20).",
+    "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:97-105"
+   },
+   {
+    "label": "Attack speed",
+    "value": "−3.5 (replaces the sword's normal −2.4)",
+    "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:47, model/item/ItemFactory.kt:196-205"
+   },
+   {
+    "label": "Movement speed",
+    "value": "−0.01 while in main hand",
+    "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:48"
+   }
+  ],
+  "details": [
+   {
+    "text": "Every caught creature, including the one you hit, is dealt the extra damage as an attack from you. Sweeping-edge hits and thorns don't trigger it.",
+    "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:71-73, items/weapons/cutlass/MidnightClaymoreItem.kt:81, items/weapons/cutlass/MidnightClaymoreItem.kt:98-99"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "The attack-speed penalty applies in any slot, so holding the Claymore in your off-hand also slows your main-hand swings.",
+    "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:47"
+   }
+  ],
+  "config": [
+   {
+    "text": "The Claymore does no claim or PvP check of its own: every living thing nearby, including other players, pets and villagers, is targeted. Whether they actually take damage is up to the server's protection plugins.",
+    "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:86-99"
+   },
+   {
+    "text": "The plugin joins the two nearby-creature lists without removing repeats. If the server's lookup hands back plain lists, a creature close to both you and your target (often the target itself) is counted twice, which raises N and the multiplier. That depends on the server software, so it isn't guaranteed.",
+    "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:86-97"
+   }
+  ]
+ },
+ {
+  "key": "honeywickhatchet",
+  "items": [
+   "honeywickhatchet"
+  ],
+  "summary": "Every hit deals 6–14 bonus damage and sometimes sprays decorative honeycomb. Eat the hatchet for 30 seconds of Speed, Regeneration, Absorption and Saturation. The food buff has a 1-minute cooldown and doesn't use up the hatchet.",
+  "use": [
+   {
+    "text": "Hit something. Bonus damage is added to the hit.",
+    "src": "items/weapons/hatchet/HoneyWickHatchetItem.kt:73-77"
+   },
+   {
+    "text": "Eat it (hold right-click) for the buffs. If it's still on cooldown, you get a \"too full\" message.",
+    "src": "items/weapons/hatchet/HoneyWickHatchetItem.kt:109-124"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Bonus damage",
+    "value": "+6 to +14 per hit (2 × a random 3–7)",
+    "src": "items/weapons/hatchet/HoneyWickHatchetItem.kt:75-77"
+   },
+   {
+    "label": "Honeycomb burst",
+    "value": "21% per hit, 3–7 pieces that vanish after 1.25 s",
+    "src": "items/weapons/hatchet/HoneyWickHatchetItem.kt:79-94"
+   },
+   {
+    "label": "Food buffs",
+    "value": "Speed III, Regeneration III, Absorption III, Saturation III for 30 s (600 ticks)",
+    "src": "items/weapons/hatchet/HoneyWickHatchetItem.kt:119-122"
+   },
+   {
+    "label": "Food cooldown",
+    "value": "1 min (1200 ticks)",
+    "src": "items/weapons/hatchet/HoneyWickHatchetItem.kt:112-117"
+   }
+  ],
+  "details": [
+   {
+    "text": "The honeycomb is for show: mobs and hoppers can't pick it up, and it despawns.",
+    "src": "items/weapons/hatchet/HoneyWickHatchetItem.kt:92-107"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "Eating is always cancelled: the hatchet isn't used up and restores no hunger itself.",
+    "src": "items/weapons/hatchet/HoneyWickHatchetItem.kt:109-110"
+   },
+   {
+    "text": "While the hatchet is in either hand you can't eat or drink anything else: other food and potions are cancelled.",
+    "src": "items/weapons/hatchet/HoneyWickHatchetItem.kt:109-110, events/item/Listeners.kt:365-369, util/extensions/PlayerUtil.kt:171-186"
+   }
+  ]
+ },
+ {
+  "key": "nightmare-glaive",
+  "items": [
+   "nightmare-glaive"
+  ],
+  "summary": "When the thrown Glaive lands, it leashes nearby creatures to that spot for 15 seconds and keeps them blinded. While they're held, damage you deal to one of them is copied to all the others.",
+  "use": [
+   {
+    "text": "Throw it. Where it lands, mobs within 14 blocks and players within 7 blocks are tied to the spot and pulled back if they stray more than about 4 blocks.",
+    "src": "items/weapons/trident/NightmareGlaiveItem.kt:80-103, items/weapons/trident/NightmareGlaiveItem.kt:120-135, items/weapons/trident/NightmareGlaiveItem.kt:168-173, util/BukkitVectors.kt:113-136"
+   },
+   {
+    "text": "Hit any held creature, with any weapon. Every other held creature takes the same damage.",
+    "src": "items/weapons/trident/NightmareGlaiveItem.kt:38, items/weapons/trident/NightmareGlaiveItem.kt:105-113"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Hold duration",
+    "value": "15 s (300 ticks) for mobs, 5 s for players",
+    "src": "items/weapons/trident/NightmareGlaiveItem.kt:122, items/weapons/trident/NightmareGlaiveItem.kt:154-164"
+   },
+   {
+    "label": "Capture radius",
+    "value": "14 blocks (mobs), 7 blocks (players)",
+    "src": "items/weapons/trident/NightmareGlaiveItem.kt:120-121, items/weapons/trident/NightmareGlaiveItem.kt:126-131"
+   },
+   {
+    "label": "Leash length",
+    "value": "3.5 blocks (+0.5 slack)",
+    "src": "items/weapons/trident/NightmareGlaiveItem.kt:169, util/BukkitVectors.kt:113-128"
+   },
+   {
+    "label": "Blindness",
+    "value": "10 s, reapplied every tick while held and removed on release",
+    "src": "items/weapons/trident/NightmareGlaiveItem.kt:45, items/weapons/trident/NightmareGlaiveItem.kt:174, items/weapons/trident/NightmareGlaiveItem.kt:181-185"
+   }
+  ],
+  "details": [
+   {
+    "text": "Creatures you aren't allowed to hurt there (WorldGuard/Towny) are generally skipped. NPCs are never caught.",
+    "src": "items/weapons/trident/NightmareGlaiveItem.kt:126-135"
+   },
+   {
+    "text": "A new throw ends your previous hold. If you sneak, every held player (you included) is let go.",
+    "src": "items/weapons/trident/NightmareGlaiveItem.kt:91, items/weapons/trident/NightmareGlaiveItem.kt:155"
+   },
+   {
+    "text": "Throwing it does nothing in the Piñata world, spawn or the new event world.",
+    "src": "items/weapons/trident/NightmareGlaiveItem.kt:39, enums/WorldKey.kt:21-25"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "You're caught too if you're within 7 blocks of where it lands: pulled in and blinded for 5 seconds unless you sneak.",
+    "src": "items/weapons/trident/NightmareGlaiveItem.kt:130-133, items/weapons/trident/NightmareGlaiveItem.kt:155-163"
+   },
+   {
+    "text": "Copied damage is plain damage with no attacker attached, not an attack from you.",
+    "src": "items/weapons/trident/NightmareGlaiveItem.kt:109-111"
+   }
+  ]
+ }
+]

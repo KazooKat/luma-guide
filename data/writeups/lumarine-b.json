@@ -1,0 +1,964 @@
+[
+  {
+    "key": "aestiva-barillas",
+    "items": [
+      "aestiva-barillas"
+    ],
+    "summary": "Netherite boots that make you bounce off surfaces and push back the height at which falls start to hurt. They do this through two attributes on the boots, with no plugin code running.",
+    "numbers": [
+      {
+        "label": "Bounciness",
+        "value": "+1.0 (only while worn on the feet)",
+        "src": "items/armor/boots/AestivaBarillasItem.kt:44-50"
+      },
+      {
+        "label": "Safe fall distance",
+        "value": "+10 blocks (only while worn on the feet)",
+        "src": "items/armor/boots/AestivaBarillasItem.kt:51-57"
+      }
+    ],
+    "details": [
+      {
+        "text": "The item has no ability code of its own. The bounce and the softer landings come from the two attributes, and the Feather Falling VII on the boots cuts fall damage further.",
+        "src": "items/armor/boots/AestivaBarillasItem.kt:15-59"
+      },
+      {
+        "text": "Both attributes only count in the feet slot. Holding the boots in your hand does nothing.",
+        "src": "items/armor/boots/AestivaBarillasItem.kt:48, items/armor/boots/AestivaBarillasItem.kt:55"
+      }
+    ],
+    "config": [
+      {
+        "text": "How much you bounce is decided by the game server's handling of the Bounciness attribute, not by this plugin, so the feel depends on the server software and version.",
+        "src": "items/armor/boots/AestivaBarillasItem.kt:46"
+      }
+    ]
+  },
+  {
+    "key": "sunbrella-nouveau",
+    "items": [
+      "sunbrella-nouveau"
+    ],
+    "summary": "A helmet with three abilities while worn. Full-power sword swings throw a fan of three wind crescents, the helmet lowers your air drag, and holding sneak while falling opens a steerable paraglider canopy that cancels fall damage.",
+    "use": [
+      {
+        "text": "Crescent Gale: wear it on your head, hold a sword in your main hand, and left-click (swing) with the attack meter at least 90% charged. The same check also runs when you land a melee hit.",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:414-432"
+      },
+      {
+        "text": "Drift: while falling, hold sneak to open the canopy and keep holding sneak to stay under it. Look down to dive and build speed, and look up to flare, which trades speed for lift.",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:168-182, items/armor/helmet/SunbrellaHatNouveauItem.kt:189-198, items/armor/helmet/SunbrellaHatNouveauItem.kt:251-278"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Crescent volley",
+        "value": "3 crescents at -14°, 0° and +14°, launched 0.1 s apart",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:93-97, items/armor/helmet/SunbrellaHatNouveauItem.kt:438-444"
+      },
+      {
+        "label": "Crescent cooldown",
+        "value": "0.5 s (10 ticks)",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:83, items/armor/helmet/SunbrellaHatNouveauItem.kt:432"
+      },
+      {
+        "label": "Crescent damage",
+        "value": "34% of (your attack damage + the sword's Sharpness bonus), at least 3 per crescent. Example: netherite sword with Sharpness V is about 3.7",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:88-89, items/armor/helmet/SunbrellaHatNouveauItem.kt:434-436"
+      },
+      {
+        "label": "Crescent range",
+        "value": "17 blocks, travelling 1.1 blocks per tick (22 blocks/s)",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:84-86, items/armor/helmet/SunbrellaHatNouveauItem.kt:481-483"
+      },
+      {
+        "label": "Crescent hit size",
+        "value": "1.7 blocks around the crescent sideways, about 1.45 blocks up and down",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:87, items/armor/helmet/SunbrellaHatNouveauItem.kt:541"
+      },
+      {
+        "label": "Sword wear",
+        "value": "1 durability per volley",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:446"
+      },
+      {
+        "label": "Air drag",
+        "value": "-0.5 air drag modifier while worn on the head",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:157-163"
+      },
+      {
+        "label": "Canopy speed",
+        "value": "cruises at 0.55 blocks/tick (11 blocks/s), dives up to 2.1 blocks/tick (42 blocks/s)",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:56-58, items/armor/helmet/SunbrellaHatNouveauItem.kt:255-258"
+      },
+      {
+        "label": "Canopy climb",
+        "value": "at most 0.38 blocks/tick upward while flaring",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:65, items/armor/helmet/SunbrellaHatNouveauItem.kt:268-272"
+      }
+    ],
+    "details": [
+      {
+        "text": "Each crescent hits each creature at most once, and it clears the target's short post-hit immunity right before hitting, so all three crescents can land on the same target.",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:543-550"
+      },
+      {
+        "text": "Crescents stop at the first solid block and pass through open or non-solid space. They hit players too, but only where protection plugins (WorldGuard/Towny) allow you to damage them.",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:492-495, items/armor/helmet/SunbrellaHatNouveauItem.kt:545, util/AbilityUtil.kt:26"
+      },
+      {
+        "text": "Damage done by a crescent can't trigger another volley. Arrows and other projectiles you shoot don't trigger one either.",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:419-424"
+      },
+      {
+        "text": "The canopy only opens when you're falling faster than 0.08 blocks per tick and at least about 0.6 blocks above the ground. It won't open while flying, gliding with an elytra, riding, or in water.",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:189-198"
+      },
+      {
+        "text": "The canopy closes when you let go of sneak, touch the ground, enter water, start flying, gliding or riding, or take the helmet off. While it's open your fall distance resets every tick, so landing does no damage.",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:200-209, items/armor/helmet/SunbrellaHatNouveauItem.kt:228-233, items/armor/helmet/SunbrellaHatNouveauItem.kt:279"
+      },
+      {
+        "text": "Slipstream is only visual: colored wind streaks and a whirl sound appear once you move faster than 15.5 blocks per second.",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:79-80, items/armor/helmet/SunbrellaHatNouveauItem.kt:364-412"
+      },
+      {
+        "text": "Crescent Gale is switched off in the Piñata world. The canopy, the wind streaks and the lower air drag still work there, because the world block isn't applied to movement.",
+        "src": "items/armor/helmet/SunbrellaHatNouveauItem.kt:49, events/item/ItemListener.kt:123, enums/Action.kt:36, enums/Action.kt:41, enums/Action.kt:60"
+      }
+    ]
+  },
+  {
+    "key": "builders-wand",
+    "items": [
+      "builders-wand"
+    ],
+    "summary": "A building tool that copies a block along a path you point at. Right-click a block to start a preview line of up to 48 blocks, aim to shape it, and left-click to place it using blocks from your inventory. Left-clicking a block without a preview rotates it.",
+    "use": [
+      {
+        "text": "Right-click a block with the wand to start build mode. The preview starts from the side you clicked and runs to the spot in front of whatever face you're aiming at.",
+        "src": "items/misc/builderswand/BuildersWandItem.kt:82-98, items/misc/builderswand/BuildersWandItem.kt:156-189"
+      },
+      {
+        "text": "Left-click anywhere to confirm. This places copies of the block you first right-clicked, keeping its exact state (orientation, half, and so on).",
+        "src": "items/misc/builderswand/BuildersWandItem.kt:64-74, items/misc/builderswand/BuildersWandBase.kt:62-79"
+      },
+      {
+        "text": "Press the swap key (F) to cancel the preview.",
+        "src": "items/misc/builderswand/BuildersWandItem.kt:100-102"
+      },
+      {
+        "text": "With no preview open, left-click a block to turn it to its next direction or axis. On fences, panes and similar blocks it toggles the side you clicked.",
+        "src": "items/misc/builderswand/BuildersWandItem.kt:74-79, items/misc/builderswand/BuildersWandItem.kt:123-143"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Max path length",
+        "value": "48 blocks",
+        "src": "items/misc/builderswand/BuildersWandItem.kt:150, items/misc/builderswand/BuildersWandItem.kt:213"
+      },
+      {
+        "label": "Aim reach",
+        "value": "48 blocks",
+        "src": "items/misc/builderswand/BuildersWandItem.kt:151, items/misc/builderswand/BuildersWandItem.kt:163"
+      },
+      {
+        "label": "Cooldown",
+        "value": "4 s after a successful placement",
+        "src": "items/misc/builderswand/BuildersWandItem.kt:73, items/misc/builderswand/BuildersWandBase.kt:81-83"
+      },
+      {
+        "label": "Cost",
+        "value": "1 of the block's item per block in the path (free in Creative)",
+        "src": "items/misc/builderswand/BuildersWandBase.kt:68-70"
+      }
+    ],
+    "details": [
+      {
+        "text": "The path goes around solid blocks, moving one block at a time in any of the six directions, so it can climb and bend. Only non-solid spaces count as open.",
+        "src": "items/misc/builderswand/BuildersWandItem.kt:192-247, items/misc/builderswand/BuildersWandItem.kt:279-285"
+      },
+      {
+        "text": "You can't start from ores, chests, crops and other growing plants, doors, pistons, or blocks that have no item form. Trying shows red dust instead. Red dust also appears while the wand is on cooldown or where you can't build.",
+        "src": "items/misc/builderswand/BuildersWandBase.kt:45-49, items/misc/builderswand/BuildersWandItem.kt:89-93"
+      },
+      {
+        "text": "If you don't have enough of the block for the whole path, nothing is placed and red dust traces the path.",
+        "src": "items/misc/builderswand/BuildersWandBase.kt:69-78"
+      },
+      {
+        "text": "Placement respects claims (WorldGuard/Towny) and stops at the first spot you can't build in. Leaves placed by the wand never decay.",
+        "src": "items/misc/builderswand/BuildersWandBase.kt:64-66, items/misc/builderswand/BuildersWandBase.kt:72-75"
+      },
+      {
+        "text": "The preview uses small ghost blocks that other players can see too. It is cancelled when you teleport, log out, stop holding the wand in your main hand, or open a container (checked about once a second).",
+        "src": "items/misc/builderswand/BuildersWandBase.kt:114-136, items/misc/builderswand/BuildersWandBase.kt:150-165, items/misc/builderswand/BuildersWandItem.kt:105-121, items/misc/builderswand/BuildersWandItem.kt:154"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "The items for the whole path are taken before the claim check. If the path runs into a spot you can't build in, placement stops there, but you still lose the items for the blocks that weren't placed.",
+        "src": "items/misc/builderswand/BuildersWandBase.kt:69-79"
+      },
+      {
+        "text": "Non-solid blocks in the path, such as grass, flowers, torches and water, are overwritten without dropping anything.",
+        "src": "items/misc/builderswand/BuildersWandBase.kt:72-75, items/misc/builderswand/BuildersWandItem.kt:279-285"
+      },
+      {
+        "text": "The wand also reacts when it's in your off-hand. Your left- and right-clicks on blocks are cancelled, and left-clicking a block rotates it, so keep the wand out of your off-hand while you mine or build normally.",
+        "src": "items/misc/builderswand/BuildersWandItem.kt:64-87, events/item/Listeners.kt:125-137, util/extensions/PlayerUtil.kt:171-186"
+      }
+    ]
+  },
+  {
+    "key": "lodestar-compass",
+    "items": [
+      "lodestar-compass"
+    ],
+    "summary": "A biome-finding compass. Left-click to scan for the nearest different biomes between 300 and 1,000 blocks away, then right-click to step through them. The needle and action bar show each biome's name and distance.",
+    "use": [
+      {
+        "text": "Left-click to scan. A ring of particles sweeps over the ground around you, and when it finishes the compass points at the nearest biome it found.",
+        "src": "items/misc/LodestarCompassItem.kt:109-118, items/misc/LodestarCompassItem.kt:163-195"
+      },
+      {
+        "text": "Right-click (either hand) to switch to the next biome in the list. It loops back to the first after the last.",
+        "src": "items/misc/LodestarCompassItem.kt:120-151"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Scan range",
+        "value": "300 to 1,000 blocks from where you stand (horizontal distance)",
+        "src": "items/misc/LodestarCompassItem.kt:50, items/misc/LodestarCompassItem.kt:53, items/misc/LodestarCompassItem.kt:316-330"
+      },
+      {
+        "label": "Results",
+        "value": "up to 12 biomes, nearest first",
+        "src": "items/misc/LodestarCompassItem.kt:55, items/misc/LodestarCompassItem.kt:345-348"
+      },
+      {
+        "label": "Cooldown",
+        "value": "1 s, shared by scanning and switching",
+        "src": "items/misc/LodestarCompassItem.kt:59, items/misc/LodestarCompassItem.kt:115, items/misc/LodestarCompassItem.kt:148"
+      },
+      {
+        "label": "Reading expires",
+        "value": "after you move more than 4,000 blocks from the scan spot, or change worlds",
+        "src": "items/misc/LodestarCompassItem.kt:57, items/misc/LodestarCompassItem.kt:461-463"
+      },
+      {
+        "label": "Sweep effect",
+        "value": "75-block radius",
+        "src": "items/misc/LodestarCompassItem.kt:61, items/misc/LodestarCompassItem.kt:197-230"
+      }
+    ],
+    "details": [
+      {
+        "text": "It lists each biome type once, at its nearest point, and skips the biome you're standing in.",
+        "src": "items/misc/LodestarCompassItem.kt:312-338"
+      },
+      {
+        "text": "It reads the world generator's biome map, so it works for land nobody has loaded yet. It samples every 16 blocks and then narrows each hit down on a 4-block grid, so the edge it points to can be a few blocks off.",
+        "src": "items/misc/LodestarCompassItem.kt:301-374"
+      },
+      {
+        "text": "In the Overworld it checks biomes at your height or sea level, whichever is higher. In other dimensions it uses your height.",
+        "src": "items/misc/LodestarCompassItem.kt:376-383"
+      },
+      {
+        "text": "Biomes added by datapacks show their source in grey brackets on the action bar, and as 'Charted by' on the compass tooltip.",
+        "src": "items/misc/LodestarCompassItem.kt:398-402, items/misc/LodestarCompassItem.kt:426-432, items/misc/LodestarCompassItem.kt:479-482"
+      },
+      {
+        "text": "The scan-sweep particles are shown only to you.",
+        "src": "items/misc/LodestarCompassItem.kt:252-262"
+      },
+      {
+        "text": "Right-clicking a lodestone does nothing, so the compass can't be re-bound. Right-clicking a door, chest or other usable block uses that block instead, unless you're sneaking.",
+        "src": "items/misc/LodestarCompassItem.kt:124-132"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "The scan is only remembered while the server is running. It's cleared if you log out while holding the compass, and after a restart you have to scan again.",
+        "src": "items/misc/LodestarCompassItem.kt:102, items/misc/LodestarCompassItem.kt:153-161, events/item/Listeners.kt:441-445"
+      },
+      {
+        "text": "Every new reading swaps the compass in your hand for a freshly made copy, so a custom name or any enchantments you added to it are lost.",
+        "src": "items/misc/LodestarCompassItem.kt:385-394, items/misc/LodestarCompassItem.kt:406-420, items/misc/LodestarCompassItem.kt:422-455"
+      }
+    ]
+  },
+  {
+    "key": "infinite-tropical-fish-bucket",
+    "items": [
+      "infinite-tropical-fish-bucket"
+    ],
+    "summary": "A tropical fish bucket that never empties. Every use places water, and it releases a new tropical fish at most once every 8 seconds.",
+    "use": [
+      {
+        "text": "Use it like a normal bucket (either hand) to pour water. The bucket is never used up.",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:166-170, events/item/Listeners.kt:542-552"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Fish cooldown",
+        "value": "8 s between released fish (water has no cooldown)",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:144, items/misc/nests/InfiniteBucketsItemNest.kt:172-174"
+      }
+    ],
+    "details": [
+      {
+        "text": "Pouring respects claims (WorldGuard/Towny). It waterlogs waterloggable blocks, and replaceable blocks in the way (like grass) break and drop as usual.",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:287-288, items/misc/nests/InfiniteBucketsItemNest.kt:303-320"
+      },
+      {
+        "text": "Released fish are marked as coming from a bucket. Fish from this bucket give no Jobs experience or pay.",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:177-182, events/item/JobsListeners.kt:27-44, events/item/JobsListeners.kt:57-59"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "In the Nether the water evaporates, but a fish is still released (if off cooldown) with no water around it.",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:170-174, items/misc/nests/InfiniteBucketsItemNest.kt:295-301"
+      }
+    ],
+    "config": [
+      {
+        "text": "The no-Jobs-reward rule only applies when the Jobs plugin is installed.",
+        "src": "events/item/JobsListeners.kt:20"
+      }
+    ]
+  },
+  {
+    "key": "infinite-air-bucket",
+    "items": [
+      "infinite-air-bucket"
+    ],
+    "summary": "An empty bucket that never fills. It deletes water, lava and powder snow instead of picking them up, and can also remove flowing (non-source) water and lava. Press F while holding it to refill your breath.",
+    "use": [
+      {
+        "text": "Use it on a source block of water or lava, on powder snow, or on a waterlogged block to remove the fluid. The bucket stays empty.",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:224-231, items/misc/nests/InfiniteBucketsItemNest.kt:373-403"
+      },
+      {
+        "text": "Right-click flowing water or lava within your normal reach to remove that block too, which a vanilla bucket can't do.",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:233-242, items/misc/nests/InfiniteBucketsItemNest.kt:368-371"
+      },
+      {
+        "text": "Press the swap key (F) with it in either hand to refill your air bar to full.",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:244-254"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Air refill cooldown",
+        "value": "3 s (60 ticks)",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:192, items/misc/nests/InfiniteBucketsItemNest.kt:251"
+      },
+      {
+        "label": "Stack size",
+        "value": "1",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:216"
+      }
+    ],
+    "details": [
+      {
+        "text": "Draining respects claims (WorldGuard/Towny).",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:374"
+      },
+      {
+        "text": "The air refill does nothing if your air is already full, and the cooldown gives no message.",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:248-249"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "Pressing F while holding it never swaps your hands, even when your air is full or the refill is on cooldown.",
+        "src": "items/misc/nests/InfiniteBucketsItemNest.kt:244-246"
+      }
+    ]
+  },
+  {
+    "key": "tidewarden-barding",
+    "items": [
+      "tidewarden-barding"
+    ],
+    "summary": "Unbreakable diamond armor for a nautilus. While your nautilus wears it, it's made invulnerable, never despawns, and leaves a glowing blue trail.",
+    "use": [
+      {
+        "text": "Put it on a nautilus as body armor. A conduit chime and a particle burst confirm it's active.",
+        "src": "items/misc/TidewardenBardingItem.kt:141-145, items/misc/TidewardenBardingItem.kt:152-157, items/misc/TidewardenBardingItem.kt:112-118"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Trail",
+        "value": "particles every 0.15 s (3 ticks), only while a player is nearby to see them",
+        "src": "items/misc/TidewardenBardingItem.kt:35, items/misc/TidewardenBardingItem.kt:101-109"
+      }
+    ],
+    "details": [
+      {
+        "text": "While worn, the nautilus is made invulnerable and is kept from despawning.",
+        "src": "items/misc/TidewardenBardingItem.kt:59-62"
+      },
+      {
+        "text": "Remove the barding and the invulnerability goes away. An untamed nautilus can despawn again.",
+        "src": "items/misc/TidewardenBardingItem.kt:82-86, items/misc/TidewardenBardingItem.kt:95-99"
+      },
+      {
+        "text": "The protection comes back on its own when the nautilus's chunk reloads, for example after a restart.",
+        "src": "items/misc/TidewardenBardingItem.kt:28, items/misc/TidewardenBardingItem.kt:147-150"
+      },
+      {
+        "text": "The barding itself is unbreakable.",
+        "src": "items/misc/TidewardenBardingItem.kt:128"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "'It will not wander off' only means it won't despawn. Nothing stops the nautilus from swimming away.",
+        "src": "items/misc/TidewardenBardingItem.kt:59-62"
+      }
+    ]
+  },
+  {
+    "key": "lumarine-charm",
+    "items": [
+      "lumarine-charm"
+    ],
+    "summary": "A Lumarine minigame participation token. This plugin gives it no ability, so its value is as a collectible.",
+    "details": [
+      {
+        "text": "The item class has no ability code, and nothing else in LumaItems checks for the charm.",
+        "src": "items/playground/event/LumarineCharmItem.kt:9-26"
+      }
+    ],
+    "config": [
+      {
+        "text": "The tooltip hints at a future use ('keep it around'). If that exists, it lives outside this plugin, for example in an event or another server plugin.",
+        "src": "items/playground/event/LumarineCharmItem.kt:12-20"
+      }
+    ]
+  },
+  {
+    "key": "gala-hatchet",
+    "items": [
+      "gala-hatchet"
+    ],
+    "summary": "A netherite axe that sometimes fires a volley of fireworks when you break logs or leaves. The rockets steer toward nearby wood and blast away the logs and leaves around where they explode.",
+    "use": [
+      {
+        "text": "Break logs or leaves with it in your main hand. Each break has a small chance to launch the volley.",
+        "src": "items/tools/hatchet/GalaHatchetItem.kt:98-106, events/item/Listeners.kt:217-224"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Trigger chance",
+        "value": "5% per log or leaf block broken",
+        "src": "items/tools/hatchet/GalaHatchetItem.kt:100"
+      },
+      {
+        "label": "Rockets per volley",
+        "value": "1 to 9 (random), launched 0.1 s apart",
+        "src": "items/tools/hatchet/GalaHatchetItem.kt:38-39, items/tools/hatchet/GalaHatchetItem.kt:118, items/tools/hatchet/GalaHatchetItem.kt:131"
+      },
+      {
+        "label": "Fuse",
+        "value": "at most 0.7 s (14 ticks) before it goes off",
+        "src": "items/tools/hatchet/GalaHatchetItem.kt:40, items/tools/hatchet/GalaHatchetItem.kt:195-208"
+      },
+      {
+        "label": "Blast radius",
+        "value": "up to 2 blocks, with ragged edges (1.2-2 blocks)",
+        "src": "items/tools/hatchet/GalaHatchetItem.kt:43, items/tools/hatchet/GalaHatchetItem.kt:216-223"
+      },
+      {
+        "label": "Wood-seeking range",
+        "value": "8 blocks",
+        "src": "items/tools/hatchet/GalaHatchetItem.kt:46, items/tools/hatchet/GalaHatchetItem.kt:138-146"
+      },
+      {
+        "label": "Cooldown",
+        "value": "0.25 s between volleys",
+        "src": "items/tools/hatchet/GalaHatchetItem.kt:105"
+      }
+    ],
+    "details": [
+      {
+        "text": "Rockets fan out in a ring. Any rocket whose path wouldn't reach a tree turns toward a nearby log it has a clear line to, choosing from the 4 logs closest to its direction.",
+        "src": "items/tools/hatchet/GalaHatchetItem.kt:122-129, items/tools/hatchet/GalaHatchetItem.kt:148-167"
+      },
+      {
+        "text": "Each blast breaks only logs and leaves, and only where you're allowed to build (WorldGuard/Towny). Blocks drop as if broken by hand, and blast-broken blocks don't set off more volleys.",
+        "src": "items/tools/hatchet/GalaHatchetItem.kt:211-230, util/extensions/BlockUtil.kt:35-39"
+      },
+      {
+        "text": "Players holding a Gala Hatchet in either hand take no damage from these rockets.",
+        "src": "items/tools/hatchet/GalaHatchetItem.kt:108-112, events/item/Listeners.kt:182-190"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "Any log block counts, including player-built log walls, as long as you have build rights there.",
+        "src": "items/tools/hatchet/GalaHatchetItem.kt:174, items/tools/hatchet/GalaHatchetItem.kt:216-228"
+      }
+    ],
+    "config": [
+      {
+        "text": "The rockets are real fireworks. Nothing in this plugin shields other players or mobs who aren't holding a Gala Hatchet, so they may take firework damage (depends on the game and protection plugins, not tested).",
+        "src": "items/tools/hatchet/GalaHatchetItem.kt:108-112, items/tools/hatchet/GalaHatchetItem.kt:176-190"
+      }
+    ]
+  },
+  {
+    "key": "axiom-mattock-core",
+    "items": [
+      "axiom-mattock-core"
+    ],
+    "summary": "A voucher. Right-click it to use it up and get one Axiom Mattock, either Flux or Union at even odds.",
+    "numbers": [
+      {
+        "label": "Odds",
+        "value": "50% Union, 50% Flux",
+        "src": "items/tools/nests/AxiomItemNest.kt:66-70"
+      }
+    ],
+    "details": [
+      {
+        "text": "The mattock is added straight to your inventory.",
+        "src": "items/tools/nests/AxiomItemNest.kt:72-73, util/Util.kt:34-42"
+      }
+    ],
+    "config": [
+      {
+        "text": "If your inventory is full, the server's own give logic decides what happens to the mattock. Normally it drops at your feet (depends on the game, not tested).",
+        "src": "util/Util.kt:34-42"
+      }
+    ]
+  },
+  {
+    "key": "axiom-mattock",
+    "items": [
+      "union-paradox-mattock",
+      "flux-paradox-mattock"
+    ],
+    "summary": "A netherite pickaxe with +2 block reach. Right-click to spend 10 seconds carving out an 8-block sphere around the block you're looking at, using beams that break stone- and dirt-type blocks. Union fires straight up-and-down beams; Flux fires them in random directions.",
+    "use": [
+      {
+        "text": "Right-click while looking at a block up to 25 blocks away. The effect is centered on top of that block. If you're not looking at a block, nothing happens and no cooldown starts.",
+        "src": "items/tools/nests/AxiomItemNest.kt:96-102"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Cooldown",
+        "value": "3 min (180 s)",
+        "src": "items/tools/nests/AxiomItemNest.kt:82, items/tools/nests/AxiomItemNest.kt:99"
+      },
+      {
+        "label": "Duration",
+        "value": "10 s (200 ticks)",
+        "src": "items/tools/nests/AxiomItemNest.kt:81, items/tools/nests/AxiomItemNest.kt:115-122"
+      },
+      {
+        "label": "Radius",
+        "value": "8 blocks (sphere)",
+        "src": "items/tools/nests/AxiomItemNest.kt:80, items/tools/nests/AxiomItemNest.kt:195-205"
+      },
+      {
+        "label": "Beams",
+        "value": "2 per tick (about 400 over the whole effect)",
+        "src": "items/tools/nests/AxiomItemNest.kt:84, items/tools/nests/AxiomItemNest.kt:149-151"
+      },
+      {
+        "label": "Targeting range",
+        "value": "25 blocks",
+        "src": "items/tools/nests/AxiomItemNest.kt:98"
+      },
+      {
+        "label": "Durability cost",
+        "value": "50 per use",
+        "src": "items/tools/nests/AxiomItemNest.kt:100"
+      },
+      {
+        "label": "Reach bonus",
+        "value": "+2 block interaction range while held in either hand",
+        "src": "items/tools/nests/AxiomItemNest.kt:159-167"
+      }
+    ],
+    "details": [
+      {
+        "text": "Beams break blocks that are mined with a pickaxe or shovel and are softer than obsidian. Obsidian, crying obsidian, bedrock and anything else as hard or harder are left alone.",
+        "src": "items/tools/nests/AxiomItemNest.kt:85, items/tools/nests/AxiomItemNest.kt:215-221"
+      },
+      {
+        "text": "Each beam stops at the first block you aren't allowed to build on (WorldGuard/Towny).",
+        "src": "items/tools/nests/AxiomItemNest.kt:212-213"
+      },
+      {
+        "text": "With the mattock in your main hand, its Silk Touch applies to what the beams break, so you get the blocks themselves. Broken ores drop no experience.",
+        "src": "items/tools/nests/AxiomItemNest.kt:182, items/tools/nests/AxiomItemNest.kt:223, util/extensions/BlockUtil.kt:30-34"
+      },
+      {
+        "text": "Union beams all run vertically. Flux beams each pick a random direction.",
+        "src": "items/tools/nests/AxiomItemNest.kt:284, items/tools/nests/AxiomItemNest.kt:302-307"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "It doesn't spare builds. Anything pickaxe- or shovel-mineable and softer than obsidian inside the sphere gets broken, as long as you have build rights there.",
+        "src": "items/tools/nests/AxiomItemNest.kt:211-226"
+      },
+      {
+        "text": "There's no hand check, so right-clicking with the mattock in your off-hand also fires it.",
+        "src": "items/tools/nests/AxiomItemNest.kt:96-100, events/item/Listeners.kt:125-137"
+      }
+    ]
+  },
+  {
+    "key": "pink-ayune-tools",
+    "items": [
+      "pink-ayune-mattock",
+      "pink-ayune-hatchet"
+    ],
+    "summary": "A gamble on every ore (mattock) or log (hatchet) you break. Some breaks 'burst': the block stays in place and its drops pop out anyway. Some other breaks drop nothing. A burst makes the next burst more likely.",
+    "use": [
+      {
+        "text": "Mine ores with the mattock or logs with the hatchet, with the tool in your main hand.",
+        "src": "items/tools/nests/PinkAyuneItemNest.kt:41-45, items/tools/nests/PinkAyuneItemNest.kt:111, items/tools/nests/PinkAyuneItemNest.kt:141, events/item/Listeners.kt:217-224"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Burst chance",
+        "value": "25% per block, or 35% right after a burst",
+        "src": "items/tools/nests/PinkAyuneItemNest.kt:49-50"
+      },
+      {
+        "label": "Empty chance",
+        "value": "18% of non-burst breaks (13.5% of all breaks normally, 11.7% during a streak)",
+        "src": "items/tools/nests/PinkAyuneItemNest.kt:50-56"
+      },
+      {
+        "label": "Pickup delay on burst drops",
+        "value": "1 s",
+        "src": "items/tools/nests/PinkAyuneItemNest.kt:95"
+      }
+    ],
+    "details": [
+      {
+        "text": "On a burst, the break is cancelled, so the block stays in place. You get the drops the tool would normally give (including Fortune V), scattered one item at a time.",
+        "src": "items/tools/nests/PinkAyuneItemNest.kt:61-100"
+      },
+      {
+        "text": "On an 'empty' break, the block breaks but drops no items.",
+        "src": "items/tools/nests/PinkAyuneItemNest.kt:52-56"
+      },
+      {
+        "text": "The 35% streak lasts until a break doesn't burst. It doesn't climb past 35%, and the mattock and hatchet keep separate streaks.",
+        "src": "items/tools/nests/PinkAyuneItemNest.kt:33, items/tools/nests/PinkAyuneItemNest.kt:49-59"
+      },
+      {
+        "text": "The mattock counts every ore, including deepslate and nether gold ore and nether quartz ore. Ancient debris doesn't count.",
+        "src": "util/tags/Kind.java:26-31"
+      },
+      {
+        "text": "The hatchet turns burst drops into the matching bark-covered wood block (oak log gives oak wood, crimson stem gives crimson hyphae, and so on).",
+        "src": "items/tools/nests/PinkAyuneItemNest.kt:145-148, util/tags/LinkedTags.java:26-39"
+      },
+      {
+        "text": "Burst drops are kept from merging into stacks for 1.5 s.",
+        "src": "items/tools/nests/PinkAyuneItemNest.kt:97-98, items/tools/nests/PinkAyuneItemNest.kt:103-105"
+      },
+      {
+        "text": "Protected blocks aren't affected. If a claim stops you breaking the block, neither roll happens.",
+        "src": "events/item/Listeners.kt:217-218"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "A burst on a mangrove log gives mangrove propagules instead of mangrove wood. The log-to-wood table maps mangrove to the wrong item.",
+        "src": "util/tags/LinkedTags.java:33"
+      },
+      {
+        "text": "The hatchet also rolls on stripped logs and on wood blocks, which have no entry in that table. A burst on those gives nothing, and the block just stays.",
+        "src": "items/tools/nests/PinkAyuneItemNest.kt:141, items/tools/nests/PinkAyuneItemNest.kt:145-148"
+      }
+    ],
+    "config": [
+      {
+        "text": "Because a burst cancels the break, the tool should take no durability and ores should give no experience on a burst (depends on the game, not tested).",
+        "src": "items/tools/nests/PinkAyuneItemNest.kt:61"
+      }
+    ]
+  },
+  {
+    "key": "mistrium-rod",
+    "items": [
+      "mistrium-rod"
+    ],
+    "summary": "A fishing rod that shortens the bite timing when you cast and keeps a little rain cloud over your head. The rain turns dirt into grass and lava into obsidian where it lands.",
+    "use": [
+      {
+        "text": "Hold it in either hand to get the rain cloud. Cast it as usual to get the shorter bite timing.",
+        "src": "items/tools/rod/MistriumRodItem.kt:70-95, events/item/PassiveListeners.kt:43-55, util/extensions/PlayerUtil.kt:216-227"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Lure time",
+        "value": "cut to 22% of normal (both the shortest and the longest)",
+        "src": "items/tools/rod/MistriumRodItem.kt:78-79"
+      },
+      {
+        "label": "Extra durability per cast",
+        "value": "7 (before Unbreaking)",
+        "src": "items/tools/rod/MistriumRodItem.kt:76"
+      },
+      {
+        "label": "Rain",
+        "value": "2 drops per tick from about 3 blocks above your eyes, within 1.5 blocks sideways, falling up to 24 blocks",
+        "src": "items/tools/rod/MistriumRodItem.kt:33-36, items/tools/rod/MistriumRodItem.kt:87, items/tools/rod/MistriumRodItem.kt:103-115, events/item/PassiveListeners.kt:21, LumaItems.java:89"
+      }
+    ],
+    "details": [
+      {
+        "text": "The fishing bonus is skipped if you hold a fishing rod in both hands.",
+        "src": "items/tools/rod/MistriumRodItem.kt:71, util/extensions/PlayerUtil.kt:151-153"
+      },
+      {
+        "text": "Raindrops that land on dirt turn it into a grass block, and drops that land on a lava source turn it into obsidian. This only happens where you're allowed to build (WorldGuard/Towny).",
+        "src": "items/tools/rod/MistriumRodItem.kt:39-42, items/tools/rod/MistriumRodItem.kt:113-117, items/tools/rod/MistriumRodItem.kt:128-135"
+      },
+      {
+        "text": "The cloud stops while you're jumping, underwater, or in the Nether.",
+        "src": "items/tools/rod/MistriumRodItem.kt:85"
+      }
+    ],
+    "config": [
+      {
+        "text": "Which part of fishing the shortened lure time covers is decided by the game, not this plugin. It should be the time between a fish appearing and it biting, not the wait before a fish appears, which Lure V on the rod shortens the usual way (depends on the game, not tested).",
+        "src": "items/tools/rod/MistriumRodItem.kt:73-80"
+      },
+      {
+        "text": "The rod also switches off rain's influence on each cast's timing, so real weather shouldn't speed it up (depends on the game, not tested).",
+        "src": "items/tools/rod/MistriumRodItem.kt:75"
+      }
+    ]
+  },
+  {
+    "key": "magmatic-shovel",
+    "items": [
+      "magmatic-shovel"
+    ],
+    "summary": "A netherite shovel that adds a glass block when you dig sand or red sand.",
+    "use": [
+      {
+        "text": "Dig sand or red sand with the shovel in your main hand.",
+        "src": "items/tools/spade/MagmaticShovelItem.kt:31-34, events/item/Listeners.kt:217-224"
+      }
+    ],
+    "details": [
+      {
+        "text": "Red sand gives plain glass, not a colored glass.",
+        "src": "items/tools/spade/MagmaticShovelItem.kt:34-38"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "The sand isn't replaced. Its normal drop is left alone and the glass drops as an extra item, so each sand block gives you both sand and glass.",
+        "src": "items/tools/spade/MagmaticShovelItem.kt:33-43"
+      }
+    ]
+  },
+  {
+    "key": "incursion-spitter",
+    "items": [
+      "incursion-spitter"
+    ],
+    "summary": "A pufferfish gun that can't be eaten. Right-click to spit a fast, arcing jet of water that hits the first creature in its path, dealing less damage the farther it travels.",
+    "use": [
+      {
+        "text": "Right-click with it in your main hand (the off-hand doesn't work).",
+        "src": "items/weapons/incursion/SpitterItem.kt:79-91"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Cooldown",
+        "value": "0.25 s (5 ticks)",
+        "src": "items/weapons/incursion/SpitterItem.kt:35, items/weapons/incursion/SpitterItem.kt:94"
+      },
+      {
+        "label": "Damage",
+        "value": "15 up close, falling to 11.25 at max range",
+        "src": "items/weapons/incursion/SpitterItem.kt:41-42, items/weapons/incursion/SpitterItem.kt:145-148"
+      },
+      {
+        "label": "Range",
+        "value": "22 blocks of travel",
+        "src": "items/weapons/incursion/SpitterItem.kt:39, items/weapons/incursion/SpitterItem.kt:110"
+      },
+      {
+        "label": "Speed",
+        "value": "1.2 blocks per tick, aimed 10° above where you look, then arcing down",
+        "src": "items/weapons/incursion/SpitterItem.kt:36-38, items/weapons/incursion/SpitterItem.kt:97-99, items/weapons/incursion/SpitterItem.kt:167"
+      }
+    ],
+    "details": [
+      {
+        "text": "The spit stops at the first solid block or the first creature it touches. Barriers don't stop it.",
+        "src": "items/weapons/incursion/SpitterItem.kt:135-153, items/weapons/incursion/IncursionArsenal.kt:324-325"
+      },
+      {
+        "text": "Tamed pets and mobs with a custom name take no damage (the spit still stops on them). Boss mobs (Ender Dragon, Wither, Warden, Elder Guardian) take half damage. You can't hit yourself, and other players can only be hit where protection plugins allow.",
+        "src": "items/weapons/incursion/IncursionArsenal.kt:154-156, items/weapons/incursion/IncursionArsenal.kt:175-208, items/weapons/incursion/SpitterItem.kt:142-152"
+      },
+      {
+        "text": "The cooldown uses the game's own item cooldown for pufferfish.",
+        "src": "items/weapons/incursion/SpitterItem.kt:86-94"
+      }
+    ],
+    "config": [
+      {
+        "text": "The damage is dealt as a hit from you, so the target's armor and Protection should reduce it (depends on the game, not tested).",
+        "src": "items/weapons/incursion/IncursionArsenal.kt:174, items/weapons/incursion/IncursionArsenal.kt:199"
+      },
+      {
+        "text": "Nothing in the plugin clears a target's short immunity after being hit, and spits can fire every 0.25 s, so back-to-back spits on one target may not all do full damage (depends on the game, not tested).",
+        "src": "items/weapons/incursion/SpitterItem.kt:35, items/weapons/incursion/IncursionArsenal.kt:188-201"
+      }
+    ]
+  },
+  {
+    "key": "darksun-scythe",
+    "items": [
+      "darksun-scythe"
+    ],
+    "summary": "A netherite hoe that reaps an area when you right-click. A small zone at your target is hit by 7 waves of slashes over about 2 seconds, and the first wave stops and heavily slows what it hits.",
+    "use": [
+      {
+        "text": "Right-click with the scythe in your main hand. It targets the creature you're looking at (up to 50 blocks away), otherwise the top of the block you're looking at (up to 10 blocks away), otherwise a spot 10 blocks in front of you.",
+        "src": "items/weapons/scythe/DarksunScytheItem.kt:83-91"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Cooldown",
+        "value": "8 s",
+        "src": "items/weapons/scythe/DarksunScytheItem.kt:45, items/weapons/scythe/DarksunScytheItem.kt:90"
+      },
+      {
+        "label": "Damage",
+        "value": "14 per wave, 7 waves (one right away, then every 0.35 s)",
+        "src": "items/weapons/scythe/DarksunScytheItem.kt:42-44, items/weapons/scythe/DarksunScytheItem.kt:94-111"
+      },
+      {
+        "label": "Area",
+        "value": "2 blocks out from the target point and 2.5 blocks up and down (box-shaped)",
+        "src": "items/weapons/scythe/DarksunScytheItem.kt:40-41, items/weapons/scythe/DarksunScytheItem.kt:126-130"
+      },
+      {
+        "label": "Root (first wave only)",
+        "value": "stops the target's movement and gives Slowness IV for 2.8 s",
+        "src": "items/weapons/scythe/DarksunScytheItem.kt:51, items/weapons/scythe/DarksunScytheItem.kt:118-121"
+      }
+    ],
+    "details": [
+      {
+        "text": "The zone stays where you aimed. Moving away or looking elsewhere doesn't move it.",
+        "src": "items/weapons/scythe/DarksunScytheItem.kt:94-110"
+      },
+      {
+        "text": "It skips you and armor stands. Other players, pets and animals can be hit wherever protection plugins (WorldGuard/Towny) allow.",
+        "src": "items/weapons/scythe/DarksunScytheItem.kt:126-130, util/extensions/PlayerUtil.kt:244-253"
+      },
+      {
+        "text": "Disabled in the Piñata world.",
+        "src": "items/weapons/scythe/DarksunScytheItem.kt:33"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "Right-clicking while on cooldown does nothing and shows no message.",
+        "src": "items/weapons/scythe/DarksunScytheItem.kt:84"
+      }
+    ],
+    "config": [
+      {
+        "text": "Nothing in the plugin clears a target's short immunity after being hit, and the waves come 0.35 s apart, so a target standing in the zone may not take damage from every wave (depends on the game, not tested).",
+        "src": "items/weapons/scythe/DarksunScytheItem.kt:44, items/weapons/scythe/DarksunScytheItem.kt:116"
+      }
+    ]
+  },
+  {
+    "key": "incursion-incendiary-egg",
+    "items": [
+      "incursion-incendiary-egg"
+    ],
+    "summary": "A reusable throwing egg. Right-click to throw it, and it explodes where it lands, damaging creatures within 4.5 blocks and setting them on fire. Press F to cycle it to the next egg variant.",
+    "use": [
+      {
+        "text": "Right-click to throw. The egg in your hand isn't used up.",
+        "src": "items/weapons/incursion/IncursionEggItem.kt:81-103"
+      },
+      {
+        "text": "Press the swap key (F) with it in either hand to turn it into the next variant: Incendiary, then Unstable, then Cryo, then back to Incendiary.",
+        "src": "items/weapons/incursion/IncursionEggItem.kt:105-130"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Cooldown",
+        "value": "3.5 s (70 ticks)",
+        "src": "items/weapons/incursion/IncursionEggItem.kt:41, items/weapons/incursion/IncursionEggItem.kt:87-91"
+      },
+      {
+        "label": "Damage",
+        "value": "65 at the center, falling off with distance to 9.75 at the edge",
+        "src": "items/weapons/incursion/IncendiaryEggItem.kt:19, items/weapons/incursion/IncursionEggItem.kt:43, items/weapons/incursion/IncursionEggItem.kt:210"
+      },
+      {
+        "label": "Blast radius",
+        "value": "4.5 blocks, measured to the center of each creature's body",
+        "src": "items/weapons/incursion/IncursionEggItem.kt:42, items/weapons/incursion/IncursionEggItem.kt:203-206"
+      },
+      {
+        "label": "Burn",
+        "value": "at least 5 s of fire (100 ticks) on everything hit",
+        "src": "items/weapons/incursion/IncendiaryEggItem.kt:11, items/weapons/incursion/IncendiaryEggItem.kt:34-36"
+      },
+      {
+        "label": "Throw speed",
+        "value": "1.5 blocks per tick, plus your own movement",
+        "src": "items/weapons/incursion/IncursionEggItem.kt:44, items/weapons/incursion/IncursionEggItem.kt:93-96"
+      }
+    ],
+    "details": [
+      {
+        "text": "Tamed pets and name-tagged mobs are neither hurt nor set on fire. Boss mobs take half damage. You can't hit yourself, and other players are only hit where protection plugins allow.",
+        "src": "items/weapons/incursion/IncursionArsenal.kt:154-156, items/weapons/incursion/IncursionArsenal.kt:175-208"
+      },
+      {
+        "text": "A custom name or lore you give the egg is kept for that variant when you cycle through the others and back.",
+        "src": "items/weapons/incursion/IncursionEggItem.kt:132-172"
+      },
+      {
+        "text": "It stacks to 1, can't be used in crafting, and dispensers won't fire it.",
+        "src": "items/weapons/incursion/IncursionEggItem.kt:75, items/weapons/incursion/IncursionEggItem.kt:219-226"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "The explosion goes through walls. A line-of-sight check exists in the code but is switched off.",
+        "src": "items/weapons/incursion/IncursionEggItem.kt:203-208"
+      }
+    ]
+  }
+]

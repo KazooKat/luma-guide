@@ -1,0 +1,529 @@
+[
+  {
+    "key": "ribbon-socks",
+    "items": ["ribbon-socks"],
+    "summary": "While worn, these boots cancel fall damage and freeze (powder snow) damage. The boots take durability damage instead, and they can never fully break.",
+    "use": [
+      { "text": "Wear them on your feet. The protection only checks the boots slot.", "src": "items/armor/boots/RibbonSocksItem.kt:57-58" }
+    ],
+    "numbers": [
+      { "label": "Durability cost per blocked hit", "value": "1/3 of the damage blocked (rounded down)", "src": "items/armor/boots/RibbonSocksItem.kt:61" },
+      { "label": "Damage types blocked", "value": "Fall, freeze", "src": "items/armor/boots/RibbonSocksItem.kt:23-26" }
+    ],
+    "details": [
+      { "text": "Any durability loss that would break the socks leaves them at 1 durability instead, so they never break.", "src": "items/armor/boots/RibbonSocksItem.kt:69-75, util/extensions/ItemUtil.kt:123-132" }
+    ],
+    "quirks": [
+      { "text": "At 1 durability left, the socks stop blocking damage. You take the fall or freeze damage as normal and hear an item-break sound. Repair them to get the protection back (they have no Mending).", "src": "items/armor/boots/RibbonSocksItem.kt:51, items/armor/boots/RibbonSocksItem.kt:60-65, util/extensions/ItemUtil.kt:70-79" }
+    ],
+    "config": [
+      { "text": "Powder snow usually deals freeze damage 1 point at a time. One third of 1 rounds down to 0, so blocking it should cost no durability (depends on the game, not tested).", "src": "items/armor/boots/RibbonSocksItem.kt:24-25, items/armor/boots/RibbonSocksItem.kt:61" }
+    ]
+  },
+  {
+    "key": "wanderers-decanter",
+    "items": ["wanderers-decanter-boots"],
+    "summary": "Walking or sprinting turns your experience points into Bottles o' Enchanting. Each bottle costs 12 XP points and takes 24 blocks of walking or 32 blocks of sprinting.",
+    "use": [
+      { "text": "Walk or sprint on foot while wearing the boots. Movement while gliding, flying, riding something or in water doesn't count.", "src": "items/armor/boots/WanderersDecanterBootsItem.kt:74-80" }
+    ],
+    "numbers": [
+      { "label": "XP cost per bottle", "value": "12 experience points (points, not levels)", "src": "items/armor/boots/WanderersDecanterBootsItem.kt:28, items/armor/boots/WanderersDecanterBootsItem.kt:139-145" },
+      { "label": "Distance per bottle (walking)", "value": "24 blocks", "src": "items/armor/boots/WanderersDecanterBootsItem.kt:29, items/armor/boots/WanderersDecanterBootsItem.kt:119" },
+      { "label": "Distance per bottle (sprinting)", "value": "32 blocks", "src": "items/armor/boots/WanderersDecanterBootsItem.kt:30, items/armor/boots/WanderersDecanterBootsItem.kt:119" },
+      { "label": "Diagonal step", "value": "Counts as about 1.41 blocks", "src": "items/armor/boots/WanderersDecanterBootsItem.kt:42, items/armor/boots/WanderersDecanterBootsItem.kt:127-137" }
+    ],
+    "details": [
+      { "text": "Only a move into a neighbouring block counts. Moves that skip blocks (knockback, lag or teleports) are ignored, and landing more than 6 blocks from where you were last counted resets your progress.", "src": "items/armor/boots/WanderersDecanterBootsItem.kt:41, items/armor/boots/WanderersDecanterBootsItem.kt:95-102, items/armor/boots/WanderersDecanterBootsItem.kt:127-137" },
+      { "text": "Stepping back and forth across the same block edge earns nothing. You have to keep moving to new ground.", "src": "items/armor/boots/WanderersDecanterBootsItem.kt:104-111" },
+      { "text": "With under 12 XP points, you get no bottle and your progress stops at one bottle's worth. The next step after you have enough XP makes the bottle.", "src": "items/armor/boots/WanderersDecanterBootsItem.kt:120-123, items/armor/boots/WanderersDecanterBootsItem.kt:140" },
+      { "text": "Walking progress is cleared if you log out while wearing or holding the boots.", "src": "items/armor/boots/WanderersDecanterBootsItem.kt:148-150, events/item/Listeners.kt:441-445" }
+    ],
+    "quirks": [
+      { "text": "The code never checks the boots slot. Carrying the boots in your main hand or off-hand also works while you walk.", "src": "items/armor/boots/WanderersDecanterBootsItem.kt:74-80, events/item/Listeners.kt:327-332, util/extensions/PlayerUtil.kt:171-185" }
+    ]
+  },
+  {
+    "key": "paradox-cuirass",
+    "items": ["paradox-cuirass"],
+    "summary": "A netherite armor piece you can switch between chestplate, leggings, boots and helmet by pressing the swap-hands key. Switching locks for good once you take any damage or die while it's equipped.",
+    "use": [
+      { "text": "Hold it in your main hand and press the swap-hands key (F). It changes piece in place and stays in your main hand. The order is chestplate, leggings, boots, helmet, then back to chestplate.", "src": "items/armor/chestplate/ParadoxCuirassItem.kt:75-85, items/armor/chestplate/ParadoxCuirassItem.kt:88-100, events/item/Listeners.kt:139-144" }
+    ],
+    "numbers": [
+      { "label": "Cooldown between switches", "value": "0.5 s (10 ticks)", "src": "items/armor/chestplate/ParadoxCuirassItem.kt:81-83" }
+    ],
+    "details": [
+      { "text": "Damage from any source locks switching if the cuirass is worn in any armor slot or held in either hand, and so does dying. When damage locks it, you see soul particles and hear a sound.", "src": "items/armor/chestplate/ParadoxCuirassItem.kt:60-72, events/item/Listeners.kt:197-207, events/item/Listeners.kt:159-163" },
+      { "text": "Once it's locked, pressing F does a normal hand swap.", "src": "items/armor/chestplate/ParadoxCuirassItem.kt:76-79" }
+    ],
+    "quirks": [
+      { "text": "The lock applies to you as a player, not to one cuirass, and nothing in the item ever removes it. It lasts until the server restarts or staff clear your cooldowns with the plugin's clear-cooldown command.", "src": "items/armor/chestplate/ParadoxCuirassItem.kt:62, items/armor/chestplate/ParadoxCuirassItem.kt:71, util/extensions/QuickTasks.kt:14, commands/subcommands/ClearCooldownCommand.kt:38-42" }
+    ],
+    "config": [
+      { "text": "Switching only changes the item's type, so its enchantments and name should carry over to each piece (depends on the game, not tested).", "src": "items/armor/chestplate/ParadoxCuirassItem.kt:88-100" }
+    ]
+  },
+  {
+    "key": "amor-ceralytras",
+    "items": ["amorceralytras"],
+    "summary": "An elytra that adds two sneak-triggered air jumps and a charged high launch. Press sneak in mid-air to jump again, or hold sneak on the ground for 4 seconds and release to launch upward.",
+    "use": [
+      { "text": "In mid-air, press sneak to jump again toward where you're looking. You get up to 2 of these before you touch the ground.", "src": "items/armor/elytra/AmorCeralytrasItem.kt:72-76, items/armor/elytra/AmorCeralytrasItem.kt:44-47" },
+      { "text": "On the ground, hold sneak. After 4 seconds a bell plays and red dust appears. Let go of sneak (or leave the ground) to launch high into the air.", "src": "items/armor/elytra/AmorCeralytrasItem.kt:49-69" }
+    ],
+    "numbers": [
+      { "label": "Air jumps", "value": "2 per time in the air (reset on landing)", "src": "items/armor/elytra/AmorCeralytrasItem.kt:44-47, items/armor/elytra/AmorCeralytrasItem.kt:72-76" },
+      { "label": "Air jump strength", "value": "0.6 forward, 0.7 upward", "src": "items/armor/elytra/AmorCeralytrasItem.kt:75" },
+      { "label": "Charge time for the high launch", "value": "4 s (80 ticks)", "src": "items/armor/elytra/AmorCeralytrasItem.kt:52, items/armor/elytra/AmorCeralytrasItem.kt:54, items/armor/elytra/AmorCeralytrasItem.kt:62" },
+      { "label": "High launch strength", "value": "3.0 upward; current sideways speed ×8.2", "src": "items/armor/elytra/AmorCeralytrasItem.kt:55" }
+    ],
+    "details": [
+      { "text": "Air jumps don't work in water or while in creative/spectator flight.", "src": "items/armor/elytra/AmorCeralytrasItem.kt:72-73" },
+      { "text": "Neither ability has a cooldown. The only limit on air jumps is the 2 per time in the air.", "src": "items/armor/elytra/AmorCeralytrasItem.kt:49-77" },
+      { "text": "Stand still while charging the high launch. Moving along the ground resets the 4-second count.", "src": "items/armor/elytra/AmorCeralytrasItem.kt:44-47, items/armor/elytra/AmorCeralytrasItem.kt:62" }
+    ],
+    "quirks": [
+      { "text": "The code never checks the chestplate slot, so both abilities also work with the elytra held in either hand.", "src": "items/armor/elytra/AmorCeralytrasItem.kt:44-77, events/item/Listeners.kt:305-310, util/extensions/PlayerUtil.kt:171-185" }
+    ]
+  },
+  {
+    "key": "deep-rose-veil",
+    "items": ["deep-rose-veil"],
+    "summary": "While you wear this elytra, you have the Glowing effect with a dark purple outline.",
+    "use": [
+      { "text": "Wear it in the chestplate slot.", "src": "items/armor/elytra/DeepRoseVeilItem.kt:52-56" }
+    ],
+    "numbers": [
+      { "label": "Glowing duration per refresh", "value": "17 s (340 ticks)", "src": "items/armor/elytra/DeepRoseVeilItem.kt:24" },
+      { "label": "Refresh interval", "value": "Every 3.5 s (70 ticks)", "src": "items/armor/elytra/DeepRoseVeilItem.kt:52-56, events/item/PassiveListeners.kt:19, LumaItems.java:87" }
+    ],
+    "details": [
+      { "text": "Putting it on applies the glow and purple colour right away. Taking it off removes it at once.", "src": "items/armor/elytra/DeepRoseVeilItem.kt:59-67" }
+    ],
+    "quirks": [
+      { "text": "Taking it off removes every Glowing effect you have, including glowing from other sources such as a spectral arrow.", "src": "items/armor/elytra/DeepRoseVeilItem.kt:63-65" }
+    ]
+  },
+  {
+    "key": "strawberry-chapeau",
+    "items": ["strawberry-chapeau"],
+    "summary": "Kills give you saturation, up to your current food level. Once per hour it also saves you from death and revives you with 15 health (7.5 hearts).",
+    "use": [
+      { "text": "Wear it and kill mobs to top up your saturation. The hat takes a little durability each time.", "src": "items/armor/helmet/StrawberryChapeauItem.kt:64-73" },
+      { "text": "When you would die, the hat cancels the death, plays the totem animation and puts you back at 15 health.", "src": "items/armor/helmet/StrawberryChapeauItem.kt:51-61" }
+    ],
+    "numbers": [
+      { "label": "Death-save cooldown", "value": "1 hour (72,000 ticks)", "src": "items/armor/helmet/StrawberryChapeauItem.kt:56" },
+      { "label": "Health after a save", "value": "15 (7.5 hearts)", "src": "items/armor/helmet/StrawberryChapeauItem.kt:58" },
+      { "label": "Durability cost per save", "value": "50 (to your helmet slot)", "src": "items/armor/helmet/StrawberryChapeauItem.kt:60" },
+      { "label": "Saturation per kill", "value": "The gap between your food level and saturation, capped at the victim's max health", "src": "items/armor/helmet/StrawberryChapeauItem.kt:67-71" },
+      { "label": "Durability cost per kill", "value": "Victim's max health ÷ 4, at most 16 (only if saturation was gained)", "src": "items/armor/helmet/StrawberryChapeauItem.kt:69, items/armor/helmet/StrawberryChapeauItem.kt:72" }
+    ],
+    "details": [
+      { "text": "When your saturation already equals your food level, a kill gives nothing and costs no durability.", "src": "items/armor/helmet/StrawberryChapeauItem.kt:68-69" },
+      { "text": "The 1-hour cooldown is kept in memory, so a server restart resets it.", "src": "items/armor/helmet/StrawberryChapeauItem.kt:52, util/extensions/QuickTasks.kt:13, model/item/CustomItemCooldown.kt:15" }
+    ],
+    "quirks": [
+      { "text": "Neither ability checks that the hat is on your head. Both also work with it held in either hand. The durability cost always goes to whatever is in your helmet slot, not to the hat.", "src": "items/armor/helmet/StrawberryChapeauItem.kt:51-73, events/item/Listeners.kt:146-163, util/extensions/PlayerUtil.kt:171-185" }
+    ]
+  },
+  {
+    "key": "hearthglow-lantern",
+    "items": ["hearthglow-lantern"],
+    "summary": "While you hold it, nearby mobs and animals keep the Glowing effect. Players and armor stands are not affected.",
+    "use": [
+      { "text": "Hold it in either hand. The glow is refreshed every 1.5 seconds while you hold it.", "src": "items/misc/HearthglowLanternItem.kt:47-55, events/item/PassiveListeners.kt:20, LumaItems.java:88, util/extensions/PlayerUtil.kt:216-227" }
+    ],
+    "numbers": [
+      { "label": "Range", "value": "5 blocks in every direction (a box, including up and down)", "src": "items/misc/HearthglowLanternItem.kt:23, items/misc/HearthglowLanternItem.kt:49" },
+      { "label": "Glow duration", "value": "1.6 s (32 ticks), refreshed every 1.5 s", "src": "items/misc/HearthglowLanternItem.kt:24, events/item/PassiveListeners.kt:20" }
+    ],
+    "details": [
+      { "text": "Players and armor stands are skipped. Every other living mob in range glows, including other people's pets.", "src": "items/misc/HearthglowLanternItem.kt:49-52" },
+      { "text": "It can't be placed as a block.", "src": "items/misc/HearthglowLanternItem.kt:65-68" }
+    ]
+  },
+  {
+    "key": "infinite-milk-bucket",
+    "items": ["infinite-milk-bucket"],
+    "summary": "A milk bucket that stays full after you drink it. Drinking still clears your effects like normal milk.",
+    "details": [
+      { "text": "After you drink, the bucket is replaced with an identical copy of itself instead of an empty bucket.", "src": "items/misc/nests/InfiniteBucketsItemNest.kt:130-135" }
+    ]
+  },
+  {
+    "key": "reformation-pouch-bundle",
+    "items": ["reformation-pouch-bundle"],
+    "summary": "A sealed pouch. Right-clicking it uses it up and gives you one Reformation Pouch for a random wood type.",
+    "use": [
+      { "text": "Right-click while holding it. One is used up and a random Reformation Pouch goes into your inventory.", "src": "items/misc/nests/ReformationPouchItemNest.kt:52-72" }
+    ],
+    "numbers": [
+      { "label": "Chance of each wood type", "value": "1 in 9 (about 11.1%): oak, spruce, birch, jungle, acacia, dark oak, mangrove, cherry or pale oak", "src": "items/misc/nests/ReformationPouchItemNest.kt:56, items/misc/nests/ReformationPouchItemNest.kt:259-275" }
+    ]
+  },
+  {
+    "key": "reformation-pouches",
+    "items": ["reformation-pouch-oak", "reformation-pouch-spruce", "reformation-pouch-birch", "reformation-pouch-jungle", "reformation-pouch-acacia", "reformation-pouch-dark-oak", "reformation-pouch-mangrove", "reformation-pouch-cherry", "reformation-pouch-pale-oak"],
+    "summary": "A bundle that turns wood items put inside it into the pouch's own wood type. For example, birch planks placed in a cherry pouch become cherry planks.",
+    "use": [
+      { "text": "Put wood items into the pouch in your inventory, the same way you fill a normal bundle. One tick later the contents are converted.", "src": "items/misc/nests/ReformationPouchItemNest.kt:197-211" }
+    ],
+    "numbers": [
+      { "label": "Source woods accepted", "value": "Oak, spruce, birch, jungle, acacia, dark oak, mangrove, cherry, pale oak, bamboo", "src": "items/misc/nests/ReformationPouchItemNest.kt:81-83" }
+    ],
+    "details": [
+      { "text": "Converted item types: logs, wood, stripped logs and wood, planks, stairs, slabs, shelves, fences, fence gates, doors, trapdoors, pressure plates, buttons, signs, hanging signs, boats, chest boats, leaves and saplings (including mangrove propagules).", "src": "items/misc/nests/ReformationPouchItemNest.kt:84-92, items/misc/nests/ReformationPouchItemNest.kt:115-144" },
+      { "text": "Crimson and warped (nether) wood, azalea leaves and anything else not listed stay as they are.", "src": "items/misc/nests/ReformationPouchItemNest.kt:81-83, items/misc/nests/ReformationPouchItemNest.kt:111-113" },
+      { "text": "Stack sizes and item names are kept. Only the wood type changes.", "src": "items/misc/nests/ReformationPouchItemNest.kt:242-250" },
+      { "text": "Each fill converts every Reformation Pouch in your inventory and in any container you have open, not just the one you used.", "src": "items/misc/nests/ReformationPouchItemNest.kt:203-228" },
+      { "text": "Crafting a pouch with one dye recolours it and keeps its wood type and contents. No other items can be in the grid.", "src": "items/misc/nests/ReformationPouchItemNest.kt:277-285, util/extensions/ItemUtil.kt:97-121" }
+    ]
+  },
+  {
+    "key": "prism-pearl",
+    "items": ["prism-pearl"],
+    "summary": "Right-click to teleport the nearest passive animal within 40 blocks to you. It can't be thrown like an ender pearl.",
+    "use": [
+      { "text": "Hold it in your main hand and right-click.", "src": "items/misc/PrismPearlItem.kt:53-60" }
+    ],
+    "numbers": [
+      { "label": "Search range", "value": "40 blocks in every direction (a box)", "src": "items/misc/PrismPearlItem.kt:28, items/misc/PrismPearlItem.kt:62-64" },
+      { "label": "Cooldown", "value": "5 s (100 ticks), only after a successful summon", "src": "items/misc/PrismPearlItem.kt:74" }
+    ],
+    "details": [
+      { "text": "Only animals that aren't hostile can be summoned, and only ones you're allowed to hurt. Animals protected by a claim or region are skipped.", "src": "items/misc/PrismPearlItem.kt:65, util/extensions/PlayerUtil.kt:244-253" },
+      { "text": "If nothing qualifies, you see \"No passive mobs nearby!\" and there's no cooldown.", "src": "items/misc/PrismPearlItem.kt:68-71" },
+      { "text": "It can't be used in any crafting recipe.", "src": "items/misc/PrismPearlItem.kt:88-90" }
+    ],
+    "quirks": [
+      { "text": "While the pearl is in either hand, the plugin cancels every projectile you launch, not just the pearl, so you can't shoot or throw anything else (such as arrows, snowballs or tridents) until you put it away.", "src": "items/misc/PrismPearlItem.kt:81-86, events/item/Listeners.kt:111-116" }
+    ],
+    "config": [
+      { "text": "The claim check goes through the server's WorldGuard and Towny hooks, so which animals count as protected depends on those plugins' settings.", "src": "util/extensions/PlayerUtil.kt:32-35, util/extensions/PlayerUtil.kt:244-253" }
+    ]
+  },
+  {
+    "key": "recall-compass",
+    "items": ["recall-compass"],
+    "summary": "Sneak and right-click to teleport to your respawn point. It works across worlds and has a 2.5-second cooldown.",
+    "use": [
+      { "text": "Hold it in your main hand, sneak and right-click.", "src": "items/misc/RecallCompassItem.kt:57" }
+    ],
+    "numbers": [
+      { "label": "Cooldown", "value": "2.5 s (50 ticks)", "src": "items/misc/RecallCompassItem.kt:73" },
+      { "label": "Minimum distance", "value": "3 blocks from your respawn point", "src": "items/misc/RecallCompassItem.kt:66-69" }
+    ],
+    "details": [
+      { "text": "If you have no respawn point set, it says so and doesn't teleport you.", "src": "items/misc/RecallCompassItem.kt:61-64" },
+      { "text": "Within 3 blocks of your respawn point in the same world, it refuses (\"already within your comfort zone\").", "src": "items/misc/RecallCompassItem.kt:66-69" },
+      { "text": "Nothing stops a teleport to another world.", "src": "items/misc/RecallCompassItem.kt:60-81" },
+      { "text": "It can't be linked to a lodestone. Right-clicking one with it does nothing and shows a message.", "src": "items/misc/RecallCompassItem.kt:51-55" }
+    ]
+  },
+  {
+    "key": "mini-mushroom",
+    "items": ["mini-mushroom"],
+    "summary": "While you hold or wear it, you shrink to about 30% size, fall more slowly, jump a bit higher and take less fall damage. It costs 2 hearts of max health.",
+    "use": [
+      { "text": "Hold it in either hand. You can also right-click to put it on your head, which only works if your helmet slot is empty. The stats work in any slot where it's equipped.", "src": "items/misc/scale/MiniMushroomItem.kt:52-59, events/GeneralListeners.kt:97-119" }
+    ],
+    "numbers": [
+      { "label": "Size", "value": "−0.7 scale (normal 1.0, so about 0.3)", "src": "items/misc/scale/MiniMushroomItem.kt:31, items/misc/scale/MiniMushroomItem.kt:53" },
+      { "label": "Gravity", "value": "−0.04 (normal 0.08, so about half)", "src": "items/misc/scale/MiniMushroomItem.kt:54" },
+      { "label": "Safe fall distance", "value": "+6 blocks", "src": "items/misc/scale/MiniMushroomItem.kt:55" },
+      { "label": "Jump strength", "value": "+0.06", "src": "items/misc/scale/MiniMushroomItem.kt:56" },
+      { "label": "Max health", "value": "−4 (2 hearts)", "src": "items/misc/scale/MiniMushroomItem.kt:57" }
+    ],
+    "details": [
+      { "text": "It can't be placed as a mushroom or put in a composter.", "src": "items/misc/scale/MiniMushroomItem.kt:64-74" },
+      { "text": "In the event_new and piñata worlds, the plugin stops you moving it into your hotbar or armor slots, switching to it, or putting it on your head.", "src": "items/misc/scale/MiniMushroomItem.kt:26, events/GeneralListeners.kt:104-108,events/item/Listeners.kt:473-487, events/item/Listeners.kt:564-576, enums/WorldKey.kt:21-23" }
+    ]
+  },
+  {
+    "key": "pride-2026-tokens",
+    "items": ["pride-maze-token-2026", "pride-token-2026"],
+    "summary": "Collectible Pride 2026 tokens with no special ability. They can't be placed, and you can't break blocks while holding one in your main hand.",
+    "details": [
+      { "text": "Breaking a block is cancelled while a token is in your main hand.", "src": "items/playground/event/PrideMazeTokenItem.kt:29-31, items/playground/event/PrideTokenItem.kt:30-32, events/item/Listeners.kt:217-224" },
+      { "text": "Like other tiered custom items, they can't be placed as flowers or petals.", "src": "events/item/Listeners.kt:246-259, util/extensions/ItemUtil.kt:162-164" }
+    ]
+  },
+  {
+    "key": "valentide-2026-charm",
+    "items": ["valentide-2026-charm"],
+    "summary": "A Valentide 2026 event keepsake with no hidden ability, whatever the tooltip hints. It can't be eaten.",
+    "details": [
+      { "text": "Eating it is always cancelled, so the apple is never used up.", "src": "items/playground/event/Valentide2026CharmItem.kt:33-35" }
+    ],
+    "quirks": [
+      { "text": "The block applies to anything you eat or drink, not only the charm. With the charm in either hand, you can't eat food or drink potions or milk from your other hand.", "src": "items/playground/event/Valentide2026CharmItem.kt:33-35, events/item/Listeners.kt:365-369, util/extensions/PlayerUtil.kt:171-185" }
+    ]
+  },
+  {
+    "key": "illume-shears",
+    "items": ["illume-shears"],
+    "summary": "Left-click a block that gives off light to break it instantly, like torches, glowstone or lit candles. It drops as if mined with the item in your main hand.",
+    "use": [
+      { "text": "Left-click a light-emitting block while holding the shears.", "src": "items/tools/shears/IllumeShearsItem.kt:37-43" }
+    ],
+    "details": [
+      { "text": "The block has to be giving off light right now: a lit candle or lamp works, an unlit one doesn't.", "src": "items/tools/shears/IllumeShearsItem.kt:45-47" },
+      { "text": "Blocks that only drop with a specific tool (for example ones that need a pickaxe) are skipped unless the item in your main hand is that tool.", "src": "items/tools/shears/IllumeShearsItem.kt:45-47" },
+      { "text": "Blocks are broken with your main-hand item, so the shears' Silk Touch applies to the drop.", "src": "items/tools/shears/IllumeShearsItem.kt:41" },
+      { "text": "Containers and special blocks are never broken. The list includes chests, barrels, furnaces, smokers, blast furnaces, hoppers, brewing stands, shulker boxes, signs, spawners, end portal frames, vaults and bedrock.", "src": "items/tools/shears/IllumeShearsItem.kt:40, util/tags/Kind.java:48" }
+    ],
+    "quirks": [
+      { "text": "The code doesn't check which hand the shears are in. With them in your off-hand, left-clicking with an empty hand or another item still breaks light blocks.", "src": "items/tools/shears/IllumeShearsItem.kt:37-43, events/item/Listeners.kt:125-137, util/extensions/PlayerUtil.kt:171-185" }
+    ]
+  },
+  {
+    "key": "parfait-fallow",
+    "items": ["parfait-fallow"],
+    "summary": "Breaking a crop also breaks the matching crop on each side of it, making a 3-wide row across the direction you're facing.",
+    "use": [
+      { "text": "Break a crop with the hoe in your main hand. The crops to your left and right of it are broken too if they're the same kind.", "src": "items/tools/harrow/ParfaitFallowItem.kt:42-58, enums/CardinalDirection.kt:6-10" }
+    ],
+    "numbers": [
+      { "label": "Extra crops per break", "value": "Up to 2 (one on each side)", "src": "items/tools/harrow/ParfaitFallowItem.kt:48-57" }
+    ],
+    "details": [
+      { "text": "Works on the vanilla crops (wheat, carrots, potatoes, beetroot, stems, torchflower, pitcher) and nether wart.", "src": "items/tools/harrow/ParfaitFallowItem.kt:44, util/tags/Kind.java:43" },
+      { "text": "The side crops use the hoe, so Fortune IV applies to them.", "src": "items/tools/harrow/ParfaitFallowItem.kt:51-56" },
+      { "text": "Side crops aren't checked for ripeness. Unripe crops next to the one you break are harvested too.", "src": "items/tools/harrow/ParfaitFallowItem.kt:52-57" }
+    ],
+    "quirks": [
+      { "text": "The tooltip says crops \"in the direction faced\" break. The code actually breaks the crops to either side of the direction you face, not the ones in front.", "src": "items/tools/harrow/ParfaitFallowItem.kt:48-50, enums/CardinalDirection.kt:6-10" }
+    ],
+    "config": [
+      { "text": "With mcMMO's Herbalism Green Thumb replant, the hoe also replants the two side spots 1 second later if you have 2 of the crop's first drop item. Those 2 items are taken from your inventory even if neither side spot is empty; only empty spots get a crop.", "src": "items/tools/harrow/ParfaitFallowItem.kt:60-77, events/item/McMMOListeners.kt:23-29" }
+    ]
+  },
+  {
+    "key": "hyacinth-cleaver",
+    "items": ["hyacinth-cleaver"],
+    "summary": "Logs you chop with this axe drop one charcoal instead of the log.",
+    "use": [
+      { "text": "Break any log with the axe in your main hand.", "src": "items/tools/hatchet/HyacinthCleaverItem.kt:48-60" }
+    ],
+    "numbers": [
+      { "label": "Drop per log", "value": "1 charcoal", "src": "items/tools/hatchet/HyacinthCleaverItem.kt:20, items/tools/hatchet/HyacinthCleaverItem.kt:60" }
+    ],
+    "details": [
+      { "text": "Any block in the vanilla logs group counts, including wood, stripped logs and crimson/warped stems. The normal drop is replaced, so Silk Touch has no effect on logs.", "src": "items/tools/hatchet/HyacinthCleaverItem.kt:50, items/tools/hatchet/HyacinthCleaverItem.kt:57-60" }
+    ],
+    "config": [
+      { "text": "While mcMMO's Tree Feller is active, the plugin skips this ability and logs drop normally.", "src": "events/item/Listeners.kt:217-224, events/item/ItemListener.kt:210-219" }
+    ]
+  },
+  {
+    "key": "aurai-gale-mattock",
+    "items": ["aurai-gale-mattock"],
+    "summary": "Holding this pickaxe makes you move faster. Mining an ore breaks every block of the same ore within 7 blocks and gives you Haste III.",
+    "use": [
+      { "text": "Hold it in your main hand for the speed boost, and mine ores with it.", "src": "items/tools/mattock/AuraiGaleMattockItem.kt:52-60, items/tools/mattock/AuraiGaleMattockItem.kt:71-84" }
+    ],
+    "numbers": [
+      { "label": "Movement speed", "value": "+0.075 (main hand only)", "src": "items/tools/mattock/AuraiGaleMattockItem.kt:55-58" },
+      { "label": "Ore radius", "value": "7 blocks (a sphere)", "src": "items/tools/mattock/AuraiGaleMattockItem.kt:76" },
+      { "label": "Haste after mining an ore", "value": "Haste III for 10.5 s (210 ticks)", "src": "items/tools/mattock/AuraiGaleMattockItem.kt:28, items/tools/mattock/AuraiGaleMattockItem.kt:83" }
+    ],
+    "details": [
+      { "text": "The ore check covers coal, iron, copper, gold, redstone, emerald, lapis, diamond and nether quartz ores, but not ancient debris. Only the exact same block type breaks, so deepslate iron ore won't pull in plain iron ore.", "src": "items/tools/mattock/AuraiGaleMattockItem.kt:73-80, util/tags/Kind.java:26-31" },
+      { "text": "The \"vein\" is really every matching ore in the sphere, connected or not.", "src": "items/tools/mattock/AuraiGaleMattockItem.kt:76-82, shapes/Sphere.java:71-90" }
+    ],
+    "quirks": [
+      { "text": "Not on the tooltip: with the mattock in your main hand, when the block just below your feet isn't solid (for example mid-jump), stone-type blocks break instantly. That covers stone, deepslate, tuff and similar, netherrack, basalt, blackstone and end stone.", "src": "items/tools/mattock/AuraiGaleMattockItem.kt:64-69, util/extensions/PlayerUtil.kt:130-132" }
+    ]
+  },
+  {
+    "key": "rainier-cherry-mattock",
+    "items": ["rainier-cherry-mattock"],
+    "summary": "Mined overworld stone drops a random terracotta. Mined nether stone drops a random glazed terracotta.",
+    "use": [
+      { "text": "Mine with the pickaxe in your main hand.", "src": "items/tools/mattock/RainierCherryMattockItem.kt:57-74" }
+    ],
+    "details": [
+      { "text": "Overworld stone (stone, granite, diorite, andesite, tuff, deepslate) drops one random block from the terracotta group, plain or coloured.", "src": "items/tools/mattock/RainierCherryMattockItem.kt:61-62, items/tools/mattock/RainierCherryMattockItem.kt:69-70" },
+      { "text": "Nether stone (netherrack, basalt, blackstone) drops one random glazed terracotta.", "src": "items/tools/mattock/RainierCherryMattockItem.kt:63, items/tools/mattock/RainierCherryMattockItem.kt:69-70, util/tags/Kind.java:24" },
+      { "text": "The block's normal drop is replaced, so Silk Touch doesn't give you the stone back.", "src": "items/tools/mattock/RainierCherryMattockItem.kt:67" }
+    ]
+  },
+  {
+    "key": "soulbound-seeker",
+    "items": ["lovers-bond-capsule", "lovers-bond-mattock"],
+    "summary": "A two-player pickaxe pair. While your partner is online carrying the other mattock, mining an ore breaks matching ore around it, and you can teleport to your partner.",
+    "use": [
+      { "text": "Right-click the Soulbound Seeker Set to open it. You get two linked mattocks, one in each colour, to give one to your partner.", "src": "items/tools/nests/SoulBoundSeekerItemNest.kt:57-65, items/tools/nests/SoulBoundSeekerItemNest.kt:113-116" },
+      { "text": "Mine an ore with your mattock in your main hand. If your partner is online with the other mattock anywhere in their inventory, the same ore around the block breaks too.", "src": "items/tools/nests/SoulBoundSeekerItemNest.kt:147-163, model/item/MultiPlayerCustomItem.kt:52-67" },
+      { "text": "Hold the mattock (in either hand), sneak and press the swap-hands key (F) to teleport to your partner.", "src": "items/tools/nests/SoulBoundSeekerItemNest.kt:125-144" }
+    ],
+    "numbers": [
+      { "label": "Teleport cooldown", "value": "2.5 s (50 ticks)", "src": "items/tools/nests/SoulBoundSeekerItemNest.kt:143" },
+      { "label": "Ore radius", "value": "About 8 blocks (a sphere)", "src": "items/tools/nests/SoulBoundSeekerItemNest.kt:157, shapes/Sphere.java:51-58" },
+      { "label": "Partner check", "value": "Updated once per second", "src": "model/item/MultiPlayerCustomItem.kt:32-45, events/item/PassiveListeners.kt:22, LumaItems.java:90" }
+    ],
+    "details": [
+      { "text": "Each set gets its own random link. Only the two mattocks from the same set are paired.", "src": "items/tools/nests/SoulBoundSeekerItemNest.kt:113-116, model/item/MultiPlayerCustomItem.kt:21-25" },
+      { "text": "Both abilities need exactly one other online player carrying the matching mattock. Carrying both yourself does nothing, and so does your partner being offline (\"Couldn't find your partner.\").", "src": "model/item/MultiPlayerCustomItem.kt:47-59, items/tools/nests/SoulBoundSeekerItemNest.kt:137-139" },
+      { "text": "The teleport takes you to your partner's exact position, even in another world. They aren't asked first.", "src": "items/tools/nests/SoulBoundSeekerItemNest.kt:137-142" },
+      { "text": "Ores are the same group as other vein tools (coal to diamond plus nether quartz, no ancient debris), same block type only.", "src": "items/tools/nests/SoulBoundSeekerItemNest.kt:149-162, util/tags/Kind.java:26-31" },
+      { "text": "The ore search is built from spherical shells rather than a full block-by-block scan. Some matching blocks near the outer edge may be missed.", "src": "items/tools/nests/SoulBoundSeekerItemNest.kt:157, shapes/Sphere.java:51-58, shapes/Sphere.java:178-198" }
+    ]
+  },
+  {
+    "key": "flux-rod",
+    "items": ["flux-rod"],
+    "summary": "Each cast sends out three lines: the normal one plus one angled to each side. You reel them in one at a time.",
+    "use": [
+      { "text": "Cast as normal. Two extra bobbers fly out at random angles to the left and right.", "src": "items/tools/rod/FluxRodItem.kt:72-102" },
+      { "text": "When any bobber gets a bite, that line becomes the one your next right-click reels in. After each reel, the next remaining bobber becomes active.", "src": "items/tools/rod/FluxRodItem.kt:145-166, items/tools/rod/FluxRodItem.kt:177-187" }
+    ],
+    "numbers": [
+      { "label": "Lines per cast", "value": "3", "src": "items/tools/rod/FluxRodItem.kt:94-101" },
+      { "label": "Extra-line angle", "value": "10°–40° off to each side (random)", "src": "items/tools/rod/FluxRodItem.kt:95-99" }
+    ],
+    "details": [
+      { "text": "It works from either hand, but no extra lines appear if you hold a fishing rod in both hands.", "src": "items/tools/rod/FluxRodItem.kt:88, events/item/Listeners.kt:269-294, util/extensions/PlayerUtil.kt:151-153" },
+      { "text": "Extra lines copy the main line's wait times, rain and sky effects, and lure angle.", "src": "items/tools/rod/FluxRodItem.kt:112-124" },
+      { "text": "If any bobber gets stuck in a block, all the lines are removed.", "src": "items/tools/rod/FluxRodItem.kt:167-170" },
+      { "text": "If your active line is no longer one of the group's, all the remaining lines are removed within about a second.", "src": "items/tools/rod/FluxRodItem.kt:55-70, items/tools/rod/FluxRodItem.kt:194-198, events/item/PassiveListeners.kt:22" }
+    ],
+    "config": [
+      { "text": "Each extra line's Lure speed is shifted by a random amount of up to 200 either way from your rod's. The game counts this in ticks, so that's up to about 10 s faster or slower (depends on the game, not tested).", "src": "items/tools/rod/FluxRodItem.kt:131-136" }
+    ]
+  },
+  {
+    "key": "auroras-reach",
+    "items": ["auroras-reach"],
+    "summary": "This bow fires a rainbow firework instead of an arrow. The firework flies straight where you're looking and the plugin sets it off just before it reaches a solid block, or after 5 seconds at most.",
+    "use": [
+      { "text": "Draw and release like a normal bow. The arrow shot is cancelled and a firework launches from your eyes.", "src": "items/weapons/bow/AurorasReachItem.kt:52-58" }
+    ],
+    "numbers": [
+      { "label": "Firework speed", "value": "Reset to 1.5 blocks per tick (about 30 blocks/s) every tick, so it doesn't drop", "src": "items/weapons/bow/AurorasReachItem.kt:72-73, items/weapons/bow/AurorasReachItem.kt:90" },
+      { "label": "Plugin's flight limit", "value": "5 s (100 ticks)", "src": "items/weapons/bow/AurorasReachItem.kt:92-95" }
+    ],
+    "details": [
+      { "text": "Draw strength doesn't matter. Every shot flies at the same speed in a straight line.", "src": "items/weapons/bow/AurorasReachItem.kt:72-90" },
+      { "text": "Each firework is a large ball with trail and twinkle, in random colours: red, orange, yellow, green, blue or violet.", "src": "items/weapons/bow/AurorasReachItem.kt:24-31, items/weapons/bow/AurorasReachItem.kt:60-68" },
+      { "text": "The plugin doesn't set it off when it passes a mob, and adds no damage beyond a normal firework explosion.", "src": "items/weapons/bow/AurorasReachItem.kt:82-96" }
+    ],
+    "config": [
+      { "text": "The firework is given the lowest flight power. Normal fireworks also burst on their own when their fuse runs out, so it may explode well before the 5-second limit (depends on the game, not tested).", "src": "items/weapons/bow/AurorasReachItem.kt:69-70, items/weapons/bow/AurorasReachItem.kt:92-95" }
+    ]
+  },
+  {
+    "key": "cupids-longbow",
+    "items": ["cupids-longbow"],
+    "summary": "Mobs hit by its arrows are teleported right in front of you. Arrows that hit a block fly back to you after a second.",
+    "use": [
+      { "text": "Shoot a mob. It is teleported to 1.5 blocks from you, on the side where it was standing, at your height.", "src": "items/weapons/bow/CupidsLongbowItem.kt:74-78, items/weapons/bow/CupidsLongbowItem.kt:105-121" },
+      { "text": "Miss and hit a block, and after 1 second the arrow flies back toward you, passing through blocks.", "src": "items/weapons/bow/CupidsLongbowItem.kt:81-102" }
+    ],
+    "numbers": [
+      { "label": "Pull distance", "value": "Mob lands 1.5 blocks from you", "src": "items/weapons/bow/CupidsLongbowItem.kt:116-117" },
+      { "label": "Durability per mob pulled", "value": "10 (to the item in your main hand)", "src": "items/weapons/bow/CupidsLongbowItem.kt:76" },
+      { "label": "Arrow return delay", "value": "1 s (20 ticks)", "src": "items/weapons/bow/CupidsLongbowItem.kt:85" },
+      { "label": "Arrow return time limit", "value": "10 s (200 ticks)", "src": "items/weapons/bow/CupidsLongbowItem.kt:92-95" }
+    ],
+    "details": [
+      { "text": "Players are never pulled. Any other living mob can be, and the code makes no exception for bosses or pets.", "src": "items/weapons/bow/CupidsLongbowItem.kt:74-79" },
+      { "text": "Disabled in the piñata world.", "src": "items/weapons/bow/CupidsLongbowItem.kt:27, enums/WorldKey.kt:23" }
+    ],
+    "quirks": [
+      { "text": "Any arrow-type projectile you launch while the bow is in either hand gets the effect. That includes arrows from a crossbow in your other hand and thrown tridents.", "src": "items/weapons/bow/CupidsLongbowItem.kt:60-63, events/item/Listeners.kt:111-116" },
+      { "text": "The 10 durability goes to whatever is in your main hand when the arrow lands. Switch to a sword mid-flight and the sword takes it.", "src": "items/weapons/bow/CupidsLongbowItem.kt:76" }
+    ]
+  },
+  {
+    "key": "aurai-gale-mace",
+    "items": ["aurai-gale-mace"],
+    "summary": "Every jump with the mace in your main hand throws you high into the air. A smash attack after falling at least 4 blocks also hits up to 10 nearby entities for 3× your fall distance.",
+    "use": [
+      { "text": "Jump with the mace in your main hand (not while gliding or in water) for an extra upward boost.", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:70-75, items/weapons/mace/AuraiGaleMaceItem.kt:106-120" },
+      { "text": "Land a mace smash attack after falling at least 4 blocks. The entities around your target are launched upward, and the living ones take extra damage.", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:77-104" }
+    ],
+    "numbers": [
+      { "label": "Jump boost", "value": "+1.5 upward speed", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:107, items/weapons/mace/AuraiGaleMaceItem.kt:116" },
+      { "label": "Durability per jump", "value": "5", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:73" },
+      { "label": "Movement speed", "value": "+0.045 (main hand only)", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:58-65" },
+      { "label": "Minimum fall for the splash", "value": "4 blocks", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:78" },
+      { "label": "Splash damage", "value": "3 × fall distance (fall counted up to 30 blocks, so at most 90)", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:90-94" },
+      { "label": "Splash area", "value": "Up to 10 entities within 5 blocks of your target (a box), closest first", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:82-87" },
+      { "label": "Durability per entity hit", "value": "15", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:99-102" }
+    ],
+    "details": [
+      { "text": "The jump boost has no cooldown. It fires on every jump.", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:70-75" },
+      { "text": "The splash skips you and the mob you hit. Nothing else is excluded in the code, so other players and pets nearby can be hit.", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:85-103" },
+      { "text": "The mace has no Mending.", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:50-57" }
+    ],
+    "quirks": [
+      { "text": "Non-living entities, such as dropped items and XP orbs, count toward the 10-entity limit. They're flung straight up and take no damage.", "src": "items/weapons/mace/AuraiGaleMaceItem.kt:82-87, items/weapons/mace/AuraiGaleMaceItem.kt:97-103, items/weapons/mace/AuraiGaleMaceItem.kt:117-119" }
+    ]
+  },
+  {
+    "key": "aurai-gale-spear",
+    "items": ["aurai-gale-spear"],
+    "summary": "Every jump with the spear in your main hand launches you upward. Each hit also damages nearby mobs of the same kind for 70% of your hit and knocks them back hard.",
+    "use": [
+      { "text": "Jump with the spear in your main hand (not while gliding or in water).", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:74-81" },
+      { "text": "Hit a mob with the spear in your main hand. Mobs of the same type within 5 blocks of it are hit too.", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:83-106" }
+    ],
+    "numbers": [
+      { "label": "Jump boost", "value": "+1.0 upward speed", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:78-79" },
+      { "label": "Durability per jump", "value": "14", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:76" },
+      { "label": "Movement speed", "value": "+0.075 (main hand only)", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:60-68" },
+      { "label": "Splash damage", "value": "70% of the triggering hit", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:99" },
+      { "label": "Splash radius", "value": "5 blocks around the mob you hit", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:90" },
+      { "label": "Splash knockback", "value": "Strength 3.5", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:100" },
+      { "label": "Durability per extra target", "value": "4", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:101" }
+    ],
+    "details": [
+      { "text": "The jump boost has no cooldown.", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:74-81" },
+      { "text": "The splash doesn't read your speed, whatever the tooltip says. It copies 70% of your hit's damage.", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:99" }
+    ],
+    "quirks": [
+      { "text": "The tooltip says \"all nearby entities\", but only entities of the same type as the one you hit are affected. Hit a zombie, and only other zombies take splash damage. Hit a player, and nearby players take it (where PvP is allowed).", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:90-91" }
+    ],
+    "config": [
+      { "text": "The knockback direction is worked out from the way you're looking, but which way the mobs actually fly comes from the game's knockback handling (depends on the game, not tested).", "src": "items/weapons/spear/AuraiGaleSpearItem.kt:97-100" }
+    ]
+  },
+  {
+    "key": "paradox-spear",
+    "items": ["paradox-spear"],
+    "summary": "The spear starts at 6× damage against mobs. Each hit you take lowers the multiplier by 2 until it reaches 1×. While you hold it, all damage you take is also halved.",
+    "use": [
+      { "text": "Hit mobs with it in your main hand. Your remaining power shows as stars in your action bar when you get hurt.", "src": "items/weapons/spear/ParadoxSpearItem.kt:65-75, items/weapons/spear/ParadoxSpearItem.kt:89-91, items/weapons/spear/ParadoxSpearItem.kt:101-116" }
+    ],
+    "numbers": [
+      { "label": "Starting multiplier", "value": "6× damage", "src": "items/weapons/spear/ParadoxSpearItem.kt:28, items/weapons/spear/ParadoxSpearItem.kt:69-71" },
+      { "label": "Loss per hit taken", "value": "−2 (6 → 4 → 2 → 0, and 0 counts as 1×)", "src": "items/weapons/spear/ParadoxSpearItem.kt:29, items/weapons/spear/ParadoxSpearItem.kt:82-87, items/weapons/spear/ParadoxSpearItem.kt:71" },
+      { "label": "Damage you take", "value": "×0.5", "src": "items/weapons/spear/ParadoxSpearItem.kt:30, items/weapons/spear/ParadoxSpearItem.kt:80" },
+      { "label": "Durability per hit while powered", "value": "30", "src": "items/weapons/spear/ParadoxSpearItem.kt:72-74" }
+    ],
+    "details": [
+      { "text": "Players never take extra damage from it. Only other living mobs do.", "src": "items/weapons/spear/ParadoxSpearItem.kt:67" },
+      { "text": "Dying with the spear in either hand drops the multiplier straight to 1× (no bonus).", "src": "items/weapons/spear/ParadoxSpearItem.kt:94-98, items/weapons/spear/ParadoxSpearItem.kt:71, events/item/Listeners.kt:159-163" },
+      { "text": "The star display updates at most every 0.5 s, but every hit still lowers the multiplier.", "src": "items/weapons/spear/ParadoxSpearItem.kt:85-91" }
+    ],
+    "quirks": [
+      { "text": "Any damage counts as a hit, not just attacks. Each separate bit of fall, fire or poison damage lowers the multiplier too.", "src": "items/weapons/spear/ParadoxSpearItem.kt:78-87, events/item/Listeners.kt:197-207" },
+      { "text": "The multiplier never recovers. Once spent, it stays at 1× until the server restarts or staff clear your cooldowns. It's tracked per player, not per spear.", "src": "items/weapons/spear/ParadoxSpearItem.kt:82-87, util/extensions/QuickTasks.kt:14, commands/subcommands/ClearCooldownCommand.kt:38-42" },
+      { "text": "The tooltip doesn't mention the damage halving. It works with the spear in either hand and keeps working after the multiplier is spent.", "src": "items/weapons/spear/ParadoxSpearItem.kt:78-80, events/item/Listeners.kt:197-207, util/extensions/PlayerUtil.kt:171-185" }
+    ]
+  },
+  {
+    "key": "verdant-traveler",
+    "items": ["verdant-traveler-spear"],
+    "summary": "While you hold this spear, hunger caused by enchantment effects is cancelled. The tooltip says this is for Lunge.",
+    "use": [
+      { "text": "Hold it in either hand. It doesn't work while you're flying.", "src": "items/weapons/spear/VerdantTravelerSpearItem.kt:48-52" }
+    ],
+    "details": [
+      { "text": "Only hunger caused by enchantment effects is removed. Sprinting, jumping and fighting still make you hungry as normal.", "src": "items/weapons/spear/VerdantTravelerSpearItem.kt:50-51" }
+    ]
+  }
+]

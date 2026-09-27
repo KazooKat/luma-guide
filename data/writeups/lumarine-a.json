@@ -1,0 +1,337 @@
+[
+  {
+    "key": "peach-plum-apron",
+    "items": ["peach-plum-apron"],
+    "summary": "An elytra with two passives: while you wear it, beacon effects you receive are raised to a higher level, and anything you damage is given an Instant Health effect.",
+    "use": [
+      { "text": "Wear it in the chest slot and stand in a beacon's range: each beacon effect you get is swapped for a stronger level.", "src": "items/armor/elytra/PeachPlumApronItem.kt:54-65, items/armor/elytra/PeachPlumApronItem.kt:77-78" },
+      { "text": "Hit any living thing (up close or with your own arrows and other projectiles) while wearing or holding the apron, and it receives an Instant Health effect based on the damage you dealt.", "src": "items/armor/elytra/PeachPlumApronItem.kt:87-94, events/item/Listeners.kt:165-180, util/extensions/PlayerUtil.kt:171-185" }
+    ],
+    "numbers": [
+      { "label": "Beacon boost", "value": "Effect level doubled: I becomes II, II becomes IV", "src": "items/armor/elytra/PeachPlumApronItem.kt:64-65" },
+      { "label": "Heal on hit", "value": "Instant Health I for hits under 16 damage, II for 16-31, III for 32-47 (one level per 16 damage)", "src": "items/armor/elytra/PeachPlumApronItem.kt:90-93" },
+      { "label": "Durability cost", "value": "A 50% roll for 1 point of wear each time a beacon refreshes an effect, plus a second 50% roll when the effect first lands or changes level", "src": "items/armor/elytra/PeachPlumApronItem.kt:67-84" }
+    ],
+    "details": [
+      { "text": "The beacon boost only works with the apron in your chest slot, and only for effects that come from a beacon (not potions or other sources).", "src": "items/armor/elytra/PeachPlumApronItem.kt:57" },
+      { "text": "Both abilities switch off once the item in your chest slot is down to its last point of durability.", "src": "items/armor/elytra/PeachPlumApronItem.kt:57, items/armor/elytra/PeachPlumApronItem.kt:88, util/extensions/ItemUtil.kt:70-79" },
+      { "text": "The Instant Health goes to whatever you hit, including hostile mobs and other players. It does not heal you.", "src": "items/armor/elytra/PeachPlumApronItem.kt:87-94" }
+    ],
+    "quirks": [
+      { "text": "The tooltip says 25% of the damage is healed, but the code turns that 25% into a whole Instant Health level instead (level I for any hit under 16 damage, II from 16, and so on), so the result is not a straight 25% of the damage.", "src": "items/armor/elytra/PeachPlumApronItem.kt:90-94" },
+      { "text": "The tooltip says beacon effects are boosted by 50%, but the code doubles the effect level.", "src": "items/armor/elytra/PeachPlumApronItem.kt:64" },
+      { "text": "When a beacon effect first lands, the apron rolls for wear twice, so it can take 2 points at once. A comment in the code asks whether this is intentional.", "src": "items/armor/elytra/PeachPlumApronItem.kt:67-84" },
+      { "text": "The heal-on-hit doesn't need the apron to be worn: it also works while the apron is held in either hand. It only checks that whatever is in your chest slot isn't about to break.", "src": "items/armor/elytra/PeachPlumApronItem.kt:87-88, events/item/Listeners.kt:165-180, util/extensions/PlayerUtil.kt:171-185" }
+    ],
+    "config": [
+      { "text": "How much health each Instant Health level restores, and the fact that Instant Health hurts undead mobs (zombies, skeletons and so on) instead of healing them, are the game's own rules, not this item's code. Not tested here.", "src": "items/armor/elytra/PeachPlumApronItem.kt:93-94" },
+      { "text": "The wear is applied through the game's normal item-damage handling, so how much the apron's Unbreaking enchant cancels depends on the game, not this item. Not tested here.", "src": "items/armor/elytra/PeachPlumApronItem.kt:72-74, items/armor/elytra/PeachPlumApronItem.kt:82-84" }
+    ]
+  },
+  {
+    "key": "architects-compass",
+    "items": ["architects-compass"],
+    "summary": "An off-hand add-on for the Builder's Wand. With the wand in your main hand and the compass in your off-hand, the wand builds a flat ring of blocks instead of a path.",
+    "use": [
+      { "text": "Hold a Builder's Wand in your main hand and the compass in your off-hand, then right-click a block. The block you clicked is the one that gets copied, and the ring is centred on the space next to the face you clicked.", "src": "items/misc/builderswand/ArchitectsCompassItem.kt:58-73, items/misc/builderswand/BuildersWandBase.kt:51-53" },
+      { "text": "Look outward to set the size. The radius follows the flat distance from the centre to the block you're looking at, and a preview of the ring follows your aim.", "src": "items/misc/builderswand/ArchitectsCompassItem.kt:125-145" },
+      { "text": "Left-click to build the ring, or press swap (F) to cancel.", "src": "items/misc/builderswand/ArchitectsCompassItem.kt:76-89" }
+    ],
+    "numbers": [
+      { "label": "Max radius", "value": "22 blocks (you must be looking at a block within 22 blocks)", "src": "items/misc/builderswand/ArchitectsCompassItem.kt:113-114, items/misc/builderswand/ArchitectsCompassItem.kt:127-133" },
+      { "label": "Preview refresh", "value": "Every 0.15 s (3 ticks)", "src": "items/misc/builderswand/ArchitectsCompassItem.kt:126" },
+      { "label": "Cost", "value": "1 of the copied block per ring spot", "src": "items/misc/builderswand/BuildersWandBase.kt:68-70" },
+      { "label": "Cooldown", "value": "11 s on the tooltip, but 4 s in practice (see quirks); only starts after a successful build", "src": "items/misc/builderswand/ArchitectsCompassItem.kt:84, items/misc/builderswand/BuildersWandItem.kt:71-73, items/misc/builderswand/BuildersWandBase.kt:81-83" }
+    ],
+    "details": [
+      { "text": "The ring is flat, at the same height as its centre. It only fills spots that were empty or replaceable (air, grass, water and so on) when the preview was drawn.", "src": "items/misc/builderswand/ArchitectsCompassItem.kt:117-120, items/misc/builderswand/ArchitectsCompassItem.kt:138-141" },
+      { "text": "It copies the exact block you clicked, including which way it faces. Leaves placed this way never decay.", "src": "items/misc/builderswand/BuildersWandBase.kt:64-66, items/misc/builderswand/BuildersWandBase.kt:75" },
+      { "text": "You need enough of that block in your inventory for the whole ring. If you're short, nothing is placed and red dust shows instead. It's free in creative mode.", "src": "items/misc/builderswand/BuildersWandBase.kt:69-79, util/extensions/PlayerUtil.kt:291-302" },
+      { "text": "Claims are respected: you can't start on a block you aren't allowed to build on, and building stops at the first ring spot you can't build in.", "src": "items/misc/builderswand/ArchitectsCompassItem.kt:66, items/misc/builderswand/BuildersWandBase.kt:72-75" },
+      { "text": "It can't copy ores, chests, crops and other growing blocks, doors, pistons, or blocks that have no item form.", "src": "items/misc/builderswand/BuildersWandBase.kt:45-49" },
+      { "text": "The preview is cancelled if you teleport, log out, open a container, or take the wand or compass out of your hands.", "src": "items/misc/builderswand/ArchitectsCompassItem.kt:91-105, items/misc/builderswand/ArchitectsCompassItem.kt:123, items/misc/builderswand/BuildersWandBase.kt:150-165, items/misc/builderswand/BuildersWandItem.kt:105" }
+    ],
+    "quirks": [
+      { "text": "The tooltip says right-click centres the circle on you, but it's actually centred on the space next to the block face you clicked.", "src": "items/misc/builderswand/ArchitectsCompassItem.kt:61-71, items/misc/builderswand/ArchitectsCompassItem.kt:117-120" },
+      { "text": "The tooltip says the cooldown is 11 s, but the Builder's Wand in your main hand reacts to the left-click first. It builds the ring and puts only its own 4-second cooldown on the compass, so the compass is ready again after 4 s.", "src": "events/item/Listeners.kt:127-137, util/extensions/PlayerUtil.kt:171-185, events/item/ItemListener.kt:96-106, items/misc/builderswand/BuildersWandItem.kt:64-73, items/misc/builderswand/BuildersWandBase.kt:62-83, items/misc/builderswand/ArchitectsCompassItem.kt:76-85" },
+      { "text": "Blocks for the whole ring are taken before anything is placed. If building stops early at a claim border, you don't get back the blocks for the spots that were skipped.", "src": "items/misc/builderswand/BuildersWandBase.kt:69-79" }
+    ],
+    "config": [
+      { "text": "Placed blocks are logged under your name if the server runs CoreProtect. With Prism, only blocks that were replaced (not empty air) are logged; the new blocks themselves aren't.", "src": "util/extensions/BlockUtil.kt:50-59" }
+    ]
+  },
+  {
+    "key": "grow-berries",
+    "items": ["grow-berries"],
+    "summary": "Reusable berries. Eating them makes you twice as big for one minute and doubles your health, speed, reach and several other stats, then you shrink back.",
+    "use": [
+      { "text": "Eat them like normal food, from either hand. The berries are not used up.", "src": "items/misc/scale/GrowBerriesItem.kt:93-95, events/item/Listeners.kt:365-369" }
+    ],
+    "numbers": [
+      { "label": "Duration", "value": "60 s", "src": "items/misc/scale/GrowBerriesItem.kt:45, items/misc/scale/GrowBerriesItem.kt:118-120" },
+      { "label": "Cooldown", "value": "2 min (120 s), starting when you eat", "src": "items/misc/scale/GrowBerriesItem.kt:46, items/misc/scale/GrowBerriesItem.kt:97-102" },
+      { "label": "Stat boost", "value": "+100% of the base value on 9 stats", "src": "items/misc/scale/GrowBerriesItem.kt:48-58, items/misc/scale/GrowBerriesItem.kt:140-151" }
+    ],
+    "details": [
+      { "text": "Doubled stats: size, max health, movement speed, jump strength, safe fall distance, block reach, entity reach, underwater breath and step height.", "src": "items/misc/scale/GrowBerriesItem.kt:48-58" },
+      { "text": "When you grow, your health is scaled up so you keep the same share of your new, doubled maximum.", "src": "items/misc/scale/GrowBerriesItem.kt:104-113" },
+      { "text": "You can eat them on a full hunger bar. They give no food or saturation.", "src": "items/misc/scale/GrowBerriesItem.kt:87-89" },
+      { "text": "Eating them while on cooldown just shows the time left.", "src": "items/misc/scale/GrowBerriesItem.kt:97-101" },
+      { "text": "They only work in the main worlds (overworld, nether, end, seasons, terralith) and the resource worlds (overworld, nether, end, desert). Everywhere else they are fully disabled: you can't eat them or even move them into your hotbar.", "src": "items/misc/scale/GrowBerriesItem.kt:39, enums/WorldGroup.kt:44-54, model/item/CustomItem.kt:71-99, events/item/Listeners.kt:474-488, events/item/Listeners.kt:564-578" },
+      { "text": "Teleporting into a world where they're disabled shrinks you back right away, even if you're no longer carrying the berries.", "src": "items/misc/scale/GrowBerriesItem.kt:40, items/misc/scale/GrowBerriesItem.kt:123-131" },
+      { "text": "They can't be planted as cave vines or put in a composter.", "src": "items/misc/scale/GrowBerriesItem.kt:167-175" }
+    ]
+  },
+  {
+    "key": "smugglers-cask",
+    "items": ["smugglers-cask"],
+    "summary": "A barrel you wear as a hat. Sneak while wearing it and you become a small, invisible barrel that can't move, and mobs lose track of you.",
+    "use": [
+      { "text": "Wear it in the helmet slot (it equips like armour), then sneak while standing on something solid.", "src": "items/misc/SmugglersCaskItem.kt:117-122, items/misc/SmugglersCaskItem.kt:127-130, items/misc/SmugglersCaskItem.kt:200-204" },
+      { "text": "If you sneak in mid-air, the barrel closes as soon as you land on a solid block, as long as you're still sneaking.", "src": "items/misc/SmugglersCaskItem.kt:130, items/misc/SmugglersCaskItem.kt:146-150, items/misc/SmugglersCaskItem.kt:231-238" },
+      { "text": "Stop sneaking to pop back out.", "src": "items/misc/SmugglersCaskItem.kt:131-133" }
+    ],
+    "numbers": [
+      { "label": "Mob forget radius", "value": "32 blocks", "src": "items/misc/SmugglersCaskItem.kt:75, items/misc/SmugglersCaskItem.kt:261-271" },
+      { "label": "Barrel seen by players within", "value": "64 blocks", "src": "items/misc/SmugglersCaskItem.kt:83, items/misc/SmugglersCaskItem.kt:362-378" },
+      { "label": "Refresh", "value": "Every 1 s (20 ticks)", "src": "items/misc/SmugglersCaskItem.kt:84, items/misc/SmugglersCaskItem.kt:220-222" },
+      { "label": "Size while hidden", "value": "0.35x normal", "src": "items/misc/SmugglersCaskItem.kt:80, items/misc/SmugglersCaskItem.kt:299-308" },
+      { "label": "Invisibility", "value": "5 s, renewed every second while hidden", "src": "items/misc/SmugglersCaskItem.kt:86-93, items/misc/SmugglersCaskItem.kt:254-258" }
+    ],
+    "details": [
+      { "text": "While hidden you're snapped to the middle of the block and can't walk or jump, but you can still look around. Your camera is pulled far out behind you, you shrink and turn invisible, and players nearby see a barrel standing where you are.", "src": "items/misc/SmugglersCaskItem.kt:151-155, items/misc/SmugglersCaskItem.kt:206-218, items/misc/SmugglersCaskItem.kt:254-258, items/misc/SmugglersCaskItem.kt:351-408" },
+      { "text": "Nothing can start targeting you. Every second, mobs within 32 blocks that were targeting you forget you: creepers stop swelling, Wardens drop their anger at you, and shulker bullets stop homing in.", "src": "items/misc/SmugglersCaskItem.kt:157-160, items/misc/SmugglersCaskItem.kt:261-297" },
+      { "text": "The disguise ends when you stop sneaking, take the cask off, teleport off the spot, die or log out.", "src": "items/misc/SmugglersCaskItem.kt:131-133, items/misc/SmugglersCaskItem.kt:141-143, items/misc/SmugglersCaskItem.kt:162-179" },
+      { "text": "Nothing in its code stops players from attacking you. The protection only covers mob targeting.", "src": "items/misc/SmugglersCaskItem.kt:157-160, items/misc/SmugglersCaskItem.kt:261-271" },
+      { "text": "It can't be placed as a barrel block.", "src": "items/misc/SmugglersCaskItem.kt:194-197" }
+    ],
+    "quirks": [
+      { "text": "Coming out of the barrel removes all Invisibility from you, including any from a potion you drank earlier.", "src": "items/misc/SmugglersCaskItem.kt:247" }
+    ]
+  },
+  {
+    "key": "prospectors-spyglass",
+    "items": ["prospectors-spyglass"],
+    "summary": "Look through it, and ores up to 18 blocks away in a narrow line where you're aiming glow through the ground. Only you can see the glow.",
+    "use": [
+      { "text": "Scope in (hold right-click) with it in either hand. Ores near your crosshair are outlined in their ore colour.", "src": "items/tools/ProspectorsSpyglassItem.kt:99-124, items/tools/ProspectorsSpyglassItem.kt:156-158, items/tools/ProspectorsSpyglassItem.kt:213-233" }
+    ],
+    "numbers": [
+      { "label": "Range", "value": "18 blocks", "src": "items/tools/ProspectorsSpyglassItem.kt:43, items/tools/ProspectorsSpyglassItem.kt:198" },
+      { "label": "Search cone", "value": "About 1.7 blocks wide at your eye, spreading 3.5 degrees each side of your crosshair (about 4 blocks wide at 18 blocks)", "src": "items/tools/ProspectorsSpyglassItem.kt:46-51, items/tools/ProspectorsSpyglassItem.kt:54-62" },
+      { "label": "Scan rate", "value": "Every 0.2 s (4 ticks) while scoped", "src": "items/tools/ProspectorsSpyglassItem.kt:52, items/tools/ProspectorsSpyglassItem.kt:116-117, events/item/PassiveListeners.kt:21, LumaItems.java:89" }
+    ],
+    "details": [
+      { "text": "Shows the game's coal, iron, copper, gold, redstone, emerald, lapis and diamond ore groups plus nether quartz ore. Ancient debris is not shown.", "src": "util/tags/Kind.java:26-31, items/tools/ProspectorsSpyglassItem.kt:203" },
+      { "text": "Outlines disappear when you stop scoping, look away, move more than 20 blocks from them, switch to a hotbar slot without the spyglass, swap hands, or log out.", "src": "items/tools/ProspectorsSpyglassItem.kt:44, items/tools/ProspectorsSpyglassItem.kt:99-114, items/tools/ProspectorsSpyglassItem.kt:126-141" },
+      { "text": "It only scans loaded chunks and never shows anything behind you.", "src": "items/tools/ProspectorsSpyglassItem.kt:54-62, items/tools/ProspectorsSpyglassItem.kt:192-194" }
+    ],
+    "config": [
+      { "text": "The outline is only sent to your screen through the ProtocolLib plugin. Without it, the outlines don't show up.", "src": "util/PacketGlowColors.kt:92-117, items/tools/ProspectorsSpyglassItem.kt:231" }
+    ]
+  },
+  {
+    "key": "fiberglass-rod",
+    "items": ["fiberglass-rod"],
+    "summary": "A fishing rod that fishes in lava instead of water. Fish caught in lava come out cooked, and there's a small chance of a bonus item with a fire theme.",
+    "use": [
+      { "text": "Cast into lava with it in either hand. The bobber floats on the lava, and bites work like normal fishing.", "src": "items/tools/rod/FiberglassRodItem.kt:108-138, items/tools/rod/FiberglassRodItem.kt:241-313, events/item/Listeners.kt:269-294" }
+    ],
+    "numbers": [
+      { "label": "Bonus catch", "value": "10% of lava catches are replaced by one of 11 bonus items (equal odds)", "src": "items/tools/rod/FiberglassRodItem.kt:60-75, items/tools/rod/FiberglassRodItem.kt:146-147" },
+      { "label": "Catch fire protection", "value": "5 s (100 ticks)", "src": "items/tools/rod/FiberglassRodItem.kt:49, items/tools/rod/FiberglassRodItem.kt:153-159" },
+      { "label": "Hooked mob burn", "value": "5 s (100 ticks)", "src": "items/tools/rod/FiberglassRodItem.kt:162-164" },
+      { "label": "Bite window", "value": "1-2 s to reel in after a bite", "src": "items/tools/rod/FiberglassRodItem.kt:386" },
+      { "label": "Max line length", "value": "32 blocks (you must keep a fishing rod in hand)", "src": "items/tools/rod/FiberglassRodItem.kt:316-328" }
+    ],
+    "details": [
+      { "text": "Swaps for lava catches that aren't bonus items: raw cod becomes cooked cod, raw salmon becomes cooked salmon, lily pad becomes crimson fungus, ink sac becomes glow ink sac, and a water bottle becomes a glass bottle. Other catches are unchanged.", "src": "items/tools/rod/FiberglassRodItem.kt:52-58, items/tools/rod/FiberglassRodItem.kt:148-150" },
+      { "text": "Bonus items: beetroot soup, 2 golden dandelions, enchanted golden apple, 2 golden carrots, golden apple, ominous bottle, 4 glowstone dust, blaze rod, fire charge, 3 dragon's breath, potion of Fire Resistance.", "src": "items/tools/rod/FiberglassRodItem.kt:60-75" },
+      { "text": "Caught items can't be hurt for 5 seconds, so they survive the trip out of the lava.", "src": "items/tools/rod/FiberglassRodItem.kt:153-159" },
+      { "text": "It can't fish in water. A bobber that lands in water fizzles out and disappears.", "src": "items/tools/rod/FiberglassRodItem.kt:112-115, items/tools/rod/FiberglassRodItem.kt:206-221, items/tools/rod/FiberglassRodItem.kt:241-246" },
+      { "text": "The rod's Lure and Luck of the Sea enchants still apply.", "src": "items/tools/rod/FiberglassRodItem.kt:121-131" },
+      { "text": "In the Nether, fishing gets the speed boost that rain normally gives. Fishing under a roof isn't slowed down.", "src": "items/tools/rod/FiberglassRodItem.kt:331-340" },
+      { "text": "If you hold a fishing rod in both hands, none of this happens.", "src": "items/tools/rod/FiberglassRodItem.kt:109, util/extensions/PlayerUtil.kt:150-152" }
+    ],
+    "quirks": [
+      { "text": "Cooking, the bonus roll and the fire protection only happen if the bobber's own block is lava when you reel in. The rod's own code notes that a floating bobber can sit in the air block just above the lava; a catch reeled in at that moment comes out unchanged and unprotected.", "src": "items/tools/rod/FiberglassRodItem.kt:140-143, items/tools/rod/FiberglassRodItem.kt:224-229" }
+    ],
+    "config": [
+      { "text": "The Nether speed-up only applies while the bobber counts as 'rain-influenced', a server-side fishing setting this item never changes (on by default on Paper servers). Not tested here.", "src": "items/tools/rod/FiberglassRodItem.kt:335" }
+    ]
+  },
+  {
+    "key": "undertow-spade",
+    "items": ["undertow-spade"],
+    "summary": "A shovel that puts the drops of every block you break straight into your inventory.",
+    "use": [
+      { "text": "Break blocks with it in your main hand.", "src": "items/tools/spade/UndertowSpadeItem.kt:35-50, events/item/Listeners.kt:217-224" }
+    ],
+    "details": [
+      { "text": "You get the block's normal drops for this spade. Anything that doesn't fit in your inventory falls at the block.", "src": "items/tools/spade/UndertowSpadeItem.kt:37-48" },
+      { "text": "Experience orbs aren't touched and still drop on the ground.", "src": "items/tools/spade/UndertowSpadeItem.kt:35-50" },
+      { "text": "It only acts on breaks that were allowed. If a claim or another plugin cancels the break, nothing happens.", "src": "events/item/Listeners.kt:217-224" }
+    ],
+    "config": [
+      { "text": "The spade switches off the block's own drops and gives you the standard drops directly. Whether extra drops from other plugins (for example mcMMO bonus drops) still appear depends on how those plugins work. Not tested here.", "src": "items/tools/spade/UndertowSpadeItem.kt:37-40" }
+    ]
+  },
+  {
+    "key": "ignition-cutlass",
+    "items": ["ignition-cutlass"],
+    "summary": "A sword that sets nearby mobs on fire while you hold it, and gives you Speed, Haste and Regeneration whenever you deal damage.",
+    "use": [
+      { "text": "Hold it in either hand. Every 3.5 seconds, every eligible mob within 10 blocks takes 1 heart of damage and catches fire.", "src": "items/weapons/cutlass/IgnitionCutlassItem.kt:55-70, events/item/PassiveListeners.kt:19, events/item/PassiveListeners.kt:43-55, LumaItems.java:87" },
+      { "text": "Damage anything while holding it to get Speed I, Regeneration I and Haste I.", "src": "items/weapons/cutlass/IgnitionCutlassItem.kt:23-27, items/weapons/cutlass/IgnitionCutlassItem.kt:72-83, events/item/Listeners.kt:165-180" }
+    ],
+    "numbers": [
+      { "label": "Aura interval", "value": "Every 3.5 s (70 ticks)", "src": "events/item/PassiveListeners.kt:19, LumaItems.java:87" },
+      { "label": "Aura radius", "value": "10 blocks", "src": "items/weapons/cutlass/IgnitionCutlassItem.kt:56" },
+      { "label": "Aura damage", "value": "2 (1 heart) per pulse", "src": "items/weapons/cutlass/IgnitionCutlassItem.kt:65" },
+      { "label": "Aura burn", "value": "20 s (400 ticks)", "src": "items/weapons/cutlass/IgnitionCutlassItem.kt:66" },
+      { "label": "On-hit buffs", "value": "Speed I, Regeneration I, Haste I for 8 s (160 ticks)", "src": "items/weapons/cutlass/IgnitionCutlassItem.kt:23-27" }
+    ],
+    "details": [
+      { "text": "The aura skips players, named mobs, tamed pets, leashed animals, and anything you're not allowed to hurt (for example in a claim). Everything else is hit, including passive animals and villagers.", "src": "items/weapons/cutlass/IgnitionCutlassItem.kt:56-63" },
+      { "text": "The aura's damage isn't credited to you.", "src": "items/weapons/cutlass/IgnitionCutlassItem.kt:65" },
+      { "text": "The buffs trigger on any damage you deal with the cutlass in either hand, including arrows.", "src": "events/item/Listeners.kt:165-180" }
+    ],
+    "quirks": [
+      { "text": "The tooltip only mentions speed and haste, but you also get Regeneration I.", "src": "items/weapons/cutlass/IgnitionCutlassItem.kt:23-27" }
+    ]
+  },
+  {
+    "key": "umbra-scimitar",
+    "items": ["umbra-scimitar"],
+    "summary": "Right-click to open a 10-second gravity well at the block you're looking at. It drags mobs in and damages them every second, then explodes, flinging them outward and setting them on fire.",
+    "use": [
+      { "text": "Right-click with it in your main hand while looking at a block up to 75 blocks away.", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:90-97" }
+    ],
+    "numbers": [
+      { "label": "Cooldown", "value": "30 s (600 ticks); not used if you aren't looking at a block", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:43, items/weapons/cutlass/UmbraScimitarItem.kt:91-97" },
+      { "label": "Target range", "value": "75 blocks", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:93" },
+      { "label": "Duration", "value": "10 s (200 ticks)", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:42, items/weapons/cutlass/UmbraScimitarItem.kt:113-118" },
+      { "label": "Pull radius", "value": "15 blocks", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:49, items/weapons/cutlass/UmbraScimitarItem.kt:125-131" },
+      { "label": "Well damage", "value": "8 every second (10 times) to mobs within 16 blocks", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:45-48, items/weapons/cutlass/UmbraScimitarItem.kt:123, items/weapons/cutlass/UmbraScimitarItem.kt:142-145" },
+      { "label": "Tether", "value": "Mobs just outside 15 blocks are tethered and pulled in, taking 5 damage every 0.5 s until they're within 5 blocks", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:50, items/weapons/cutlass/UmbraScimitarItem.kt:132-139, items/weapons/cutlass/UmbraScimitarItem.kt:213-234" },
+      { "label": "Final burst", "value": "25 damage and 10 s of fire (200 ticks) to mobs within 16 blocks", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:51, items/weapons/cutlass/UmbraScimitarItem.kt:154-176" }
+    ],
+    "details": [
+      { "text": "Only mobs are hurt. Players, armour stands, named mobs, tamed pets, leashed animals, and anything you're not allowed to hurt (for example in a claim) are left alone.", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:178-188" },
+      { "text": "All of its damage is credited to you.", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:143, items/weapons/cutlass/UmbraScimitarItem.kt:171, items/weapons/cutlass/UmbraScimitarItem.kt:231" },
+      { "text": "Each once-a-second damage pulse briefly stops everything in the well, so the pull is jerky.", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:142-145" },
+      { "text": "Disabled in the Pinata world (incu:pinata).", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:38, enums/WorldKey.kt:23" }
+    ],
+    "quirks": [
+      { "text": "The pull also catches things that aren't alive, such as dropped items, XP orbs, arrows, minecarts and boats, and drags them into the well.", "src": "items/weapons/cutlass/UmbraScimitarItem.kt:124-131, items/weapons/cutlass/UmbraScimitarItem.kt:178-188" }
+    ]
+  },
+  {
+    "key": "incursion-blunderhorn",
+    "items": ["incursion-blunderhorn"],
+    "summary": "A goat horn that works like a shotgun. Right-click to blast a short cone that hurts every living thing in front of you, hardest up close.",
+    "use": [
+      { "text": "Right-click with it in your main hand.", "src": "items/weapons/incursion/BlunderhornItem.kt:79-91" }
+    ],
+    "numbers": [
+      { "label": "Range", "value": "6.5 blocks", "src": "items/weapons/incursion/BlunderhornItem.kt:34" },
+      { "label": "Cone width", "value": "45 degrees", "src": "items/weapons/incursion/BlunderhornItem.kt:35" },
+      { "label": "Damage", "value": "90 at point-blank, dropping evenly to 13.5 at 6.5 blocks", "src": "items/weapons/incursion/BlunderhornItem.kt:36-37, items/weapons/incursion/BlunderhornItem.kt:124" },
+      { "label": "Cooldown", "value": "1.5 s (30 ticks)", "src": "items/weapons/incursion/BlunderhornItem.kt:33, items/weapons/incursion/BlunderhornItem.kt:94" },
+      { "label": "Bosses", "value": "Elder Guardian, Ender Dragon, Wither and Warden take half damage", "src": "items/weapons/incursion/IncursionArsenal.kt:186, items/weapons/incursion/IncursionArsenal.kt:204-208" }
+    ],
+    "details": [
+      { "text": "It hits everything in the cone at once but can't hit through walls. Blocks you can walk through (grass, flowers and so on) and barrier blocks don't stop it.", "src": "items/weapons/incursion/BlunderhornItem.kt:117-122, items/weapons/incursion/IncursionArsenal.kt:324-352" },
+      { "text": "It skips you, tamed pets and named mobs. Players can be hit wherever PvP and claims allow it.", "src": "items/weapons/incursion/IncursionArsenal.kt:154-156, items/weapons/incursion/IncursionArsenal.kt:183-184" },
+      { "text": "The damage is dealt as a normal hit from you (not true damage), so claim and protection plugins can still block it.", "src": "items/weapons/incursion/IncursionArsenal.kt:174-200" },
+      { "text": "All your Blunderhorns share one cooldown: a second Blunderhorn can't fire until it runs out.", "src": "items/weapons/incursion/BlunderhornItem.kt:86, items/weapons/incursion/BlunderhornItem.kt:94" },
+      { "text": "It's unbreakable and plays no horn tune.", "src": "items/weapons/incursion/BlunderhornItem.kt:60, items/weapons/incursion/BlunderhornItem.kt:75" }
+    ],
+    "config": [
+      { "text": "The cooldown is put on goat horns as an item type. Whether that also blocks ordinary goat horns you carry depends on the game's own cooldown rules. Not tested here.", "src": "items/weapons/incursion/BlunderhornItem.kt:94" }
+    ]
+  },
+  {
+    "key": "incursion-overwatch",
+    "items": ["incursion-overwatch"],
+    "summary": "A spyglass that works as a sniper rifle. Hold right-click to charge, then release to fire a beam up to 100 blocks that goes through every mob in its path and does double damage on headshots.",
+    "use": [
+      { "text": "Hold right-click with it in your main hand. A charge bar fills on screen and shows READY once charged.", "src": "items/weapons/incursion/OverwatchItem.kt:80-89, items/weapons/incursion/OverwatchItem.kt:99-155" },
+      { "text": "Release to fire. If you let go before it's charged, or after switching hotbar slots, nothing fires and there's no cooldown.", "src": "items/weapons/incursion/OverwatchItem.kt:105-124" }
+    ],
+    "numbers": [
+      { "label": "Charge time", "value": "0.8 s (16 ticks)", "src": "items/weapons/incursion/OverwatchItem.kt:39, items/weapons/incursion/OverwatchItem.kt:135-137" },
+      { "label": "Range", "value": "100 blocks", "src": "items/weapons/incursion/OverwatchItem.kt:41" },
+      { "label": "Damage", "value": "40 per mob hit, 80 on a headshot", "src": "items/weapons/incursion/OverwatchItem.kt:43-44, items/weapons/incursion/OverwatchItem.kt:279" },
+      { "label": "Cooldown", "value": "2.25 s (45 ticks) after firing", "src": "items/weapons/incursion/OverwatchItem.kt:40, items/weapons/incursion/OverwatchItem.kt:161" },
+      { "label": "Charge limit", "value": "Gives up without firing after 60 s of holding", "src": "items/weapons/incursion/OverwatchItem.kt:49, items/weapons/incursion/OverwatchItem.kt:128-133" },
+      { "label": "Bosses", "value": "Elder Guardian, Ender Dragon, Wither and Warden take half damage", "src": "items/weapons/incursion/IncursionArsenal.kt:186, items/weapons/incursion/IncursionArsenal.kt:204-208" }
+    ],
+    "details": [
+      { "text": "The beam goes through mobs, hitting every one whose body it crosses, until it reaches a solid block. Blocks you can walk through and barrier blocks don't stop it.", "src": "items/weapons/incursion/OverwatchItem.kt:190-258, items/weapons/incursion/OverwatchItem.kt:261-286, items/weapons/incursion/IncursionArsenal.kt:311-325" },
+      { "text": "A headshot shows a HEADSHOT title with the distance. Headshots on the Ender Dragon hit its head directly.", "src": "items/weapons/incursion/OverwatchItem.kt:278-291, items/weapons/incursion/IncursionArsenal.kt:194-197, items/weapons/incursion/IncursionArsenal.kt:240-251" },
+      { "text": "It skips you, tamed pets and named mobs. Players can be hit wherever PvP and claims allow it. The damage is dealt as a normal hit from you (not true damage), so claim and protection plugins can still block it.", "src": "items/weapons/incursion/IncursionArsenal.kt:154-156, items/weapons/incursion/IncursionArsenal.kt:174-200" },
+      { "text": "All your Overwatches share one cooldown: a second one can't start charging until it runs out.", "src": "items/weapons/incursion/OverwatchItem.kt:83-86, items/weapons/incursion/OverwatchItem.kt:161" },
+      { "text": "It's unbreakable.", "src": "items/weapons/incursion/OverwatchItem.kt:75" }
+    ],
+    "config": [
+      { "text": "The cooldown is put on spyglasses as an item type. Whether that also stops you using other spyglasses (such as the Prospector's Spyglass) for 2.25 s depends on the game's own cooldown rules. Not tested here.", "src": "items/weapons/incursion/OverwatchItem.kt:161, items/tools/ProspectorsSpyglassItem.kt:76" }
+    ]
+  },
+  {
+    "key": "stormveil-reaper",
+    "items": ["stormveil-reaper"],
+    "summary": "Right-click to hang storm clouds over mobs near where you're looking. For 45 seconds, those mobs take extra damage from players' hits and don't get knocked back. When one dies, its loot rains down from the cloud, sometimes with extra and sometimes swallowed completely.",
+    "use": [
+      { "text": "Right-click with it in your main hand. It aims at the mob you're looking at (up to 50 blocks), otherwise the block you're looking at (up to 15 blocks), otherwise a point 10 blocks ahead. Every eligible mob within 6 blocks of that spot gets a cloud.", "src": "items/weapons/scythe/StormveilReaperItem.kt:179-196" }
+    ],
+    "numbers": [
+      { "label": "Cooldown", "value": "23 s; only used if at least one mob got a cloud", "src": "items/weapons/scythe/StormveilReaperItem.kt:71, items/weapons/scythe/StormveilReaperItem.kt:190-192" },
+      { "label": "Cloud radius", "value": "6 blocks around the aimed spot", "src": "items/weapons/scythe/StormveilReaperItem.kt:68, items/weapons/scythe/StormveilReaperItem.kt:186" },
+      { "label": "Cloud duration", "value": "45 s (900 ticks)", "src": "items/weapons/scythe/StormveilReaperItem.kt:69, items/weapons/scythe/StormveilReaperItem.kt:426-443" },
+      { "label": "Damage bonus", "value": "Each hit is multiplied by a random amount between 1x and 2x", "src": "items/weapons/scythe/StormveilReaperItem.kt:70, items/weapons/scythe/StormveilReaperItem.kt:296" },
+      { "label": "Bounty chance", "value": "12%: drops rain down, with the mob's normal loot increased by a random 1.5x-2x", "src": "items/weapons/scythe/StormveilReaperItem.kt:75-77, items/weapons/scythe/StormveilReaperItem.kt:319-324, items/weapons/scythe/StormveilReaperItem.kt:379-396" },
+      { "label": "Void chance", "value": "10%: all drops are destroyed", "src": "items/weapons/scythe/StormveilReaperItem.kt:78, items/weapons/scythe/StormveilReaperItem.kt:325" },
+      { "label": "Otherwise", "value": "78%: the normal drops rain down from the cloud unchanged", "src": "items/weapons/scythe/StormveilReaperItem.kt:326" },
+      { "label": "Rained drops won't stack for", "value": "30 s (600 ticks)", "src": "items/weapons/scythe/StormveilReaperItem.kt:81, items/weapons/scythe/StormveilReaperItem.kt:420-421, items/weapons/scythe/StormveilReaperItem.kt:353-359" }
+    ],
+    "details": [
+      { "text": "The damage bonus applies to direct hits from any player, with any weapon, not only the Reaper. Arrows and other projectiles don't get it.", "src": "items/weapons/scythe/StormveilReaperItem.kt:287-298, events/item/Listeners.kt:182-195" },
+      { "text": "Clouded mobs take no knockback from players' hits.", "src": "items/weapons/scythe/StormveilReaperItem.kt:300-304, events/item/Listeners.kt:588-597" },
+      { "text": "The loot effect happens no matter who or what kills a clouded mob.", "src": "items/weapons/scythe/StormveilReaperItem.kt:62, items/weapons/scythe/StormveilReaperItem.kt:307-328, events/item/Listeners.kt:146-157" },
+      { "text": "Rained drops fall one at a time from the cloud, over a small area around where the mob died. XP isn't affected.", "src": "items/weapons/scythe/StormveilReaperItem.kt:398-423" },
+      { "text": "Only mobs get clouds. Players, armour stands, mobs you can't hurt (for example in a claim), and mobs that already have a cloud are skipped.", "src": "items/weapons/scythe/StormveilReaperItem.kt:186-189" },
+      { "text": "In the Pinata world (incu:pinata), right-clicking, the damage bonus and the no-knockback effect are switched off for players standing there, but the loot effect still happens.", "src": "items/weapons/scythe/StormveilReaperItem.kt:61-62, events/item/ItemListener.kt:121-126, events/item/ItemListener.kt:182-193" }
+    ],
+    "quirks": [
+      { "text": "The tooltip says a cloud may rain double the loot, but the bonus is a random 1.5x to 2x, and it only multiplies items from the mob's normal loot table (not, for example, gear it picked up).", "src": "items/weapons/scythe/StormveilReaperItem.kt:76-77, items/weapons/scythe/StormveilReaperItem.kt:361-396" }
+    ]
+  },
+  {
+    "key": "incursion-eggs",
+    "items": ["incursion-cryo-egg", "incursion-unstable-egg"],
+    "summary": "Reusable throwing eggs that explode where they land and damage everything within 4.5 blocks. The Cryo Egg also freezes and slows what it hits; the Unstable Egg is just the explosion. Press swap (F) to switch between the egg types.",
+    "use": [
+      { "text": "Right-click to throw, from either hand. The egg isn't used up.", "src": "items/weapons/incursion/IncursionEggItem.kt:81-103" },
+      { "text": "Press swap (F) while holding one to turn it into the next egg type: Unstable to Cryo, Cryo to Incendiary, Incendiary back to Unstable.", "src": "items/weapons/incursion/IncursionEggItem.kt:105-130" }
+    ],
+    "numbers": [
+      { "label": "Blast radius", "value": "4.5 blocks", "src": "items/weapons/incursion/IncursionEggItem.kt:42, items/weapons/incursion/IncursionEggItem.kt:203-206" },
+      { "label": "Damage", "value": "65 at the centre, dropping evenly to about 9.75 at the edge", "src": "items/weapons/incursion/IncursionEggItem.kt:43, items/weapons/incursion/IncursionEggItem.kt:210, items/weapons/incursion/CryoEggItem.kt:23, items/weapons/incursion/UnstableEggItem.kt:13" },
+      { "label": "Cooldown", "value": "3.5 s (70 ticks)", "src": "items/weapons/incursion/IncursionEggItem.kt:41, items/weapons/incursion/IncursionEggItem.kt:87-91" },
+      { "label": "Cryo Egg: Slowness", "value": "Slowness III for 5 s (100 ticks)", "src": "items/weapons/incursion/CryoEggItem.kt:14-15, items/weapons/incursion/CryoEggItem.kt:40-42" },
+      { "label": "Cryo Egg: freeze", "value": "Target's freeze meter (the one powder snow fills) set to at least 200", "src": "items/weapons/incursion/CryoEggItem.kt:13, items/weapons/incursion/CryoEggItem.kt:39" },
+      { "label": "Bosses", "value": "Elder Guardian, Ender Dragon, Wither and Warden take half damage", "src": "items/weapons/incursion/IncursionArsenal.kt:186, items/weapons/incursion/IncursionArsenal.kt:204-208" }
+    ],
+    "details": [
+      { "text": "It explodes when it hits a block or a mob. Every living thing in range is hurt except you, tamed pets and named mobs, with distance measured to each target's centre. Players can be hit wherever PvP and claims allow it.", "src": "items/weapons/incursion/IncursionEggItem.kt:180-217, items/weapons/incursion/IncursionArsenal.kt:116-121, items/weapons/incursion/IncursionArsenal.kt:154-156, items/weapons/incursion/IncursionArsenal.kt:175-184" },
+      { "text": "The explosion goes through walls, because its line-of-sight check is switched off in the code. It doesn't break blocks.", "src": "items/weapons/incursion/IncursionEggItem.kt:194-217" },
+      { "text": "Your movement adds to the throw speed.", "src": "items/weapons/incursion/IncursionEggItem.kt:93-96" },
+      { "text": "A custom name or lore you give an egg is remembered for each egg type and comes back when you switch to that type again.", "src": "items/weapons/incursion/IncursionEggItem.kt:132-178" },
+      { "text": "They can't be fired from dispensers or used in crafting.", "src": "items/weapons/incursion/IncursionEggItem.kt:219-226" }
+    ],
+    "config": [
+      { "text": "The cooldown is put on the egg's underlying item type. Whether that also blocks throwing ordinary eggs of the same colour depends on the game's own cooldown rules. Not tested here.", "src": "items/weapons/incursion/IncursionEggItem.kt:87-91" }
+    ]
+  }
+]

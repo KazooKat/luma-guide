@@ -40,6 +40,15 @@ npm run items        # writes src/data/items.json; lists skipped items and anyth
 npm run data         # copies the item icons into public/icons/ and packs them into src/assets/items-atlas.png (needs Pillow)
 ```
 
+**Mechanics write-ups** live in `data/writeups/<batch>.json`, one entry per item or item family, every line citing
+the source (`items/x/File.kt:12-30`). `npm run writeups` checks them (ids, fields, and that each cited file/line exists)
+and merges them into `src/data/writeups.json`. The public guide leaves out anything that would teach an exploit;
+behaviour that depends on the game or server config goes under `config`.
+
+**Astral upgrades** are computed, not hand-written: `scripts/lib/astral-upgrades.mjs` reads the `astral-upgrades`
+defaults in `AstralYml.kt` and applies `AstralSetUpgradeFactory`'s rules, using vanilla 26.2 item stats and enchantment
+rules from `scripts/lib/mc-26.2.json` (refresh with `node scripts/fetch-mc-data.mjs`).
+
 After moving to a newer commit, re-check the hand-written entries in `data/items-overrides.json` against the source
 (the build flags overrides whose builder no longer exists, but not ones whose values changed).
 

@@ -1,0 +1,596 @@
+[
+ {
+  "key": "archael-set",
+  "items": [
+   "archael-set-elytra"
+  ],
+  "summary": "A heavily enchanted elytra with no special ability of its own. Its value is the enchantments on it.",
+  "details": [
+   {
+    "text": "The set's code does nothing when events happen, so there is no hidden effect beyond the enchantments.",
+    "src": "items/astral/sets/ArchaelSet.kt:31-33"
+   },
+   {
+    "text": "Enchantments: Protection VI, Projectile Protection V, Unbreaking V and Feather Falling IV, all on an elytra.",
+    "src": "items/astral/sets/ArchaelSet.kt:16-25, items/astral/AstralSetFactory.kt:56-60"
+   }
+  ]
+ },
+ {
+  "key": "avalon-set",
+  "items": [
+   "avalon-set-iron-helmet",
+   "avalon-set-iron-chestplate",
+   "avalon-set-iron-leggings",
+   "avalon-set-iron-boots",
+   "avalon-set-iron-sword",
+   "avalon-set-iron-pickaxe",
+   "avalon-set-fishing-rod"
+  ],
+  "summary": "Every Avalon piece makes you move faster while it's worn or held. Wear all four armor pieces together and you also get Speed I, refreshed every few seconds.",
+  "use": [
+   {
+    "text": "Any piece (armor, sword, pickaxe or rod): its speed bonus is set to apply in any equipment slot, so it works whether the piece is worn or held.",
+    "src": "items/astral/sets/AvalonSet.kt:38-51"
+   },
+   {
+    "text": "Full set: wear the Avalon helmet, chestplate, leggings and boots at the same time to get Speed I.",
+    "src": "items/astral/sets/AvalonSet.kt:59-65, relics/RelicCrafting.kt:122-128"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Speed bonus per piece",
+    "value": "+0.025 movement speed",
+    "src": "items/astral/sets/AvalonSet.kt:50"
+   },
+   {
+    "label": "Full-set Speed I",
+    "value": "12 s (240 ticks), re-applied every 3.5 s while the full set is worn",
+    "src": "items/astral/sets/AvalonSet.kt:63, events/item/PassiveListeners.kt:19, LumaItems.java:87"
+   }
+  ],
+  "details": [
+   {
+    "text": "The full-set check looks only at your four armor slots. Every slot has to hold an Avalon piece, so a missing piece or an elytra in the chest slot turns the Speed I bonus off.",
+    "src": "relics/RelicCrafting.kt:122-128"
+   },
+   {
+    "text": "Speed I isn't removed when you take a piece off. It runs out on its own, up to 12 s later.",
+    "src": "items/astral/sets/AvalonSet.kt:61-64"
+   }
+  ]
+ },
+ {
+  "key": "blitz-set",
+  "items": [
+   "blitz-set-diamond-axe",
+   "blitz-set-elytra"
+  ],
+  "summary": "The Blitz Axe gives you Haste while you hold it. The Blitz Wings launch you forward each time you use a firework rocket while gliding.",
+  "use": [
+   {
+    "text": "Axe: hold it in your main hand to get Haste I, which is re-applied every 3.5 s.",
+    "src": "items/astral/sets/BlitzSet.kt:46-53, events/item/PassiveListeners.kt:19"
+   },
+   {
+    "text": "Wings: wear them in the chest slot and use a firework rocket while gliding. You're thrown in the direction you're looking and an extra rocket-launch sound plays.",
+    "src": "items/astral/sets/BlitzSet.kt:54-59, events/item/Listeners.kt:296-303"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Haste I duration",
+    "value": "11 s (220 ticks), refreshed every 3.5 s",
+    "src": "items/astral/sets/BlitzSet.kt:51"
+   },
+   {
+    "label": "Rocket launch",
+    "value": "sets your speed to 1.5 in your look direction",
+    "src": "items/astral/sets/BlitzSet.kt:56"
+   }
+  ],
+  "details": [
+   {
+    "text": "The launch doesn't cancel the rocket. The rocket is still used as normal on top of the launch.",
+    "src": "items/astral/sets/BlitzSet.kt:54-59"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "The Haste check only asks whether your main-hand item is any axe. If you wear the Blitz Wings, or hold the Blitz Axe in your off-hand, any axe in your main hand gets Haste.",
+    "src": "items/astral/sets/BlitzSet.kt:46-52, events/item/PassiveListeners.kt:26-33, util/extensions/PlayerUtil.kt:216-227"
+   }
+  ]
+ },
+ {
+  "key": "falter-set",
+  "items": [
+   "falter-set-diamond-pickaxe",
+   "falter-set-diamond-hoe",
+   "falter-set-diamond-axe",
+   "falter-set-fishing-rod"
+  ],
+  "summary": "Falter tools deal bonus damage based on your level in the matching Job: pickaxe uses Miner, hoe uses Farmer, axe uses Lumberjack and fishing rod uses Fisherman.",
+  "use": [
+   {
+    "text": "Hit a mob or player while holding a Falter tool. The bonus is based on your level in the Job that matches your main-hand tool.",
+    "src": "items/astral/sets/FalterSet.kt:56-65, items/astral/sets/FalterSet.kt:68-80, events/item/Listeners.kt:166-180"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Bonus damage per hit",
+    "value": "your Job level ÷ 4 (e.g. level 40 gives +10 damage)",
+    "src": "items/astral/sets/FalterSet.kt:60"
+   }
+  ],
+  "details": [
+   {
+    "text": "If you haven't joined the matching Job, or your main-hand item isn't a pickaxe, hoe, axe or fishing rod, the bonus is 0.",
+    "src": "items/astral/sets/FalterSet.kt:71-79"
+   },
+   {
+    "text": "Projectiles you shoot also count as your hits, but the Job is still chosen from your main-hand item. A bow in your main hand gives no bonus.",
+    "src": "events/item/Listeners.kt:166-180, items/astral/sets/FalterSet.kt:71-78"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "The tool only has to be the right type, not a Falter tool. With a Falter piece in your off-hand, a plain pickaxe in your main hand still gets the Miner bonus.",
+    "src": "items/astral/sets/FalterSet.kt:60, util/extensions/PlayerUtil.kt:171-186"
+   }
+  ],
+  "config": [
+   {
+    "text": "This needs the Jobs plugin, with Jobs named exactly Miner, Farmer, Lumberjack and Fisherman. How high levels go depends on the server's Jobs setup.",
+    "src": "items/astral/sets/FalterSet.kt:69-79"
+   }
+  ]
+ },
+ {
+  "key": "harbinger-set",
+  "items": [
+   "harbinger-set-copper-helmet",
+   "harbinger-set-copper-chestplate",
+   "harbinger-set-copper-leggings",
+   "harbinger-set-copper-boots",
+   "harbinger-set-elytra"
+  ],
+  "summary": "Wearing any single Harbinger piece, including the elytra, keeps Night Vision on you. You don't need the full set.",
+  "use": [
+   {
+    "text": "Wear at least one Harbinger piece in an armor slot. The elytra counts when it's in the chest slot.",
+    "src": "items/astral/sets/HarbingerSet.kt:52-56, util/extensions/PlayerUtil.kt:61-65"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Night Vision",
+    "value": "15 s (300 ticks), re-applied every 3.5 s while worn",
+    "src": "items/astral/sets/HarbingerSet.kt:16, events/item/PassiveListeners.kt:19"
+   }
+  ],
+  "details": [
+   {
+    "text": "Wearing more pieces doesn't make it stronger. It's always Night Vision I.",
+    "src": "items/astral/sets/HarbingerSet.kt:16, items/astral/sets/HarbingerSet.kt:52-56"
+   },
+   {
+    "text": "Night Vision stays for up to 15 s after you take the last piece off.",
+    "src": "items/astral/sets/HarbingerSet.kt:16"
+   }
+  ]
+ },
+ {
+  "key": "kazkan-set",
+  "items": [
+   "kazkan-set-iron-axe",
+   "kazkan-set-crossbow",
+   "kazkan-set-blaze-rod",
+   "kazkan-set-shield"
+  ],
+  "summary": "A combat set with a different trick on each piece. The axe charges up bonus damage while you hold right-click. The crossbow freezes arrows in mid-air so you can fire them later. The staff spends lapis to slow a mob or cast a damaging bolt.",
+  "use": [
+   {
+    "text": "Axe: hold right-click to charge, then hit something while you're still charging. The bonus only applies if your last right-click was less than 0.3 s ago.",
+    "src": "items/astral/sets/KazkanSet.kt:90-93, items/astral/sets/KazkanSet.kt:114-122, items/astral/sets/KazkanSet.kt:232-234"
+   },
+   {
+    "text": "Crossbow: each arrow you shoot slows to 1% of its speed and stops falling, so it hangs almost still in the air. Left-click with a crossbow to fire the oldest frozen arrow at the entity you're looking at, or straight ahead if you're not looking at one.",
+    "src": "items/astral/sets/KazkanSet.kt:142-168, items/astral/sets/KazkanSet.kt:102-105, items/astral/sets/KazkanSet.kt:190-216"
+   },
+   {
+    "text": "Staff: right-click while looking at a mob to give it Slowness XXXI. This costs 13 lapis and doesn't work on players.",
+    "src": "items/astral/sets/KazkanSet.kt:94-99"
+   },
+   {
+    "text": "Staff: left-click to cast a hidden bolt trailed by witch particles. It flies straight without dropping and damages the first living thing it hits. Costs 13 lapis.",
+    "src": "items/astral/sets/KazkanSet.kt:106-110, items/astral/sets/KazkanSet.kt:170-183, model/spell/SpellCaster.kt:36-46"
+   },
+   {
+    "text": "Shield: it has no ability of its own. Holding it still turns on the set's other effects (see the notes below).",
+    "src": "items/astral/sets/KazkanSet.kt:68-76"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Axe charge",
+    "value": "+1 damage for every 4 right-clicks registered while charging, up to +14 damage",
+    "src": "items/astral/sets/KazkanSet.kt:121, items/astral/sets/KazkanSet.kt:226-230"
+   },
+   {
+    "label": "Frozen arrows",
+    "value": "up to 5 at once; a 6th makes the oldest start falling",
+    "src": "items/astral/sets/KazkanSet.kt:152-156"
+   },
+   {
+    "label": "Frozen arrow timeout",
+    "value": "7.5 s (150 ticks), after which an unfired arrow starts falling",
+    "src": "items/astral/sets/KazkanSet.kt:160-167"
+   },
+   {
+    "label": "Crossbow aim range / launch speed",
+    "value": "locks onto a target within 75 blocks; fired at speed 3.2",
+    "src": "items/astral/sets/KazkanSet.kt:193-203"
+   },
+   {
+    "label": "Staff slow",
+    "value": "Slowness XXXI for 10 s (200 ticks), target within 15 blocks, 13 lapis",
+    "src": "items/astral/sets/KazkanSet.kt:95-97"
+   },
+   {
+    "label": "Staff bolt",
+    "value": "17 damage (8.5 hearts) on hit, lasts 6 s (120 ticks), 13 lapis",
+    "src": "items/astral/sets/KazkanSet.kt:107-108, items/astral/sets/KazkanSet.kt:182"
+   }
+  ],
+  "details": [
+   {
+    "text": "Lapis can come from anywhere in your inventory. If you have fewer than 13, nothing happens and nothing is taken.",
+    "src": "util/AbilityUtil.kt:31, util/extensions/PlayerUtil.kt:291-302"
+   },
+   {
+    "text": "The bolt won't hurt anything the server's protection says you can't damage.",
+    "src": "items/astral/sets/KazkanSet.kt:173, util/AbilityUtil.kt:26, util/extensions/PlayerUtil.kt:244-253"
+   },
+   {
+    "text": "Frozen arrows lose their critical-hit status. An arrow fired with left-click is made a critical hit again.",
+    "src": "items/astral/sets/KazkanSet.kt:150, items/astral/sets/KazkanSet.kt:214"
+   },
+   {
+    "text": "Hitting something doesn't use up the axe charge. It keeps counting for as long as you keep holding right-click.",
+    "src": "items/astral/sets/KazkanSet.kt:114-122"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "Every ability only checks what type of item is in your main hand while any Kazkan piece is in either hand. If you hold the Kazkan Shield in your off-hand, a regular axe charges, a regular crossbow fires frozen arrows, and arrows from a regular bow freeze in the air.",
+    "src": "items/astral/sets/KazkanSet.kt:88-106, items/astral/sets/KazkanSet.kt:142-148, events/item/Listeners.kt:111-116, util/extensions/PlayerUtil.kt:171-186"
+   }
+  ],
+  "config": [
+   {
+    "text": "What the bolt is allowed to hit depends on the server's WorldGuard and Towny setup.",
+    "src": "util/AbilityUtil.kt:26, util/extensions/PlayerUtil.kt:32-35, util/extensions/PlayerUtil.kt:244-253"
+   }
+  ]
+ },
+ {
+  "key": "magmatic-set",
+  "items": [
+   "magmatic-set-diamond-helmet",
+   "magmatic-set-diamond-chestplate",
+   "magmatic-set-diamond-leggings",
+   "magmatic-set-diamond-boots",
+   "magmatic-set-diamond-sword",
+   "magmatic-set-diamond-pickaxe",
+   "magmatic-set-diamond-shovel"
+  ],
+  "summary": "A fire-themed set. The sword shoots a flame bolt that sets mobs on fire. The pickaxe smelts ores as you mine them, and the shovel turns sand into glass. The armor has no ability beyond its enchantments.",
+  "use": [
+   {
+    "text": "Sword: right-click to fire a hidden bolt trailed by flames. Whatever living thing it hits catches fire.",
+    "src": "items/astral/sets/MagmaticSet.kt:76-87, items/astral/sets/MagmaticSet.kt:102-108, model/spell/SpellCaster.kt:36-46"
+   },
+   {
+    "text": "Pickaxe (main hand): gold, iron and copper ore (including deepslate) and ancient debris drop ingots or netherite scrap instead of raw drops.",
+    "src": "items/astral/sets/MagmaticSet.kt:29-33, items/astral/sets/MagmaticSet.kt:88-95, items/astral/sets/MagmaticSet.kt:111-129, events/item/Listeners.kt:222-224"
+   },
+   {
+    "text": "Shovel (main hand): sand and red sand drop glass.",
+    "src": "items/astral/sets/MagmaticSet.kt:92-93, items/astral/sets/MagmaticSet.kt:132-141, events/item/Listeners.kt:222-224"
+   },
+   {
+    "text": "Armor: no special ability.",
+    "src": "items/astral/sets/MagmaticSet.kt:53-58"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Flame bolt cooldown",
+    "value": "10 s (200 ticks)",
+    "src": "items/astral/sets/MagmaticSet.kt:78-80"
+   },
+   {
+    "label": "Burn time on hit",
+    "value": "5 s (100 ticks)",
+    "src": "items/astral/sets/MagmaticSet.kt:107"
+   },
+   {
+    "label": "Bolt lifetime",
+    "value": "6 s (120 ticks)",
+    "src": "items/astral/sets/MagmaticSet.kt:79"
+   },
+   {
+    "label": "Bonus XP per smelted ore",
+    "value": "1 XP orb (worth 1)",
+    "src": "items/astral/sets/MagmaticSet.kt:124"
+   }
+  ],
+  "details": [
+   {
+    "text": "The drops are worked out from the pickaxe you're holding first, then turned into ingots.",
+    "src": "items/astral/sets/MagmaticSet.kt:91, items/astral/sets/MagmaticSet.kt:114-122"
+   },
+   {
+    "text": "The flame bolt won't ignite anything the server's protection says you can't damage.",
+    "src": "items/astral/sets/MagmaticSet.kt:85, util/AbilityUtil.kt:26"
+   },
+   {
+    "text": "Abilities are switched off in the newer event world, and you get a one-time action-bar notice about it.",
+    "src": "items/astral/sets/MagmaticSet.kt:25, model/item/CustomItem.kt:71-77, events/item/ItemListener.kt:52-56, events/item/ItemListener.kt:123"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "The flame bolt works with any sword in your main hand, as long as a Magmatic item is in one of your hands. For example, the Magmatic Pickaxe in your off-hand and a plain sword in your main hand fires bolts.",
+    "src": "items/astral/sets/MagmaticSet.kt:78"
+   }
+  ]
+ },
+ {
+  "key": "meluka-set",
+  "items": [
+   "meluka-set-golden-helmet",
+   "meluka-set-golden-chestplate",
+   "meluka-set-golden-leggings",
+   "meluka-set-golden-boots",
+   "meluka-set-golden-pickaxe",
+   "meluka-set-golden-shovel"
+  ],
+  "summary": "A water set. The armor gives you Dolphin's Grace while you're in water. The pickaxe and shovel put blocks you break straight into your inventory, but only while you're in water.",
+  "use": [
+   {
+    "text": "Armor: wear any one piece while in water to get Dolphin's Grace. You don't need the full set.",
+    "src": "items/astral/sets/MelukaSet.kt:53-59, util/extensions/PlayerUtil.kt:61-65"
+   },
+   {
+    "text": "Pickaxe or shovel (main hand): while you are in water, the drops from blocks you break go into your inventory instead of onto the ground.",
+    "src": "items/astral/sets/MelukaSet.kt:53, items/astral/sets/MelukaSet.kt:60-71, events/item/Listeners.kt:222-224"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Dolphin's Grace",
+    "value": "12 s (240 ticks), re-applied every 3.5 s while you're in water",
+    "src": "items/astral/sets/MelukaSet.kt:57, events/item/PassiveListeners.kt:19"
+   }
+  ],
+  "details": [
+   {
+    "text": "It checks whether you are in water, not the block you break. Breaking a block underwater from dry land doesn't trigger it.",
+    "src": "items/astral/sets/MelukaSet.kt:53"
+   },
+   {
+    "text": "Only item drops are moved to your inventory. Experience from the block isn't touched.",
+    "src": "items/astral/sets/MelukaSet.kt:65-70"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "The set is marked as disabled in the newer event world, but that only turns off the tool pickup there. Dolphin's Grace from the armor still works, because the timer that grants it skips the world check.",
+    "src": "items/astral/sets/MelukaSet.kt:19, events/item/PassiveListeners.kt:26-33, events/item/ItemListener.kt:121-123"
+   }
+  ]
+ },
+ {
+  "key": "reforged-set",
+  "items": [
+   "reforged-set-netherite-helmet",
+   "reforged-set-netherite-chestplate",
+   "reforged-set-netherite-leggings",
+   "reforged-set-netherite-boots"
+  ],
+  "summary": "Each Reforged piece adds one extra heart of max health while worn in its own slot. The bonus adds up, so the full set gives four extra hearts. There is no other ability.",
+  "use": [
+   {
+    "text": "Wear the pieces in their normal armor slots. Each piece's bonus only counts in its own slot.",
+    "src": "items/astral/sets/ReforgedSet.kt:27-28, items/astral/sets/ReforgedSet.kt:36-37, items/astral/sets/ReforgedSet.kt:45-46, items/astral/sets/ReforgedSet.kt:54-55"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Max health per piece",
+    "value": "+2 (1 heart)",
+    "src": "items/astral/sets/ReforgedSet.kt:27-28"
+   },
+   {
+    "label": "Full set",
+    "value": "+8 max health (4 hearts)",
+    "src": "items/astral/sets/ReforgedSet.kt:22-56"
+   }
+  ],
+  "details": [
+   {
+    "text": "Each piece has its own separate health bonus, so they stack, and the netherite armor values are kept.",
+    "src": "items/astral/sets/ReforgedSet.kt:28, items/astral/sets/ReforgedSet.kt:37, model/item/ItemFactory.kt:196-206"
+   }
+  ]
+ },
+ {
+  "key": "valley-set",
+  "items": [
+   "valley-set-golden-shovel",
+   "valley-set-golden-sword",
+   "valley-set-golden-axe",
+   "valley-set-golden-hoe",
+   "valley-set-fishing-rod"
+  ],
+  "summary": "A golden farming and utility set. The shovel deletes water you look at from a distance, the sword buffs you when you hit monsters, and the hoe sometimes drops bonus crops. The axe and fishing rod have no special ability.",
+  "use": [
+   {
+    "text": "Shovel: left- or right-click while looking at water to remove that one water block.",
+    "src": "items/astral/sets/ValleySet.kt:70-78"
+   },
+   {
+    "text": "Sword: hitting a monster gives you Speed I and Resistance I.",
+    "src": "items/astral/sets/ValleySet.kt:80-86"
+   },
+   {
+    "text": "Hoe (main hand): any block you break has a small chance to drop a bonus wheat or golden carrot.",
+    "src": "items/astral/sets/ValleySet.kt:88-94, events/item/Listeners.kt:222-224"
+   },
+   {
+    "text": "Axe and fishing rod: no special ability.",
+    "src": "items/astral/sets/ValleySet.kt:41-45, items/astral/sets/ValleySet.kt:53-57"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Water removal reach",
+    "value": "45 blocks",
+    "src": "items/astral/sets/ValleySet.kt:72"
+   },
+   {
+    "label": "Sword buffs",
+    "value": "Speed I + Resistance I for 5 s (100 ticks)",
+    "src": "items/astral/sets/ValleySet.kt:84-85"
+   },
+   {
+    "label": "Hoe bonus crop chance",
+    "value": "3% per block broken (50/50 wheat or golden carrot, 1 item)",
+    "src": "items/astral/sets/ValleySet.kt:89-92"
+   }
+  ],
+  "details": [
+   {
+    "text": "The sword buffs only trigger when the thing you hit counts as a monster. Hitting animals or players does nothing.",
+    "src": "items/astral/sets/ValleySet.kt:83"
+   },
+   {
+    "text": "Only the first block you're looking at is checked, and it's only removed if that block is water itself.",
+    "src": "items/astral/sets/ValleySet.kt:72-77"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "The shovel and sword abilities only check what type of item is in your main hand. With any Valley piece in your off-hand, a regular shovel removes water and a regular sword grants the buffs.",
+    "src": "items/astral/sets/ValleySet.kt:67, items/astral/sets/ValleySet.kt:71, items/astral/sets/ValleySet.kt:81, util/extensions/PlayerUtil.kt:171-186"
+   }
+  ],
+  "config": [
+   {
+    "text": "Removed water is logged to CoreProtect or Prism if the server runs one of them.",
+    "src": "items/astral/sets/ValleySet.kt:76, util/extensions/BlockUtil.kt:40-44"
+   }
+  ]
+ },
+ {
+  "key": "venom-set",
+  "items": [
+   "venom-set-diamond-helmet",
+   "venom-set-diamond-chestplate",
+   "venom-set-diamond-leggings",
+   "venom-set-diamond-boots",
+   "venom-set-diamond-sword",
+   "venom-set-diamond-axe"
+  ],
+  "summary": "Viper gear poisons things in combat. The tooltips split the effects between weapons and armor, but in the code every piece does both: whatever you hit is poisoned, and so is whatever hits you.",
+  "use": [
+   {
+    "text": "Wear or hold any Viper piece. Anything you damage is poisoned, including targets hit by arrows or other projectiles you shoot.",
+    "src": "items/astral/sets/VenomSet.kt:56-60, events/item/Listeners.kt:166-180"
+   },
+   {
+    "text": "Wear or hold any Viper piece. A mob or player that hits you in melee is poisoned.",
+    "src": "items/astral/sets/VenomSet.kt:51-55, events/item/Listeners.kt:183-190"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Poison",
+    "value": "Poison II for 3 s (60 ticks), each time",
+    "src": "items/astral/sets/VenomSet.kt:54, items/astral/sets/VenomSet.kt:59"
+   }
+  ],
+  "details": [
+   {
+    "text": "If another plugin has already cancelled the hit, no poison is applied.",
+    "src": "events/item/Listeners.kt:166-167, events/item/Listeners.kt:183"
+   },
+   {
+    "text": "Wearing more pieces doesn't make the poison stronger or longer. It's just applied again.",
+    "src": "items/astral/sets/VenomSet.kt:54, events/item/ItemListener.kt:96-106"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "Against the tooltips, the armor also poisons what you hit, and a held Viper Sword or Axe also poisons what hits you.",
+    "src": "items/astral/sets/VenomSet.kt:31-39, items/astral/sets/VenomSet.kt:49-60"
+   },
+   {
+    "text": "Ranged attackers are never poisoned. The poison only goes to an attacker that is itself a living creature, so a hit from an arrow or other projectile is skipped.",
+    "src": "items/astral/sets/VenomSet.kt:53, events/item/Listeners.kt:168-171"
+   }
+  ]
+ },
+ {
+  "key": "verdant-set",
+  "items": [
+   "verdant-set-diamond-pickaxe",
+   "verdant-set-diamond-axe",
+   "verdant-set-diamond-hoe",
+   "verdant-set-diamond-shovel",
+   "verdant-set-diamond-helmet",
+   "verdant-set-diamond-chestplate",
+   "verdant-set-diamond-leggings",
+   "verdant-set-diamond-boots"
+  ],
+  "summary": "Verdant armor keeps Regeneration on you while you wear any single piece. The pickaxe, hoe and shovel refill a little hunger for every block you break. Despite its tooltip, the axe doesn't.",
+  "use": [
+   {
+    "text": "Armor: wear any one piece to get Regeneration I. You don't need the full set.",
+    "src": "items/astral/sets/VerdantSet.kt:126-130, util/extensions/PlayerUtil.kt:61-65"
+   },
+   {
+    "text": "Pickaxe, hoe or shovel (main hand): each block you break restores 1 hunger point. If your hunger bar is already full, it adds saturation instead.",
+    "src": "items/astral/sets/VerdantSet.kt:111-124, events/item/Listeners.kt:222-224"
+   }
+  ],
+  "numbers": [
+   {
+    "label": "Regeneration I",
+    "value": "12 s (240 ticks), re-applied every 3.5 s while worn",
+    "src": "items/astral/sets/VerdantSet.kt:18, events/item/PassiveListeners.kt:19"
+   },
+   {
+    "label": "Per block broken",
+    "value": "+1 hunger point, or +0.5 saturation when hunger is full (up to 20)",
+    "src": "items/astral/sets/VerdantSet.kt:119-123"
+   }
+  ],
+  "details": [
+   {
+    "text": "Wearing more armor pieces doesn't make Regeneration stronger. It stays at level I.",
+    "src": "items/astral/sets/VerdantSet.kt:18, items/astral/sets/VerdantSet.kt:126-130"
+   }
+  ],
+  "quirks": [
+   {
+    "text": "The Verdant Axe never restores hunger even though its tooltip says it does. The hunger ability only runs for items the plugin treats as tools, and it classes every axe as a weapon.",
+    "src": "items/astral/sets/VerdantSet.kt:113, items/astral/AstralSetFunctions.kt:19-25, enums/GenericToolType.kt:7-9, enums/GenericToolType.kt:21-30"
+   }
+  ]
+ }
+]

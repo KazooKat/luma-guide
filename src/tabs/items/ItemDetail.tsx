@@ -1,21 +1,39 @@
 import type { ComponentType } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
 import { Icon } from '../../components/Icon';
 import { McTooltip } from '../../components/McTooltip';
 import { SuggestButton } from '../../components/SuggestButton';
 import { ASTRAL_ORB_SETS } from '../../lib/relics';
 import { materialName } from '../../lib/itemSearch';
 import { plain } from '../../lib/minimessage';
-import { BY_ID, ITEMS, SECTIONS, sectionGradient, TierChip } from './common';
+import { BY_ID, DATA, ITEMS, SECTIONS, sectionGradient, TierChip } from './common';
+import type { WriteupsData } from '../../data/types';
+import { AstralUpgrades } from './AstralUpgrades';
 import { KamoriWriteup } from './KamoriWriteup';
+import { WriteupView } from './Writeup';
 
-/** Hand-checked mechanics write-ups, keyed by item id. Items without one show the tooltip and facts only. */
-const WRITEUPS: Record<string, ComponentType> = {
+/** Items whose write-up is a custom component (live clocks etc.); every other item uses data/writeups. */
+const CUSTOM: Record<string, ComponentType> = {
   'kamoris-glasses': KamoriWriteup,
 };
+/** The write-ups (~350 KB) load only when an item page opens, not with the grid. */
+let cache: WriteupsData | null = null;
+function useWriteups() {
+  const [data, setData] = useState<WriteupsData | null>(cache);
+  const [failed, setFailed] = useState(false);
+  useEffect(() => {
+    if (cache) return;
+    import('../../data/writeups.json')
+      .then((m) => { cache = m.default as WriteupsData; setData(cache); })
+      .catch(() => setFailed(true));
+  }, []);
+  return { data, failed };
+}
 
 const ORB_SETS = new Set(ASTRAL_ORB_SETS.map((s) => `${s.set.toLowerCase()}-set`));
 
 export function ItemDetail({ id }: { id: string }) {
+  const { data: W, failed } = useWriteups();
   const item = BY_ID.get(id);
   if (!item) {
     return (
@@ -27,7 +45,8 @@ export function ItemDetail({ id }: { id: string }) {
   }
   const section = SECTIONS.get(item.section)!;
   const name = plain(item.name);
-  const Writeup = WRITEUPS[item.id];
+  const Custom = CUSTOM[item.id];
+  const writeup = W?.writeups[W.byItem[item.id]];
   const siblings = ITEMS.filter((i) => i.section === item.section && i.set === item.set);
   const at = siblings.indexOf(item);
   const prev = siblings[at - 1];
@@ -89,8 +108,13 @@ export function ItemDetail({ id }: { id: string }) {
           </div>
         </div>
 
-        {Writeup ? (
-          <div class="writeup"><Writeup /></div>
+        {!Custom && !W ? (
+          <p class="note" aria-live="polite">{failed ? "The mechanics didn't load. Check your connection and reload the page." : 'Loading how it works…'}</p>
+        ) : Custom || writeup ? (
+          <div class="writeup">
+            <h3 class="writeup-title">How it works</h3>
+            {Custom ? <Custom /> : <WriteupView w={writeup!} commit={W!.commit} />}
+          </div>
         ) : (
           <div class="no-writeup">
             <p>
@@ -100,6 +124,7 @@ export function ItemDetail({ id }: { id: string }) {
             <SuggestButton label="Tell us how it works" outline />
           </div>
         )}
+        {item.upgrades && <div class="writeup"><AstralUpgrades item={item} commit={DATA.source.commit} /></div>}
       </section>
     </>
   );

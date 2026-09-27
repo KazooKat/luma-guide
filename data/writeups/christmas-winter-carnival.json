@@ -1,0 +1,603 @@
+[
+  {
+    "key": "zephyr-skates",
+    "items": ["zephyr-skates"],
+    "summary": "Netherite boots that give you a short, fast dash when you start sneaking while walking on solid ground. The dash goes in the direction you were last moving, not where you're looking.",
+    "use": [
+      { "text": "Walk on solid ground (not flying or gliding), then press sneak. You're shoved hard in the direction you were moving, slightly downward.", "src": "items/armor/boots/ZephyrSkatesItem.kt:67-73, items/armor/boots/ZephyrSkatesItem.kt:76-89" }
+    ],
+    "numbers": [
+      { "label": "Cooldown", "value": "1 s (20 ticks) between dashes", "src": "items/armor/boots/ZephyrSkatesItem.kt:80" },
+      { "label": "Dash strength", "value": "horizontal speed of up to 5 (a very strong push), with a slight downward pull", "src": "items/armor/boots/ZephyrSkatesItem.kt:81-89" },
+      { "label": "Hunger cost", "value": "50% chance per dash to take 1 saturation, or 1 hunger point if saturation is below 1", "src": "items/armor/boots/ZephyrSkatesItem.kt:92-100" }
+    ],
+    "details": [
+      { "text": "\"Grounded\" means the block half a block below your feet is solid. You also have to have moved since your last sneak, because each sneak uses up the stored direction.", "src": "items/armor/boots/ZephyrSkatesItem.kt:68-71, items/armor/boots/ZephyrSkatesItem.kt:77-78, util/extensions/PlayerUtil.kt:134-136" }
+    ],
+    "quirks": [
+      { "text": "The movement and sneak checks never look at your boot slot, so the dash also works with the skates held in either hand.", "src": "items/armor/boots/ZephyrSkatesItem.kt:67-78, events/item/Listeners.kt:305-310, events/item/Listeners.kt:327-332, util/extensions/PlayerUtil.kt:171-186" }
+    ]
+  },
+  {
+    "key": "clown-mask",
+    "items": ["clownmask"],
+    "summary": "A wearable head that gives +3 hearts when worn. Right-clicking it puts it straight on your head.",
+    "use": [
+      { "text": "Right-click while holding it to put it on, but only if your helmet slot is empty.", "src": "items/armor/ClownMaskItem.kt:44-52" }
+    ],
+    "numbers": [
+      { "label": "Max health", "value": "+6 (3 hearts), head slot only", "src": "items/armor/ClownMaskItem.kt:38" }
+    ],
+    "config": [
+      { "text": "Each mask gets a random face when it's created, picked from a list of textures in the server's heads config.", "src": "items/armor/ClownMaskItem.kt:29, items/armor/ClownMaskItem.kt:36, api/ItemManager.java:80" }
+    ]
+  },
+  {
+    "key": "magicians-cloak",
+    "items": ["magicianscloak"],
+    "summary": "An elytra that stores up the damage you deal as stars, one star per 120 damage. With at least one star, right-click a mob while holding a weapon or tool to spend all your stars on a delayed, explosive attack.",
+    "use": [
+      { "text": "Charge it by damaging mobs or players. Melee hits and your own projectiles both count, and the action bar shows your stars.", "src": "items/armor/elytra/MagiciansCloakItem.kt:67-73, items/armor/elytra/MagiciansCloakItem.kt:107-117, events/item/Listeners.kt:165-180" },
+      { "text": "Right-click while looking at a living target and holding a weapon or tool in your main hand (sword, axe, bow, crossbow, trident, mace, spear, pickaxe, shovel, hoe, fishing rod or shears).", "src": "items/armor/elytra/MagiciansCloakItem.kt:75-80, items/armor/elytra/MagiciansCloakItem.kt:119-124, enums/GenericToolType.kt:8-9" }
+    ],
+    "numbers": [
+      { "label": "Charge per star", "value": "120 damage dealt (each hit rounded down to a whole number)", "src": "items/armor/elytra/MagiciansCloakItem.kt:33, items/armor/elytra/MagiciansCloakItem.kt:69" },
+      { "label": "Charge cap", "value": "stops charging once you reach 5 stars (600 damage)", "src": "items/armor/elytra/MagiciansCloakItem.kt:34, items/armor/elytra/MagiciansCloakItem.kt:87" },
+      { "label": "Spell damage", "value": "20 per star, split into 5 hits half a second apart", "src": "items/armor/elytra/MagiciansCloakItem.kt:35, items/armor/elytra/MagiciansCloakItem.kt:133-137, model/entity/TickDamager.kt:35-51, model/entity/TickDamager.kt:64" },
+      { "label": "Targeting range", "value": "50 blocks", "src": "items/armor/elytra/MagiciansCloakItem.kt:76" },
+      { "label": "Target slowdown", "value": "Slowness IV for 2.5 s; the target is also frozen in place on each hit", "src": "items/armor/elytra/MagiciansCloakItem.kt:137-143" },
+      { "label": "Final explosion", "value": "power equal to your star count, no fire, no block damage", "src": "items/armor/elytra/MagiciansCloakItem.kt:140-142" },
+      { "label": "Cooldown", "value": "5 s (100 ticks) after a release. No charge is gained during it", "src": "items/armor/elytra/MagiciansCloakItem.kt:68, items/armor/elytra/MagiciansCloakItem.kt:125" }
+    ],
+    "details": [
+      { "text": "Releasing resets the charge to zero. Nothing happens without at least 1 star, or if you aren't allowed to hurt the target (claims and protection plugins are respected).", "src": "items/armor/elytra/MagiciansCloakItem.kt:122-124, items/armor/elytra/MagiciansCloakItem.kt:135, util/AbilityUtil.kt:26" }
+    ],
+    "quirks": [
+      { "text": "The cap only stops charging once you're already at 600 or more, so the last hit can push you past 5 stars. A very big final hit can give a release stronger than 5 stars.", "src": "items/armor/elytra/MagiciansCloakItem.kt:86-88, items/armor/elytra/MagiciansCloakItem.kt:128" }
+    ]
+  },
+  {
+    "key": "snowy-sunset-wings",
+    "items": ["snowy-sunset-wings"],
+    "summary": "An elytra that makes you glow while worn in the chest slot, with a black outline if the server's glow-colour plugin is installed.",
+    "numbers": [
+      { "label": "Glowing", "value": "17 s (340 ticks), topped up every 3.5 s while worn", "src": "items/armor/elytra/SnowySunsetWingsItem.kt:26, items/armor/elytra/SnowySunsetWingsItem.kt:54-58, events/item/PassiveListeners.kt:19, LumaItems.java:87" }
+    ],
+    "quirks": [
+      { "text": "Taking the wings off removes every Glowing effect you have, including one from a spectral arrow or another item.", "src": "items/armor/elytra/SnowySunsetWingsItem.kt:61-69" }
+    ],
+    "config": [
+      { "text": "The black outline colour only works when the LumaGlowAPI plugin is present. Without it you get the default white glow.", "src": "items/armor/elytra/SnowySunsetWingsItem.kt:75-85" }
+    ]
+  },
+  {
+    "key": "flourishing-fedora",
+    "items": ["flourishing-fedora"],
+    "summary": "A netherite helmet that sometimes makes everything with growth stages around you grow by one stage.",
+    "numbers": [
+      { "label": "Chance", "value": "6% every 3.5 s", "src": "items/armor/helmet/FlourishingFedoraItem.kt:38-40, events/item/PassiveListeners.kt:19" },
+      { "label": "Radius", "value": "about 5 blocks around you", "src": "items/armor/helmet/FlourishingFedoraItem.kt:42, shapes/Sphere.java:51-58" },
+      { "label": "Growth per trigger", "value": "+1 stage on every growing block in range", "src": "items/armor/helmet/FlourishingFedoraItem.kt:45-51" }
+    ],
+    "details": [
+      { "text": "It affects any block that has growth stages, not just farm crops. Fully grown blocks are skipped.", "src": "items/armor/helmet/FlourishingFedoraItem.kt:43-47" },
+      { "text": "Claims aren't checked, so crops on other players' land within range grow too.", "src": "items/armor/helmet/FlourishingFedoraItem.kt:35-52" }
+    ],
+    "quirks": [
+      { "text": "The code never checks that the fedora is on your head, so it also works while held in either hand.", "src": "items/armor/helmet/FlourishingFedoraItem.kt:35-52, events/item/PassiveListeners.kt:43-55, util/extensions/PlayerUtil.kt:216-227" }
+    ]
+  },
+  {
+    "key": "wizards-hat",
+    "items": ["wizardshat"],
+    "summary": "An unbreakable leather hat that gives +3 hearts when worn and keeps switching between four colours.",
+    "numbers": [
+      { "label": "Max health", "value": "+6 (3 hearts), head slot only", "src": "items/armor/helmet/WizardsHatItem.kt:40-42" },
+      { "label": "Colour change", "value": "every 3.5 s while worn, random pick from 4 colours", "src": "items/armor/helmet/WizardsHatItem.kt:22-27, items/armor/helmet/WizardsHatItem.kt:52-62, events/item/PassiveListeners.kt:19" }
+    ],
+    "details": [
+      { "text": "It really is unbreakable. \"Revitalise\" has no code beyond the extra hearts.", "src": "items/armor/helmet/WizardsHatItem.kt:33, items/armor/helmet/WizardsHatItem.kt:38, items/armor/helmet/WizardsHatItem.kt:52-66" }
+    ]
+  },
+  {
+    "key": "wonder-beanie",
+    "items": ["wonderbeanie"],
+    "summary": "A netherite helmet with +2 hearts. While it's worn, potion effects you get from potions, tipped arrows, lingering clouds, totems, axolotls or dolphins last longer and are 1 or 2 levels stronger.",
+    "numbers": [
+      { "label": "Max health", "value": "+4 (2 hearts), head slot only", "src": "items/armor/helmet/WonderBeanieItem.kt:50-54" },
+      { "label": "Extra duration", "value": "+10 to 20 s (random)", "src": "items/armor/helmet/WonderBeanieItem.kt:66" },
+      { "label": "Extra level", "value": "+1 or +2 (random)", "src": "items/armor/helmet/WonderBeanieItem.kt:66" }
+    ],
+    "details": [
+      { "text": "Only these sources are boosted: drinking or splashing a potion, lingering clouds, tipped arrows, totems, axolotls and dolphins. Food (golden apples, stews), beacons and conduits are not.", "src": "items/armor/helmet/WonderBeanieItem.kt:24-32, items/armor/helmet/WonderBeanieItem.kt:58-61" }
+    ],
+    "quirks": [
+      { "text": "Harmful effects count too. Poison or Slowness from an enemy's tipped arrow or splash potion is also made longer and stronger.", "src": "items/armor/helmet/WonderBeanieItem.kt:24-32, items/armor/helmet/WonderBeanieItem.kt:63-66" }
+    ]
+  },
+  {
+    "key": "carnival-lollipop",
+    "items": ["carnivallollipop"],
+    "summary": "Holding the lollipop gives you Speed I and Haste I. It can't be placed like a normal flower.",
+    "numbers": [
+      { "label": "Effects", "value": "Speed I + Haste I, 13 s each, topped up every 3.5 s", "src": "items/misc/CarnivalLollipopItem.kt:17-18, items/misc/CarnivalLollipopItem.kt:32-35, events/item/PassiveListeners.kt:19" }
+    ],
+    "details": [
+      { "text": "Works in either hand. The effects stay up to 13 s after you put it away.", "src": "items/misc/CarnivalLollipopItem.kt:32-35, util/extensions/PlayerUtil.kt:216-227" },
+      { "text": "Placing it is blocked.", "src": "items/misc/CarnivalLollipopItem.kt:37-42" }
+    ]
+  },
+  {
+    "key": "book-of-knowledge",
+    "items": ["bookofknowledge"],
+    "summary": "A spellbook with two spells: Drain, which pulls health from everything around you, and Valiant Explosion, a spell ball that wears down and then blows up the mob it hits. Holding it also adds 1 XP to every orb you pick up.",
+    "use": [
+      { "text": "Right-click to cast the selected spell. Left-click (book in main hand), or sneak + right-click, switches spells. The new spell is shown in chat.", "src": "items/misc/magical/BookOfKnowledgeItem.kt:75-97, items/misc/magical/BookOfKnowledgeItem.kt:132-143" },
+      { "text": "Drain: every living thing within 15 blocks that you're allowed to hurt takes 1 heart per pulse, and you heal 1 heart for each one hit.", "src": "items/misc/magical/BookOfKnowledgeItem.kt:150-173" },
+      { "text": "Valiant Explosion: fires a spell ball. If it hits a mob you're allowed to hurt, the mob loses a third of its current health, is frozen with extreme Slowness, then explodes at the 2 s mark (only if you can build at that spot).", "src": "items/misc/magical/BookOfKnowledgeItem.kt:94, items/misc/magical/BookOfKnowledgeItem.kt:99-106, items/misc/magical/BookOfKnowledgeItem.kt:175-193" }
+    ],
+    "numbers": [
+      { "label": "XP bonus", "value": "+1 XP per orb picked up while held", "src": "items/misc/magical/BookOfKnowledgeItem.kt:70-72" },
+      { "label": "Drain", "value": "6 pulses, 1 s apart; 2 damage per target and 2 healing per target each pulse; 15-block range", "src": "items/misc/magical/BookOfKnowledgeItem.kt:153-169" },
+      { "label": "Drain cooldown", "value": "30 s", "src": "items/misc/magical/BookOfKnowledgeItem.kt:36, items/misc/magical/BookOfKnowledgeItem.kt:151" },
+      { "label": "Valiant damage", "value": "1/3 of the target's current health, in 4 hits half a second apart", "src": "items/misc/magical/BookOfKnowledgeItem.kt:181, model/entity/TickDamager.kt:35-51, model/entity/TickDamager.kt:64" },
+      { "label": "Valiant slow", "value": "Slowness LI for 2 s", "src": "items/misc/magical/BookOfKnowledgeItem.kt:192" },
+      { "label": "Valiant explosion", "value": "power 20, sets fire, doesn't break blocks", "src": "items/misc/magical/BookOfKnowledgeItem.kt:185-189" },
+      { "label": "Valiant cooldown", "value": "60 s", "src": "items/misc/magical/BookOfKnowledgeItem.kt:37, items/misc/magical/BookOfKnowledgeItem.kt:177" },
+      { "label": "Spell ball lifetime", "value": "7.5 s (150 ticks)", "src": "items/misc/magical/BookOfKnowledgeItem.kt:125" }
+    ],
+    "details": [
+      { "text": "Drain picks its targets when you cast it. That can include passive mobs and players, as long as protection rules let you damage them.", "src": "items/misc/magical/BookOfKnowledgeItem.kt:153, items/misc/magical/BookOfKnowledgeItem.kt:162-165" },
+      { "text": "While a spell is on cooldown, casting it does nothing and shows no message.", "src": "items/misc/magical/BookOfKnowledgeItem.kt:88-90" }
+    ],
+    "quirks": [
+      { "text": "Valiant Explosion's cooldown only starts when the ball hits a mob you're allowed to hurt. A ball that misses doesn't start it.", "src": "items/misc/magical/BookOfKnowledgeItem.kt:94, items/misc/magical/BookOfKnowledgeItem.kt:103, items/misc/magical/BookOfKnowledgeItem.kt:176-177" }
+    ]
+  },
+  {
+    "key": "windforged-rocket",
+    "items": ["windforged-rocket"],
+    "summary": "A firework rocket that never runs out. It refills itself after each use, but only works 3 times in any 30 seconds and backfires in the Nether.",
+    "use": [
+      { "text": "Right-click like a normal rocket (e.g. to boost while gliding). If the rocket was used up, a fresh one appears in the same hand a tick later.", "src": "items/misc/WindforgedRocketItem.kt:74-97, items/misc/WindforgedRocketItem.kt:169-174" }
+    ],
+    "numbers": [
+      { "label": "Uses", "value": "3 per rolling 30 s window", "src": "items/misc/WindforgedRocketItem.kt:30-31, items/misc/WindforgedRocketItem.kt:176-189" },
+      { "label": "Flight power", "value": "1", "src": "items/misc/WindforgedRocketItem.kt:62" },
+      { "label": "Nether penalty", "value": "Poison I for 6 s, and that use is blocked", "src": "items/misc/WindforgedRocketItem.kt:136-141, items/misc/WindforgedRocketItem.kt:130-132, items/misc/WindforgedRocketItem.kt:158-161" }
+    ],
+    "details": [
+      { "text": "When it's resting, the action bar shows how many seconds are left and the use is blocked.", "src": "items/misc/WindforgedRocketItem.kt:82-90, items/misc/WindforgedRocketItem.kt:130-132" },
+      { "text": "A Nether use still counts toward your 3.", "src": "items/misc/WindforgedRocketItem.kt:92-93" },
+      { "text": "Right-clicking a shelf block doesn't count as a use.", "src": "items/misc/WindforgedRocketItem.kt:99-107" }
+    ],
+    "quirks": [
+      { "text": "Every right-click with it, in the air or on a block, counts as one of your 3 uses. The code doesn't check whether you're gliding.", "src": "items/misc/WindforgedRocketItem.kt:74-97, items/misc/WindforgedRocketItem.kt:99-107" }
+    ]
+  },
+  {
+    "key": "winter-vault",
+    "items": ["wintervault"],
+    "summary": "A breeze rod that launches you high into the air when you right-click.",
+    "numbers": [
+      { "label": "Launch", "value": "adds 1.5 upward, then multiplies your whole speed by 2.45", "src": "items/misc/WinterVaultItem.kt:39" },
+      { "label": "Cooldown", "value": "15 s (300 ticks)", "src": "items/misc/WinterVaultItem.kt:35-37, items/misc/WinterVaultItem.kt:43" }
+    ],
+    "details": [
+      { "text": "Your current horizontal speed is multiplied too, so vaulting while running also throws you forward.", "src": "items/misc/WinterVaultItem.kt:39" },
+      { "text": "It fires on any right-click while it's in either hand.", "src": "items/misc/WinterVaultItem.kt:34-39, events/item/Listeners.kt:125-137, util/extensions/PlayerUtil.kt:171-186" },
+      { "text": "Nothing protects you from fall damage.", "src": "items/misc/WinterVaultItem.kt:34-52" },
+      { "text": "Doesn't work in the new event world (worlds:event_new).", "src": "items/misc/WinterVaultItem.kt:19, enums/WorldKey.kt:21, model/item/CustomItem.kt:71-77" }
+    ]
+  },
+  {
+    "key": "carnival-fishing-rod",
+    "items": ["carnivalfishingrod"],
+    "summary": "An unbreakable Lure III event rod that can't actually fish. Every fishing action with it is cancelled, from either hand.",
+    "details": [
+      { "text": "Everything it does as a fishing rod is cancelled.", "src": "items/playground/CarnivalFishingRodItem.kt:26-28, events/item/Listeners.kt:269-294" }
+    ],
+    "config": [
+      { "text": "Nothing in LumaItems gives it a use. Any purpose it has on the server would come from somewhere else.", "src": "items/playground/CarnivalFishingRodItem.kt:12-29" }
+    ]
+  },
+  {
+    "key": "carnival-pickaxe",
+    "items": ["carnivalminingpickaxe"],
+    "summary": "An unbreakable Efficiency II event pickaxe that can't break blocks or interact with anything. All its clicks and block breaks are cancelled.",
+    "details": [
+      { "text": "Left-clicks, right-clicks, other interactions and block breaks are all cancelled.", "src": "items/playground/CarnivalMiningPickaxeItem.kt:27-41" }
+    ],
+    "quirks": [
+      { "text": "The click blocking also applies with the pickaxe in your off-hand, so it can stop you using your main-hand item.", "src": "items/playground/CarnivalMiningPickaxeItem.kt:27-37, events/item/Listeners.kt:125-137, util/extensions/PlayerUtil.kt:171-186" }
+    ],
+    "config": [
+      { "text": "Nothing in LumaItems gives it a use. Any purpose it has on the server would come from somewhere else.", "src": "items/playground/CarnivalMiningPickaxeItem.kt:13-42" }
+    ]
+  },
+  {
+    "key": "carnival-crossbow",
+    "items": ["carnivaltargetpracticebow"],
+    "summary": "An unbreakable event crossbow (Quick Charge II, Infinity) that can't fire. Every projectile launch is cancelled while it's in hand.",
+    "quirks": [
+      { "text": "The block covers anything you launch, not just its own bolts. With it in your off-hand, you can't throw or shoot other things (pearls, snowballs, tridents, bows) either.", "src": "items/playground/CarnivalTargetPracticeBowItem.kt:26-28, events/item/Listeners.kt:111-116, util/extensions/PlayerUtil.kt:171-186" }
+    ],
+    "config": [
+      { "text": "Nothing in LumaItems gives it a use. Any purpose it has on the server would come from somewhere else.", "src": "items/playground/CarnivalTargetPracticeBowItem.kt:12-28" }
+    ]
+  },
+  {
+    "key": "christmas-charm",
+    "items": ["christmas-charm"],
+    "summary": "A collectible from the Christmas minigames with no special ability. Its item code has no ability at all, whatever the lore hints.",
+    "config": [
+      { "text": "The lore suggests keeping it for later, but nothing in LumaItems reads it. Any future use would have to come from elsewhere.", "src": "items/playground/event/ChristmasCharmItem.kt:10-30" }
+    ]
+  },
+  {
+    "key": "circus-harrower",
+    "items": ["circusharrower"],
+    "summary": "A netherite hoe that harvests mature crops around you one at a time when you sneak and right-click.",
+    "use": [
+      { "text": "Sneak + right-click while standing among fully grown crops. It breaks them one by one and they drop as if broken with the item in your main hand (Fortune IV if that's the harrower).", "src": "items/tools/harrow/CircusHarrowerItem.kt:55-60, items/tools/harrow/CircusHarrowerItem.kt:73-89, items/tools/harrow/CircusHarrowerItem.kt:49" }
+    ],
+    "numbers": [
+      { "label": "Area", "value": "flat rings out to 4 blocks from you, at your feet level", "src": "items/tools/harrow/CircusHarrowerItem.kt:62, shapes/ShapeUtil.java:32-47" },
+      { "label": "Speed", "value": "1 crop every 0.25 s (5 ticks)", "src": "items/tools/harrow/CircusHarrowerItem.kt:75" },
+      { "label": "Cooldown", "value": "20 s (400 ticks), starting after the last crop is harvested", "src": "items/tools/harrow/CircusHarrowerItem.kt:70, items/tools/harrow/CircusHarrowerItem.kt:78" }
+    ],
+    "details": [
+      { "text": "Harvests fully grown wheat, carrots, potatoes, beetroots, nether wart and cocoa. It doesn't replant.", "src": "items/tools/harrow/CircusHarrowerItem.kt:27-36, items/tools/harrow/CircusHarrowerItem.kt:62-64" },
+      { "text": "If there are no ripe crops nearby, nothing happens and no cooldown starts.", "src": "items/tools/harrow/CircusHarrowerItem.kt:66-68" }
+    ],
+    "quirks": [
+      { "text": "Melons and pumpkins are on its crop list but never get harvested, because the ripeness check rejects them.", "src": "items/tools/harrow/CircusHarrowerItem.kt:33-34, items/tools/harrow/CircusHarrowerItem.kt:63" },
+      { "text": "The first ripe crop it finds is used for the claim check and then skipped, so one crop is always left standing. With only one ripe crop nearby, nothing is harvested but the cooldown still starts.", "src": "items/tools/harrow/CircusHarrowerItem.kt:66-70, items/tools/harrow/CircusHarrowerItem.kt:75-81" },
+      { "text": "Claims are only checked for that one crop. The other crops it harvests aren't checked.", "src": "items/tools/harrow/CircusHarrowerItem.kt:66-68, items/tools/harrow/CircusHarrowerItem.kt:81-86, util/extensions/BlockUtil.kt:30-34" },
+      { "text": "The rings are sampled at fixed angles, so a couple of spots inside the circle are never checked.", "src": "shapes/ShapeUtil.java:32-47" }
+    ]
+  },
+  {
+    "key": "snowflake-harrower",
+    "items": ["snowflake-harrower"],
+    "summary": "A netherite hoe that tills in a plus shape. Right-click dirt and the four blocks beside it become farmland along with the one you clicked.",
+    "details": [
+      { "text": "The item itself only turns the four side neighbours (north, south, east, west) into farmland. The block you clicked is left to the normal hoe action.", "src": "items/tools/harrow/SnowflakeHarrowerItem.kt:46-58, util/extensions/BlockUtil.kt:16, util/extensions/BlockUtil.kt:90-96" },
+      { "text": "Only dirt-named blocks and grass blocks with air above them are tilled. Dirt, coarse dirt, rooted dirt and grass work; podzol, mycelium and dirt paths don't.", "src": "items/tools/harrow/SnowflakeHarrowerItem.kt:19, items/tools/harrow/SnowflakeHarrowerItem.kt:61-63" },
+      { "text": "No cooldown.", "src": "items/tools/harrow/SnowflakeHarrowerItem.kt:46-58" }
+    ],
+    "quirks": [
+      { "text": "The four extra blocks aren't checked against claims.", "src": "items/tools/harrow/SnowflakeHarrowerItem.kt:53-57" },
+      { "text": "It also works with the harrower in your off-hand, whatever you right-click with.", "src": "items/tools/harrow/SnowflakeHarrowerItem.kt:46-58, events/item/Listeners.kt:125-137, util/extensions/PlayerUtil.kt:171-186" }
+    ]
+  },
+  {
+    "key": "big-swing-axe",
+    "items": ["big-swing-axe"],
+    "summary": "A netherite axe with 2 extra blocks of reach and much slower mining and attacks. The large vertical area-break in its lore isn't in the code.",
+    "numbers": [
+      { "label": "Reach", "value": "+2 blocks for blocks and mobs (main hand)", "src": "items/tools/hatchet/BigSwingAxeItem.kt:44-45" },
+      { "label": "Mining speed", "value": "cut to 25% (-0.75)", "src": "items/tools/hatchet/BigSwingAxeItem.kt:42" },
+      { "label": "Attack speed", "value": "0.6 per second (-3.4, replacing the axe's normal speed)", "src": "items/tools/hatchet/BigSwingAxeItem.kt:43, model/item/ItemFactory.kt:196-206" }
+    ],
+    "quirks": [
+      { "text": "The lore promises breaking blocks in a large vertical area, but the item has no block-breaking code. It's only slower mining and more reach. (The Big Swing Spade does have its area break.)", "src": "items/tools/hatchet/BigSwingAxeItem.kt:28-30, items/tools/hatchet/BigSwingAxeItem.kt:14-52" },
+      { "text": "The mining and attack slowdowns apply in any slot, so holding it in your off-hand slows your main-hand mining and attacks too.", "src": "items/tools/hatchet/BigSwingAxeItem.kt:42-43" }
+    ]
+  },
+  {
+    "key": "frostbark-chisel",
+    "items": ["frostbark-chisel"],
+    "summary": "A netherite axe that changes what shape logs drop as when you chop them: normal logs, stripped logs, wood (bark on all sides) or stripped wood.",
+    "use": [
+      { "text": "Sneak + right-click to cycle the mode: Logs, Stripped Logs, Wood, Stripped Wood. The action bar shows the new mode, and the choice is saved on the axe.", "src": "items/tools/hatchet/FrostbarkChiselItem.kt:51-55, items/tools/hatchet/FrostbarkChiselItem.kt:92-113" },
+      { "text": "Break a log or nether stem with the axe in your main hand. It drops in the selected form.", "src": "items/tools/hatchet/FrostbarkChiselItem.kt:57-71, items/tools/hatchet/FrostbarkChiselItem.kt:81-90" }
+    ],
+    "details": [
+      { "text": "Supported wood types: oak, spruce, birch, jungle, acacia, dark oak, mangrove, cherry, warped and crimson. Other types (e.g. pale oak) drop normally.", "src": "items/tools/hatchet/FrostbarkChiselItem.kt:87, items/tools/hatchet/FrostbarkChiselItem.kt:115-125" },
+      { "text": "It keeps the wood type. It doesn't turn oak into another tree.", "src": "items/tools/hatchet/FrostbarkChiselItem.kt:86-89, items/tools/hatchet/FrostbarkChiselItem.kt:127-133" }
+    ],
+    "quirks": [
+      { "text": "Logs that are already stripped always drop as themselves, whatever the mode.", "src": "items/tools/hatchet/FrostbarkChiselItem.kt:86-87" }
+    ]
+  },
+  {
+    "key": "cinnamon-oxidizer",
+    "items": ["cinnamon-oxidizer"],
+    "summary": "A netherite pickaxe (copper-pickaxe look) that turns an unwaxed copper block into its next weathering stage just as you break it.",
+    "details": [
+      { "text": "Works on any copper block that can still weather further. Waxed and fully oxidized copper aren't affected.", "src": "items/tools/mattock/CinnamonOxidizerItem.kt:54-57" },
+      { "text": "It only reacts to breaks that go through, so claims are respected.", "src": "items/tools/mattock/CinnamonOxidizerItem.kt:54, events/item/Listeners.kt:217-224" }
+    ],
+    "quirks": [
+      { "text": "The swap uses the next stage's default form, so shape details like stair direction or a double slab aren't carried over.", "src": "items/tools/mattock/CinnamonOxidizerItem.kt:60-62" }
+    ],
+    "config": [
+      { "text": "The block is swapped to the next stage in the middle of your break, and the break isn't cancelled. Whether you end up with the weathered block as your drop depends on how the game finishes the break (not tested).", "src": "items/tools/mattock/CinnamonOxidizerItem.kt:54-64" }
+    ]
+  },
+  {
+    "key": "violet-garnet-mattock",
+    "items": ["violet-garnet-mattock"],
+    "summary": "A netherite pickaxe for amethyst geodes. Breaking a cluster or bud (or a block touching one) also breaks a whole sphere of pickaxe blocks around it, and budding amethyst you break yourself drops as an item.",
+    "use": [
+      { "text": "Break an amethyst cluster or bud, or any block touching one on a face. Everything in the sphere around it that a pickaxe mines best is also broken.", "src": "items/tools/mattock/VioletGarnetMattockItem.kt:66-93, items/tools/mattock/VioletGarnetMattockItem.kt:103-111" },
+      { "text": "Break budding amethyst directly to get it as an item.", "src": "items/tools/mattock/VioletGarnetMattockItem.kt:69-71, items/tools/mattock/VioletGarnetMattockItem.kt:113-116" }
+    ],
+    "numbers": [
+      { "label": "Area", "value": "sphere with a 3-block radius around the broken block", "src": "items/tools/mattock/VioletGarnetMattockItem.kt:76, shapes/Sphere.java:71-90" },
+      { "label": "Durability", "value": "1 per extra block broken", "src": "items/tools/mattock/VioletGarnetMattockItem.kt:99" }
+    ],
+    "details": [
+      { "text": "Blocks in the area break only if a shovel, axe, shears or hoe wouldn't mine them faster, plus gravel, dirt, rooted dirt and clay. So stone and ores break; wood doesn't. Non-solid blocks are skipped.", "src": "items/tools/mattock/VioletGarnetMattockItem.kt:27-36, items/tools/mattock/VioletGarnetMattockItem.kt:80-87, util/extensions/BlockUtil.kt:68-81" },
+      { "text": "Containers, spawners, bedrock, portal frames, signs, shulker boxes, farmland and similar blocks are never broken.", "src": "items/tools/mattock/VioletGarnetMattockItem.kt:85, util/tags/Kind.java:48" },
+      { "text": "Blocks broken in the area drop as if mined with the mattock (Silk Touch).", "src": "items/tools/mattock/VioletGarnetMattockItem.kt:77, items/tools/mattock/VioletGarnetMattockItem.kt:93, util/extensions/BlockUtil.kt:30-34" }
+    ],
+    "quirks": [
+      { "text": "The extra blocks in the area aren't checked against claims.", "src": "items/tools/mattock/VioletGarnetMattockItem.kt:79-100, util/extensions/BlockUtil.kt:30-34" },
+      { "text": "Budding amethyst inside the area is left alone because it's on the protected list. Only the budding block you break directly drops.", "src": "items/tools/mattock/VioletGarnetMattockItem.kt:85-92, util/tags/Kind.java:48" }
+    ]
+  },
+  {
+    "key": "aquamax-angler",
+    "items": ["aquamax-angler"],
+    "summary": "A fishing rod that reels in a live sea creature instead of a normal catch. Each catch is swapped for a random water mob that's flung toward you.",
+    "details": [
+      { "text": "The mob is random: anything in Minecraft's built-in \"aquatic\" mob group, or a Drowned or Frog. It spawns at the bobber and is thrown toward you.", "src": "items/tools/rod/AquamaxAngler.kt:17-20, items/tools/rod/AquamaxAngler.kt:47-60" },
+      { "text": "The normal fish or treasure item is deleted.", "src": "items/tools/rod/AquamaxAngler.kt:59" },
+      { "text": "Works from either hand.", "src": "events/item/Listeners.kt:269-294" }
+    ],
+    "quirks": [
+      { "text": "The mob can be hostile (e.g. a Drowned), so a catch can start a fight.", "src": "items/tools/rod/AquamaxAngler.kt:17-20" }
+    ]
+  },
+  {
+    "key": "frosted-alluring",
+    "items": ["frosted-alluring"],
+    "summary": "A fishing rod that reels itself in the moment a fish bites.",
+    "numbers": [
+      { "label": "Reaction time", "value": "1 tick after the bite", "src": "items/tools/rod/FrostedAlluringItem.kt:35-40" }
+    ],
+    "details": [
+      { "text": "It fakes a right-click with the hand holding the rod (off-hand if it's there, otherwise main hand).", "src": "items/tools/rod/FrostedAlluringItem.kt:43-51" }
+    ],
+    "config": [
+      { "text": "Needs the ProtocolLib plugin. Without it, bites aren't auto-reeled.", "src": "items/tools/rod/FrostedAlluringItem.kt:41, hooks/ProtocolLibHook.kt:13-15" }
+    ]
+  },
+  {
+    "key": "rimelure-rod",
+    "items": ["rimelure-rod"],
+    "summary": "A fishing rod where fish reach your hook much faster once they appear, and a catch sometimes comes as a pair.",
+    "numbers": [
+      { "label": "Fish approach time", "value": "cut to 25% of normal", "src": "items/tools/rod/RimelureRodItem.kt:49-52" },
+      { "label": "Pair chance", "value": "about 8.9% (9 in 101) per catch", "src": "items/tools/rod/RimelureRodItem.kt:54" }
+    ],
+    "details": [
+      { "text": "Pairing adds 1 to the caught item. It only works on stackable catches, not rods, books or gear.", "src": "items/tools/rod/RimelureRodItem.kt:55-59" }
+    ],
+    "quirks": [
+      { "text": "Neither effect works if you're holding a fishing rod in both hands.", "src": "items/tools/rod/RimelureRodItem.kt:44, util/extensions/PlayerUtil.kt:151-153" }
+    ]
+  },
+  {
+    "key": "winter-pruners",
+    "items": ["winter-pruners"],
+    "summary": "Shears that instantly break glass blocks and mob heads with a left-click.",
+    "details": [
+      { "text": "Works on any block whose name ends in GLASS (plain, stained and tinted glass, but not panes), on mob and player heads, and on skeleton or wither skeleton skulls.", "src": "items/tools/shears/WinterPrunersItem.kt:15, items/tools/shears/WinterPrunersItem.kt:39-44" }
+    ],
+    "quirks": [
+      { "text": "Wall-mounted skeleton and wither skeleton skulls aren't matched. Wall-mounted mob heads are.", "src": "items/tools/shears/WinterPrunersItem.kt:15" },
+      { "text": "The name check also catches an extended piston's head, so left-clicking one breaks it right away.", "src": "items/tools/shears/WinterPrunersItem.kt:15, items/tools/shears/WinterPrunersItem.kt:41-42" },
+      { "text": "It also triggers with the pruners in your off-hand.", "src": "items/tools/shears/WinterPrunersItem.kt:39-44, events/item/Listeners.kt:125-137, util/extensions/PlayerUtil.kt:171-186" }
+    ],
+    "config": [
+      { "text": "The break uses the game's own \"player breaks this block\" action, which should go through claim protection and use your main-hand tool (so Silk Touch keeps the glass). That part depends on the game, not tested.", "src": "items/tools/shears/WinterPrunersItem.kt:42" }
+    ]
+  },
+  {
+    "key": "big-swing-spade",
+    "items": ["big-swing-spade"],
+    "summary": "A netherite shovel that digs out a wide oval of shovel blocks around each block you break, in exchange for very slow mining and attacks. It won't work while you have Haste.",
+    "numbers": [
+      { "label": "Area", "value": "oval about 8 blocks wide, 6 deep and 4 tall around the broken block (2 below it, only 1 above)", "src": "items/tools/spade/BigSwingSpadeItem.kt:68-75, shapes/Ellipsoid.java:69-92" },
+      { "label": "Mining speed", "value": "cut to 14% (-0.86)", "src": "items/tools/spade/BigSwingSpadeItem.kt:48" },
+      { "label": "Attack speed", "value": "0.6 per second (-3.4)", "src": "items/tools/spade/BigSwingSpadeItem.kt:49, model/item/ItemFactory.kt:196-206" }
+    ],
+    "details": [
+      { "text": "The oval is wider side to side than it is deep, based on which way you face.", "src": "items/tools/spade/BigSwingSpadeItem.kt:68-72, enums/CardinalDirection.kt:18-26" },
+      { "text": "It only starts when you break a shovel block with the spade in your main hand. It only takes solid shovel blocks and skips blacklisted ones such as farmland and dirt paths.", "src": "items/tools/spade/BigSwingSpadeItem.kt:56-60, items/tools/spade/BigSwingSpadeItem.kt:75-77, util/tags/Kind.java:48, util/tags/Kind.java:54, events/item/Listeners.kt:217-224" },
+      { "text": "If you have Haste, breaking a block removes your Haste instead of area-digging and shows \"Cannot be used with Haste.\"", "src": "items/tools/spade/BigSwingSpadeItem.kt:62-66" },
+      { "text": "Extra blocks drop as if dug with the spade (Silk Touch) and cost no durability.", "src": "items/tools/spade/BigSwingSpadeItem.kt:78-80, util/extensions/BlockUtil.kt:30-34" }
+    ],
+    "quirks": [
+      { "text": "The extra blocks aren't checked against claims.", "src": "items/tools/spade/BigSwingSpadeItem.kt:75-80, util/extensions/BlockUtil.kt:30-34" },
+      { "text": "The slow mining and attack speed apply in any slot, including your off-hand.", "src": "items/tools/spade/BigSwingSpadeItem.kt:48-49" }
+    ]
+  },
+  {
+    "key": "crystalline-spade",
+    "items": ["crystalline-spade"],
+    "summary": "A diamond shovel that turns gravel and clay into one random stained glass block instead of their normal drops.",
+    "details": [
+      { "text": "Each gravel or clay block gives exactly 1 stained glass block in a random one of the 16 colours. Flint, clay balls and the clay block itself never drop.", "src": "items/tools/spade/CrystallineSpadeItem.kt:38-44, util/tags/Kind.java:37" },
+      { "text": "Must be in your main hand.", "src": "events/item/Listeners.kt:217-224" }
+    ]
+  },
+  {
+    "key": "montanaire-spade",
+    "items": ["montanaire-spade-bundle", "montanaire-spade"],
+    "summary": "The bundle opens into a Montanaire Spade of a random colour. The spade turns sand and red sand into concrete powder of its colour.",
+    "use": [
+      { "text": "Right-click the bundle to use it up and get a spade.", "src": "items/tools/spade/MontanaireSpadeItemNest.kt:49-55" },
+      { "text": "Break sand or red sand with the spade in your main hand to get concrete powder instead.", "src": "items/tools/spade/MontanaireSpadeItemNest.kt:96-108" }
+    ],
+    "numbers": [
+      { "label": "Colours", "value": "16 (every concrete powder colour), picked at random when the spade is made", "src": "items/tools/spade/MontanaireSpadeItemNest.kt:65, items/tools/spade/MontanaireSpadeItemNest.kt:110-129" },
+      { "label": "Drop", "value": "1 concrete powder per sand block", "src": "items/tools/spade/MontanaireSpadeItemNest.kt:106-107" }
+    ],
+    "details": [
+      { "text": "You can't choose the colour. It's rolled when the bundle is opened and saved on that spade.", "src": "items/tools/spade/MontanaireSpadeItemNest.kt:54, items/tools/spade/MontanaireSpadeItemNest.kt:65, items/tools/spade/MontanaireSpadeItemNest.kt:73-75" }
+    ]
+  },
+  {
+    "key": "abominable-howitzer",
+    "items": ["abominable-howitzer"],
+    "summary": "A bow that fires small snow golems instead of arrows. They explode when they bump into something.",
+    "numbers": [
+      { "label": "Cooldown", "value": "1 s (20 ticks). Shots during it are cancelled", "src": "items/weapons/bow/AbominableHowitzerItem.kt:50-54" },
+      { "label": "Explosion", "value": "power 2.4, no fire, no block damage", "src": "items/weapons/bow/AbominableHowitzerItem.kt:74, items/weapons/bow/AbominableHowitzerItem.kt:90" },
+      { "label": "Snowman", "value": "half size, 50% chance to have no pumpkin", "src": "items/weapons/bow/AbominableHowitzerItem.kt:27, items/weapons/bow/AbominableHowitzerItem.kt:58-65" }
+    ],
+    "details": [
+      { "text": "The snowman explodes when any non-air block is right next to it sideways, or when it tries to leave a snow trail.", "src": "items/weapons/bow/AbominableHowitzerItem.kt:69-79, items/weapons/bow/AbominableHowitzerItem.kt:87-105" }
+    ],
+    "quirks": [
+      { "text": "Any mob you kill while holding the Howitzer in either hand drops nothing and gives no XP, even if you killed it with something else.", "src": "items/weapons/bow/AbominableHowitzerItem.kt:82-85, events/item/Listeners.kt:146-157, util/extensions/PlayerUtil.kt:171-186" },
+      { "text": "If the snowman dies before either of those happens, it just disappears without exploding.", "src": "items/weapons/bow/AbominableHowitzerItem.kt:69-79" }
+    ],
+    "config": [
+      { "text": "The blast has no owner and the code doesn't check claims or PvP. Whether nearby players (including you) are hurt depends on the server's protection settings.", "src": "items/weapons/bow/AbominableHowitzerItem.kt:74, items/weapons/bow/AbominableHowitzerItem.kt:90" }
+    ]
+  },
+  {
+    "key": "candy-cannon",
+    "items": ["candycannon"],
+    "summary": "A crossbow whose shots look like flying wool candy and deal 5 damage from the cannon to whatever living thing they hit.",
+    "numbers": [
+      { "label": "Hit damage", "value": "5 (2.5 hearts) to the living thing hit, credited to you", "src": "items/weapons/bow/CandyCannonItem.kt:79-82" },
+      { "label": "Max flight time", "value": "15 s (300 ticks), then the shot is removed", "src": "items/weapons/bow/CandyCannonItem.kt:59-72" }
+    ],
+    "details": [
+      { "text": "Each shot is hidden from you and followed by a tiny red, orange or yellow wool block with a matching dust trail.", "src": "items/weapons/bow/CandyCannonItem.kt:25-29, items/weapons/bow/CandyCannonItem.kt:46-63" },
+      { "text": "The shot is removed as soon as it hits anything.", "src": "items/weapons/bow/CandyCannonItem.kt:75-77" }
+    ],
+    "quirks": [
+      { "text": "This happens to anything you launch while the cannon is in either hand, not just its own bolts. A trident thrown this way is deleted when it hits, so it's lost. Ender pearls and other projectiles are deleted on impact too.", "src": "items/weapons/bow/CandyCannonItem.kt:45-77, events/item/Listeners.kt:111-123, util/extensions/PlayerUtil.kt:171-186" }
+    ]
+  },
+  {
+    "key": "deorium-cutlass",
+    "items": ["deoriumcutlass"],
+    "summary": "A netherite sword that creates a gravity well on the block you're looking at. The well pulls things in and damages and weakens mobs near its centre.",
+    "use": [
+      { "text": "Right-click while looking at a block. The well appears one block above it.", "src": "items/weapons/cutlass/DeoriumCutlassItem.kt:51-56" }
+    ],
+    "numbers": [
+      { "label": "Target range", "value": "50 blocks", "src": "items/weapons/cutlass/DeoriumCutlassItem.kt:53" },
+      { "label": "Cooldown", "value": "30 s (600 ticks)", "src": "items/weapons/cutlass/DeoriumCutlassItem.kt:55" },
+      { "label": "Duration", "value": "6 s, pulsing every 0.25 s", "src": "items/weapons/cutlass/DeoriumCutlassItem.kt:70-75" },
+      { "label": "Pull range", "value": "10 blocks", "src": "items/weapons/cutlass/DeoriumCutlassItem.kt:85, items/weapons/cutlass/DeoriumCutlassItem.kt:100" },
+      { "label": "Core damage", "value": "5 per pulse to living things within 2.5 blocks, plus Weakness II for 2 s", "src": "items/weapons/cutlass/DeoriumCutlassItem.kt:90-94" }
+    ],
+    "details": [
+      { "text": "Players and armor stands are never pulled or hurt. Dropped items and other non-living things are pulled in too.", "src": "items/weapons/cutlass/DeoriumCutlassItem.kt:85-100" },
+      { "text": "Disabled at spawn, in the piñata world and in the new event world.", "src": "items/weapons/cutlass/DeoriumCutlassItem.kt:30, model/item/CustomItem.kt:71-77" }
+    ],
+    "quirks": [
+      { "text": "The protection check only looks at one nearby entity each pulse. If that one is protected, the whole well collapses, even if other targets aren't protected.", "src": "items/weapons/cutlass/DeoriumCutlassItem.kt:77-83" }
+    ],
+    "config": [
+      { "text": "Pulses come every 0.25 s, faster than the game's usual short hit protection after taking damage, so a mob in the core may not take all 5 damage every pulse. That depends on the game, not tested.", "src": "items/weapons/cutlass/DeoriumCutlassItem.kt:70, items/weapons/cutlass/DeoriumCutlassItem.kt:91" }
+    ]
+  },
+  {
+    "key": "training-katana",
+    "items": ["training-katana"],
+    "summary": "A netherite sword that looks like a wooden sword and attacks very fast. Left-click shoots a snowball; right-click puts a damage-over-time curse on a target, but gives you Darkness as well.",
+    "use": [
+      { "text": "Left-click to launch a snowball that flies straight (no gravity), with sweep particles for its first few ticks.", "src": "items/weapons/cutlass/TrainingKatanaItem.kt:48-63" },
+      { "text": "Right-click while looking at a living target within 10 blocks. Both of you get Darkness, and the target takes damage every 1.25 s.", "src": "items/weapons/cutlass/TrainingKatanaItem.kt:79-94" }
+    ],
+    "numbers": [
+      { "label": "Attack speed", "value": "8 per second (+4, replacing the sword's normal speed)", "src": "items/weapons/cutlass/TrainingKatanaItem.kt:34-38, model/item/ItemFactory.kt:196-206" },
+      { "label": "Curse damage", "value": "3 damage every 1.25 s, 12 times over about 14 s (36 total before armor)", "src": "items/weapons/cutlass/TrainingKatanaItem.kt:87-93" },
+      { "label": "Darkness", "value": "Darkness II for 7.5 s, on you and the target", "src": "items/weapons/cutlass/TrainingKatanaItem.kt:82-85" }
+    ],
+    "quirks": [
+      { "text": "Right-click has no cooldown. Each use starts its own damage timer.", "src": "items/weapons/cutlass/TrainingKatanaItem.kt:79-94" },
+      { "text": "The code gives the snowball no extra damage; it hits like a normal thrown snowball.", "src": "items/weapons/cutlass/TrainingKatanaItem.kt:48-63" }
+    ]
+  },
+  {
+    "key": "yukon-cutlass",
+    "items": ["yukon-cutlass"],
+    "summary": "A netherite sword that knocks loot out of mobs while you fight them. The first 3 hits on each mob roll its drops and spray them out as bouncing snowballs, but mobs you kill drop no stackable items.",
+    "use": [
+      { "text": "Hit a mob with the cutlass in your main hand. Each of the first 3 hits rolls its loot and throws each stackable item out as a bouncing snowball.", "src": "items/weapons/cutlass/YukonCutlassItem.kt:81-120" }
+    ],
+    "numbers": [
+      { "label": "Loot hits", "value": "3 per mob (stored on the mob)", "src": "items/weapons/cutlass/YukonCutlassItem.kt:40, items/weapons/cutlass/YukonCutlassItem.kt:86-96" }
+    ],
+    "details": [
+      { "text": "Loot snowballs bounce off blocks. They turn into a dropped item when they hit an entity or settle on top of a block. Before their first bounce, landing in water or lava also turns them into an item.", "src": "items/weapons/cutlass/YukonCutlassItem.kt:129-144, items/weapons/cutlass/YukonCutlassItem.kt:156-176, items/weapons/cutlass/YukonCutlassItem.kt:189-192" },
+      { "text": "Unstackable loot (gear, tools) is never thrown out, but still drops normally on death.", "src": "items/weapons/cutlass/YukonCutlassItem.kt:107-110, items/weapons/cutlass/YukonCutlassItem.kt:122-127" },
+      { "text": "Baby animals, the Ender Dragon, Wither, Elder Guardian and Warden are excluded.", "src": "items/weapons/cutlass/YukonCutlassItem.kt:42-45, items/weapons/cutlass/YukonCutlassItem.kt:83, items/weapons/cutlass/YukonCutlassItem.kt:88" },
+      { "text": "Disabled in the special world (worlds:special).", "src": "items/weapons/cutlass/YukonCutlassItem.kt:36, enums/WorldKey.kt:22, model/item/CustomItem.kt:71-77" }
+    ],
+    "quirks": [
+      { "text": "The no-drops-on-kill rule doesn't check your main hand. Any mob you kill with the cutlass anywhere in your hands (even off-hand, killed with another weapon) loses its stackable drops.", "src": "items/weapons/cutlass/YukonCutlassItem.kt:122-127, events/item/Listeners.kt:146-157, util/extensions/PlayerUtil.kt:171-186" },
+      { "text": "A mob you've hit with the cutlass is marked. If it later dies without a player getting the kill, it also loses its stackable drops.", "src": "items/weapons/cutlass/YukonCutlassItem.kt:96, items/weapons/cutlass/YukonCutlassItem.kt:122-127, events/item/Listeners.kt:155-156" }
+    ]
+  },
+  {
+    "key": "giant-inflatable-hammer",
+    "items": ["giantinflatablehammer"],
+    "summary": "A mace whose smash attacks stun the target, and sometimes knock out the ground under it.",
+    "numbers": [
+      { "label": "Stun (mobs)", "value": "Slowness XI + Darkness II for 7.5 s", "src": "items/weapons/mace/GiantInflatableHammerItem.kt:62-66" },
+      { "label": "Stun (players)", "value": "Darkness II for 7.5 s (no Slowness)", "src": "items/weapons/mace/GiantInflatableHammerItem.kt:63-66" },
+      { "label": "Ground break chance", "value": "10% per smash", "src": "items/weapons/mace/GiantInflatableHammerItem.kt:50" },
+      { "label": "Ground break area", "value": "7 blocks in a small patch just under the target", "src": "items/weapons/mace/GiantInflatableHammerItem.kt:55-60, shapes/ShapeUtil.java:32-47" }
+    ],
+    "details": [
+      { "text": "Only smash attacks (hits after a fall) count, with the hammer in your main hand. Normal swings do nothing extra.", "src": "items/weapons/mace/GiantInflatableHammerItem.kt:46-53, events/item/Listeners.kt:606-612" },
+      { "text": "The ground break needs build permission at the target's position, and broken blocks drop as items.", "src": "items/weapons/mace/GiantInflatableHammerItem.kt:50-58" }
+    ],
+    "quirks": [
+      { "text": "Build permission is only checked at the target's own block, not for each block broken.", "src": "items/weapons/mace/GiantInflatableHammerItem.kt:50, items/weapons/mace/GiantInflatableHammerItem.kt:55-60" }
+    ]
+  },
+  {
+    "key": "heavy-bloblob-scythe",
+    "items": ["heavy-bloblob-scythe"],
+    "summary": "A slow, heavy netherite scythe. A fully charged swing or hit also fires a fan of 5 icy blobs that bounce off walls and hit hard. The extra-loot ability in its lore doesn't work.",
+    "use": [
+      { "text": "Swing at the air or a block, or hit something, once your attack is at least 83% charged. Five blobs fly out in a fan in front of you.", "src": "items/weapons/scythe/HeavyBloblobScytheItem.kt:89-96, items/weapons/scythe/HeavyBloblobScytheItem.kt:154-183" }
+    ],
+    "numbers": [
+      { "label": "Blob damage", "value": "18 (9 hearts) per blob; each blob resets the target's hit cooldown so several can land", "src": "items/weapons/scythe/HeavyBloblobScytheItem.kt:128-136" },
+      { "label": "Spread", "value": "5 blobs at -10, -5, 0, +5, +10 degrees, plus up to ±5 degrees random aim", "src": "items/weapons/scythe/HeavyBloblobScytheItem.kt:165, items/weapons/scythe/HeavyBloblobScytheItem.kt:173-179, items/weapons/scythe/HeavyBloblobScytheItem.kt:250-254" },
+      { "label": "Blob cooldown", "value": "1.25 s (25 ticks)", "src": "items/weapons/scythe/HeavyBloblobScytheItem.kt:156-157" },
+      { "label": "Attack speed", "value": "about 0.55 per second (-3.45)", "src": "items/weapons/scythe/HeavyBloblobScytheItem.kt:58-60, model/item/ItemFactory.kt:196-206" },
+      { "label": "Blob life", "value": "up to 10 s per flight; bounces keep 75% speed while within 30 blocks of you", "src": "items/weapons/scythe/HeavyBloblobScytheItem.kt:141-148, items/weapons/scythe/HeavyBloblobScytheItem.kt:188, items/weapons/scythe/HeavyBloblobScytheItem.kt:214" }
+    ],
+    "details": [
+      { "text": "Blobs only hurt things you're allowed to damage (claims and PvP rules are respected) and never damage you. After a bounce, they vanish in liquid.", "src": "items/weapons/scythe/HeavyBloblobScytheItem.kt:120, items/weapons/scythe/HeavyBloblobScytheItem.kt:128, items/weapons/scythe/HeavyBloblobScytheItem.kt:214" }
+    ],
+    "quirks": [
+      { "text": "\"Naturality\" (extra drops from naturally spawned mobs) never adds anything. The extra loot it rolls is thrown away instead of being added to the mob's drops.", "src": "items/weapons/scythe/HeavyBloblobScytheItem.kt:98-114" },
+      { "text": "The blob fan also fires with the scythe in your off-hand when you swing or hit with something else.", "src": "items/weapons/scythe/HeavyBloblobScytheItem.kt:89-96, events/item/Listeners.kt:125-137, events/item/Listeners.kt:165-180" }
+    ]
+  },
+  {
+    "key": "frozenflare-shield",
+    "items": ["frozenflare-shield"],
+    "summary": "A shield that sets off a big explosion around you if you're still sneaking 2 seconds after right-clicking or pressing sneak.",
+    "use": [
+      { "text": "Right-click (e.g. raise the shield) or press sneak, then be sneaking 2 seconds later. The explosion goes off at your position.", "src": "items/weapons/shield/FrozenFlareShieldItem.kt:30-41, items/weapons/shield/FrozenFlareShieldItem.kt:44-50" }
+    ],
+    "numbers": [
+      { "label": "Delay", "value": "2 s (40 ticks)", "src": "items/weapons/shield/FrozenFlareShieldItem.kt:47" },
+      { "label": "Explosion", "value": "power 7, no fire, no block damage", "src": "items/weapons/shield/FrozenFlareShieldItem.kt:49" },
+      { "label": "Cooldown", "value": "15 s (300 ticks)", "src": "items/weapons/shield/FrozenFlareShieldItem.kt:52" }
+    ],
+    "quirks": [
+      { "text": "Despite the lore, it never checks that you're blocking. It only checks that you're sneaking at the 2-second mark, so sneaking alone is enough.", "src": "items/weapons/shield/FrozenFlareShieldItem.kt:35-37, items/weapons/shield/FrozenFlareShieldItem.kt:48" }
+    ],
+    "config": [
+      { "text": "Claims and PvP aren't checked by the item. Whether other players are hurt depends on the server's protection settings.", "src": "items/weapons/shield/FrozenFlareShieldItem.kt:44-54" }
+    ]
+  }
+]

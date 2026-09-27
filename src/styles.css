@@ -415,6 +415,28 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
 .no-writeup { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; border-top: 1px solid var(--border); padding-top: 20px; }
 .no-writeup p { flex: 1 1 320px; color: var(--text-2); font-size: 15px; }
 
+/* ---------- item write-ups + Astral upgrades ---------- */
+.writeup-title { font-family: var(--display); font-weight: 800; font-size: 24px; letter-spacing: -0.01em; }
+.writeup-summary { font-size: 16.5px; line-height: 1.6; color: var(--text); max-width: 860px; }
+.writeup-block { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.writeup-block h3 { font-size: 18px; font-weight: 600; }
+.callout { padding: 16px 18px; border-radius: 14px; background: var(--surface-2); }
+.callout.warn { background: var(--warn-soft); }
+.callout.warn h3 { color: var(--warn); }
+.callout .facts { color: var(--text-2); }
+.src-links { display: inline-flex; gap: 6px; white-space: nowrap; }
+.src-links a { font-size: 11.5px; font-weight: 600; color: var(--muted); text-decoration: none; border-bottom: 1px dotted currentColor; }
+.src-links a:hover { color: var(--accent); }
+.mtable.numbers td { text-align: left; font-family: var(--sans); font-size: 15px; }
+.mtable.numbers td:first-child { color: var(--muted); font-weight: 600; width: 40%; }
+.upgrades { display: grid; gap: 18px; }
+.upgrade-table { display: grid; gap: 2px; }
+.upgrade-row { display: grid; grid-template-columns: 56px minmax(0, 1.1fr) minmax(0, 1.4fr) minmax(0, 1.2fr); gap: 12px; align-items: start; padding: 10px 12px; border-top: 1px solid var(--grid); }
+.upgrade-row.head { border-top: 0; padding-block: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+.upgrade-row b { display: block; font-weight: 600; }
+.upgrade-row small { display: block; font-size: 12.5px; color: var(--text-2); }
+.tier-num { font-family: var(--display); font-weight: 800; font-size: 22px; color: var(--hero); line-height: 1; }
+
 /* ---------- responsive ---------- */
 @media (max-width: 1000px) {
   .job-grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
@@ -448,6 +470,9 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
   .odds-row { grid-template-columns: minmax(0, 1fr) 110px; }
   .odds-row > :last-child { display: none; }
   .odds-bar { display: none; }
+  .upgrade-row { grid-template-columns: 40px minmax(0, 1fr); }
+  .upgrade-row > :nth-child(3), .upgrade-row > :nth-child(4) { grid-column: 2; }
+  .upgrade-row.head { display: none; }
   .item-grid { grid-template-columns: repeat(auto-fill, minmax(54px, 1fr)); gap: 6px; }
   .crumbs .spacer { flex-basis: 100%; height: 0; }
 }

@@ -1,0 +1,551 @@
+[
+ {
+  "key": "bunnybarillas",
+  "items": ["bunnybarillas"],
+  "summary": "Boots that keep Jump Boost III on you while you wear them. The effect is topped up every few seconds and removed when you take the boots off.",
+  "use": [
+   { "text": "Wear them in the boots slot. Holding them in your hand does nothing, because the code checks the feet slot.", "src": "items/armor/boots/BunnyBarillasItem.kt:41-45" }
+  ],
+  "numbers": [
+   { "label": "Effect", "value": "Jump Boost III, no particles or icon", "src": "items/armor/boots/BunnyBarillasItem.kt:20" },
+   { "label": "Effect length", "value": "17 s (340 ticks), refreshed every 3.5 s (70 ticks) while worn", "src": "items/armor/boots/BunnyBarillasItem.kt:20, events/item/PassiveListeners.kt:19, LumaItems.java:87" }
+  ],
+  "details": [
+   { "text": "Putting the boots on gives the effect right away. You don't have to wait for the next refresh.", "src": "items/armor/boots/BunnyBarillasItem.kt:47-50" }
+  ],
+  "quirks": [
+   { "text": "Taking the boots off removes every Jump Boost effect you have, including one from a potion or beacon.", "src": "items/armor/boots/BunnyBarillasItem.kt:51" }
+  ]
+ },
+ {
+  "key": "palomas-strides",
+  "items": ["palomas-strides"],
+  "summary": "Leggings that give you up to five mid-air boosts. Press sneak while airborne to launch forward and up. The count resets when you land.",
+  "use": [
+   { "text": "While in the air, press sneak to boost in the direction you're looking. It only works when you're about a block or more above solid ground, not in water and not flying.", "src": "items/armor/boots/PalomasStridesItem.kt:42-49" },
+   { "text": "Touch the ground to get your boosts back.", "src": "items/armor/boots/PalomasStridesItem.kt:37-40" }
+  ],
+  "numbers": [
+   { "label": "Boosts before you land", "value": "5", "src": "items/armor/boots/PalomasStridesItem.kt:47-50" },
+   { "label": "Boost strength", "value": "0.6 × your look direction forward, and upward speed set to 0.83", "src": "items/armor/boots/PalomasStridesItem.kt:49" }
+  ],
+  "details": [
+   { "text": "The boost triggers when you start sneaking, not when you let go.", "src": "items/armor/boots/PalomasStridesItem.kt:43" }
+  ],
+  "quirks": [
+   { "text": "The code never checks that the leggings are worn. Holding them in your main hand or off-hand gives the same air boosts.", "src": "items/armor/boots/PalomasStridesItem.kt:37-50, events/item/Listeners.kt:305-310, util/extensions/PlayerUtil.kt:171-185" },
+   { "text": "The in-game tooltip only says \"Not yet written.\"", "src": "items/armor/boots/PalomasStridesItem.kt:29-31" }
+  ]
+ },
+ {
+  "key": "palomas-veil",
+  "items": ["palomas-core", "palomas-veil"],
+  "summary": "Paloma's Core opens into Paloma's Veil, a helmet that summons 5 orbs that float in front of you. Fire them one at a time or all at once. The Veil also re-rolls your kills' drops as if you had Looting VII.",
+  "use": [
+   { "text": "Paloma's Core: right-click with it in your main hand. One is used up and you get a Paloma's Veil in a random colour (red, lime, light blue or yellow, each with its own armor trim).", "src": "items/armor/helmet/PalomasVeilItemNest.kt:105-114, items/armor/helmet/PalomasVeilItemNest.kt:128-140, items/armor/helmet/PalomasVeilItemNest.kt:647-652" },
+   { "text": "Wear the Veil on your head. With both hands empty, press your swap key (F) to summon the orbs. Press F again to dismiss them with no cooldown.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:276-292" },
+   { "text": "Left-click to fire one orb where you're looking. Hitting something with a melee attack also fires one. When you've fired all 5 one at a time, a fresh set of 5 appears right away if your main hand is still empty.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:189-220" },
+   { "text": "Sneak and left-click to fire the whole set, about one orb per tick. This is the only way of firing that starts the 4-second cooldown.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:193-201, items/armor/helmet/PalomasVeilItemNest.kt:332-335" }
+  ],
+  "numbers": [
+   { "label": "Orbs", "value": "5", "src": "items/armor/helmet/PalomasVeilItemNest.kt:629-636" },
+   { "label": "Direct hit", "value": "8 damage (4 hearts), counts as arrow damage", "src": "items/armor/helmet/PalomasVeilItemNest.kt:493-497, items/armor/helmet/PalomasVeilItemNest.kt:513-516" },
+   { "label": "Splash", "value": "3–6 random damage to every other living thing within 1 block of where the orb lands", "src": "items/armor/helmet/PalomasVeilItemNest.kt:489-502" },
+   { "label": "Cooldown", "value": "4 s (80 ticks), only after a sneak volley, taking the helmet off, teleporting with orbs out, or dying", "src": "items/armor/helmet/PalomasVeilItemNest.kt:193-195, items/armor/helmet/PalomasVeilItemNest.kt:277, items/armor/helmet/PalomasVeilItemNest.kt:295-306, items/armor/helmet/PalomasVeilItemNest.kt:327-335" },
+   { "label": "Looting", "value": "VII, applied to your kills while you wear or hold the Veil", "src": "items/armor/helmet/PalomasVeilItemNest.kt:124, items/armor/helmet/PalomasVeilItemNest.kt:260-274, events/item/Listeners.kt:146-157" }
+  ],
+  "details": [
+   { "text": "The orbs change formation depending on what you're doing: in water, gliding (and gliding while sneaking), sneaking, in the air, or standing.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:569-645" },
+   { "text": "Holding any item in your main hand removes the orbs. They come back on their own once your hand is empty again, unless you dismissed them.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:176, items/armor/helmet/PalomasVeilItemNest.kt:229-254" },
+   { "text": "Opening a chest or any other container removes the orbs until you close it. Logging out and dying also remove them.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:245-258, items/armor/helmet/PalomasVeilItemNest.kt:317-330" },
+   { "text": "An orb that bumps into something while still floating is replaced in its spot instead of being lost.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:470-487" },
+   { "text": "The Looting VII comes from custom code: when you kill a mob, its drops are thrown out and its loot table is rolled again as if you had Looting VII.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:260-274, util/FakeLootTable.java:49-95" }
+  ],
+  "quirks": [
+   { "text": "The tooltip says \"Cooldown: 4s\", but firing orbs one at a time has no cooldown: a new set appears as soon as the old one is used up.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:161, items/armor/helmet/PalomasVeilItemNest.kt:204-207" },
+   { "text": "Orb damage only happens while you still have a set of orbs out. After a sneak volley the set is gone a few ticks after the last orb leaves, so volley orbs that take longer than that to land deal no damage. The same goes for orbs still flying when you pick up an item or dismiss the set.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:189-201, items/armor/helmet/PalomasVeilItemNest.kt:222-226, items/armor/helmet/PalomasVeilItemNest.kt:402-417" },
+   { "text": "The orb splash doesn't skip other players or pets. Only you and the orb's direct target are left out.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:489-502" }
+  ],
+  "config": [
+   { "text": "After each orb hit the code clears the target's short damage immunity, so several orbs should be able to land on the same mob in a row. This depends on the game, not tested.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:499-502, items/armor/helmet/PalomasVeilItemNest.kt:513-516" },
+   { "text": "Drops that aren't part of the mob's loot table are lost when the Veil re-rolls them. In the base game that normally includes gear a mob was wearing or had picked up (depends on the game, not tested).", "src": "items/armor/helmet/PalomasVeilItemNest.kt:267-273" },
+   { "text": "Whether splash damage actually hurts other players or pets can depend on the server's PvP and protection settings.", "src": "items/armor/helmet/PalomasVeilItemNest.kt:493-502" }
+  ]
+ },
+ {
+  "key": "piglin-mask",
+  "items": ["piglin-mask"],
+  "summary": "A wearable piglin head. Piglins and piglin brutes won't target you while you wear it, and when something hurts you they all turn on your attacker.",
+  "use": [
+   { "text": "Right-click with it in your main hand to put it on, as long as your helmet slot is empty.", "src": "items/armor/helmet/PiglinMaskItem.kt:61, events/GeneralListeners.kt:98-118" }
+  ],
+  "numbers": [
+   { "label": "Rally range", "value": "24 blocks", "src": "items/armor/helmet/PiglinMaskItem.kt:34, items/armor/helmet/PiglinMaskItem.kt:96-97" },
+   { "label": "Piglin anger", "value": "30 s (600 ticks) at your attacker", "src": "items/armor/helmet/PiglinMaskItem.kt:37, items/armor/helmet/PiglinMaskItem.kt:100-102" },
+   { "label": "Rally limit", "value": "at most once every 5 s per player", "src": "items/armor/helmet/PiglinMaskItem.kt:35, items/armor/helmet/PiglinMaskItem.kt:79-81" },
+   { "label": "Eating pork", "value": "Poison I + Nausea I for 10 s (200 ticks)", "src": "items/armor/helmet/PiglinMaskItem.kt:36, items/armor/helmet/PiglinMaskItem.kt:108-115" }
+  ],
+  "details": [
+   { "text": "Only piglins and piglin brutes are affected. Zombified piglins and hoglins are not.", "src": "items/armor/helmet/PiglinMaskItem.kt:38, items/armor/helmet/PiglinMaskItem.kt:65-69" },
+   { "text": "Putting the mask on makes nearby piglins that were already attacking you give up.", "src": "items/armor/helmet/PiglinMaskItem.kt:71-76" },
+   { "text": "The rally works against anything that hurts you, directly or with a projectile, including other players. It doesn't trigger against a player who is also wearing a Piglin Mask. There's no limit on how many piglins join in.", "src": "items/armor/helmet/PiglinMaskItem.kt:84-105" },
+   { "text": "Eating a raw or cooked porkchop while wearing the mask poisons you.", "src": "items/armor/helmet/PiglinMaskItem.kt:39, items/armor/helmet/PiglinMaskItem.kt:108-115" }
+  ]
+ },
+ {
+  "key": "charged-breeze-rod",
+  "items": ["charged-breeze-rod"],
+  "summary": "Hitting something while this rod is in your main hand launches the target far away and into the air.",
+  "use": [
+   { "text": "Hold it in your main hand and hit a mob or player. The target is thrown the way you're facing.", "src": "items/misc/ChargedBreezeRodItem.kt:55-69" }
+  ],
+  "numbers": [
+   { "label": "Horizontal launch", "value": "5 × your look direction", "src": "items/misc/ChargedBreezeRodItem.kt:25, items/misc/ChargedBreezeRodItem.kt:66-67" },
+   { "label": "Upward boost", "value": "+0.75", "src": "items/misc/ChargedBreezeRodItem.kt:26, items/misc/ChargedBreezeRodItem.kt:68" }
+  ],
+  "details": [
+   { "text": "\"Knockback VIII\" on the tooltip is just text. The launch is custom code, and the real enchantments are hidden.", "src": "items/misc/ChargedBreezeRodItem.kt:32-37" },
+   { "text": "It won't launch the mount you're riding.", "src": "items/misc/ChargedBreezeRodItem.kt:59-60" },
+   { "text": "Looking up or down while you hit shortens the sideways throw, because it scales with the horizontal part of where you're looking.", "src": "items/misc/ChargedBreezeRodItem.kt:62-68" },
+   { "text": "It can't be used as a crafting ingredient. The recipe result is cleared.", "src": "items/misc/ChargedBreezeRodItem.kt:51-53" }
+  ],
+  "quirks": [
+   { "text": "Damage from your projectiles also counts. If an arrow or other shot of yours lands while the rod is in your main hand, the target gets launched too.", "src": "items/misc/ChargedBreezeRodItem.kt:55-56, events/item/Listeners.kt:165-180" }
+  ]
+ },
+ {
+  "key": "chikos-charm",
+  "items": ["chikos-charm-valet", "chikos-charm"],
+  "summary": "Chiko's Charm Orb opens into Chiko's Charm, a dye-shaped trinket that stores one command of your choice and runs it for you when you right-click.",
+  "use": [
+   { "text": "Right-click the Charm Orb to use it up and get a Chiko's Charm. The charm's dye colour is random.", "src": "items/misc/ChikosCharmItem.kt:63-69, items/misc/ChikosCharmItem.kt:80" },
+   { "text": "To set the command, hold the charm in your main hand, sneak and press F. Then type the command in chat, with or without the slash. It's saved on the charm instead of being sent or run.", "src": "items/misc/ChikosCharmItem.kt:117-129, items/misc/ChikosCharmItem.kt:148-175" },
+   { "text": "Right-click the charm to run its stored command as yourself.", "src": "items/misc/ChikosCharmItem.kt:105-115" }
+  ],
+  "numbers": [
+   { "label": "Cooldown", "value": "0.5 s (10 ticks) after running the command or starting setup", "src": "items/misc/ChikosCharmItem.kt:106, items/misc/ChikosCharmItem.kt:112, items/misc/ChikosCharmItem.kt:124, items/misc/ChikosCharmItem.kt:129" }
+  ],
+  "details": [
+   { "text": "The command runs with your own permissions, so it can only do what you could type yourself.", "src": "items/misc/ChikosCharmItem.kt:111" },
+   { "text": "Moving the charm out of your main hand during setup cancels it. So does logging out.", "src": "items/misc/ChikosCharmItem.kt:131-146" },
+   { "text": "A charm with no command shows \"No command set on this charm!\" when used.", "src": "items/misc/ChikosCharmItem.kt:114" }
+  ],
+  "quirks": [
+   { "text": "After you successfully set a command, you still get a \"Cancelled!\" message when you next switch away from the charm. The setup check keeps running until the charm leaves your hand, so you get one message for each setup you did while holding it.", "src": "items/misc/ChikosCharmItem.kt:131-138, items/misc/ChikosCharmItem.kt:148-175" }
+  ]
+ },
+ {
+  "key": "crown-jewel-of-elsewhere",
+  "items": ["crown-jewel-of-elsewhere"],
+  "summary": "An ender pearl you never run out of. Right-clicking throws a pearl without using up the item, and you take no ender pearl damage when it lands.",
+  "use": [
+   { "text": "Right-click to throw a pearl. The Jewel stays in your hand.", "src": "items/misc/CrownJewelOfElsewhereItem.kt:68-75" }
+  ],
+  "numbers": [
+   { "label": "Cooldown", "value": "3 s (60 ticks), shared with normal ender pearls", "src": "items/misc/CrownJewelOfElsewhereItem.kt:32, items/misc/CrownJewelOfElsewhereItem.kt:69, items/misc/CrownJewelOfElsewhereItem.kt:97" }
+  ],
+  "details": [
+   { "text": "It uses the regular ender pearl cooldown. Throwing the Jewel puts normal pearls on cooldown, and a normal pearl on cooldown blocks the Jewel.", "src": "items/misc/CrownJewelOfElsewhereItem.kt:69, items/misc/CrownJewelOfElsewhereItem.kt:97" },
+   { "text": "The damage an ender pearl deals when you teleport is cancelled for pearls from the Jewel.", "src": "items/misc/CrownJewelOfElsewhereItem.kt:27, items/misc/CrownJewelOfElsewhereItem.kt:100-110" },
+   { "text": "The \"Unbreaking\" line on the tooltip is text only. The real enchantment (Loyalty V) is hidden, and the code doesn't use it.", "src": "items/misc/CrownJewelOfElsewhereItem.kt:46-51" },
+   { "text": "It can't be used in crafting recipes, such as eyes of ender.", "src": "items/misc/CrownJewelOfElsewhereItem.kt:126-128" }
+  ],
+  "quirks": [
+   { "text": "It also fires from your off-hand. With the Jewel in your off-hand, right-clicking with anything, even placing a block or eating, throws a pearl and cancels what you were doing whenever pearls are off cooldown.", "src": "items/misc/CrownJewelOfElsewhereItem.kt:68-71, events/item/Listeners.kt:125-137" }
+  ]
+ },
+ {
+  "key": "seagull-feather",
+  "items": ["seagull-feather"],
+  "summary": "A feather that makes you walk faster while you hold it. It has no other ability.",
+  "numbers": [
+   { "label": "Movement speed", "value": "+0.025 (about +25% if your base walking speed is the game's default of 0.1)", "src": "items/misc/SeagullFeatherItem.kt:30" }
+  ],
+  "details": [
+   { "text": "The item has no active abilities. All it does is add movement speed.", "src": "items/misc/SeagullFeatherItem.kt:37-39" }
+  ],
+  "quirks": [
+   { "text": "The tooltip says off-hand, but the speed bonus is set for any slot, so it works in your main hand too. An older version of the item was limited to the off-hand.", "src": "items/misc/SeagullFeatherItem.kt:24-25, items/misc/SeagullFeatherItem.kt:30, items/misc/SeagullFeatherItem.kt:51" }
+  ]
+ },
+ {
+  "key": "sowing-bundle",
+  "items": ["sowing-bundle"],
+  "summary": "A bundle that plants seeds across a whole connected field at once. Right-click farmland (or soul sand for nether wart) and it spreads seeds from inside the bundle across every connected soil block.",
+  "use": [
+   { "text": "Put seeds in the bundle, hold it in your main hand and right-click farmland (or soul sand if it holds nether wart).", "src": "items/misc/SowingBundleItem.kt:74-96" }
+  ],
+  "numbers": [
+   { "label": "Cooldown", "value": "1 s (20 ticks) per seed planted, e.g. 64 seeds = 64 s", "src": "items/misc/SowingBundleItem.kt:98-108" },
+   { "label": "Range", "value": "no limit: every soil block of the same kind connected side-to-side on the same level as the one you clicked", "src": "items/misc/SowingBundleItem.kt:47, items/misc/SowingBundleItem.kt:115-152" }
+  ],
+  "details": [
+   { "text": "Seeds it plants: wheat seeds, carrots, potatoes, beetroot seeds, torchflower seeds, pitcher pods, pumpkin seeds and melon seeds on farmland, and nether wart on soul sand.", "src": "items/misc/SowingBundleItem.kt:33-43" },
+   { "text": "It only plants where the block above the soil is empty air. It goes through the bundle one stack at a time and uses one seed per crop.", "src": "items/misc/SowingBundleItem.kt:127-139" },
+   { "text": "You can dye it in a crafting grid. It keeps its ability and contents.", "src": "items/misc/SowingBundleItem.kt:154-163, util/extensions/ItemUtil.kt:97-121" }
+  ],
+  "quirks": [
+   { "text": "Torchflower seeds come up as fully grown torchflowers right away, not as a young crop.", "src": "items/misc/SowingBundleItem.kt:38, items/misc/SowingBundleItem.kt:132" },
+   { "text": "The planting doesn't check land claims, so the spread can continue onto connected farmland past a claim border.", "src": "items/misc/SowingBundleItem.kt:115-152" },
+   { "text": "With the Sowing Bundle in your off-hand, a plain bundle of seeds in your main hand sows the same way.", "src": "items/misc/SowingBundleItem.kt:92-93, events/item/Listeners.kt:125-137" }
+  ]
+ },
+ {
+  "key": "verdigris-idol",
+  "items": ["verdigris-idol"],
+  "summary": "A copper golem statue. While you hold it, mining stone or deepslate can drop raw copper instead. It oxidizes as you use it, which lowers its success rate, and fire charges polish it back.",
+  "use": [
+   { "text": "Hold the Idol in your main hand or off-hand (the code also accepts it in the head slot) and break plain Stone or Deepslate.", "src": "items/misc/VerdigrisIdolItem.kt:56-59, items/misc/VerdigrisIdolItem.kt:100-108" },
+   { "text": "To remove oxidation, pick up a stack of at least 10 fire charges and click it onto the Idol in your inventory. Every 10 charges remove 1 oxidation point.", "src": "items/misc/VerdigrisIdolItem.kt:140-188" }
+  ],
+  "numbers": [
+   { "label": "Success chance per block", "value": "50% unoxidized, 25% exposed, 10% weathered, 0% fully oxidized", "src": "items/misc/VerdigrisIdolItem.kt:34-43, items/misc/VerdigrisIdolItem.kt:120-121" },
+   { "label": "Oxidation", "value": "0–30 points; stage changes every 10 points; 20% chance to gain 1 point per successful transmute", "src": "items/misc/VerdigrisIdolItem.kt:50-51, items/misc/VerdigrisIdolItem.kt:73, items/misc/VerdigrisIdolItem.kt:190-194" },
+   { "label": "Raw copper per block", "value": "1–3, at most 6", "src": "items/misc/VerdigrisIdolItem.kt:212-226" },
+   { "label": "Polishing cost", "value": "10 fire charges per oxidation point", "src": "items/misc/VerdigrisIdolItem.kt:52, items/misc/VerdigrisIdolItem.kt:154-165" }
+  ],
+  "details": [
+   { "text": "A successful transmute replaces the block's normal drop with raw copper. Failed rolls give the block's usual drop.", "src": "items/misc/VerdigrisIdolItem.kt:120-133" },
+   { "text": "Silk Touch blocks it: if the Idol is in your off-hand (or head slot) and your main-hand tool has Silk Touch, nothing is transmuted.", "src": "items/misc/VerdigrisIdolItem.kt:110-115" },
+   { "text": "With the Idol in your off-hand (or head slot), your main-hand tool's Fortune is used for the copper count. With it in your main hand there is no Fortune, so you get 1–3.", "src": "items/misc/VerdigrisIdolItem.kt:110, items/misc/VerdigrisIdolItem.kt:133, items/misc/VerdigrisIdolItem.kt:212-218" },
+   { "text": "Only breaks you're allowed to make count. Breaks cancelled by claims don't trigger it.", "src": "events/item/Listeners.kt:217-224" },
+   { "text": "It can't be placed as a block or used in crafting, and it doesn't stack.", "src": "items/misc/VerdigrisIdolItem.kt:94, items/misc/VerdigrisIdolItem.kt:228-234" }
+  ],
+  "quirks": [
+   { "text": "Don't use it with a Fortune I or II tool. With the Idol in your off-hand or head slot, every successful transmute with such a tool hits an error: the block drops nothing at all (no copper and no stone), and oxidation can still go up. Fortune III to VIII adds nothing, and only Fortune IX or higher can raise the copper (still capped at 6).", "src": "items/misc/VerdigrisIdolItem.kt:110, items/misc/VerdigrisIdolItem.kt:123-133, items/misc/VerdigrisIdolItem.kt:216, items/misc/VerdigrisIdolItem.kt:221-226" },
+   { "text": "With the Idol in your off-hand or head slot you need something in your main hand. Breaking stone with an empty main hand never triggers it.", "src": "events/item/Listeners.kt:222-224, model/item/PdcSource.kt:32-34, util/extensions/ItemUtil.kt:149" }
+  ]
+ },
+ {
+  "key": "wonder-apple",
+  "items": ["wonder-apple"],
+  "summary": "A golden apple you keep forever. Held in your off-hand it gives Haste II. Eating it (or eating or drinking anything else while it's in your hand) randomly resizes you for 30 seconds.",
+  "use": [
+   { "text": "Hold it in your off-hand for Haste II.", "src": "items/misc/WonderAppleItem.kt:63-68" },
+   { "text": "Eat it to change size. The apple isn't used up and you get no normal golden apple effects or food.", "src": "items/misc/WonderAppleItem.kt:70-95" }
+  ],
+  "numbers": [
+   { "label": "Haste", "value": "Haste II for 13 s (260 ticks), refreshed every 3.5 s while in the off-hand", "src": "items/misc/WonderAppleItem.kt:40, items/misc/WonderAppleItem.kt:63-68, events/item/PassiveListeners.kt:19" },
+   { "label": "Size change", "value": "a random amount from −3 to +7 times your base size is added; 3 in 10 rolls shrink you, the rest make you bigger, up to 8× a normal-size player", "src": "items/misc/WonderAppleItem.kt:82-89" },
+   { "label": "Size duration", "value": "30 s (600 ticks)", "src": "items/misc/WonderAppleItem.kt:92-94" },
+   { "label": "Cooldown", "value": "120 s (2400 ticks)", "src": "items/misc/WonderAppleItem.kt:76-80" }
+  ],
+  "details": [
+   { "text": "Eating it only works in the main and resource worlds. Anywhere else you get a red warning, and actions you take while it's in your hands are cancelled.", "src": "items/misc/WonderAppleItem.kt:34, enums/WorldGroup.kt:44-54, model/item/CustomItem.kt:84-99, events/item/ItemListener.kt:123" },
+   { "text": "Teleporting into a world where it's disabled returns you to normal size immediately.", "src": "items/misc/WonderAppleItem.kt:35, items/misc/WonderAppleItem.kt:97-122" },
+   { "text": "Eating the apple is always cancelled, even on cooldown, so it can never actually be consumed.", "src": "items/misc/WonderAppleItem.kt:71-78" }
+  ],
+  "quirks": [
+   { "text": "Anything you eat or drink counts. Eating food or drinking a potion or milk while the Wonder Apple is in your main hand or off-hand also resizes you and starts the cooldown.", "src": "items/misc/WonderAppleItem.kt:70-89, events/item/Listeners.kt:365-369" },
+   { "text": "Haste isn't removed when you move the apple out of your off-hand. It just runs out, taking up to 13 s.", "src": "items/misc/WonderAppleItem.kt:40, items/misc/WonderAppleItem.kt:63-68" }
+  ],
+  "config": [
+   { "text": "How small a shrink roll makes you depends on the game's size limits. Most shrink rolls ask for a size of zero or less, so you end up at whatever minimum size the game allows (depends on the game, not tested). The 8× top end assumes you start at normal size.", "src": "items/misc/WonderAppleItem.kt:82-89" }
+  ]
+ },
+ {
+  "key": "pale-side-token",
+  "items": ["pale-side-token"],
+  "summary": "An event token with no ability of its own. Its only use is being redeemed at /wonderland.",
+  "details": [
+   { "text": "The item has no abilities in the plugin. It's a plain collectible tagged as a Wonderland item.", "src": "items/playground/event/PaleSideTokenItem.kt:10-26" }
+  ],
+  "config": [
+   { "text": "What /wonderland gives for the token isn't part of this plugin, so rewards depend on the server's setup.", "src": "items/playground/event/PaleSideTokenItem.kt:15-17" }
+  ]
+ },
+ {
+  "key": "wonderland-charm",
+  "items": ["wonderland-charm"],
+  "summary": "A participation charm from Wonderland minigames. It has no special ability. The only code attached to it stops you placing it as a mushroom.",
+  "details": [
+   { "text": "Placing it is blocked, so the red mushroom can't end up on the ground.", "src": "items/playground/event/WonderlandCharmItem.kt:35-38" },
+   { "text": "Despite the tooltip hinting at a hidden use (\"keep it around for a while\"), the plugin gives it no other behaviour.", "src": "items/playground/event/WonderlandCharmItem.kt:13-40" }
+  ]
+ },
+ {
+  "key": "kamoris-rake",
+  "items": ["kamoris-rake"],
+  "summary": "A hoe that reaches blocks 2 further away. Harvesting a crop sometimes also harvests a few fully grown crops around you.",
+  "numbers": [
+   { "label": "Extra reach", "value": "+2 blocks when reaching for blocks (main hand)", "src": "items/tools/harrow/KamorisRake.kt:44" },
+   { "label": "Trigger chance", "value": "10% per crop broken", "src": "items/tools/harrow/KamorisRake.kt:66" },
+   { "label": "Extra crops", "value": "1–4, one every 0.25 s (5 ticks)", "src": "items/tools/harrow/KamorisRake.kt:73-78" },
+   { "label": "Search area", "value": "flat circle up to 4 blocks around you, at your feet level", "src": "items/tools/harrow/KamorisRake.kt:71, shapes/ShapeUtil.java:32-47" },
+   { "label": "Durability", "value": "2 per extra crop", "src": "items/tools/harrow/KamorisRake.kt:90" }
+  ],
+  "details": [
+   { "text": "Only breaking crops (wheat, carrots, potatoes, beetroot, nether wart and similar) can trigger it, at any growth stage. The extra blocks it picks are any fully grown blocks with growth stages nearby.", "src": "items/tools/harrow/KamorisRake.kt:66-72, util/tags/Kind.java:43" },
+   { "text": "Extra crops are broken as if you broke them yourself, so claims are respected and normal drops (with the rake's Fortune) apply. Extra breaks can't set off more extra breaks.", "src": "items/tools/harrow/KamorisRake.kt:78-88" }
+  ]
+ },
+ {
+  "key": "umbral-hoe",
+  "items": ["umbral-hoe"],
+  "summary": "A hoe that sends crop drops straight to your inventory instead of dropping them on the ground.",
+  "use": [
+   { "text": "Hold it in your main hand and break crops.", "src": "items/tools/harrow/UmbralHoeItem.kt:36-44, events/item/Listeners.kt:237-243" }
+  ],
+  "details": [
+   { "text": "Only crop blocks count (wheat, carrots, potatoes, beetroot, pumpkin and melon stems, torchflower and pitcher crops, nether wart). Pumpkins, melons and other blocks drop normally.", "src": "items/tools/harrow/UmbralHoeItem.kt:37, util/tags/Kind.java:43" }
+  ]
+ },
+ {
+  "key": "aurai-gale-hatchet",
+  "items": ["aurai-gale-hatchet"],
+  "summary": "A fast-movement axe that breaks wooden blocks instantly while you're in the air or while you're standing in water, but not both.",
+  "numbers": [
+   { "label": "Movement speed", "value": "+0.025 while in main hand (about +25% if your base walking speed is the game's default of 0.1)", "src": "items/tools/hatchet/AuraiGaleHatchetItem.kt:47-55" },
+   { "label": "Instant-break cost", "value": "1 extra durability per block", "src": "items/tools/hatchet/AuraiGaleHatchetItem.kt:62-64" }
+  ],
+  "details": [
+   { "text": "Wooden blocks instant-break when you're off the ground and not in water, or in water with your feet on the ground. Swimming off the bottom or standing on dry land mines at normal speed.", "src": "items/tools/hatchet/AuraiGaleHatchetItem.kt:59-70" },
+   { "text": "\"Wooden blocks\" means logs, planks, wooden slabs, stairs, doors, trapdoors, fences, buttons, pressure plates, shelves and signs.", "src": "util/tags/Kind.java:50" }
+  ],
+  "quirks": [
+   { "text": "The tooltip says the axe \"will not lose any efficiency\" in those states. What actually happens is stronger: those blocks break instantly.", "src": "items/tools/hatchet/AuraiGaleHatchetItem.kt:36-39, items/tools/hatchet/AuraiGaleHatchetItem.kt:62-63" }
+  ]
+ },
+ {
+  "key": "boreal-hatchet",
+  "items": ["boreal-hatchet"],
+  "summary": "An axe that replants a tree for you. When you break the bottom log, it plants a matching sapling from your inventory in its place 2 seconds later.",
+  "numbers": [
+   { "label": "Replant delay", "value": "2 s (40 ticks)", "src": "items/tools/hatchet/BorealHatchetItem.kt:62" }
+  ],
+  "details": [
+   { "text": "It only replants a log that sat directly on dirt (including coarse and rooted dirt), grass, podzol, mycelium, mud or muddy mangrove roots, which is normally the bottom log of a tree. Moss blocks don't count.", "src": "items/tools/hatchet/BorealHatchetItem.kt:52-54, util/tags/Kind.java:52" },
+   { "text": "You need the matching sapling in your inventory. One is taken when it replants. Oak, birch, spruce, jungle, acacia, dark oak, cherry and pale oak logs give their saplings, and mangrove gives a propagule.", "src": "items/tools/hatchet/BorealHatchetItem.kt:56-66, util/tags/LinkedTags.java:11-24" }
+  ],
+  "quirks": [
+   { "text": "Crimson and warped stems are linked to their fungi, but they grow on nylium, which isn't on the allowed soil list, so they are almost never replanted.", "src": "items/tools/hatchet/BorealHatchetItem.kt:52-54, util/tags/LinkedTags.java:21-22, util/tags/Kind.java:52" },
+   { "text": "Stripped logs and wood blocks never replant, because only plain logs are linked to a sapling.", "src": "util/tags/LinkedTags.java:11-24" },
+   { "text": "Don't put anything in the log's spot during those 2 seconds. The sapling is placed without checking the spot again and replaces whatever is there.", "src": "items/tools/hatchet/BorealHatchetItem.kt:62-66, util/extensions/BlockUtil.kt:50-59" }
+  ]
+ },
+ {
+  "key": "horizons-toolkit",
+  "items": ["horizons-toolkit"],
+  "summary": "A multitool that turns into whichever tool fits the block you hit, and into a sword when you attack. In the Mixer you can permanently merge other custom tools into it, one per tool type, and it gains their abilities in that form.",
+  "use": [
+   { "text": "Left-click a block: it becomes whichever netherite pickaxe, shovel, axe, hoe, sword or shears mines that block fastest.", "src": "items/tools/HorizonsToolkitItem.kt:94-114" },
+   { "text": "Hit a mob: it becomes a sword.", "src": "items/tools/HorizonsToolkitItem.kt:83-92" },
+   { "text": "To mix, open the Mixer (/mixer), put the Toolkit in the first slot and another custom tool in the second, then confirm. The other item is used up.", "src": "guis/MixerUpgradeGui.kt:35-66, commands/MixerCommand.kt:13-36" }
+  ],
+  "details": [
+   { "text": "Mixing works with one custom item per tool type (pickaxe, shovel, axe, hoe, sword, shears). The other item must be a custom item of one of those types, and relics can't be mixed.", "src": "items/tools/HorizonsToolkitItem.kt:131-151, items/tools/HorizonsToolkitItem.kt:246-253, guis/MixerUpgradeGui.kt:52-55" },
+   { "text": "When the Toolkit changes into a mixed type, it becomes a fresh copy of that item, with its default enchantments and tooltip. The name gets a ★ and a \"Mix\" line, and your durability carries over. Unmixed types use the Toolkit's own default enchantments. Enchantments you add yourself don't carry over when it changes form.", "src": "items/tools/HorizonsToolkitItem.kt:155-168, items/tools/HorizonsToolkitItem.kt:185-203, items/tools/HorizonsToolkitItem.kt:211-244" },
+   { "text": "In a mixed form, the Toolkit passes what you do on to the mixed item's abilities.", "src": "items/tools/HorizonsToolkitItem.kt:75-79, util/extensions/PlayerUtil.kt:67-70" },
+   { "text": "Pressing F while holding it doesn't move it to your off-hand. It resets the name and tooltip to plain Horizon's Toolkit without changing its form.", "src": "items/tools/HorizonsToolkitItem.kt:116-121" }
+  ],
+  "quirks": [
+   { "text": "Don't keep the Toolkit in your off-hand while holding something you care about. Its form switching always rewrites whatever is in your main hand, so with the Toolkit in your off-hand, attacking or left-clicking a block can overwrite your main-hand item (the whole stack), and that item is lost. Pressing F in that setup also replaces your main-hand item's name and tooltip.", "src": "items/tools/HorizonsToolkitItem.kt:75-121, items/tools/HorizonsToolkitItem.kt:185-203, events/item/Listeners.kt:125-180" }
+  ],
+  "config": [
+   { "text": "Whether players can open /mixer themselves depends on the server's permission setup.", "src": "commands/MixerCommand.kt:13-36" }
+  ]
+ },
+ {
+  "key": "hauynes-pickaxe",
+  "items": ["hauynes-pickaxe"],
+  "summary": "A pickaxe that smelts iron, gold, copper and ancient debris as you mine them, dropping ingots (or scrap) instead of raw ore.",
+  "details": [
+   { "text": "Iron, gold and copper ores (including deepslate versions) drop ingots, and Fortune still multiplies the amount. Ancient debris drops netherite scrap.", "src": "items/tools/mattock/HauynesPickaxeItem.kt:36-53, util/tags/LinkedTags.java:41-56" },
+   { "text": "Breaking a placed block of raw iron, raw gold or raw copper gives the matching metal block.", "src": "util/tags/LinkedTags.java:46, util/tags/LinkedTags.java:50, util/tags/LinkedTags.java:54" },
+   { "text": "Only breaks you're allowed to make count, since the ability runs on the normal break.", "src": "events/item/Listeners.kt:217-224" }
+  ],
+  "quirks": [
+   { "text": "Nether gold ore always gives exactly 1 gold ingot, and Fortune is ignored.", "src": "items/tools/mattock/HauynesPickaxeItem.kt:46-47, util/tags/LinkedTags.java:44" }
+  ]
+ },
+ {
+  "key": "neo-ballistic-bunny-mattock",
+  "items": ["neo-ballistic-bunny-mattock"],
+  "summary": "A pickaxe that places explosive Easter eggs. Hit an egg enough times and every egg you own blows up, breaking blocks.",
+  "use": [
+   { "text": "Right-click a block to place an egg on that face. Its size is random: small, normal or big.", "src": "items/tools/mattock/NeoBallisticBunnyMattockItem.kt:76-93" },
+   { "text": "Hit the egg to crack it. When it cracks past its limit, all of your eggs explode at once.", "src": "items/tools/mattock/NeoBallisticBunnyMattockItem.kt:95-121" }
+  ],
+  "numbers": [
+   { "label": "Cooldown", "value": "25 s (500 ticks)", "src": "items/tools/mattock/NeoBallisticBunnyMattockItem.kt:77-78" },
+   { "label": "Durability per egg", "value": "40", "src": "items/tools/mattock/NeoBallisticBunnyMattockItem.kt:92" },
+   { "label": "Explosion power", "value": "small 3, normal 4, big 5", "src": "items/tools/mattock/NeoBallisticBunnyMattockItem.kt:117, items/tools/mattock/NeoBallisticBunnyMattockItem.kt:287-291" },
+   { "label": "Hits to explode", "value": "about 6–7; a hit while falling counts triple", "src": "items/tools/mattock/NeoBallisticBunnyMattockItem.kt:101-109, items/tools/mattock/NeoBallisticBunnyMattockItem.kt:132-134, items/tools/mattock/NeoBallisticBunnyMattockItem.kt:153-155, items/tools/mattock/NeoBallisticBunnyMattockItem.kt:197-222" }
+  ],
+  "details": [
+   { "text": "The explosions break blocks but don't start fires.", "src": "items/tools/mattock/NeoBallisticBunnyMattockItem.kt:117" },
+   { "text": "The egg grows a little with every crack.", "src": "items/tools/mattock/NeoBallisticBunnyMattockItem.kt:283-285" },
+   { "text": "Eggs aren't saved. They disappear when their area unloads or the server restarts.", "src": "items/tools/mattock/NeoBallisticBunnyMattockItem.kt:180-182" }
+  ],
+  "quirks": [
+   { "text": "The cooldown starts before it checks for a block. Right-clicking air puts the mattock on its 25 s cooldown without placing an egg.", "src": "items/tools/mattock/NeoBallisticBunnyMattockItem.kt:77-80" },
+   { "text": "Anyone can crack anyone's egg, with any item. When the egg breaks, it's the hitter's own eggs that explode. If someone else finishes your egg, their eggs (if any) blow up and yours stays.", "src": "items/tools/mattock/NeoBallisticBunnyMattockItem.kt:95-121, events/item/Listeners.kt:182-195" }
+  ],
+  "config": [
+   { "text": "Whether the blast can break blocks inside claims depends on the server's protection plugins. The item itself doesn't check claims.", "src": "items/tools/mattock/NeoBallisticBunnyMattockItem.kt:117" }
+  ]
+ },
+ {
+  "key": "sirocco-clay-pickaxe",
+  "items": ["sirocco-clay-pickaxe"],
+  "summary": "A pickaxe that breaks reinforced deepslate instantly and drops it as an item.",
+  "numbers": [
+   { "label": "Durability cost", "value": "10 per reinforced deepslate", "src": "items/tools/mattock/SiroccoClayPickaxeItem.kt:47" }
+  ],
+  "details": [
+   { "text": "It has no effect on other blocks.", "src": "items/tools/mattock/SiroccoClayPickaxeItem.kt:42-48" }
+  ]
+ },
+ {
+  "key": "ventanas-tools",
+  "items": ["ventanas-mattock", "ventanas-spade"],
+  "summary": "Ventana's Mattock and Spade mine a 3×3×3 cube around the block you break. The Spade only takes shovel blocks, while the Mattock takes almost any solid block.",
+  "numbers": [
+   { "label": "Area", "value": "3×3×3 cube centred on the broken block (up to 26 extra blocks)", "src": "items/tools/mattock/VentanasMattockItem.kt:49-54, items/tools/spade/VentanasSpadeItem.kt:47-52, shapes/ShapeUtil.java:16-30" }
+  ],
+  "details": [
+   { "text": "Mattock: breaks every solid block in the cube, not just pickaxe blocks.", "src": "items/tools/mattock/VentanasMattockItem.kt:51-54" },
+   { "text": "Spade: only breaks shovel blocks (dirt, sand, gravel and so on) in the cube.", "src": "items/tools/spade/VentanasSpadeItem.kt:49-52" },
+   { "text": "Both skip chests, trapped chests, barrels, furnaces, blast furnaces, smokers, hoppers, droppers, dispensers, brewing stands, shulker boxes, signs, spawners, bedrock, reinforced deepslate, farmland, dirt paths and a few other special blocks.", "src": "util/tags/Kind.java:48" },
+   { "text": "Extra blocks drop as if mined with the tool, so Silk Touch applies, but they give no XP.", "src": "items/tools/mattock/VentanasMattockItem.kt:54, util/extensions/BlockUtil.kt:30-34" },
+   { "text": "The Mattock is switched off in the newer event world.", "src": "items/tools/mattock/VentanasMattockItem.kt:17" }
+  ],
+  "quirks": [
+   { "text": "Only the block you actually break is checked against claims. The other blocks in the cube are broken without a claim check, so the cube can reach past a claim border.", "src": "items/tools/mattock/VentanasMattockItem.kt:51-54, items/tools/spade/VentanasSpadeItem.kt:49-52, util/extensions/BlockUtil.kt:30-34" },
+   { "text": "The extra blocks cost no durability.", "src": "items/tools/mattock/VentanasMattockItem.kt:40-55" },
+   { "text": "The tooltip says \"3x3\", but the area is a full 3×3×3 cube, one layer above and below as well.", "src": "items/tools/mattock/VentanasMattockItem.kt:28-29, items/tools/mattock/VentanasMattockItem.kt:49-50" }
+  ]
+ },
+ {
+  "key": "equinox-mattock",
+  "items": ["equinox-mattock"],
+  "summary": "Right-click to throw 3 geyser seeds. Where each seed lands, a geyser shoots up waves of balls that break pickaxe blocks where they land and fly the drops back to you.",
+  "use": [
+   { "text": "Right-click to throw 3 seeds in random directions around you.", "src": "items/tools/nests/EquinoxItemNest.kt:55-81" }
+  ],
+  "numbers": [
+   { "label": "Cooldown", "value": "2 min (2400 ticks)", "src": "items/tools/nests/EquinoxItemNest.kt:56-57, items/tools/nests/EquinoxItemNest.kt:420-422" },
+   { "label": "Geyser", "value": "5 waves of 7–11 balls; each wave starts 1 s after the last one's balls have all landed", "src": "items/tools/nests/EquinoxItemNest.kt:94, items/tools/nests/EquinoxItemNest.kt:153-176, items/tools/nests/EquinoxItemNest.kt:183-190" },
+   { "label": "Break radius", "value": "1.5 blocks around each ball's landing spot", "src": "items/tools/nests/EquinoxItemNest.kt:99-105" },
+   { "label": "Hit damage", "value": "5 per seed or ball that hits a living thing other than you", "src": "items/tools/nests/EquinoxItemNest.kt:84-87" },
+   { "label": "Durability", "value": "1 per block broken", "src": "items/tools/nests/EquinoxItemNest.kt:411" }
+  ],
+  "details": [
+   { "text": "Only pickaxe-mineable blocks you're allowed to build on are broken. They drop as if mined with a Silk Touch pickaxe.", "src": "items/tools/nests/EquinoxItemNest.kt:401-410" },
+   { "text": "Drops fly toward you for up to 10 s.", "src": "items/tools/nests/EquinoxItemNest.kt:47, items/tools/nests/EquinoxItemNest.kt:116-129" },
+   { "text": "Balls never hurt you. Other mobs and players are only hurt where you're allowed to damage them.", "src": "items/tools/nests/EquinoxItemNest.kt:84-87, util/AbilityUtil.kt:26" }
+  ],
+  "quirks": [
+   { "text": "The tooltip says \"Cooldown: 3m\", but the Mattock's real cooldown is 2 minutes.", "src": "items/tools/nests/EquinoxItemNest.kt:395, items/tools/nests/EquinoxItemNest.kt:420-422" },
+   { "text": "Durability for each broken block is taken from whatever you're holding at that moment. If you switch items while the geyser runs, that other item takes the damage.", "src": "items/tools/nests/EquinoxItemNest.kt:411" }
+  ],
+  "config": [
+   { "text": "Which spots count as \"allowed to build\" or \"allowed to damage\" comes from the server's protection plugins.", "src": "util/extensions/PlayerUtil.kt:244-264" },
+   { "text": "Blocks are removed directly rather than mined, and only the block itself is dropped. Whether a pickaxe-mineable container caught in the blast (furnace, hopper and so on) spills or loses its contents depends on the game, not tested.", "src": "items/tools/nests/EquinoxItemNest.kt:405-410, util/extensions/BlockUtil.kt:40-44" }
+  ]
+ },
+ {
+  "key": "pathweaver",
+  "items": ["pathweaver"],
+  "summary": "Shears that pave grass. Right-click a grass block to swap the grass around it for random full blocks taken from your hotbar.",
+  "use": [
+   { "text": "Hold it, keep some full blocks (stone, planks and so on) in your hotbar, and right-click a grass block.", "src": "items/tools/shears/PathweaverItem.kt:55-69, items/tools/shears/PathweaverItem.kt:103-114" }
+  ],
+  "numbers": [
+   { "label": "Area", "value": "3×3 flat square centred on the clicked block (grass only)", "src": "items/tools/shears/PathweaverItem.kt:76-81" },
+   { "label": "Cooldown", "value": "1.5 s (30 ticks)", "src": "items/tools/shears/PathweaverItem.kt:67" },
+   { "label": "Durability", "value": "7 per use", "src": "items/tools/shears/PathweaverItem.kt:91" },
+   { "label": "Block theft", "value": "50% chance to take 1–3 extra blocks from your hotbar", "src": "items/tools/shears/PathweaverItem.kt:93-100" }
+  ],
+  "details": [
+   { "text": "Each grass block gets a random block from your hotbar, weighted by stack size, and one item is used per block. Custom Luma items are never used.", "src": "items/tools/shears/PathweaverItem.kt:80-89, items/tools/shears/PathweaverItem.kt:109, items/tools/shears/PathweaverItem.kt:117-132" },
+   { "text": "If your hotbar has no usable blocks you see red particles, and the cooldown still applies.", "src": "items/tools/shears/PathweaverItem.kt:67-74" },
+   { "text": "The grass that gets replaced is destroyed, not dropped.", "src": "items/tools/shears/PathweaverItem.kt:86-87" }
+  ],
+  "quirks": [
+   { "text": "The tooltip says a 3x1 area, but the code covers a 3×3 square.", "src": "items/tools/shears/PathweaverItem.kt:43, items/tools/shears/PathweaverItem.kt:76-78" },
+   { "text": "Only the clicked block is checked against claims. The other grass blocks in the square aren't checked, so the square can reach past a claim border.", "src": "items/tools/shears/PathweaverItem.kt:62, items/tools/shears/PathweaverItem.kt:80-88" }
+  ]
+ },
+ {
+  "key": "montairis-spade",
+  "items": ["montairis-spade"],
+  "summary": "Right-click to throw a seed that grows into a coloured storm cloud. For 15 seconds the cloud rains down drops that turn sand into concrete powder of its colour and pull loose items toward you.",
+  "use": [
+   { "text": "Right-click to throw a slow seed. Where it lands, a cloud forms 11 blocks above.", "src": "items/tools/spade/MontairisSpadeItem.kt:89-98, items/tools/spade/MontairisSpadeItem.kt:110-120, items/tools/spade/MontairisSpadeItem.kt:175" },
+   { "text": "Look around to steer it: the cloud drifts slowly in the direction you're facing.", "src": "items/tools/spade/MontairisSpadeItem.kt:214-220" }
+  ],
+  "numbers": [
+   { "label": "Cooldown", "value": "2 min (2400 ticks)", "src": "items/tools/spade/MontairisSpadeItem.kt:90-91" },
+   { "label": "Cloud duration", "value": "15 s (300 ticks), one drop per tick", "src": "items/tools/spade/MontairisSpadeItem.kt:116, items/tools/spade/MontairisSpadeItem.kt:205-241" },
+   { "label": "Rain spread", "value": "up to 6 blocks from the cloud's centre in each direction", "src": "items/tools/spade/MontairisSpadeItem.kt:226" },
+   { "label": "Drift speed", "value": "up to about 1.5 blocks per second (slower when you look up or down)", "src": "items/tools/spade/MontairisSpadeItem.kt:214-220" }
+  ],
+  "details": [
+   { "text": "Each cloud has one random dye colour. A drop that hits sand (normal, red or suspicious) removes that sand and drops concrete powder of the cloud's colour. Other blocks aren't changed.", "src": "items/tools/spade/MontairisSpadeItem.kt:122-133, items/tools/spade/MontairisSpadeItem.kt:176, items/tools/spade/MontairisSpadeItem.kt:252" },
+   { "text": "After each hit, dropped items near that spot are flung toward you.", "src": "items/tools/spade/MontairisSpadeItem.kt:136-163" },
+   { "text": "You must be allowed to build where you stand to use it, and each converted sand block must also be in a spot where you can build.", "src": "items/tools/spade/MontairisSpadeItem.kt:90, items/tools/spade/MontairisSpadeItem.kt:126-128" },
+   { "text": "The falling drops are hidden from nearby players, so you only see the cloud and the sparkles.", "src": "items/tools/spade/MontairisSpadeItem.kt:255-257" }
+  ]
+ },
+ {
+  "key": "crimson-edict",
+  "items": ["crimson-edict"],
+  "summary": "A sword that can make mobs and players drop their heads when you kill them with it.",
+  "use": [
+   { "text": "Kill with it in your main hand.", "src": "items/weapons/cutlass/CrimsonEdictItem.kt:51-52" }
+  ],
+  "numbers": [
+   { "label": "Zombie, creeper, skeleton, wither skeleton", "value": "≈5% (5 in 101) head drop", "src": "items/weapons/cutlass/CrimsonEdictItem.kt:56, items/weapons/cutlass/CrimsonEdictItem.kt:68-71" },
+   { "label": "Player, piglin", "value": "≈2% (2 in 101) head drop", "src": "items/weapons/cutlass/CrimsonEdictItem.kt:56, items/weapons/cutlass/CrimsonEdictItem.kt:63-67, items/weapons/cutlass/CrimsonEdictItem.kt:72" },
+   { "label": "Ender dragon", "value": "≈1% (1 in 101) head drop", "src": "items/weapons/cutlass/CrimsonEdictItem.kt:56, items/weapons/cutlass/CrimsonEdictItem.kt:73" }
+  ],
+  "details": [
+   { "text": "A player's head shows that player's skin.", "src": "items/weapons/cutlass/CrimsonEdictItem.kt:63-67" },
+   { "text": "Looting doesn't raise the head chance. No other mob types get a head from the sword.", "src": "items/weapons/cutlass/CrimsonEdictItem.kt:54-59" }
+  ]
+ },
+ {
+  "key": "dark-moon-claymore",
+  "items": ["dark-moon-claymore"],
+  "summary": "A slow, heavy two-handed sword. Every melee hit also strikes every living thing around you and the target, dealing more damage the more targets there are.",
+  "use": [
+   { "text": "Hold it in your main hand with no weapon or tool in your off-hand. A shield or an empty hand is fine.", "src": "items/weapons/cutlass/DarkMoonClaymoreItem.kt:55-58, enums/GenericToolType.kt:7-9" }
+  ],
+  "numbers": [
+   { "label": "Targets", "value": "up to 20: everything within 3 blocks of you plus everything within 5 blocks of the mob you hit", "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:31, items/weapons/cutlass/MidnightClaymoreItem.kt:86-92" },
+   { "label": "Damage per target", "value": "your hit × (1 + 0.19 × N) for the first of N targets, 0.095× less for each target after", "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:97-106" },
+   { "label": "Attack speed", "value": "−3.5 (0.5 attacks per second, a 2 s full swing, if your base attack speed is the game's default of 4)", "src": "items/weapons/cutlass/DarkMoonClaymoreItem.kt:32, model/item/ItemFactory.kt:196-205" },
+   { "label": "Movement speed", "value": "−0.01 in main hand (about −10% if your base walking speed is the game's default of 0.1)", "src": "items/weapons/cutlass/DarkMoonClaymoreItem.kt:33" }
+  ],
+  "details": [
+   { "text": "Only your direct melee hits count. Sweeps, thorns and projectiles don't trigger it. The code doesn't check the attack cooldown, so quick weak hits trigger it too.", "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:71-73, items/weapons/cutlass/MidnightClaymoreItem.kt:81" },
+   { "text": "It shares its sweep with the Midnight Claymore but has higher enchantments (Smite and Bane of Arthropods VIII, Looting VI, Unbreaking X).", "src": "items/weapons/cutlass/DarkMoonClaymoreItem.kt:18, items/weapons/cutlass/DarkMoonClaymoreItem.kt:35-42, items/weapons/cutlass/MidnightClaymoreItem.kt:50-57" }
+  ],
+  "quirks": [
+   { "text": "The sweep doesn't skip anything except you: pets, villagers, armor stands and other players in range are all picked.", "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:86-99" },
+   { "text": "The slow attack speed applies in any slot. Holding the claymore in your off-hand also slows attacks with whatever is in your main hand.", "src": "items/weapons/cutlass/DarkMoonClaymoreItem.kt:32" },
+   { "text": "The tooltip says damage grows \"exponentially\" with more targets. In the code it grows in a straight line.", "src": "items/weapons/cutlass/DarkMoonClaymoreItem.kt:47-50, items/weapons/cutlass/MidnightClaymoreItem.kt:97-99" }
+  ],
+  "config": [
+   { "text": "Extra hits are dealt as your attacks, so protection or PvP rules on the server can still block them.", "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:99" },
+   { "text": "The two ranges are added together without removing repeats, so a mob in both (usually including the one you hit) may be picked twice. Whether that second strike deals extra damage depends on the game's hit immunity (not tested).", "src": "items/weapons/cutlass/MidnightClaymoreItem.kt:86-99" }
+  ]
+ },
+ {
+  "key": "rosalia-glaive",
+  "items": ["rosalia-glaive"],
+  "summary": "A fish-hunting trident. When you kill an aquatic mob, its fish drops can be swapped for EvenMoreFish fish, as long as EvenMoreFish allows catches at that moment (for example during a fishing competition).",
+  "use": [
+   { "text": "Kill fish, squid and other aquatic mobs while holding the Glaive.", "src": "items/weapons/trident/RosaliaGlaiveItem.kt:47-62" }
+  ],
+  "details": [
+   { "text": "Each fish item the mob drops (cod, salmon, tropical fish, pufferfish) is swapped for a fish rolled by EvenMoreFish as a \"hunted\" catch. If EvenMoreFish returns no fish, the normal drop stays.", "src": "items/weapons/trident/RosaliaGlaiveItem.kt:53-62, items/weapons/trident/RosaliaGlaiveItem.kt:75-86" },
+   { "text": "Mobs from spawners don't count.", "src": "items/weapons/trident/RosaliaGlaiveItem.kt:49" },
+   { "text": "It works from either hand, since the code doesn't check which hand holds it.", "src": "items/weapons/trident/RosaliaGlaiveItem.kt:47-50, events/item/Listeners.kt:146-157" }
+  ],
+  "config": [
+   { "text": "The item only exists when the EvenMoreFish plugin is installed. Whether it works outside a competition, and which fish you get, depend on EvenMoreFish's settings: it works during a competition that allows fishing, or at any time if the server doesn't restrict catches to competitions.", "src": "items/weapons/trident/RosaliaGlaiveItem.kt:19, items/weapons/trident/RosaliaGlaiveItem.kt:88-91" }
+  ]
+ }
+]
