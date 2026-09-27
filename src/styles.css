@@ -387,16 +387,16 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
 }
 .item-tile:hover { border-color: var(--accent); background: var(--selected); }
 .item-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.tile-icon { position: relative; display: grid; }
-/* Enchantment glint: a violet sheen masked to the icon's own pixels. */
-.tile-icon.glint::after {
+.atlas-icon { position: relative; display: block; flex: none; background-repeat: no-repeat; image-rendering: pixelated; }
+/* Enchantment glint: a violet sheen masked to the icon's own pixels (same cell of the sprite sheet). */
+.atlas-icon.glint::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  -webkit-mask: var(--icon) center / contain no-repeat; mask: var(--icon) center / contain no-repeat;
+  -webkit-mask: var(--atlas) var(--pos) / var(--dims) no-repeat; mask: var(--atlas) var(--pos) / var(--dims) no-repeat;
   background: linear-gradient(115deg, transparent 35%, rgb(190 130 255 / 0.6) 47%, rgb(230 200 255 / 0.45) 52%, transparent 65%) 0 0 / 300% 100%;
   mix-blend-mode: screen; animation: glint 3.2s linear infinite;
 }
 @keyframes glint { from { background-position: 150% 0; } to { background-position: -150% 0; } }
-@media (prefers-reduced-motion: reduce) { .tile-icon.glint::after { animation: none; background-position: 50% 0; } }
+@media (prefers-reduced-motion: reduce) { .atlas-icon.glint::after { animation: none; background-position: 50% 0; } }
 .astral-set { display: grid; gap: 10px; scroll-margin-top: 90px; }
 .astral-set h3 { font-size: 16px; font-weight: 600; }
 .astral-set.focus { outline: 2px solid var(--accent); outline-offset: 8px; border-radius: 12px; }

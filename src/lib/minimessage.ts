@@ -148,8 +148,10 @@ export function parseMini(input: string, base: Partial<Span> = {}): Span[] {
     const end = input.indexOf('>', i);
     if (end < 0) { text += ch; continue; }
     const body = input.slice(i + 1, end);
+    // `<<#fff>`: MiniMessage restarts the tag at the inner '<', so the outer one is plain text.
+    if (body.includes('<')) { text += ch; continue; }
     if (body.startsWith('/')) {
-      const name = body.slice(1).split(':')[0];
+      const name = body.slice(1).split(':')[0].replace(/^!/, '');
       let idx = -1;
       for (let k = stack.length - 1; k >= 0; k--) if (sameName(stack[k], name)) { idx = k; break; }
       if (idx < 0 && name !== '') { text += input.slice(i, end + 1); i = end; continue; }

@@ -37,7 +37,7 @@ The server's Jobs config isn't public, so the guide is built from in-game readin
 git -c core.longpaths=true clone https://github.com/LumaLibre/LumaItems.git data/LumaItems   # not committed (CC BY-NC-ND)
 git -C data/LumaItems checkout "$(cat data/LumaItems.commit)"                                   # or a newer commit: update the .commit file too
 npm run items        # writes src/data/items.json; lists skipped items and anything needing an override
-npm run data         # copies the item icons into public/icons/
+npm run data         # copies the item icons into public/icons/ and packs them into src/assets/items-atlas.png (needs Pillow)
 ```
 
 After moving to a newer commit, re-check the hand-written entries in `data/items-overrides.json` against the source

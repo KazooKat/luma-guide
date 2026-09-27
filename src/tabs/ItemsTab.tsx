@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks';
-import { Icon } from '../components/Icon';
+import { AtlasIcon } from '../components/AtlasIcon';
 import { McTooltip } from '../components/McTooltip';
 import { SuggestButton } from '../components/SuggestButton';
 import type { GlossaryItem } from '../data/types';
@@ -54,9 +54,7 @@ function ItemTile({ item, onTip }: { item: GlossaryItem; onTip: (t: Tip | null) 
       }}
       onBlur={() => onTip(null)}
     >
-      <span class={item.glint ? 'tile-icon glint' : 'tile-icon'} style={item.glint ? { '--icon': `url(${import.meta.env.BASE_URL}icons/${item.icon}.png)` } : undefined}>
-        <Icon id={item.icon} size={40} lazy />
-      </span>
+      <AtlasIcon id={item.icon} size={40} glint={item.glint} />
     </a>
   );
 }

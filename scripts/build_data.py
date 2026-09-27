@@ -5,6 +5,8 @@ Every value is normalized to its level-1 base using the fitted Luma scaling:
     xp(L) = base (L+5)/6        money(L) = base (L+9)/10
 so the site can project any level. Icons come from the minecraft-textures package
 (MC 26.2 manifest); only the PNGs actually referenced are copied into public/icons/.
+The item glossary's icons are also packed into one sprite sheet (src/assets/items-atlas.png) so the Items page
+makes one image request instead of ~120; that step needs Pillow (pip install pillow).
 """
 import json
 import re
@@ -18,6 +20,9 @@ META_FILE = ROOT / "data" / "jobs-meta.json"
 OUT = ROOT / "src" / "data" / "jobs.json"
 # The Items glossary (built by scripts/build-items.mjs); each item's material icon is copied too.
 ITEMS_FILE = ROOT / "src" / "data" / "items.json"
+ATLAS_PNG = ROOT / "src" / "assets" / "items-atlas.png"
+ATLAS_JSON = ROOT / "src" / "data" / "items-atlas.json"
+ATLAS_COLS = 16
 ICON_DIR = ROOT / "public" / "icons"
 # Icons that aren't vanilla items (e.g. Luma's sapling box head). Copied into public/icons/ as-is.
 CUSTOM_ICON_DIR = ROOT / "data" / "custom-icons"
@@ -166,6 +171,25 @@ class Icons:
             shutil.copyfile(custom, ICON_DIR / custom.name)
 
 
+def build_atlas(ids):
+    """Pack the glossary's item icons into one PNG grid; the index says where each one sits."""
+    from PIL import Image
+
+    images = [Image.open(ICON_DIR / f"{i}.png").convert("RGBA") for i in ids]
+    cell = images[0].width
+    if any(im.size != (cell, cell) for im in images):
+        raise SystemExit("item icons are not all the same square size; the atlas assumes they are")
+    rows = -(-len(ids) // ATLAS_COLS)
+    sheet = Image.new("RGBA", (ATLAS_COLS * cell, rows * cell), (0, 0, 0, 0))
+    for n, im in enumerate(images):
+        sheet.paste(im, ((n % ATLAS_COLS) * cell, (n // ATLAS_COLS) * cell))
+    ATLAS_PNG.parent.mkdir(parents=True, exist_ok=True)
+    sheet.save(ATLAS_PNG, optimize=True)
+    ATLAS_JSON.write_text(json.dumps({"cell": cell, "cols": ATLAS_COLS, "rows": rows,
+                                      "icons": {i: n for n, i in enumerate(ids)}}, indent=1) + "\n", encoding="utf-8")
+    print(f"atlas: {len(ids)} item icons in {ATLAS_COLS}x{rows} grid of {cell}px ({ATLAS_PNG.stat().st_size} bytes)")
+
+
 def parse_file(path):
     meta, rows, action = {}, [], None
     for raw in path.read_text(encoding="utf-8").splitlines():
@@ -227,6 +251,8 @@ def main():
                 raise SystemExit(f"unknown item icon id: {item['icon']} ({item['id']})")
             icons.used[item["icon"]] = icons.by_id[item["icon"]]
     icons.copy()
+    if ITEMS_FILE.exists():
+        build_atlas(sorted({i["icon"] for i in json.loads(ITEMS_FILE.read_text(encoding="utf-8"))["items"]}))
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"mcVersion": MC_VERSION, "jobs": jobs}, indent=1), encoding="utf-8")
     for j in jobs:

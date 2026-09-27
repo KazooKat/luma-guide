@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { ASTRAL_ORB_SETS } from '../lib/relics';
 import { plain } from '../lib/minimessage';
+import atlas from './items-atlas.json';
 import data from './items.json';
 import type { ItemsData } from './types';
 
@@ -26,6 +27,18 @@ describe('items.json', () => {
       expect(plain(it.name).trim(), it.id).not.toBe('');
       expect(plain(it.lore[it.lore.length - 2]), it.id).toMatch(/^Tier • /);
       expect(existsSync(icon(it.icon)), `${it.id}: ${it.icon}.png`).toBe(true);
+    }
+  });
+
+  it('has every item icon in the sprite sheet the Items grid draws from', () => {
+    const inAtlas = atlas.icons as Record<string, number>;
+    for (const it of DATA.items) expect(inAtlas[it.icon], `${it.id}: ${it.icon}`).toBeTypeOf('number');
+    expect(Object.keys(inAtlas).length).toBeLessThanOrEqual(atlas.cols * atlas.rows);
+  });
+
+  it('leaves no MiniMessage tags unrendered in any tooltip line', () => {
+    for (const it of DATA.items) {
+      for (const line of [it.name, ...it.enchants, ...it.lore]) expect(plain(line), it.id).not.toMatch(/<\/?[#a-z!]/i);
     }
   });
 

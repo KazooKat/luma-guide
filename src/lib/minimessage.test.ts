@@ -42,6 +42,18 @@ describe('parseMini', () => {
     expect(plain('<foo>bar \\<b> baz')).toBe('<foo>bar <b> baz');
   });
 
+  it('closes negated decorations with </!b>', () => {
+    const spans = parseMini('<b>Pouch</b> <!b><#F7FFC9>Bundle</#F7FFC9></!b>');
+    expect(spans.map((s) => s.text).join('')).toBe('Pouch Bundle');
+    expect(spans.at(-1)).toMatchObject({ text: 'Bundle', color: '#F7FFC9', bold: false });
+  });
+
+  it('prints a < that opens no tag and still applies the tag after it, like MiniMessage', () => {
+    const spans = parseMini('<<#B9C5E5>"x');
+    expect(spans.map((s) => s.text).join('')).toBe('<"x');
+    expect(spans.at(-1)).toMatchObject({ color: '#B9C5E5' });
+  });
+
   it('handles reset', () => {
     const spans = parseMini('<red><b>a<reset>b');
     expect(spans[1]).toMatchObject({ text: 'b', color: null, bold: undefined });
