@@ -6,3 +6,5 @@ dist/
 data/PerksFile.kt
 src/lib/__fixtures__/Bloom.java
 __pycache__/
+# Upstream mcMMO potions.yml (GPL-3.0), fetched locally to build src/data/potions.json.
+data/mcmmo-potions.yml

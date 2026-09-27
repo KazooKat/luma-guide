@@ -44,6 +44,14 @@ The server's Jobs config isn't public, so the guide is built from in-game readin
    gh api "repos/LumaLibre/JobsAddons/contents/src/main/kotlin/dev/lumas/jobsaddons/configuration/PerksFile.kt" --jq .content | base64 -d > data/PerksFile.kt
    ```
    Also update `DATA_DATE` in `src/config.ts`.
+   Alchemist brewing chains use Luma's mcMMO potion recipes (`src/data/potions.json`). To refresh them
+   (needs PyYAML; the fetched `.yml` isn't committed):
+   ```sh
+   gh api repos/LumaLibre/mcMMO/commits/HEAD --jq .sha > data/mcmmo.commit
+   gh api "repos/LumaLibre/mcMMO/contents/src/main/resources/potions.yml?ref=$(cat data/mcmmo.commit)" --jq .content | base64 -d > data/mcmmo-potions.yml
+   npm run potions
+   ```
+   Catalysis and Master Angler numbers live in `src/lib/mcmmo.ts` (Retro Mode, checked against `/alchemy` and `/fishing` in game).
 3. `npm test && npm run build`, then commit and push. GitHub Actions tests and deploys `main`.
 
 `scripts/extract_log.py --log <path>` reads another log (including `.log.gz`).

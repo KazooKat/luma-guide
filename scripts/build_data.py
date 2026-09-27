@@ -116,7 +116,9 @@ EXTRA_ICONS = ["furnace", "smoker", "blast_furnace", "brewing_stand", "netherite
                # relics page
                "netherite_chestplate", "diamond_chestplate", "golden_sword", "iron_pickaxe", "chainmail_helmet",
                "crossbow", "coal_block", "iron_ingot", "gold_ingot", "diamond", "netherite_scrap", "prismarine_shard",
-               "ender_eye", "amethyst_cluster", "charcoal", "zombie_head", "firework_star", "writable_book", "experience_bottle", "emerald"]
+               "ender_eye", "amethyst_cluster", "charcoal", "zombie_head", "firework_star", "writable_book", "experience_bottle", "emerald",
+               # brewing chains
+               "potion", "splash_potion", "lingering_potion", "slime_ball"]
 
 
 def slug(name):

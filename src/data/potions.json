@@ -1,0 +1,1519 @@
+{
+ "source": "LumaLibre/mcMMO@e19e043 potions.yml",
+ "start": "POTION_OF_WATER",
+ "tiers": {
+  "BREEZE_ROD": 1,
+  "BLAZE_POWDER": 1,
+  "FERMENTED_SPIDER_EYE": 1,
+  "GHAST_TEAR": 1,
+  "GLOWSTONE_DUST": 1,
+  "GOLDEN_CARROT": 1,
+  "MAGMA_CREAM": 1,
+  "NETHER_WART": 1,
+  "REDSTONE": 1,
+  "GLISTERING_MELON_SLICE": 1,
+  "SPIDER_EYE": 1,
+  "SUGAR": 1,
+  "GUNPOWDER": 1,
+  "WATER_LILY": 1,
+  "PUFFERFISH": 1,
+  "DRAGON_BREATH": 1,
+  "STONE": 1,
+  "SLIME_BLOCK": 1,
+  "COBWEB": 1,
+  "TURTLE_HELMET": 1,
+  "CARROT": 2,
+  "SLIME_BALL": 2,
+  "PHANTOM_MEMBRANE": 2,
+  "QUARTZ": 3,
+  "RABBIT_FOOT": 3,
+  "APPLE": 4,
+  "ROTTEN_FLESH": 4,
+  "BROWN_MUSHROOM": 5,
+  "INK_SAC": 5,
+  "FERN": 6,
+  "POISONOUS_POTATO": 7,
+  "GOLDEN_APPLE": 8
+ },
+ "potions": {
+  "POTION_OF_WATER": {
+   "name": "Water Bottle",
+   "children": {
+    "BREEZE_ROD": "POTION_OF_MUNDANE",
+    "SPIDER_EYE": "POTION_OF_MUNDANE",
+    "FERMENTED_SPIDER_EYE": "POTION_OF_WEAKNESS",
+    "GLOWSTONE_DUST": "POTION_OF_THICK",
+    "GUNPOWDER": "SPLASH_POTION_OF_WATER",
+    "GHAST_TEAR": "POTION_OF_MUNDANE",
+    "MAGMA_CREAM": "POTION_OF_MUNDANE",
+    "SUGAR": "POTION_OF_MUNDANE",
+    "GLISTERING_MELON_SLICE": "POTION_OF_MUNDANE",
+    "NETHER_WART": "POTION_OF_AWKWARD",
+    "BLAZE_POWDER": "POTION_OF_MUNDANE",
+    "REDSTONE": "POTION_OF_MUNDANE",
+    "RABBIT_FOOT": "POTION_OF_MUNDANE"
+   }
+  },
+  "POTION_OF_MUNDANE": {
+   "name": "Mundane Potion",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_MUNDANE"
+   }
+  },
+  "SPLASH_POTION_OF_MUNDANE": {
+   "name": "Splash Mundane Potion",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_MUNDANE"
+   }
+  },
+  "LINGERING_POTION_OF_MUNDANE": {
+   "name": "Lingering Mundane Potion",
+   "children": {}
+  },
+  "POTION_OF_AWKWARD": {
+   "name": "Awkward Potion",
+   "children": {
+    "BREEZE_ROD": "POTION_OF_WIND_CHARGING",
+    "QUARTZ": "POTION_OF_ABSORPTION",
+    "GUNPOWDER": "SPLASH_POTION_OF_AWKWARD",
+    "BROWN_MUSHROOM": "POTION_OF_NAUSEA",
+    "SLIME_BALL": "POTION_OF_DULLNESS",
+    "GLISTERING_MELON_SLICE": "POTION_OF_HEALING",
+    "INK_SAC": "POTION_OF_BLINDNESS",
+    "APPLE": "POTION_OF_HEALTH_BOOST",
+    "GOLDEN_APPLE": "POTION_OF_RESISTANCE",
+    "FERN": "POTION_OF_SATURATION",
+    "MAGMA_CREAM": "POTION_OF_FIRE_RESISTANCE",
+    "PHANTOM_MEMBRANE": "POTION_OF_SLOW_FALLING",
+    "CARROT": "POTION_OF_HASTE",
+    "BLAZE_POWDER": "POTION_OF_STRENGTH",
+    "POISONOUS_POTATO": "POTION_OF_DECAY",
+    "GOLDEN_CARROT": "POTION_OF_NIGHT_VISION",
+    "SUGAR": "POTION_OF_SWIFTNESS",
+    "ROTTEN_FLESH": "POTION_OF_HUNGER",
+    "SPIDER_EYE": "POTION_OF_POISON",
+    "PUFFERFISH": "POTION_OF_WATER_BREATHING",
+    "GHAST_TEAR": "POTION_OF_REGENERATION",
+    "TURTLE_HELMET": "POTION_OF_TURTLE_MASTER",
+    "RABBIT_FOOT": "POTION_OF_LEAPING",
+    "STONE": "POTION_OF_INFESTATION",
+    "SLIME_BLOCK": "POTION_OF_OOZING",
+    "COBWEB": "POTION_OF_WEAVING"
+   }
+  },
+  "POTION_OF_WEAVING": {
+   "name": "Potion of Weaving",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_WEAVING"
+   }
+  },
+  "SPLASH_POTION_OF_WEAVING": {
+   "name": "Splash Potion of Weaving",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_WEAVING"
+   }
+  },
+  "LINGERING_POTION_OF_WEAVING": {
+   "name": "Lingering Potion of Weaving",
+   "children": {}
+  },
+  "POTION_OF_OOZING": {
+   "name": "Potion of Oozing",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_OOZING"
+   }
+  },
+  "SPLASH_POTION_OF_OOZING": {
+   "name": "Splash Potion of Oozing",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_OOZING"
+   }
+  },
+  "LINGERING_POTION_OF_OOZING": {
+   "name": "Lingering Potion of Oozing",
+   "children": {}
+  },
+  "POTION_OF_INFESTATION": {
+   "name": "Potion of Infestation",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_INFESTATION",
+    "DRAGON_BREATH": "SPLASH_POTION_OF_INFESTATION"
+   }
+  },
+  "SPLASH_POTION_OF_INFESTATION": {
+   "name": "Splash Potion of Infestation",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_INFESTATION"
+   }
+  },
+  "LINGERING_POTION_OF_INFESTATION": {
+   "name": "Lingering Potion of Infestation",
+   "children": {}
+  },
+  "POTION_OF_LEAPING": {
+   "name": "Potion of Leaping",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_LEAPING",
+    "FERMENTED_SPIDER_EYE": "POTION_OF_SLOWNESS",
+    "GLOWSTONE_DUST": "POTION_OF_LEAPING_II",
+    "REDSTONE": "POTION_OF_LEAPING_EXTENDED"
+   }
+  },
+  "POTION_OF_LEAPING_EXTENDED": {
+   "name": "Potion of Leaping (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_LEAPING_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_LEAPING_EXTENDED": {
+   "name": "Splash Potion of Leaping (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_LEAPING_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_LEAPING_EXTENDED": {
+   "name": "Lingering Potion of Leaping (long)",
+   "children": {}
+  },
+  "POTION_OF_LEAPING_II": {
+   "name": "Potion of Leaping II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_LEAPING_II"
+   }
+  },
+  "SPLASH_POTION_OF_LEAPING_II": {
+   "name": "Splash Potion of Leaping II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_LEAPING_II"
+   }
+  },
+  "LINGERING_POTION_OF_LEAPING_II": {
+   "name": "Lingering Potion of Leaping II",
+   "children": {}
+  },
+  "POTION_OF_SLOWNESS": {
+   "name": "Potion of Slowness",
+   "children": {
+    "REDSTONE": "POTION_OF_SLOWNESS_EXTENDED",
+    "GUNPOWDER": "SPLASH_POTION_OF_SLOWNESS"
+   }
+  },
+  "SPLASH_POTION_OF_SLOWNESS": {
+   "name": "Splash Potion of Slowness",
+   "children": {
+    "REDSTONE": "SPLASH_POTION_OF_SLOWNESS_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_SLOWNESS"
+   }
+  },
+  "LINGERING_POTION_OF_SLOWNESS": {
+   "name": "Lingering Potion of Slowness",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_SLOWNESS_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_SLOWNESS_EXTENDED": {
+   "name": "Lingering Potion of Slowness (long)",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_SLOWNESS_EXTENDED": {
+   "name": "Splash Potion of Slowness (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_SLOWNESS_EXTENDED"
+   }
+  },
+  "POTION_OF_SLOWNESS_EXTENDED": {
+   "name": "Potion of Slowness (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_SLOWNESS_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_LEAPING": {
+   "name": "Splash Potion of Leaping",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_LEAPING",
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_SLOWNESS",
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_LEAPING_II",
+    "REDSTONE": "SPLASH_POTION_OF_LEAPING_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_LEAPING": {
+   "name": "Lingering Potion of Leaping",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_LEAPING_EXTENDED",
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_SLOWNESS",
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_LEAPING_II"
+   }
+  },
+  "POTION_OF_TURTLE_MASTER": {
+   "name": "Potion of Turtle Master",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_TURTLE_MASTER",
+    "GLOWSTONE_DUST": "POTION_OF_TURTLE_MASTER_II",
+    "REDSTONE": "POTION_OF_TURTLE_MASTER_EXTENDED"
+   }
+  },
+  "POTION_OF_TURTLE_MASTER_EXTENDED": {
+   "name": "Potion of Turtle Master (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_TURTLE_MASTER_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_TURTLE_MASTER_EXTENDED": {
+   "name": "Splash Potion of Turtle Master (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_TURTLE_MASTER_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_TURTLE_MASTER_EXTENDED": {
+   "name": "Lingering Potion of Turtle Master (long)",
+   "children": {}
+  },
+  "POTION_OF_TURTLE_MASTER_II": {
+   "name": "Potion of Turtle Master II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_TURTLE_MASTER_II"
+   }
+  },
+  "SPLASH_POTION_OF_TURTLE_MASTER_II": {
+   "name": "Splash Potion of Turtle Master II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_TURTLE_MASTER_II"
+   }
+  },
+  "LINGERING_POTION_OF_TURTLE_MASTER_II": {
+   "name": "Lingering Potion of Turtle Master II",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_TURTLE_MASTER": {
+   "name": "Splash Potion of Turtle Master",
+   "children": {
+    "REDSTONE": "SPLASH_POTION_OF_TURTLE_MASTER_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_TURTLE_MASTER",
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_TURTLE_MASTER_II"
+   }
+  },
+  "LINGERING_POTION_OF_TURTLE_MASTER": {
+   "name": "Lingering Potion of Turtle Master",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_TURTLE_MASTER_EXTENDED",
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_TURTLE_MASTER_II"
+   }
+  },
+  "POTION_OF_REGENERATION": {
+   "name": "Potion of Regeneration",
+   "children": {
+    "GLOWSTONE_DUST": "POTION_OF_REGENERATION_II",
+    "GUNPOWDER": "SPLASH_POTION_OF_REGENERATION",
+    "REDSTONE": "POTION_OF_REGENERATION_EXTENDED"
+   }
+  },
+  "POTION_OF_REGENERATION_EXTENDED": {
+   "name": "Potion of Regeneration (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_REGENERATION_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_REGENERATION_EXTENDED": {
+   "name": "Splash Potion of Regeneration (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_REGENERATION_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_REGENERATION_EXTENDED": {
+   "name": "Lingering Potion of Regeneration (long)",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_REGENERATION": {
+   "name": "Splash Potion of Regeneration",
+   "children": {
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_REGENERATION_II",
+    "REDSTONE": "SPLASH_POTION_OF_REGENERATION_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_REGENERATION"
+   }
+  },
+  "LINGERING_POTION_OF_REGENERATION": {
+   "name": "Lingering Potion of Regeneration",
+   "children": {
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_REGENERATION_II",
+    "REDSTONE": "LINGERING_POTION_OF_REGENERATION_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_REGENERATION_II": {
+   "name": "Lingering Potion of Regeneration II",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_REGENERATION_II": {
+   "name": "Splash Potion of Regeneration II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_REGENERATION_II"
+   }
+  },
+  "POTION_OF_REGENERATION_II": {
+   "name": "Potion of Regeneration II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_REGENERATION_II"
+   }
+  },
+  "POTION_OF_WATER_BREATHING": {
+   "name": "Potion of Water Breathing",
+   "children": {
+    "REDSTONE": "POTION_OF_WATER_BREATHING_EXTENDED",
+    "GUNPOWDER": "SPLASH_POTION_OF_WATER_BREATHING",
+    "FERMENTED_SPIDER_EYE": "POTION_OF_HARMING"
+   }
+  },
+  "POTION_OF_HARMING": {
+   "name": "Potion of Harming",
+   "children": {
+    "GLOWSTONE_DUST": "POTION_OF_HARMING_II",
+    "GUNPOWDER": "SPLASH_POTION_OF_HARMING"
+   }
+  },
+  "SPLASH_POTION_OF_HARMING": {
+   "name": "Splash Potion of Harming",
+   "children": {
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_HARMING_II",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HARMING"
+   }
+  },
+  "LINGERING_POTION_OF_HARMING": {
+   "name": "Lingering Potion of Harming",
+   "children": {
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_HARMING_II"
+   }
+  },
+  "LINGERING_POTION_OF_HARMING_II": {
+   "name": "Lingering Potion of Harming II",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_HARMING_II": {
+   "name": "Splash Potion of Harming II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HARMING_II"
+   }
+  },
+  "POTION_OF_HARMING_II": {
+   "name": "Potion of Harming II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_HARMING_II"
+   }
+  },
+  "SPLASH_POTION_OF_WATER_BREATHING": {
+   "name": "Splash Potion of Water Breathing",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_HARMING",
+    "REDSTONE": "SPLASH_POTION_OF_WATER_BREATHING_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_WATER_BREATHING"
+   }
+  },
+  "LINGERING_POTION_OF_WATER_BREATHING": {
+   "name": "Lingering Potion of Water Breathing",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_HARMING",
+    "REDSTONE": "LINGERING_POTION_OF_WATER_BREATHING_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_WATER_BREATHING_EXTENDED": {
+   "name": "Lingering Potion of Water Breathing (long)",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_WATER_BREATHING_EXTENDED": {
+   "name": "Splash Potion of Water Breathing (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_WATER_BREATHING_EXTENDED"
+   }
+  },
+  "POTION_OF_WATER_BREATHING_EXTENDED": {
+   "name": "Potion of Water Breathing (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_WATER_BREATHING_EXTENDED"
+   }
+  },
+  "POTION_OF_POISON": {
+   "name": "Potion of Poison",
+   "children": {
+    "GLOWSTONE_DUST": "POTION_OF_POISON_II",
+    "FERMENTED_SPIDER_EYE": "POTION_OF_HARMING",
+    "GUNPOWDER": "SPLASH_POTION_OF_POISON",
+    "REDSTONE": "POTION_OF_POISON_EXTENDED"
+   }
+  },
+  "POTION_OF_POISON_EXTENDED": {
+   "name": "Potion of Poison (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_POISON_EXTENDED",
+    "FERMENTED_SPIDER_EYE": "POTION_OF_HARMING_II"
+   }
+  },
+  "SPLASH_POTION_OF_POISON_EXTENDED": {
+   "name": "Splash Potion of Poison (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_POISON_EXTENDED",
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_HARMING_II"
+   }
+  },
+  "LINGERING_POTION_OF_POISON_EXTENDED": {
+   "name": "Lingering Potion of Poison (long)",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_HARMING_II"
+   }
+  },
+  "SPLASH_POTION_OF_POISON": {
+   "name": "Splash Potion of Poison",
+   "children": {
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_POISON_II",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_POISON",
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_HARMING",
+    "REDSTONE": "SPLASH_POTION_OF_POISON_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_POISON": {
+   "name": "Lingering Potion of Poison",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_POISON_EXTENDED",
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_HARMING",
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_POISON_II"
+   }
+  },
+  "LINGERING_POTION_OF_POISON_II": {
+   "name": "Lingering Potion of Poison II",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_HARMING_II"
+   }
+  },
+  "SPLASH_POTION_OF_POISON_II": {
+   "name": "Splash Potion of Poison II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_POISON_II",
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_HARMING_II"
+   }
+  },
+  "POTION_OF_POISON_II": {
+   "name": "Potion of Poison II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_POISON_II",
+    "FERMENTED_SPIDER_EYE": "POTION_OF_HARMING_II"
+   }
+  },
+  "POTION_OF_HUNGER": {
+   "name": "Potion of Hunger",
+   "children": {
+    "REDSTONE": "POTION_OF_HUNGER_EXTENDED",
+    "GLOWSTONE_DUST": "POTION_OF_HUNGER_II",
+    "GUNPOWDER": "SPLASH_POTION_OF_HUNGER"
+   }
+  },
+  "SPLASH_POTION_OF_HUNGER": {
+   "name": "Splash Potion of Hunger",
+   "children": {
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_HUNGER_II",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HUNGER",
+    "REDSTONE": "SPLASH_POTION_OF_HUNGER_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_HUNGER_EXTENDED": {
+   "name": "Splash Potion of Hunger (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HUNGER_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_HUNGER_EXTENDED": {
+   "name": "Lingering Potion of Hunger (long)",
+   "children": {}
+  },
+  "LINGERING_POTION_OF_HUNGER": {
+   "name": "Lingering Potion of Hunger",
+   "children": {
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_HUNGER_II",
+    "REDSTONE": "LINGERING_POTION_OF_HUNGER_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_HUNGER_II": {
+   "name": "Lingering Potion of Hunger II",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_HUNGER_II": {
+   "name": "Splash Potion of Hunger II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HUNGER_II"
+   }
+  },
+  "POTION_OF_HUNGER_II": {
+   "name": "Potion of Hunger II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_HUNGER_II"
+   }
+  },
+  "POTION_OF_HUNGER_EXTENDED": {
+   "name": "Potion of Hunger (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_HUNGER_EXTENDED"
+   }
+  },
+  "POTION_OF_SWIFTNESS": {
+   "name": "Potion of Swiftness",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "POTION_OF_SLOWNESS",
+    "GLOWSTONE_DUST": "POTION_OF_SWIFTNESS_II",
+    "REDSTONE": "POTION_OF_SWIFTNESS_EXTENDED",
+    "GUNPOWDER": "SPLASH_POTION_OF_SWIFTNESS"
+   }
+  },
+  "SPLASH_POTION_OF_SWIFTNESS": {
+   "name": "Splash Potion of Swiftness",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_SLOWNESS",
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_SWIFTNESS_II",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_SWIFTNESS",
+    "REDSTONE": "SPLASH_POTION_OF_SWIFTNESS_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_SWIFTNESS_EXTENDED": {
+   "name": "Splash Potion of Swiftness (long)",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_SLOWNESS_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_SWIFTNESS_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_SWIFTNESS_EXTENDED": {
+   "name": "Lingering Potion of Swiftness (long)",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_SLOWNESS_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_SWIFTNESS": {
+   "name": "Lingering Potion of Swiftness",
+   "children": {
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_SWIFTNESS_II",
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_SLOWNESS",
+    "REDSTONE": "LINGERING_POTION_OF_SWIFTNESS_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_SWIFTNESS_II": {
+   "name": "Lingering Potion of Swiftness II",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_SLOWNESS_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_SWIFTNESS_II": {
+   "name": "Splash Potion of Swiftness II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_SWIFTNESS_II",
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_SLOWNESS_EXTENDED"
+   }
+  },
+  "POTION_OF_SWIFTNESS_EXTENDED": {
+   "name": "Potion of Swiftness (long)",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "POTION_OF_SLOWNESS_EXTENDED",
+    "GUNPOWDER": "SPLASH_POTION_OF_SWIFTNESS_EXTENDED"
+   }
+  },
+  "POTION_OF_SWIFTNESS_II": {
+   "name": "Potion of Swiftness II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_SWIFTNESS_II",
+    "FERMENTED_SPIDER_EYE": "POTION_OF_SLOWNESS_EXTENDED"
+   }
+  },
+  "POTION_OF_NIGHT_VISION": {
+   "name": "Potion of Night Vision",
+   "children": {
+    "REDSTONE": "POTION_OF_NIGHT_VISION_EXTENDED",
+    "GUNPOWDER": "SPLASH_POTION_OF_NIGHT_VISION",
+    "FERMENTED_SPIDER_EYE": "POTION_OF_INVISIBILITY"
+   }
+  },
+  "POTION_OF_INVISIBILITY": {
+   "name": "Potion of Invisibility",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_INVISIBILITY",
+    "REDSTONE": "POTION_OF_INVISIBILITY_EXTENDED"
+   }
+  },
+  "POTION_OF_INVISIBILITY_EXTENDED": {
+   "name": "Potion of Invisibility (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_INVISIBILITY_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_INVISIBILITY_EXTENDED": {
+   "name": "Splash Potion of Invisibility (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_INVISIBILITY_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_INVISIBILITY_EXTENDED": {
+   "name": "Lingering Potion of Invisibility (long)",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_INVISIBILITY": {
+   "name": "Splash Potion of Invisibility",
+   "children": {
+    "REDSTONE": "SPLASH_POTION_OF_INVISIBILITY_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_INVISIBILITY"
+   }
+  },
+  "LINGERING_POTION_OF_INVISIBILITY": {
+   "name": "Lingering Potion of Invisibility",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_INVISIBILITY_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_NIGHT_VISION": {
+   "name": "Splash Potion of Night Vision",
+   "children": {
+    "REDSTONE": "SPLASH_POTION_OF_NIGHT_VISION_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_NIGHT_VISION",
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_INVISIBILITY"
+   }
+  },
+  "LINGERING_POTION_OF_NIGHT_VISION": {
+   "name": "Lingering Potion of Night Vision",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_INVISIBILITY",
+    "REDSTONE": "LINGERING_POTION_OF_NIGHT_VISION_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_NIGHT_VISION_EXTENDED": {
+   "name": "Lingering Potion of Night Vision (long)",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_INVISIBILITY_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_NIGHT_VISION_EXTENDED": {
+   "name": "Splash Potion of Night Vision (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_NIGHT_VISION_EXTENDED",
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_INVISIBILITY_EXTENDED"
+   }
+  },
+  "POTION_OF_NIGHT_VISION_EXTENDED": {
+   "name": "Potion of Night Vision (long)",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "POTION_OF_INVISIBILITY_EXTENDED",
+    "GUNPOWDER": "SPLASH_POTION_OF_NIGHT_VISION_EXTENDED"
+   }
+  },
+  "POTION_OF_DECAY": {
+   "name": "Potion of Decay",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_DECAY",
+    "REDSTONE": "POTION_OF_DECAY_EXTENDED",
+    "GLOWSTONE_DUST": "POTION_OF_DECAY_II"
+   }
+  },
+  "POTION_OF_DECAY_II": {
+   "name": "Potion of Decay II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_DECAY_II"
+   }
+  },
+  "SPLASH_POTION_OF_DECAY_II": {
+   "name": "Splash Potion of Decay II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_DECAY_II"
+   }
+  },
+  "LINGERING_POTION_OF_DECAY_II": {
+   "name": "Lingering Potion of Decay II",
+   "children": {}
+  },
+  "POTION_OF_DECAY_EXTENDED": {
+   "name": "Potion of Decay (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_DECAY_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_DECAY_EXTENDED": {
+   "name": "Splash Potion of Decay (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_DECAY_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_DECAY_EXTENDED": {
+   "name": "Lingering Potion of Decay (long)",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_DECAY": {
+   "name": "Splash Potion of Decay",
+   "children": {
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_DECAY_II",
+    "REDSTONE": "SPLASH_POTION_OF_DECAY_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_DECAY"
+   }
+  },
+  "LINGERING_POTION_OF_DECAY": {
+   "name": "Lingering Potion of Decay",
+   "children": {
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_DECAY_II",
+    "REDSTONE": "LINGERING_POTION_OF_DECAY_EXTENDED"
+   }
+  },
+  "POTION_OF_STRENGTH": {
+   "name": "Potion of Strength",
+   "children": {
+    "REDSTONE": "POTION_OF_STRENGTH_EXTENDED",
+    "GLOWSTONE_DUST": "POTION_OF_STRENGTH_II",
+    "GUNPOWDER": "SPLASH_POTION_OF_STRENGTH"
+   }
+  },
+  "SPLASH_POTION_OF_STRENGTH": {
+   "name": "Splash Potion of Strength",
+   "children": {
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_STRENGTH_II",
+    "REDSTONE": "SPLASH_POTION_OF_STRENGTH_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_STRENGTH"
+   }
+  },
+  "LINGERING_POTION_OF_STRENGTH": {
+   "name": "Lingering Potion of Strength",
+   "children": {
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_STRENGTH_II",
+    "REDSTONE": "LINGERING_POTION_OF_STRENGTH_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_STRENGTH_EXTENDED": {
+   "name": "Lingering Potion of Strength (long)",
+   "children": {}
+  },
+  "LINGERING_POTION_OF_STRENGTH_II": {
+   "name": "Lingering Potion of Strength II",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_STRENGTH_EXTENDED": {
+   "name": "Splash Potion of Strength (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_STRENGTH_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_STRENGTH_II": {
+   "name": "Splash Potion of Strength II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_STRENGTH_II"
+   }
+  },
+  "POTION_OF_STRENGTH_II": {
+   "name": "Potion of Strength II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_STRENGTH_II"
+   }
+  },
+  "POTION_OF_STRENGTH_EXTENDED": {
+   "name": "Potion of Strength (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_STRENGTH_EXTENDED"
+   }
+  },
+  "POTION_OF_HASTE": {
+   "name": "Potion of Haste",
+   "children": {
+    "REDSTONE": "POTION_OF_HASTE_EXTENDED",
+    "GLOWSTONE_DUST": "POTION_OF_HASTE_II",
+    "GUNPOWDER": "SPLASH_POTION_OF_HASTE"
+   }
+  },
+  "SPLASH_POTION_OF_HASTE": {
+   "name": "Splash Potion of Haste",
+   "children": {
+    "REDSTONE": "SPLASH_POTION_OF_HASTE_EXTENDED",
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_HASTE_II",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HASTE"
+   }
+  },
+  "LINGERING_POTION_OF_HASTE": {
+   "name": "Lingering Potion of Haste",
+   "children": {
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_HASTE_II",
+    "REDSTONE": "LINGERING_POTION_OF_HASTE_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_HASTE_EXTENDED": {
+   "name": "Lingering Potion of Haste (long)",
+   "children": {}
+  },
+  "LINGERING_POTION_OF_HASTE_II": {
+   "name": "Lingering Potion of Haste II",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_HASTE_II": {
+   "name": "Splash Potion of Haste II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HASTE_II"
+   }
+  },
+  "SPLASH_POTION_OF_HASTE_EXTENDED": {
+   "name": "Splash Potion of Haste (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HASTE_EXTENDED"
+   }
+  },
+  "POTION_OF_HASTE_II": {
+   "name": "Potion of Haste II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_HASTE_II"
+   }
+  },
+  "POTION_OF_HASTE_EXTENDED": {
+   "name": "Potion of Haste (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_HASTE_EXTENDED"
+   }
+  },
+  "POTION_OF_SLOW_FALLING": {
+   "name": "Potion of Slow Falling",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_SLOW_FALLING",
+    "REDSTONE": "POTION_OF_SLOW_FALLING_EXTENDED"
+   }
+  },
+  "POTION_OF_SLOW_FALLING_EXTENDED": {
+   "name": "Potion of Slow Falling (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_SLOW_FALLING_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_SLOW_FALLING_EXTENDED": {
+   "name": "Splash Potion of Slow Falling (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_SLOW_FALLING_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_SLOW_FALLING_EXTENDED": {
+   "name": "Lingering Potion of Slow Falling (long)",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_SLOW_FALLING": {
+   "name": "Splash Potion of Slow Falling",
+   "children": {
+    "REDSTONE": "SPLASH_POTION_OF_SLOW_FALLING_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_SLOW_FALLING"
+   }
+  },
+  "LINGERING_POTION_OF_SLOW_FALLING": {
+   "name": "Lingering Potion of Slow Falling",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_SLOW_FALLING_EXTENDED"
+   }
+  },
+  "POTION_OF_FIRE_RESISTANCE": {
+   "name": "Potion of Fire Resistance",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "POTION_OF_SLOWNESS",
+    "REDSTONE": "POTION_OF_FIRE_RESISTANCE_EXTENDED",
+    "GUNPOWDER": "SPLASH_POTION_OF_FIRE_RESISTANCE"
+   }
+  },
+  "SPLASH_POTION_OF_FIRE_RESISTANCE": {
+   "name": "Splash Potion of Fire Resistance",
+   "children": {
+    "REDSTONE": "SPLASH_POTION_OF_FIRE_RESISTANCE_EXTENDED",
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_SLOWNESS",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_FIRE_RESISTANCE"
+   }
+  },
+  "LINGERING_POTION_OF_FIRE_RESISTANCE": {
+   "name": "Lingering Potion of Fire Resistance",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_SLOWNESS",
+    "REDSTONE": "LINGERING_POTION_OF_FIRE_RESISTANCE_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_FIRE_RESISTANCE_EXTENDED": {
+   "name": "Lingering Potion of Fire Resistance (long)",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_SLOWNESS_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_FIRE_RESISTANCE_EXTENDED": {
+   "name": "Splash Potion of Fire Resistance (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_FIRE_RESISTANCE_EXTENDED",
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_SLOWNESS_EXTENDED"
+   }
+  },
+  "POTION_OF_FIRE_RESISTANCE_EXTENDED": {
+   "name": "Potion of Fire Resistance (long)",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "POTION_OF_SLOWNESS_EXTENDED",
+    "GUNPOWDER": "SPLASH_POTION_OF_FIRE_RESISTANCE_EXTENDED"
+   }
+  },
+  "POTION_OF_SATURATION": {
+   "name": "Potion of Saturation",
+   "children": {
+    "GLOWSTONE_DUST": "POTION_OF_SATURATION_II",
+    "REDSTONE": "POTION_OF_SATURATION_EXTENDED",
+    "GUNPOWDER": "SPLASH_POTION_OF_SATURATION"
+   }
+  },
+  "SPLASH_POTION_OF_SATURATION": {
+   "name": "Splash Potion of Saturation",
+   "children": {
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_SATURATION_II",
+    "REDSTONE": "SPLASH_POTION_OF_SATURATION_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_SATURATION"
+   }
+  },
+  "LINGERING_POTION_OF_SATURATION": {
+   "name": "Lingering Potion of Saturation",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_SATURATION_EXTENDED",
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_SATURATION_II"
+   }
+  },
+  "LINGERING_POTION_OF_SATURATION_II": {
+   "name": "Lingering Potion of Saturation II",
+   "children": {}
+  },
+  "LINGERING_POTION_OF_SATURATION_EXTENDED": {
+   "name": "Lingering Potion of Saturation (long)",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_SATURATION_EXTENDED": {
+   "name": "Splash Potion of Saturation (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_SATURATION_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_SATURATION_II": {
+   "name": "Splash Potion of Saturation II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_SATURATION_II"
+   }
+  },
+  "POTION_OF_SATURATION_EXTENDED": {
+   "name": "Potion of Saturation (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_SATURATION_EXTENDED"
+   }
+  },
+  "POTION_OF_SATURATION_II": {
+   "name": "Potion of Saturation II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_SATURATION_II"
+   }
+  },
+  "POTION_OF_RESISTANCE": {
+   "name": "Potion of Resistance",
+   "children": {
+    "REDSTONE": "POTION_OF_RESISTANCE_EXTENDED",
+    "GLOWSTONE_DUST": "POTION_OF_RESISTANCE_II",
+    "GUNPOWDER": "SPLASH_POTION_OF_RESISTANCE"
+   }
+  },
+  "SPLASH_POTION_OF_RESISTANCE": {
+   "name": "Splash Potion of Resistance",
+   "children": {
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_RESISTANCE_II",
+    "REDSTONE": "SPLASH_POTION_OF_RESISTANCE_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_RESISTANCE"
+   }
+  },
+  "LINGERING_POTION_OF_RESISTANCE": {
+   "name": "Lingering Potion of Resistance",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_RESISTANCE_EXTENDED",
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_RESISTANCE_II"
+   }
+  },
+  "LINGERING_POTION_OF_RESISTANCE_II": {
+   "name": "Lingering Potion of Resistance II",
+   "children": {}
+  },
+  "LINGERING_POTION_OF_RESISTANCE_EXTENDED": {
+   "name": "Lingering Potion of Resistance (long)",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_RESISTANCE_EXTENDED": {
+   "name": "Splash Potion of Resistance (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_RESISTANCE_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_RESISTANCE_II": {
+   "name": "Splash Potion of Resistance II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_RESISTANCE_II"
+   }
+  },
+  "POTION_OF_RESISTANCE_II": {
+   "name": "Potion of Resistance II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_RESISTANCE_II"
+   }
+  },
+  "POTION_OF_RESISTANCE_EXTENDED": {
+   "name": "Potion of Resistance (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_RESISTANCE_EXTENDED"
+   }
+  },
+  "POTION_OF_HEALTH_BOOST": {
+   "name": "Potion of Health Boost",
+   "children": {
+    "GLOWSTONE_DUST": "POTION_OF_HEALTH_BOOST_II",
+    "GUNPOWDER": "SPLASH_POTION_OF_HEALTH_BOOST",
+    "REDSTONE": "POTION_OF_HEALTH_BOOST_EXTENDED"
+   }
+  },
+  "POTION_OF_HEALTH_BOOST_EXTENDED": {
+   "name": "Potion of Health Boost (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_HEALTH_BOOST_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_HEALTH_BOOST_EXTENDED": {
+   "name": "Splash Potion of Health Boost (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HEALTH_BOOST_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_HEALTH_BOOST_EXTENDED": {
+   "name": "Lingering Potion of Health Boost (long)",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_HEALTH_BOOST": {
+   "name": "Splash Potion of Health Boost",
+   "children": {
+    "REDSTONE": "SPLASH_POTION_OF_HEALTH_BOOST_EXTENDED",
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_HEALTH_BOOST_II",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HEALTH_BOOST"
+   }
+  },
+  "LINGERING_POTION_OF_HEALTH_BOOST": {
+   "name": "Lingering Potion of Health Boost",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_HEALTH_BOOST_EXTENDED",
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_HEALTH_BOOST_II"
+   }
+  },
+  "LINGERING_POTION_OF_HEALTH_BOOST_II": {
+   "name": "Lingering Potion of Health Boost II",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_HEALTH_BOOST_II": {
+   "name": "Splash Potion of Health Boost II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HEALTH_BOOST_II"
+   }
+  },
+  "POTION_OF_HEALTH_BOOST_II": {
+   "name": "Potion of Health Boost II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_HEALTH_BOOST_II"
+   }
+  },
+  "POTION_OF_BLINDNESS": {
+   "name": "Potion of Blindness",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_BLINDNESS",
+    "GLOWSTONE_DUST": "POTION_OF_BLINDNESS_II",
+    "REDSTONE": "POTION_OF_BLINDNESS_EXTENDED"
+   }
+  },
+  "POTION_OF_BLINDNESS_EXTENDED": {
+   "name": "Potion of Blindness (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_BLINDNESS_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_BLINDNESS_EXTENDED": {
+   "name": "Splash Potion of Blindness (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_BLINDNESS_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_BLINDNESS_EXTENDED": {
+   "name": "Lingering Potion of Blindness (long)",
+   "children": {}
+  },
+  "POTION_OF_BLINDNESS_II": {
+   "name": "Potion of Blindness II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_BLINDNESS_II"
+   }
+  },
+  "SPLASH_POTION_OF_BLINDNESS_II": {
+   "name": "Splash Potion of Blindness II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_BLINDNESS_II"
+   }
+  },
+  "LINGERING_POTION_OF_BLINDNESS_II": {
+   "name": "Lingering Potion of Blindness II",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_BLINDNESS": {
+   "name": "Splash Potion of Blindness",
+   "children": {
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_BLINDNESS_II",
+    "REDSTONE": "SPLASH_POTION_OF_BLINDNESS_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_BLINDNESS"
+   }
+  },
+  "LINGERING_POTION_OF_BLINDNESS": {
+   "name": "Lingering Potion of Blindness",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_BLINDNESS_EXTENDED",
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_BLINDNESS_II"
+   }
+  },
+  "POTION_OF_HEALING": {
+   "name": "Potion of Healing",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "POTION_OF_HARMING",
+    "GLOWSTONE_DUST": "POTION_OF_HEALING_II",
+    "GUNPOWDER": "SPLASH_POTION_OF_HEALING"
+   }
+  },
+  "SPLASH_POTION_OF_HEALING": {
+   "name": "Splash Potion of Healing",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HEALING",
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_HARMING",
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_HEALING_II"
+   }
+  },
+  "SPLASH_POTION_OF_HEALING_II": {
+   "name": "Splash Potion of Healing II",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_HARMING_II",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_HEALING_II"
+   }
+  },
+  "LINGERING_POTION_OF_HEALING_II": {
+   "name": "Lingering Potion of Healing II",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_HARMING_II"
+   }
+  },
+  "LINGERING_POTION_OF_HEALING": {
+   "name": "Lingering Potion of Healing",
+   "children": {
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_HEALING_II",
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_HARMING"
+   }
+  },
+  "POTION_OF_HEALING_II": {
+   "name": "Potion of Healing II",
+   "children": {
+    "FERMENTED_SPIDER_EYE": "POTION_OF_HARMING_II",
+    "GUNPOWDER": "SPLASH_POTION_OF_HEALING_II"
+   }
+  },
+  "POTION_OF_DULLNESS": {
+   "name": "Potion of Dullness",
+   "children": {
+    "GLOWSTONE_DUST": "POTION_OF_DULLNESS_II",
+    "REDSTONE": "POTION_OF_DULLNESS_EXTENDED",
+    "GUNPOWDER": "SPLASH_POTION_OF_DULLNESS"
+   }
+  },
+  "SPLASH_POTION_OF_DULLNESS": {
+   "name": "Splash Potion of Dullness",
+   "children": {
+    "REDSTONE": "SPLASH_POTION_OF_DULLNESS_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_DULLNESS",
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_DULLNESS_II"
+   }
+  },
+  "SPLASH_POTION_OF_DULLNESS_II": {
+   "name": "Splash Potion of Dullness II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_DULLNESS_II"
+   }
+  },
+  "LINGERING_POTION_OF_DULLNESS_II": {
+   "name": "Lingering Potion of Dullness II",
+   "children": {}
+  },
+  "LINGERING_POTION_OF_DULLNESS": {
+   "name": "Lingering Potion of Dullness",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_DULLNESS_EXTENDED",
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_DULLNESS_II"
+   }
+  },
+  "LINGERING_POTION_OF_DULLNESS_EXTENDED": {
+   "name": "Lingering Potion of Dullness (long)",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_DULLNESS_EXTENDED": {
+   "name": "Splash Potion of Dullness (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_DULLNESS_EXTENDED"
+   }
+  },
+  "POTION_OF_DULLNESS_EXTENDED": {
+   "name": "Potion of Dullness (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_DULLNESS_EXTENDED"
+   }
+  },
+  "POTION_OF_DULLNESS_II": {
+   "name": "Potion of Dullness II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_DULLNESS_II"
+   }
+  },
+  "POTION_OF_NAUSEA": {
+   "name": "Potion of Nausea",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_NAUSEA",
+    "REDSTONE": "POTION_OF_NAUSEA_EXTENDED",
+    "GLOWSTONE_DUST": "POTION_OF_NAUSEA_II"
+   }
+  },
+  "POTION_OF_NAUSEA_II": {
+   "name": "Potion of Nausea II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_NAUSEA_II"
+   }
+  },
+  "SPLASH_POTION_OF_NAUSEA_II": {
+   "name": "Splash Potion of Nausea II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_NAUSEA_II"
+   }
+  },
+  "LINGERING_POTION_OF_NAUSEA_II": {
+   "name": "Lingering Potion of Nausea II",
+   "children": {}
+  },
+  "POTION_OF_NAUSEA_EXTENDED": {
+   "name": "Potion of Nausea (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_NAUSEA_EXTENDED"
+   }
+  },
+  "SPLASH_POTION_OF_NAUSEA_EXTENDED": {
+   "name": "Splash Potion of Nausea (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_NAUSEA_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_NAUSEA_EXTENDED": {
+   "name": "Lingering Potion of Nausea (long)",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_NAUSEA": {
+   "name": "Splash Potion of Nausea",
+   "children": {
+    "REDSTONE": "SPLASH_POTION_OF_NAUSEA_EXTENDED",
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_NAUSEA_II",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_NAUSEA"
+   }
+  },
+  "LINGERING_POTION_OF_NAUSEA": {
+   "name": "Lingering Potion of Nausea",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_NAUSEA_EXTENDED",
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_NAUSEA_II"
+   }
+  },
+  "SPLASH_POTION_OF_AWKWARD": {
+   "name": "Splash Awkward Potion",
+   "children": {
+    "GLISTERING_MELON_SLICE": "SPLASH_POTION_OF_HEALING",
+    "SLIME_BALL": "SPLASH_POTION_OF_DULLNESS",
+    "CARROT": "SPLASH_POTION_OF_HASTE",
+    "TURTLE_HELMET": "SPLASH_POTION_OF_TURTLE_MASTER",
+    "ROTTEN_FLESH": "SPLASH_POTION_OF_HUNGER",
+    "GOLDEN_APPLE": "SPLASH_POTION_OF_RESISTANCE",
+    "GHAST_TEAR": "SPLASH_POTION_OF_REGENERATION",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_AWKWARD",
+    "BLAZE_POWDER": "SPLASH_POTION_OF_STRENGTH",
+    "GOLDEN_CARROT": "SPLASH_POTION_OF_NIGHT_VISION",
+    "APPLE": "SPLASH_POTION_OF_HEALTH_BOOST",
+    "POISONOUS_POTATO": "SPLASH_POTION_OF_DECAY",
+    "SUGAR": "SPLASH_POTION_OF_SWIFTNESS",
+    "PHANTOM_MEMBRANE": "SPLASH_POTION_OF_SLOW_FALLING",
+    "QUARTZ": "SPLASH_POTION_OF_ABSORPTION",
+    "RABBIT_FOOT": "SPLASH_POTION_OF_LEAPING",
+    "BROWN_MUSHROOM": "SPLASH_POTION_OF_NAUSEA",
+    "MAGMA_CREAM": "SPLASH_POTION_OF_FIRE_RESISTANCE",
+    "SPIDER_EYE": "SPLASH_POTION_OF_POISON",
+    "INK_SAC": "SPLASH_POTION_OF_BLINDNESS",
+    "PUFFERFISH": "SPLASH_POTION_OF_WATER_BREATHING"
+   }
+  },
+  "SPLASH_POTION_OF_ABSORPTION": {
+   "name": "Splash Potion of Absorption",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_ABSORPTION",
+    "REDSTONE": "SPLASH_POTION_OF_ABSORPTION_EXTENDED",
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_ABSORPTION_II"
+   }
+  },
+  "SPLASH_POTION_OF_ABSORPTION_II": {
+   "name": "Splash Potion of Absorption II",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_ABSORPTION_II"
+   }
+  },
+  "LINGERING_POTION_OF_ABSORPTION_II": {
+   "name": "Lingering Potion of Absorption II",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_ABSORPTION_EXTENDED": {
+   "name": "Splash Potion of Absorption (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_ABSORPTION_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_ABSORPTION_EXTENDED": {
+   "name": "Lingering Potion of Absorption (long)",
+   "children": {}
+  },
+  "LINGERING_POTION_OF_ABSORPTION": {
+   "name": "Lingering Potion of Absorption",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_ABSORPTION_EXTENDED",
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_ABSORPTION_II"
+   }
+  },
+  "LINGERING_POTION_OF_AWKWARD": {
+   "name": "Lingering Awkward Potion",
+   "children": {
+    "RABBIT_FOOT": "LINGERING_POTION_OF_LEAPING",
+    "PHANTOM_MEMBRANE": "LINGERING_POTION_OF_SLOW_FALLING",
+    "SLIME_BALL": "LINGERING_POTION_OF_DULLNESS",
+    "GOLDEN_CARROT": "LINGERING_POTION_OF_NIGHT_VISION",
+    "QUARTZ": "LINGERING_POTION_OF_ABSORPTION",
+    "GLISTERING_MELON_SLICE": "LINGERING_POTION_OF_HEALING",
+    "GHAST_TEAR": "LINGERING_POTION_OF_REGENERATION",
+    "INK_SAC": "LINGERING_POTION_OF_BLINDNESS",
+    "BLAZE_POWDER": "LINGERING_POTION_OF_STRENGTH",
+    "CARROT": "LINGERING_POTION_OF_HASTE",
+    "TURTLE_HELMET": "LINGERING_POTION_OF_TURTLE_MASTER",
+    "SUGAR": "LINGERING_POTION_OF_SWIFTNESS",
+    "APPLE": "LINGERING_POTION_OF_HEALTH_BOOST",
+    "GOLDEN_APPLE": "LINGERING_POTION_OF_RESISTANCE",
+    "POISONOUS_POTATO": "LINGERING_POTION_OF_DECAY",
+    "SPIDER_EYE": "LINGERING_POTION_OF_POISON",
+    "BROWN_MUSHROOM": "LINGERING_POTION_OF_NAUSEA",
+    "ROTTEN_FLESH": "LINGERING_POTION_OF_HUNGER",
+    "MAGMA_CREAM": "LINGERING_POTION_OF_FIRE_RESISTANCE",
+    "PUFFERFISH": "LINGERING_POTION_OF_WATER_BREATHING"
+   }
+  },
+  "POTION_OF_ABSORPTION": {
+   "name": "Potion of Absorption",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_ABSORPTION",
+    "GLOWSTONE_DUST": "POTION_OF_ABSORPTION_II",
+    "REDSTONE": "POTION_OF_ABSORPTION_EXTENDED"
+   }
+  },
+  "POTION_OF_ABSORPTION_EXTENDED": {
+   "name": "Potion of Absorption (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_ABSORPTION_EXTENDED"
+   }
+  },
+  "POTION_OF_ABSORPTION_II": {
+   "name": "Potion of Absorption II",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_ABSORPTION_II"
+   }
+  },
+  "POTION_OF_WIND_CHARGING": {
+   "name": "Potion of Wind Charging",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_WIND_CHARGING"
+   }
+  },
+  "SPLASH_POTION_OF_WIND_CHARGING": {
+   "name": "Splash Potion of Wind Charging",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_WATER": {
+   "name": "Splash Water Bottle",
+   "children": {
+    "BREEZE_ROD": "SPLASH_POTION_OF_MUNDANE",
+    "SUGAR": "SPLASH_POTION_OF_MUNDANE",
+    "BLAZE_POWDER": "SPLASH_POTION_OF_MUNDANE",
+    "GHAST_TEAR": "SPLASH_POTION_OF_MUNDANE",
+    "FERMENTED_SPIDER_EYE": "SPLASH_POTION_OF_WEAKNESS",
+    "GLOWSTONE_DUST": "SPLASH_POTION_OF_THICK",
+    "GLISTERING_MELON_SLICE": "SPLASH_POTION_OF_MUNDANE",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_WATER",
+    "NETHER_WART": "SPLASH_POTION_OF_AWKWARD",
+    "RABBIT_FOOT": "SPLASH_POTION_OF_MUNDANE",
+    "SPIDER_EYE": "SPLASH_POTION_OF_MUNDANE",
+    "REDSTONE": "SPLASH_POTION_OF_MUNDANE",
+    "MAGMA_CREAM": "SPLASH_POTION_OF_MUNDANE"
+   }
+  },
+  "LINGERING_POTION_OF_WATER": {
+   "name": "Lingering Water Bottle",
+   "children": {
+    "BREEZE_ROD": "LINGERING_POTION_OF_MUNDANE",
+    "REDSTONE": "LINGERING_POTION_OF_MUNDANE",
+    "GLISTERING_MELON_SLICE": "LINGERING_POTION_OF_MUNDANE",
+    "GHAST_TEAR": "LINGERING_POTION_OF_MUNDANE",
+    "GLOWSTONE_DUST": "LINGERING_POTION_OF_THICK",
+    "RABBIT_FOOT": "LINGERING_POTION_OF_MUNDANE",
+    "FERMENTED_SPIDER_EYE": "LINGERING_POTION_OF_WEAKNESS",
+    "NETHER_WART": "LINGERING_POTION_OF_AWKWARD",
+    "BLAZE_POWDER": "LINGERING_POTION_OF_MUNDANE",
+    "SUGAR": "LINGERING_POTION_OF_MUNDANE",
+    "SPIDER_EYE": "LINGERING_POTION_OF_MUNDANE",
+    "MAGMA_CREAM": "LINGERING_POTION_OF_MUNDANE"
+   }
+  },
+  "LINGERING_POTION_OF_WEAKNESS": {
+   "name": "Lingering Potion of Weakness",
+   "children": {
+    "REDSTONE": "LINGERING_POTION_OF_WEAKNESS_EXTENDED"
+   }
+  },
+  "LINGERING_POTION_OF_WEAKNESS_EXTENDED": {
+   "name": "Lingering Potion of Weakness (long)",
+   "children": {}
+  },
+  "LINGERING_POTION_OF_THICK": {
+   "name": "Lingering Thick Potion",
+   "children": {}
+  },
+  "SPLASH_POTION_OF_THICK": {
+   "name": "Splash Thick Potion",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_THICK"
+   }
+  },
+  "SPLASH_POTION_OF_WEAKNESS": {
+   "name": "Splash Potion of Weakness",
+   "children": {
+    "REDSTONE": "SPLASH_POTION_OF_WEAKNESS_EXTENDED",
+    "DRAGON_BREATH": "LINGERING_POTION_OF_WEAKNESS"
+   }
+  },
+  "SPLASH_POTION_OF_WEAKNESS_EXTENDED": {
+   "name": "Splash Potion of Weakness (long)",
+   "children": {
+    "DRAGON_BREATH": "LINGERING_POTION_OF_WEAKNESS_EXTENDED"
+   }
+  },
+  "POTION_OF_THICK": {
+   "name": "Thick Potion",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_THICK"
+   }
+  },
+  "POTION_OF_WEAKNESS": {
+   "name": "Potion of Weakness",
+   "children": {
+    "REDSTONE": "POTION_OF_WEAKNESS_EXTENDED",
+    "GUNPOWDER": "SPLASH_POTION_OF_WEAKNESS"
+   }
+  },
+  "POTION_OF_WEAKNESS_EXTENDED": {
+   "name": "Potion of Weakness (long)",
+   "children": {
+    "GUNPOWDER": "SPLASH_POTION_OF_WEAKNESS_EXTENDED"
+   }
+  }
+ }
+}

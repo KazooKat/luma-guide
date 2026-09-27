@@ -16107,7 +16107,7 @@
    "job": "Fisherman",
    "icon": "fishing_rod",
    "defaultRate": 150,
-   "rateNote": "Lure III rod",
+   "rateNote": "killing fish and squid by hand",
    "confidence": "assumed",
    "defaultItem": "Fish/Cod",
    "level": 46,

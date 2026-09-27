@@ -6,6 +6,7 @@
   "scripts": {
     "data": "python scripts/build_data.py && node scripts/build-perks.mjs",
     "extract-log": "python scripts/extract_log.py",
+    "potions": "python scripts/build_potions.py",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",

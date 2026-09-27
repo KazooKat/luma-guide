@@ -5,20 +5,33 @@ import { fmt2, fmtCompact, fmtDays, fmtInt, fmtMoney } from '../../lib/format';
 import { machineRate, machinesFor, type Machine } from '../../lib/machines';
 import { moneyAt, xpAt, type Plan as PlanResult } from '../../lib/scaling';
 import { GRUBBY_PER_ACTION } from '../../lib/relics';
+import { brewsPerStandHour, fishingTiming } from '../../lib/mcmmo';
+import { potionName } from '../../lib/brewing';
+import { BrewSetup, type BrewChain } from './BrewSetup';
+import { FishingSetup, fishingSetupOf } from './FishingSetup';
 
 export interface Rate {
   perHour: number;
   machines: { machine: Machine; count: number }[];
 }
 
-/** Smelt and Brew are paced by machines; everything else by how fast the player acts. */
+/**
+ * Smelt and Brew are paced by machines (brewing stands sped up by mcMMO Catalysis), fishing by the hook's
+ * timers (mcMMO Master Angler, Lure, rain), everything else by how fast the player acts.
+ */
 export function resolveRate(job: Job, item: JobItem, prefs: JobPrefs): Rate {
   const machines = machinesFor(job.job, item.action).map((machine) => ({
     machine,
     count: Math.max(0, prefs.machines[machine.id] ?? machine.defaultCount),
   }));
+  if (item.action === 'Brew') {
+    return { perHour: machines.reduce((a, m) => a + m.count, 0) * brewsPerStandHour(prefs.alchemyLevel), machines };
+  }
   if (machines.length) {
     return { perHour: machineRate(Object.fromEntries(machines.map((m) => [m.machine.id, m.count]))), machines };
+  }
+  if (item.action === 'Fish') {
+    return { perHour: fishingTiming(fishingSetupOf(prefs)).catchesPerHour, machines: [] };
   }
   return { perHour: Math.max(1, Number(prefs.handRate) || job.defaultRate), machines: [] };
 }
@@ -50,6 +63,8 @@ export function heroTime(h: number): string {
 interface Props {
   job: Job;
   item: JobItem;
+  /** Set when the item is brewed: the whole chain being planned. */
+  chain: BrewChain | null;
   from: number;
   to: number;
   hoursPerDay: number;
@@ -59,22 +74,36 @@ interface Props {
   set: (p: Partial<JobPrefs>) => void;
 }
 
-export function Plan({ job, item, from, to, hoursPerDay, rate, plan, prefs, set }: Props) {
+export function Plan({ job, item, chain, from, to, hoursPerDay, rate, plan, prefs, set }: Props) {
   const next = plan.rows[0];
   const num = (e: Event) => Number((e.currentTarget as HTMLInputElement).value);
   return (
     <section class="card" aria-label="Your plan">
       <div class="card-title"><h3>Your plan: {from} → {to}</h3></div>
 
-      <div class="selected-item">
-        <Icon id={item.icon} size={36} />
-        <div>
-          <b>{item.item}</b>
-          <span>{item.action} · {fmtMoney(moneyAt(item.moneyBase, from))} and {fmt2(xpAt(item.xpBase, from))} XP each at level {from}</span>
+      {chain && chain.steps.length > 1 ? (
+        <div class="selected-item">
+          <Icon id={item.icon} size={36} />
+          <div>
+            <b>{potionName(chain.steps[chain.steps.length - 1].to)}</b>
+            <span>{chain.steps.length}-brew chain · {fmtMoney(moneyAt(chain.moneyBase, from))} and {fmt2(xpAt(chain.xpBase, from))} XP per brew on average at level {from}</span>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div class="selected-item">
+          <Icon id={item.icon} size={36} />
+          <div>
+            <b>{item.item}</b>
+            <span>{item.action} · {fmtMoney(moneyAt(item.moneyBase, from))} and {fmt2(xpAt(item.xpBase, from))} XP each at level {from}</span>
+          </div>
+        </div>
+      )}
 
-      {rate.machines.length ? (
+      {chain ? (
+        <BrewSetup job={job} chain={chain} level={from} prefs={prefs} perHour={rate.perHour} set={set} />
+      ) : item.action === 'Fish' ? (
+        <FishingSetup prefs={prefs} set={set} />
+      ) : rate.machines.length ? (
         <div style={{ display: 'grid', gap: '10px' }}>
           <span class="sub-label">Your {item.action === 'Brew' ? 'brewing stands' : 'smelters'} (always fed)</span>
           <div class="machines">
@@ -128,6 +157,9 @@ export function Plan({ job, item, from, to, hoursPerDay, rate, plan, prefs, set 
           Along the way you'd expect about <b>{fmtInt(plan.totalActions * GRUBBY_PER_ACTION)}</b> Grubby Relic{Math.round(plan.totalActions * GRUBBY_PER_ACTION) === 1 ? '' : 's'}
           {' '}(a 0.015% chance per paid action). <a href="#/relics">What's inside a Grubby Relic?</a>
         </p>
+      )}
+      {item.action === 'Brew' && !chain && (
+        <p class="note flag">Jobs lists {item.item} under Brew, but no mcMMO recipe uses it, so a brewing stand won't take it. Treat this plan as theoretical.</p>
       )}
       {item.dupe && (
         <p class="note flag">The server lists {item.item.replace(/ \(\d+\)$/, '')} more than once under {item.action} with different pay. Which entry applies isn't known.</p>

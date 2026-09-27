@@ -1,5 +1,4 @@
 import { useState } from 'preact/hooks';
-import type { JobItem } from '../../data/types';
 import { fmtCompact, fmtDays, fmtHours, fmtInt, fmtMoney } from '../../lib/format';
 import type { Plan } from '../../lib/scaling';
 
@@ -11,7 +10,7 @@ function niceTop(max: number): number {
   return step * 4;
 }
 
-export function HoursChart({ plan, item, perHour }: { plan: Plan; item: JobItem; perHour: number }) {
+export function HoursChart({ plan, label, perHour }: { plan: Plan; label: string; perHour: number }) {
   const [hover, setHover] = useState<number | null>(null);
   const rows = plan.rows;
   if (rows.length < 3) return null; // one or two bars say less than the numbers already shown
@@ -30,7 +29,7 @@ export function HoursChart({ plan, item, perHour }: { plan: Plan; item: JobItem;
     <section class="card" aria-label="Hours to clear each level">
       <div class="card-title">
         <h3>Hours to clear each level</h3>
-        <span>{item.item} at {fmtInt(perHour)}/h. XP needed grows faster than pay, so each level takes a bit longer.</span>
+        <span>{label} at {fmtInt(perHour)}/h. XP needed grows faster than pay, so each level takes a bit longer.</span>
       </div>
       <div class="chart">
         <div class="chart-y" aria-hidden="true">

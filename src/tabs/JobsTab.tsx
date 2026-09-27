@@ -9,10 +9,14 @@ import { ItemTable } from './jobs/ItemTable';
 import { Plan, resolveRate } from './jobs/Plan';
 import { HoursChart, Milestones } from './jobs/HoursChart';
 import { Perks } from './jobs/Perks';
+import { resolveChain } from './jobs/BrewSetup';
+import { materialOf, shortestChainTo } from '../lib/brewing';
 
 const DATA = jobsData as JobsData;
 const PERKS = (perksData as { perks: Record<string, Perk[]> }).perks;
 const DEFAULT_JOB = 'cook';
+const MCMMO_REF = 'e19e043';
+const MCMMO_SRC = `https://github.com/LumaLibre/mcMMO/blob/${MCMMO_REF}`;
 
 export const itemKey = (it: JobItem) => `${it.action}/${it.item}`;
 
@@ -24,6 +28,16 @@ export interface JobPrefs {
   itemKey: string;
   handRate: number;
   machines: Record<string, number>;
+  /** mcMMO Alchemy level (Catalysis brewing speed, Concoctions ingredients). */
+  alchemyLevel: number;
+  /** Brewing chain from a water bottle, as ingredient materials. Empty = shortest chain for the picked item. */
+  brewChain: string[];
+  /** mcMMO Fishing level (Master Angler). */
+  fishingLevel: number;
+  lure: number;
+  raining: boolean;
+  boat: boolean;
+  handlingSeconds: number;
 }
 
 export function JobsTab({ jobSlug }: { jobSlug?: string }) {
@@ -77,6 +91,7 @@ function JobView({ job }: { job: Job }) {
     from: 1, xpInto: 0, to: MAX_LEVEL, hoursPerDay: 4,
     itemKey: job.defaultItem ?? (job.items[0] ? itemKey(job.items[0]) : ''),
     handRate: job.defaultRate, machines: {},
+    alchemyLevel: 0, brewChain: [], fishingLevel: 0, lure: 3, raining: false, boat: false, handlingSeconds: 1.5,
   };
   const [prefs, setPrefs] = useState<JobPrefs>(() => loadPref(`job:${job.job}`, defaults));
   useEffect(() => savePref(`job:${job.job}`, prefs), [prefs]);
@@ -89,10 +104,17 @@ function JobView({ job }: { job: Job }) {
   const hoursPerDay = Math.min(24, Math.max(0.25, Number(prefs.hoursPerDay) || 4));
   const item = useMemo(() => job.items.find((i) => itemKey(i) === prefs.itemKey) ?? job.items[0], [job, prefs.itemKey]);
   const rate = item ? resolveRate(job, item, prefs) : null;
+  // Brewing plans a whole chain: each brew pays for its own ingredient, so use the chain's average per brew.
+  const chain = useMemo(() => (item?.action === 'Brew' ? resolveChain(job, item, prefs.brewChain) : null), [job, item, prefs.brewChain]);
+  const basis = chain ?? item;
   const plan = useMemo(
-    () => (item && rate ? planLevels({ xpBase: item.xpBase, moneyBase: item.moneyBase, from, to, xpInto, actionsPerHour: rate.perHour }) : null),
-    [item, rate?.perHour, from, to, xpInto],
+    () => (basis && rate ? planLevels({ xpBase: basis.xpBase, moneyBase: basis.moneyBase, from, to, xpInto, actionsPerHour: rate.perHour }) : null),
+    [basis, rate?.perHour, from, to, xpInto],
   );
+  const selectItem = (key: string) => {
+    const picked = job.items.find((i) => itemKey(i) === key);
+    set({ itemKey: key, brewChain: picked?.action === 'Brew' ? shortestChainTo(materialOf(picked.item)) ?? [] : prefs.brewChain });
+  };
 
   if (!job.items.length || !item || !rate || !plan) {
     return <section class="card"><p>No pay data for {job.job} yet.</p></section>;
@@ -138,13 +160,13 @@ function JobView({ job }: { job: Job }) {
       </section>
 
       <div class="job-layout">
-        <ItemTable job={job} level={from} selectedKey={itemKey(item)} onSelect={(k) => set({ itemKey: k })} />
+        <ItemTable job={job} level={from} selectedKey={itemKey(item)} onSelect={selectItem} />
         <div class="plan-col">
-          <Plan job={job} item={item} from={from} to={to} hoursPerDay={hoursPerDay} rate={rate} plan={plan} prefs={prefs} set={set} />
+          <Plan job={job} item={item} chain={chain} from={from} to={to} hoursPerDay={hoursPerDay} rate={rate} plan={plan} prefs={prefs} set={set} />
         </div>
       </div>
 
-      <HoursChart plan={plan} item={item} perHour={rate.perHour} />
+      <HoursChart plan={plan} label={chain && chain.steps.length > 1 ? `A ${chain.steps.length}-brew chain` : item.item} perHour={rate.perHour} />
 
       <div class="pair">
         <Milestones plan={plan} from={from} hoursPerDay={hoursPerDay} />
@@ -162,6 +184,20 @@ function JobView({ job }: { job: Job }) {
             The server's Jobs config isn't public, so these formulas are fitted from in-game readings. Game values are rounded to 2 decimals, so projections can be off by about half a percent.
             Rank multipliers, boosts, events and payment caps aren't included. Machine rates assume vanilla timings and machines that never sit idle.
           </p>
+          {job.job === 'Alchemist' && (
+            <p>
+              Brewing speed and ingredients come from Luma's mcMMO (<a href={`${MCMMO_SRC}/src/main/resources/potions.yml`} target="_blank" rel="noopener noreferrer">LumaLibre/mcMMO @ {MCMMO_REF}</a>).
+              Catalysis speeds up every brewing stand you own from 1x at Alchemy 0 to 4x at 1000, matching <code>/alchemy</code> in game.
+              Jobs pays once per finished brew for the ingredient in it, so a chain pays for every step. Red Mushroom is on the Jobs list, but no mcMMO recipe uses it.
+            </p>
+          )}
+          {job.job === 'Fisherman' && (
+            <p>
+              Catch speed follows vanilla fishing plus Luma's mcMMO (<a href={`${MCMMO_SRC}/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java`} target="_blank" rel="noopener noreferrer">LumaLibre/mcMMO @ {MCMMO_REF}</a>):
+              Master Angler shortens the wait by 0.5 s (minimum) and 1.5 s (maximum) per rank, and Lure takes 5 s per level off the maximum.
+              In a boat, Master Angler takes another 0.5 s and 1.5 s off. The reel + recast time is a guess; time a few catches and adjust it. Fishing under a roof isn't modelled.
+            </p>
+          )}
         </div>
       </section>
     </>
