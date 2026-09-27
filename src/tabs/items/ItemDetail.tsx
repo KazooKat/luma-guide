@@ -1,13 +1,13 @@
-import type { ComponentType } from 'preact';
+import type { ComponentChildren, ComponentType } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
-import { Icon } from '../../components/Icon';
+import { AtlasIcon } from '../../components/AtlasIcon';
 import { McTooltip } from '../../components/McTooltip';
 import { SuggestButton } from '../../components/SuggestButton';
 import { ASTRAL_ORB_SETS } from '../../lib/relics';
 import { materialName } from '../../lib/itemSearch';
 import { plain } from '../../lib/minimessage';
 import { BY_ID, DATA, ITEMS, SECTIONS, sectionGradient, TierChip } from './common';
-import type { WriteupsData } from '../../data/types';
+import type { GlossaryItem, Writeup, WriteupsData } from '../../data/types';
 import { AstralUpgrades } from './AstralUpgrades';
 import { KamoriWriteup } from './KamoriWriteup';
 import { WriteupView } from './Writeup';
@@ -31,6 +31,46 @@ function useWriteups() {
 }
 
 const ORB_SETS = new Set(ASTRAL_ORB_SETS.map((s) => `${s.set.toLowerCase()}-set`));
+
+function Fact({ label, wide, children }: { label: string; wide?: 'always' | 'phone'; children: ComponentChildren }) {
+  return (
+    <div class={`fact${wide ? ` wide-${wide}` : ''}`}>
+      <span class="fact-label">{label}</span>
+      <span class="fact-value">{children}</span>
+    </div>
+  );
+}
+
+/** "At a glance": the facts a player wants first, including the cooldown when the write-up has one. */
+function Glance({ item, writeup }: { item: GlossaryItem; writeup?: Writeup }) {
+  const section = SECTIONS.get(item.section)!;
+  const cooldown = writeup?.numbers?.find((n) => n.label && n.value && /cooldown/i.test(n.label));
+  const top = item.upgrades?.path[item.upgrades.path.length - 1];
+  return (
+    <div class="facts-grid">
+      <Fact label={section.kind === 'event' ? 'Event' : 'Group'} wide="phone"><TierChip section={section} /></Fact>
+      <Fact label="Item">{materialName(item.material)}{item.setName ? ` · ${item.setName} set` : ''}</Fact>
+      {item.abilities.length > 0 && <Fact label="Abilities">{item.abilities.map(plain).join(', ')}</Fact>}
+      {cooldown?.label && cooldown.value && <Fact label={cooldown.label}>{cooldown.value.replace(/\s*\(.*\)$/, '')}</Fact>}
+      {item.enchantList.length > 0 && (
+        <Fact label="Enchantments" wide="always">
+          {item.enchantList.join(', ')}{item.enchantsHidden && <span class="muted"> (not shown on the tooltip)</span>}
+        </Fact>
+      )}
+      {top && (
+        <Fact label="Upgrades">
+          {item.upgrades!.path.length - 1} tier{item.upgrades!.path.length > 2 ? 's' : ''} · up to {materialName(top.material)}
+        </Fact>
+      )}
+      {item.set && (
+        <Fact label="Set">
+          <a href={`#/items/astral/${item.set}`}>{item.setName} set</a>
+          {ORB_SETS.has(item.set) ? <> · drops from <a href="#/relics">Astral Orbs</a></> : <span class="muted"> · not in the Astral Orb pool</span>}
+        </Fact>
+      )}
+    </div>
+  );
+}
 
 export function ItemDetail({ id }: { id: string }) {
   const { data: W, failed } = useWriteups();
@@ -63,16 +103,12 @@ export function ItemDetail({ id }: { id: string }) {
 
       <section class="card item-detail" style={{ '--sec': sectionGradient(section) }} aria-labelledby="item-title">
         <div class="item-card-head">
-          <div class="item-frame"><Icon id={item.icon} size={48} /></div>
+          <div class="item-frame"><AtlasIcon id={item.icon} size={48} /></div>
           <div class="item-title">
-            <h2 id="item-title">{name}</h2>
-            <div class="stripe" aria-hidden="true"><i style={{ background: sectionGradient(section) }} /></div>
-            <p class="small" style={{ color: 'var(--text-2)' }}>
-              {materialName(item.material)} · {item.setName ? `${item.setName} set · ` : ''}{section.name}
-            </p>
+            <h1 id="item-title">{name}</h1>
+            <p>{materialName(item.material)} · {item.setName ? `${item.setName} set · ` : ''}{section.name}</p>
           </div>
         </div>
-
         <div class="detail-grid">
           <div class="tip-col">
             <span class="sub-label">In-game tooltip</span>
@@ -81,51 +117,26 @@ export function ItemDetail({ id }: { id: string }) {
           </div>
           <div class="facts-col">
             <span class="sub-label">At a glance</span>
-            <dl class="kv">
-              <dt>{section.kind === 'event' ? 'Event' : 'Group'}</dt>
-              <dd><TierChip section={section} /></dd>
-              <dt>Item</dt>
-              <dd>{materialName(item.material)}</dd>
-              {item.abilities.length > 0 && (<><dt>Abilities</dt><dd>{item.abilities.map(plain).join(', ')}</dd></>)}
-              {item.enchantList.length > 0 && (
-                <>
-                  <dt>Enchants</dt>
-                  <dd>{item.enchantList.join(', ')}{item.enchantsHidden && <span class="muted"> (not shown on the tooltip)</span>}</dd>
-                </>
-              )}
-              {item.set && (
-                <>
-                  <dt>Set</dt>
-                  <dd>
-                    <a href={`#/items/astral/${item.set}`}>{item.setName} set</a>
-                    {ORB_SETS.has(item.set) ? <> · drops from <a href="#/relics">Astral Orbs</a></> : <span class="muted"> · not in the Astral Orb pool</span>}
-                  </dd>
-                </>
-              )}
-              <dt>Source</dt>
-              <dd><a href={item.source} target="_blank" rel="noopener noreferrer">{item.source.split('/').pop()}</a></dd>
-            </dl>
+            <Glance item={item} writeup={writeup} />
+            <a class="small" href={item.source} target="_blank" rel="noopener noreferrer">View {item.source.split('/').pop()} on GitHub</a>
           </div>
         </div>
-
-        {!Custom && !W ? (
-          <p class="note" aria-live="polite">{failed ? "The mechanics didn't load. Check your connection and reload the page." : 'Loading how it works…'}</p>
-        ) : Custom || writeup ? (
-          <div class="writeup">
-            <h3 class="writeup-title">How it works</h3>
-            {Custom ? <Custom /> : <WriteupView w={writeup!} commit={W!.commit} />}
-          </div>
-        ) : (
-          <div class="no-writeup">
-            <p>
-              No hand-checked write-up for {name} yet. The tooltip and facts above are read straight from the plugin's source.
-              Write-ups are being added one event at a time.
-            </p>
-            <SuggestButton label="Tell us how it works" outline />
-          </div>
-        )}
-        {item.upgrades && <div class="writeup"><AstralUpgrades item={item} commit={DATA.source.commit} /></div>}
       </section>
+
+      {!Custom && !W ? (
+        <p class="note" aria-live="polite">{failed ? "The mechanics didn't load. Check your connection and reload the page." : 'Loading how it works…'}</p>
+      ) : Custom || writeup ? (
+        <section class="card detail-card" aria-labelledby="how-it-works">
+          <h2 id="how-it-works" class="detail-h2">How it works</h2>
+          {Custom ? <Custom /> : <WriteupView w={writeup!} commit={W!.commit} />}
+        </section>
+      ) : (
+        <section class="card no-writeup">
+          <p>No hand-checked write-up for {name} yet. The tooltip and facts above are read straight from the plugin's source.</p>
+          <SuggestButton label="Tell us how it works" outline />
+        </section>
+      )}
+      {item.upgrades && <AstralUpgrades item={item} commit={DATA.source.commit} />}
     </>
   );
 }

@@ -245,14 +245,20 @@ def main():
         if extra not in icons.by_id:
             raise SystemExit(f"unknown UI icon id: {extra}")
         icons.used[extra] = icons.by_id[extra]
+    atlas_ids = set()
     if ITEMS_FILE.exists():
         for item in json.loads(ITEMS_FILE.read_text(encoding="utf-8"))["items"]:
-            if item["icon"] not in icons.by_id:
-                raise SystemExit(f"unknown item icon id: {item['icon']} ({item['id']})")
-            icons.used[item["icon"]] = icons.by_id[item["icon"]]
+            # the item's own icon, plus every material an Astral piece becomes on upgrade (tier cards)
+            ids = [item["icon"]] + [step["material"].lower() for step in item.get("upgrades", {}).get("path", [])]
+            for icon_id in ids:
+                if icon_id not in icons.by_id:
+                    raise SystemExit(f"unknown item icon id: {icon_id} ({item['id']})")
+                icons.used[icon_id] = icons.by_id[icon_id]
+                atlas_ids.add(icon_id)
+        atlas_ids.add("amethyst_cluster")  # the Astral Upgrade Core in the upgrade slot diagram
     icons.copy()
-    if ITEMS_FILE.exists():
-        build_atlas(sorted({i["icon"] for i in json.loads(ITEMS_FILE.read_text(encoding="utf-8"))["items"]}))
+    if atlas_ids:
+        build_atlas(sorted(atlas_ids))
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"mcVersion": MC_VERSION, "jobs": jobs}, indent=1), encoding="utf-8")
     for j in jobs:
