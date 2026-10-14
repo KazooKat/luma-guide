@@ -122,7 +122,38 @@ for (const c of constants) {
 
 // ---- hand-written guides -------------------------------------------------------------------------------------
 const LISTS = ['howToPlay', 'scoring', 'tokens', 'numbers', 'tips', 'quirks', 'config'];
-const FIELDS = ['key', 'constant', 'name', 'summary', 'tokenLine', ...LISTS];
+const FIELDS = ['key', 'constant', 'name', 'summary', 'tokenLine', 'storyboard', ...LISTS];
+/** Every ref in a guide line's src ("games/logic/X.java:12, other.java:3-8") must name a real span of a real file. */
+function checkSrc(where, src) {
+  if (typeof src !== 'string' || !src.trim()) { errors.push(`${where}: missing src`); return; }
+  for (const ref of src.split(/,\s*/)) {
+    const r = /^([\w/.-]+\.(?:kt|java)):(\d+)(?:-(\d+))?$/.exec(ref.trim());
+    if (!r) { errors.push(`${where}: src "${ref}" must look like games/logic/X.java:12 or :12-30`); continue; }
+    const ls = lines(r[1]);
+    if (!ls) errors.push(`${where}: src file not found: ${r[1]}`);
+    else if (Number(r[2]) < 1 || Number(r[3] ?? r[2]) > ls.length || Number(r[3] ?? r[2]) < Number(r[2])) errors.push(`${where}: ${ref} is outside the file (${ls.length} lines)`);
+  }
+}
+/** storyboard: { values: { name: number }, beats: [3 x { caption, sub, src }] }, read by src/tabs/event/storyboard. */
+function checkStoryboard(at, sb) {
+  const where = `${at} storyboard`;
+  if (!sb || typeof sb !== 'object' || Array.isArray(sb)) { errors.push(`${where}: must be an object`); return; }
+  for (const k of Object.keys(sb)) if (!['values', 'beats'].includes(k)) errors.push(`${where}: unknown field "${k}"`);
+  if (!sb.values || typeof sb.values !== 'object' || Array.isArray(sb.values)) errors.push(`${where}: values must be an object`);
+  else for (const [k, v] of Object.entries(sb.values)) {
+    if (!/^[a-z][A-Za-z0-9]*$/.test(k)) errors.push(`${where}: value name "${k}" must be camelCase`);
+    if (typeof v !== 'number' || !Number.isFinite(v)) errors.push(`${where}: value "${k}" must be a number`);
+  }
+  if (!Array.isArray(sb.beats) || sb.beats.length !== 3) { errors.push(`${where}: needs exactly 3 beats`); return; }
+  for (const [m, b] of sb.beats.entries()) {
+    const w = `${where} beats[${m}]`;
+    for (const k of Object.keys(b)) if (!['caption', 'sub', 'src'].includes(k)) errors.push(`${w}: unknown field "${k}"`);
+    if (typeof b.caption !== 'string' || !b.caption.trim() || b.caption.length > 40) errors.push(`${w}: caption must be 1 to 40 characters`);
+    if (typeof b.sub !== 'string' || !b.sub.trim() || b.sub.length > 110) errors.push(`${w}: sub must be 1 to 110 characters`);
+    if (/[–—]/.test(`${b.caption}${b.sub}`)) errors.push(`${w}: uses an en/em dash`);
+    checkSrc(w, b.src);
+  }
+}
 const guides = new Map();
 const gdir = root('data/event/minigames');
 for (const f of existsSync(gdir) ? readdirSync(gdir).filter((f) => f.endsWith('.json')).sort() : []) {
@@ -145,16 +176,10 @@ for (const f of existsSync(gdir) ? readdirSync(gdir).filter((f) => f.endsWith('.
         if (list === 'numbers' ? !(e.label && e.value) : !e.text) errors.push(`${where}: needs ${list === 'numbers' ? 'label and value' : 'text'}`);
         for (const k of Object.keys(e)) if (!(list === 'numbers' ? ['label', 'value', 'src'] : ['text', 'src']).includes(k)) errors.push(`${where}: unknown field "${k}"`);
         if (/[–—]/.test(e.text ?? e.value ?? '')) errors.push(`${where}: uses an en/em dash`);
-        if (typeof e.src !== 'string' || !e.src.trim()) { errors.push(`${where}: missing src`); continue; }
-        for (const ref of e.src.split(/,\s*/)) {
-          const r = /^([\w/.-]+\.(?:kt|java)):(\d+)(?:-(\d+))?$/.exec(ref.trim());
-          if (!r) { errors.push(`${where}: src "${ref}" must look like games/logic/X.java:12 or :12-30`); continue; }
-          const ls = lines(r[1]);
-          if (!ls) errors.push(`${where}: src file not found: ${r[1]}`);
-          else if (Number(r[2]) < 1 || Number(r[3] ?? r[2]) > ls.length || Number(r[3] ?? r[2]) < Number(r[2])) errors.push(`${where}: ${ref} is outside the file (${ls.length} lines)`);
-        }
+        checkSrc(where, e.src);
       }
     }
+    if (g.storyboard !== undefined) checkStoryboard(at, g.storyboard);
     guides.set(g.key, g);
   }
 }

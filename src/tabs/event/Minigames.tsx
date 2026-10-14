@@ -2,6 +2,8 @@ import type { JSX } from 'preact';
 import type { EventMinigame, WriteupLine } from '../../data/types';
 import { makeNotes, Sources } from '../items/Writeup';
 import { EVENT, EVENTS_REPO, isActive, PREVIEW, Src, VISIBLE_GAMES } from './common';
+import { SCENES } from './storyboard/scenes';
+import { StoryboardPlayer } from './storyboard/Storyboard';
 
 function Badge({ g }: { g: EventMinigame }) {
   if (isActive(g)) return <span class="badge good">In this event</span>;
@@ -53,6 +55,11 @@ export function MinigameDetail({ slug }: { slug: string }) {
         <ul class="wu-bullets">{lines.map((l, i) => <li key={i}><span>{l.text}{notes.cite(l.src)}</span></li>)}</ul>
       </div>
     ) : null;
+  // The storyboard sits under the summary, so its 3 beats are cited first.
+  const Scene = w?.storyboard ? SCENES[g.key] : undefined;
+  const story = w?.storyboard && Scene
+    ? <StoryboardPlayer name={g.name} storyboard={w.storyboard} Scene={Scene} cites={w.storyboard.beats.map((b) => notes.cite(b.src))} />
+    : null;
   let steps: JSX.Element | null = null;
   if (w?.howToPlay?.length) {
     steps = (
@@ -90,6 +97,7 @@ export function MinigameDetail({ slug }: { slug: string }) {
       {w ? (
         <>
           <p class="writeup-summary">{w.summary}</p>
+          {story}
           {steps}
           {(scoring || tokens) && <div class="pair">{scoring}{tokens}</div>}
           {numbers}

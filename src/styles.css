@@ -25,6 +25,17 @@
   --warn: #f3c46b;
   --warn-soft: #3a2f17;
   --kamori: #e3f3ea;
+  /* Minigame storyboards (src/tabs/event/storyboard) */
+  --sb-stage: #17141f;
+  --sb-cell: #2f2a45;
+  --sb-wall: #4a4466;
+  --sb-hot: #e0913f;
+  --sb-safe: #7fdcaa;
+  --sb-rival: #8a83a6;
+  --sb-team-a: #6cb6ff;
+  --sb-team-b: #ff8f8f;
+  --sb-token: #f3c46b;
+  --sb-token-off: #3a3450;
   --mc-px: 2px; /* one Minecraft GUI pixel at GUI scale 2 */
   --display: 'Bricolage Grotesque', system-ui, sans-serif;
   --sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -60,6 +71,16 @@
   --warn: #8a5a00;
   --warn-soft: #fff2d6;
   --kamori: #2f6b4f;
+  --sb-stage: #ece8f6;
+  --sb-cell: #d9d2ea;
+  --sb-wall: #b2a8d4;
+  --sb-hot: #c8691a;
+  --sb-safe: #1d7a4f;
+  --sb-rival: #8a82a6;
+  --sb-team-a: #2b78c9;
+  --sb-team-b: #cf4440;
+  --sb-token: #b07a0a;
+  --sb-token-off: #d4cde6;
 }
 
 * { box-sizing: border-box; }
@@ -509,6 +530,48 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
 .job-odds .odds-cell .mono { width: 66px; }
 .odds-row.shop-row { grid-template-columns: minmax(0, 1fr) 100px 80px; }
 
+/* Minigame storyboards: a 3-beat captioned animation per game (src/tabs/event/storyboard). */
+.sb { margin: 0; padding: 14px 16px 12px; border-radius: 14px; background: var(--sb-stage); display: grid; gap: 8px; }
+.sb-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; min-height: 58px; }
+.sb-caption { display: grid; gap: 2px; min-width: 0; animation: sb-in .35s ease-out; }
+.sb-caption b { font-family: var(--display); font-weight: 800; font-size: 19px; line-height: 1.25; color: var(--text); }
+.sb-caption span { font-size: 14.5px; line-height: 1.45; color: var(--text-2); text-wrap: pretty; }
+@keyframes sb-in { from { opacity: 0; transform: translateY(4px); } }
+.sb-controls { display: flex; align-items: center; gap: 8px; flex: none; }
+.sb-steps { display: flex; gap: 4px; }
+.sb-step { all: unset; cursor: pointer; width: 22px; height: 18px; display: grid; place-items: center; }
+.sb-step::before { content: ''; width: 22px; height: 4px; border-radius: 2px; background: var(--sb-token-off); }
+.sb-step.done::before { background: color-mix(in srgb, var(--accent) 45%, var(--sb-token-off)); }
+.sb-step.on::before { background: var(--accent); }
+.sb-step:focus-visible, .sb-play:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.sb-play { all: unset; cursor: pointer; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 999px; color: var(--text-2); }
+.sb-play:hover { color: var(--text); background: var(--surface-2); }
+.sb-scene { width: 100%; max-width: 600px; margin: 0 auto; }
+.sb-scene svg { display: block; width: 100%; height: auto; overflow: visible; }
+.sb-svg text { font-family: var(--sans); }
+.sb-c { fill: var(--sb-cell); }
+.sb-c.hot { fill: var(--sb-hot); }
+.sb-c.safe { fill: var(--sb-safe); }
+.sb-c.wall { fill: var(--sb-wall); }
+.sb-c.dim { fill: var(--sb-token-off); }
+.sb-you { fill: var(--accent); }
+.sb-rival { fill: var(--sb-rival); }
+.sb-a { fill: var(--sb-team-a); }
+.sb-b { fill: var(--sb-team-b); }
+.sb-ghost { fill: none; stroke: var(--sb-rival); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.sb-ring { fill: none; stroke: var(--accent); stroke-width: 2; opacity: .45; }
+.sb-tok { fill: var(--sb-token-off); }
+.sb-tok.on { fill: var(--sb-token); }
+.sb-read { fill: var(--sb-token); font-family: var(--display) !important; font-weight: 800; font-size: 26px; }
+.sb-lbl { fill: var(--text-2); font-size: 12px; font-weight: 600; }
+.sb-lbl.muted { fill: var(--muted); font-size: 11px; }
+.sb-ink { fill: var(--text); }
+.sb-line { fill: none; stroke: var(--sb-rival); stroke-width: 1.5; stroke-linecap: round; }
+.sb-line.dash { stroke-dasharray: 4 4; }
+.sb-line.you { stroke: var(--accent); }
+.sb-line.hot { stroke: var(--sb-hot); }
+@media (prefers-reduced-motion: reduce) { .sb-caption { animation: none; } }
+
 @media (max-width: 1000px) {
   .job-grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
   .job-layout, .pair, .bloom-grid, .source-grid, .detail-grid, .callouts.two, .upgrade-how { grid-template-columns: 1fr; }
@@ -553,6 +616,9 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
   .writeup-summary { font-size: 16px; }
   .fact.wide-phone { grid-column: 1 / -1; }
   .stat-grid, .callouts.two, .upgrade-how, .sources ol, .tier-cards { grid-template-columns: 1fr; }
+  .sb { padding: 12px 12px 10px; }
+  .sb-top { flex-direction: column-reverse; gap: 6px; }
+  .sb-controls { align-self: flex-end; }
   .item-grid { grid-template-columns: repeat(auto-fill, minmax(54px, 1fr)); gap: 6px; }
   .crumbs .spacer { flex-basis: 100%; height: 0; }
 }

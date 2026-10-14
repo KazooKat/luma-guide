@@ -128,6 +128,21 @@ export interface MinigameGuide {
   tips?: WriteupLine[];
   quirks?: WriteupLine[];
   config?: WriteupLine[];
+  storyboard?: Storyboard;
+}
+
+/** One captioned step of a minigame's animation. */
+export interface StoryBeat {
+  caption: string;
+  sub: string;
+  src: string;
+}
+
+/** The 3-beat animation on a minigame page (what you do, what happens, how it pays). */
+export interface Storyboard {
+  /** The numbers the scene animates with, so the scene never hard-codes a rule. */
+  values: Record<string, number>;
+  beats: [StoryBeat, StoryBeat, StoryBeat];
 }
 
 export interface EventMinigame {

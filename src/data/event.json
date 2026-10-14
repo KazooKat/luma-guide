@@ -2508,7 +2508,32 @@
       "text": "The server-wide token multiplier is 1.0 by default.",
       "src": "configurable/Config.java:42-43, items/TokenExchanging.java:38"
      }
-    ]
+    ],
+    "storyboard": {
+     "values": {
+      "pointsPerSecond": 4,
+      "pointsPerToken": 90,
+      "maxTokens": 12,
+      "blockDelaySeconds": 1
+     },
+     "beats": [
+      {
+       "caption": "Keep running",
+       "sub": "You score 4 points every second you are still in the game.",
+       "src": "games/logic/TNTRun.java:185-191, utility/scheduler/AsynchronousRunnable.java:34-35"
+      },
+      {
+       "caption": "The floor falls behind you",
+       "sub": "Each block you step on disappears 1 second later, so keep moving onto fresh ones.",
+       "src": "games/logic/TNTRun.java:343-348, games/logic/TNTRun.java:351-370"
+      },
+      {
+       "caption": "Every 90 points is 1 token",
+       "sub": "That's 1 token for every 22.5 seconds you last, up to 12.",
+       "src": "games/logic/TNTRun.java:100, games/tokenformula/DivisibleTokenFormula.java:21-28"
+      }
+     ]
+    }
    }
   },
   {
