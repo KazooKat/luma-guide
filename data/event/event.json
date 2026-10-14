@@ -1,0 +1,23 @@
+{
+  "_readme": "Hand-maintained event facts. npm run event merges this with what it reads from data/luma-events into src/data/event.json. live=false keeps the Event tab out of the nav (the routes still open, with a preview banner). activeGames lists minigame keys confirmed for this event; once live, only those show. sourceEvent names the event the luma-events code at data/luma-events.commit was written for; while it differs from name, the pages say the numbers come from that event's code.",
+  "live": false,
+  "name": "Lumaween 2026",
+  "nameConfirmed": false,
+  "sourceEvent": "Lumarine 2026",
+  "dates": {
+    "start": null,
+    "end": null
+  },
+  "token": {
+    "name": null,
+    "itemId": null
+  },
+  "charmItemId": null,
+  "activeGames": [],
+  "shop": {
+    "readOn": null,
+    "where": null,
+    "items": []
+  },
+  "notes": []
+}

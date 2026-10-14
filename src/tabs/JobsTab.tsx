@@ -72,7 +72,7 @@ export function JobsTab({ jobSlug }: { jobSlug?: string }) {
             <Icon id={j.icon} size={32} />
             <span class="job-text">
               <b>{j.job}</b>
-              <span class="job-meta">{j.level ? `Lvl ${j.level} data · ${j.items.length} items` : 'No data yet'}</span>
+              <span class="job-meta">{j.level ? `${j.items.length} items` : 'No data yet'}</span>
             </span>
           </a>
         ))}
@@ -138,7 +138,6 @@ function JobView({ job }: { job: Job }) {
                 ) : (
                   <span class="badge warn" title="Uses the shared Luma scaling formulas; not yet checked at a second level for this job.">Scaling assumed</span>
                 )}
-                <span class="badge">Read at level {job.level}</span>
               </div>
             </div>
           </div>
@@ -178,7 +177,7 @@ function JobView({ job }: { job: Job }) {
         <div class="explain">
           <p>
             XP for the next level is <code>4.29·L³ + 0.3002·L² − 0.095</code>, rounded. That is within 1 XP of all 14 <code>/jobs stats</code> readings we have.
-            XP per action grows with <code>(L + 5)</code> and money with <code>(L + 9)</code>, so the {job.job} values above were read at level {job.level} and projected to yours.
+            XP per action grows with <code>(L + 5)</code> and money with <code>(L + 9)</code>, so the {job.job} values above are projected to your level.
           </p>
           <p>
             The server's Jobs config isn't public, so these formulas are fitted from in-game readings. Game values are rounded to 2 decimals, so projections can be off by about half a percent.

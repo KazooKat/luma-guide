@@ -1,0 +1,677 @@
+[
+  {
+    "key": "bomberman",
+    "constant": "BOMBERMAN",
+    "name": "Bomberman",
+    "summary": "A last-one-standing bombing game over 2 rounds, in an arena the game builds to fit the number of players. You drop TNT to blow up soft blocks and other players, and your points for blocks, kills and round wins decide your tokens.",
+    "tokenLine": "3 to 13 by how close you get to the target score, +2 for a round win, max 13",
+    "howToPlay": [
+      {
+        "text": "Join with /event join while the queue is open. Bomberman starts with as few as 1 player. Your inventory is saved and cleared when the game starts and given back at the end.",
+        "src": "games/MinigameManager.java:63, games/logic/Bomberman.java:121-124, games/interfaces/Minigame.java:127-146, games/interfaces/InventoryUnifiedMinigame.java:37-62, games/interfaces/InventoryUnifiedMinigame.java:73-91"
+      },
+      {
+        "text": "Each round a fresh arena is built: a bedrock floor, unbreakable obsidian pillars, and soft blocks 7 high everywhere else, in a random one of 7 block themes. Everyone starts at their own spawn, spread out toward the edges and facing the middle, and is held still with Slowness for 1 second.",
+        "src": "games/logic/Bomberman.java:191-215, games/logic/Bomberman.java:161-168, games/logic/Bomberman.java:95-96, games/logic/Bomberman.java:863-878, games/logic/Bomberman.java:905-964, games/logic/Bomberman.java:1136-1142, games/logic/Bomberman.java:1210-1253"
+      },
+      {
+        "text": "Your kit is 64 TNT, a diamond pickaxe, a diamond axe and 64 cooked porkchops. You start at full health with Mining Fatigue II, and you can't jump. You can't drop items.",
+        "src": "games/logic/Bomberman.java:137-158, games/logic/Bomberman.java:572-578, games/logic/Bomberman.java:663-667, games/logic/Bomberman.java:674-685, games/logic/Bomberman.java:703-708"
+      },
+      {
+        "text": "Place TNT anywhere in the arena to drop a lit bomb with a 1.5 second fuse. You can only have 1 bomb out at a time, and the next one is ready as soon as it explodes. Your TNT stack is topped back up to 64 each time.",
+        "src": "games/logic/Bomberman.java:77-78, games/logic/Bomberman.java:440-469, games/logic/Bomberman.java:471-478, games/logic/Bomberman.java:687-701"
+      },
+      {
+        "text": "A bomb removes the whole soft-block column (all 7 blocks) for every column the blast reaches within 2 blocks of it, measured flat. Pillars and the floor can't be destroyed, and nothing drops.",
+        "src": "games/logic/Bomberman.java:79, games/logic/Bomberman.java:480-492, games/logic/Bomberman.java:1068-1076"
+      },
+      {
+        "text": "You can also mine soft blocks with your tools. A column only counts as cleared once all 7 of its blocks are gone. Pillars and the floor can't be mined.",
+        "src": "games/logic/Bomberman.java:580-600, games/logic/Bomberman.java:1112-1122"
+      },
+      {
+        "text": "Other players' bombs are the only danger from other players: hitting someone does nothing, your own bomb can't hurt you, and explosions don't knock players back.",
+        "src": "games/logic/Bomberman.java:551-570, games/logic/Bomberman.java:602-609"
+      },
+      {
+        "text": "You only see other living players when they're within 5 blocks of you or nothing solid (a soft block or pillar) stands between you on the grid. They see you by the same rule.",
+        "src": "games/logic/Bomberman.java:80-81, games/logic/Bomberman.java:393-438, games/logic/Bomberman.java:1078-1110"
+      },
+      {
+        "text": "When you would die, you're healed and turned into an invisible, flying spectator who can't be hurt and can't place or break blocks. If you fell off the map, you're put 32 blocks above the arena centre.",
+        "src": "games/logic/Bomberman.java:611-633, games/logic/Bomberman.java:710-732, games/logic/Bomberman.java:752-796, games/logic/Bomberman.java:543-549, games/logic/Bomberman.java:440-448, games/logic/Bomberman.java:580-590"
+      },
+      {
+        "text": "A round ends when 1 player is left (or nobody is), or when the 3 minute timer runs out.",
+        "src": "games/logic/Bomberman.java:75, games/logic/Bomberman.java:217-224, games/logic/Bomberman.java:251-274"
+      },
+      {
+        "text": "If the timer runs out with 2 or more players alive, Sudden Death starts: every soft block is removed, the survivors are healed, re-equipped and moved to spots around the centre, and they get 60 seconds to finish it. If more than 1 is still alive after that, nobody wins the round.",
+        "src": "games/logic/Bomberman.java:276-300, games/logic/Bomberman.java:325-368, games/logic/Bomberman.java:983-1014"
+      },
+      {
+        "text": "After round 1 there's a 10 second break showing who won, then round 2 starts in a new arena with everyone back in, eliminated players included. After round 2 the top 5 scores are posted in chat, a title names the top scorer, and the game ends 10 seconds later.",
+        "src": "games/logic/Bomberman.java:191-215, games/logic/Bomberman.java:301-322, games/models/Scoreboard.java:59-107"
+      }
+    ],
+    "scoring": [
+      {
+        "text": "+1 for each soft-block column your bomb destroys.",
+        "src": "games/logic/Bomberman.java:485-495"
+      },
+      {
+        "text": "+1 for each column you clear by hand, counted when you break its last block.",
+        "src": "games/logic/Bomberman.java:592-596, games/logic/Bomberman.java:1112-1122"
+      },
+      {
+        "text": "+60 for each player your bomb kills, as long as you're still alive when they die.",
+        "src": "games/logic/Bomberman.java:82, games/logic/Bomberman.java:717-723"
+      },
+      {
+        "text": "+30 for winning a round by being the last one standing.",
+        "src": "games/logic/Bomberman.java:83, games/logic/Bomberman.java:290-295"
+      },
+      {
+        "text": "Nothing takes points away. Your score carries over from round 1 to round 2.",
+        "src": "games/models/Scoreboard.java:23-35, games/logic/Bomberman.java:227"
+      },
+      {
+        "text": "Your score is also added to your all-time Bomberman total, which feeds the server's top 10 leaderboard (refreshed every minute).",
+        "src": "games/logic/Bomberman.java:248, model/EventPlayer.java:171-173, manager/LeaderboardCacheManager.java:22, manager/LeaderboardCacheManager.java:39-54, placeholders/games/BombermanPositionPlaceholder.java:17-26"
+      }
+    ],
+    "tokens": [
+      {
+        "text": "You're paid once, when the game ends, from your total score. Eliminated players are still in the game as spectators and are paid the same way.",
+        "src": "games/interfaces/InventoryUnifiedMinigame.java:73-91, games/logic/Bomberman.java:240-249, games/interfaces/TokenFormula.java:35-48"
+      },
+      {
+        "text": "You get 3 tokens, plus up to 10 more as your score climbs toward a target score, plus 2 if you won at least 1 round. The total never goes above 13.",
+        "src": "games/tokenformula/BombermanTokenFormula.java:8-10, games/tokenformula/BombermanTokenFormula.java:18-28"
+      },
+      {
+        "text": "The target is set once, at the start of round 1: twice your fair share of the arena's soft columns plus 60 for every other player, doubled for the 2 rounds. In other words, clearing twice your share of blocks and killing everyone in both rounds.",
+        "src": "games/logic/Bomberman.java:226-232"
+      },
+      {
+        "text": "Example with 4 players: the arena is 32 blocks wide with about 708 soft columns (worked out from the arena template), so the target is 1,068. Clearing 150 columns, getting 1 kill and winning 1 round is 240 points, which is 22% of the target: 3 + 2 + 2 for the win = 7 tokens.",
+        "src": "games/logic/Bomberman.java:226-232, games/logic/Bomberman.java:905-950, games/logic/Bomberman.java:1177-1180, games/tokenformula/BombermanTokenFormula.java:18-28"
+      },
+      {
+        "text": "Same game, 400 columns, 3 kills and 2 round wins is 640 points (60%): 3 + 6 + 2 = 11 tokens. A round winner reaches 13 from 801 points; without a round win you need 1,015.",
+        "src": "games/tokenformula/BombermanTokenFormula.java:18-28"
+      },
+      {
+        "text": "The event's usual rules then apply: staff can start a game that pays a multiple of this, a flat amount for everyone, or nothing (announced in chat). The server's token multiplier is applied and rounded up, and you receive at most 20 Summer Dollops from one payout. The chat message shows the amount before that 20 cap.",
+        "src": "games/interfaces/TokenPayout.java:30-36, games/MinigameManager.java:64, games/MinigameManager.java:86-93, items/TokenExchanging.java:34-54"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Rounds",
+        "value": "2",
+        "src": "games/logic/Bomberman.java:84"
+      },
+      {
+        "label": "Round timer",
+        "value": "3 min (180 s)",
+        "src": "games/logic/Bomberman.java:75, games/logic/Bomberman.java:217-224"
+      },
+      {
+        "label": "Sudden Death",
+        "value": "60 s",
+        "src": "games/logic/Bomberman.java:76, games/logic/Bomberman.java:355-362"
+      },
+      {
+        "label": "Break between rounds",
+        "value": "10 s",
+        "src": "games/logic/Bomberman.java:85, games/logic/Bomberman.java:306-315"
+      },
+      {
+        "label": "Bomb fuse",
+        "value": "1.5 s (30 ticks)",
+        "src": "games/logic/Bomberman.java:77, games/logic/Bomberman.java:462-463"
+      },
+      {
+        "label": "Bombs at once",
+        "value": "1 (locked until it explodes, at most 2.5 s)",
+        "src": "games/logic/Bomberman.java:78, games/logic/Bomberman.java:456-465, games/logic/Bomberman.java:476-478"
+      },
+      {
+        "label": "Blast reach",
+        "value": "Soft columns within 2 blocks, measured flat",
+        "src": "games/logic/Bomberman.java:79, games/logic/Bomberman.java:486-491"
+      },
+      {
+        "label": "Points",
+        "value": "1 per column, 60 per kill, 30 per round win",
+        "src": "games/logic/Bomberman.java:82-83, games/logic/Bomberman.java:494, games/logic/Bomberman.java:595"
+      },
+      {
+        "label": "Always visible within",
+        "value": "5 blocks",
+        "src": "games/logic/Bomberman.java:80, games/logic/Bomberman.java:418"
+      },
+      {
+        "label": "Arena width",
+        "value": "32 blocks for 1-5 players, growing with player count up to 238",
+        "src": "games/logic/Bomberman.java:857-859, games/logic/Bomberman.java:1157-1161, games/logic/Bomberman.java:1177-1180"
+      },
+      {
+        "label": "Spawn spacing",
+        "value": "At least 18 blocks apart (the arena grows to fit)",
+        "src": "games/logic/Bomberman.java:860, games/logic/Bomberman.java:912-921, games/logic/Bomberman.java:1210-1236"
+      },
+      {
+        "label": "Block heights",
+        "value": "Soft blocks and pillars both 7 blocks above the floor",
+        "src": "games/logic/Bomberman.java:863-864, games/logic/Bomberman.java:1238-1253"
+      },
+      {
+        "label": "Spawn freeze",
+        "value": "Slowness VII for 1 s",
+        "src": "games/logic/Bomberman.java:95-96, games/logic/Bomberman.java:161-168"
+      },
+      {
+        "label": "Mining Fatigue",
+        "value": "Level II, topped up every 0.25 s",
+        "src": "games/logic/Bomberman.java:115, games/logic/Bomberman.java:663, games/logic/Bomberman.java:703-708, utility/scheduler/AsynchronousRunnable.java:34-36"
+      },
+      {
+        "label": "Fall rescue height",
+        "value": "32 blocks above the arena centre",
+        "src": "games/logic/Bomberman.java:86, games/logic/Bomberman.java:715"
+      },
+      {
+        "label": "Minimum players",
+        "value": "1",
+        "src": "games/logic/Bomberman.java:121-124"
+      },
+      {
+        "label": "Longest possible game",
+        "value": "8 min 50 s, then it's stopped",
+        "src": "games/logic/Bomberman.java:85-89, games/interfaces/Minigame.java:286-291"
+      },
+      {
+        "label": "Tokens",
+        "value": "3-13",
+        "src": "games/tokenformula/BombermanTokenFormula.java:8-10, games/tokenformula/BombermanTokenFormula.java:18-28"
+      }
+    ],
+    "tips": [
+      {
+        "text": "Bomb rather than mine. A bomb clears whole 7-block columns several at a time, while mining needs all 7 blocks of a column broken for 1 point, and you have Mining Fatigue II.",
+        "src": "games/logic/Bomberman.java:486-495, games/logic/Bomberman.java:1112-1122, games/logic/Bomberman.java:156"
+      },
+      {
+        "text": "A kill is worth 60 points, as much as 60 columns, and a round win adds 30 more. The 2 token win bonus is the same whether you win 1 round or both.",
+        "src": "games/logic/Bomberman.java:82-83, games/logic/Bomberman.java:244, games/tokenformula/BombermanTokenFormula.java:23-25"
+      },
+      {
+        "text": "Your own bomb can't hurt you and blasts don't push you, so standing next to your own bomb is safe.",
+        "src": "games/logic/Bomberman.java:565-569, games/logic/Bomberman.java:602-609"
+      },
+      {
+        "text": "If you're eliminated before your bomb goes off, that bomb earns you nothing: no block points and no kill.",
+        "src": "games/logic/Bomberman.java:476-495, games/logic/Bomberman.java:717-723"
+      },
+      {
+        "text": "Walls hide you as well as your opponents. Every column you clear opens sight lines, and anyone within 5 blocks can see you regardless.",
+        "src": "games/logic/Bomberman.java:416-426, games/logic/Bomberman.java:1078-1110"
+      },
+      {
+        "text": "Sudden Death removes every soft block, so from then on only kills and the round win score.",
+        "src": "games/logic/Bomberman.java:983-995, games/logic/Bomberman.java:1068-1069"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "One of the possible subtitles when you join is leftover placeholder text: '// TODO: Splash Text'.",
+        "src": "games/logic/Bomberman.java:66-71, games/logic/Bomberman.java:115, games/interfaces/Minigame.java:252-255"
+      },
+      {
+        "text": "If the player whose bomb killed you was already eliminated, chat says you 'blew themselves up!', even though your own bomb can't hurt you.",
+        "src": "games/logic/Bomberman.java:717-726, games/logic/Bomberman.java:565-569"
+      },
+      {
+        "text": "The end-of-game title names the player with the most points, who isn't always the player who won the most rounds.",
+        "src": "games/logic/Bomberman.java:317-318, games/models/Scoreboard.java:79-91"
+      },
+      {
+        "text": "The +2 win bonus is cut off by the 13 token cap, so it adds only 1 token if your score alone gets you 12, and nothing if it gets you 13.",
+        "src": "games/tokenformula/BombermanTokenFormula.java:23-27"
+      },
+      {
+        "text": "Playing alone, you win every round you survive to the end of the timer, since the round only ends early if nobody is left.",
+        "src": "games/logic/Bomberman.java:269-274, games/logic/Bomberman.java:284-295"
+      },
+      {
+        "text": "A code comment says the arena width must be 17, 21, 25 and so on (steps of 4) for the pillar grid to line up, but the minimum width is 32. Worked out from the arena template, games with 1-5 players get a lopsided pillar grid, with pillars along the north and west edges but not the south and east.",
+        "src": "games/logic/Bomberman.java:856-857, games/logic/Bomberman.java:1163-1180"
+      }
+    ],
+    "config": [
+      {
+        "text": "The waiting spot and the arena's centre point come from the map config. The arena itself is generated by the game every round.",
+        "src": "configurable/sectors/BombermanDefinition.java:10-11, games/logic/Bomberman.java:114-118, games/logic/Bomberman.java:905-964"
+      },
+      {
+        "text": "By default, Bomberman is 1 of 3 games (with Incursion and Soccer) in the automatic rotation, but automatic games are switched off by default.",
+        "src": "configurable/Config.java:31, configurable/Config.java:52-56"
+      },
+      {
+        "text": "The server's token multiplier is 1 by default.",
+        "src": "configurable/Config.java:43, items/TokenExchanging.java:38"
+      },
+      {
+        "text": "Bomb damage is the game's normal TNT damage; the code doesn't change it. Not tested here.",
+        "src": "games/logic/Bomberman.java:462-464, games/logic/Bomberman.java:551-570"
+      }
+    ]
+  },
+  {
+    "key": "prop-hunt",
+    "constant": "PROP_HUNT",
+    "name": "Prop Hunt",
+    "summary": "Hide and seek with disguises. Hiders turn into blocks and hide in the map while Seekers hunt them down, and Hiders score for time survived while Seekers score for each catch.",
+    "tokenLine": "Your score, at least 3 and at most 13",
+    "howToPlay": [
+      {
+        "text": "Join with /event join while the queue is open. At least 2 players are needed. Your inventory is saved and cleared for the game, and you can't move items or switch hotbar slots.",
+        "src": "games/interfaces/Minigame.java:127-146, games/interfaces/Minigame.java:420-423, games/logic/PropHunt.java:75, games/interfaces/InventoryUnifiedMinigame.java:26-28, games/interfaces/InventoryUnifiedMinigame.java:37-62, games/events/MinigamePreventInventoryTampering.java:22-44"
+      },
+      {
+        "text": "1 random player becomes the Seeker and gets a Stone Sword and Speed I. Everyone else is a Hider and is sent to the start point, while the Seeker waits at the waiting spot for 40 seconds.",
+        "src": "games/logic/PropHunt.java:63, games/logic/PropHunt.java:91-116, games/logic/PropHunt.java:637-648, games/logic/PropHunt.java:659-665"
+      },
+      {
+        "text": "As a Hider, left-click a block to disguise yourself as it. It has to be a solid, non see-through block (stairs and slabs also work), and not a barrier. After disguising you must wait 22.5 seconds before picking another block.",
+        "src": "games/logic/PropHunt.java:382, games/logic/PropHunt.java:411-415, games/logic/PropHunt.java:452-484"
+      },
+      {
+        "text": "While disguised, right-click a block to lock in place. The space you're standing in must be empty: a real block of your disguise is placed there, and you sit invisible next to it (on top if there's room), hidden from Seekers. Sneak to get off and unlock.",
+        "src": "games/logic/PropHunt.java:404-409, games/logic/PropHunt.java:452-460, games/logic/PropHunt.java:529-598, games/logic/PropHunt.java:614-631, games/logic/PropHunt.java:310-318"
+      },
+      {
+        "text": "After 40 seconds the Seeker is sent to the start point, everyone hears a Warden emerging, and a 5 minute timer starts.",
+        "src": "games/logic/PropHunt.java:117-150"
+      },
+      {
+        "text": "A Seeker catches a Hider with 1 hit. Left-clicking a locked Hider's block unlocks them and hits them in the same click. Seekers can't hurt other Seekers or spectators, and Hiders can't hit anyone.",
+        "src": "games/logic/PropHunt.java:233-276, games/logic/PropHunt.java:680-702"
+      },
+      {
+        "text": "Every 22.5 seconds the Seeker hears a sound at each Hider's position: a Warden listening sound at the nearest Hider and clicking sounds at the rest. Only the Seeker hears these.",
+        "src": "games/logic/PropHunt.java:636, games/logic/PropHunt.java:659-677, games/logic/PropHunt.java:732-761"
+      },
+      {
+        "text": "A caught Hider has a 20% chance to become another Seeker. Otherwise they become an invisible spectator. Either way they're sent back to the start point.",
+        "src": "games/logic/PropHunt.java:704-720, games/logic/PropHunt.java:764-791"
+      },
+      {
+        "text": "Only a Seeker's hit can take you out; any other death is prevented. Your hunger stays full.",
+        "src": "games/logic/PropHunt.java:167-177, games/logic/PropHunt.java:278-306"
+      },
+      {
+        "text": "The game ends when every Hider is caught (Seekers win) or the 5 minute timer runs out (Hiders win). If no Seeker is left, a random Hider becomes the Seeker. At the end the top 5 scores are posted, you're sent to the waiting spot, and 15 seconds later to the drop-off point.",
+        "src": "games/logic/PropHunt.java:141-165, games/logic/PropHunt.java:180-215, games/models/Scoreboard.java:59-107"
+      }
+    ],
+    "scoring": [
+      {
+        "text": "Hiders get 1 point every 40 seconds while they're still Hiders, counting from the very start of the game (the 40 second hiding time included).",
+        "src": "games/logic/PropHunt.java:62, games/logic/PropHunt.java:154-178, games/logic/PropHunt.java:383, games/logic/PropHunt.java:423-427, utility/scheduler/AsynchronousRunnable.java:34-36"
+      },
+      {
+        "text": "Seekers get 1 point for each Hider they catch.",
+        "src": "games/logic/PropHunt.java:704, games/logic/PropHunt.java:723-724"
+      },
+      {
+        "text": "Caught Hiders keep the points they earned. Spectators earn nothing more, and a Hider who becomes a Seeker adds catches on top of their Hider points.",
+        "src": "games/logic/PropHunt.java:719-724, games/logic/PropHunt.java:784-791, games/models/Scoreboard.java:23-25"
+      },
+      {
+        "text": "Your score is also added to your all-time Prop Hunt total, which feeds the server's top 10 leaderboard.",
+        "src": "games/logic/PropHunt.java:88, model/EventPlayer.java:171-173, manager/LeaderboardCacheManager.java:39-54, placeholders/games/PropHuntPositionPlaceholder.java:17-25"
+      }
+    ],
+    "tokens": [
+      {
+        "text": "You're paid once, when the game ends: your score is your token count, but never less than 3 or more than 13.",
+        "src": "games/tokenformula/PropHuntTokenFormula.java:6-9, games/logic/PropHunt.java:84-89, games/interfaces/InventoryUnifiedMinigame.java:73-91"
+      },
+      {
+        "text": "Caught players who became spectators stay in the game and are paid at the end like everyone else.",
+        "src": "games/logic/PropHunt.java:714-719, games/interfaces/InventoryUnifiedMinigame.java:73-91"
+      },
+      {
+        "text": "Example: a Hider who's never caught is in the game for the full 5 minutes 40 seconds and earns 8 points, so 8 tokens. A Seeker who catches 5 Hiders gets 5 tokens, and one who catches only 1 still gets 3.",
+        "src": "games/logic/PropHunt.java:61-63, games/logic/PropHunt.java:119, games/logic/PropHunt.java:423-427, games/tokenformula/PropHuntTokenFormula.java:8"
+      },
+      {
+        "text": "Example: a Hider caught at 2 minutes (3 points) who becomes a Seeker and catches 4 more ends on 7 points, so 7 tokens.",
+        "src": "games/logic/PropHunt.java:710-724, games/tokenformula/PropHuntTokenFormula.java:8"
+      },
+      {
+        "text": "The event's usual rules then apply: staff can start a game that pays a multiple of this, a flat amount for everyone, or nothing (announced in chat). The server's token multiplier is applied and rounded up, and you receive at most 20 Summer Dollops from one payout.",
+        "src": "games/interfaces/TokenPayout.java:30-36, games/MinigameManager.java:86-93, items/TokenExchanging.java:34-54"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Minimum players",
+        "value": "2",
+        "src": "games/interfaces/Minigame.java:130, games/interfaces/Minigame.java:420-423"
+      },
+      {
+        "label": "Hiding time",
+        "value": "40 s",
+        "src": "games/logic/PropHunt.java:63, games/logic/PropHunt.java:112-116"
+      },
+      {
+        "label": "Seeking time",
+        "value": "5 min, so 5 min 40 s in total",
+        "src": "games/logic/PropHunt.java:61, games/logic/PropHunt.java:119, games/logic/PropHunt.java:141-150"
+      },
+      {
+        "label": "Disguise cooldown",
+        "value": "22.5 s (450 ticks)",
+        "src": "games/logic/PropHunt.java:382, games/logic/PropHunt.java:413-415, games/logic/PropHunt.java:469"
+      },
+      {
+        "label": "Hider point",
+        "value": "1 every 40 s (800 ticks)",
+        "src": "games/logic/PropHunt.java:383, games/logic/PropHunt.java:423-427"
+      },
+      {
+        "label": "Seeker clue",
+        "value": "Every 22.5 s (450 ticks)",
+        "src": "games/logic/PropHunt.java:636, games/logic/PropHunt.java:669-677"
+      },
+      {
+        "label": "Seeker hit",
+        "value": "40 damage, always a catch",
+        "src": "games/logic/PropHunt.java:272-275"
+      },
+      {
+        "label": "Caught Hider becomes a Seeker",
+        "value": "20 in 101 (about 19.8%)",
+        "src": "games/logic/PropHunt.java:710"
+      },
+      {
+        "label": "Seeker kit",
+        "value": "Stone Sword, Speed I",
+        "src": "games/logic/PropHunt.java:637-647, games/logic/PropHunt.java:665"
+      },
+      {
+        "label": "Locked Hider particles",
+        "value": "2 block particles every 0.5 s",
+        "src": "games/logic/PropHunt.java:62, games/logic/PropHunt.java:431-449"
+      },
+      {
+        "label": "Tokens",
+        "value": "3-13",
+        "src": "games/tokenformula/PropHuntTokenFormula.java:8"
+      }
+    ],
+    "tips": [
+      {
+        "text": "Seekers: the sound tells you which Hider is closest. The Warden listening sound is the nearest one, and the clicks are everyone else.",
+        "src": "games/logic/PropHunt.java:673-676, games/logic/PropHunt.java:732-761"
+      },
+      {
+        "text": "Locked Hiders give off block particles from their block every 0.5 seconds, so Seekers should watch for blocks shedding particles, and Hiders should know a locked spot isn't silent.",
+        "src": "games/logic/PropHunt.java:431-449"
+      },
+      {
+        "text": "Hiders: locking is what hides you from Seekers. Unlocked, you're a moving block that Seekers can see and hit.",
+        "src": "games/logic/PropHunt.java:243-249, games/logic/PropHunt.java:558-562, games/logic/PropHunt.java:590-594"
+      },
+      {
+        "text": "Hiders score just by staying uncaught, so surviving the whole game (8 points) beats any early catch. Seekers need 4 or more catches to earn more than the 3 token minimum.",
+        "src": "games/logic/PropHunt.java:423-427, games/logic/PropHunt.java:723-724, games/tokenformula/PropHuntTokenFormula.java:8"
+      },
+      {
+        "text": "When you lock, a real block of your disguise type appears where you stand, so pick a disguise that matches the blocks around your hiding spot.",
+        "src": "games/logic/PropHunt.java:537-543"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "The message says you can only disguise as solid, opaque blocks, but stairs and slabs are allowed too.",
+        "src": "games/logic/PropHunt.java:473, games/logic/PropHunt.java:481-484"
+      },
+      {
+        "text": "The end title says '<name> has won!' for whoever has the most points, which can be a Seeker even when the Hiders won.",
+        "src": "games/logic/PropHunt.java:199, games/models/Scoreboard.java:85-91"
+      },
+      {
+        "text": "'Time is up! Hiders win!' is sent by the 5 minute timer after it stops the game. The game's own time limit ends at the same moment, and if that one fires first, the message may not appear.",
+        "src": "games/logic/PropHunt.java:119, games/logic/PropHunt.java:146-149, games/logic/PropHunt.java:187-191, games/interfaces/Minigame.java:286-291, games/models/CountdownBossBar.java:74-83"
+      },
+      {
+        "text": "The nearest Hider's clue sound is played quieter (0.8) than the other Hiders' sounds (2.0).",
+        "src": "games/logic/PropHunt.java:674-675"
+      },
+      {
+        "text": "While you're looking at another unlocked Hider within 6 blocks, your clicks as a Hider do nothing, so you can't disguise or lock until you look away.",
+        "src": "games/logic/PropHunt.java:243-250, games/logic/PropHunt.java:486-490"
+      },
+      {
+        "text": "A code comment says the 40 second hiding time is meant to become 30 seconds.",
+        "src": "games/logic/PropHunt.java:115"
+      },
+      {
+        "text": "There's a switched-off handler that would lock you in place when you stop sneaking. It isn't active, so locking is right-click only.",
+        "src": "games/logic/PropHunt.java:320-329"
+      }
+    ],
+    "config": [
+      {
+        "text": "The waiting spot, start point and play area come from the map config, which has the same shape as Manor's. By default there's 1 Prop Hunt map entry with no locations filled in, so the server has to set it up.",
+        "src": "configurable/sectors/ManorMinigameDefinition.java:10-12, games/logic/PropHunt.java:74-82, configurable/Config.java:116-119"
+      },
+      {
+        "text": "Prop Hunt isn't in the default automatic rotation.",
+        "src": "configurable/Config.java:52-56"
+      },
+      {
+        "text": "How far the Seeker's clue sounds carry is up to the game's normal sound rules. Not tested here.",
+        "src": "games/logic/PropHunt.java:674-675"
+      }
+    ]
+  },
+  {
+    "key": "manor",
+    "constant": "MANOR",
+    "name": "Manor",
+    "summary": "A 1-Hunter tag game. Shrunken Runners try not to get caught in the dark while the Hunter catches them with 1 hit, and Runners score for time survived while the Hunter scores for each catch.",
+    "tokenLine": "Your score + 2, max 15",
+    "howToPlay": [
+      {
+        "text": "Join with /event join while the queue is open. At least 2 players are needed. Your inventory is saved and cleared for the game, and you can't move items or switch hotbar slots.",
+        "src": "games/interfaces/Minigame.java:127-146, games/interfaces/Minigame.java:420-423, games/logic/Manor.java:61, games/interfaces/InventoryUnifiedMinigame.java:26-28, games/interfaces/InventoryUnifiedMinigame.java:37-62, games/events/MinigamePreventInventoryTampering.java:22-44"
+      },
+      {
+        "text": "1 random player becomes the Hunter. Everyone else is a Runner and is sent to the start point. The Hunter waits at the waiting spot for 15 seconds, then is sent to the start point too.",
+        "src": "games/logic/Manor.java:96-147"
+      },
+      {
+        "text": "Runners wear boots that shrink them to half size, and get Darkness, Glowing and Night Vision.",
+        "src": "games/logic/Manor.java:254-258, games/logic/Manor.java:441-443, games/logic/Manor.java:455-470, games/logic/Manor.java:561-566"
+      },
+      {
+        "text": "The Hunter gets Glowing, Night Vision and Speed I. Runners can only see the Hunter when they're within 7 blocks of them.",
+        "src": "games/logic/Manor.java:339-343, games/logic/Manor.java:354-364, games/logic/Manor.java:374-381"
+      },
+      {
+        "text": "The Hunter can see a Runner who is within 6 blocks or 15 or more blocks away, but not one in between.",
+        "src": "games/logic/Manor.java:366-370"
+      },
+      {
+        "text": "Runners within 30 blocks of the Hunter hear a Warden heartbeat that gets louder, higher and faster the closer the Hunter is.",
+        "src": "games/logic/Manor.java:411-434, games/logic/Manor.java:536-558"
+      },
+      {
+        "text": "1 hit from the Hunter catches a Runner. Runners can't hit anyone ('You cannot attack this player.').",
+        "src": "games/logic/Manor.java:203-220, games/logic/Manor.java:523-532"
+      },
+      {
+        "text": "A caught Runner becomes an invisible spectator at the start point. Each catch adds 15 seconds to the game, unless it was the last Runner.",
+        "src": "games/logic/Manor.java:480-499, games/logic/Manor.java:583-600"
+      },
+      {
+        "text": "Once the Hunter spawns, a boss bar shows how many Runners are left.",
+        "src": "games/logic/Manor.java:97-102, games/logic/Manor.java:142-144, games/logic/Manor.java:501-507"
+      },
+      {
+        "text": "The game ends when the Hunter catches every Runner, or when time runs out (2 minutes 15 seconds plus any added time). If the Hunter leaves, a random Runner takes over, and if fewer than 2 players are left the game ends. At the end the top 5 scores are posted, you're sent to the waiting spot, and 15 seconds later to the drop-off point.",
+        "src": "games/logic/Manor.java:61, games/logic/Manor.java:163-187, games/logic/Manor.java:223-247, games/logic/Manor.java:491-495, games/models/Scoreboard.java:59-107"
+      }
+    ],
+    "scoring": [
+      {
+        "text": "Runners get 1 point about every 40 seconds while they're still Runners, counting from the very start of the game (the 15 seconds before the Hunter spawns included).",
+        "src": "games/logic/Manor.java:46, games/logic/Manor.java:150-161, games/logic/Manor.java:444, games/logic/Manor.java:472-477, utility/scheduler/AsynchronousRunnable.java:34-36"
+      },
+      {
+        "text": "The Hunter gets 1 point for each catch.",
+        "src": "games/logic/Manor.java:489"
+      },
+      {
+        "text": "Caught Runners keep their points but earn no more as spectators. A Runner who takes over as Hunter keeps their Runner points.",
+        "src": "games/logic/Manor.java:243-244, games/logic/Manor.java:591-600, games/models/Scoreboard.java:23-25"
+      },
+      {
+        "text": "Your score is also added to your all-time Manor total, which feeds the server's top 10 leaderboard.",
+        "src": "games/logic/Manor.java:77, model/EventPlayer.java:171-173, manager/LeaderboardCacheManager.java:39-54, placeholders/games/ManorPositionPlaceholder.java:17-25"
+      }
+    ],
+    "tokens": [
+      {
+        "text": "You're paid once, when the game ends: your score plus 2, up to 15.",
+        "src": "games/tokenformula/ManorTokenFormula.java:6-9, games/logic/Manor.java:72-78, games/interfaces/InventoryUnifiedMinigame.java:73-91"
+      },
+      {
+        "text": "Caught Runners stay in the game as spectators and are paid at the end like everyone else.",
+        "src": "games/logic/Manor.java:484, games/interfaces/InventoryUnifiedMinigame.java:73-91"
+      },
+      {
+        "text": "Example: in a game with no catches, a Runner lasts the full 2 minutes 15 seconds and gets 3 points, so 5 tokens. A Runner caught in the first 40 seconds has 0 points and gets 2.",
+        "src": "games/logic/Manor.java:61, games/logic/Manor.java:472-477, games/tokenformula/ManorTokenFormula.java:8"
+      },
+      {
+        "text": "Example: a Hunter who catches 6 Runners gets 6 + 2 = 8 tokens. The 15 token cap is reached at 13 points.",
+        "src": "games/logic/Manor.java:489, games/tokenformula/ManorTokenFormula.java:8"
+      },
+      {
+        "text": "The event's usual rules then apply: staff can start a game that pays a multiple of this, a flat amount for everyone, or nothing (announced in chat). The server's token multiplier is applied and rounded up, and you receive at most 20 Summer Dollops from one payout.",
+        "src": "games/interfaces/TokenPayout.java:30-36, games/MinigameManager.java:86-93, items/TokenExchanging.java:34-54"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Minimum players",
+        "value": "2",
+        "src": "games/interfaces/Minigame.java:130, games/interfaces/Minigame.java:420-423"
+      },
+      {
+        "label": "Game time",
+        "value": "2 min 15 s, +15 s per catch",
+        "src": "games/logic/Manor.java:61, games/logic/Manor.java:497-499"
+      },
+      {
+        "label": "Hunter spawn delay",
+        "value": "15 s",
+        "src": "games/logic/Manor.java:122-127"
+      },
+      {
+        "label": "Runner point",
+        "value": "About every 40 s",
+        "src": "games/logic/Manor.java:444, games/logic/Manor.java:472-477"
+      },
+      {
+        "label": "Runner size",
+        "value": "Half size (from the boots)",
+        "src": "games/logic/Manor.java:441-443"
+      },
+      {
+        "label": "Runners see the Hunter within",
+        "value": "7 blocks",
+        "src": "games/logic/Manor.java:360-364"
+      },
+      {
+        "label": "Hunter can't see a Runner",
+        "value": "Between 6 and 15 blocks away",
+        "src": "games/logic/Manor.java:366-370"
+      },
+      {
+        "label": "Heartbeat",
+        "value": "Within 30 blocks; about every 1.1 s at the edge down to every 0.4 s up close, volume 0.4 to 2.0",
+        "src": "games/logic/Manor.java:411-434, games/logic/Manor.java:544-558"
+      },
+      {
+        "label": "Hunter hit",
+        "value": "90 damage, always a catch",
+        "src": "games/logic/Manor.java:531"
+      },
+      {
+        "label": "Effects",
+        "value": "30 s long, refreshed every 10 s",
+        "src": "games/logic/Manor.java:46, games/logic/Manor.java:254-258, games/logic/Manor.java:374-381, games/logic/Manor.java:463-470"
+      },
+      {
+        "label": "Tokens",
+        "value": "2-15",
+        "src": "games/tokenformula/ManorTokenFormula.java:8"
+      }
+    ],
+    "tips": [
+      {
+        "text": "Runners: when the Hunter is 6 to 15 blocks away they can't see you at all. Closer than 6 or farther than 15, they can, and you're Glowing.",
+        "src": "games/logic/Manor.java:366-370, games/logic/Manor.java:466-467"
+      },
+      {
+        "text": "If you can see the Hunter, they're within 7 blocks of you.",
+        "src": "games/logic/Manor.java:360-364"
+      },
+      {
+        "text": "Use the heartbeat as a distance meter: silence means the Hunter is more than 30 blocks away, and the faster it beats the closer they are.",
+        "src": "games/logic/Manor.java:422-432"
+      },
+      {
+        "text": "Every catch except the last adds 15 seconds, which also gives the Runners still in the game more time to earn points.",
+        "src": "games/logic/Manor.java:491-499, games/logic/Manor.java:472-477"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "When time runs out there's no message saying the Runners won. Only a Hunter clean sweep gets an announcement ('The hunter has caught all runners. The hunter wins...').",
+        "src": "games/logic/Manor.java:163-187, games/logic/Manor.java:491-495"
+      },
+      {
+        "text": "'This minigame has concluded.' is sent twice: once when the game stops and again 15 seconds later.",
+        "src": "games/logic/Manor.java:168, games/logic/Manor.java:178-182"
+      },
+      {
+        "text": "The game only handles catches by the Hunter. Deaths from anything else aren't stopped by the game, so they'd be a normal death. Whether the map has anything that can hurt you depends on the map. Not tested here.",
+        "src": "games/logic/Manor.java:61, games/logic/Manor.java:189-201, games/events/MinigamePreventDamageListener.java:19-29"
+      }
+    ],
+    "config": [
+      {
+        "text": "Manor needs a map in the config, and the default config has none, so it can't be started until the server adds one.",
+        "src": "configurable/Config.java:130-131, games/constants/MinigameConstant.java:93-97, games/MinigameManager.java:43-48"
+      },
+      {
+        "text": "The waiting spot, start point and play area come from the map config, which has the same shape as Prop Hunt's.",
+        "src": "configurable/sectors/ManorMinigameDefinition.java:10-12, games/logic/Manor.java:60-64"
+      },
+      {
+        "text": "Manor isn't in the default automatic rotation.",
+        "src": "configurable/Config.java:52-56"
+      }
+    ]
+  }
+]

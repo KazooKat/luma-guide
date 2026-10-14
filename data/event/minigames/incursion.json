@@ -1,0 +1,307 @@
+[
+  {
+    "key": "incursion",
+    "constant": "INCURSION",
+    "name": "Incursion",
+    "summary": "A two-team shooter where you score by diving into the enemy team's hole, with kills worth a smaller bonus. After 8 minutes the team with the higher total score wins, but your tokens come only from your own points.",
+    "tokenLine": "3 + 1 per 75 points scored, max 13",
+    "howToPlay": [
+      {
+        "text": "Join with /event join while the queue is open (90 seconds by default). At least 2 players are needed or the game is cancelled. You are sent to the lobby, and your inventory is saved and cleared, then given back when the game ends.",
+        "src": "games/MinigameManager.java:63, games/MinigameManager.java:95-97, games/interfaces/Minigame.java:130-146, games/interfaces/Minigame.java:420-423, games/logic/Incursion.java:310-318, games/interfaces/InventoryUnifiedMinigame.java:38-62, games/interfaces/InventoryUnifiedMinigame.java:73-91"
+      },
+      {
+        "text": "Players are split into 2 teams, Scarlet and Ivory, with team sizes at most 1 apart. By default the split also tries to give both teams a similar average ping, with a little randomness.",
+        "src": "games/logic/Incursion.java:370-420, configurable/sectors/IncursionDefinition.java:32-33, configurable/sectors/IncursionDefinition.java:113-126"
+      },
+      {
+        "text": "Your kit is a team-coloured leather chestplate plus 4 weapons in hotbar slots 1 to 4: Last Resort (stone sword, Sharpness II), Overwatch (spyglass), Blunderhorn (goat horn) and Spitter (pufferfish). You can't take off the chestplate, rearrange your inventory, drop items or swap hands.",
+        "src": "games/logic/Incursion.java:979-999, games/logic/Incursion.java:2766-2775, games/logic/Incursion.java:2040-2064, games/logic/Incursion.java:2076-2082, games/logic/Incursion.java:2188-2200"
+      },
+      {
+        "text": "At the start everyone is sent to a random spot in their team's spawn area and frozen for 5 seconds while a \"Get ready\" countdown plays. Nobody can deal or take damage until \"GO!\" shows.",
+        "src": "games/logic/Incursion.java:536-592, games/logic/Incursion.java:2208-2213, configurable/sectors/IncursionDefinition.java:38-39"
+      },
+      {
+        "text": "Your goal is to reach the enemy team's hole and jump into it. That scores for you and your team, then sends you back to your own spawn. Jumping into your own hole says \"That's your own hole! No points for you.\" and sends you back, and so does leaving the arena (\"Don't leave the arena!\").",
+        "src": "games/logic/Incursion.java:1910-1918, games/logic/Incursion.java:777-789"
+      },
+      {
+        "text": "Overwatch: hold right click to charge, and release once the title shows READY (a bell plays) to fire a beam. It passes through every enemy in a line and stops at the first solid block. Letting go early fires nothing (\"The shot wasn't fully charged!\"), and switching hotbar slot cancels the charge.",
+        "src": "games/logic/Incursion.java:1023-1066, games/logic/Incursion.java:2163-2186, games/logic/Incursion.java:2066-2074, games/logic/Incursion.java:1087-1179"
+      },
+      {
+        "text": "Blunderhorn: right click for a short cone blast that hits every enemy inside it who isn't behind a wall. It hurts less the further away they are.",
+        "src": "games/logic/Incursion.java:1198-1234"
+      },
+      {
+        "text": "Spitter: right click to spit a stream of water that flies in an arc (aimed a little above your crosshair) and hits the first enemy it touches.",
+        "src": "games/logic/Incursion.java:1295-1378"
+      },
+      {
+        "text": "Overwatch, Blunderhorn, Spitter and the eggs deal true damage: it comes straight off health and ignores armor. They can only hurt the enemy team and Vanguards, never your own team. Hitting teammates with the sword is also blocked.",
+        "src": "games/logic/Incursion.java:1522-1572, games/logic/Incursion.java:1607-1631, games/logic/Incursion.java:2028-2031"
+      },
+      {
+        "text": "Orbs (dark particle spheres with a white core) float around the map. Walk through one to get a random egg: Unstable Egg (blast only), Cryo Egg (blast plus frost and slowness) or Incendiary Egg (blast plus fire). Throw it and it goes off where it lands. An orb comes back 30 seconds after someone takes it.",
+        "src": "games/logic/Incursion.java:1418-1457, games/logic/Incursion.java:1466-1520, games/logic/Incursion.java:2249-2306, games/logic/Incursion.java:2731-2738"
+      },
+      {
+        "text": "Some maps have boss rooms, each guarded by a Vanguard (a Drowned with a trident by default, its HP shown on its name tag). It stays locked in its room and attacks the nearest player in range. Killing it drops 2-5 random eggs on the floor, and it comes back 60 seconds later.",
+        "src": "games/logic/Incursion.java:2308-2333, games/logic/Incursion.java:2483-2518, games/logic/Incursion.java:2577-2603, games/logic/Incursion.java:2650-2682, configurable/sectors/IncursionDefinition.java:279-295"
+      },
+      {
+        "text": "When you die there is no death screen. You go straight back to your spawn area at full health, frozen for 2.5 seconds and invincible for 2.5 seconds (a ⛨ timer and a ring of team-coloured particles). While invincible you can't use your weapons or eggs either.",
+        "src": "games/logic/Incursion.java:1927-1962, games/logic/Incursion.java:759-775, games/logic/Incursion.java:627-674, games/logic/Incursion.java:2084-2126, configurable/sectors/IncursionDefinition.java:41-45"
+      },
+      {
+        "text": "At 4 minutes it is half time: the teams swap sides, every orb refills, every Vanguard respawns, and everyone gets a fresh 5 second countdown at their new spawn. Chat warns you 60, 30, 10, 3, 2 and 1 seconds before the swap and before the end.",
+        "src": "games/logic/Incursion.java:442-457, games/logic/Incursion.java:520-534, games/logic/Incursion.java:199, games/logic/Incursion.java:594-607"
+      },
+      {
+        "text": "Your action bar always shows both team scores and your own points (\"You: 150\"). The game ends after 8 minutes. The team with the higher score is announced as the winner, then you are sent to the lobby and get your inventory back.",
+        "src": "games/logic/Incursion.java:609-625, games/logic/Incursion.java:459-496, games/models/Scoreboard.java:79-97"
+      }
+    ],
+    "scoring": [
+      {
+        "text": "Diving into the enemy hole gives 100 points to you and your team.",
+        "src": "games/logic/Incursion.java:777-794, configurable/sectors/IncursionDefinition.java:53-54"
+      },
+      {
+        "text": "Killing an enemy gives you 25 points. If they die without a direct killer (a long fall, fire, a Vanguard), the kill goes to the last enemy who damaged them, as long as that was within the last 10 seconds.",
+        "src": "games/logic/Incursion.java:1945-1958, games/logic/Incursion.java:1582-1587, games/logic/Incursion.java:182, configurable/sectors/IncursionDefinition.java:56-57"
+      },
+      {
+        "text": "Killing a Vanguard gives 0 points by default. You only get the eggs it drops.",
+        "src": "games/logic/Incursion.java:2605-2620, configurable/sectors/IncursionDefinition.java:293-294"
+      },
+      {
+        "text": "Nothing takes points away. Dying, jumping into your own hole or leaving the arena only cost you the trip back to spawn.",
+        "src": "games/logic/Incursion.java:791-794, games/logic/Incursion.java:1910-1918, games/logic/Incursion.java:1927-1962"
+      },
+      {
+        "text": "Your team's score is every point its members earned, and it never goes down, even if a player leaves. It only decides which team is named the winner.",
+        "src": "games/logic/Incursion.java:791-794, games/logic/Incursion.java:480-483"
+      },
+      {
+        "text": "When you are paid, your points from the game are also added to your all-time Incursion leaderboard score.",
+        "src": "games/logic/Incursion.java:498-503, model/EventPlayer.java:171-173, placeholders/games/IncursionPositionPlaceholder.java:17-25"
+      }
+    ],
+    "tokens": [
+      {
+        "text": "You are paid Summer Dollops when the game ends, once per game.",
+        "src": "games/interfaces/InventoryUnifiedMinigame.java:73-91, games/interfaces/TokenFormula.java:35-48"
+      },
+      {
+        "text": "The formula is 3 tokens plus 1 for every full 75 points you scored, capped at 13. So 0 points gives 3 tokens and 750 points or more gives the full 13.",
+        "src": "games/tokenformula/IncursionTokenFormula.java:7-8, games/tokenformula/IncursionTokenFormula.java:18, games/logic/Incursion.java:279, games/logic/Incursion.java:498-503, configurable/sectors/IncursionDefinition.java:59-60"
+      },
+      {
+        "text": "Example: 1 hole and 2 kills is 150 points, which is 3 + 2 = 5 tokens. 4 holes and 6 kills is 550 points, and 550 / 75 rounds down to 7, so 10 tokens.",
+        "src": "games/tokenformula/IncursionTokenFormula.java:18, configurable/sectors/IncursionDefinition.java:53-60"
+      },
+      {
+        "text": "There is no win bonus. Only your own points count, so you get the same tokens whether your team wins or loses.",
+        "src": "games/logic/Incursion.java:498-503"
+      },
+      {
+        "text": "Staff can start a game with a token multiplier (the result is rounded, so 10 tokens at 1.5x becomes 15), a flat amount for everyone, or no tokens at all. Chat says which when the game is announced.",
+        "src": "games/interfaces/TokenPayout.java:30-36, games/MinigameManager.java:64, games/MinigameManager.java:86-93"
+      },
+      {
+        "text": "After that, the server-wide token multiplier (1 by default) is applied and rounded up, and a single payout can't give more than 20 tokens.",
+        "src": "items/TokenExchanging.java:38, items/TokenExchanging.java:46, configurable/Config.java:43"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Game length",
+        "value": "8 minutes, sides swap at 4 minutes",
+        "src": "configurable/sectors/IncursionDefinition.java:35-36, games/logic/Incursion.java:449-450"
+      },
+      {
+        "label": "Start countdown",
+        "value": "5 seconds frozen at the start of each half",
+        "src": "configurable/sectors/IncursionDefinition.java:38-39, games/logic/Incursion.java:536-576"
+      },
+      {
+        "label": "Respawn",
+        "value": "2.5 seconds frozen and 2.5 seconds invincible",
+        "src": "configurable/sectors/IncursionDefinition.java:41-45, games/logic/Incursion.java:759-775"
+      },
+      {
+        "label": "Hole",
+        "value": "100 points",
+        "src": "configurable/sectors/IncursionDefinition.java:53-54"
+      },
+      {
+        "label": "Kill",
+        "value": "25 points, credited up to 10 seconds after the last hit",
+        "src": "configurable/sectors/IncursionDefinition.java:56-57, games/logic/Incursion.java:182"
+      },
+      {
+        "label": "Tokens",
+        "value": "3 + 1 per 75 points, max 13",
+        "src": "games/tokenformula/IncursionTokenFormula.java:7-8, games/tokenformula/IncursionTokenFormula.java:18, configurable/sectors/IncursionDefinition.java:59-60"
+      },
+      {
+        "label": "Overwatch",
+        "value": "0.8 second charge, 2.25 second cooldown, 75 block range, 14 damage (28 on a headshot)",
+        "src": "configurable/sectors/IncursionDefinition.java:150-172"
+      },
+      {
+        "label": "Blunderhorn",
+        "value": "1.5 second cooldown, 6.5 block range, 45 degree cone, 25 damage up close down to 3.75 at max range",
+        "src": "configurable/sectors/IncursionDefinition.java:177-199, games/logic/Incursion.java:1227-1229"
+      },
+      {
+        "label": "Spitter",
+        "value": "0.75 second cooldown, 22 block range, 6.5 damage down to about 4.9 at max range",
+        "src": "configurable/sectors/IncursionDefinition.java:204-238, games/logic/Incursion.java:1351-1354"
+      },
+      {
+        "label": "Eggs",
+        "value": "25 damage at the centre down to 3.75 at the 4.5 block edge, blocked by walls",
+        "src": "configurable/sectors/IncursionDefinition.java:243-261, games/logic/Incursion.java:1478-1494"
+      },
+      {
+        "label": "Cryo Egg",
+        "value": "Frosted for 10 seconds and Slowness III for 5 seconds",
+        "src": "configurable/sectors/IncursionDefinition.java:263-270, games/logic/Incursion.java:1509-1513"
+      },
+      {
+        "label": "Incendiary Egg",
+        "value": "On fire for 5 seconds",
+        "src": "configurable/sectors/IncursionDefinition.java:272-273, games/logic/Incursion.java:1514-1515"
+      },
+      {
+        "label": "Orb respawn",
+        "value": "30 seconds",
+        "src": "configurable/sectors/IncursionDefinition.java:80-81"
+      },
+      {
+        "label": "Vanguard",
+        "value": "50 HP, back 60 seconds after dying, drops 2-5 eggs, targets players within 20 blocks or within 15 blocks of its room",
+        "src": "configurable/sectors/IncursionDefinition.java:284-291, games/logic/Incursion.java:149-150, games/logic/Incursion.java:2325-2328, games/logic/Incursion.java:2514-2518"
+      },
+      {
+        "label": "Lethal fall",
+        "value": "Falling 10 or more blocks kills you outright",
+        "src": "games/logic/Incursion.java:201-203, games/logic/Incursion.java:2017-2020, games/logic/Incursion.java:2202-2206"
+      },
+      {
+        "label": "Outnumbering slowdown",
+        "value": "3 vs 2: 15%, 2 vs 1: 25%, 3 vs 1 or worse: 40% (the max)",
+        "src": "games/logic/Incursion.java:856-859, configurable/sectors/IncursionDefinition.java:95-108"
+      }
+    ],
+    "tips": [
+      {
+        "text": "A hole is worth 4 kills, so diving is the fastest way to tokens. 1 hole is 100 points, which is already more than 1 token on its own.",
+        "src": "configurable/sectors/IncursionDefinition.java:53-60, games/tokenformula/IncursionTokenFormula.java:18"
+      },
+      {
+        "text": "Dying never costs points, only about 2.5 seconds stuck at spawn, so an aggressive dive that fails costs you very little.",
+        "src": "games/logic/Incursion.java:759-775, games/logic/Incursion.java:1927-1962"
+      },
+      {
+        "text": "Overwatch headshots do 28 damage, more than the normal 20 health, so one headshot kills a player at full health. The head zone is the top part of the hitbox, from a little below eye level up. A body shot does 14.",
+        "src": "games/logic/Incursion.java:1162-1163, games/logic/Incursion.java:1793-1802, games/logic/Incursion.java:173-174, configurable/sectors/IncursionDefinition.java:164-168"
+      },
+      {
+        "text": "The Overwatch beam pierces, so lining up 2 enemies hits both of them.",
+        "src": "games/logic/Incursion.java:1155-1171"
+      },
+      {
+        "text": "Wait for the bell and READY before letting go of Overwatch. An early release fires nothing, but it also doesn't start the cooldown, so you can charge again straight away.",
+        "src": "games/logic/Incursion.java:2178-2185, games/logic/Incursion.java:1068-1072"
+      },
+      {
+        "text": "The Blunderhorn does 25 damage at point blank, enough to kill a full-health player in one blast, but only 3.75 at its 6.5 block edge. Get right up close before using it.",
+        "src": "games/logic/Incursion.java:1227-1229, configurable/sectors/IncursionDefinition.java:182-195"
+      },
+      {
+        "text": "Knocking an enemy off a drop of 10 or more blocks kills them, and you get the 25 points if you hit them in the last 10 seconds. Every custom weapon and the eggs push players back.",
+        "src": "games/logic/Incursion.java:2017-2020, games/logic/Incursion.java:1945-1958, games/logic/Incursion.java:1547-1554"
+      },
+      {
+        "text": "Eggs go off in real time and need a clear line to you, so stepping behind a wall saves you from the blast. Overwatch, Blunderhorn and Spitter shots are judged by where you were a moment earlier (the shooter's ping plus 120 ms, up to 300 ms by default), so ducking into cover at the very last moment may not save you.",
+        "src": "games/logic/Incursion.java:1482-1490, games/logic/Incursion.java:1646-1663, configurable/sectors/IncursionDefinition.java:131-145"
+      },
+      {
+        "text": "Vanguard eggs land on the floor and anyone can pick them up, enemies included, so grab them quickly. Killing a Vanguard gives no points by default, so only fight it if you want the eggs.",
+        "src": "games/logic/Incursion.java:2596-2603, configurable/sectors/IncursionDefinition.java:293-294"
+      },
+      {
+        "text": "Every orb refills at half time, so it's worth checking them again at the start of the second half.",
+        "src": "games/logic/Incursion.java:528, games/logic/Incursion.java:2272-2275"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "With an odd number of players the bigger team is slowed down from the very first second, because the slowdown only looks at team sizes. In a 3 vs 2 game the team of 3 moves 15% slower, and chat tells both teams about it.",
+        "src": "games/logic/Incursion.java:819-884, games/logic/Incursion.java:397"
+      },
+      {
+        "text": "When players leave mid-game, their team keeps every point they earned, and the other team, now the bigger one, is slowed down until the numbers even out.",
+        "src": "games/logic/Incursion.java:505-518, games/logic/Incursion.java:791-794, games/logic/Incursion.java:819-854"
+      },
+      {
+        "text": "Barrier blocks don't stop anything: Overwatch beams, Blunderhorn blasts, Spitter streams and egg blasts all go through them as if they weren't there.",
+        "src": "games/logic/Incursion.java:1850-1852, games/logic/Incursion.java:1811-1848"
+      },
+      {
+        "text": "Killing a Vanguard is announced to everyone as \"defeated a vanguard! (+0)\", because by default it is worth 0 points.",
+        "src": "games/logic/Incursion.java:2612-2618, configurable/sectors/IncursionDefinition.java:293-294"
+      },
+      {
+        "text": "If both teams finish on the same score, the end screen still names one of them as the winner (\"... has won!\"). Nothing in the code breaks the tie.",
+        "src": "games/models/Scoreboard.java:79-91"
+      },
+      {
+        "text": "Vanguards only burn when an Incendiary Egg hits them. Sunlight and other fire don't hurt them.",
+        "src": "games/logic/Incursion.java:1502-1506, games/logic/Incursion.java:2000-2006, games/logic/Incursion.java:2460-2466"
+      },
+      {
+        "text": "The server config's comment on points per token says you can earn up to 11 tokens, but the formula actually caps at 13.",
+        "src": "configurable/sectors/IncursionDefinition.java:59, games/tokenformula/IncursionTokenFormula.java:8"
+      }
+    ],
+    "config": [
+      {
+        "text": "Each Incursion map can be switched on or off, and a random enabled map is picked when the game starts. Incursion is also in the default list of games that start automatically.",
+        "src": "configurable/sectors/IncursionDefinition.java:23-24, games/MinigameManager.java:43-49, configurable/Config.java:52-56"
+      },
+      {
+        "text": "Team names and colours are Scarlet (red) and Ivory (white) by default.",
+        "src": "configurable/sectors/IncursionDefinition.java:32-33"
+      },
+      {
+        "text": "Game length (8 minutes), start countdown (5 seconds), respawn freeze (2.5 seconds), respawn invincibility (2.5 seconds) and a movement speed multiplier (1, so normal speed) are all set per map by default.",
+        "src": "configurable/sectors/IncursionDefinition.java:35-48"
+      },
+      {
+        "text": "Hole points (100), kill points (25), Vanguard points (0) and points per token (75) can be changed per map. The 3 token base and 13 token cap are fixed in code.",
+        "src": "configurable/sectors/IncursionDefinition.java:53-60, configurable/sectors/IncursionDefinition.java:293-294, games/tokenformula/IncursionTokenFormula.java:7-8"
+      },
+      {
+        "text": "The outnumbering slowdown is on by default: 25% at double the other team's size, at most 40%, and anything under 2% is ignored. The code never allows more than 60%.",
+        "src": "configurable/sectors/IncursionDefinition.java:95-108, games/logic/Incursion.java:196, games/logic/Incursion.java:283-287"
+      },
+      {
+        "text": "Ping-based team balancing is on by default. Lag compensation is on by default too, rewinding shots by the shooter's ping plus 120 ms, up to 300 ms (the code never rewinds more than 800 ms whatever the setting).",
+        "src": "configurable/sectors/IncursionDefinition.java:113-145, games/logic/Incursion.java:184-185, games/logic/Incursion.java:1646-1658"
+      },
+      {
+        "text": "Every weapon and egg stat in the numbers above (damage, range, cooldown, falloff, knockback, effect lengths) is a per-map setting, so the live values may differ.",
+        "src": "configurable/sectors/IncursionDefinition.java:150-274"
+      },
+      {
+        "text": "Orb spawn spots, boss rooms and the Vanguard's mob type (Drowned with a trident by default, or a bow-using Parched or a potion-throwing Witch), health, respawn time and egg drop count are set per map. A map with no boss rooms has no Vanguards.",
+        "src": "configurable/sectors/IncursionDefinition.java:77-90, configurable/sectors/IncursionDefinition.java:279-301, games/logic/Incursion.java:289-294"
+      }
+    ]
+  }
+]

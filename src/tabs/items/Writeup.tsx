@@ -1,16 +1,18 @@
 import type { JSX } from 'preact';
 import type { Writeup, WriteupLine } from '../../data/types';
 
-const SRC = 'https://github.com/LumaLibre/LumaItems/blob';
+/** Where a citation's paths live: the repo and the source folder they are relative to. */
+export interface SourceRepo { url: string; path: string }
+export const LUMAITEMS_REPO: SourceRepo = { url: 'https://github.com/LumaLibre/LumaItems', path: 'src/main/java/dev/lumas/lumaitems' };
 
 /** "items/x/File.kt:12-30" -> a GitHub link to those lines at the pinned commit. */
-export function sourceLinks(src: string, commit: string) {
+export function sourceLinks(src: string, commit: string, repo: SourceRepo = LUMAITEMS_REPO) {
   return src.split(/,\s*/).map((ref) => {
     const m = /^(.+?):(\d+)(?:-(\d+))?$/.exec(ref.trim());
     if (!m) return null;
     const [, file, a, b] = m;
     const name = file.split('/').pop();
-    return { href: `${SRC}/${commit.slice(0, 7)}/src/main/java/dev/lumas/lumaitems/${file}#L${a}${b ? `-L${b}` : ''}`, label: `${name} · ${a}${b ? `–${b}` : ''}` };
+    return { href: `${repo.url}/blob/${commit.slice(0, 7)}/${repo.path}/${file}#L${a}${b ? `-L${b}` : ''}`, label: `${name} · ${a}${b ? `–${b}` : ''}` };
   }).filter((x): x is { href: string; label: string } => !!x);
 }
 
@@ -36,7 +38,7 @@ export function makeNotes(prefix: string) {
   return { list, cite, prefix };
 }
 
-export function Sources({ notes, commit }: { notes: ReturnType<typeof makeNotes>; commit: string }) {
+export function Sources({ notes, commit, repo }: { notes: ReturnType<typeof makeNotes>; commit: string; repo?: SourceRepo }) {
   if (!notes.list.length) return null;
   return (
     <details class="sources">
@@ -44,7 +46,7 @@ export function Sources({ notes, commit }: { notes: ReturnType<typeof makeNotes>
       <ol>
         {notes.list.map((src, i) => (
           <li key={i} id={`${notes.prefix}-src-${i + 1}`}>
-            {sourceLinks(src, commit).map((l, j) => (
+            {sourceLinks(src, commit, repo).map((l, j) => (
               <span key={l.href}>{j > 0 && ', '}<a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a></span>
             ))}
           </li>

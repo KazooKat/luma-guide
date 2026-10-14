@@ -112,3 +112,83 @@ export interface WriteupsData {
   writeups: Record<string, Writeup>;
   byItem: Record<string, string>;
 }
+
+/** One cited minigame guide (data/event/minigames/*.json), written from the luma-events source. */
+export interface MinigameGuide {
+  key: string;
+  constant: string;
+  name: string;
+  summary: string;
+  /** One short line for the token table, e.g. "3 + 1 per 2 plays, +2 for a win, max 15". */
+  tokenLine?: string;
+  howToPlay?: WriteupLine[];
+  scoring?: WriteupLine[];
+  tokens?: WriteupLine[];
+  numbers?: WriteupLine[];
+  tips?: WriteupLine[];
+  quirks?: WriteupLine[];
+  config?: WriteupLine[];
+}
+
+export interface EventMinigame {
+  key: string;
+  constant: string;
+  /** The name the plugin shows in chat. */
+  name: string;
+  aliases: string[];
+  src: string;
+  formula: { cls: string; args: string; src: string; file: string };
+  guide: MinigameGuide | null;
+}
+
+export interface ShopItem {
+  name: string;
+  cost: number;
+  /** Glossary id, when the item is in the item list. */
+  itemId?: string;
+  limit?: number | null;
+  note?: string;
+}
+
+/** src/data/event.json, built by scripts/build-event.mjs. Every *src is a path:line in luma-events at `commit`. */
+export interface EventData {
+  commit: string;
+  meta: {
+    live: boolean;
+    name: string;
+    nameConfirmed: boolean;
+    /** The event the pinned luma-events code was written for. */
+    sourceEvent: string;
+    dates: { start: string | null; end: string | null };
+    token: { name: string | null; itemId: string | null };
+    charmItemId: string | null;
+    activeGames: string[];
+    shop: { readOn: string | null; where: string | null; items: ShopItem[] };
+    notes: WriteupLine[];
+  };
+  tokens: {
+    types: { name: string; key: string; src: string }[];
+    multiplier: { default: number; src: string; roundingSrc: string };
+    cap: { value: number; src: string; messageSrc: string };
+  };
+  jobs: {
+    bound: number; boundSrc: string; rollSrc: string;
+    treeFellerFactor: number; treeFellerSrc: string; tntSrc: string;
+    tokensPerDrop: number; tokensPerDropSrc: string;
+    onByDefault: boolean; onSrc: string;
+    list: { job: string; chance: number; src: string }[];
+  };
+  townInvite: {
+    minPlaytimeMinutes: number; maxPlaytimeHours: number; cooldownMinutes: number;
+    rewardMin: number; rewardMax: number; onByDefault: boolean; onSrc: string; src: string;
+  };
+  schedule: {
+    autoByDefault: boolean; autoSrc: string;
+    cooldownMinutes: number; cooldownSrc: string;
+    countdownSeconds: number; countdownSrc: string;
+    rotationSrc: string; defaultRotation: string[]; defaultRotationSrc: string;
+  };
+  commands: { root: string; aliases: string[]; src: string; player: { name: string; usage: string; src: string }[] };
+  charm: { itemId: string; src: string; requirementSrc: string };
+  minigames: EventMinigame[];
+}
