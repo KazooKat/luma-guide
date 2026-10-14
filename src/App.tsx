@@ -49,7 +49,7 @@ export function App() {
           <a class="tab" href="#/jobs" aria-current={tab === 'jobs' ? 'page' : undefined}>Jobs</a>
           <a class="tab" href="#/items" aria-current={tab === 'items' ? 'page' : undefined}>Items</a>
           <a class="tab" href="#/relics" aria-current={tab === 'relics' ? 'page' : undefined}>Relics</a>
-          {eventLive.live && <a class="tab" href="#/event" aria-current={tab === 'event' ? 'page' : undefined}>Event</a>}
+          {eventLive.listed && <a class="tab" href="#/event" aria-current={tab === 'event' ? 'page' : undefined}>{eventLive.name}</a>}
         </nav>
         <div class="spacer" />
         <ThemeToggle />

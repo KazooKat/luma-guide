@@ -10,7 +10,7 @@ export const META = EVENT.meta;
 export const EVENTS_REPO: SourceRepo = { url: 'https://github.com/LumaLibre/luma-events', path: 'src/main/java/dev/lumas/events' };
 export const EVENTS_REF = EVENT.commit.slice(0, 7);
 
-/** While the tab is hidden (live: false), every page is a preview and every minigame shows so the guides can be checked. */
+/** Before the event opens (live: false), every page is a preview with the scaffolding disclaimer, and every minigame shows. */
 export const PREVIEW = !META.live;
 /** The pinned code was written for an earlier event, so its numbers may still change. */
 export const FROM_OLD_CODE = META.sourceEvent !== META.name;
@@ -44,8 +44,9 @@ export function Banners() {
     <div class="event-banners">
       {PREVIEW && (
         <p class="event-banner preview" role="note">
-          <b>Preview.</b> This section isn't in the menu yet. Every minigame is listed so the guides can be checked; once the event opens,
-          only the ones that are actually running will show.
+          <b>Scaffolding, not verified.</b> {META.name} hasn't started yet, so this whole section is a draft. Nothing here has been
+          checked in game: the minigames, scores and token payouts come from the last event's code, and every minigame is listed even
+          if it won't run this time. It will be updated when the event goes live.
         </p>
       )}
       {FROM_OLD_CODE && (

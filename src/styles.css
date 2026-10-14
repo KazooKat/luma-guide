@@ -657,7 +657,7 @@ small.block { display: block; }
   .topbar { flex-wrap: wrap; gap: 10px 12px; }
   .brand small { display: none; }
   .tabs { order: 3; width: 100%; }
-  .tab { flex: 1; text-align: center; }
+  .tab { flex: 1 1 auto; text-align: center; white-space: nowrap; padding: 10px 10px; }
   .suggest:not(.outline) .long { display: none; }
   .suggest .short { display: inline; }
   main { padding-top: 20px; gap: 16px; }

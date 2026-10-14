@@ -174,6 +174,8 @@ export interface EventData {
   commit: string;
   meta: {
     live: boolean;
+    /** In the nav. With live false, the section is a public preview (scaffolding) that lists every minigame. */
+    listed: boolean;
     name: string;
     nameConfirmed: boolean;
     /** The event the pinned luma-events code was written for. */

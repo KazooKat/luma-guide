@@ -74,8 +74,9 @@ an en or em dash. Games without a guide are listed but don't fail the build.
 
 `data/event/event.json` holds what the code can't tell you:
 
-- `live`: `false` keeps the Event tab out of the nav. The pages still open by link, with a "Preview" banner, and every
-  minigame shows so the guides can be checked. Set it to `true` when the event opens.
+- `listed`: `true` puts the tab in the nav, labelled with `name`. Leave `live` at `false` until the event opens: the
+  section is then a public preview with a "Scaffolding, not verified" banner, and every minigame shows.
+- `live`: set it to `true` when the event opens. The scaffolding banner goes away and only `activeGames` show.
 - `activeGames`: the minigame keys confirmed for this event. Once `live` is on, only these show.
 - `sourceEvent`: the event the pinned luma-events code was written for. While it differs from `name`, every page says
   the numbers come from that event's code. Set it to the new event's name after moving to its code and re-checking.

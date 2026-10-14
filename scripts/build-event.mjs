@@ -243,7 +243,8 @@ const out = {
 if (!CHECK) {
   writeFileSync(root('src/data/event.json'), JSON.stringify(out, null, 1) + '\n');
   // The nav only needs the switch; importing event.json in App would pull all of it into the main bundle.
-  writeFileSync(root('src/data/event-live.json'), JSON.stringify({ live: meta.live }) + '\n');
+  // The nav only needs these, so it doesn't pull the whole event data into the main bundle.
+writeFileSync(root('src/data/event-live.json'), JSON.stringify({ live: meta.live, listed: Boolean(meta.listed || meta.live), name: meta.name }) + '\n');
   console.log('wrote src/data/event.json, src/data/event-live.json');
 }
 console.log(`ok: luma-events @ ${commit.slice(0, 7)}, ${jobList.length} jobs, ${constants.length} minigames, ${guides.size} guide(s)${missing.length ? `, no guide yet: ${missing.join(', ')}` : ''}`);
