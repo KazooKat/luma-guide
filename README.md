@@ -18,8 +18,8 @@ The server's Jobs config isn't public, so the guide is built from in-game readin
 - **Scaling** (fitted, see `src/lib/scaling.ts` and its tests):
   `XP needed = round(4.29·L³ + 0.3002·L² − 0.095)`, money per action ∝ `(L + 9)`, XP per action ∝ `(L + c)` with a
   per-job `xpOffset` c in `data/jobs-meta.json`: 10/7 for Hunter, Farmer and Blacksmith (each read at 2 levels, every item
-  fits; earlier dumps are in `data/readings/`, checked by `src/lib/readings.test.ts`), 5 for Cook (its 2026-09-24
-  readings), and 10/7 for the jobs read only once. Each dump is normalized to its level-1 base, so dumps taken at any
+  fits; earlier dumps are in `data/readings/`, checked by `src/lib/readings.test.ts`), 5 for Cook (read at 41 and 44,
+  which rules out 10/7 for it), and 10/7 for the jobs read only once. Each dump is normalized to its level-1 base, so dumps taken at any
   level work. A second `/jobs browse` at a different level for any job settles its offset.
 - **Perks** (level + perk name) are extracted from `LumaLibre/JobsAddons` `PerksFile.kt`.
 - **Kamori's Glasses** bloom hour is an exact port of `KamorisGlasses.kt`, tested against the JVM on every day 2024–2034.

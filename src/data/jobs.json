@@ -13419,22 +13419,23 @@
     39,
     40,
     41,
+    44,
     48
    ],
    "defaultItem": "Smelt/Baked Potato",
-   "level": 41,
-   "source": "latest.log 06:42:19 (2 pages)",
+   "level": 44,
+   "source": "/jobs browse pasted in chat 2026-10-14 09:19:50 (2 pages; the paste started below the Craft: header)",
    "items": [
     {
      "action": "Craft",
      "item": "Bread",
      "category": "Craft",
-     "moneyBase": 1.332,
-     "xpBase": 0.193043,
+     "moneyBase": 1.332075,
+     "xpBase": 0.193469,
      "observed": {
-      "level": 41,
-      "money": 6.66,
-      "xp": 1.48
+      "level": 44,
+      "money": 7.06,
+      "xp": 1.58
      },
      "icon": "bread",
      "dupe": false
@@ -13443,12 +13444,12 @@
      "action": "Craft",
      "item": "Glistering Melon Slice",
      "category": "Craft",
-     "moneyBase": 4.068,
-     "xpBase": 0.345652,
+     "moneyBase": 4.067925,
+     "xpBase": 0.346531,
      "observed": {
-      "level": 41,
-      "money": 20.34,
-      "xp": 2.65
+      "level": 44,
+      "money": 21.56,
+      "xp": 2.83
      },
      "icon": "glistering_melon_slice",
      "dupe": false
@@ -13457,12 +13458,12 @@
      "action": "Craft",
      "item": "Golden Carrot",
      "category": "Craft",
-     "moneyBase": 4.068,
-     "xpBase": 0.345652,
+     "moneyBase": 4.067925,
+     "xpBase": 0.346531,
      "observed": {
-      "level": 41,
-      "money": 20.34,
-      "xp": 2.65
+      "level": 44,
+      "money": 21.56,
+      "xp": 2.83
      },
      "icon": "golden_carrot",
      "dupe": false
@@ -13471,12 +13472,12 @@
      "action": "Craft",
      "item": "Golden Apple",
      "category": "Craft",
-     "moneyBase": 23.232,
-     "xpBase": 2.136522,
+     "moneyBase": 23.232075,
+     "xpBase": 2.136735,
      "observed": {
-      "level": 41,
-      "money": 116.16,
-      "xp": 16.38
+      "level": 44,
+      "money": 123.13,
+      "xp": 17.45
      },
      "icon": "golden_apple",
      "dupe": false
@@ -13485,12 +13486,12 @@
      "action": "Craft",
      "item": "Cake",
      "category": "Craft",
-     "moneyBase": 6.972,
-     "xpBase": 0.854348,
+     "moneyBase": 6.971698,
+     "xpBase": 0.854694,
      "observed": {
-      "level": 41,
-      "money": 34.86,
-      "xp": 6.55
+      "level": 44,
+      "money": 36.95,
+      "xp": 6.98
      },
      "icon": "cake",
      "dupe": false
@@ -13499,12 +13500,12 @@
      "action": "Craft",
      "item": "Cookie",
      "category": "Craft",
-     "moneyBase": 1.332,
-     "xpBase": 0.193043,
+     "moneyBase": 1.332075,
+     "xpBase": 0.193469,
      "observed": {
-      "level": 41,
-      "money": 6.66,
-      "xp": 1.48
+      "level": 44,
+      "money": 7.06,
+      "xp": 1.58
      },
      "icon": "cookie",
      "dupe": false
@@ -13513,12 +13514,12 @@
      "action": "Craft",
      "item": "Pumpkin Pie",
      "category": "Craft",
-     "moneyBase": 2.034,
-     "xpBase": 0.254348,
+     "moneyBase": 2.033962,
+     "xpBase": 0.254694,
      "observed": {
-      "level": 41,
-      "money": 10.17,
-      "xp": 1.95
+      "level": 44,
+      "money": 10.78,
+      "xp": 2.08
      },
      "icon": "pumpkin_pie",
      "dupe": false
@@ -13527,12 +13528,12 @@
      "action": "Craft",
      "item": "Mushroom Stew",
      "category": "Craft",
-     "moneyBase": 2.904,
-     "xpBase": 0.854348,
+     "moneyBase": 2.903774,
+     "xpBase": 0.854694,
      "observed": {
-      "level": 41,
-      "money": 14.52,
-      "xp": 6.55
+      "level": 44,
+      "money": 15.39,
+      "xp": 6.98
      },
      "icon": "mushroom_stew",
      "dupe": false
@@ -13541,12 +13542,12 @@
      "action": "Craft",
      "item": "Beetroot Soup",
      "category": "Craft",
-     "moneyBase": 2.616,
-     "xpBase": 0.854348,
+     "moneyBase": 2.615094,
+     "xpBase": 0.854694,
      "observed": {
-      "level": 41,
-      "money": 13.08,
-      "xp": 6.55
+      "level": 44,
+      "money": 13.86,
+      "xp": 6.98
      },
      "icon": "beetroot_soup",
      "dupe": false
@@ -13555,12 +13556,12 @@
      "action": "Craft",
      "item": "Rabbit Stew",
      "category": "Craft",
-     "moneyBase": 6.972,
-     "xpBase": 0.854348,
+     "moneyBase": 6.971698,
+     "xpBase": 0.854694,
      "observed": {
-      "level": 41,
-      "money": 34.86,
-      "xp": 6.55
+      "level": 44,
+      "money": 36.95,
+      "xp": 6.98
      },
      "icon": "rabbit_stew",
      "dupe": false
@@ -13569,12 +13570,12 @@
      "action": "Smelt",
      "item": "Cooked Beef",
      "category": "Smelt",
-     "moneyBase": 3.564,
-     "xpBase": 0.173478,
+     "moneyBase": 3.564151,
+     "xpBase": 0.172653,
      "observed": {
-      "level": 41,
-      "money": 17.82,
-      "xp": 1.33
+      "level": 44,
+      "money": 18.89,
+      "xp": 1.41
      },
      "icon": "cooked_beef",
      "dupe": false
@@ -13583,12 +13584,12 @@
      "action": "Smelt",
      "item": "Cooked Porkchop",
      "category": "Smelt",
-     "moneyBase": 3.564,
-     "xpBase": 0.173478,
+     "moneyBase": 3.564151,
+     "xpBase": 0.172653,
      "observed": {
-      "level": 41,
-      "money": 17.82,
-      "xp": 1.33
+      "level": 44,
+      "money": 18.89,
+      "xp": 1.41
      },
      "icon": "cooked_porkchop",
      "dupe": false
@@ -13597,12 +13598,12 @@
      "action": "Smelt",
      "item": "Cooked Cod",
      "category": "Smelt",
-     "moneyBase": 3.564,
-     "xpBase": 0.173478,
+     "moneyBase": 3.564151,
+     "xpBase": 0.172653,
      "observed": {
-      "level": 41,
-      "money": 17.82,
-      "xp": 1.33
+      "level": 44,
+      "money": 18.89,
+      "xp": 1.41
      },
      "icon": "cooked_cod",
      "dupe": false
@@ -13611,12 +13612,12 @@
      "action": "Smelt",
      "item": "Cooked Salmon",
      "category": "Smelt",
-     "moneyBase": 3.564,
-     "xpBase": 0.173478,
+     "moneyBase": 3.564151,
+     "xpBase": 0.172653,
      "observed": {
-      "level": 41,
-      "money": 17.82,
-      "xp": 1.33
+      "level": 44,
+      "money": 18.89,
+      "xp": 1.41
      },
      "icon": "cooked_salmon",
      "dupe": false
@@ -13625,12 +13626,12 @@
      "action": "Smelt",
      "item": "Cooked Chicken",
      "category": "Smelt",
-     "moneyBase": 3.564,
-     "xpBase": 0.173478,
+     "moneyBase": 3.564151,
+     "xpBase": 0.172653,
      "observed": {
-      "level": 41,
-      "money": 17.82,
-      "xp": 1.33
+      "level": 44,
+      "money": 18.89,
+      "xp": 1.41
      },
      "icon": "cooked_chicken",
      "dupe": false
@@ -13639,12 +13640,12 @@
      "action": "Smelt",
      "item": "Cooked Mutton",
      "category": "Smelt",
-     "moneyBase": 3.564,
-     "xpBase": 0.173478,
+     "moneyBase": 3.564151,
+     "xpBase": 0.172653,
      "observed": {
-      "level": 41,
-      "money": 17.82,
-      "xp": 1.33
+      "level": 44,
+      "money": 18.89,
+      "xp": 1.41
      },
      "icon": "cooked_mutton",
      "dupe": false
@@ -13653,12 +13654,12 @@
      "action": "Smelt",
      "item": "Cooked Rabbit",
      "category": "Smelt",
-     "moneyBase": 4.278,
-     "xpBase": 0.173478,
+     "moneyBase": 4.277358,
+     "xpBase": 0.172653,
      "observed": {
-      "level": 41,
-      "money": 21.39,
-      "xp": 1.33
+      "level": 44,
+      "money": 22.67,
+      "xp": 1.41
      },
      "icon": "cooked_rabbit",
      "dupe": false
@@ -13667,12 +13668,12 @@
      "action": "Smelt",
      "item": "Baked Potato",
      "category": "Smelt",
-     "moneyBase": 2.85,
-     "xpBase": 0.131739,
+     "moneyBase": 2.850943,
+     "xpBase": 0.132245,
      "observed": {
-      "level": 41,
-      "money": 14.25,
-      "xp": 1.01
+      "level": 44,
+      "money": 15.11,
+      "xp": 1.08
      },
      "icon": "baked_potato",
      "dupe": false
@@ -13681,12 +13682,12 @@
      "action": "Smelt",
      "item": "Popped Chorus Fruit",
      "category": "Smelt",
-     "moneyBase": 1.248,
-     "xpBase": 0.131739,
+     "moneyBase": 1.24717,
+     "xpBase": 0.132245,
      "observed": {
-      "level": 41,
-      "money": 6.24,
-      "xp": 1.01
+      "level": 44,
+      "money": 6.61,
+      "xp": 1.08
      },
      "icon": "popped_chorus_fruit",
      "dupe": false
@@ -13695,12 +13696,12 @@
      "action": "Smelt",
      "item": "Dried Kelp",
      "category": "Smelt",
-     "moneyBase": 1.248,
-     "xpBase": 0.131739,
+     "moneyBase": 1.24717,
+     "xpBase": 0.132245,
      "observed": {
-      "level": 41,
-      "money": 6.24,
-      "xp": 1.01
+      "level": 44,
+      "money": 6.61,
+      "xp": 1.08
      },
      "icon": "dried_kelp",
      "dupe": false

@@ -3,7 +3,7 @@
 Raw format and the Builder/Miner category rules come from Luma Jobs/scripts/parse.py.
 Every value is normalized to its level-1 base using the fitted Luma scaling:
     xp(L) = base (L+c)/(1+c)    money(L) = base (L+9)/10
-where c is the job's xpOffset in data/jobs-meta.json (10/7 measured for Hunter, Farmer and Blacksmith, 5 for Cook),
+where c is the job's xpOffset in data/jobs-meta.json (10/7 measured for Hunter, Farmer and Blacksmith, 5 measured for Cook),
 so the site can project any level. Icons come from the minecraft-textures package
 (MC 26.2 manifest); only the PNGs actually referenced are copied into public/icons/.
 The item glossary's icons are also packed into one sprite sheet (src/assets/items-atlas.png) so the Items page

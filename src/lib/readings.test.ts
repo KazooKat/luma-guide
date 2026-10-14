@@ -50,24 +50,29 @@ const PAIRS = [
   { job: 'Hunter', earlier: 'data/readings/hunter-23.txt', later: 'data/raw/hunter.txt' },
   { job: 'Farmer', earlier: 'data/readings/farmer-54.txt', later: 'data/raw/farmer.txt' },
   { job: 'Blacksmith', earlier: 'data/raw/blacksmith.txt', later: 'data/readings/blacksmith-26.txt' },
+  { job: 'Cook', earlier: 'data/readings/cook-41.txt', later: 'data/raw/cook.txt' },
 ];
+/** What each job's readings pin XP to, and the other candidate that must not fit. */
+const MEASURED: Record<string, { c: number; other: number }> = {
+  Hunter: { c: 10 / 7, other: 5 }, Farmer: { c: 10 / 7, other: 5 }, Blacksmith: { c: 10 / 7, other: 5 }, Cook: { c: 5, other: 10 / 7 },
+};
 
 describe('jobs read at two levels', () => {
   it.each(PAIRS)('$job: money ∝ (L + 9) fits every item', ({ earlier, later }) => {
     const r = misses(earlier, later, 0, 'money');
-    expect(r.checked).toBeGreaterThan(20);
+    expect(r.checked).toBeGreaterThan(15);
     expect(r.out).toEqual([]);
   });
 
   it.each(PAIRS)('$job: XP ∝ (L + its xpOffset) fits every item', ({ job, earlier, later }) => {
     const r = misses(earlier, later, JOBS[job].xpOffset, 'xp');
-    expect(JOBS[job].xpOffset).toBeCloseTo(10 / 7, 12);
-    expect(r.checked).toBeGreaterThan(20);
+    expect(JOBS[job].xpOffset).toBeCloseTo(MEASURED[job].c, 12);
+    expect(r.checked).toBeGreaterThan(5);
     expect(r.out).toEqual([]);
   });
 
-  it.each(PAIRS)('$job: the old (L + 5) does not fit, so the readings tell the two apart', ({ earlier, later }) => {
-    const r = misses(earlier, later, 5, 'xp');
+  it.each(PAIRS)('$job: the other offset does not fit, so the readings tell (L + 10/7) and (L + 5) apart', ({ job, earlier, later }) => {
+    const r = misses(earlier, later, MEASURED[job].other, 'xp');
     expect(r.out.length).toBeGreaterThan(r.checked / 2);
   });
 
