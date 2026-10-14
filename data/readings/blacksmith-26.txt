@@ -1,0 +1,37 @@
+# job: Blacksmith
+# level: 26
+# source: 2 in-game screenshots of /jobs browse (pages 1/2 and 2/2), 2026-10-14, transcribed by hand
+#   (luma-tools/bvlacksmith26-1.png, luma-tools/blacksmith26-2.png). /jobs stats bar: Lvl 26, 75603 xp to next.
+#
+# NOT USED by npm run data yet (scripts/build_data.py only reads data/raw/<job>.txt). Open question:
+#   money: all 25 items match the level 7 reading (data/raw/blacksmith.txt) projected with (L + 9), within a cent.
+#   xp:    all 25 items are 1.259-1.261x the level 7 reading projected with (L + 5), the same factor for every item.
+#   Cook (L23-48) and Farmer (L53-54) readings fit (L + 5), so a jobs XP boost during one of the two readings is the
+#   likely cause, but it isn't confirmed. Resolve before using this file for XP.
+Craft:
+  Iron Sword ->  4.05$ 2.30xp
+  Iron Boots ->  7.77$ 4.61xp
+  Iron Chestplate ->  15.56$ 9.22xp
+  Iron Helmet ->  9.72$ 5.76xp
+  Iron Leggings ->  13.63$ 8.06xp
+  Golden Sword ->  6.49$ 4.61xp
+  Golden Boots ->  12.98$ 9.22xp
+  Golden Chestplate ->  25.94$ 18.43xp
+  Golden Helmet ->  16.23$ 11.52xp
+  Golden Leggings ->  22.70$ 16.13xp
+  Diamond Sword ->  11.34$ 8.06xp
+  Diamond Pickaxe ->  17.01$ 12.10xp
+  Diamond Axe ->  17.01$ 12.10xp
+  Diamond Helmet ->  28.37$ 20.16xp
+  Diamond Chestplate ->  45.42$ 32.26xp
+  Diamond Leggings ->  39.75$ 28.22xp
+  Diamond Boots ->  22.70$ 16.13xp
+  Turtle Helmet ->  34.86$ 28.22xp
+  Shield ->  3.89$ 2.30xp
+  Lightning Rod ->  2.27$ 12.29xp
+Smelt:
+  Iron Ingot ->  15.12$ 4.61xp
+  Gold Ingot ->  32.45$ 5.38xp
+  Diamond ->  45.97$ 7.30xp
+  Copper Ingot ->  6.91$ 4.22xp
+  Netherite Scrap ->  54.07$ 8.45xp
