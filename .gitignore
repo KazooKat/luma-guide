@@ -10,3 +10,8 @@ __pycache__/
 data/mcmmo-potions.yml
 # LumaItems source (CC BY-NC-ND 4.0), cloned locally to build src/data/items.json. Pinned in data/LumaItems.commit.
 data/LumaItems/
+# luma-events source (no license file upstream), cloned locally to build src/data/event.json. Pinned in data/luma-events.commit.
+data/luma-events/
+.superpowers/
+# Wrangler local state
+.wrangler/

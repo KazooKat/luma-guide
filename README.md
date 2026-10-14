@@ -4,7 +4,7 @@ A player guide for [LumaMC](https://lumamc.net) (`play.lumamc.net`): how each jo
 takes, what each job pays per item, level perks, item mechanics (Kamori's Glasses, with a live bloom-hour clock), and
 relics (where they drop, what's inside them, disassembly odds).
 
-Live site: https://kazookat.github.io/luma-guide/ · Design canvas: https://claude.ai/artifact/P1tHzLmUEceQpNcXqmzEn8
+Live site: https://luma-guide.tarkov-quest-router.workers.dev/ (the old https://kazookat.github.io/luma-guide/ links redirect there) · Design canvas: https://claude.ai/artifact/P1tHzLmUEceQpNcXqmzEn8
 
 Fan-made; not affiliated with LumaMC. Minecraft icons © Mojang (via the `minecraft-textures` package).
 The sapling-box icon (`data/custom-icons/sapling_box.png`) is a render of the `BoxMan01234` head that CustomSaplings uses, via mc-heads.net.
@@ -52,6 +52,37 @@ rules from `scripts/lib/mc-26.2.json` (refresh with `node scripts/fetch-mc-data.
 After moving to a newer commit, re-check the hand-written entries in `data/items-overrides.json` against the source
 (the build flags overrides whose builder no longer exists, but not ones whose values changed).
 
+## Refreshing event data
+
+The Event section (`#/event`) is built from `LumaLibre/luma-events` (no license file upstream, so it is cloned locally
+and not committed, like LumaItems), the hand-maintained `data/event/event.json`, and the cited minigame guides in
+`data/event/minigames/*.json`.
+
+```sh
+git clone https://github.com/LumaLibre/luma-events.git data/luma-events
+git -C data/luma-events checkout "$(cat data/luma-events.commit)"   # or a newer commit: update the .commit file too
+npm run event        # checks everything, writes src/data/event.json and src/data/event-live.json
+```
+
+`npm run event` reads the job token odds, town invite rules, token cap and multiplier, schedule defaults, player
+commands and the minigame list (with each game's token formula) straight from the source, keeping the file:line of every
+number. It fails if something it expects has moved, if a guide cites a line that doesn't exist, or if a guide uses
+an en or em dash. Games without a guide are listed but don't fail the build.
+
+`data/event/event.json` holds what the code can't tell you:
+
+- `live`: `false` keeps the Event tab out of the nav. The pages still open by link, with a "Preview" banner, and every
+  minigame shows so the guides can be checked. Set it to `true` when the event opens.
+- `activeGames`: the minigame keys confirmed for this event. Once `live` is on, only these show.
+- `sourceEvent`: the event the pinned luma-events code was written for. While it differs from `name`, every page says
+  the numbers come from that event's code. Set it to the new event's name after moving to its code and re-checking.
+- `name`, `nameConfirmed`, `dates`, `token`, `charmItemId`, and `shop` (items with `name`, `cost`, optional `itemId`
+  from the item glossary, `limit` and `note`). Shop prices are server config, so they're read in game; put the date in
+  `shop.readOn`.
+
+After moving to a newer luma-events commit, re-read each game's guide against the new code: the build line-checks
+citations but can't tell when the cited lines now say something else.
+
 ## Refreshing job data after a server change
 
 1. In game, for each job: `/jobs stats` (so the log has your level), then `/jobs browse` for that job and page
@@ -79,7 +110,7 @@ After moving to a newer commit, re-check the hand-written entries in `data/items
    npm run potions
    ```
    Catalysis and Master Angler numbers live in `src/lib/mcmmo.ts` (Retro Mode, checked against `/alchemy` and `/fishing` in game).
-3. `npm test && npm run build`, then commit and push. GitHub Actions tests and deploys `main`.
+3. `npm test && npm run build`, then commit and push. GitHub Actions tests `main`, deploys it to Cloudflare, and then publishes the GitHub Pages redirect (see "Hosting").
 
 `scripts/extract_log.py --log <path>` reads another log (including `.log.gz`).
 
@@ -91,6 +122,14 @@ To use a Google Form instead, create one with these fields and paste its share l
 1. *Which part of the guide?* (multiple choice: Jobs / Items & mechanics / Something new / A mistake to fix)
 2. *What should be added or changed?* (paragraph, required)
 3. *Your in-game name* (short answer, optional)
+
+## Hosting
+
+The site is static files served by Cloudflare Workers static assets (`wrangler.jsonc`, no Worker script, so requests
+are free and unlimited). `.github/workflows/deploy.yml` deploys with `wrangler deploy` and needs two repo secrets:
+`CLOUDFLARE_API_TOKEN` (a token from the "Edit Cloudflare Workers" template) and `CLOUDFLARE_ACCOUNT_ID`. After that
+succeeds it publishes `redirect/index.html` to GitHub Pages, which forwards old links and keeps the `#/` route.
+To deploy by hand: `npm run build && npx wrangler deploy`.
 
 ## Development
 
