@@ -1,0 +1,130 @@
+# job: Farmer
+# level: 54
+# source: latest.log 06:42:38 (9 pages)
+Break:
+  Kelp ->  1.32$ 0.78xp
+  Vine ->  3.33$ 4.66xp
+  Seagrass ->  5.29$ 6.21xp
+  Sea Pickle ->  5.29$ 6.21xp
+  Brain Coral ->  5.29$ 6.21xp
+  Brain Coral Fan ->  5.29$ 6.21xp
+  Brain Coral Wall Fan ->  5.29$ 6.21xp
+  Brain Coral Block ->  5.29$ 6.21xp
+  Bubble Coral ->  5.29$ 6.21xp
+  Bubble Coral Wall Fan ->  5.29$ 6.21xp
+  Bubble Coral Block ->  5.29$ 6.21xp
+  Fire Coral ->  5.29$ 6.21xp
+  Fire Coral Fan ->  5.29$ 6.21xp
+  Fire Coral Wall Fan ->  5.29$ 6.21xp
+  Fire Coral Block ->  5.29$ 6.21xp
+  Horn Coral ->  5.29$ 6.21xp
+  Horn Coral Fan ->  5.29$ 6.21xp
+  Horn Coral Wall Fan ->  5.29$ 6.21xp
+  Horn Coral Block ->  5.29$ 6.21xp
+  Tube Coral ->  5.29$ 6.21xp
+  Tube Coral Fan ->  5.29$ 6.21xp
+  Tube Coral Wall Fan ->  5.29$ 6.21xp
+  Tube Coral Block ->  5.29$ 6.21xp
+  Chorus Plant ->  5.97$ 9.31xp
+  Chorus Flower ->  6.24$ 9.31xp
+  Beetroots ->  5.97$ 5.43xp
+  Wheat ->  5.29$ 6.21xp
+  Nether Wart ->  5.29$ 6.21xp
+  Carrots ->  5.97$ 6.21xp
+  Potatoes ->  5.29$ 6.21xp
+  Pumpkin ->  4.65$ 3.88xp
+  Sugar Cane ->  0.98$ 6.21xp
+  Cocoa ->  6.65$ 7.76xp
+  Melon ->  4.65$ 3.88xp
+  Red Mushroom ->  33.26$ 12.42xp
+  Brown Mushroom ->  33.26$ 12.42xp
+  Bamboo ->  1.13$ 2.33xp
+  Moss Block ->  3.33$ 3.10xp
+  Moss Carpet ->  3.33$ 3.10xp
+  Pale Moss Block ->  3.33$ 3.10xp
+  Pale Moss Carpet ->  3.33$ 3.10xp
+  Spore Blossom ->  16.63$ 15.52xp
+  Flowering Azalea ->  6.65$ 6.21xp
+  Azalea ->  6.65$ 6.21xp
+  Small Dripleaf ->  6.65$ 6.21xp
+  Big Dripleaf ->  6.65$ 6.21xp
+  Shroomlight ->  6.65$ 6.21xp
+  Glow Lichen ->  6.65$ 6.21xp
+  Dandelion ->  6.65$ 6.21xp
+  Poppy ->  3.33$ 6.21xp
+  Blue Orchid ->  3.33$ 6.21xp
+  Allium ->  3.33$ 6.21xp
+  Azure Bluet ->  3.33$ 6.21xp
+  Red Tulip ->  3.33$ 6.21xp
+  Orange Tulip ->  3.33$ 6.21xp
+  White Tulip ->  3.33$ 6.21xp
+  Pink Tulip ->  3.33$ 6.21xp
+  Oxeye Daisy ->  3.33$ 6.21xp
+  Cornflower ->  3.33$ 6.21xp
+  Lily Of The Valley ->  3.33$ 6.21xp
+  Wither Rose ->  3.33$ 6.21xp
+  Lilac ->  3.33$ 6.21xp
+  Rose Bush ->  3.33$ 6.21xp
+  Peony ->  3.33$ 6.21xp
+  Lily Pad ->  33.26$ 37.25xp
+Place:
+  Wheat ->  5.29$ 6.21xp
+  Beetroots ->  5.97$ 5.43xp
+  Carrots ->  5.97$ 6.21xp
+  Potatoes ->  5.29$ 6.21xp
+  Cocoa ->  2.49$ 6.21xp
+  Nether Wart ->  5.29$ 6.21xp
+  Sugar Cane ->  1.66$ 3.10xp
+  Cactus ->  1.66$ 3.10xp
+  Melon Stem ->  5.29$ 6.21xp
+  Pumpkin Stem ->  5.29$ 6.21xp
+  Red Mushroom ->  6.65$ 12.42xp
+  Brown Mushroom ->  6.65$ 12.42xp
+Smelt:
+  Green Dye ->  7.26$ 6.98xp
+Breed:
+  Horse ->  13.31$ 15.52xp
+  Sheep ->  13.31$ 15.52xp
+  Cow ->  13.31$ 15.52xp
+  Mooshroom ->  13.31$ 15.52xp
+  Pig ->  13.31$ 15.52xp
+  Chicken ->  13.31$ 15.52xp
+  Wolf ->  13.31$ 15.52xp
+  Ocelot ->  13.31$ 15.52xp
+  Rabbit ->  13.31$ 15.52xp
+  Llama ->  13.31$ 15.52xp
+  Turtle ->  13.31$ 15.52xp
+  Allay ->  13.31$ 15.52xp
+  Frog ->  13.31$ 15.52xp
+Tame:
+  Wolf ->  16.63$ 15.52xp
+  Horse ->  16.63$ 15.52xp
+  Parrot ->  16.63$ 15.52xp
+  Ocelot ->  16.63$ 15.52xp
+  Llama ->  16.63$ 15.52xp
+Shear:
+  Black ->  9.98$ 15.52xp
+  Blue ->  9.98$ 15.52xp
+  Brown ->  9.98$ 15.52xp
+  Cyan ->  9.98$ 15.52xp
+  Gray ->  9.98$ 15.52xp
+  Green ->  9.98$ 15.52xp
+  Light Blue ->  9.98$ 15.52xp
+  Lime ->  9.98$ 15.52xp
+  Magenta ->  9.98$ 15.52xp
+  Orange ->  9.98$ 15.52xp
+  Pink ->  9.98$ 15.52xp
+  Purple ->  9.98$ 15.52xp
+  Red ->  9.98$ 15.52xp
+  Light Gray ->  9.98$ 15.52xp
+  White ->  9.98$ 15.52xp
+  Yellow ->  9.98$ 15.52xp
+Milk:
+  Cow ->  11.64$ 15.52xp
+Collect:
+  Sweet Berries ->  1.32$ 9.31xp
+  Sweet Berries ->  2.08$ 9.31xp
+  Bone Meal ->  9.98$ 9.31xp
+  Honeycomb ->  9.98$ 9.31xp
+  Honey Bottle ->  9.98$ 9.31xp
+  Glow Berries ->  9.98$ 9.31xp

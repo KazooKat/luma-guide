@@ -37,18 +37,20 @@ describe('per-action scaling', () => {
 
   it.each([[23, 0.62], [38, 0.95], [39, 0.97], [40, 0.99], [48, 1.17]])(
     'Cook xp L=%i -> %f', (L, v) => {
-      expect(Math.round(xpAt(0.1326, L) * 100) / 100).toBe(v);
+      expect(Math.round(xpAt(0.1326, L, 5) * 100) / 100).toBe(v);
     });
 
   it('Farmer L53 reading predicts the confirmed L54 reading', () => {
     const mb = moneyBase(5.21, 53);
-    const xb = xpBase(6.1, 53);
+    const xb = xpBase(6.1, 53, 10 / 7);
     expect(Math.round(moneyAt(mb, 54) * 100) / 100).toBe(5.29);
-    expect(Math.round(xpAt(xb, 54) * 100) / 100).toBe(6.21);
+    expect(Math.round(xpAt(xb, 54, 10 / 7) * 100) / 100).toBe(6.21);
   });
 
   it('base normalization round-trips', () => {
-    expect(xpAt(xpBase(4.78, 27), 27)).toBeCloseTo(4.78, 10);
+    expect(xpAt(xpBase(4.78, 27, 10 / 7), 27, 10 / 7)).toBeCloseTo(4.78, 10);
+    expect(xpAt(xpBase(4.78, 27, 5), 27, 5)).toBeCloseTo(4.78, 10);
+    expect(xpAt(0.4, 1, 10 / 7)).toBeCloseTo(0.4, 12); // base is the level-1 value
     expect(moneyAt(moneyBase(3.8, 27), 27)).toBeCloseTo(3.8, 10);
   });
 });
@@ -57,7 +59,7 @@ describe('planLevels: hours to level', () => {
   // Research worked example: Cook potatoes, 14,400/h, xp = 0.0221*(L+5), from 0 XP into 39.
   // The note's milestone table used its alternative linear fit (0.02198758L + 0.11396), which runs
   // <0.3% slower; these expectations use the stated (L+5) model.
-  const plan = planLevels({ xpBase: 0.1326, moneyBase: 2.851, from: 39, to: 85, actionsPerHour: 14_400 });
+  const plan = planLevels({ xpBase: 0.1326, xpOffset: 5, moneyBase: 2.851, from: 39, to: 85, actionsPerHour: 14_400 });
 
   it.each([[40, 18.2], [50, 259.7], [70, 1150.2], [80, 1853.1], [85, 2280.7]])(
     'reaches %i after ~%i h', (L, h) => {
@@ -72,13 +74,13 @@ describe('planLevels: hours to level', () => {
   });
 
   it('subtracts XP already earned into the current level', () => {
-    const fresh = planLevels({ xpBase: 1, moneyBase: 1, from: 10, to: 11, actionsPerHour: 100 });
-    const half = planLevels({ xpBase: 1, moneyBase: 1, from: 10, to: 11, actionsPerHour: 100, xpInto: req(10) / 2 });
+    const fresh = planLevels({ xpBase: 1, xpOffset: 5, moneyBase: 1, from: 10, to: 11, actionsPerHour: 100 });
+    const half = planLevels({ xpBase: 1, xpOffset: 5, moneyBase: 1, from: 10, to: 11, actionsPerHour: 100, xpInto: req(10) / 2 });
     expect(half.totalHours).toBeCloseTo(fresh.totalHours / 2, 6);
   });
 
   it('returns an empty plan when target <= current', () => {
-    const p = planLevels({ xpBase: 1, moneyBase: 1, from: 20, to: 20, actionsPerHour: 100 });
+    const p = planLevels({ xpBase: 1, xpOffset: 5, moneyBase: 1, from: 20, to: 20, actionsPerHour: 100 });
     expect(p.rows).toEqual([]);
     expect(p.totalHours).toBe(0);
   });

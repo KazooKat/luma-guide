@@ -19,6 +19,10 @@ export interface Job {
   rateNote: string;
   defaultItem?: string;
   confidence: 'confirmed' | 'assumed';
+  /** c in XP per action ∝ (L + c). Money is ∝ (L + 9) for every job. */
+  xpOffset: number;
+  /** Levels this job's /jobs browse was read at (more than one = scaling checked). */
+  readLevels: number[];
   level: number | null;
   source: string | null;
   items: JobItem[];

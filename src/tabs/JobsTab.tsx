@@ -10,6 +10,7 @@ import { Plan } from './jobs/Plan';
 import { resolveRate } from './jobs/rate';
 import { HoursChart, Milestones } from './jobs/HoursChart';
 import { Perks } from './jobs/Perks';
+import { fmtOffset, ScalingBadge } from './jobs/ScalingBadge';
 import { resolveChain } from './jobs/BrewSetup';
 import { materialOf, shortestChainTo } from '../lib/brewing';
 
@@ -81,7 +82,7 @@ function JobView({ job }: { job: Job }) {
   const chain = useMemo(() => (item?.action === 'Brew' ? resolveChain(job, item, prefs.brewChain) : null), [job, item, prefs.brewChain]);
   const basis = chain ?? item;
   const plan = useMemo(
-    () => (basis && rate ? planLevels({ xpBase: basis.xpBase, moneyBase: basis.moneyBase, from, to, xpInto, actionsPerHour: rate.perHour }) : null),
+    () => (basis && rate ? planLevels({ xpBase: basis.xpBase, xpOffset: job.xpOffset, moneyBase: basis.moneyBase, from, to, xpInto, actionsPerHour: rate.perHour }) : null),
     [basis, rate?.perHour, from, to, xpInto],
   );
   const selectItem = (key: string) => {
@@ -103,14 +104,7 @@ function JobView({ job }: { job: Job }) {
             <div>
               <h2>{job.job}</h2>
               <div class="badges">
-                {job.confidence === 'confirmed' ? (
-                  <span class="badge good" title="Scaling for this job was checked against in-game readings at several levels.">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10" /></svg>
-                    Scaling confirmed
-                  </span>
-                ) : (
-                  <span class="badge warn" title="Uses the shared Luma scaling formulas; not yet checked at a second level for this job.">Scaling assumed</span>
-                )}
+                <ScalingBadge job={job} level={from} />
               </div>
             </div>
           </div>
@@ -150,7 +144,10 @@ function JobView({ job }: { job: Job }) {
         <div class="explain">
           <p>
             XP for the next level is <code>4.29·L³ + 0.3002·L² − 0.095</code>, rounded. That is within 1 XP of all 14 <code>/jobs stats</code> readings we have.
-            XP per action grows with <code>(L + 5)</code> and money with <code>(L + 9)</code>, so the {job.job} values above are projected to your level.
+            Money per action grows with <code>(L + 9)</code> and XP per action with <code>(L + {fmtOffset(job.xpOffset)})</code>, so the {job.job} values above are projected to your level.
+            {job.confidence === 'confirmed'
+              ? <> {job.job} was read at levels {job.readLevels.join(', ')}, and both formulas match those readings within the game's rounding.</>
+              : <> {job.job} has only been read at level {job.readLevels.join(', ')}, so its projections use the formulas measured on other jobs.</>}
           </p>
           <p>
             The server's Jobs config isn't public, so these formulas are fitted from in-game readings. Game values are rounded to 2 decimals, so projections can be off by about half a percent.

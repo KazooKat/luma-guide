@@ -33,7 +33,7 @@ export function ItemTable({ job, level, selectedKey, onSelect }: Props) {
     const q = query.trim().toLowerCase();
     return job.items
       .filter((i) => (!action || i.action === action) && (!category || i.category === category) && (!q || i.item.toLowerCase().includes(q)))
-      .map((i) => ({ i, money: moneyAt(i.moneyBase, level), xp: xpAt(i.xpBase, level) }))
+      .map((i) => ({ i, money: moneyAt(i.moneyBase, level), xp: xpAt(i.xpBase, level, job.xpOffset) }))
       .sort((a, b) => b[sort] - a[sort] || a.i.item.localeCompare(b.i.item));
   }, [job, level, query, action, category, sort]);
 

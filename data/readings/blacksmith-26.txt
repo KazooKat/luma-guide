@@ -3,9 +3,10 @@
 # source: 2 in-game screenshots of /jobs browse (pages 1/2 and 2/2), 2026-10-14, transcribed by hand
 #   (luma-tools/bvlacksmith26-1.png, luma-tools/blacksmith26-2.png). /jobs stats bar: Lvl 26, 75603 xp to next.
 #
-# NOT USED by npm run data yet (scripts/build_data.py only reads data/raw/<job>.txt). Open question:
+# Not read by npm run data (scripts/build_data.py only reads data/raw/<job>.txt); src/lib/readings.test.ts checks it.
 #   money: all 25 items match the level 7 reading (data/raw/blacksmith.txt) projected with (L + 9), within a cent.
-#   xp:    all 25 items are 1.259-1.261x the level 7 reading projected with (L + 5), the same factor for every item.
+#   xp:    all 25 items were 1.26x the (L + 5) projection. Answered 2026-10-14: XP scales with (L + 10/7), which fits every
+#          item here, and the Hunter 23/24 and Farmer 54/58 readings too (xpOffset in data/jobs-meta.json).
 #   Cook (L23-48) and Farmer (L53-54) readings fit (L + 5), so a jobs XP boost during one of the two readings is the
 #   likely cause, but it isn't confirmed. Resolve before using this file for XP.
 Craft:

@@ -1,0 +1,53 @@
+# job: Hunter
+# level: 23
+# source: latest.log 06:43:06 (4 pages)
+Kill:
+  Creeper ->  8.54$ 7.35xp
+  Pillager ->  2.76$ 2.05xp
+  Evoker ->  4.47$ 3.76xp
+  Vindicator ->  4.47$ 3.76xp
+  Skeleton ->  8.54$ 7.35xp
+  Stray ->  8.54$ 7.35xp
+  Zombie ->  8.54$ 11.12xp
+  Witch ->  8.54$ 11.12xp
+  Spider ->  6.41$ 7.35xp
+  Slime ->  4.26$ 3.76xp
+  Blaze ->  8.54$ 7.35xp
+  Cave Spider ->  5.97$ 11.12xp
+  Magma Cube ->  4.26$ 3.76xp
+  Enderman ->  4.59$ 5.13xp
+  Ghast ->  128.14$ 110.81xp
+  Piglin ->  2.55$ 2.22xp
+  Zombified Piglin ->  2.55$ 2.22xp
+  Silverfish ->  1.67$ 4.62xp
+  Iron Golem ->  8.54$ 7.35xp
+  Hoglin ->  5.97$ 7.35xp
+  Strider ->  5.97$ 7.35xp
+  Guardian ->  7.58$ 6.67xp
+  Elder Guardian ->  9.93$ 7.35xp
+  Shulker ->  4.26$ 2.22xp
+  Phantom ->  4.26$ 2.22xp
+  Drowned ->  4.26$ 2.22xp
+  Husk ->  4.26$ 2.22xp
+  Vex ->  17.09$ 14.71xp
+  Warden ->  234.93$ 110.81xp
+  Wither Skeleton ->  35.65$ 24.97xp
+  Wither ->  1136.26$ 982.57xp
+  Ender Dragon ->  1366.92$ 1181.95xp
+  Polar Bear ->  5.11$ 5.81xp
+  Horse ->  3.40$ 3.76xp
+  Sheep ->  3.40$ 3.76xp
+  Cow ->  3.40$ 3.76xp
+  Mooshroom ->  3.40$ 3.76xp
+  Pig ->  3.40$ 3.76xp
+  Chicken ->  3.40$ 3.76xp
+  Wolf ->  3.40$ 3.76xp
+  Ocelot ->  3.40$ 3.76xp
+  Rabbit ->  3.40$ 3.76xp
+  Llama ->  3.40$ 3.76xp
+  Trader Llama ->  3.40$ 3.76xp
+  Turtle ->  3.40$ 3.76xp
+  Allay ->  3.40$ 3.76xp
+  Frog ->  3.40$ 3.76xp
+  Squid ->  3.40$ 3.76xp
+  Glow Squid ->  3.40$ 3.76xp

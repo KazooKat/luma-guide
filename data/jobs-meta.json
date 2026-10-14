@@ -1,18 +1,27 @@
 {
-  "_comment": "Per-job site metadata. defaultRate = actions/hour guess for hand actions (players can edit it); Smelt and Brew use the machine setup instead. defaultItem = Action/Item preselected in the calculator. confidence: confirmed = scaling checked against in-game readings at two+ levels for this job; assumed = uses the shared formulas without a per-job check yet.",
+  "_comment": "Per-job site metadata. defaultRate = actions/hour guess for hand actions (players can edit it); Smelt and Brew use the machine setup instead. defaultItem = Action/Item preselected in the calculator. xpOffset = c in XP per action ∝ (L + c); money is ∝ (L + 9) for every job. readLevels = levels this job's /jobs browse was read at. confidence: confirmed = scaling checked against readings at two+ levels for this job (data/readings/ and scaling.test.ts); assumed = one reading, projected with the shared formulas.",
   "jobs": {
     "Alchemist": {
       "icon": "brewing_stand",
       "defaultRate": 600,
       "rateNote": "hand actions",
       "confidence": "assumed",
+      "xpOffset": 1.4285714285714286,
+      "readLevels": [
+        1
+      ],
       "defaultItem": "Brew/Nether Wart"
     },
     "Blacksmith": {
       "icon": "anvil",
       "defaultRate": 600,
       "rateNote": "crafting gear",
-      "confidence": "assumed",
+      "confidence": "confirmed",
+      "xpOffset": 1.4285714285714286,
+      "readLevels": [
+        7,
+        26
+      ],
       "defaultItem": "Smelt/Iron Ingot"
     },
     "Builder": {
@@ -20,6 +29,10 @@
       "defaultRate": 2000,
       "rateNote": "sustained block placing",
       "confidence": "assumed",
+      "xpOffset": 1.4285714285714286,
+      "readLevels": [
+        32
+      ],
       "defaultItem": "Place/Cobblestone"
     },
     "Cook": {
@@ -27,6 +40,15 @@
       "defaultRate": 2000,
       "rateNote": "hand crafting",
       "confidence": "confirmed",
+      "xpOffset": 5,
+      "readLevels": [
+        23,
+        38,
+        39,
+        40,
+        41,
+        48
+      ],
       "defaultItem": "Smelt/Baked Potato"
     },
     "Digger": {
@@ -34,6 +56,10 @@
       "defaultRate": 2000,
       "rateNote": "shovel with Efficiency",
       "confidence": "assumed",
+      "xpOffset": 1.4285714285714286,
+      "readLevels": [
+        30
+      ],
       "defaultItem": "Break/Dirt"
     },
     "Farmer": {
@@ -41,6 +67,12 @@
       "defaultRate": 3000,
       "rateNote": "harvesting a large crop field",
       "confidence": "confirmed",
+      "xpOffset": 1.4285714285714286,
+      "readLevels": [
+        53,
+        54,
+        58
+      ],
       "defaultItem": "Break/Wheat"
     },
     "Fisherman": {
@@ -48,13 +80,22 @@
       "defaultRate": 150,
       "rateNote": "killing fish and squid by hand",
       "confidence": "assumed",
+      "xpOffset": 1.4285714285714286,
+      "readLevels": [
+        46
+      ],
       "defaultItem": "Fish/Cod"
     },
     "Hunter": {
       "icon": "diamond_sword",
       "defaultRate": 600,
       "rateNote": "mob farm kills",
-      "confidence": "assumed",
+      "confidence": "confirmed",
+      "xpOffset": 1.4285714285714286,
+      "readLevels": [
+        23,
+        24
+      ],
       "defaultItem": "Kill/Zombie"
     },
     "Lumberjack": {
@@ -62,6 +103,10 @@
       "defaultRate": 1500,
       "rateNote": "logs, with mcMMO Tree Feller",
       "confidence": "assumed",
+      "xpOffset": 1.4285714285714286,
+      "readLevels": [
+        37
+      ],
       "defaultItem": "Break/Oak Log"
     },
     "Miner": {
@@ -69,6 +114,10 @@
       "defaultRate": 1500,
       "rateNote": "stone/ore mining",
       "confidence": "assumed",
+      "xpOffset": 1.4285714285714286,
+      "readLevels": [
+        19
+      ],
       "defaultItem": "Break/Stone"
     }
   }

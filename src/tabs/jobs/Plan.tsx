@@ -59,7 +59,7 @@ export function Plan({ job, item, chain, from, to, hoursPerDay, rate, plan, pref
           <Icon id={item.icon} size={36} />
           <div>
             <b>{potionName(chain.steps[chain.steps.length - 1].to)}</b>
-            <span>{chain.steps.length}-brew chain · {fmtMoney(moneyAt(chain.moneyBase, from))} and {fmt2(xpAt(chain.xpBase, from))} XP per brew on average at level {from}</span>
+            <span>{chain.steps.length}-brew chain · {fmtMoney(moneyAt(chain.moneyBase, from))} and {fmt2(xpAt(chain.xpBase, from, job.xpOffset))} XP per brew on average at level {from}</span>
           </div>
         </div>
       ) : (
@@ -67,7 +67,7 @@ export function Plan({ job, item, chain, from, to, hoursPerDay, rate, plan, pref
           <Icon id={item.icon} size={36} />
           <div>
             <b>{item.item}</b>
-            <span>{item.action} · {fmtMoney(moneyAt(item.moneyBase, from))} and {fmt2(xpAt(item.xpBase, from))} XP each at level {from}</span>
+            <span>{item.action} · {fmtMoney(moneyAt(item.moneyBase, from))} and {fmt2(xpAt(item.xpBase, from, job.xpOffset))} XP each at level {from}</span>
           </div>
         </div>
       )}

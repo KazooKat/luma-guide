@@ -15,17 +15,22 @@ export function totalXp(from: number, to: number): number {
   return sum;
 }
 
-/** XP per action scales with (L + 5). `base` is the level-1 value. */
-export const xpAt = (base: number, L: number) => (base * (L + 5)) / 6;
+/**
+ * XP per action scales with (L + c), where c is the job's `xpOffset`: 10/7 for Hunter, Farmer and Blacksmith (pinned by
+ * readings 1 to 19 levels apart, see scaling.test.ts), 5 for Cook (its 2026-09-24 readings). `base` is the level-1 value.
+ */
+export const xpAt = (base: number, L: number, c: number) => (base * (L + c)) / (1 + c);
 /** Money per action scales with (L + 9). `base` is the level-1 value. */
 export const moneyAt = (base: number, L: number) => (base * (L + 9)) / 10;
 
 /** Level-1 base from a reading taken at level L0. */
-export const xpBase = (value: number, L0: number) => (value * 6) / (L0 + 5);
+export const xpBase = (value: number, L0: number, c: number) => (value * (1 + c)) / (L0 + c);
 export const moneyBase = (value: number, L0: number) => (value * 10) / (L0 + 9);
 
 export interface PlanInput {
   xpBase: number;
+  /** The job's XP offset c, as in xpAt. */
+  xpOffset: number;
   moneyBase: number;
   from: number;
   to: number;
@@ -62,7 +67,7 @@ export function planLevels(p: PlanInput): Plan {
   const rate = Math.max(p.actionsPerHour, 1e-9);
   for (let L = p.from; L < p.to; L++) {
     const need = Math.max(req(L) - (L === p.from ? p.xpInto ?? 0 : 0), 0);
-    const actions = need / xpAt(p.xpBase, L);
+    const actions = need / xpAt(p.xpBase, L, p.xpOffset);
     const hours = actions / rate;
     const money = actions * moneyAt(p.moneyBase, L);
     cumHours += hours;

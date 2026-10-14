@@ -2,7 +2,8 @@
 
 Raw format and the Builder/Miner category rules come from Luma Jobs/scripts/parse.py.
 Every value is normalized to its level-1 base using the fitted Luma scaling:
-    xp(L) = base (L+5)/6        money(L) = base (L+9)/10
+    xp(L) = base (L+c)/(1+c)    money(L) = base (L+9)/10
+where c is the job's xpOffset in data/jobs-meta.json (10/7 measured for Hunter, Farmer and Blacksmith, 5 for Cook),
 so the site can project any level. Icons come from the minecraft-textures package
 (MC 26.2 manifest); only the PNGs actually referenced are copied into public/icons/.
 The item glossary's icons are also packed into one sprite sheet (src/assets/items-atlas.png) so the Items page
@@ -217,6 +218,7 @@ def main():
         if path.exists():
             meta, rows = parse_file(path)
             level = int(meta["level"])
+            c = float(jm["xpOffset"])
             entry["level"] = level
             entry["source"] = meta.get("source")
             seen = {}
@@ -229,7 +231,7 @@ def main():
                     "item": label,
                     "category": classify(name) if job in CATEGORIZED_JOBS else action,
                     "moneyBase": round(money * 10 / (level + 9), 6),
-                    "xpBase": round(xp * 6 / (level + 5), 6),
+                    "xpBase": round(xp * (1 + c) / (level + c), 6),
                     "observed": {"level": level, "money": money, "xp": xp},
                     "icon": icons.resolve(job, action, name),
                     "key": key,
