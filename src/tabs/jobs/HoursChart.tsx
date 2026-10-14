@@ -3,7 +3,7 @@ import { fmtCompact, fmtDays, fmtHours, fmtInt, fmtMoney } from '../../lib/forma
 import type { Plan } from '../../lib/scaling';
 
 /** Round a max up to a clean axis top with 4 steps (0 / 25 / 50 / 75 / 100). */
-function niceTop(max: number): number {
+export function niceTop(max: number): number {
   const rough = max / 4;
   const mag = 10 ** Math.floor(Math.log10(rough || 1));
   const step = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= rough)!;

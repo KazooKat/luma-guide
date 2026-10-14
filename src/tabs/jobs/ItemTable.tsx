@@ -3,7 +3,7 @@ import type { Job } from '../../data/types';
 import { Icon } from '../../components/Icon';
 import { fmt2, fmtMoney } from '../../lib/format';
 import { moneyAt, xpAt } from '../../lib/scaling';
-import { itemKey } from '../JobsTab';
+import { itemKey } from './prefs';
 
 type Sort = 'money' | 'xp';
 const PAGE = 12;

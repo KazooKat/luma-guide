@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import jobsData from '../data/jobs.json';
 import perksData from '../data/perks.json';
-import type { Job, JobItem, JobsData, Perk } from '../data/types';
+import type { Job, JobsData, Perk } from '../data/types';
 import { Icon } from '../components/Icon';
-import { loadPref, savePref } from '../lib/route';
 import { MAX_LEVEL, planLevels, req } from '../lib/scaling';
+import { itemKey, loadJobPrefs, pickedItem, saveJobPrefs, type JobPrefs } from './jobs/prefs';
 import { ItemTable } from './jobs/ItemTable';
-import { Plan, resolveRate } from './jobs/Plan';
+import { Plan } from './jobs/Plan';
+import { resolveRate } from './jobs/rate';
 import { HoursChart, Milestones } from './jobs/HoursChart';
 import { Perks } from './jobs/Perks';
 import { resolveChain } from './jobs/BrewSetup';
@@ -17,28 +18,6 @@ const PERKS = (perksData as { perks: Record<string, Perk[]> }).perks;
 const DEFAULT_JOB = 'cook';
 const MCMMO_REF = 'e19e043';
 const MCMMO_SRC = `https://github.com/LumaLibre/mcMMO/blob/${MCMMO_REF}`;
-
-export const itemKey = (it: JobItem) => `${it.action}/${it.item}`;
-
-export interface JobPrefs {
-  from: number;
-  xpInto: number;
-  to: number;
-  hoursPerDay: number;
-  itemKey: string;
-  handRate: number;
-  machines: Record<string, number>;
-  /** mcMMO Alchemy level (Catalysis brewing speed, Concoctions ingredients). */
-  alchemyLevel: number;
-  /** Brewing chain from a water bottle, as ingredient materials. Empty = shortest chain for the picked item. */
-  brewChain: string[];
-  /** mcMMO Fishing level (Master Angler). */
-  fishingLevel: number;
-  lure: number;
-  raining: boolean;
-  boat: boolean;
-  handlingSeconds: number;
-}
 
 export function JobsTab({ jobSlug }: { jobSlug?: string }) {
   const job = DATA.jobs.find((j) => j.job.toLowerCase() === (jobSlug ?? DEFAULT_JOB)) ?? DATA.jobs.find((j) => j.job.toLowerCase() === DEFAULT_JOB)!;
@@ -87,14 +66,8 @@ function clampInt(v: number, lo: number, hi: number) {
 }
 
 function JobView({ job }: { job: Job }) {
-  const defaults: JobPrefs = {
-    from: 1, xpInto: 0, to: MAX_LEVEL, hoursPerDay: 4,
-    itemKey: job.defaultItem ?? (job.items[0] ? itemKey(job.items[0]) : ''),
-    handRate: job.defaultRate, machines: {},
-    alchemyLevel: 0, brewChain: [], fishingLevel: 0, lure: 3, raining: false, boat: false, handlingSeconds: 1.5,
-  };
-  const [prefs, setPrefs] = useState<JobPrefs>(() => loadPref(`job:${job.job}`, defaults));
-  useEffect(() => savePref(`job:${job.job}`, prefs), [prefs]);
+  const [prefs, setPrefs] = useState<JobPrefs>(() => loadJobPrefs(job));
+  useEffect(() => saveJobPrefs(job, prefs), [prefs]);
   const set = (patch: Partial<JobPrefs>) => setPrefs((p) => ({ ...p, ...patch }));
 
   // Keep inputs in range without fighting the user while they type.
@@ -102,7 +75,7 @@ function JobView({ job }: { job: Job }) {
   const to = clampInt(prefs.to, from + 1, MAX_LEVEL);
   const xpInto = clampInt(prefs.xpInto, 0, req(from) - 1);
   const hoursPerDay = Math.min(24, Math.max(0.25, Number(prefs.hoursPerDay) || 4));
-  const item = useMemo(() => job.items.find((i) => itemKey(i) === prefs.itemKey) ?? job.items[0], [job, prefs.itemKey]);
+  const item = useMemo(() => pickedItem(job, prefs), [job, prefs.itemKey]);
   const rate = item ? resolveRate(job, item, prefs) : null;
   // Brewing plans a whole chain: each brew pays for its own ingredient, so use the chain's average per brew.
   const chain = useMemo(() => (item?.action === 'Brew' ? resolveChain(job, item, prefs.brewChain) : null), [job, item, prefs.brewChain]);

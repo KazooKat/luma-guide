@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import data from '../data/event.json';
 import type { EventData } from '../data/types';
-import { actionsForChance, applyPayout, chanceWithin, deliver, jobTokenChance } from './event';
+import { actionsForChance, applyPayout, chanceWithin, deliver, hoursForChance, hoursPerToken, jobTokenChance, tokensPerHour } from './event';
 
 const EVENT = data as unknown as EventData; // see src/tabs/event/common.tsx
 
@@ -73,5 +73,19 @@ describe('token delivery (TokenExchanging.give)', () => {
   });
   it('gives nothing for less than 1', () => {
     expect(deliver(0, 2, 20)).toEqual({ shown: 0, given: 0 });
+  });
+});
+
+describe('job tokens per hour', () => {
+  const p = jobTokenChance(9, 90_000); // Alchemist: 1 in 10,000 per paid action
+  it('is the per-action chance times actions per hour', () => {
+    expect(tokensPerHour(p, 3_609)).toBeCloseTo(0.3609, 6);
+    expect(tokensPerHour(p, 0)).toBe(0);
+  });
+  it('turns that into time per token and time to be 90% sure', () => {
+    expect(hoursPerToken(p, 14_400)).toBeCloseTo(10_000 / 14_400, 9);
+    expect(hoursPerToken(p, 0)).toBe(Infinity);
+    expect(hoursForChance(p, 14_400, 0.9)).toBeCloseTo(actionsForChance(p, 0.9) / 14_400, 9);
+    expect(hoursForChance(p, 0, 0.9)).toBe(Infinity);
   });
 });

@@ -1,12 +1,8 @@
-import type { JobPrefs } from '../JobsTab';
+import { fishingSetupOf, type JobPrefs } from './prefs';
 import { fmt2, fmtInt } from '../../lib/format';
 import { fishingTiming, MASTER_ANGLER_LEVELS, MCMMO_MAX_LEVEL } from '../../lib/mcmmo';
 
 const LURE = ['None', 'I', 'II', 'III', 'IV', 'V'];
-
-export const fishingSetupOf = (prefs: JobPrefs) => ({
-  level: prefs.fishingLevel, lure: prefs.lure, raining: prefs.raining, boat: prefs.boat, handlingSeconds: prefs.handlingSeconds,
-});
 
 export function FishingSetup({ prefs, set }: { prefs: JobPrefs; set: (p: Partial<JobPrefs>) => void }) {
   const t = fishingTiming(fishingSetupOf(prefs));

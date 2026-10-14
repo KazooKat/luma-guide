@@ -526,9 +526,54 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
 .mg-tokens { font-size: 13px; font-weight: 600; color: var(--accent-strong); }
 .odds-row.mg-row { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr) 90px; }
 .odds-row.mg-row .soft { font-size: 14px; color: var(--text-2); }
-.odds-row.job-odds { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) 110px 110px; }
-.job-odds .odds-cell .mono { width: 66px; }
 .odds-row.shop-row { grid-template-columns: minmax(0, 1fr) 100px 80px; }
+
+/* Job token odds per hour (event Tokens page) */
+.tok-tiles { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 12px; }
+.tok-tile { display: grid; gap: 6px; align-content: start; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--border); color: var(--text-2); text-decoration: none; }
+.tok-tile.hero { background: var(--selected); border-color: transparent; }
+a.tok-tile:hover { outline: 1px solid var(--accent); color: var(--text-2); }
+.tok-label { font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.tok-job { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.tok-job b { font-family: var(--display); font-weight: 800; font-size: 20px; color: var(--text); }
+.tok-job small { font-size: 13px; color: var(--muted); }
+.tok-big { font-family: var(--display); font-weight: 800; font-size: 44px; line-height: 1; color: var(--hero); letter-spacing: -0.02em; }
+.tok-big small { font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: 0; color: var(--text-2); }
+.tok-sub { font-size: 13px; color: var(--text-2); }
+.tok-controls { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 24px; }
+.range-field b { color: var(--text); font-family: var(--mono); margin-left: 4px; }
+.range-field input[type='range'] { width: 240px; max-width: 100%; accent-color: var(--accent); padding: 0; border: 0; background: transparent; height: 36px; }
+.odds-row.job-hour { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.6fr) 96px 110px; }
+.odds-row.job-hour.top { background: color-mix(in srgb, var(--selected) 60%, transparent); border-radius: 10px; }
+.job-cell { display: grid; gap: 1px; min-width: 0; }
+.job-cell .basis { font-size: 12.5px; color: var(--muted); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.job-cell .basis:hover { color: var(--accent); text-decoration: underline; }
+.hour-cell { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.hour-bar { flex: 1; height: 12px; border-radius: 0 4px 4px 0; background: var(--grid); }
+.hour-bar i { display: block; height: 100%; background: var(--chart); border-radius: 0 4px 4px 0; }
+.hour-val { width: 96px; flex: none; display: grid; line-height: 1.25; }
+.hour-val b { font-family: var(--mono); font-size: 15px; color: var(--text); }
+.hour-val small, small.block { font-size: 11.5px; color: var(--muted); font-family: var(--sans); }
+small.block { display: block; }
+.lchart { display: grid; gap: 10px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--text-2); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend .key { width: 18px; height: 0; border-top: 2px solid var(--chart); border-radius: 1px; }
+.legend .key.ref { border-top: 2px dashed var(--muted); }
+.lplot { cursor: crosshair; touch-action: pan-y; }
+.lsvg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.lsvg .line { fill: none; stroke: var(--chart); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.lsvg .area { fill: var(--chart); opacity: .1; }
+.lsvg .ref { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 4; vector-effect: non-scaling-stroke; }
+.lref-label { position: absolute; left: 8px; transform: translateY(calc(-100% - 4px)); font-family: var(--mono); font-size: 12px; color: var(--text-2); pointer-events: none; }
+.lcross { position: absolute; pointer-events: none; }
+.lcross i { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--surface); border: 2px solid var(--text-2); transform: translate(-50%, -50%); }
+.lcross b { position: absolute; transform: translate(-50%, 10px); font-size: 12px; font-weight: 600; color: var(--text); white-space: nowrap; }
+.crosshair { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--axis); pointer-events: none; }
+.ldot { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--chart); box-shadow: 0 0 0 2px var(--surface); transform: translate(-50%, -50%); pointer-events: none; }
+.lchart .chart-x span:first-child { transform: none; }
+.lchart .chart-x span:last-child { transform: translateX(-100%); }
+.hour-val small { white-space: nowrap; }
 
 /* Minigame storyboards: a 3-beat captioned animation per game (src/tabs/event/storyboard). */
 .sb { margin: 0; padding: 14px 16px 12px; border-radius: 14px; background: var(--sb-stage); display: grid; gap: 8px; }
@@ -605,9 +650,12 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
   .odds-row { grid-template-columns: minmax(0, 1fr) 110px; }
   .odds-row > :last-child { display: none; }
   .odds-row.mg-row { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); }
-  .odds-row.job-odds { grid-template-columns: minmax(0, 1fr) 120px; }
-  .odds-row.job-odds > :nth-child(2) { display: none; }
   .odds-row.shop-row { grid-template-columns: minmax(0, 1fr) 80px; }
+  .tok-tiles { grid-template-columns: 1fr; }
+  .odds-row.job-hour { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+  .odds-row.job-hour > :nth-child(3) { display: none; }
+  .hour-val { width: 84px; }
+  .job-cell .basis { white-space: normal; font-size: 12px; line-height: 1.35; }
   .title-badge { margin-left: 8px; }
   .odds-bar { display: none; }
   .item-detail, .detail-card { padding: 16px; }

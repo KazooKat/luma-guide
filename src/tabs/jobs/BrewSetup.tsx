@@ -1,5 +1,5 @@
 import type { Job, JobItem } from '../../data/types';
-import type { JobPrefs } from '../JobsTab';
+import type { JobPrefs } from './prefs';
 import { Icon } from '../../components/Icon';
 import { fmt2, fmtInt, fmtMoney } from '../../lib/format';
 import {

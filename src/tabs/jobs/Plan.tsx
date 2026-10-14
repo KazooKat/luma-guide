@@ -1,40 +1,13 @@
 import type { Job, JobItem } from '../../data/types';
-import type { JobPrefs } from '../JobsTab';
+import type { JobPrefs } from './prefs';
 import { Icon } from '../../components/Icon';
 import { fmt2, fmtCompact, fmtDays, fmtInt, fmtMoney } from '../../lib/format';
-import { machineRate, machinesFor, type Machine } from '../../lib/machines';
 import { moneyAt, xpAt, type Plan as PlanResult } from '../../lib/scaling';
 import { GRUBBY_PER_ACTION } from '../../lib/relics';
-import { brewsPerStandHour, fishingTiming } from '../../lib/mcmmo';
 import { potionName } from '../../lib/brewing';
 import { BrewSetup, type BrewChain } from './BrewSetup';
-import { FishingSetup, fishingSetupOf } from './FishingSetup';
-
-export interface Rate {
-  perHour: number;
-  machines: { machine: Machine; count: number }[];
-}
-
-/**
- * Smelt and Brew are paced by machines (brewing stands sped up by mcMMO Catalysis), fishing by the hook's
- * timers (mcMMO Master Angler, Lure, rain), everything else by how fast the player acts.
- */
-export function resolveRate(job: Job, item: JobItem, prefs: JobPrefs): Rate {
-  const machines = machinesFor(job.job, item.action).map((machine) => ({
-    machine,
-    count: Math.max(0, prefs.machines[machine.id] ?? machine.defaultCount),
-  }));
-  if (item.action === 'Brew') {
-    return { perHour: machines.reduce((a, m) => a + m.count, 0) * brewsPerStandHour(prefs.alchemyLevel), machines };
-  }
-  if (machines.length) {
-    return { perHour: machineRate(Object.fromEntries(machines.map((m) => [m.machine.id, m.count]))), machines };
-  }
-  if (item.action === 'Fish') {
-    return { perHour: fishingTiming(fishingSetupOf(prefs)).catchesPerHour, machines: [] };
-  }
-  return { perHour: Math.max(1, Number(prefs.handRate) || job.defaultRate), machines: [] };
-}
+import { FishingSetup } from './FishingSetup';
+import type { Rate } from './rate';
 
 const NOUNS: Record<string, string> = {
   Break: 'Blocks to break', Place: 'Blocks to place', Smelt: 'Items to smelt', Brew: 'Brews', Craft: 'Crafts',
