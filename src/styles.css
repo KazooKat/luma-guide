@@ -413,7 +413,7 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
 .atlas-icon.glint::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   -webkit-mask: var(--atlas) var(--pos) / var(--dims) no-repeat; mask: var(--atlas) var(--pos) / var(--dims) no-repeat;
-  background: linear-gradient(115deg, transparent 35%, rgb(190 130 255 / 0.6) 47%, rgb(230 200 255 / 0.45) 52%, transparent 65%) 0 0 / 300% 100%;
+  background: linear-gradient(115deg, transparent 35%, rgb(190 130 255 / 0.3) 47%, rgb(230 200 255 / 0.22) 52%, transparent 65%) 0 0 / 300% 100%;
   mix-blend-mode: screen; animation: glint 3.2s linear infinite;
 }
 @keyframes glint { from { background-position: 150% 0; } to { background-position: -150% 0; } }
