@@ -10,7 +10,7 @@ import { Plan } from './jobs/Plan';
 import { resolveRate } from './jobs/rate';
 import { HoursChart, Milestones } from './jobs/HoursChart';
 import { Perks } from './jobs/Perks';
-import { fmtOffset, ScalingBadge } from './jobs/ScalingBadge';
+import { fmtOffset, ScaleMark, ScalingBadge } from './jobs/ScalingBadge';
 import { resolveChain } from './jobs/BrewSetup';
 import { materialOf, shortestChainTo } from '../lib/brewing';
 
@@ -51,12 +51,16 @@ export function JobsTab({ jobSlug }: { jobSlug?: string }) {
           <a key={j.job} class="job-tile" href={`#/jobs/${j.job.toLowerCase()}`} aria-current={j.job === job.job ? 'true' : undefined}>
             <Icon id={j.icon} size={32} />
             <span class="job-text">
-              <b>{j.job}</b>
+              <span class="job-name-line"><b>{j.job}</b><ScaleMark confirmed={j.confidence === 'confirmed'} /></span>
               <span class="job-meta">{j.level ? `${j.items.length} items` : 'No data yet'}</span>
             </span>
           </a>
         ))}
       </nav>
+      <p class="scale-key" aria-hidden="true">
+        <span><ScaleMark confirmed /> scaling checked at 2+ levels</span>
+        <span><ScaleMark confirmed={false} /> scaling assumed (read at 1 level)</span>
+      </p>
       <JobView key={job.job} job={job} />
     </>
   );

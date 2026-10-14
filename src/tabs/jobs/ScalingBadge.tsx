@@ -5,6 +5,18 @@ import { MAX_LEVEL } from '../../lib/scaling';
 /** 10/7 -> "10/7", 5 -> "5" */
 export const fmtOffset = (c: number) => (Math.abs(c - 10 / 7) < 1e-9 ? '10/7' : String(+c.toFixed(3)));
 
+/** Small mark for the job picker: a check when scaling is confirmed, a tilde (approximately) when it's assumed. */
+export function ScaleMark({ confirmed }: { confirmed: boolean }) {
+  const label = confirmed ? 'Scaling confirmed' : 'Scaling assumed';
+  return (
+    <svg class={`scale-mark ${confirmed ? 'good' : 'warn'}`} viewBox="0 0 16 16" width="14" height="14" role="img" aria-label={label}>
+      <title>{label}</title>
+      <circle cx="8" cy="8" r="7.5" />
+      <path d={confirmed ? 'M4.6 8.3l2.2 2.2 4.6-4.9' : 'M4.2 9.1c1.1-1.7 2.4-1.7 3.8-.6s2.7 1.1 3.8-.6'} />
+    </svg>
+  );
+}
+
 /** "23 and 24", "23, 38, 39 and 48" */
 const listLevels = (ls: number[]) => (ls.length < 2 ? String(ls[0] ?? '?') : `${ls.slice(0, -1).join(', ')} and ${ls[ls.length - 1]}`);
 

@@ -177,6 +177,16 @@ details.newbie b { color: var(--text); }
 .job-text { display: grid; min-width: 0; }
 .job-tile b { font-weight: 600; font-size: 16px; }
 .job-meta { font-size: 12.5px; color: var(--muted); }
+.job-name-line { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
+.scale-mark { flex: none; }
+.scale-mark circle { stroke: none; }
+.scale-mark path { fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.scale-mark.good circle { fill: var(--good-soft); }
+.scale-mark.good path { stroke: var(--good); }
+.scale-mark.warn circle { fill: var(--warn-soft); }
+.scale-mark.warn path { stroke: var(--warn); }
+.scale-key { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: -4px 0 0; font-size: 12.5px; color: var(--muted); }
+.scale-key span { display: inline-flex; align-items: center; gap: 6px; }
 
 /* ---------- job header ---------- */
 .job-head { display: flex; align-items: center; flex-wrap: wrap; gap: 20px 28px; }
