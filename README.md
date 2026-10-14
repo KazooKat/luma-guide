@@ -4,7 +4,7 @@ A player guide for [LumaMC](https://lumamc.net) (`play.lumamc.net`): how each jo
 takes, what each job pays per item, level perks, item mechanics (Kamori's Glasses, with a live bloom-hour clock), and
 relics (where they drop, what's inside them, disassembly odds).
 
-Live site: https://luma-guide.tarkov-quest-router.workers.dev/ (the old https://kazookat.github.io/luma-guide/ links redirect there) · Design canvas: https://claude.ai/artifact/P1tHzLmUEceQpNcXqmzEn8
+Live site: https://luma.kazookat.dev/ (the old https://kazookat.github.io/luma-guide/ links redirect there) · Design canvas: https://claude.ai/artifact/P1tHzLmUEceQpNcXqmzEn8
 
 Fan-made; not affiliated with LumaMC. Minecraft icons © Mojang (via the `minecraft-textures` package).
 The sapling-box icon (`data/custom-icons/sapling_box.png`) is a render of the `BoxMan01234` head that CustomSaplings uses, via mc-heads.net.

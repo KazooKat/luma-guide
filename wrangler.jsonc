@@ -3,7 +3,9 @@
 {
   "name": "luma-guide",
   "compatibility_date": "2026-10-14",
-  "workers_dev": true,
+  // Served only on the custom domain (attached on the kazookat.dev zone); the workers.dev address is off.
+  "workers_dev": false,
+  "routes": [{ "pattern": "luma.kazookat.dev", "custom_domain": true }],
   "assets": {
     "directory": "./dist"
   }
