@@ -46,12 +46,14 @@ export function Scene({ beat, t, values }: SceneProps) {
   const pts = Math.floor(g * pps);
   const toks = Math.min(max, Math.floor(pts / ppt));
   const sinceToken = toks ? g - (toks * ppt) / pps : -1;
-  const tokY = 168, tokEnd = 400 - GX;
+  const tokY = 164, tokEnd = 400 - GX;
   const tokX = tokEnd - max * 14 + 4 + (toks - 1) * 14 + 5;
 
   return (
     <Stage>
       <SpedUp />
+      {/* A faint copy of the whole floor underneath, so fallen blocks read as holes. */}
+      <g opacity={0.3}><Grid x={GX} y={GY} cols={COLS} rows={ROWS} size={SIZE} gap={GAP} look={() => ({ kind: 'dim' })} /></g>
       <Grid x={GX} y={GY} cols={COLS} rows={ROWS} size={SIZE} gap={GAP} look={look} />
       <Dot x={px} y={py} />
       <g opacity={beat === 0 ? 1 : 0.6}>
@@ -59,7 +61,7 @@ export function Scene({ beat, t, values }: SceneProps) {
       </g>
       <g opacity={beat === 2 ? 1 : 0.6}>
         <Tokens x={tokEnd} y={tokY} n={toks} max={max} anchor="end" />
-        <Label x={tokEnd} y={tokY + 26} text={`${toks} token${toks === 1 ? '' : 's'}`} anchor="end" />
+        <Label x={tokEnd} y={tokY + 30} text={`${toks} token${toks === 1 ? '' : 's'}`} anchor="end" />
       </g>
       <Float x={tokX} y={tokY - 4} p={sinceToken < 0 ? 0 : sinceToken / 2.5} text="+1" />
     </Stage>

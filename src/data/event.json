@@ -194,6 +194,34 @@
     "name": "Freeze Tag",
     "summary": "A 2 team tag game: hit enemies to freeze them in ice and hit frozen teammates to free them. A round ends when one whole team is frozen, and the first team to win 2 rounds wins the match.",
     "tokenLine": "11, or 14 if your team wins, plus up to 5 more for a low score",
+    "storyboard": {
+     "values": {
+      "hitsToFreeze": 3,
+      "hitsToUnfreeze": 4,
+      "pointsPerFreeze": 6,
+      "pointsPerUnfreeze": 4,
+      "winTokens": 14,
+      "loseTokens": 11,
+      "lowScoreBonus": 5
+     },
+     "beats": [
+      {
+       "caption": "Hit an enemy 3 times to freeze them",
+       "sub": "Hits deal no damage. The hit that freezes them scores you 6 points.",
+       "src": "games/logic/FreezeTag.java:279, games/logic/FreezeTag.java:334-348, configurable/sectors/FreezeTagDefinition.java:22, configurable/sectors/FreezeTagDefinition.java:28"
+      },
+      {
+       "caption": "4 hits frees a frozen teammate",
+       "sub": "That scores you 4 points. A round ends when every player on one team is frozen.",
+       "src": "games/logic/FreezeTag.java:314-331, configurable/sectors/FreezeTagDefinition.java:23, configurable/sectors/FreezeTagDefinition.java:29, games/logic/FreezeTag.java:170-178"
+      },
+      {
+       "caption": "14 tokens if your team wins, 11 if not",
+       "sub": "A low score adds up to 5 more, so a player on 0 points is paid 5 more than one on 6 or more.",
+       "src": "games/logic/FreezeTag.java:565-567, games/tokenformula/Paintball2_1TokenFormula.java:11-21"
+      }
+     ]
+    },
     "howToPlay": [
      {
       "text": "When the game starts, players are shuffled and split into 2 teams (Scarlet and Ivory by default). With an odd number of players the second team gets the extra player. You get a leather chestplate and a glow in your team colour, and you are sent to your team's spawn.",
@@ -392,6 +420,34 @@
     "name": "Paintball 2.1",
     "summary": "A 3 minute, 2 team paint fight: throw paintballs to colour blocks for your team and hit enemies to knock them out. The team with more paint points at the end wins.",
     "tokenLine": "11, or 14 if your team wins, plus 3 or 4 for 5 players per team",
+    "storyboard": {
+     "values": {
+      "pointsPerBlock": 1,
+      "gameMinutes": 3,
+      "winTokens": 14,
+      "loseTokens": 11,
+      "firstBonus": 4,
+      "otherBonus": 3,
+      "bonusPlayers": 5
+     },
+     "beats": [
+      {
+       "caption": "Throw paintballs to paint blocks",
+       "sub": "Each block you paint that isn't your team's colour yet scores 1 point, even ones the other team painted.",
+       "src": "games/logic/Paintball2_1.java:300-306, games/logic/Paintball2_1.java:456-469"
+      },
+      {
+       "caption": "Most paint points after 3 minutes wins",
+       "sub": "When they paint over your blocks, your team keeps the points it already got.",
+       "src": "games/logic/Paintball2_1.java:82, games/logic/Paintball2_1.java:168-169, games/logic/Paintball2_1.java:466-469, games/models/Scoreboard.java:23-25"
+      },
+      {
+       "caption": "14 tokens if your team wins, 11 if not",
+       "sub": "5 players per team get 3 or 4 more, but which 5 is effectively random, not by score.",
+       "src": "games/tokenformula/Paintball2_1TokenFormula.java:11-21, games/logic/Paintball2_1.java:168-183"
+      }
+     ]
+    },
     "howToPlay": [
      {
       "text": "Players are split into 2 teams (the second team gets the extra player if the count is odd), and the teams get a random colour pair such as Red and Blue. Your inventory is saved and cleared, you get a stack of 16 paintballs in your team colour, and you glow in that colour.",
@@ -601,6 +657,32 @@
     "name": "Boat Race 2",
     "summary": "A raft race over 3 laps through a set of checkpoints. You score points and tokens on every lap, based on your position when you cross the finish line.",
     "tokenLine": "Every lap: 3 if you are top 5 at the line, otherwise 2",
+    "storyboard": {
+     "values": {
+      "laps": 3,
+      "starters": 8,
+      "topPlaces": 5,
+      "topTokens": 3,
+      "otherTokens": 2
+     },
+     "beats": [
+      {
+       "caption": "Race 3 laps through the checkpoints",
+       "sub": "Drive through every checkpoint, then cross the finish line to complete a lap.",
+       "src": "games/logic/BoatRace2.java:270-310, configurable/sectors/BoatRace2Definition.java:16"
+      },
+      {
+       "caption": "Every lap scores on your place",
+       "sub": "Each lap scores the starters plus 1 minus your place, so with 8 starters 1st gets 8 and 8th gets 1.",
+       "src": "games/logic/BoatRace2.java:101, games/logic/BoatRace2.java:322-327"
+      },
+      {
+       "caption": "3 tokens a lap in the top 5, else 2",
+       "sub": "You are paid at every lap crossing, so a 3 lap race pays 6 to 9 tokens.",
+       "src": "games/tokenformula/BoatRace2TokenFormula.java:12-14, games/logic/BoatRace2.java:334, configurable/sectors/BoatRace2Definition.java:16"
+      }
+     ]
+    },
     "howToPlay": [
      {
       "text": "You are put in a bamboo raft at a random starting spot (players beyond the number of spots start near an overflow point), and the race starts right away with a Go! title.",
@@ -768,6 +850,31 @@
     "name": "TNT Tag",
     "summary": "Hot potato tag with TNT: whoever is holding the TNT when each 90 second round ends explodes and is out. Runners score a point for every 30 seconds they go without being tagged.",
     "tokenLine": "1 per 30 seconds untagged as a Runner",
+    "storyboard": {
+     "values": {
+      "pointSeconds": 30,
+      "roundSeconds": 90,
+      "rounds": 3,
+      "maxPoints": 9
+     },
+     "beats": [
+      {
+       "caption": "Stay away from the Tagger",
+       "sub": "As a Runner you get 1 point for every 30 seconds in a row you go without being tagged.",
+       "src": "games/logic/TNTTag.java:384-396"
+      },
+      {
+       "caption": "A tag hands you the TNT",
+       "sub": "Tag someone to pass it on. A tag resets your count, and Taggers explode when the 90 second round ends.",
+       "src": "games/logic/TNTTag.java:271-302, games/logic/TNTTag.java:355-359, games/logic/TNTTag.java:46, games/logic/TNTTag.java:227-263"
+      },
+      {
+       "caption": "1 token per point",
+       "sub": "Paid when the game ends. Never tagged in all 3 rounds is 9 points, so up to 9 tokens.",
+       "src": "games/tokenformula/TNTTagTokenFormula.java:7-8, games/logic/TNTTag.java:46-47, games/logic/TNTTag.java:128-133, games/logic/TNTTag.java:384-396"
+      }
+     ]
+    },
     "howToPlay": [
      {
       "text": "Everyone starts as a Runner, and your inventory is saved and cleared. At the start of each round, 1 Tagger is picked at random for every 5 Runners (at least 1), and chat says who is it.",
@@ -1122,7 +1229,34 @@
       "text": "The server-wide token multiplier is 1.0 by default.",
       "src": "configurable/Config.java:42-43, items/TokenExchanging.java:38"
      }
-    ]
+    ],
+    "storyboard": {
+     "values": {
+      "dropSeconds": 9,
+      "firstDropBlocks": 3,
+      "secondDropBlocks": 4,
+      "kills": 3,
+      "endPoint": 1,
+      "maxTokens": 9
+     },
+     "beats": [
+      {
+       "caption": "Build out from your pillar",
+       "sub": "You start on your own 1 block pillar. Every 9 seconds you get a random item, most often 3 or 4 blocks.",
+       "src": "games/logic/Towers.java:124-151, games/logic/Towers.java:535-551, games/logic/Towers.java:557-575"
+      },
+      {
+       "caption": "Knock players off their towers",
+       "sub": "When a player dies, whoever hit them last gets the kill and their whole inventory.",
+       "src": "games/logic/Towers.java:284-322, games/logic/Towers.java:691-706"
+      },
+      {
+       "caption": "Your tokens are your kills + 1",
+       "sub": "The +1 is for dying or for lasting to the end, so only kills earn more. Up to 9.",
+       "src": "games/logic/Towers.java:200-203, games/logic/Towers.java:686-696, games/logic/Towers.java:108, games/tokenformula/FlatIntTokenFormula.java:17-20"
+      }
+     ]
+    }
    }
   },
   {
@@ -1329,7 +1463,38 @@
       "text": "Manor isn't in the default automatic rotation.",
       "src": "configurable/Config.java:52-56"
      }
-    ]
+    ],
+    "storyboard": {
+     "values": {
+      "hunterSeesNear": 6,
+      "hunterSeesFar": 15,
+      "hunterDelaySeconds": 15,
+      "timeMinutes": 2,
+      "timeSeconds": 15,
+      "catchBonusSeconds": 15,
+      "secondsPerPoint": 40,
+      "bonusTokens": 2,
+      "maxTokens": 15,
+      "hunterCatches": 6
+     },
+     "beats": [
+      {
+       "caption": "Stay 6 to 15 blocks from the Hunter",
+       "sub": "The Hunter can't see you in that band, only closer or farther out. 1 hit from them catches you.",
+       "src": "games/logic/Manor.java:366-370, games/logic/Manor.java:203-220, games/logic/Manor.java:523-532"
+      },
+      {
+       "caption": "Stay uncaught to score",
+       "sub": "You get 1 point about every 40 seconds. Each catch gives the Hunter 1 point and adds 15 seconds.",
+       "src": "games/logic/Manor.java:150-161, games/logic/Manor.java:472-477, games/logic/Manor.java:489, games/logic/Manor.java:491-499"
+      },
+      {
+       "caption": "Your score plus 2 tokens",
+       "sub": "Paid once at the end, up to 15. A Runner with 3 points gets 5, and a Hunter with 6 catches gets 8.",
+       "src": "games/tokenformula/ManorTokenFormula.java:6-9, games/logic/Manor.java:472-477, games/logic/Manor.java:489"
+      }
+     ]
+    }
    }
   },
   {
@@ -1557,7 +1722,34 @@
       "text": "How far the Seeker's clue sounds carry is up to the game's normal sound rules. Not tested here.",
       "src": "games/logic/PropHunt.java:674-675"
      }
-    ]
+    ],
+    "storyboard": {
+     "values": {
+      "hidingSeconds": 40,
+      "seekingMinutes": 5,
+      "secondsPerPoint": 40,
+      "minTokens": 3,
+      "maxTokens": 13,
+      "seekerCatches": 1
+     },
+     "beats": [
+      {
+       "caption": "Hide as a block",
+       "sub": "While the Seeker waits 40 seconds, left-click a block to look like it, then right-click to lock in place.",
+       "src": "games/logic/PropHunt.java:112-116, games/logic/PropHunt.java:452-484, games/logic/PropHunt.java:529-598"
+      },
+      {
+       "caption": "Stay uncaught to score",
+       "sub": "You get 1 point every 40 seconds until caught. The Seeker catches with 1 hit and gets 1 point per catch.",
+       "src": "games/logic/PropHunt.java:154-178, games/logic/PropHunt.java:423-427, games/logic/PropHunt.java:233-276, games/logic/PropHunt.java:704, games/logic/PropHunt.java:723-724"
+      },
+      {
+       "caption": "Your score is your tokens",
+       "sub": "At least 3 and at most 13. A Hider never caught ends on 8, and a Seeker with 1 catch still gets 3.",
+       "src": "games/tokenformula/PropHuntTokenFormula.java:6-9, games/logic/PropHunt.java:423-427"
+      }
+     ]
+    }
    }
   },
   {
@@ -1581,6 +1773,31 @@
     "name": "The Nabbits",
     "summary": "A spreading tag game: one player starts as the Nabbit and catches fleeing players with 3 hits each. Caught players turn into Nabbits or Rabbits, and the fleeing players win if anyone is still uncaught after 6 minutes.",
     "tokenLine": "1 per point, max 10 (the end-of-game payout is broken)",
+    "storyboard": {
+     "values": {
+      "hitsToCatch": 3,
+      "carrotOdds": 10,
+      "pointsPerMinute": 2,
+      "tokenCap": 10
+     },
+     "beats": [
+      {
+       "caption": "Run from the Nabbit",
+       "sub": "It catches you with 3 hits. Each carrot you walk over has a 1 in 10 chance to give 1 point.",
+       "src": "games/models/NabbitPlayer.java:112-128, games/logic/TheNabbits.java:243-265, games/logic/TheNabbits.java:300-315"
+      },
+      {
+       "caption": "Caught? Become a Nabbit or Rabbit",
+       "sub": "It's 50/50. Nabbits score 1 point per catch, and everyone scores 2 points per full minute.",
+       "src": "games/models/NabbitPlayer.java:130-134, games/logic/TheNabbits.java:243-262, games/logic/TheNabbits.java:141-149"
+      },
+      {
+       "caption": "The end payout is broken",
+       "sub": "It should pay 1 token per point, up to 10, but players still in at the end get no tokens in this version.",
+       "src": "games/logic/TheNabbits.java:185, games/logic/TheNabbits.java:208-217, games/tokenformula/TheNabbitsTokenFormula.java:8, games/interfaces/Minigame.java:185-195"
+      }
+     ]
+    },
     "howToPlay": [
      {
       "text": "Everyone starts as Fleeing and is sent to a random spot in the play areas, and your inventory is saved and cleared. One random player becomes The Nabbit, and chat tells everyone to run.",
@@ -1972,7 +2189,34 @@
       "text": "The server-wide token multiplier is 1.0 by default.",
       "src": "configurable/Config.java:42-43, items/TokenExchanging.java:38"
      }
-    ]
+    ],
+    "storyboard": {
+     "values": {
+      "greenRoundSeconds": 11,
+      "dontMoveSeconds": 5,
+      "panels": 12,
+      "purplePanels": 3,
+      "panelsPerToken": 2,
+      "maxTokens": 13
+     },
+     "beats": [
+      {
+       "caption": "Stand on the called block",
+       "sub": "Each round names 1 block. Get onto it before the bar runs out: 11 seconds at first, 4 at the end.",
+       "src": "games/logic/PanelParty.java:725-731, games/logic/PanelParty.java:743-758, games/logic/PanelParty.java:862-865"
+      },
+      {
+       "caption": "Every other block is removed",
+       "sub": "For 5 seconds only the called block is left. Anyone not standing on it falls and is out.",
+       "src": "games/logic/PanelParty.java:759-789, games/logic/PanelParty.java:674, games/logic/PanelParty.java:474, games/logic/PanelParty.java:483"
+      },
+      {
+       "caption": "1 token per 2 panels survived",
+       "sub": "Plus 1 per purple panel, up to 13. Surviving a 12-panel map pays 9. Winning adds nothing.",
+       "src": "games/tokenformula/PanelPartyTokenFormula.java:17-21, games/logic/PanelParty.java:111-112, games/logic/PanelParty.java:894-906, games/logic/PanelParty.java:577"
+      }
+     ]
+    }
    }
   },
   {
@@ -2276,7 +2520,33 @@
       "text": "If the server has MineBattle structure files installed, each player has a 50% chance that a random structure is placed in their spawn pocket, and they spawn in an extra empty pocket instead. Without those files there are no structures.",
       "src": "games/logic/MineBattle.java:1526-1566, games/logic/MineBattle.java:236-245"
      }
-    ]
+    ],
+    "storyboard": {
+     "values": {
+      "pointsPerMinute": 1,
+      "pointsPerKill": 2,
+      "maxTokens": 12,
+      "sightBlocks": 10,
+      "minutesAlive": 4
+     },
+     "beats": [
+      {
+       "caption": "Dig out and gear up",
+       "sub": "You start sealed in deepslate. Ores give you gear, and every full minute alive is 1 point.",
+       "src": "games/logic/MineBattle.java:568-659, games/logic/MineBattle.java:1242-1284, games/logic/MineBattle.java:119, games/logic/MineBattle.java:414-421"
+      },
+      {
+       "caption": "Find a player and fight",
+       "sub": "You see players within 10 blocks if nothing solid is between you. A kill is 2 points.",
+       "src": "games/logic/MineBattle.java:676-701, games/logic/MineBattle.java:754-795, games/logic/MineBattle.java:120, games/logic/MineBattle.java:1158-1165"
+      },
+      {
+       "caption": "1 token per point, up to 12",
+       "sub": "4 minutes alive and 1 kill is 4 + 2 = 6 tokens. You need kills to get near 12.",
+       "src": "games/logic/MineBattle.java:119-120, games/logic/MineBattle.java:184, games/tokenformula/FlatIntTokenFormula.java:18-20"
+      }
+     ]
+    }
    }
   },
   {
@@ -2822,7 +3092,35 @@
       "text": "Soccer is in the default list for automatic games (with Bomberman and Incursion), but automatic games are switched off by default.",
       "src": "configurable/Config.java:31, configurable/Config.java:52-56"
      }
-    ]
+    ],
+    "storyboard": {
+     "values": {
+      "pointsPerGoal": 10,
+      "pointsToWin": 30,
+      "baseTokens": 3,
+      "playsPerToken": 2,
+      "winBonus": 2,
+      "maxTokens": 15,
+      "examplePlays": 12
+     },
+     "beats": [
+      {
+       "caption": "Run into the ball",
+       "sub": "The faster you run at it, the harder it goes. Touches like a First touch or a Save are plays.",
+       "src": "games/logic/Soccer.java:751-822, games/logic/Soccer.java:1129-1142"
+      },
+      {
+       "caption": "A goal is 10 points",
+       "sub": "The first team to 30 wins. If 90 seconds pass with no goal, the team with more plays gets 10.",
+       "src": "games/logic/Soccer.java:880-907, games/logic/Soccer.java:280-284, games/logic/Soccer.java:324-328, games/logic/Soccer.java:336-359"
+      },
+      {
+       "caption": "3 tokens + 1 per 2 plays",
+       "sub": "Plus 2 if your team is ahead at the end, up to 15. Leaving early gives up all of them.",
+       "src": "games/tokenformula/SoccerTokenFormula.java:8-17, games/logic/Soccer.java:444-459, games/logic/Soccer.java:209-216"
+      }
+     ]
+    }
    }
   },
   {
@@ -3142,7 +3440,34 @@
       "text": "Orb spawn spots, boss rooms and the Vanguard's mob type (Drowned with a trident by default, or a bow-using Parched or a potion-throwing Witch), health, respawn time and egg drop count are set per map. A map with no boss rooms has no Vanguards.",
       "src": "configurable/sectors/IncursionDefinition.java:77-90, configurable/sectors/IncursionDefinition.java:279-301, games/logic/Incursion.java:289-294"
      }
-    ]
+    ],
+    "storyboard": {
+     "values": {
+      "holePoints": 100,
+      "killPoints": 25,
+      "kills": 2,
+      "pointsPerToken": 75,
+      "baseTokens": 3,
+      "maxTokens": 13
+     },
+     "beats": [
+      {
+       "caption": "Dive into the enemy hole",
+       "sub": "Get past the other team and jump into their hole. That's 100 points, then you go back to your spawn.",
+       "src": "games/logic/Incursion.java:777-794, games/logic/Incursion.java:1910-1918, configurable/sectors/IncursionDefinition.java:53-54"
+      },
+      {
+       "caption": "Kills add 25 each",
+       "sub": "Taking down an enemy is 25 points, so a hole is worth 4 kills. Nothing ever takes points away.",
+       "src": "games/logic/Incursion.java:1945-1958, configurable/sectors/IncursionDefinition.java:53-57, games/logic/Incursion.java:791-794"
+      },
+      {
+       "caption": "3 tokens plus 1 per 75 points",
+       "sub": "Up to 13. 1 hole and 2 kills is 150 points, so 5 tokens. Only your own points count, win or lose.",
+       "src": "games/tokenformula/IncursionTokenFormula.java:7-8, games/tokenformula/IncursionTokenFormula.java:18, configurable/sectors/IncursionDefinition.java:59-60, games/logic/Incursion.java:498-503"
+      }
+     ]
+    }
    }
   },
   {
@@ -3429,7 +3754,40 @@
       "text": "Bomb damage is the game's normal TNT damage; the code doesn't change it. Not tested here.",
       "src": "games/logic/Bomberman.java:462-464, games/logic/Bomberman.java:551-570"
      }
-    ]
+    ],
+    "storyboard": {
+     "values": {
+      "fuseSeconds": 1.5,
+      "blastRadius": 2,
+      "pointsPerColumn": 1,
+      "pointsPerKill": 60,
+      "roundWinPoints": 30,
+      "baseTokens": 3,
+      "scoreTokens": 10,
+      "winBonusTokens": 2,
+      "maxTokens": 13,
+      "exampleColumns": 150,
+      "exampleKills": 1,
+      "exampleTarget": 1068
+     },
+     "beats": [
+      {
+       "caption": "Drop TNT to clear blocks",
+       "sub": "Your bomb goes off after 1.5 seconds and clears every soft column within 2 blocks, 1 point each.",
+       "src": "games/logic/Bomberman.java:77-79, games/logic/Bomberman.java:440-469, games/logic/Bomberman.java:480-495"
+      },
+      {
+       "caption": "Catch other players in the blast",
+       "sub": "A kill with your bomb is 60 points, and being the last one standing wins the round for 30 more.",
+       "src": "games/logic/Bomberman.java:82-83, games/logic/Bomberman.java:717-723, games/logic/Bomberman.java:290-295"
+      },
+      {
+       "caption": "3 to 13 tokens by score",
+       "sub": "You get 3, plus up to 10 as your score nears the target, plus 2 if you won a round. Max 13.",
+       "src": "games/tokenformula/BombermanTokenFormula.java:8-10, games/tokenformula/BombermanTokenFormula.java:18-28, games/logic/Bomberman.java:226-232"
+      }
+     ]
+    }
    }
   }
  ]

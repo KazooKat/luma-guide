@@ -562,9 +562,9 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
 .sb-ring { fill: none; stroke: var(--accent); stroke-width: 2; opacity: .45; }
 .sb-tok { fill: var(--sb-token-off); }
 .sb-tok.on { fill: var(--sb-token); }
-.sb-read { fill: var(--sb-token); font-family: var(--display) !important; font-weight: 800; font-size: 26px; }
-.sb-lbl { fill: var(--text-2); font-size: 12px; font-weight: 600; }
-.sb-lbl.muted { fill: var(--muted); font-size: 11px; }
+.sb-read { fill: var(--sb-token); font-family: var(--display) !important; font-weight: 800; font-size: 28px; }
+.sb-lbl { fill: var(--text-2); font-size: 14px; font-weight: 600; }
+.sb-lbl.muted { fill: var(--muted); font-size: 12px; }
 .sb-ink { fill: var(--text); }
 .sb-line { fill: none; stroke: var(--sb-rival); stroke-width: 1.5; stroke-linecap: round; }
 .sb-line.dash { stroke-dasharray: 4 4; }

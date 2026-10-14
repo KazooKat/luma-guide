@@ -285,7 +285,33 @@
         "text": "If the server has MineBattle structure files installed, each player has a 50% chance that a random structure is placed in their spawn pocket, and they spawn in an extra empty pocket instead. Without those files there are no structures.",
         "src": "games/logic/MineBattle.java:1526-1566, games/logic/MineBattle.java:236-245"
       }
-    ]
+    ],
+    "storyboard": {
+      "values": {
+        "pointsPerMinute": 1,
+        "pointsPerKill": 2,
+        "maxTokens": 12,
+        "sightBlocks": 10,
+        "minutesAlive": 4
+      },
+      "beats": [
+        {
+          "caption": "Dig out and gear up",
+          "sub": "You start sealed in deepslate. Ores give you gear, and every full minute alive is 1 point.",
+          "src": "games/logic/MineBattle.java:568-659, games/logic/MineBattle.java:1242-1284, games/logic/MineBattle.java:119, games/logic/MineBattle.java:414-421"
+        },
+        {
+          "caption": "Find a player and fight",
+          "sub": "You see players within 10 blocks if nothing solid is between you. A kill is 2 points.",
+          "src": "games/logic/MineBattle.java:676-701, games/logic/MineBattle.java:754-795, games/logic/MineBattle.java:120, games/logic/MineBattle.java:1158-1165"
+        },
+        {
+          "caption": "1 token per point, up to 12",
+          "sub": "4 minutes alive and 1 kill is 4 + 2 = 6 tokens. You need kills to get near 12.",
+          "src": "games/logic/MineBattle.java:119-120, games/logic/MineBattle.java:184, games/tokenformula/FlatIntTokenFormula.java:18-20"
+        }
+      ]
+    }
   },
   {
     "key": "soccer",
@@ -558,6 +584,34 @@
         "text": "Soccer is in the default list for automatic games (with Bomberman and Incursion), but automatic games are switched off by default.",
         "src": "configurable/Config.java:31, configurable/Config.java:52-56"
       }
-    ]
+    ],
+    "storyboard": {
+      "values": {
+        "pointsPerGoal": 10,
+        "pointsToWin": 30,
+        "baseTokens": 3,
+        "playsPerToken": 2,
+        "winBonus": 2,
+        "maxTokens": 15,
+        "examplePlays": 12
+      },
+      "beats": [
+        {
+          "caption": "Run into the ball",
+          "sub": "The faster you run at it, the harder it goes. Touches like a First touch or a Save are plays.",
+          "src": "games/logic/Soccer.java:751-822, games/logic/Soccer.java:1129-1142"
+        },
+        {
+          "caption": "A goal is 10 points",
+          "sub": "The first team to 30 wins. If 90 seconds pass with no goal, the team with more plays gets 10.",
+          "src": "games/logic/Soccer.java:880-907, games/logic/Soccer.java:280-284, games/logic/Soccer.java:324-328, games/logic/Soccer.java:336-359"
+        },
+        {
+          "caption": "3 tokens + 1 per 2 plays",
+          "sub": "Plus 2 if your team is ahead at the end, up to 15. Leaving early gives up all of them.",
+          "src": "games/tokenformula/SoccerTokenFormula.java:8-17, games/logic/Soccer.java:444-459, games/logic/Soccer.java:209-216"
+        }
+      ]
+    }
   }
 ]

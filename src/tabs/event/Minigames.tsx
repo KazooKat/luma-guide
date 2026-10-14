@@ -55,10 +55,11 @@ export function MinigameDetail({ slug }: { slug: string }) {
         <ul class="wu-bullets">{lines.map((l, i) => <li key={i}><span>{l.text}{notes.cite(l.src)}</span></li>)}</ul>
       </div>
     ) : null;
-  // The storyboard sits under the summary, so its 3 beats are cited first.
+  // The storyboard sits under the summary, so its 3 beats are cited first. Keyed by game so moving to another game's
+  // page starts its storyboard fresh instead of keeping the last one's beat and pause state.
   const Scene = w?.storyboard ? SCENES[g.key] : undefined;
   const story = w?.storyboard && Scene
-    ? <StoryboardPlayer name={g.name} storyboard={w.storyboard} Scene={Scene} cites={w.storyboard.beats.map((b) => notes.cite(b.src))} />
+    ? <StoryboardPlayer key={g.key} name={g.name} storyboard={w.storyboard} Scene={Scene} cites={w.storyboard.beats.map((b) => notes.cite(b.src))} />
     : null;
   let steps: JSX.Element | null = null;
   if (w?.howToPlay?.length) {

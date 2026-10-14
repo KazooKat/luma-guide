@@ -3,7 +3,9 @@ import data from '../../data/event.json';
 import type { EventData, EventMinigame } from '../../data/types';
 import type { SourceRepo } from '../items/Writeup';
 
-export const EVENT = data as EventData;
+// Through unknown: TypeScript types the JSON as a union of every guide's shape, so storyboard values (different names
+// per game) no longer overlap EventData. scripts/build-event.mjs checks the shape before it writes the file.
+export const EVENT = data as unknown as EventData;
 export const META = EVENT.meta;
 export const EVENTS_REPO: SourceRepo = { url: 'https://github.com/LumaLibre/luma-events', path: 'src/main/java/dev/lumas/events' };
 export const EVENTS_REF = EVENT.commit.slice(0, 7);

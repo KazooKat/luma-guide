@@ -3,7 +3,7 @@ import data from '../data/event.json';
 import type { EventData } from '../data/types';
 import { actionsForChance, applyPayout, chanceWithin, deliver, jobTokenChance } from './event';
 
-const EVENT = data as EventData;
+const EVENT = data as unknown as EventData; // see src/tabs/event/common.tsx
 
 /** Seeded PRNG so the simulation is deterministic. */
 function mulberry32(seed: number) {

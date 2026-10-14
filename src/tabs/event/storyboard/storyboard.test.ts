@@ -5,7 +5,7 @@ import type { EventData, MinigameGuide } from '../../../data/types';
 import { SCENE_FILES, SCENES } from './scenes';
 import { BEAT_MS, beatAt, type Beat } from './Storyboard';
 
-const EVENT = data as EventData;
+const EVENT = data as unknown as EventData; // see src/tabs/event/common.tsx
 const GUIDES = EVENT.minigames.flatMap((g) => (g.guide ? [g.guide] : []));
 
 /** Every number written in a piece of text ("1,080 points", "22.5 seconds", "33%"). */

@@ -302,6 +302,33 @@
         "text": "Orb spawn spots, boss rooms and the Vanguard's mob type (Drowned with a trident by default, or a bow-using Parched or a potion-throwing Witch), health, respawn time and egg drop count are set per map. A map with no boss rooms has no Vanguards.",
         "src": "configurable/sectors/IncursionDefinition.java:77-90, configurable/sectors/IncursionDefinition.java:279-301, games/logic/Incursion.java:289-294"
       }
-    ]
+    ],
+    "storyboard": {
+      "values": {
+        "holePoints": 100,
+        "killPoints": 25,
+        "kills": 2,
+        "pointsPerToken": 75,
+        "baseTokens": 3,
+        "maxTokens": 13
+      },
+      "beats": [
+        {
+          "caption": "Dive into the enemy hole",
+          "sub": "Get past the other team and jump into their hole. That's 100 points, then you go back to your spawn.",
+          "src": "games/logic/Incursion.java:777-794, games/logic/Incursion.java:1910-1918, configurable/sectors/IncursionDefinition.java:53-54"
+        },
+        {
+          "caption": "Kills add 25 each",
+          "sub": "Taking down an enemy is 25 points, so a hole is worth 4 kills. Nothing ever takes points away.",
+          "src": "games/logic/Incursion.java:1945-1958, configurable/sectors/IncursionDefinition.java:53-57, games/logic/Incursion.java:791-794"
+        },
+        {
+          "caption": "3 tokens plus 1 per 75 points",
+          "sub": "Up to 13. 1 hole and 2 kills is 150 points, so 5 tokens. Only your own points count, win or lose.",
+          "src": "games/tokenformula/IncursionTokenFormula.java:7-8, games/tokenformula/IncursionTokenFormula.java:18, configurable/sectors/IncursionDefinition.java:59-60, games/logic/Incursion.java:498-503"
+        }
+      ]
+    }
   }
 ]

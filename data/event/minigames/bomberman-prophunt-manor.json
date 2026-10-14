@@ -268,7 +268,40 @@
         "text": "Bomb damage is the game's normal TNT damage; the code doesn't change it. Not tested here.",
         "src": "games/logic/Bomberman.java:462-464, games/logic/Bomberman.java:551-570"
       }
-    ]
+    ],
+    "storyboard": {
+      "values": {
+        "fuseSeconds": 1.5,
+        "blastRadius": 2,
+        "pointsPerColumn": 1,
+        "pointsPerKill": 60,
+        "roundWinPoints": 30,
+        "baseTokens": 3,
+        "scoreTokens": 10,
+        "winBonusTokens": 2,
+        "maxTokens": 13,
+        "exampleColumns": 150,
+        "exampleKills": 1,
+        "exampleTarget": 1068
+      },
+      "beats": [
+        {
+          "caption": "Drop TNT to clear blocks",
+          "sub": "Your bomb goes off after 1.5 seconds and clears every soft column within 2 blocks, 1 point each.",
+          "src": "games/logic/Bomberman.java:77-79, games/logic/Bomberman.java:440-469, games/logic/Bomberman.java:480-495"
+        },
+        {
+          "caption": "Catch other players in the blast",
+          "sub": "A kill with your bomb is 60 points, and being the last one standing wins the round for 30 more.",
+          "src": "games/logic/Bomberman.java:82-83, games/logic/Bomberman.java:717-723, games/logic/Bomberman.java:290-295"
+        },
+        {
+          "caption": "3 to 13 tokens by score",
+          "sub": "You get 3, plus up to 10 as your score nears the target, plus 2 if you won a round. Max 13.",
+          "src": "games/tokenformula/BombermanTokenFormula.java:8-10, games/tokenformula/BombermanTokenFormula.java:18-28, games/logic/Bomberman.java:226-232"
+        }
+      ]
+    }
   },
   {
     "key": "prop-hunt",
@@ -480,7 +513,34 @@
         "text": "How far the Seeker's clue sounds carry is up to the game's normal sound rules. Not tested here.",
         "src": "games/logic/PropHunt.java:674-675"
       }
-    ]
+    ],
+    "storyboard": {
+      "values": {
+        "hidingSeconds": 40,
+        "seekingMinutes": 5,
+        "secondsPerPoint": 40,
+        "minTokens": 3,
+        "maxTokens": 13,
+        "seekerCatches": 1
+      },
+      "beats": [
+        {
+          "caption": "Hide as a block",
+          "sub": "While the Seeker waits 40 seconds, left-click a block to look like it, then right-click to lock in place.",
+          "src": "games/logic/PropHunt.java:112-116, games/logic/PropHunt.java:452-484, games/logic/PropHunt.java:529-598"
+        },
+        {
+          "caption": "Stay uncaught to score",
+          "sub": "You get 1 point every 40 seconds until caught. The Seeker catches with 1 hit and gets 1 point per catch.",
+          "src": "games/logic/PropHunt.java:154-178, games/logic/PropHunt.java:423-427, games/logic/PropHunt.java:233-276, games/logic/PropHunt.java:704, games/logic/PropHunt.java:723-724"
+        },
+        {
+          "caption": "Your score is your tokens",
+          "sub": "At least 3 and at most 13. A Hider never caught ends on 8, and a Seeker with 1 catch still gets 3.",
+          "src": "games/tokenformula/PropHuntTokenFormula.java:6-9, games/logic/PropHunt.java:423-427"
+        }
+      ]
+    }
   },
   {
     "key": "manor",
@@ -672,6 +732,37 @@
         "text": "Manor isn't in the default automatic rotation.",
         "src": "configurable/Config.java:52-56"
       }
-    ]
+    ],
+    "storyboard": {
+      "values": {
+        "hunterSeesNear": 6,
+        "hunterSeesFar": 15,
+        "hunterDelaySeconds": 15,
+        "timeMinutes": 2,
+        "timeSeconds": 15,
+        "catchBonusSeconds": 15,
+        "secondsPerPoint": 40,
+        "bonusTokens": 2,
+        "maxTokens": 15,
+        "hunterCatches": 6
+      },
+      "beats": [
+        {
+          "caption": "Stay 6 to 15 blocks from the Hunter",
+          "sub": "The Hunter can't see you in that band, only closer or farther out. 1 hit from them catches you.",
+          "src": "games/logic/Manor.java:366-370, games/logic/Manor.java:203-220, games/logic/Manor.java:523-532"
+        },
+        {
+          "caption": "Stay uncaught to score",
+          "sub": "You get 1 point about every 40 seconds. Each catch gives the Hunter 1 point and adds 15 seconds.",
+          "src": "games/logic/Manor.java:150-161, games/logic/Manor.java:472-477, games/logic/Manor.java:489, games/logic/Manor.java:491-499"
+        },
+        {
+          "caption": "Your score plus 2 tokens",
+          "sub": "Paid once at the end, up to 15. A Runner with 3 points gets 5, and a Hunter with 6 catches gets 8.",
+          "src": "games/tokenformula/ManorTokenFormula.java:6-9, games/logic/Manor.java:472-477, games/logic/Manor.java:489"
+        }
+      ]
+    }
   }
 ]

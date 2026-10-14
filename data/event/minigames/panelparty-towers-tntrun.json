@@ -206,7 +206,34 @@
         "text": "The server-wide token multiplier is 1.0 by default.",
         "src": "configurable/Config.java:42-43, items/TokenExchanging.java:38"
       }
-    ]
+    ],
+    "storyboard": {
+      "values": {
+        "greenRoundSeconds": 11,
+        "dontMoveSeconds": 5,
+        "panels": 12,
+        "purplePanels": 3,
+        "panelsPerToken": 2,
+        "maxTokens": 13
+      },
+      "beats": [
+        {
+          "caption": "Stand on the called block",
+          "sub": "Each round names 1 block. Get onto it before the bar runs out: 11 seconds at first, 4 at the end.",
+          "src": "games/logic/PanelParty.java:725-731, games/logic/PanelParty.java:743-758, games/logic/PanelParty.java:862-865"
+        },
+        {
+          "caption": "Every other block is removed",
+          "sub": "For 5 seconds only the called block is left. Anyone not standing on it falls and is out.",
+          "src": "games/logic/PanelParty.java:759-789, games/logic/PanelParty.java:674, games/logic/PanelParty.java:474, games/logic/PanelParty.java:483"
+        },
+        {
+          "caption": "1 token per 2 panels survived",
+          "sub": "Plus 1 per purple panel, up to 13. Surviving a 12-panel map pays 9. Winning adds nothing.",
+          "src": "games/tokenformula/PanelPartyTokenFormula.java:17-21, games/logic/PanelParty.java:111-112, games/logic/PanelParty.java:894-906, games/logic/PanelParty.java:577"
+        }
+      ]
+    }
   },
   {
     "key": "towers",
@@ -400,7 +427,34 @@
         "text": "The server-wide token multiplier is 1.0 by default.",
         "src": "configurable/Config.java:42-43, items/TokenExchanging.java:38"
       }
-    ]
+    ],
+    "storyboard": {
+      "values": {
+        "dropSeconds": 9,
+        "firstDropBlocks": 3,
+        "secondDropBlocks": 4,
+        "kills": 3,
+        "endPoint": 1,
+        "maxTokens": 9
+      },
+      "beats": [
+        {
+          "caption": "Build out from your pillar",
+          "sub": "You start on your own 1 block pillar. Every 9 seconds you get a random item, most often 3 or 4 blocks.",
+          "src": "games/logic/Towers.java:124-151, games/logic/Towers.java:535-551, games/logic/Towers.java:557-575"
+        },
+        {
+          "caption": "Knock players off their towers",
+          "sub": "When a player dies, whoever hit them last gets the kill and their whole inventory.",
+          "src": "games/logic/Towers.java:284-322, games/logic/Towers.java:691-706"
+        },
+        {
+          "caption": "Your tokens are your kills + 1",
+          "sub": "The +1 is for dying or for lasting to the end, so only kills earn more. Up to 9.",
+          "src": "games/logic/Towers.java:200-203, games/logic/Towers.java:686-696, games/logic/Towers.java:108, games/tokenformula/FlatIntTokenFormula.java:17-20"
+        }
+      ]
+    }
   },
   {
     "key": "tnt-run",
