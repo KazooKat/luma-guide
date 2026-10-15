@@ -57,6 +57,9 @@ export function Tokens() {
           {META.token.name ? <span>this event's token: <b>{META.token.name}</b></span>
             : tokenType && <span>{META.sourceEvent}'s token was <span class="tier-chip mc"><McLine mini={tokenType.name} /></span></span>}
         </div>
+        {META.token.earnedBy && (
+          <p class="explain-line">The announcement says {META.token.name ?? 'tokens'} come from {META.token.earnedBy}. The odds below are from {META.sourceEvent}'s code.</p>
+        )}
         <div class="source-grid">
           <div class="source">
             <div class="source-head"><Icon id="target" size={32} /><h4>Minigames</h4></div>
@@ -80,7 +83,7 @@ export function Tokens() {
       </section>
 
       <section class="card" aria-label="Minigame payouts">
-        <div class="card-title"><h3>What each minigame pays</h3><span>open a game for the full breakdown</span></div>
+        <div class="card-title"><h3>What each minigame pays</h3>{VISIBLE_GAMES.length > 0 && <span>open a game for the full breakdown</span>}</div>
         <div class="odds-table" role="table" aria-label="Minigame token formulas">
           <div class="odds-row head mg-row" role="row">
             <span role="columnheader">Game</span><span role="columnheader">Tokens</span><span role="columnheader" class="r">Code</span>
@@ -92,7 +95,7 @@ export function Tokens() {
               <span role="cell" class="r"><Src src={g.formula.src}>formula</Src></span>
             </div>
           ))}
-          {NEW_GAMES.map((name) => (
+          {NEW_GAMES.map(({ name }) => (
             <div class="odds-row mg-row" role="row" key={name}>
               <span role="cell"><b>{name}</b></span>
               <span role="cell" class="soft">New this event, its code isn't public yet</span>

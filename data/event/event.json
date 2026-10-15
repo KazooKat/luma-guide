@@ -1,28 +1,36 @@
 {
-  "_readme": "Hand-maintained event facts. npm run event merges this with what it reads from data/luma-events into src/data/event.json. listed=true puts the tab in the nav (labelled with name) while live=false keeps it a preview: every minigame shows, with the scaffolding disclaimer. live=true means the event is running. activeGames lists minigame keys confirmed for this event; once live, only those show. gameNames gives an active game this event's name for it (manor -> Manor 2). newGames names games running this event that the pinned code doesn't have, so they show without a guide. trickOrTreat (null if the event has none) is read in game, like the shop. sourceEvent names the event the luma-events code at data/luma-events.commit was written for; while it differs from name, the pages say the numbers come from that event's code.",
+  "_readme": "Hand-maintained event facts. npm run event merges this with what it reads from data/luma-events into src/data/event.json. listed=true puts the tab in the nav (labelled with name) while live=false keeps it a preview: every minigame shows, with the scaffolding disclaimer. live=true means the event is running. activeGames lists minigame keys confirmed for this event; once live, only those show. newGames lists games running this event that the pinned code doesn't have (name, and a summary from the announcement), so they show without a guide. command, dates, token.name and token.earnedBy come from the event's announcement. trickOrTreat (null if the event has none) is read in game, like the shop. sourceEvent names the event the luma-events code at data/luma-events.commit was written for; while it differs from name, the pages say the numbers come from that event's code.",
   "live": true,
   "listed": true,
   "name": "Luma Nightmares",
   "nameConfirmed": true,
   "sourceEvent": "Lumarine 2026",
+  "command": "lumares",
   "dates": {
-    "start": null,
-    "end": null
+    "start": "2026-10-15",
+    "end": null,
+    "note": "Planned to last at least 2 weeks, and it may be extended."
   },
   "token": {
-    "name": null,
-    "itemId": null
+    "name": "Soul Orbs",
+    "itemId": null,
+    "earnedBy": "working jobs, exploring the Lumares map and playing minigames"
   },
   "charmItemId": null,
-  "activeGames": [
-    "manor"
-  ],
-  "gameNames": {
-    "manor": "Manor 2"
-  },
+  "activeGames": [],
   "newGames": [
-    "Skywars",
-    "Copycat"
+    {
+      "name": "Manor 2",
+      "summary": "A ground up rewrite of Manor. You spawn as a Ghost or a Hunter: Ghosts hunt down and kill every Hunter, and Hunters find artifacts and kill the Ghost with their flashlight."
+    },
+    {
+      "name": "SkyWars",
+      "summary": "Luma's take on the classic minigame, with a border that closes in over time."
+    },
+    {
+      "name": "Copycat",
+      "summary": "A casual memory game with no PvP. Memorize a build in 16 seconds, then restore the parts of it that were removed."
+    }
   ],
   "trickOrTreat": {
     "cooldownHours": 40,

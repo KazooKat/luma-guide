@@ -553,7 +553,7 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
 .mg-card-head b { font-family: var(--display); font-weight: 800; font-size: 19px; color: var(--text); }
 .mg-tokens { font-size: 13px; font-weight: 600; color: var(--accent-strong); }
 .mg-card-new:hover { border-color: var(--border); background: none; }
-.mg-renamed { font-size: 13px; color: var(--muted); }
+.mg-note { font-size: 13px; color: var(--muted); }
 .odds-row.mg-row { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr) 90px; }
 .odds-row.mg-row .soft { font-size: 14px; color: var(--text-2); }
 .odds-row.shop-row { grid-template-columns: minmax(0, 1fr) 100px 80px; }

@@ -1,20 +1,13 @@
 import type { JSX } from 'preact';
 import type { EventMinigame, WriteupLine } from '../../data/types';
 import { makeNotes, Sources } from '../items/Writeup';
-import { codeName, EVENT, EVENTS_REPO, FROM_OLD_CODE, GAME_COUNT, isActive, META, NEW_GAMES, PREVIEW, Src, VISIBLE_GAMES } from './common';
+import { EVENT, EVENTS_REPO, GAME_COUNT, isActive, NEW_GAMES, PREVIEW, Src, VISIBLE_GAMES } from './common';
 import { SCENES } from './storyboard/scenes';
 import { StoryboardPlayer } from './storyboard/Storyboard';
 
 function Badge({ g }: { g: EventMinigame }) {
   if (isActive(g)) return <span class="badge good">In this event</span>;
   return PREVIEW ? <span class="badge">Not confirmed</span> : null;
-}
-
-/** For a game this event renamed (Manor 2), says the guide is still the old game's, read from the old code. */
-function RenamedNote({ g }: { g: EventMinigame }) {
-  const from = codeName(g);
-  if (!from || !FROM_OLD_CODE) return null;
-  return <p class="mg-renamed">This guide is for {META.sourceEvent}'s {from}, so {g.name} may play or pay differently.</p>;
 }
 
 export function MinigameList() {
@@ -34,13 +27,13 @@ export function MinigameList() {
             <div class="mg-card-head"><b>{g.name}</b><Badge g={g} /></div>
             <p>{g.guide?.summary ?? 'Guide not written yet.'}</p>
             {g.guide?.tokenLine && <p class="mg-tokens">{g.guide.tokenLine}</p>}
-            <RenamedNote g={g} />
           </a>
         ))}
-        {NEW_GAMES.map((name) => (
-          <div class="mg-card mg-card-new" key={name}>
-            <div class="mg-card-head"><b>{name}</b><span class="badge good">New</span></div>
-            <p>New this event. There's no guide for it yet, because its code isn't public.</p>
+        {NEW_GAMES.map((n) => (
+          <div class="mg-card mg-card-new" key={n.name}>
+            <div class="mg-card-head"><b>{n.name}</b><span class="badge good">New</span></div>
+            <p>{n.summary}</p>
+            <p class="mg-note">From the announcement. There's no full guide yet, because its code isn't public.</p>
           </div>
         ))}
       </div>
@@ -109,7 +102,6 @@ export function MinigameDetail({ slug }: { slug: string }) {
         <h1>{g.name}</h1>
         <div class="badges"><Badge g={g} />{g.guide?.tokenLine && <span class="badge">{g.guide.tokenLine}</span>}</div>
       </div>
-      <RenamedNote g={g} />
       {w ? (
         <>
           <p class="writeup-summary">{w.summary}</p>

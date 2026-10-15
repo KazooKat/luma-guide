@@ -180,14 +180,14 @@ export interface EventData {
     nameConfirmed: boolean;
     /** The event the pinned luma-events code was written for. */
     sourceEvent: string;
-    dates: { start: string | null; end: string | null };
-    token: { name: string | null; itemId: string | null };
+    /** The command the announcement gives, when it differs from the code's root command. */
+    command?: string | null;
+    dates: { start: string | null; end: string | null; note?: string | null };
+    token: { name: string | null; itemId: string | null; earnedBy?: string | null };
     charmItemId: string | null;
     activeGames: string[];
-    /** This event's name for an active game, by key, when it differs from the code's (manor -> Manor 2). */
-    gameNames: Record<string, string>;
-    /** Games running this event that the pinned code doesn't have, so they have no guide. */
-    newGames: string[];
+    /** Games running this event that the pinned code doesn't have, so they have no guide. Summary from the announcement. */
+    newGames: { name: string; summary: string }[];
     /** Read in game, not from the code. Null when the event has no trick or treating. */
     trickOrTreat: { cooldownHours: number; reward: string; readOn: string | null } | null;
     shop: { readOn: string | null; where: string | null; items: ShopItem[] };

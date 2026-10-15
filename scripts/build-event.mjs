@@ -189,7 +189,6 @@ const meta = JSON.parse(readFileSync(root('data/event/event.json'), 'utf8'));
 delete meta._readme;
 const itemIds = new Set(JSON.parse(readFileSync(root('src/data/items.json'), 'utf8')).items.map((i) => i.id));
 for (const k of meta.activeGames ?? []) if (!guides.has(k)) errors.push(`event.json activeGames: no minigame guide with key "${k}"`);
-meta.gameNames ??= {};
 meta.trickOrTreat ??= null;
 if (meta.trickOrTreat) {
   const t = meta.trickOrTreat;
@@ -197,10 +196,9 @@ if (meta.trickOrTreat) {
   if (!t.reward) errors.push('event.json trickOrTreat.reward: say what it gives');
 }
 meta.newGames ??= [];
-for (const k of Object.keys(meta.gameNames)) if (!meta.activeGames.includes(k)) errors.push(`event.json gameNames: "${k}" isn't in activeGames`);
-for (const n of meta.newGames) {
-  if (typeof n !== 'string' || !n.trim()) errors.push('event.json newGames: each entry is a game name');
-  else if ([...guides.values()].some((g) => g.name.toLowerCase() === n.toLowerCase())) errors.push(`event.json newGames: "${n}" already has a guide, put its key in activeGames`);
+for (const [i, n] of meta.newGames.entries()) {
+  if (!n?.name?.trim() || !n.summary?.trim()) errors.push(`event.json newGames[${i}]: needs a name and a summary`);
+  else if ([...guides.values()].some((g) => g.name.toLowerCase() === n.name.toLowerCase())) errors.push(`event.json newGames: "${n.name}" already has a guide, put its key in activeGames`);
 }
 for (const [i, s] of (meta.shop?.items ?? []).entries()) {
   if (!s.name) errors.push(`event.json shop.items[${i}]: needs a name`);

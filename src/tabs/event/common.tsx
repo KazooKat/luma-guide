@@ -17,18 +17,11 @@ export const FROM_OLD_CODE = META.sourceEvent !== META.name;
 
 const ACTIVE = new Set(META.activeGames);
 export const isActive = (g: EventMinigame) => ACTIVE.has(g.key);
-/** Once live, only the games confirmed for this event, under this event's name for them; in preview, all of them. */
-export const VISIBLE_GAMES = EVENT.minigames
-  .filter((g) => PREVIEW || isActive(g))
-  .map((g) => (!PREVIEW && META.gameNames[g.key] ? { ...g, name: META.gameNames[g.key] } : g));
+/** Once live, only the games confirmed for this event; in preview, all of them. */
+export const VISIBLE_GAMES = EVENT.minigames.filter((g) => PREVIEW || isActive(g));
 /** Games running this event that the pinned code doesn't have, so there's no guide for them. Only once live. */
 export const NEW_GAMES = PREVIEW ? [] : META.newGames;
 export const GAME_COUNT = VISIBLE_GAMES.length + NEW_GAMES.length;
-/** The code's name for a game this event renamed (Manor for Manor 2), or null. */
-export function codeName(g: EventMinigame) {
-  const name = EVENT.minigames.find((x) => x.key === g.key)?.name;
-  return name && name !== g.name ? name : null;
-}
 /** "Luma Nightmares'" rather than "Luma Nightmares's". */
 export const possessive = (name: string) => (name.endsWith('s') ? `${name}'` : `${name}'s`);
 

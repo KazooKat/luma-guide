@@ -13,8 +13,9 @@ export function EventTab({ sub, extra }: { sub?: string; extra?: string }) {
       <section class="intro">
         <h1>{META.name}{!META.nameConfirmed && <span class="badge warn title-badge">name not confirmed</span>}</h1>
         <p>
-          The seasonal event: minigames that pay event tokens, and a shop to spend them in. Everything here is read from the event plugin's
-          code, with the source linked, apart from shop prices, which are read in game.
+          The seasonal event: minigames that pay event tokens, and a shop to spend them in. Rules and numbers are read from the event
+          plugin's code, with the source linked. Shop prices and trick or treating are read in game, and anything from the event's
+          announcement says so.
         </p>
       </section>
       <Banners />

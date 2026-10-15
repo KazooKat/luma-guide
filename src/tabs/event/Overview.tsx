@@ -2,7 +2,7 @@ import { Fragment } from 'preact';
 import { AtlasIcon } from '../../components/AtlasIcon';
 import { BY_ID } from '../items/common';
 import { plain } from '../../lib/minimessage';
-import { EVENT, GAME_COUNT, META, Src } from './common';
+import { EVENT, GAME_COUNT, META, Src, VISIBLE_GAMES } from './common';
 
 const COMMAND_TEXT: Record<string, string> = {
   join: 'Join the minigame that is starting (or click the announcement in chat).',
@@ -11,6 +11,9 @@ const COMMAND_TEXT: Record<string, string> = {
   claim: 'Claim the event charm, once you have played at least 1 minigame.',
   formula: 'Listed as a player command, but it does nothing yet: the command is empty in the code.',
 };
+
+/** Whether a YYYY-MM-DD date has come, in UTC like fmtDate. */
+const started = (d: string) => new Date(`${d}T00:00:00Z`).getTime() <= Date.now();
 
 function fmtDate(d: string | null) {
   if (!d) return null;
@@ -29,7 +32,9 @@ export function Overview() {
       <section class="card" aria-label="When">
         <div class="card-title"><h3>When</h3></div>
         <p class="explain-line">
-          {start && end ? <>From <b>{start}</b> to <b>{end}</b>.</> : start ? <>Starts <b>{start}</b>.</> : <>Dates haven't been announced yet.</>}
+          {start && end ? <>From <b>{start}</b> to <b>{end}</b>.</>
+            : start ? <>{started(META.dates.start!) ? 'Started' : 'Starts'} <b>{start}</b>.</> : <>Dates haven't been announced yet.</>}
+          {META.dates.note && <> {META.dates.note}</>}
         </p>
       </section>
 
@@ -46,7 +51,8 @@ export function Overview() {
         <div class="card-title"><h3>How the event works</h3></div>
         <ol class="wu-steps">
           <li><span class="step-num" aria-hidden="true">1</span><span>
-            Use <code>/{EVENT.commands.root}</code> to go to the event area. <Src src="commands/CommandManager.java:27-40">source</Src>
+            {META.command ? <>Use <code>/{META.command}</code> to get started, as the event's announcement says.</>
+              : <>Use <code>/{EVENT.commands.root}</code> to go to the event area. <Src src="commands/CommandManager.java:27-40">source</Src></>}
           </span></li>
           <li><span class="step-num" aria-hidden="true">2</span><span>
             Minigames start on their own, by default every <b>{s.cooldownMinutes / 60} hours</b>, going through the event's games in a fixed order.
@@ -55,7 +61,7 @@ export function Overview() {
           </span></li>
           <li><span class="step-num" aria-hidden="true">3</span><span>
             How well you do turns into event tokens, using each game's own formula.
-            {' '}See <a href="#/event/minigames">Minigames</a> ({GAME_COUNT} game{GAME_COUNT === 1 ? '' : 's'}) for how each one plays and pays.
+            {' '}See <a href="#/event/minigames">Minigames</a> ({GAME_COUNT} game{GAME_COUNT === 1 ? '' : 's'}){VISIBLE_GAMES.length ? ' for how each one plays and pays' : ''}.
           </span></li>
           <li><span class="step-num" aria-hidden="true">4</span><span>
             You can also get tokens from jobs and from inviting new players to your town. <a href="#/event/tokens">Tokens</a> has the odds.
@@ -85,6 +91,7 @@ export function Overview() {
             <p class="note">
               In {META.sourceEvent}, <code>/{EVENT.commands.root}</code> also worked as {EVENT.commands.aliases.map((a, i) => <Fragment key={a}>{i > 0 && ', '}<code>/{a}</code></Fragment>)}.
               Each event usually gets its own aliases.
+              {META.command && <> For {META.name}, <code>/{META.command}</code> should work in place of <code>/{EVENT.commands.root}</code> in all of these.</>}
             </p>
           )}
         </section>
