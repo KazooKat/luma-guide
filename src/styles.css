@@ -552,6 +552,8 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
 .mg-card-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .mg-card-head b { font-family: var(--display); font-weight: 800; font-size: 19px; color: var(--text); }
 .mg-tokens { font-size: 13px; font-weight: 600; color: var(--accent-strong); }
+.mg-card-new:hover { border-color: var(--border); background: none; }
+.mg-renamed { font-size: 13px; color: var(--muted); }
 .odds-row.mg-row { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr) 90px; }
 .odds-row.mg-row .soft { font-size: 14px; color: var(--text-2); }
 .odds-row.shop-row { grid-template-columns: minmax(0, 1fr) 100px 80px; }
@@ -678,7 +680,8 @@ small.block { display: block; }
   .odds-row { grid-template-columns: minmax(0, 1fr) 110px; }
   .odds-row > :last-child { display: none; }
   .odds-row.mg-row { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); }
-  .odds-row.shop-row { grid-template-columns: minmax(0, 1fr) 80px; }
+  .odds-row.shop-row { grid-template-columns: minmax(0, 1fr) 56px 52px; }
+  .odds-row.shop-row > :last-child { display: block; } /* the limit matters more than the bars other tables drop */
   .tok-tiles { grid-template-columns: 1fr; }
   .odds-row.job-hour { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
   .odds-row.job-hour > :nth-child(3) { display: none; }

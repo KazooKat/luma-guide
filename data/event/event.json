@@ -1,9 +1,9 @@
 {
-  "_readme": "Hand-maintained event facts. npm run event merges this with what it reads from data/luma-events into src/data/event.json. listed=true puts the tab in the nav (labelled with name) while live=false keeps it a preview: every minigame shows, with the scaffolding disclaimer. live=true means the event is running. activeGames lists minigame keys confirmed for this event; once live, only those show. sourceEvent names the event the luma-events code at data/luma-events.commit was written for; while it differs from name, the pages say the numbers come from that event's code.",
-  "live": false,
+  "_readme": "Hand-maintained event facts. npm run event merges this with what it reads from data/luma-events into src/data/event.json. listed=true puts the tab in the nav (labelled with name) while live=false keeps it a preview: every minigame shows, with the scaffolding disclaimer. live=true means the event is running. activeGames lists minigame keys confirmed for this event; once live, only those show. gameNames gives an active game this event's name for it (manor -> Manor 2). newGames names games running this event that the pinned code doesn't have, so they show without a guide. trickOrTreat (null if the event has none) is read in game, like the shop. sourceEvent names the event the luma-events code at data/luma-events.commit was written for; while it differs from name, the pages say the numbers come from that event's code.",
+  "live": true,
   "listed": true,
-  "name": "Lumaween 2026",
-  "nameConfirmed": false,
+  "name": "Luma Nightmares",
+  "nameConfirmed": true,
   "sourceEvent": "Lumarine 2026",
   "dates": {
     "start": null,
@@ -14,11 +14,42 @@
     "itemId": null
   },
   "charmItemId": null,
-  "activeGames": [],
+  "activeGames": [
+    "manor"
+  ],
+  "gameNames": {
+    "manor": "Manor 2"
+  },
+  "newGames": [
+    "Skywars",
+    "Copycat"
+  ],
+  "trickOrTreat": {
+    "cooldownHours": 40,
+    "reward": "candy",
+    "readOn": "2026-10-15"
+  },
   "shop": {
-    "readOn": null,
+    "readOn": "2026-10-15",
     "where": null,
-    "items": []
+    "items": [
+      {"name": "Sibyl's Gospel", "cost": 175, "limit": 1},
+      {"name": "Parallix Star", "cost": 175, "limit": 1},
+      {"name": "Playtime Harrower", "cost": 175, "limit": 1},
+      {"name": "Sibyl's Requiem", "cost": 150, "limit": 2},
+      {"name": "Playtime Mattock", "cost": 165, "limit": 2},
+      {"name": "Autumn's Harvest", "cost": 200, "limit": 1},
+      {"name": "Vitral Shovel", "cost": 125, "limit": 2},
+      {"name": "Illustrious Mattock", "cost": 165, "limit": 2},
+      {"name": "Sibyl's Slippers", "cost": 160, "limit": 2},
+      {"name": "Button Trousers", "cost": 150, "limit": 2},
+      {"name": "Playtime Bundle", "cost": 125, "limit": 2},
+      {"name": "Parallix Strides", "cost": 165, "limit": 2},
+      {"name": "Playtime Goggles", "cost": 150, "limit": 1},
+      {"name": "Witching Wings", "cost": 265, "limit": 1, "note": "12 in stock for the whole server"},
+      {"name": "Nametags", "cost": 35, "limit": null, "note": "Price for each one"},
+      {"name": "Particles", "cost": 64, "limit": null, "note": "Price for each one"}
+    ]
   },
   "notes": []
 }

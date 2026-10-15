@@ -184,6 +184,12 @@ export interface EventData {
     token: { name: string | null; itemId: string | null };
     charmItemId: string | null;
     activeGames: string[];
+    /** This event's name for an active game, by key, when it differs from the code's (manor -> Manor 2). */
+    gameNames: Record<string, string>;
+    /** Games running this event that the pinned code doesn't have, so they have no guide. */
+    newGames: string[];
+    /** Read in game, not from the code. Null when the event has no trick or treating. */
+    trickOrTreat: { cooldownHours: number; reward: string; readOn: string | null } | null;
     shop: { readOn: string | null; where: string | null; items: ShopItem[] };
     notes: WriteupLine[];
   };

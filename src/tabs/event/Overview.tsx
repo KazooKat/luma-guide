@@ -2,7 +2,7 @@ import { Fragment } from 'preact';
 import { AtlasIcon } from '../../components/AtlasIcon';
 import { BY_ID } from '../items/common';
 import { plain } from '../../lib/minimessage';
-import { EVENT, META, Src, VISIBLE_GAMES } from './common';
+import { EVENT, GAME_COUNT, META, Src } from './common';
 
 const COMMAND_TEXT: Record<string, string> = {
   join: 'Join the minigame that is starting (or click the announcement in chat).',
@@ -23,6 +23,7 @@ export function Overview() {
   const charm = BY_ID.get(charmId);
   const start = fmtDate(META.dates.start);
   const end = fmtDate(META.dates.end);
+  const tot = META.trickOrTreat;
   return (
     <>
       <section class="card" aria-label="When">
@@ -31,6 +32,15 @@ export function Overview() {
           {start && end ? <>From <b>{start}</b> to <b>{end}</b>.</> : start ? <>Starts <b>{start}</b>.</> : <>Dates haven't been announced yet.</>}
         </p>
       </section>
+
+      {tot && (
+        <section class="card" aria-label="Trick or treating">
+          <div class="card-title"><h3>Trick or treating</h3><span>{tot.readOn ? `read in game on ${fmtDate(tot.readOn)}` : 'read in game'}</span></div>
+          <p class="explain-line">
+            Trick or treating gives you {tot.reward}. After that you have to wait <b>{tot.cooldownHours} hours</b> before you can trick or treat again.
+          </p>
+        </section>
+      )}
 
       <section class="card" aria-label="How it works">
         <div class="card-title"><h3>How the event works</h3></div>
@@ -45,7 +55,7 @@ export function Overview() {
           </span></li>
           <li><span class="step-num" aria-hidden="true">3</span><span>
             How well you do turns into event tokens, using each game's own formula.
-            {' '}See <a href="#/event/minigames">Minigames</a> ({VISIBLE_GAMES.length} game{VISIBLE_GAMES.length === 1 ? '' : 's'}) for how each one plays and pays.
+            {' '}See <a href="#/event/minigames">Minigames</a> ({GAME_COUNT} game{GAME_COUNT === 1 ? '' : 's'}) for how each one plays and pays.
           </span></li>
           <li><span class="step-num" aria-hidden="true">4</span><span>
             You can also get tokens from jobs and from inviting new players to your town. <a href="#/event/tokens">Tokens</a> has the odds.

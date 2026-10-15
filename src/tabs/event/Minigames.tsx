@@ -1,7 +1,7 @@
 import type { JSX } from 'preact';
 import type { EventMinigame, WriteupLine } from '../../data/types';
 import { makeNotes, Sources } from '../items/Writeup';
-import { EVENT, EVENTS_REPO, isActive, PREVIEW, Src, VISIBLE_GAMES } from './common';
+import { codeName, EVENT, EVENTS_REPO, FROM_OLD_CODE, GAME_COUNT, isActive, META, NEW_GAMES, PREVIEW, Src, VISIBLE_GAMES } from './common';
 import { SCENES } from './storyboard/scenes';
 import { StoryboardPlayer } from './storyboard/Storyboard';
 
@@ -10,8 +10,15 @@ function Badge({ g }: { g: EventMinigame }) {
   return PREVIEW ? <span class="badge">Not confirmed</span> : null;
 }
 
+/** For a game this event renamed (Manor 2), says the guide is still the old game's, read from the old code. */
+function RenamedNote({ g }: { g: EventMinigame }) {
+  const from = codeName(g);
+  if (!from || !FROM_OLD_CODE) return null;
+  return <p class="mg-renamed">This guide is for {META.sourceEvent}'s {from}, so {g.name} may play or pay differently.</p>;
+}
+
 export function MinigameList() {
-  if (!VISIBLE_GAMES.length) {
+  if (!GAME_COUNT) {
     return (
       <section class="card empty" aria-label="Minigames">
         <p>The minigames for this event haven't been confirmed yet. They'll show here once they are.</p>
@@ -20,14 +27,21 @@ export function MinigameList() {
   }
   return (
     <section class="card" aria-label="Minigames">
-      <div class="card-title"><h3>Minigames</h3><span>{VISIBLE_GAMES.length} game{VISIBLE_GAMES.length === 1 ? '' : 's'}</span></div>
+      <div class="card-title"><h3>Minigames</h3><span>{GAME_COUNT} game{GAME_COUNT === 1 ? '' : 's'}</span></div>
       <div class="mg-grid">
         {VISIBLE_GAMES.map((g) => (
           <a class="mg-card" href={`#/event/minigames/${g.key}`} key={g.key}>
             <div class="mg-card-head"><b>{g.name}</b><Badge g={g} /></div>
             <p>{g.guide?.summary ?? 'Guide not written yet.'}</p>
             {g.guide?.tokenLine && <p class="mg-tokens">{g.guide.tokenLine}</p>}
+            <RenamedNote g={g} />
           </a>
+        ))}
+        {NEW_GAMES.map((name) => (
+          <div class="mg-card mg-card-new" key={name}>
+            <div class="mg-card-head"><b>{name}</b><span class="badge good">New</span></div>
+            <p>New this event. There's no guide for it yet, because its code isn't public.</p>
+          </div>
         ))}
       </div>
     </section>
@@ -95,6 +109,7 @@ export function MinigameDetail({ slug }: { slug: string }) {
         <h1>{g.name}</h1>
         <div class="badges"><Badge g={g} />{g.guide?.tokenLine && <span class="badge">{g.guide.tokenLine}</span>}</div>
       </div>
+      <RenamedNote g={g} />
       {w ? (
         <>
           <p class="writeup-summary">{w.summary}</p>

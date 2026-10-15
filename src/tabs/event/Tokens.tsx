@@ -8,7 +8,7 @@ import { MCMMO_MAX_LEVEL } from '../../lib/mcmmo';
 import { loadJobPrefs, saveJobPrefs, type JobPrefs } from '../jobs/prefs';
 import { AlchemyChart } from './AlchemyChart';
 import { CALC_JOBS, calcJob, jobTokenRow, type JobTokenRow } from './jobTokens';
-import { EVENT, META, Src, VISIBLE_GAMES } from './common';
+import { EVENT, META, NEW_GAMES, Src, VISIBLE_GAMES } from './common';
 
 const alchJob = calcJob('Alchemist');
 const STANDS_DEFAULT = MACHINES.brewing_stand.defaultCount;
@@ -90,6 +90,13 @@ export function Tokens() {
               <span role="cell"><a href={`#/event/minigames/${g.key}`}><b>{g.name}</b></a></span>
               <span role="cell" class="soft">{g.guide?.tokenLine ?? 'See the game\'s page'}</span>
               <span role="cell" class="r"><Src src={g.formula.src}>formula</Src></span>
+            </div>
+          ))}
+          {NEW_GAMES.map((name) => (
+            <div class="odds-row mg-row" role="row" key={name}>
+              <span role="cell"><b>{name}</b></span>
+              <span role="cell" class="soft">New this event, its code isn't public yet</span>
+              <span role="cell" class="r" />
             </div>
           ))}
         </div>

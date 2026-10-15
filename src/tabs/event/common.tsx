@@ -10,15 +10,27 @@ export const META = EVENT.meta;
 export const EVENTS_REPO: SourceRepo = { url: 'https://github.com/LumaLibre/luma-events', path: 'src/main/java/dev/lumas/events' };
 export const EVENTS_REF = EVENT.commit.slice(0, 7);
 
-/** Before the event opens (live: false), every page is a preview with the scaffolding disclaimer, and every minigame shows. */
+/** Until the event is checked in game (live: false), every page is a preview with the scaffolding disclaimer, and every minigame shows. */
 export const PREVIEW = !META.live;
 /** The pinned code was written for an earlier event, so its numbers may still change. */
 export const FROM_OLD_CODE = META.sourceEvent !== META.name;
 
 const ACTIVE = new Set(META.activeGames);
 export const isActive = (g: EventMinigame) => ACTIVE.has(g.key);
-/** Once live, only the games confirmed for this event; in preview, all of them. */
-export const VISIBLE_GAMES = EVENT.minigames.filter((g) => PREVIEW || isActive(g));
+/** Once live, only the games confirmed for this event, under this event's name for them; in preview, all of them. */
+export const VISIBLE_GAMES = EVENT.minigames
+  .filter((g) => PREVIEW || isActive(g))
+  .map((g) => (!PREVIEW && META.gameNames[g.key] ? { ...g, name: META.gameNames[g.key] } : g));
+/** Games running this event that the pinned code doesn't have, so there's no guide for them. Only once live. */
+export const NEW_GAMES = PREVIEW ? [] : META.newGames;
+export const GAME_COUNT = VISIBLE_GAMES.length + NEW_GAMES.length;
+/** The code's name for a game this event renamed (Manor for Manor 2), or null. */
+export function codeName(g: EventMinigame) {
+  const name = EVENT.minigames.find((x) => x.key === g.key)?.name;
+  return name && name !== g.name ? name : null;
+}
+/** "Luma Nightmares'" rather than "Luma Nightmares's". */
+export const possessive = (name: string) => (name.endsWith('s') ? `${name}'` : `${name}'s`);
 
 export const PAGES = [
   ['', 'Overview'],
@@ -44,16 +56,16 @@ export function Banners() {
     <div class="event-banners">
       {PREVIEW && (
         <p class="event-banner preview" role="note">
-          <b>Scaffolding, not verified.</b> {META.name} hasn't started yet, so this whole section is a draft. Nothing here has been
-          checked in game: the minigames, scores and token payouts come from the last event's code, and every minigame is listed even
-          if it won't run this time. It will be updated when the event goes live.
+          <b>Scaffolding, not verified.</b> Nothing in this section has been checked in game for {META.name} yet, so it is a draft:
+          the minigames, scores and token payouts come from the last event's code, and every minigame is listed even if it isn't
+          running this time. It will be updated as each part is checked in game.
         </p>
       )}
       {FROM_OLD_CODE && (
         <p class="event-banner" role="note">
           <b>From {META.sourceEvent}'s code.</b> The numbers here are read from the event plugin as it was for {META.sourceEvent}
           {' '}(<a href={`${EVENTS_REPO.url}/tree/${EVENTS_REF}`} target="_blank" rel="noopener noreferrer">luma-events @ {EVENTS_REF}</a>).
-          {' '}They'll be re-checked once {META.name}'s code is public, so some of them may change.
+          {' '}They'll be re-checked once {possessive(META.name)} code is public, so some of them may change.
         </p>
       )}
     </div>

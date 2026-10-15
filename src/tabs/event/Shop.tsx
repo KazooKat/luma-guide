@@ -3,7 +3,19 @@ import { SuggestButton } from '../../components/SuggestButton';
 import { fmtInt } from '../../lib/format';
 import { plain } from '../../lib/minimessage';
 import { BY_ID } from '../items/common';
+import type { ShopItem } from '../../data/types';
 import { META } from './common';
+
+/**
+ * What the shop costs in total. Items with no limit (nametags, particles) can be bought any number of times, so they
+ * stay out of the total and are listed in `open` instead. With no limits at all, the total is 1 of everything.
+ */
+export function shopTotal(items: ShopItem[]) {
+  const limited = items.filter((s) => s.limit);
+  const open = limited.length ? items.filter((s) => !s.limit).map((s) => s.name) : [];
+  const total = (limited.length ? limited : items).reduce((n, s) => n + s.cost * (s.limit ?? 1), 0);
+  return { total, limited: limited.length, open };
+}
 
 export function Shop() {
   const { items, readOn, where } = META.shop;
@@ -22,7 +34,8 @@ export function Shop() {
     );
   }
 
-  const total = items.reduce((n, s) => n + s.cost * (s.limit ?? 1), 0);
+  const { total, limited, open } = shopTotal(items);
+  const openNames = open.length > 1 ? `${open.slice(0, -1).join(', ')} and ${open[open.length - 1]}` : open[0];
   return (
     <section class="card" aria-label="Shop">
       <div class="card-title">
@@ -51,7 +64,11 @@ export function Shop() {
           );
         })}
       </div>
-      <p class="note">Everything{items.some((s) => s.limit) ? ', up to each limit,' : ''} costs {fmtInt(total)} {token} in total.</p>
+      <p class="note">
+        {!limited ? <>1 of everything costs {fmtInt(total)} {token} in total.</>
+          : !open.length ? <>Everything, up to each limit, costs {fmtInt(total)} {token} in total.</>
+          : <>Everything with a limit, bought up to that limit, costs {fmtInt(total)} {token} in total. {openNames} {open.length > 1 ? 'have' : 'has'} no limit.</>}
+      </p>
     </section>
   );
 }
