@@ -1,25 +1,25 @@
 # job: Cook
-# level: 44
-# source: /jobs browse pasted in chat 2026-10-14 09:19:50 (2 pages; the paste started below the Craft: header)
+# level: 45
+# source: /jobs browse pasted in chat 2026-10-15 02:20:53 (2 pages; page 2 at 02:21:01 continues Smelt: without repeating the header)
 Craft:
-  Bread ->  7.06$ 1.58xp
-  Glistering Melon Slice ->  21.56$ 2.83xp
-  Golden Carrot ->  21.56$ 2.83xp
-  Golden Apple ->  123.13$ 17.45xp
-  Cake ->  36.95$ 6.98xp
-  Cookie ->  7.06$ 1.58xp
-  Pumpkin Pie ->  10.78$ 2.08xp
-  Mushroom Stew ->  15.39$ 6.98xp
-  Beetroot Soup ->  13.86$ 6.98xp
-  Rabbit Stew ->  36.95$ 6.98xp
+  Bread ->  7.19$ 1.61xp
+  Glistering Melon Slice ->  21.97$ 2.88xp
+  Golden Carrot ->  21.97$ 2.88xp
+  Golden Apple ->  125.45$ 17.81xp
+  Cake ->  37.65$ 7.12xp
+  Cookie ->  7.19$ 1.61xp
+  Pumpkin Pie ->  10.98$ 2.12xp
+  Mushroom Stew ->  15.68$ 7.12xp
+  Beetroot Soup ->  14.13$ 7.12xp
+  Rabbit Stew ->  37.65$ 7.12xp
 Smelt:
-  Cooked Beef ->  18.89$ 1.41xp
-  Cooked Porkchop ->  18.89$ 1.41xp
-  Cooked Cod ->  18.89$ 1.41xp
-  Cooked Salmon ->  18.89$ 1.41xp
-  Cooked Chicken ->  18.89$ 1.41xp
-  Cooked Mutton ->  18.89$ 1.41xp
-  Cooked Rabbit ->  22.67$ 1.41xp
-  Baked Potato ->  15.11$ 1.08xp
-  Popped Chorus Fruit ->  6.61$ 1.08xp
-  Dried Kelp ->  6.61$ 1.08xp
+  Cooked Beef ->  19.25$ 1.44xp
+  Cooked Porkchop ->  19.25$ 1.44xp
+  Cooked Cod ->  19.25$ 1.44xp
+  Cooked Salmon ->  19.25$ 1.44xp
+  Cooked Chicken ->  19.25$ 1.44xp
+  Cooked Mutton ->  19.25$ 1.44xp
+  Cooked Rabbit ->  23.10$ 1.44xp
+  Baked Potato ->  15.39$ 1.10xp
+  Popped Chorus Fruit ->  6.74$ 1.10xp
+  Dried Kelp ->  6.74$ 1.10xp
