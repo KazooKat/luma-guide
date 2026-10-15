@@ -1,11 +1,11 @@
 {
-  "_comment": "Job level the player was at when each /jobs browse dump was taken (from /jobs stats in the same log, 2026-09-25; Hunter 24, Farmer 58 and Cook 44 re-read 2026-10-14, Cook 45 2026-10-15; the earlier dumps are kept in data/readings/).",
+  "_comment": "Job level the player was at when each /jobs browse dump was taken (from /jobs stats in the same log, 2026-09-25; Hunter 24, Farmer 58 and Cook 44 re-read 2026-10-14, Cook 45 and Farmer 59 2026-10-15; the earlier dumps are kept in data/readings/).",
   "Alchemist": 1,
   "Blacksmith": 7,
   "Builder": 32,
   "Cook": 45,
   "Digger": 30,
-  "Farmer": 58,
+  "Farmer": 59,
   "Fisherman": 46,
   "Hunter": 24,
   "Lumberjack": 37,

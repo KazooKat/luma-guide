@@ -50,6 +50,7 @@ function misses(earlier: string, later: string, c: number, field: 'money' | 'xp'
 const PAIRS = [
   { job: 'Hunter', earlier: 'data/readings/hunter-23.txt', later: 'data/raw/hunter.txt' },
   { job: 'Farmer', earlier: 'data/readings/farmer-54.txt', later: 'data/raw/farmer.txt' },
+  { job: 'Farmer', earlier: 'data/readings/farmer-58.txt', later: 'data/raw/farmer.txt', near: true },
   { job: 'Blacksmith', earlier: 'data/raw/blacksmith.txt', later: 'data/readings/blacksmith-26.txt' },
   { job: 'Cook', earlier: 'data/readings/cook-41.txt', later: 'data/raw/cook.txt' },
   { job: 'Cook', earlier: 'data/readings/cook-44.txt', later: 'data/raw/cook.txt', near: true },
