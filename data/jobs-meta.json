@@ -28,10 +28,11 @@
       "icon": "bricks",
       "defaultRate": 2000,
       "rateNote": "sustained block placing",
-      "confidence": "assumed",
+      "confidence": "confirmed",
       "xpOffset": 1.4285714285714286,
       "readLevels": [
-        32
+        32,
+        33
       ],
       "defaultItem": "Place/Cobblestone"
     },
@@ -74,7 +75,8 @@
         53,
         54,
         58,
-        59
+        59,
+        60
       ],
       "defaultItem": "Break/Wheat"
     },
