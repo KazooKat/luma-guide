@@ -84,10 +84,11 @@
       "icon": "fishing_rod",
       "defaultRate": 150,
       "rateNote": "killing fish and squid by hand",
-      "confidence": "assumed",
+      "confidence": "confirmed",
       "xpOffset": 1.4285714285714286,
       "readLevels": [
-        46
+        46,
+        47
       ],
       "defaultItem": "Fish/Cod"
     },

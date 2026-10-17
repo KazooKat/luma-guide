@@ -16145,14 +16145,15 @@
    "icon": "fishing_rod",
    "defaultRate": 150,
    "rateNote": "killing fish and squid by hand",
-   "confidence": "assumed",
+   "confidence": "confirmed",
    "xpOffset": 1.4285714285714286,
    "readLevels": [
-    46
+    46,
+    47
    ],
    "defaultItem": "Fish/Cod",
-   "level": 46,
-   "source": "latest.log 06:47:10 (6 pages)",
+   "level": 47,
+   "source": "message(5).txt 02:05:03 (6 pages)",
    "items": [
     {
      "action": "Kill",
@@ -16161,9 +16162,9 @@
      "moneyBase": 6.6,
      "xpBase": 2.04,
      "observed": {
-      "level": 46,
-      "money": 36.3,
-      "xp": 39.84
+      "level": 47,
+      "money": 36.96,
+      "xp": 40.68
      },
      "icon": "cod_spawn_egg",
      "dupe": false
@@ -16175,9 +16176,9 @@
      "moneyBase": 6.6,
      "xpBase": 2.04,
      "observed": {
-      "level": 46,
-      "money": 36.3,
-      "xp": 39.84
+      "level": 47,
+      "money": 36.96,
+      "xp": 40.68
      },
      "icon": "salmon_spawn_egg",
      "dupe": false
@@ -16189,9 +16190,9 @@
      "moneyBase": 6.6,
      "xpBase": 2.04,
      "observed": {
-      "level": 46,
-      "money": 36.3,
-      "xp": 39.84
+      "level": 47,
+      "money": 36.96,
+      "xp": 40.68
      },
      "icon": "pufferfish_spawn_egg",
      "dupe": false
@@ -16203,9 +16204,9 @@
      "moneyBase": 6.6,
      "xpBase": 2.04,
      "observed": {
-      "level": 46,
-      "money": 36.3,
-      "xp": 39.84
+      "level": 47,
+      "money": 36.96,
+      "xp": 40.68
      },
      "icon": "tropical_fish_spawn_egg",
      "dupe": false
@@ -16217,9 +16218,9 @@
      "moneyBase": 6.6,
      "xpBase": 2.04,
      "observed": {
-      "level": 46,
-      "money": 36.3,
-      "xp": 39.84
+      "level": 47,
+      "money": 36.96,
+      "xp": 40.68
      },
      "icon": "squid_spawn_egg",
      "dupe": false
@@ -16231,9 +16232,9 @@
      "moneyBase": 6.6,
      "xpBase": 2.04,
      "observed": {
-      "level": 46,
-      "money": 36.3,
-      "xp": 39.84
+      "level": 47,
+      "money": 36.96,
+      "xp": 40.68
      },
      "icon": "glow_squid_spawn_egg",
      "dupe": false
@@ -16242,12 +16243,12 @@
      "action": "Fish",
      "item": "Cod",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "cod",
      "dupe": false
@@ -16256,12 +16257,12 @@
      "action": "Fish",
      "item": "Salmon",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "salmon",
      "dupe": false
@@ -16270,12 +16271,12 @@
      "action": "Fish",
      "item": "Tropical Fish",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "tropical_fish",
      "dupe": false
@@ -16284,12 +16285,12 @@
      "action": "Fish",
      "item": "Pufferfish",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "pufferfish",
      "dupe": false
@@ -16298,12 +16299,12 @@
      "action": "Fish",
      "item": "Leather Chestplate",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "leather_chestplate",
      "dupe": false
@@ -16312,12 +16313,12 @@
      "action": "Fish",
      "item": "Leather Helmet",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "leather_helmet",
      "dupe": false
@@ -16326,12 +16327,12 @@
      "action": "Fish",
      "item": "Leather Leggings",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "leather_leggings",
      "dupe": false
@@ -16340,12 +16341,12 @@
      "action": "Fish",
      "item": "Leather Boots",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "leather_boots",
      "dupe": false
@@ -16354,12 +16355,12 @@
      "action": "Fish",
      "item": "Wooden Pickaxe",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "wooden_pickaxe",
      "dupe": false
@@ -16368,12 +16369,12 @@
      "action": "Fish",
      "item": "Wooden Shovel",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "wooden_shovel",
      "dupe": false
@@ -16382,12 +16383,12 @@
      "action": "Fish",
      "item": "Wooden Sword",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "wooden_sword",
      "dupe": false
@@ -16396,12 +16397,12 @@
      "action": "Fish",
      "item": "Wooden Axe",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "wooden_axe",
      "dupe": false
@@ -16410,12 +16411,12 @@
      "action": "Fish",
      "item": "Wooden Hoe",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "wooden_hoe",
      "dupe": false
@@ -16424,12 +16425,12 @@
      "action": "Fish",
      "item": "Bow",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "bow",
      "dupe": false
@@ -16438,12 +16439,12 @@
      "action": "Fish",
      "item": "Stone Pickaxe",
      "category": "Fish",
-     "moneyBase": 41.250909,
+     "moneyBase": 41.25,
      "xpBase": 10.88,
      "observed": {
-      "level": 46,
-      "money": 226.88,
-      "xp": 212.48
+      "level": 47,
+      "money": 231.0,
+      "xp": 216.96
      },
      "icon": "stone_pickaxe",
      "dupe": false
@@ -16452,12 +16453,12 @@
      "action": "Fish",
      "item": "Stone Shovel",
      "category": "Fish",
-     "moneyBase": 41.250909,
+     "moneyBase": 41.25,
      "xpBase": 10.88,
      "observed": {
-      "level": 46,
-      "money": 226.88,
-      "xp": 212.48
+      "level": 47,
+      "money": 231.0,
+      "xp": 216.96
      },
      "icon": "stone_shovel",
      "dupe": false
@@ -16466,12 +16467,12 @@
      "action": "Fish",
      "item": "Stone Sword",
      "category": "Fish",
-     "moneyBase": 41.250909,
+     "moneyBase": 41.25,
      "xpBase": 10.88,
      "observed": {
-      "level": 46,
-      "money": 226.88,
-      "xp": 212.48
+      "level": 47,
+      "money": 231.0,
+      "xp": 216.96
      },
      "icon": "stone_sword",
      "dupe": false
@@ -16480,12 +16481,12 @@
      "action": "Fish",
      "item": "Stone Axe",
      "category": "Fish",
-     "moneyBase": 41.250909,
+     "moneyBase": 41.25,
      "xpBase": 10.88,
      "observed": {
-      "level": 46,
-      "money": 226.88,
-      "xp": 212.48
+      "level": 47,
+      "money": 231.0,
+      "xp": 216.96
      },
      "icon": "stone_axe",
      "dupe": false
@@ -16494,12 +16495,12 @@
      "action": "Fish",
      "item": "Stone Hoe",
      "category": "Fish",
-     "moneyBase": 41.250909,
+     "moneyBase": 41.25,
      "xpBase": 10.88,
      "observed": {
-      "level": 46,
-      "money": 226.88,
-      "xp": 212.48
+      "level": 47,
+      "money": 231.0,
+      "xp": 216.96
      },
      "icon": "stone_hoe",
      "dupe": false
@@ -16508,12 +16509,12 @@
      "action": "Fish",
      "item": "Golden Pickaxe",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "golden_pickaxe",
      "dupe": false
@@ -16522,12 +16523,12 @@
      "action": "Fish",
      "item": "Golden Sword",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "golden_sword",
      "dupe": false
@@ -16536,12 +16537,12 @@
      "action": "Fish",
      "item": "Golden Shovel",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "golden_shovel",
      "dupe": false
@@ -16550,12 +16551,12 @@
      "action": "Fish",
      "item": "Golden Axe",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "golden_axe",
      "dupe": false
@@ -16564,12 +16565,12 @@
      "action": "Fish",
      "item": "Golden Hoe",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "golden_hoe",
      "dupe": false
@@ -16578,12 +16579,12 @@
      "action": "Fish",
      "item": "Golden Helmet",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "golden_helmet",
      "dupe": false
@@ -16592,12 +16593,12 @@
      "action": "Fish",
      "item": "Golden Chestplate",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "golden_chestplate",
      "dupe": false
@@ -16606,12 +16607,12 @@
      "action": "Fish",
      "item": "Golden Leggings",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "golden_leggings",
      "dupe": false
@@ -16620,12 +16621,12 @@
      "action": "Fish",
      "item": "Golden Boots",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "golden_boots",
      "dupe": false
@@ -16634,12 +16635,12 @@
      "action": "Fish",
      "item": "Gold Ingot",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "gold_ingot",
      "dupe": false
@@ -16648,12 +16649,12 @@
      "action": "Fish",
      "item": "Iron Pickaxe",
      "category": "Fish",
-     "moneyBase": 47.850909,
+     "moneyBase": 47.85,
      "xpBase": 12.24,
      "observed": {
-      "level": 46,
-      "money": 263.18,
-      "xp": 239.04
+      "level": 47,
+      "money": 267.96,
+      "xp": 244.08
      },
      "icon": "iron_pickaxe",
      "dupe": false
@@ -16662,12 +16663,12 @@
      "action": "Fish",
      "item": "Iron Sword",
      "category": "Fish",
-     "moneyBase": 47.850909,
+     "moneyBase": 47.85,
      "xpBase": 12.24,
      "observed": {
-      "level": 46,
-      "money": 263.18,
-      "xp": 239.04
+      "level": 47,
+      "money": 267.96,
+      "xp": 244.08
      },
      "icon": "iron_sword",
      "dupe": false
@@ -16676,12 +16677,12 @@
      "action": "Fish",
      "item": "Iron Shovel",
      "category": "Fish",
-     "moneyBase": 47.850909,
+     "moneyBase": 47.85,
      "xpBase": 12.24,
      "observed": {
-      "level": 46,
-      "money": 263.18,
-      "xp": 239.04
+      "level": 47,
+      "money": 267.96,
+      "xp": 244.08
      },
      "icon": "iron_shovel",
      "dupe": false
@@ -16690,12 +16691,12 @@
      "action": "Fish",
      "item": "Iron Axe",
      "category": "Fish",
-     "moneyBase": 47.850909,
+     "moneyBase": 47.85,
      "xpBase": 12.24,
      "observed": {
-      "level": 46,
-      "money": 263.18,
-      "xp": 239.04
+      "level": 47,
+      "money": 267.96,
+      "xp": 244.08
      },
      "icon": "iron_axe",
      "dupe": false
@@ -16704,12 +16705,12 @@
      "action": "Fish",
      "item": "Iron Hoe",
      "category": "Fish",
-     "moneyBase": 47.850909,
+     "moneyBase": 47.85,
      "xpBase": 12.24,
      "observed": {
-      "level": 46,
-      "money": 263.18,
-      "xp": 239.04
+      "level": 47,
+      "money": 267.96,
+      "xp": 244.08
      },
      "icon": "iron_hoe",
      "dupe": false
@@ -16718,12 +16719,12 @@
      "action": "Fish",
      "item": "Iron Helmet",
      "category": "Fish",
-     "moneyBase": 47.850909,
+     "moneyBase": 47.85,
      "xpBase": 12.24,
      "observed": {
-      "level": 46,
-      "money": 263.18,
-      "xp": 239.04
+      "level": 47,
+      "money": 267.96,
+      "xp": 244.08
      },
      "icon": "iron_helmet",
      "dupe": false
@@ -16732,12 +16733,12 @@
      "action": "Fish",
      "item": "Iron Chestplate",
      "category": "Fish",
-     "moneyBase": 47.850909,
+     "moneyBase": 47.85,
      "xpBase": 12.24,
      "observed": {
-      "level": 46,
-      "money": 263.18,
-      "xp": 239.04
+      "level": 47,
+      "money": 267.96,
+      "xp": 244.08
      },
      "icon": "iron_chestplate",
      "dupe": false
@@ -16746,12 +16747,12 @@
      "action": "Fish",
      "item": "Iron Boots",
      "category": "Fish",
-     "moneyBase": 47.850909,
+     "moneyBase": 47.85,
      "xpBase": 12.24,
      "observed": {
-      "level": 46,
-      "money": 263.18,
-      "xp": 239.04
+      "level": 47,
+      "money": 267.96,
+      "xp": 244.08
      },
      "icon": "iron_boots",
      "dupe": false
@@ -16760,12 +16761,12 @@
      "action": "Fish",
      "item": "Iron Ingot",
      "category": "Fish",
-     "moneyBase": 47.850909,
+     "moneyBase": 47.85,
      "xpBase": 12.24,
      "observed": {
-      "level": 46,
-      "money": 263.18,
-      "xp": 239.04
+      "level": 47,
+      "money": 267.96,
+      "xp": 244.08
      },
      "icon": "iron_ingot",
      "dupe": false
@@ -16777,9 +16778,9 @@
      "moneyBase": 52.8,
      "xpBase": 12.92,
      "observed": {
-      "level": 46,
-      "money": 290.4,
-      "xp": 252.32
+      "level": 47,
+      "money": 295.68,
+      "xp": 257.64
      },
      "icon": "diamond_pickaxe",
      "dupe": false
@@ -16791,9 +16792,9 @@
      "moneyBase": 52.8,
      "xpBase": 12.92,
      "observed": {
-      "level": 46,
-      "money": 290.4,
-      "xp": 252.32
+      "level": 47,
+      "money": 295.68,
+      "xp": 257.64
      },
      "icon": "diamond_sword",
      "dupe": false
@@ -16805,9 +16806,9 @@
      "moneyBase": 52.8,
      "xpBase": 12.92,
      "observed": {
-      "level": 46,
-      "money": 290.4,
-      "xp": 252.32
+      "level": 47,
+      "money": 295.68,
+      "xp": 257.64
      },
      "icon": "diamond_shovel",
      "dupe": false
@@ -16819,9 +16820,9 @@
      "moneyBase": 52.8,
      "xpBase": 12.92,
      "observed": {
-      "level": 46,
-      "money": 290.4,
-      "xp": 252.32
+      "level": 47,
+      "money": 295.68,
+      "xp": 257.64
      },
      "icon": "diamond_axe",
      "dupe": false
@@ -16833,9 +16834,9 @@
      "moneyBase": 52.8,
      "xpBase": 12.92,
      "observed": {
-      "level": 46,
-      "money": 290.4,
-      "xp": 252.32
+      "level": 47,
+      "money": 295.68,
+      "xp": 257.64
      },
      "icon": "diamond_hoe",
      "dupe": false
@@ -16847,9 +16848,9 @@
      "moneyBase": 52.8,
      "xpBase": 12.92,
      "observed": {
-      "level": 46,
-      "money": 290.4,
-      "xp": 252.32
+      "level": 47,
+      "money": 295.68,
+      "xp": 257.64
      },
      "icon": "diamond_helmet",
      "dupe": false
@@ -16861,9 +16862,9 @@
      "moneyBase": 52.8,
      "xpBase": 12.92,
      "observed": {
-      "level": 46,
-      "money": 290.4,
-      "xp": 252.32
+      "level": 47,
+      "money": 295.68,
+      "xp": 257.64
      },
      "icon": "diamond_chestplate",
      "dupe": false
@@ -16875,9 +16876,9 @@
      "moneyBase": 52.8,
      "xpBase": 12.92,
      "observed": {
-      "level": 46,
-      "money": 290.4,
-      "xp": 252.32
+      "level": 47,
+      "money": 295.68,
+      "xp": 257.64
      },
      "icon": "diamond_leggings",
      "dupe": false
@@ -16889,9 +16890,9 @@
      "moneyBase": 52.8,
      "xpBase": 12.92,
      "observed": {
-      "level": 46,
-      "money": 290.4,
-      "xp": 252.32
+      "level": 47,
+      "money": 295.68,
+      "xp": 257.64
      },
      "icon": "diamond_boots",
      "dupe": false
@@ -16903,9 +16904,9 @@
      "moneyBase": 52.8,
      "xpBase": 12.92,
      "observed": {
-      "level": 46,
-      "money": 290.4,
-      "xp": 252.32
+      "level": 47,
+      "money": 295.68,
+      "xp": 257.64
      },
      "icon": "diamond",
      "dupe": false
@@ -16917,9 +16918,9 @@
      "moneyBase": 66.0,
      "xpBase": 20.4,
      "observed": {
-      "level": 46,
-      "money": 363.0,
-      "xp": 398.4
+      "level": 47,
+      "money": 369.6,
+      "xp": 406.8
      },
      "icon": "netherite_pickaxe",
      "dupe": false
@@ -16931,9 +16932,9 @@
      "moneyBase": 66.0,
      "xpBase": 20.4,
      "observed": {
-      "level": 46,
-      "money": 363.0,
-      "xp": 398.4
+      "level": 47,
+      "money": 369.6,
+      "xp": 406.8
      },
      "icon": "netherite_sword",
      "dupe": false
@@ -16945,9 +16946,9 @@
      "moneyBase": 66.0,
      "xpBase": 20.4,
      "observed": {
-      "level": 46,
-      "money": 363.0,
-      "xp": 398.4
+      "level": 47,
+      "money": 369.6,
+      "xp": 406.8
      },
      "icon": "netherite_shovel",
      "dupe": false
@@ -16959,9 +16960,9 @@
      "moneyBase": 66.0,
      "xpBase": 20.4,
      "observed": {
-      "level": 46,
-      "money": 363.0,
-      "xp": 398.4
+      "level": 47,
+      "money": 369.6,
+      "xp": 406.8
      },
      "icon": "netherite_axe",
      "dupe": false
@@ -16973,9 +16974,9 @@
      "moneyBase": 66.0,
      "xpBase": 20.4,
      "observed": {
-      "level": 46,
-      "money": 363.0,
-      "xp": 398.4
+      "level": 47,
+      "money": 369.6,
+      "xp": 406.8
      },
      "icon": "netherite_hoe",
      "dupe": false
@@ -16987,9 +16988,9 @@
      "moneyBase": 66.0,
      "xpBase": 20.4,
      "observed": {
-      "level": 46,
-      "money": 363.0,
-      "xp": 398.4
+      "level": 47,
+      "money": 369.6,
+      "xp": 406.8
      },
      "icon": "netherite_helmet",
      "dupe": false
@@ -17001,9 +17002,9 @@
      "moneyBase": 66.0,
      "xpBase": 20.4,
      "observed": {
-      "level": 46,
-      "money": 363.0,
-      "xp": 398.4
+      "level": 47,
+      "money": 369.6,
+      "xp": 406.8
      },
      "icon": "netherite_chestplate",
      "dupe": false
@@ -17015,9 +17016,9 @@
      "moneyBase": 66.0,
      "xpBase": 20.4,
      "observed": {
-      "level": 46,
-      "money": 363.0,
-      "xp": 398.4
+      "level": 47,
+      "money": 369.6,
+      "xp": 406.8
      },
      "icon": "netherite_leggings",
      "dupe": false
@@ -17029,9 +17030,9 @@
      "moneyBase": 66.0,
      "xpBase": 20.4,
      "observed": {
-      "level": 46,
-      "money": 363.0,
-      "xp": 398.4
+      "level": 47,
+      "money": 369.6,
+      "xp": 406.8
      },
      "icon": "netherite_boots",
      "dupe": false
@@ -17043,9 +17044,9 @@
      "moneyBase": 66.0,
      "xpBase": 20.4,
      "observed": {
-      "level": 46,
-      "money": 363.0,
-      "xp": 398.4
+      "level": 47,
+      "money": 369.6,
+      "xp": 406.8
      },
      "icon": "netherite_scrap",
      "dupe": false
@@ -17054,12 +17055,12 @@
      "action": "Fish",
      "item": "Enchanted Book",
      "category": "Fish",
-     "moneyBase": 41.250909,
+     "moneyBase": 41.25,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 226.88,
-      "xp": 199.2
+      "level": 47,
+      "money": 231.0,
+      "xp": 203.4
      },
      "icon": "enchanted_book",
      "dupe": false
@@ -17068,12 +17069,12 @@
      "action": "Fish",
      "item": "Nautilus Shell",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "nautilus_shell",
      "dupe": false
@@ -17082,12 +17083,12 @@
      "action": "Fish",
      "item": "Ender Pearl",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 9.52,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 185.92
+      "level": 47,
+      "money": 212.52,
+      "xp": 189.84
      },
      "icon": "ender_pearl",
      "dupe": false
@@ -17096,12 +17097,12 @@
      "action": "Fish",
      "item": "Lapis Lazuli",
      "category": "Fish",
-     "moneyBase": 44.549091,
+     "moneyBase": 44.55,
      "xpBase": 11.56,
      "observed": {
-      "level": 46,
-      "money": 245.02,
-      "xp": 225.76
+      "level": 47,
+      "money": 249.48,
+      "xp": 230.52
      },
      "icon": "lapis_lazuli",
      "dupe": false
@@ -17110,12 +17111,12 @@
      "action": "Fish",
      "item": "Fishing Rod",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "fishing_rod",
      "dupe": false
@@ -17124,12 +17125,12 @@
      "action": "Fish",
      "item": "Ghast Tear",
      "category": "Fish",
-     "moneyBase": 47.850909,
+     "moneyBase": 47.85,
      "xpBase": 13.6,
      "observed": {
-      "level": 46,
-      "money": 263.18,
-      "xp": 265.6
+      "level": 47,
+      "money": 267.96,
+      "xp": 271.2
      },
      "icon": "ghast_tear",
      "dupe": false
@@ -17138,12 +17139,12 @@
      "action": "Fish",
      "item": "Blaze Rod",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 9.52,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 185.92
+      "level": 47,
+      "money": 212.52,
+      "xp": 189.84
      },
      "icon": "blaze_rod",
      "dupe": false
@@ -17152,12 +17153,12 @@
      "action": "Fish",
      "item": "Name Tag",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 9.52,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 185.92
+      "level": 47,
+      "money": 212.52,
+      "xp": 189.84
      },
      "icon": "name_tag",
      "dupe": false
@@ -17166,12 +17167,12 @@
      "action": "Fish",
      "item": "Saddle",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "saddle",
      "dupe": false
@@ -17180,12 +17181,12 @@
      "action": "Fish",
      "item": "Coal",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "coal",
      "dupe": false
@@ -17194,12 +17195,12 @@
      "action": "Fish",
      "item": "Stick",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "stick",
      "dupe": false
@@ -17208,12 +17209,12 @@
      "action": "Fish",
      "item": "Feather",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "feather",
      "dupe": false
@@ -17222,12 +17223,12 @@
      "action": "Fish",
      "item": "Fire Coral",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "fire_coral",
      "dupe": false
@@ -17236,12 +17237,12 @@
      "action": "Fish",
      "item": "Copper Ingot",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "copper_ingot",
      "dupe": false
@@ -17250,12 +17251,12 @@
      "action": "Fish",
      "item": "Gold Nugget",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "gold_nugget",
      "dupe": false
@@ -17264,12 +17265,12 @@
      "action": "Fish",
      "item": "Player Head",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "player_head",
      "dupe": false
@@ -17278,12 +17279,12 @@
      "action": "Fish",
      "item": "Leather",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "leather",
      "dupe": false
@@ -17292,12 +17293,12 @@
      "action": "Fish",
      "item": "Ink Sac",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "ink_sac",
      "dupe": false
@@ -17306,12 +17307,12 @@
      "action": "Fish",
      "item": "Glass Bottle",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "glass_bottle",
      "dupe": false
@@ -17320,12 +17321,12 @@
      "action": "Fish",
      "item": "Apple",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "apple",
      "dupe": false
@@ -17334,12 +17335,12 @@
      "action": "Fish",
      "item": "Prismarine Shard",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "prismarine_shard",
      "dupe": false
@@ -17348,12 +17349,12 @@
      "action": "Fish",
      "item": "Amethyst Shard",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "amethyst_shard",
      "dupe": false
@@ -17362,12 +17363,12 @@
      "action": "Fish",
      "item": "Glass",
      "category": "Fish",
-     "moneyBase": 37.950909,
+     "moneyBase": 37.95,
      "xpBase": 10.2,
      "observed": {
-      "level": 46,
-      "money": 208.73,
-      "xp": 199.2
+      "level": 47,
+      "money": 212.52,
+      "xp": 203.4
      },
      "icon": "glass",
      "dupe": false
