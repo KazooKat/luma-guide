@@ -50,6 +50,7 @@
         41,
         44,
         45,
+        46,
         48
       ],
       "defaultItem": "Smelt/Baked Potato"
@@ -88,7 +89,8 @@
       "xpOffset": 1.4285714285714286,
       "readLevels": [
         46,
-        47
+        47,
+        48
       ],
       "defaultItem": "Fish/Cod"
     },

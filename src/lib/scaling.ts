@@ -17,7 +17,7 @@ export function totalXp(from: number, to: number): number {
 
 /**
  * XP per action scales with (L + c), where c is the job's `xpOffset`: 10/7 for Hunter, Farmer, Blacksmith, Builder and Fisherman (pinned by
- * readings 1 to 19 levels apart, see scaling.test.ts), 5 for Cook (its 41, 44 and 45 readings, and the 2026-09-24 ones). `base` is the level-1 value.
+ * readings 1 to 19 levels apart, see scaling.test.ts), 5 for Cook (its 41, 44, 45 and 46 readings, and the 2026-09-24 ones). `base` is the level-1 value.
  */
 export const xpAt = (base: number, L: number, c: number) => (base * (L + c)) / (1 + c);
 /** Money per action scales with (L + 9). `base` is the level-1 value. */

@@ -47,7 +47,7 @@ function misses(earlier: string, later: string, c: number, field: 'money' | 'xp'
 }
 
 // near: levels so close that both offsets round to the same 2 decimals on most items, so the pair can't tell them apart.
-// Builder 32 -> 33 and Fisherman 46 -> 47 are 1 level apart but still tell them apart: (L + 5) misses most of their items.
+// Builder 32 -> 33 and Fisherman 47 -> 48 are 1 level apart but still tell them apart: (L + 5) misses most of their items.
 const PAIRS = [
   { job: 'Hunter', earlier: 'data/readings/hunter-23.txt', later: 'data/raw/hunter.txt' },
   { job: 'Farmer', earlier: 'data/readings/farmer-54.txt', later: 'data/raw/farmer.txt' },
@@ -55,9 +55,11 @@ const PAIRS = [
   { job: 'Farmer', earlier: 'data/readings/farmer-59.txt', later: 'data/raw/farmer.txt', near: true },
   { job: 'Builder', earlier: 'data/readings/builder-32.txt', later: 'data/raw/builder.txt' },
   { job: 'Fisherman', earlier: 'data/readings/fisherman-46.txt', later: 'data/raw/fisherman.txt' },
+  { job: 'Fisherman', earlier: 'data/readings/fisherman-47.txt', later: 'data/raw/fisherman.txt' },
   { job: 'Blacksmith', earlier: 'data/raw/blacksmith.txt', later: 'data/readings/blacksmith-26.txt' },
   { job: 'Cook', earlier: 'data/readings/cook-41.txt', later: 'data/raw/cook.txt' },
   { job: 'Cook', earlier: 'data/readings/cook-44.txt', later: 'data/raw/cook.txt', near: true },
+  { job: 'Cook', earlier: 'data/readings/cook-45.txt', later: 'data/raw/cook.txt', near: true },
 ];
 /** What each job's readings pin XP to, and the other candidate that must not fit. */
 const MEASURED: Record<string, { c: number; other: number }> = {

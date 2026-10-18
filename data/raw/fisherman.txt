@@ -1,92 +1,92 @@
 # job: Fisherman
-# level: 47
-# source: message(5).txt 02:05:03 (6 pages)
+# level: 48
+# source: /jobs browse pasted in chat 2026-10-17 23:52:31 (6 pages; one player chat line between pages 2 and 3 dropped)
 Kill:
-  Cod ->  36.96$ 40.68xp
-  Salmon ->  36.96$ 40.68xp
-  Pufferfish ->  36.96$ 40.68xp
-  Tropical Fish ->  36.96$ 40.68xp
-  Squid ->  36.96$ 40.68xp
-  Glow Squid ->  36.96$ 40.68xp
+  Cod ->  37.62$ 41.52xp
+  Salmon ->  37.62$ 41.52xp
+  Pufferfish ->  37.62$ 41.52xp
+  Tropical Fish ->  37.62$ 41.52xp
+  Squid ->  37.62$ 41.52xp
+  Glow Squid ->  37.62$ 41.52xp
 Fish:
-  Cod ->  212.52$ 203.40xp
-  Salmon ->  212.52$ 203.40xp
-  Tropical Fish ->  249.48$ 230.52xp
-  Pufferfish ->  249.48$ 230.52xp
-  Leather Chestplate ->  212.52$ 203.40xp
-  Leather Helmet ->  212.52$ 203.40xp
-  Leather Leggings ->  212.52$ 203.40xp
-  Leather Boots ->  212.52$ 203.40xp
-  Wooden Pickaxe ->  212.52$ 203.40xp
-  Wooden Shovel ->  212.52$ 203.40xp
-  Wooden Sword ->  212.52$ 203.40xp
-  Wooden Axe ->  212.52$ 203.40xp
-  Wooden Hoe ->  212.52$ 203.40xp
-  Bow ->  212.52$ 203.40xp
-  Stone Pickaxe ->  231.00$ 216.96xp
-  Stone Shovel ->  231.00$ 216.96xp
-  Stone Sword ->  231.00$ 216.96xp
-  Stone Axe ->  231.00$ 216.96xp
-  Stone Hoe ->  231.00$ 216.96xp
-  Golden Pickaxe ->  249.48$ 230.52xp
-  Golden Sword ->  249.48$ 230.52xp
-  Golden Shovel ->  249.48$ 230.52xp
-  Golden Axe ->  249.48$ 230.52xp
-  Golden Hoe ->  249.48$ 230.52xp
-  Golden Helmet ->  249.48$ 230.52xp
-  Golden Chestplate ->  249.48$ 230.52xp
-  Golden Leggings ->  249.48$ 230.52xp
-  Golden Boots ->  249.48$ 230.52xp
-  Gold Ingot ->  249.48$ 230.52xp
-  Iron Pickaxe ->  267.96$ 244.08xp
-  Iron Sword ->  267.96$ 244.08xp
-  Iron Shovel ->  267.96$ 244.08xp
-  Iron Axe ->  267.96$ 244.08xp
-  Iron Hoe ->  267.96$ 244.08xp
-  Iron Helmet ->  267.96$ 244.08xp
-  Iron Chestplate ->  267.96$ 244.08xp
-  Iron Boots ->  267.96$ 244.08xp
-  Iron Ingot ->  267.96$ 244.08xp
-  Diamond Pickaxe ->  295.68$ 257.64xp
-  Diamond Sword ->  295.68$ 257.64xp
-  Diamond Shovel ->  295.68$ 257.64xp
-  Diamond Axe ->  295.68$ 257.64xp
-  Diamond Hoe ->  295.68$ 257.64xp
-  Diamond Helmet ->  295.68$ 257.64xp
-  Diamond Chestplate ->  295.68$ 257.64xp
-  Diamond Leggings ->  295.68$ 257.64xp
-  Diamond Boots ->  295.68$ 257.64xp
-  Diamond ->  295.68$ 257.64xp
-  Netherite Pickaxe ->  369.60$ 406.80xp
-  Netherite Sword ->  369.60$ 406.80xp
-  Netherite Shovel ->  369.60$ 406.80xp
-  Netherite Axe ->  369.60$ 406.80xp
-  Netherite Hoe ->  369.60$ 406.80xp
-  Netherite Helmet ->  369.60$ 406.80xp
-  Netherite Chestplate ->  369.60$ 406.80xp
-  Netherite Leggings ->  369.60$ 406.80xp
-  Netherite Boots ->  369.60$ 406.80xp
-  Netherite Scrap ->  369.60$ 406.80xp
-  Enchanted Book ->  231.00$ 203.40xp
-  Nautilus Shell ->  212.52$ 203.40xp
-  Ender Pearl ->  212.52$ 189.84xp
-  Lapis Lazuli ->  249.48$ 230.52xp
-  Fishing Rod ->  212.52$ 203.40xp
-  Ghast Tear ->  267.96$ 271.20xp
-  Blaze Rod ->  212.52$ 189.84xp
-  Name Tag ->  212.52$ 189.84xp
-  Saddle ->  212.52$ 203.40xp
-  Coal ->  212.52$ 203.40xp
-  Stick ->  212.52$ 203.40xp
-  Feather ->  212.52$ 203.40xp
-  Fire Coral ->  212.52$ 203.40xp
-  Copper Ingot ->  212.52$ 203.40xp
-  Gold Nugget ->  212.52$ 203.40xp
-  Player Head ->  212.52$ 203.40xp
-  Leather ->  212.52$ 203.40xp
-  Ink Sac ->  212.52$ 203.40xp
-  Glass Bottle ->  212.52$ 203.40xp
-  Apple ->  212.52$ 203.40xp
-  Prismarine Shard ->  212.52$ 203.40xp
-  Amethyst Shard ->  212.52$ 203.40xp
-  Glass ->  212.52$ 203.40xp
+  Cod ->  216.32$ 207.60xp
+  Salmon ->  216.32$ 207.60xp
+  Tropical Fish ->  253.94$ 235.28xp
+  Pufferfish ->  253.94$ 235.28xp
+  Leather Chestplate ->  216.32$ 207.60xp
+  Leather Helmet ->  216.32$ 207.60xp
+  Leather Leggings ->  216.32$ 207.60xp
+  Leather Boots ->  216.32$ 207.60xp
+  Wooden Pickaxe ->  216.32$ 207.60xp
+  Wooden Shovel ->  216.32$ 207.60xp
+  Wooden Sword ->  216.32$ 207.60xp
+  Wooden Axe ->  216.32$ 207.60xp
+  Wooden Hoe ->  216.32$ 207.60xp
+  Bow ->  216.32$ 207.60xp
+  Stone Pickaxe ->  235.13$ 221.44xp
+  Stone Shovel ->  235.13$ 221.44xp
+  Stone Sword ->  235.13$ 221.44xp
+  Stone Axe ->  235.13$ 221.44xp
+  Stone Hoe ->  235.13$ 221.44xp
+  Golden Pickaxe ->  253.94$ 235.28xp
+  Golden Sword ->  253.94$ 235.28xp
+  Golden Shovel ->  253.94$ 235.28xp
+  Golden Axe ->  253.94$ 235.28xp
+  Golden Hoe ->  253.94$ 235.28xp
+  Golden Helmet ->  253.94$ 235.28xp
+  Golden Chestplate ->  253.94$ 235.28xp
+  Golden Leggings ->  253.94$ 235.28xp
+  Golden Boots ->  253.94$ 235.28xp
+  Gold Ingot ->  253.94$ 235.28xp
+  Iron Pickaxe ->  272.75$ 249.12xp
+  Iron Sword ->  272.75$ 249.12xp
+  Iron Shovel ->  272.75$ 249.12xp
+  Iron Axe ->  272.75$ 249.12xp
+  Iron Hoe ->  272.75$ 249.12xp
+  Iron Helmet ->  272.75$ 249.12xp
+  Iron Chestplate ->  272.75$ 249.12xp
+  Iron Boots ->  272.75$ 249.12xp
+  Iron Ingot ->  272.75$ 249.12xp
+  Diamond Pickaxe ->  300.96$ 262.96xp
+  Diamond Sword ->  300.96$ 262.96xp
+  Diamond Shovel ->  300.96$ 262.96xp
+  Diamond Axe ->  300.96$ 262.96xp
+  Diamond Hoe ->  300.96$ 262.96xp
+  Diamond Helmet ->  300.96$ 262.96xp
+  Diamond Chestplate ->  300.96$ 262.96xp
+  Diamond Leggings ->  300.96$ 262.96xp
+  Diamond Boots ->  300.96$ 262.96xp
+  Diamond ->  300.96$ 262.96xp
+  Netherite Pickaxe ->  376.20$ 415.20xp
+  Netherite Sword ->  376.20$ 415.20xp
+  Netherite Shovel ->  376.20$ 415.20xp
+  Netherite Axe ->  376.20$ 415.20xp
+  Netherite Hoe ->  376.20$ 415.20xp
+  Netherite Helmet ->  376.20$ 415.20xp
+  Netherite Chestplate ->  376.20$ 415.20xp
+  Netherite Leggings ->  376.20$ 415.20xp
+  Netherite Boots ->  376.20$ 415.20xp
+  Netherite Scrap ->  376.20$ 415.20xp
+  Enchanted Book ->  235.13$ 207.60xp
+  Nautilus Shell ->  216.32$ 207.60xp
+  Ender Pearl ->  216.32$ 193.76xp
+  Lapis Lazuli ->  253.94$ 235.28xp
+  Fishing Rod ->  216.32$ 207.60xp
+  Ghast Tear ->  272.75$ 276.80xp
+  Blaze Rod ->  216.32$ 193.76xp
+  Name Tag ->  216.32$ 193.76xp
+  Saddle ->  216.32$ 207.60xp
+  Coal ->  216.32$ 207.60xp
+  Stick ->  216.32$ 207.60xp
+  Feather ->  216.32$ 207.60xp
+  Fire Coral ->  216.32$ 207.60xp
+  Copper Ingot ->  216.32$ 207.60xp
+  Gold Nugget ->  216.32$ 207.60xp
+  Player Head ->  216.32$ 207.60xp
+  Leather ->  216.32$ 207.60xp
+  Ink Sac ->  216.32$ 207.60xp
+  Glass Bottle ->  216.32$ 207.60xp
+  Apple ->  216.32$ 207.60xp
+  Prismarine Shard ->  216.32$ 207.60xp
+  Amethyst Shard ->  216.32$ 207.60xp
+  Glass ->  216.32$ 207.60xp
