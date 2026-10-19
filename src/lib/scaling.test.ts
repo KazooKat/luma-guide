@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { req, xpAt, moneyAt, xpBase, moneyBase, totalXp, planLevels } from './scaling';
+import { req, xpAt, moneyAt, xpBase, moneyBase, totalXp, planLevels, PAY_CAP } from './scaling';
 
 // Observed values are in-game /jobs readings from the research note (2026-09-24).
 describe('req(L): XP needed for L -> L+1', () => {
@@ -59,7 +59,8 @@ describe('planLevels: hours to level', () => {
   // Research worked example: Cook potatoes, 14,400/h, xp = 0.0221*(L+5), from 0 XP into 39.
   // The note's milestone table used its alternative linear fit (0.02198758L + 0.11396), which runs
   // <0.3% slower; these expectations use the stated (L+5) model.
-  const plan = planLevels({ xpBase: 0.1326, xpOffset: 5, moneyBase: 2.851, from: 39, to: 85, actionsPerHour: 14_400 });
+  // The worked example predates the level 70 pay cap, so it checks the uncapped formulas.
+  const plan = planLevels({ xpBase: 0.1326, xpOffset: 5, moneyBase: 2.851, from: 39, to: 85, actionsPerHour: 14_400, payCap: Infinity });
 
   it.each([[40, 18.2], [50, 259.7], [70, 1150.2], [80, 1853.1], [85, 2280.7]])(
     'reaches %i after ~%i h', (L, h) => {
@@ -83,5 +84,27 @@ describe('planLevels: hours to level', () => {
     const p = planLevels({ xpBase: 1, xpOffset: 5, moneyBase: 1, from: 20, to: 20, actionsPerHour: 100 });
     expect(p.rows).toEqual([]);
     expect(p.totalHours).toBe(0);
+  });
+});
+
+describe('pay cap', () => {
+  it('is on by default: money and XP stop growing at 70, and nothing changes below it', () => {
+    expect(PAY_CAP).toBe(70);
+    expect(moneyAt(1, 85)).toBe(moneyAt(1, 70));
+    expect(xpAt(1, 85, 10 / 7)).toBe(xpAt(1, 70, 10 / 7));
+    expect(moneyAt(1, 60)).toBe(moneyAt(1, 60, Infinity));
+    expect(moneyAt(1, 85, Infinity)).toBeGreaterThan(moneyAt(1, 70));
+  });
+
+  it('normalizes a reading above the cap from the cap', () => {
+    expect(moneyAt(moneyBase(6.64, 85), 61)).toBeCloseTo(5.88, 2);
+    expect(xpAt(xpBase(8, 85, 10 / 7), 61, 10 / 7)).toBeCloseTo(6.99, 2);
+  });
+
+  it('past the cap, the plan takes longer than the uncapped formulas but needs the same XP', () => {
+    const capped = planLevels({ xpBase: 1, xpOffset: 10 / 7, moneyBase: 1, from: 70, to: 85, actionsPerHour: 100 });
+    const free = planLevels({ xpBase: 1, xpOffset: 10 / 7, moneyBase: 1, from: 70, to: 85, actionsPerHour: 100, payCap: Infinity });
+    expect(capped.totalHours).toBeGreaterThan(free.totalHours);
+    expect(capped.totalXp).toBe(free.totalXp);
   });
 });

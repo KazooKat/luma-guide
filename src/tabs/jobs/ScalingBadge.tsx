@@ -1,6 +1,6 @@
 import { useState } from 'preact/hooks';
 import type { Job } from '../../data/types';
-import { MAX_LEVEL } from '../../lib/scaling';
+import { MAX_LEVEL, PAY_CAP } from '../../lib/scaling';
 
 /** 10/7 -> "10/7", 5 -> "5" */
 export const fmtOffset = (c: number) => (Math.abs(c - 10 / 7) < 1e-9 ? '10/7' : String(+c.toFixed(3)));
@@ -58,6 +58,7 @@ export function ScalingBadge({ job, level }: { job: Job; level: number }) {
         </svg>
         <span class="muted">
           Money per action ∝ (L + 9), XP per action ∝ (L + {fmtOffset(job.xpOffset)}).
+          {` Both stop growing at level ${PAY_CAP}.`}
           {levels.length ? ` Your level is ${Math.abs(level - nearest) === 0 ? 'one of the readings' : `${Math.abs(level - nearest)} level${Math.abs(level - nearest) === 1 ? '' : 's'} from the nearest reading (${nearest})`}.` : ''}
         </span>
       </span>

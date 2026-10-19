@@ -14467,22 +14467,24 @@
     54,
     58,
     59,
-    60
+    60,
+    61,
+    85
    ],
    "defaultItem": "Break/Wheat",
-   "level": 60,
-   "source": "message(3).txt 19:06:11 (9 pages)",
+   "level": 61,
+   "source": "farmer-61.log 11:33:56 (9 pages)",
    "items": [
     {
      "action": "Break",
      "item": "Kelp",
      "category": "Break",
-     "moneyBase": 0.210145,
-     "xpBase": 0.034,
+     "moneyBase": 0.21,
+     "xpBase": 0.033844,
      "observed": {
-      "level": 60,
-      "money": 1.45,
-      "xp": 0.86
+      "level": 61,
+      "money": 1.47,
+      "xp": 0.87
      },
      "icon": "kelp",
      "dupe": false
@@ -14491,12 +14493,12 @@
      "action": "Break",
      "item": "Vine",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.204,
+     "moneyBase": 0.528571,
+     "xpBase": 0.203844,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 5.16
+      "level": 61,
+      "money": 3.7,
+      "xp": 5.24
      },
      "icon": "vine",
      "dupe": false
@@ -14505,12 +14507,12 @@
      "action": "Break",
      "item": "Seagrass",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "seagrass",
      "dupe": false
@@ -14519,12 +14521,12 @@
      "action": "Break",
      "item": "Sea Pickle",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "sea_pickle",
      "dupe": false
@@ -14533,12 +14535,12 @@
      "action": "Break",
      "item": "Brain Coral",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "brain_coral",
      "dupe": false
@@ -14547,12 +14549,12 @@
      "action": "Break",
      "item": "Brain Coral Fan",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "brain_coral_fan",
      "dupe": false
@@ -14561,12 +14563,12 @@
      "action": "Break",
      "item": "Brain Coral Wall Fan",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "brain_coral_fan",
      "dupe": false
@@ -14575,12 +14577,12 @@
      "action": "Break",
      "item": "Brain Coral Block",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "brain_coral_block",
      "dupe": false
@@ -14589,12 +14591,12 @@
      "action": "Break",
      "item": "Bubble Coral",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "bubble_coral",
      "dupe": false
@@ -14603,12 +14605,12 @@
      "action": "Break",
      "item": "Bubble Coral Wall Fan",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "bubble_coral_fan",
      "dupe": false
@@ -14617,12 +14619,12 @@
      "action": "Break",
      "item": "Bubble Coral Block",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "bubble_coral_block",
      "dupe": false
@@ -14631,12 +14633,12 @@
      "action": "Break",
      "item": "Fire Coral",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "fire_coral",
      "dupe": false
@@ -14645,12 +14647,12 @@
      "action": "Break",
      "item": "Fire Coral Fan",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "fire_coral_fan",
      "dupe": false
@@ -14659,12 +14661,12 @@
      "action": "Break",
      "item": "Fire Coral Wall Fan",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "fire_coral_fan",
      "dupe": false
@@ -14673,12 +14675,12 @@
      "action": "Break",
      "item": "Fire Coral Block",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "fire_coral_block",
      "dupe": false
@@ -14687,12 +14689,12 @@
      "action": "Break",
      "item": "Horn Coral",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "horn_coral",
      "dupe": false
@@ -14701,12 +14703,12 @@
      "action": "Break",
      "item": "Horn Coral Fan",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "horn_coral_fan",
      "dupe": false
@@ -14715,12 +14717,12 @@
      "action": "Break",
      "item": "Horn Coral Wall Fan",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "horn_coral_fan",
      "dupe": false
@@ -14729,12 +14731,12 @@
      "action": "Break",
      "item": "Horn Coral Block",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "horn_coral_block",
      "dupe": false
@@ -14743,12 +14745,12 @@
      "action": "Break",
      "item": "Tube Coral",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "tube_coral",
      "dupe": false
@@ -14757,12 +14759,12 @@
      "action": "Break",
      "item": "Tube Coral Fan",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "tube_coral_fan",
      "dupe": false
@@ -14771,12 +14773,12 @@
      "action": "Break",
      "item": "Tube Coral Wall Fan",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "tube_coral_fan",
      "dupe": false
@@ -14785,12 +14787,12 @@
      "action": "Break",
      "item": "Tube Coral Block",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "tube_coral_block",
      "dupe": false
@@ -14799,12 +14801,12 @@
      "action": "Break",
      "item": "Chorus Plant",
      "category": "Break",
-     "moneyBase": 0.947826,
-     "xpBase": 0.408,
+     "moneyBase": 0.948571,
+     "xpBase": 0.408078,
      "observed": {
-      "level": 60,
-      "money": 6.54,
-      "xp": 10.32
+      "level": 61,
+      "money": 6.64,
+      "xp": 10.49
      },
      "icon": "chorus_plant",
      "dupe": false
@@ -14813,12 +14815,12 @@
      "action": "Break",
      "item": "Chorus Flower",
      "category": "Break",
-     "moneyBase": 0.989855,
-     "xpBase": 0.408,
+     "moneyBase": 0.99,
+     "xpBase": 0.408078,
      "observed": {
-      "level": 60,
-      "money": 6.83,
-      "xp": 10.32
+      "level": 61,
+      "money": 6.93,
+      "xp": 10.49
      },
      "icon": "chorus_flower",
      "dupe": false
@@ -14827,12 +14829,12 @@
      "action": "Break",
      "item": "Beetroots",
      "category": "Break",
-     "moneyBase": 0.947826,
-     "xpBase": 0.238,
+     "moneyBase": 0.948571,
+     "xpBase": 0.238078,
      "observed": {
-      "level": 60,
-      "money": 6.54,
-      "xp": 6.02
+      "level": 61,
+      "money": 6.64,
+      "xp": 6.12
      },
      "icon": "beetroot",
      "dupe": false
@@ -14841,12 +14843,12 @@
      "action": "Break",
      "item": "Wheat",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "wheat",
      "dupe": false
@@ -14855,12 +14857,12 @@
      "action": "Break",
      "item": "Nether Wart",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "nether_wart",
      "dupe": false
@@ -14869,12 +14871,12 @@
      "action": "Break",
      "item": "Carrots",
      "category": "Break",
-     "moneyBase": 0.947826,
-     "xpBase": 0.272,
+     "moneyBase": 0.948571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 6.54,
-      "xp": 6.88
+      "level": 61,
+      "money": 6.64,
+      "xp": 6.99
      },
      "icon": "carrot",
      "dupe": false
@@ -14883,12 +14885,12 @@
      "action": "Break",
      "item": "Potatoes",
      "category": "Break",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "potato",
      "dupe": false
@@ -14897,12 +14899,12 @@
      "action": "Break",
      "item": "Pumpkin",
      "category": "Break",
-     "moneyBase": 0.737681,
+     "moneyBase": 0.738571,
      "xpBase": 0.17,
      "observed": {
-      "level": 60,
-      "money": 5.09,
-      "xp": 4.3
+      "level": 61,
+      "money": 5.17,
+      "xp": 4.37
      },
      "icon": "pumpkin",
      "dupe": false
@@ -14911,12 +14913,12 @@
      "action": "Break",
      "item": "Sugar Cane",
      "category": "Break",
-     "moneyBase": 0.156522,
-     "xpBase": 0.272,
+     "moneyBase": 0.155714,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 1.08,
-      "xp": 6.88
+      "level": 61,
+      "money": 1.09,
+      "xp": 6.99
      },
      "icon": "sugar_cane",
      "dupe": false
@@ -14925,12 +14927,12 @@
      "action": "Break",
      "item": "Cocoa",
      "category": "Break",
-     "moneyBase": 1.056522,
+     "moneyBase": 1.055714,
      "xpBase": 0.34,
      "observed": {
-      "level": 60,
-      "money": 7.29,
-      "xp": 8.6
+      "level": 61,
+      "money": 7.39,
+      "xp": 8.74
      },
      "icon": "cocoa_beans",
      "dupe": false
@@ -14939,12 +14941,12 @@
      "action": "Break",
      "item": "Melon",
      "category": "Break",
-     "moneyBase": 0.737681,
+     "moneyBase": 0.738571,
      "xpBase": 0.17,
      "observed": {
-      "level": 60,
-      "money": 5.09,
-      "xp": 4.3
+      "level": 61,
+      "money": 5.17,
+      "xp": 4.37
      },
      "icon": "melon",
      "dupe": false
@@ -14953,12 +14955,12 @@
      "action": "Break",
      "item": "Red Mushroom",
      "category": "Break",
-     "moneyBase": 5.27971,
-     "xpBase": 0.544,
+     "moneyBase": 5.28,
+     "xpBase": 0.543844,
      "observed": {
-      "level": 60,
-      "money": 36.43,
-      "xp": 13.76
+      "level": 61,
+      "money": 36.96,
+      "xp": 13.98
      },
      "icon": "red_mushroom",
      "dupe": false
@@ -14967,12 +14969,12 @@
      "action": "Break",
      "item": "Brown Mushroom",
      "category": "Break",
-     "moneyBase": 5.27971,
-     "xpBase": 0.544,
+     "moneyBase": 5.28,
+     "xpBase": 0.543844,
      "observed": {
-      "level": 60,
-      "money": 36.43,
-      "xp": 13.76
+      "level": 61,
+      "money": 36.96,
+      "xp": 13.98
      },
      "icon": "brown_mushroom",
      "dupe": false
@@ -14981,12 +14983,12 @@
      "action": "Break",
      "item": "Bamboo",
      "category": "Break",
-     "moneyBase": 0.17971,
-     "xpBase": 0.102,
+     "moneyBase": 0.18,
+     "xpBase": 0.101922,
      "observed": {
-      "level": 60,
-      "money": 1.24,
-      "xp": 2.58
+      "level": 61,
+      "money": 1.26,
+      "xp": 2.62
      },
      "icon": "bamboo",
      "dupe": false
@@ -14995,12 +14997,12 @@
      "action": "Break",
      "item": "Moss Block",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.136,
+     "moneyBase": 0.528571,
+     "xpBase": 0.136156,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 3.44
+      "level": 61,
+      "money": 3.7,
+      "xp": 3.5
      },
      "icon": "moss_block",
      "dupe": false
@@ -15009,12 +15011,12 @@
      "action": "Break",
      "item": "Moss Carpet",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.136,
+     "moneyBase": 0.528571,
+     "xpBase": 0.136156,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 3.44
+      "level": 61,
+      "money": 3.7,
+      "xp": 3.5
      },
      "icon": "moss_carpet",
      "dupe": false
@@ -15023,12 +15025,12 @@
      "action": "Break",
      "item": "Pale Moss Block",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.136,
+     "moneyBase": 0.528571,
+     "xpBase": 0.136156,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 3.44
+      "level": 61,
+      "money": 3.7,
+      "xp": 3.5
      },
      "icon": "pale_moss_block",
      "dupe": false
@@ -15037,12 +15039,12 @@
      "action": "Break",
      "item": "Pale Moss Carpet",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.136,
+     "moneyBase": 0.528571,
+     "xpBase": 0.136156,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 3.44
+      "level": 61,
+      "money": 3.7,
+      "xp": 3.5
      },
      "icon": "pale_moss_carpet",
      "dupe": false
@@ -15051,12 +15053,12 @@
      "action": "Break",
      "item": "Spore Blossom",
      "category": "Break",
-     "moneyBase": 2.64058,
+     "moneyBase": 2.64,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 18.22,
-      "xp": 17.2
+      "level": 61,
+      "money": 18.48,
+      "xp": 17.48
      },
      "icon": "spore_blossom",
      "dupe": false
@@ -15065,12 +15067,12 @@
      "action": "Break",
      "item": "Flowering Azalea",
      "category": "Break",
-     "moneyBase": 1.056522,
-     "xpBase": 0.272,
+     "moneyBase": 1.055714,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 7.29,
-      "xp": 6.88
+      "level": 61,
+      "money": 7.39,
+      "xp": 6.99
      },
      "icon": "flowering_azalea",
      "dupe": false
@@ -15079,12 +15081,12 @@
      "action": "Break",
      "item": "Azalea",
      "category": "Break",
-     "moneyBase": 1.056522,
-     "xpBase": 0.272,
+     "moneyBase": 1.055714,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 7.29,
-      "xp": 6.88
+      "level": 61,
+      "money": 7.39,
+      "xp": 6.99
      },
      "icon": "azalea",
      "dupe": false
@@ -15093,12 +15095,12 @@
      "action": "Break",
      "item": "Small Dripleaf",
      "category": "Break",
-     "moneyBase": 1.056522,
-     "xpBase": 0.272,
+     "moneyBase": 1.055714,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 7.29,
-      "xp": 6.88
+      "level": 61,
+      "money": 7.39,
+      "xp": 6.99
      },
      "icon": "small_dripleaf",
      "dupe": false
@@ -15107,12 +15109,12 @@
      "action": "Break",
      "item": "Big Dripleaf",
      "category": "Break",
-     "moneyBase": 1.056522,
-     "xpBase": 0.272,
+     "moneyBase": 1.055714,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 7.29,
-      "xp": 6.88
+      "level": 61,
+      "money": 7.39,
+      "xp": 6.99
      },
      "icon": "big_dripleaf",
      "dupe": false
@@ -15121,12 +15123,12 @@
      "action": "Break",
      "item": "Shroomlight",
      "category": "Break",
-     "moneyBase": 1.056522,
-     "xpBase": 0.272,
+     "moneyBase": 1.055714,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 7.29,
-      "xp": 6.88
+      "level": 61,
+      "money": 7.39,
+      "xp": 6.99
      },
      "icon": "shroomlight",
      "dupe": false
@@ -15135,12 +15137,12 @@
      "action": "Break",
      "item": "Glow Lichen",
      "category": "Break",
-     "moneyBase": 1.056522,
-     "xpBase": 0.272,
+     "moneyBase": 1.055714,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 7.29,
-      "xp": 6.88
+      "level": 61,
+      "money": 7.39,
+      "xp": 6.99
      },
      "icon": "glow_lichen",
      "dupe": false
@@ -15149,12 +15151,12 @@
      "action": "Break",
      "item": "Dandelion",
      "category": "Break",
-     "moneyBase": 1.056522,
-     "xpBase": 0.272,
+     "moneyBase": 1.055714,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 7.29,
-      "xp": 6.88
+      "level": 61,
+      "money": 7.39,
+      "xp": 6.99
      },
      "icon": "dandelion",
      "dupe": false
@@ -15163,12 +15165,12 @@
      "action": "Break",
      "item": "Poppy",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "poppy",
      "dupe": false
@@ -15177,12 +15179,12 @@
      "action": "Break",
      "item": "Blue Orchid",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "blue_orchid",
      "dupe": false
@@ -15191,12 +15193,12 @@
      "action": "Break",
      "item": "Allium",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "allium",
      "dupe": false
@@ -15205,12 +15207,12 @@
      "action": "Break",
      "item": "Azure Bluet",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "azure_bluet",
      "dupe": false
@@ -15219,12 +15221,12 @@
      "action": "Break",
      "item": "Red Tulip",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "red_tulip",
      "dupe": false
@@ -15233,12 +15235,12 @@
      "action": "Break",
      "item": "Orange Tulip",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "orange_tulip",
      "dupe": false
@@ -15247,12 +15249,12 @@
      "action": "Break",
      "item": "White Tulip",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "white_tulip",
      "dupe": false
@@ -15261,12 +15263,12 @@
      "action": "Break",
      "item": "Pink Tulip",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "pink_tulip",
      "dupe": false
@@ -15275,12 +15277,12 @@
      "action": "Break",
      "item": "Oxeye Daisy",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "oxeye_daisy",
      "dupe": false
@@ -15289,12 +15291,12 @@
      "action": "Break",
      "item": "Cornflower",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "cornflower",
      "dupe": false
@@ -15303,12 +15305,12 @@
      "action": "Break",
      "item": "Lily Of The Valley",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "lily_of_the_valley",
      "dupe": false
@@ -15317,12 +15319,12 @@
      "action": "Break",
      "item": "Wither Rose",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "wither_rose",
      "dupe": false
@@ -15331,12 +15333,12 @@
      "action": "Break",
      "item": "Lilac",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "lilac",
      "dupe": false
@@ -15345,12 +15347,12 @@
      "action": "Break",
      "item": "Rose Bush",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "rose_bush",
      "dupe": false
@@ -15359,12 +15361,12 @@
      "action": "Break",
      "item": "Peony",
      "category": "Break",
-     "moneyBase": 0.527536,
-     "xpBase": 0.272,
+     "moneyBase": 0.528571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 3.64,
-      "xp": 6.88
+      "level": 61,
+      "money": 3.7,
+      "xp": 6.99
      },
      "icon": "peony",
      "dupe": false
@@ -15373,12 +15375,12 @@
      "action": "Break",
      "item": "Lily Pad",
      "category": "Break",
-     "moneyBase": 5.27971,
-     "xpBase": 1.632,
+     "moneyBase": 0.461429,
+     "xpBase": 0.238078,
      "observed": {
-      "level": 60,
-      "money": 36.43,
-      "xp": 41.28
+      "level": 61,
+      "money": 3.23,
+      "xp": 6.12
      },
      "icon": "lily_pad",
      "dupe": false
@@ -15387,12 +15389,12 @@
      "action": "Place",
      "item": "Wheat",
      "category": "Place",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "wheat",
      "dupe": false
@@ -15401,12 +15403,12 @@
      "action": "Place",
      "item": "Beetroots",
      "category": "Place",
-     "moneyBase": 0.947826,
-     "xpBase": 0.238,
+     "moneyBase": 0.948571,
+     "xpBase": 0.238078,
      "observed": {
-      "level": 60,
-      "money": 6.54,
-      "xp": 6.02
+      "level": 61,
+      "money": 6.64,
+      "xp": 6.12
      },
      "icon": "beetroot",
      "dupe": false
@@ -15415,12 +15417,12 @@
      "action": "Place",
      "item": "Carrots",
      "category": "Place",
-     "moneyBase": 0.947826,
-     "xpBase": 0.272,
+     "moneyBase": 0.948571,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 6.54,
-      "xp": 6.88
+      "level": 61,
+      "money": 6.64,
+      "xp": 6.99
      },
      "icon": "carrot",
      "dupe": false
@@ -15429,12 +15431,12 @@
      "action": "Place",
      "item": "Potatoes",
      "category": "Place",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "potato",
      "dupe": false
@@ -15443,12 +15445,12 @@
      "action": "Place",
      "item": "Cocoa",
      "category": "Place",
-     "moneyBase": 0.395652,
-     "xpBase": 0.272,
+     "moneyBase": 0.395714,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 2.73,
-      "xp": 6.88
+      "level": 61,
+      "money": 2.77,
+      "xp": 6.99
      },
      "icon": "cocoa_beans",
      "dupe": false
@@ -15457,12 +15459,12 @@
      "action": "Place",
      "item": "Nether Wart",
      "category": "Place",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "nether_wart",
      "dupe": false
@@ -15471,12 +15473,12 @@
      "action": "Place",
      "item": "Sugar Cane",
      "category": "Place",
-     "moneyBase": 0.263768,
-     "xpBase": 0.136,
+     "moneyBase": 0.264286,
+     "xpBase": 0.136156,
      "observed": {
-      "level": 60,
-      "money": 1.82,
-      "xp": 3.44
+      "level": 61,
+      "money": 1.85,
+      "xp": 3.5
      },
      "icon": "sugar_cane",
      "dupe": false
@@ -15485,12 +15487,12 @@
      "action": "Place",
      "item": "Cactus",
      "category": "Place",
-     "moneyBase": 0.263768,
-     "xpBase": 0.136,
+     "moneyBase": 0.264286,
+     "xpBase": 0.136156,
      "observed": {
-      "level": 60,
-      "money": 1.82,
-      "xp": 3.44
+      "level": 61,
+      "money": 1.85,
+      "xp": 3.5
      },
      "icon": "cactus",
      "dupe": false
@@ -15499,12 +15501,12 @@
      "action": "Place",
      "item": "Melon Stem",
      "category": "Place",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "melon_seeds",
      "dupe": false
@@ -15513,12 +15515,12 @@
      "action": "Place",
      "item": "Pumpkin Stem",
      "category": "Place",
-     "moneyBase": 0.84058,
-     "xpBase": 0.272,
+     "moneyBase": 0.84,
+     "xpBase": 0.271922,
      "observed": {
-      "level": 60,
-      "money": 5.8,
-      "xp": 6.88
+      "level": 61,
+      "money": 5.88,
+      "xp": 6.99
      },
      "icon": "pumpkin_seeds",
      "dupe": false
@@ -15527,12 +15529,12 @@
      "action": "Place",
      "item": "Red Mushroom",
      "category": "Place",
-     "moneyBase": 1.056522,
-     "xpBase": 0.544,
+     "moneyBase": 1.055714,
+     "xpBase": 0.543844,
      "observed": {
-      "level": 60,
-      "money": 7.29,
-      "xp": 13.76
+      "level": 61,
+      "money": 7.39,
+      "xp": 13.98
      },
      "icon": "red_mushroom",
      "dupe": false
@@ -15541,12 +15543,12 @@
      "action": "Place",
      "item": "Brown Mushroom",
      "category": "Place",
-     "moneyBase": 1.056522,
-     "xpBase": 0.544,
+     "moneyBase": 1.055714,
+     "xpBase": 0.543844,
      "observed": {
-      "level": 60,
-      "money": 7.29,
-      "xp": 13.76
+      "level": 61,
+      "money": 7.39,
+      "xp": 13.98
      },
      "icon": "brown_mushroom",
      "dupe": false
@@ -15555,12 +15557,12 @@
      "action": "Smelt",
      "item": "Green Dye",
      "category": "Smelt",
-     "moneyBase": 1.152174,
-     "xpBase": 0.306,
+     "moneyBase": 1.151429,
+     "xpBase": 0.306156,
      "observed": {
-      "level": 60,
-      "money": 7.95,
-      "xp": 7.74
+      "level": 61,
+      "money": 8.06,
+      "xp": 7.87
      },
      "icon": "green_dye",
      "dupe": false
@@ -15569,12 +15571,12 @@
      "action": "Breed",
      "item": "Horse",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "horse_spawn_egg",
      "dupe": false
@@ -15583,12 +15585,12 @@
      "action": "Breed",
      "item": "Sheep",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "sheep_spawn_egg",
      "dupe": false
@@ -15597,12 +15599,12 @@
      "action": "Breed",
      "item": "Cow",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "cow_spawn_egg",
      "dupe": false
@@ -15611,12 +15613,12 @@
      "action": "Breed",
      "item": "Mooshroom",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "mooshroom_spawn_egg",
      "dupe": false
@@ -15625,12 +15627,12 @@
      "action": "Breed",
      "item": "Pig",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "pig_spawn_egg",
      "dupe": false
@@ -15639,12 +15641,12 @@
      "action": "Breed",
      "item": "Chicken",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "chicken_spawn_egg",
      "dupe": false
@@ -15653,12 +15655,12 @@
      "action": "Breed",
      "item": "Wolf",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "wolf_spawn_egg",
      "dupe": false
@@ -15667,12 +15669,12 @@
      "action": "Breed",
      "item": "Ocelot",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "ocelot_spawn_egg",
      "dupe": false
@@ -15681,12 +15683,12 @@
      "action": "Breed",
      "item": "Rabbit",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "rabbit_spawn_egg",
      "dupe": false
@@ -15695,12 +15697,12 @@
      "action": "Breed",
      "item": "Llama",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "llama_spawn_egg",
      "dupe": false
@@ -15709,12 +15711,12 @@
      "action": "Breed",
      "item": "Turtle",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "turtle_spawn_egg",
      "dupe": false
@@ -15723,12 +15725,12 @@
      "action": "Breed",
      "item": "Allay",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "allay_spawn_egg",
      "dupe": false
@@ -15737,12 +15739,12 @@
      "action": "Breed",
      "item": "Frog",
      "category": "Breed",
-     "moneyBase": 2.111594,
+     "moneyBase": 2.111429,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 14.57,
-      "xp": 17.2
+      "level": 61,
+      "money": 14.78,
+      "xp": 17.48
      },
      "icon": "frog_spawn_egg",
      "dupe": false
@@ -15751,12 +15753,12 @@
      "action": "Tame",
      "item": "Wolf",
      "category": "Tame",
-     "moneyBase": 2.64058,
+     "moneyBase": 2.64,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 18.22,
-      "xp": 17.2
+      "level": 61,
+      "money": 18.48,
+      "xp": 17.48
      },
      "icon": "wolf_spawn_egg",
      "dupe": false
@@ -15765,12 +15767,12 @@
      "action": "Tame",
      "item": "Horse",
      "category": "Tame",
-     "moneyBase": 2.64058,
+     "moneyBase": 2.64,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 18.22,
-      "xp": 17.2
+      "level": 61,
+      "money": 18.48,
+      "xp": 17.48
      },
      "icon": "horse_spawn_egg",
      "dupe": false
@@ -15779,12 +15781,12 @@
      "action": "Tame",
      "item": "Parrot",
      "category": "Tame",
-     "moneyBase": 2.64058,
+     "moneyBase": 2.64,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 18.22,
-      "xp": 17.2
+      "level": 61,
+      "money": 18.48,
+      "xp": 17.48
      },
      "icon": "parrot_spawn_egg",
      "dupe": false
@@ -15793,12 +15795,12 @@
      "action": "Tame",
      "item": "Ocelot",
      "category": "Tame",
-     "moneyBase": 2.64058,
+     "moneyBase": 2.64,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 18.22,
-      "xp": 17.2
+      "level": 61,
+      "money": 18.48,
+      "xp": 17.48
      },
      "icon": "ocelot_spawn_egg",
      "dupe": false
@@ -15807,12 +15809,12 @@
      "action": "Tame",
      "item": "Llama",
      "category": "Tame",
-     "moneyBase": 2.64058,
+     "moneyBase": 2.64,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 18.22,
-      "xp": 17.2
+      "level": 61,
+      "money": 18.48,
+      "xp": 17.48
      },
      "icon": "llama_spawn_egg",
      "dupe": false
@@ -15821,12 +15823,12 @@
      "action": "Shear",
      "item": "Black",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "black_wool",
      "dupe": false
@@ -15835,12 +15837,12 @@
      "action": "Shear",
      "item": "Blue",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "blue_wool",
      "dupe": false
@@ -15849,12 +15851,12 @@
      "action": "Shear",
      "item": "Brown",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "brown_wool",
      "dupe": false
@@ -15863,12 +15865,12 @@
      "action": "Shear",
      "item": "Cyan",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "cyan_wool",
      "dupe": false
@@ -15877,12 +15879,12 @@
      "action": "Shear",
      "item": "Gray",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "gray_wool",
      "dupe": false
@@ -15891,12 +15893,12 @@
      "action": "Shear",
      "item": "Green",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "green_wool",
      "dupe": false
@@ -15905,12 +15907,12 @@
      "action": "Shear",
      "item": "Light Blue",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "light_blue_wool",
      "dupe": false
@@ -15919,12 +15921,12 @@
      "action": "Shear",
      "item": "Lime",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "lime_wool",
      "dupe": false
@@ -15933,12 +15935,12 @@
      "action": "Shear",
      "item": "Magenta",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "magenta_wool",
      "dupe": false
@@ -15947,12 +15949,12 @@
      "action": "Shear",
      "item": "Orange",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "orange_wool",
      "dupe": false
@@ -15961,12 +15963,12 @@
      "action": "Shear",
      "item": "Pink",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "pink_wool",
      "dupe": false
@@ -15975,12 +15977,12 @@
      "action": "Shear",
      "item": "Purple",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "purple_wool",
      "dupe": false
@@ -15989,12 +15991,12 @@
      "action": "Shear",
      "item": "Red",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "red_wool",
      "dupe": false
@@ -16003,12 +16005,12 @@
      "action": "Shear",
      "item": "Light Gray",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "light_gray_wool",
      "dupe": false
@@ -16017,12 +16019,12 @@
      "action": "Shear",
      "item": "White",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "white_wool",
      "dupe": false
@@ -16031,12 +16033,12 @@
      "action": "Shear",
      "item": "Yellow",
      "category": "Shear",
-     "moneyBase": 1.584058,
+     "moneyBase": 1.584286,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 17.2
+      "level": 61,
+      "money": 11.09,
+      "xp": 17.48
      },
      "icon": "yellow_wool",
      "dupe": false
@@ -16045,12 +16047,12 @@
      "action": "Milk",
      "item": "Cow",
      "category": "Milk",
-     "moneyBase": 1.847826,
+     "moneyBase": 1.848571,
      "xpBase": 0.68,
      "observed": {
-      "level": 60,
-      "money": 12.75,
-      "xp": 17.2
+      "level": 61,
+      "money": 12.94,
+      "xp": 17.48
      },
      "icon": "cow_spawn_egg",
      "dupe": false
@@ -16059,12 +16061,12 @@
      "action": "Collect",
      "item": "Sweet Berries",
      "category": "Collect",
-     "moneyBase": 0.210145,
-     "xpBase": 0.408,
+     "moneyBase": 0.21,
+     "xpBase": 0.408078,
      "observed": {
-      "level": 60,
-      "money": 1.45,
-      "xp": 10.32
+      "level": 61,
+      "money": 1.47,
+      "xp": 10.49
      },
      "icon": "sweet_berries",
      "dupe": true
@@ -16073,12 +16075,12 @@
      "action": "Collect",
      "item": "Sweet Berries (2)",
      "category": "Collect",
-     "moneyBase": 0.330435,
-     "xpBase": 0.408,
+     "moneyBase": 0.33,
+     "xpBase": 0.408078,
      "observed": {
-      "level": 60,
-      "money": 2.28,
-      "xp": 10.32
+      "level": 61,
+      "money": 2.31,
+      "xp": 10.49
      },
      "icon": "sweet_berries",
      "dupe": true
@@ -16087,12 +16089,12 @@
      "action": "Collect",
      "item": "Bone Meal",
      "category": "Collect",
-     "moneyBase": 1.584058,
-     "xpBase": 0.408,
+     "moneyBase": 1.584286,
+     "xpBase": 0.408078,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 10.32
+      "level": 61,
+      "money": 11.09,
+      "xp": 10.49
      },
      "icon": "bone_meal",
      "dupe": false
@@ -16101,12 +16103,12 @@
      "action": "Collect",
      "item": "Honeycomb",
      "category": "Collect",
-     "moneyBase": 1.584058,
-     "xpBase": 0.408,
+     "moneyBase": 1.584286,
+     "xpBase": 0.408078,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 10.32
+      "level": 61,
+      "money": 11.09,
+      "xp": 10.49
      },
      "icon": "honeycomb",
      "dupe": false
@@ -16115,12 +16117,12 @@
      "action": "Collect",
      "item": "Honey Bottle",
      "category": "Collect",
-     "moneyBase": 1.584058,
-     "xpBase": 0.408,
+     "moneyBase": 1.584286,
+     "xpBase": 0.408078,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 10.32
+      "level": 61,
+      "money": 11.09,
+      "xp": 10.49
      },
      "icon": "honey_bottle",
      "dupe": false
@@ -16129,12 +16131,12 @@
      "action": "Collect",
      "item": "Glow Berries",
      "category": "Collect",
-     "moneyBase": 1.584058,
-     "xpBase": 0.408,
+     "moneyBase": 1.584286,
+     "xpBase": 0.408078,
      "observed": {
-      "level": 60,
-      "money": 10.93,
-      "xp": 10.32
+      "level": 61,
+      "money": 11.09,
+      "xp": 10.49
      },
      "icon": "glow_berries",
      "dupe": false

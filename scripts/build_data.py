@@ -4,7 +4,7 @@ Raw format and the Builder/Miner category rules come from Luma Jobs/scripts/pars
 Every value is normalized to its level-1 base using the fitted Luma scaling:
     xp(L) = base (L+c)/(1+c)    money(L) = base (L+9)/10
 where c is the job's xpOffset in data/jobs-meta.json (10/7 measured for Hunter, Farmer, Blacksmith, Builder and Fisherman, 5 measured for Cook),
-so the site can project any level. Icons come from the minecraft-textures package
+so the site can project any level. Pay stops growing at PAY_CAP (70) for every job, as in src/lib/scaling.ts. Icons come from the minecraft-textures package
 (MC 26.2 manifest); only the PNGs actually referenced are copied into public/icons/.
 The item glossary's icons are also packed into one sprite sheet (src/assets/items-atlas.png) so the Items page
 makes one image request instead of ~120; that step needs Pillow (pip install pillow).
@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = ROOT / "data" / "raw"
 META_FILE = ROOT / "data" / "jobs-meta.json"
+PAY_CAP = 70  # same as PAY_CAP in src/lib/scaling.ts
 OUT = ROOT / "src" / "data" / "jobs.json"
 # The Items glossary (built by scripts/build-items.mjs); each item's material icon is copied too.
 ITEMS_FILE = ROOT / "src" / "data" / "items.json"
@@ -219,6 +220,8 @@ def main():
             meta, rows = parse_file(path)
             level = int(meta["level"])
             c = float(jm["xpOffset"])
+            # Pay stops growing at PAY_CAP for every job, so a reading above it normalizes from the cap.
+            pay_level = min(level, PAY_CAP)
             entry["level"] = level
             entry["source"] = meta.get("source")
             seen = {}
@@ -230,8 +233,8 @@ def main():
                     "action": action,
                     "item": label,
                     "category": classify(name) if job in CATEGORIZED_JOBS else action,
-                    "moneyBase": round(money * 10 / (level + 9), 6),
-                    "xpBase": round(xp * (1 + c) / (level + c), 6),
+                    "moneyBase": round(money * 10 / (pay_level + 9), 6),
+                    "xpBase": round(xp * (1 + c) / (pay_level + c), 6),
                     "observed": {"level": level, "money": money, "xp": xp},
                     "icon": icons.resolve(job, action, name),
                     "key": key,

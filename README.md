@@ -20,7 +20,12 @@ The server's Jobs config isn't public, so the guide is built from in-game readin
   per-job `xpOffset` c in `data/jobs-meta.json`: 10/7 for Hunter, Farmer, Blacksmith, Builder and Fisherman (each read at 2+ levels, every item
   fits; earlier dumps are in `data/readings/`, checked by `src/lib/readings.test.ts`), 5 for Cook (read at 41, 44, 45 and 46,
   which rules out 10/7 for it), and 10/7 for the jobs read only once. Each dump is normalized to its level-1 base, so dumps taken at any
-  level work. A second `/jobs browse` at a different level for any job settles its offset.
+  level work. A second `/jobs browse` at a different level for any job settles its offset. When the server re-prices
+  an item (Farmer's Lily Pad, nerfed by 2026-10-19), list it in `REPRICED` in `src/lib/readings.test.ts` so readings
+  from before the change skip it; a test fails if a listed item didn't actually change.
+  Pay per action stops growing at level 70 for every job (`PAY_CAP` in `src/lib/scaling.ts`, mirrored in
+  `scripts/build_data.py`). Farmer read at 85 (`data/readings/farmer-85.txt`) is paid exactly its level 70 values, and
+  caps of 69, 71 or none each miss most items; only the XP needed keeps rising past 70.
 - **Perks** (level + perk name) are extracted from `LumaLibre/JobsAddons` `PerksFile.kt`.
 - **Kamori's Glasses** bloom hour is an exact port of `KamorisGlasses.kt`, tested against the JVM on every day 2024–2034.
 - **Relics** (`src/lib/relics.ts`): odds are derived from LumaItems' relic code and default `relics.yml` / `astral.yml`.

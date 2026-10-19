@@ -3,7 +3,7 @@ import jobsData from '../data/jobs.json';
 import perksData from '../data/perks.json';
 import type { Job, JobsData, Perk } from '../data/types';
 import { Icon } from '../components/Icon';
-import { MAX_LEVEL, planLevels, req } from '../lib/scaling';
+import { MAX_LEVEL, PAY_CAP, planLevels, req } from '../lib/scaling';
 import { itemKey, loadJobPrefs, pickedItem, saveJobPrefs, type JobPrefs } from './jobs/prefs';
 import { ItemTable } from './jobs/ItemTable';
 import { Plan } from './jobs/Plan';
@@ -149,6 +149,7 @@ function JobView({ job }: { job: Job }) {
           <p>
             XP for the next level is <code>4.29·L³ + 0.3002·L² − 0.095</code>, rounded. That is within 1 XP of all 14 <code>/jobs stats</code> readings we have.
             Money per action grows with <code>(L + 9)</code> and XP per action with <code>(L + {fmtOffset(job.xpOffset)})</code>, so the {job.job} values above are projected to your level.
+            {' '}Past level {PAY_CAP} pay per action stops growing for every job (a Farmer read at 85 is paid exactly the level {PAY_CAP} values), so only the XP needed keeps rising.
             {job.confidence === 'confirmed'
               ? <> {job.job} was read at levels {job.readLevels.join(', ')}, and both formulas match those readings within the game's rounding.</>
               : <> {job.job} has only been read at level {job.readLevels.join(', ')}, so its projections use the formulas measured on other jobs.</>}
