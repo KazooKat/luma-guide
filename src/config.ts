@@ -5,4 +5,4 @@ export const SUGGEST_FORM_URL = '';
 export const REPO_URL = 'https://github.com/KazooKat/luma-guide';
 export const SUGGEST_URL = SUGGEST_FORM_URL || `${REPO_URL}/issues/new?template=suggestion.yml`;
 
-export const DATA_DATE = '2026-09-25';
+export const DATA_DATE = '2026-10-19';

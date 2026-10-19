@@ -63,7 +63,7 @@ export function App() {
       </main>
       <footer class="site">
         <span>Fan-made guide, not affiliated with LumaMC. Minecraft icons © Mojang.</span>
-        <span>Job pay read from /jobs browse on {DATA_DATE}.</span>
+        <span>Job pay last read from /jobs browse on {DATA_DATE}.</span>
       </footer>
     </>
   );
