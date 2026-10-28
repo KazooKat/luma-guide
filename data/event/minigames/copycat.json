@@ -1,0 +1,306 @@
+[
+  {
+    "key": "copycat",
+    "constant": "COPYCAT",
+    "name": "Copycat",
+    "summary": "A memory building game with no PvP. You study a build for 16 seconds, then some of its blocks vanish and you put them back from the items you're given. Each round more blocks go missing and you need a bigger share of them right, and anyone below the target is out. Soul Orbs come from how many rounds you survive.",
+    "tokenLine": "2 to 8 by rounds survived, +1 for most points, max 9",
+    "storyboard": {
+      "values": {
+        "memorizeSeconds": 16,
+        "missingBlocks": 10,
+        "buildSeconds": 25,
+        "targetPercent": 30,
+        "yourRight": 8,
+        "wrongBlocks": 1,
+        "rivalRight": 2,
+        "pointsPerBlock": 10,
+        "wrongPenalty": 5,
+        "minOrbs": 2,
+        "maxOrbs": 8,
+        "roundsForMax": 8,
+        "mostPointsBonus": 1
+      },
+      "beats": [
+        {
+          "caption": "Memorize it, then fill the gaps",
+          "sub": "You get 16 seconds to study the build. Then blocks vanish and you put them back from the items you're given.",
+          "src": "games/logic/copycat/Copycat.java:110, games/logic/copycat/Copycat.java:438-459, games/logic/copycat/roles/Builder.java:161-195"
+        },
+        {
+          "caption": "Fall short and you're out",
+          "sub": "Round 1 needs 30% of your missing blocks right. The target rises every round, up to 75%.",
+          "src": "games/logic/copycat/Copycat.java:120-125, games/logic/copycat/Copycat.java:381-388, games/logic/copycat/Copycat.java:394-396, games/logic/copycat/Copycat.java:496-506"
+        },
+        {
+          "caption": "Soul Orbs for rounds survived",
+          "sub": "2 Soul Orbs, rising to 8 at 8 rounds survived. Whoever has the most points gets 1 more.",
+          "src": "games/tokenformula/CopycatTokenFormula.java:5-6, games/tokenformula/ScoreRangeTokenFormula.java:10-12, games/tokenformula/ScoreRangeTokenFormula.java:27-33, games/logic/copycat/Copycat.java:262-265"
+        }
+      ]
+    },
+    "howToPlay": [
+      {
+        "text": "Join with /event join while the queue is open (90 seconds by default). Copycat needs only 1 player to start. You are sent to the Copycat lobby, and your inventory is saved and cleared, then given back when the game ends.",
+        "src": "commands/modules/minigame/MinigameJoinCommand.java:32-48, games/interfaces/Minigame.java:126-138, games/interfaces/Minigame.java:143-159, games/interfaces/Minigame.java:344-345, games/logic/copycat/Copycat.java:207-209, games/logic/copycat/Copycat.java:242-245, games/interfaces/InventoryUnifiedMinigame.java:38-62, games/interfaces/InventoryUnifiedMinigame.java:73-88"
+      },
+      {
+        "text": "Everyone gets their own walled plot with a black terracotta floor. You are shrunk to half size and can fly, and if you fly out of your plot you are teleported back in. You can't take damage, get hungry, die or drop items.",
+        "src": "games/logic/copycat/Copycat.java:270-293, games/logic/copycat/Arena.java:20-24, games/logic/copycat/Arena.java:85-111, games/logic/copycat/roles/Builder.java:52-53, games/logic/copycat/roles/Builder.java:74-108, games/logic/copycat/Copycat.java:984-1014"
+      },
+      {
+        "text": "Each round starts with \"Round N, Memorize the build!\" and the same build appears in every plot, turned to a random side. You get 16 seconds to study it and can't touch it yet. The build's footprint is marked on your floor in light gray terracotta.",
+        "src": "games/logic/copycat/Copycat.java:409-444, games/logic/copycat/Copycat.java:110, games/logic/copycat/Copycat.java:669-675, games/logic/copycat/Plot.java:87-103"
+      },
+      {
+        "text": "Then \"Go!\" shows how many blocks went missing, how long you have and what share you need right. The missing blocks vanish from your plot and your inventory is filled with exactly the items for them, plus a lime dye called \"I'm done!\" in hotbar slot 9.",
+        "src": "games/logic/copycat/Copycat.java:446-459, games/logic/copycat/roles/Builder.java:161-195, games/logic/copycat/roles/Builder.java:44-51"
+      },
+      {
+        "text": "Only blocks with at least 1 side open to air can go missing, so blocks buried inside the build never do. A door or tall flower goes missing as a whole. The face resting on the ground doesn't count as open unless the build floats.",
+        "src": "games/logic/copycat/CopycatBuild.java:99-112, games/logic/copycat/CopycatBuild.java:243-257"
+      },
+      {
+        "text": "Put the blocks back where they were. You can only place and break inside the build's own area (\"Stay inside the marked build area\"). Breaking is instant and gives the block back to your inventory, nothing drops.",
+        "src": "games/logic/copycat/Copycat.java:669-675, games/logic/copycat/Copycat.java:682-719, games/logic/copycat/Copycat.java:744-754, games/logic/copycat/Copycat.java:773-804, games/logic/copycat/Plot.java:125-131"
+      },
+      {
+        "text": "When your copy is perfect it locks itself straight away (\"Perfect!\") and chat tells everyone. You can also lock it early by left clicking \"I'm done!\" twice quickly. Either way you can't change it after that. Submitting turns you into an invisible spectator who can fly around the arena until the round ends.",
+        "src": "games/logic/copycat/roles/Builder.java:284-292, games/logic/copycat/Copycat.java:897-924, games/logic/copycat/Copycat.java:592-605, games/logic/copycat/roles/TransientSpectator.java:7-13, games/logic/copycat/roles/Spectator.java:33-63"
+      },
+      {
+        "text": "The round ends when the timer runs out or when every builder has locked in. Your plot is then checked and chat tells you your points and what share of your missing blocks you got right, against what you needed.",
+        "src": "games/logic/copycat/Copycat.java:303-305, games/logic/copycat/Copycat.java:461-501"
+      },
+      {
+        "text": "If your share is below the target, you are eliminated. If every builder misses the target in the same round, nobody is eliminated and chat says everyone gets another chance.",
+        "src": "games/logic/copycat/Copycat.java:394-396, games/logic/copycat/Copycat.java:496-510"
+      },
+      {
+        "text": "Next everyone is moved around to look at the round's best 2 builds and up to 2 of the worst failed ones, 7 seconds each. After that the eliminated players are announced and become invisible spectators who can fly around the arena but can't touch anything.",
+        "src": "games/logic/copycat/Copycat.java:518-580, games/logic/copycat/Copycat.java:585-590, games/logic/copycat/roles/Spectator.java:23-25, games/logic/copycat/roles/Spectator.java:33-63, games/logic/copycat/Copycat.java:897-902"
+      },
+      {
+        "text": "After a 5 second break (\"Faster!\") your plot is cleared and the next round starts with a new build. Each build is only used once per game.",
+        "src": "games/logic/copycat/Copycat.java:607-632, games/logic/copycat/Copycat.java:398-401, games/logic/copycat/Copycat.java:418"
+      },
+      {
+        "text": "The game ends when only 1 builder is left, when no builders are left, after 20 rounds, or when the server runs out of builds. The player with the most points is shown as the winner, the top 5 are listed in chat, and 5 seconds later everyone goes back to the lobby.",
+        "src": "games/logic/copycat/Copycat.java:403-415, games/logic/copycat/Copycat.java:634-647, games/models/Scoreboard.java:87-100, games/logic/copycat/Copycat.java:337, configurable/sectors/game/CopycatDefinition.java:24"
+      }
+    ],
+    "scoring": [
+      {
+        "text": "Survival only looks at your missing blocks: how many you put back correctly, out of how many went missing. Wrong or extra blocks never count against survival, they only cost points.",
+        "src": "games/logic/copycat/Copycat.java:394-396, games/logic/copycat/Copycat.java:496-506, games/logic/copycat/roles/Builder.java:244-267"
+      },
+      {
+        "text": "Each missing block you put back correctly is 10 points.",
+        "src": "games/logic/copycat/roles/Builder.java:257-259, games/logic/copycat/roles/Builder.java:270, games/logic/copycat/Copycat.java:138"
+      },
+      {
+        "text": "You lose 5 points for every block that is there but wrong (in a missing spot or one of the build's own blocks you swapped), 5 for every one of the build's own blocks you broke and left empty, and 5 for every extra block placed where the build has nothing.",
+        "src": "games/logic/copycat/roles/Builder.java:250-273, games/logic/copycat/Copycat.java:139-141"
+      },
+      {
+        "text": "A perfect copy (nothing missing, wrong, removed or extra) adds 50 points, plus 1 point for every second left on the timer when it locked in.",
+        "src": "games/logic/copycat/roles/Builder.java:274-280, games/logic/copycat/Copycat.java:142-143"
+      },
+      {
+        "text": "A block counts as right if it's the same block, with the same top or bottom half for stairs, slabs and closed trapdoors, the same number of candles, sea pickles, snow layers or turtle eggs, and the same waterlogging. Which way it faces is not checked. Heads and banners must have the same skin or pattern, and you're given the exact item.",
+        "src": "games/logic/copycat/CopycatBuild.java:452-484, games/logic/copycat/CopycatBuild.java:442-450, games/logic/copycat/TileDetail.java:40-42, games/logic/copycat/roles/Builder.java:167-173"
+      },
+      {
+        "text": "Example: a round 1 build with 10 missing blocks gives you 25 seconds (at the default 2.5 seconds per block), and you need 3 right (30%). 8 right and 1 wrong is 80% and 75 points. 2 right is only 20%, so you're out.",
+        "src": "games/logic/copycat/Round.java:35-37, games/logic/copycat/Round.java:51-54, configurable/sectors/game/CopycatDefinition.java:22-23, games/logic/copycat/Copycat.java:120, games/logic/copycat/Copycat.java:381-388, games/logic/copycat/Copycat.java:394-396, games/logic/copycat/Copycat.java:496-506, games/logic/copycat/roles/Builder.java:257-273, games/logic/copycat/Copycat.java:138-139"
+      },
+      {
+        "text": "Points decide the winner and are added to your all-time Copycat leaderboard score (never below 0), but your Soul Orbs come from rounds survived.",
+        "src": "games/logic/copycat/Copycat.java:262-267, games/models/Scoreboard.java:45-51"
+      }
+    ],
+    "tokens": [
+      {
+        "text": "You are paid Soul Orbs when the game ends, once per game. Eliminated players stay in the game as spectators, so they are paid too.",
+        "src": "games/interfaces/InventoryUnifiedMinigame.java:73-88, games/interfaces/TokenFormula.java:35-48, games/logic/copycat/Copycat.java:585-590"
+      },
+      {
+        "text": "Each round you aren't eliminated in counts as 1 round survived. The round you are knocked out in doesn't count.",
+        "src": "games/logic/copycat/Copycat.java:502-516"
+      },
+      {
+        "text": "Rounds survived are spread over 2 to 8 Soul Orbs, reaching 8 at 8 rounds, rounded to the nearest whole orb. 0 rounds gives 2, 1 gives 3, 2 or 3 give 4, 4 gives 5, 5 gives 6, 6 or 7 give 7, and 8 or more give 8.",
+        "src": "games/tokenformula/CopycatTokenFormula.java:5-6, games/tokenformula/CopycatTokenFormula.java:12-14, games/tokenformula/ScoreRangeTokenFormula.java:10-12, games/tokenformula/ScoreRangeTokenFormula.java:27-33"
+      },
+      {
+        "text": "The player with the most points at the end gets 1 more, so the most is 9.",
+        "src": "games/logic/copycat/Copycat.java:262-265, games/models/Scoreboard.java:45-51, games/tokenformula/ScoreRangeTokenFormula.java:12, games/tokenformula/ScoreRangeTokenFormula.java:33"
+      },
+      {
+        "text": "If you are removed for being AFK you get nothing.",
+        "src": "games/interfaces/Minigame.java:458-464, games/interfaces/InventoryUnifiedMinigame.java:112-114"
+      },
+      {
+        "text": "Staff can start a game with a token multiplier (applied after the 9 cap), a flat amount for everyone, or no tokens, and chat announces it. Then the server-wide multiplier is applied, rounded up, and you get at most 20 tokens from one payout.",
+        "src": "games/interfaces/TokenPayout.java:30-36, games/interfaces/Minigame.java:344-346, games/interfaces/Minigame.java:633-640, items/TokenExchanging.java:38, items/TokenExchanging.java:46, configurable/Config.java:34"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Players",
+        "value": "1 or more",
+        "src": "games/logic/copycat/Copycat.java:207-209, games/interfaces/Minigame.java:143-159"
+      },
+      {
+        "label": "Memorize time",
+        "value": "16 seconds",
+        "src": "games/logic/copycat/Copycat.java:110, games/logic/copycat/Copycat.java:438-444"
+      },
+      {
+        "label": "Build time",
+        "value": "2.5 seconds per missing block (rounded up), at least 15 seconds",
+        "src": "games/logic/copycat/Round.java:8, games/logic/copycat/Round.java:35-37, games/logic/copycat/Round.java:51-54, configurable/sectors/game/CopycatDefinition.java:22-23"
+      },
+      {
+        "label": "Time per block",
+        "value": "Shrinks about 1% each round: 2.5s in round 1, about 2.26s in round 10, just under 2s in round 20",
+        "src": "games/logic/copycat/Copycat.java:113-116, games/logic/copycat/Copycat.java:377-379, games/logic/copycat/Copycat.java:418"
+      },
+      {
+        "label": "Blocks removed",
+        "value": "25% of the blocks open to air in round 1, rising evenly to 50% by round 10 (a smaller share on builds over 60 blocks)",
+        "src": "games/logic/copycat/Copycat.java:111-113, games/logic/copycat/Copycat.java:372-375, games/logic/copycat/Round.java:9-10, games/logic/copycat/Round.java:39-49"
+      },
+      {
+        "label": "Needed to survive",
+        "value": "30% in round 1, then 31, 32, 34, 36, 38, 40, 42, 45 and 48% by round 10, then 3% more each round up to 75% from round 19",
+        "src": "games/logic/copycat/Copycat.java:120-125, games/logic/copycat/Copycat.java:381-388"
+      },
+      {
+        "label": "Max rounds",
+        "value": "20",
+        "src": "configurable/sectors/game/CopycatDefinition.java:24, games/logic/copycat/Copycat.java:403-407"
+      },
+      {
+        "label": "Points",
+        "value": "+10 per correct block, -5 per wrong, removed or extra block, +50 for a perfect copy plus 1 per second left",
+        "src": "games/logic/copycat/Copycat.java:138-143, games/logic/copycat/roles/Builder.java:270-280"
+      },
+      {
+        "label": "Between rounds",
+        "value": "7 seconds per showcased build (up to 4), then a 5 second break",
+        "src": "games/logic/copycat/Copycat.java:118-119, games/logic/copycat/Copycat.java:126-127, games/logic/copycat/Copycat.java:563"
+      },
+      {
+        "label": "Breaking",
+        "value": "Instant, once every 0.25 seconds",
+        "src": "games/logic/copycat/Copycat.java:131, games/logic/copycat/Copycat.java:683-694"
+      },
+      {
+        "label": "Submit",
+        "value": "2 left clicks with \"I'm done!\" between 0.15 and 0.75 seconds apart",
+        "src": "games/logic/copycat/Copycat.java:132-133, games/logic/copycat/Copycat.java:908-923"
+      },
+      {
+        "label": "AFK",
+        "value": "Builders are warned after 60 seconds idle and removed at 90. Spectators get 6 and 7 minutes",
+        "src": "games/logic/copycat/Copycat.java:237-239, games/interfaces/models/InactivitySettings.java:17-18, games/interfaces/models/InactivitySettings.java:26-35"
+      },
+      {
+        "label": "Soul Orbs",
+        "value": "2 to 8 by rounds survived (8 at 8 rounds), +1 for most points",
+        "src": "games/tokenformula/CopycatTokenFormula.java:5-6, games/tokenformula/ScoreRangeTokenFormula.java:10-12, games/tokenformula/ScoreRangeTokenFormula.java:27-33"
+      }
+    ],
+    "tips": [
+      {
+        "text": "Your items are a cheat sheet: you are given exactly what went missing, so the blocks in your inventory tell you what to look for, and an empty inventory (apart from \"I'm done!\") means everything is placed.",
+        "src": "games/logic/copycat/roles/Builder.java:161-195"
+      },
+      {
+        "text": "During the 16 seconds, focus on the outside of the build. Blocks with no side open to air can never go missing.",
+        "src": "games/logic/copycat/CopycatBuild.java:99-112, games/logic/copycat/Copycat.java:110"
+      },
+      {
+        "text": "Never leave a spot empty if you have a guess. A right guess is 10 points and counts toward survival, and a wrong one only costs 5 points and doesn't hurt your survival share.",
+        "src": "games/logic/copycat/roles/Builder.java:257-273, games/logic/copycat/Copycat.java:394-396"
+      },
+      {
+        "text": "Don't spend time turning blocks the right way. Facing isn't checked, but top or bottom half is for stairs, slabs and closed trapdoors, and so is how many candles, sea pickles or snow layers are in a spot.",
+        "src": "games/logic/copycat/CopycatBuild.java:442-450, games/logic/copycat/CopycatBuild.java:463-484"
+      },
+      {
+        "text": "Leave the build's own blocks alone. Breaking one and not putting it back costs 5 points, and so does any block placed where the build has none.",
+        "src": "games/logic/copycat/roles/Builder.java:250-273"
+      },
+      {
+        "text": "You don't need to press \"I'm done!\" for the speed bonus. A perfect copy locks itself the moment it's finished, and the clock stops for the bonus right then. Submitting an imperfect copy just gives up the time you had left to fix it.",
+        "src": "games/logic/copycat/roles/Builder.java:274-292, games/logic/copycat/Copycat.java:592-605"
+      },
+      {
+        "text": "Fixing a mistake is cheap: breaking is instant and the block goes straight back into your inventory.",
+        "src": "games/logic/copycat/Copycat.java:683-711, games/logic/copycat/Copycat.java:744-754"
+      },
+      {
+        "text": "Don't go idle. A builder who doesn't move for 90 seconds is removed and gets no Soul Orbs.",
+        "src": "games/logic/copycat/Copycat.java:237-239, games/interfaces/models/InactivitySettings.java:17, games/interfaces/Minigame.java:458-464, games/interfaces/InventoryUnifiedMinigame.java:112-114"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "The winner and the +1 Soul Orb go to whoever has the most points, which isn't always the last builder standing.",
+        "src": "games/logic/copycat/Copycat.java:262-265, games/models/Scoreboard.java:45-51, games/models/Scoreboard.java:87-100"
+      },
+      {
+        "text": "The game stops as soon as only 1 builder is left, so the last survivor doesn't play extra rounds. Their rounds survived is however many rounds were played.",
+        "src": "games/logic/copycat/Copycat.java:403-415, games/logic/copycat/Copycat.java:512-516"
+      },
+      {
+        "text": "Elimination waits until after the showcase, so a player who failed can still be shown in the worst builds before being knocked out.",
+        "src": "games/logic/copycat/Copycat.java:518-560"
+      },
+      {
+        "text": "A double slab counts as the full block it's made of, so 2 oak slabs in one spot match oak planks. Smooth stone is the exception.",
+        "src": "games/logic/copycat/CopycatBuild.java:415-420, games/logic/copycat/CopycatBuild.java:437-438, games/logic/copycat/CopycatBuild.java:456-461"
+      },
+      {
+        "text": "An open trapdoor matches whether it is hinged at the top or the bottom.",
+        "src": "games/logic/copycat/CopycatBuild.java:477-478"
+      },
+      {
+        "text": "Right clicking a chest, crafting table, sign or other block with a menu does nothing in the arena. Sneak with an item in hand to place a block against it.",
+        "src": "games/logic/copycat/Copycat.java:134-137, games/logic/copycat/Copycat.java:903-907, games/logic/copycat/Copycat.java:926-943"
+      },
+      {
+        "text": "Water and lava don't flow, fire can't be lit or spread, and leaves don't decay anywhere in the arena.",
+        "src": "games/logic/copycat/Copycat.java:884-894, games/logic/copycat/Copycat.java:1027-1043"
+      },
+      {
+        "text": "Water, lava and waterlogged blocks go back with buckets: you're given a bucket for each one that went missing.",
+        "src": "games/logic/copycat/roles/Builder.java:167-179, games/logic/copycat/CopycatBuild.java:282-291, games/logic/copycat/CopycatBuild.java:375-379, games/logic/copycat/Copycat.java:831-857"
+      }
+    ],
+    "config": [
+      {
+        "text": "Copycat isn't in the default list of games that start automatically, so staff start it.",
+        "src": "configurable/Config.java:44-49"
+      },
+      {
+        "text": "The lobby and the corner the plot grid grows from are set per map.",
+        "src": "configurable/sectors/game/CopycatDefinition.java:17-21"
+      },
+      {
+        "text": "Build time is 2.5 seconds per missing block and the game lasts at most 20 rounds by default.",
+        "src": "configurable/sectors/game/CopycatDefinition.java:22-24"
+      },
+      {
+        "text": "The builds are schematic files on the server, up to 16 by 16 by 16 blocks. Each one can be set to float above the floor, get a minimum or maximum build time, or have block types that never go missing. By default only mini_skyblock.schem has a setting: it floats.",
+        "src": "configurable/sectors/game/CopycatDefinition.java:25-51, games/logic/copycat/Copycat.java:178-190, games/logic/copycat/CopycatBuild.java:52-53, games/logic/copycat/CopycatBuild.java:177-181, games/logic/copycat/BuildSettings.java:21-30"
+      },
+      {
+        "text": "The 16 second memorize time, how many blocks go missing, the survival targets and the point values are fixed in the code, not the config.",
+        "src": "games/logic/copycat/Copycat.java:110-143"
+      }
+    ]
+  }
+]

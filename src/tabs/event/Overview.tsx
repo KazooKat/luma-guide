@@ -2,7 +2,8 @@ import { Fragment } from 'preact';
 import { AtlasIcon } from '../../components/AtlasIcon';
 import { BY_ID } from '../items/common';
 import { plain } from '../../lib/minimessage';
-import { EVENT, GAME_COUNT, META, Src, VISIBLE_GAMES } from './common';
+import { CandyTable } from './Candy';
+import { EVENT, GAME_COUNT, META, possessive, Src, VISIBLE_GAMES } from './common';
 
 const COMMAND_TEXT: Record<string, string> = {
   join: 'Join the minigame that is starting (or click the announcement in chat).',
@@ -44,6 +45,7 @@ export function Overview() {
           <p class="explain-line">
             Trick or treating gives you {tot.reward}. After that you have to wait <b>{tot.cooldownHours} hours</b> before you can trick or treat again.
           </p>
+          {EVENT.candy && <CandyTable candy={EVENT.candy} />}
         </section>
       )}
 
@@ -104,7 +106,7 @@ export function Overview() {
           {charm && (
             <a class="selected-item charm-link" href={`#/items/${charm.id}`}>
               <AtlasIcon id={charm.icon} size={32} glint={charm.glint} />
-              <span><b>{plain(charm.name)}</b><span>{META.charmItemId ? 'This event' : `${META.sourceEvent}'s charm, as an example`}</span></span>
+              <span><b>{plain(charm.name)}</b><span>{META.charmItemId ? 'This event' : `${possessive(META.sourceEvent)} charm, as an example`}</span></span>
             </a>
           )}
         </section>

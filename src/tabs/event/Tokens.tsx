@@ -8,7 +8,8 @@ import { MCMMO_MAX_LEVEL } from '../../lib/mcmmo';
 import { loadJobPrefs, saveJobPrefs, type JobPrefs } from '../jobs/prefs';
 import { AlchemyChart } from './AlchemyChart';
 import { CALC_JOBS, calcJob, jobTokenRow, type JobTokenRow } from './jobTokens';
-import { EVENT, META, NEW_GAMES, Src, VISIBLE_GAMES } from './common';
+import { chancePct } from './Candy';
+import { EVENT, META, NEW_GAMES, possessive, Src, VISIBLE_GAMES } from './common';
 
 const alchJob = calcJob('Alchemist');
 const STANDS_DEFAULT = MACHINES.brewing_stand.defaultCount;
@@ -55,12 +56,12 @@ export function Tokens() {
         <div class="card-title">
           <h3>Where tokens come from</h3>
           {META.token.name ? <span>this event's token: <b>{META.token.name}</b></span>
-            : tokenType && <span>{META.sourceEvent}'s token was <span class="tier-chip mc"><McLine mini={tokenType.name} /></span></span>}
+            : tokenType && <span>{possessive(META.sourceEvent)} token was <span class="tier-chip mc"><McLine mini={tokenType.name} /></span></span>}
         </div>
         {META.token.earnedBy && (
-          <p class="explain-line">The announcement says {META.token.name ?? 'tokens'} come from {META.token.earnedBy}. The odds below are from {META.sourceEvent}'s code.</p>
+          <p class="explain-line">The announcement says {META.token.name ?? 'tokens'} come from {META.token.earnedBy}. The odds below are from {possessive(META.sourceEvent)} code.</p>
         )}
-        <div class="source-grid">
+        <div class={EVENT.candy ? 'source-grid four' : 'source-grid'}>
           <div class="source">
             <div class="source-head"><Icon id="target" size={32} /><h4>Minigames</h4></div>
             <p>The main source. Each game turns your score into tokens with its own formula, listed below.</p>
@@ -75,6 +76,16 @@ export function Tokens() {
             <p class="big-odds">{town.rewardMin}–{town.rewardMax}</p>
             <p>tokens when a new player you invited joins your town. <Src src={town.src}>source</Src></p>
           </div>
+          {EVENT.candy && (
+            <div class="source">
+              <div class="source-head"><Icon id="jack_o_lantern" size={32} /><h4>Trick or treat candy</h4></div>
+              <p class="big-odds">{chancePct(EVENT.candy.soulOrbChance)}</p>
+              <p>
+                chance of 1 Soul Orb per candy you eat. It goes straight into your inventory, so the token multiplier and cap don't apply to it.
+                {' '}<Src src={EVENT.candy.soulOrbSrc}>source</Src> · <a href="#/event">what each candy does</a>
+              </p>
+            </div>
+          )}
         </div>
         <p class="note">
           Job and town invite tokens only happen when staff switch them on for the event (both are off in the plugin's defaults:
@@ -92,7 +103,7 @@ export function Tokens() {
             <div class="odds-row mg-row" role="row" key={g.key}>
               <span role="cell"><a href={`#/event/minigames/${g.key}`}><b>{g.name}</b></a></span>
               <span role="cell" class="soft">{g.guide?.tokenLine ?? 'See the game\'s page'}</span>
-              <span role="cell" class="r"><Src src={g.formula.src}>formula</Src></span>
+              <span role="cell" class="r">{g.formula ? <Src src={g.formula.src}>formula</Src> : 'none'}</span>
             </div>
           ))}
           {NEW_GAMES.map(({ name }) => (

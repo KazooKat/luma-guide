@@ -73,8 +73,9 @@ npm run event        # checks everything, writes src/data/event.json and src/dat
 ```
 
 `npm run event` reads the job token odds, town invite rules, token cap and multiplier, schedule defaults, player
-commands and the minigame list (with each game's token formula) straight from the source, keeping the file:line of every
-number. It fails if something it expects has moved, if a guide cites a line that doesn't exist, or if a guide uses
+commands, the minigame list (with each game's token formula) and the trick or treat candy (each candy's Soul Orb chance
+and effects, from `items/candy/`, when the event has it) straight from the source, keeping the file:line of every
+number. A game whose class never mentions a token formula (Mob Arena in the Lumares code) is listed as paying none. It fails if something it expects has moved, if a guide cites a line that doesn't exist, or if a guide uses
 an en or em dash. Games without a guide are listed but don't fail the build.
 
 `data/event/event.json` holds what the code can't tell you:

@@ -8,91 +8,87 @@
     "howToPlay": [
       {
         "text": "Join during the queue and you are sent to the MineBattle lobby. Your inventory is saved and cleared when the game starts and given back when it ends. The game needs at least 2 players or it is cancelled.",
-        "src": "games/logic/MineBattle.java:284-288, games/interfaces/InventoryUnifiedMinigame.java:37-62, games/interfaces/InventoryUnifiedMinigame.java:73-90, games/interfaces/Minigame.java:127-146, games/interfaces/Minigame.java:420-423"
+        "src": "games/logic/MineBattle.java:289-293, games/interfaces/InventoryUnifiedMinigame.java:37-62, games/interfaces/InventoryUnifiedMinigame.java:73-88, games/interfaces/Minigame.java:140-159, games/interfaces/Minigame.java:603-606"
       },
       {
         "text": "When it starts, the game builds a fresh arena sized to the number of players: a box of mostly deepslate with random ores, wrapped in a layer of reinforced deepslate and then bedrock. A yellow \"Generating Arena...\" bar runs for 5 seconds while this happens.",
-        "src": "games/logic/MineBattle.java:220-271, games/logic/MineBattle.java:512-540, games/logic/MineBattle.java:1568-1588, configurable/sectors/MineBattleDefinition.java:27-48"
+        "src": "games/logic/MineBattle.java:225-276, games/logic/MineBattle.java:518-546, games/logic/MineBattle.java:1581-1601, configurable/sectors/game/MineBattleDefinition.java:30-51"
       },
       {
         "text": "Each player is then teleported into their own 3x3x3 air pocket somewhere inside the arena, spread apart from the others, and given a stone sword and a diamond pickaxe (Efficiency III, Unbreaking X). Both starting tools have Curse of Vanishing. Chat then says \"MineBattle started!\".",
-        "src": "games/logic/MineBattle.java:107-114, games/logic/MineBattle.java:263-267, games/logic/MineBattle.java:568-659, games/logic/MineBattle.java:922-958"
+        "src": "games/logic/MineBattle.java:109-116, games/logic/MineBattle.java:268-272, games/logic/MineBattle.java:576-667, games/logic/MineBattle.java:933-969"
       },
       {
         "text": "While you are alive you always have Night Vision and your hunger is kept full.",
-        "src": "games/logic/MineBattle.java:386, games/logic/MineBattle.java:414-429"
+        "src": "games/logic/MineBattle.java:391, games/logic/MineBattle.java:420-435"
       },
       {
         "text": "You can only see another living player if they are within 10 blocks and there is no solid, opaque block between your eyes and theirs. Within 2 blocks you always see each other. Anyone further away is hidden from you completely. This is rechecked about 4 times a second.",
-        "src": "games/logic/MineBattle.java:274-282, games/logic/MineBattle.java:676-701, games/logic/MineBattle.java:754-795, configurable/sectors/MineBattleDefinition.java:13-15"
+        "src": "games/logic/MineBattle.java:279-287, games/logic/MineBattle.java:685-710, games/logic/MineBattle.java:763-804, configurable/sectors/game/MineBattleDefinition.java:15-17"
       },
       {
         "text": "Plain deepslate drops nothing. Ores give a reward straight into your inventory instead of their normal drop: cobbled deepslate gives 1 gray stained glass, coal gives a random chainmail armor piece, iron gives a random iron armor piece or an iron sword, diamond gives a random diamond armor piece or a diamond sword, ancient debris gives a random netherite armor piece or a netherite sword, redstone gives 1 TNT, and a raw gold block gives a golden apple.",
-        "src": "games/logic/MineBattle.java:1242-1284, games/logic/MineBattle.java:1330-1353"
+        "src": "games/logic/MineBattle.java:1254-1296, games/logic/MineBattle.java:1342-1365"
       },
       {
         "text": "Lapis gives an enchanted book, picked evenly from 14 options: Sharpness I or II, Feather Falling III, Protection I or II, Blast Protection I, II or III, Knockback I or II, Thorns I, II or III, or Curse of Vanishing.",
-        "src": "games/logic/MineBattle.java:1303-1325"
+        "src": "games/logic/MineBattle.java:1315-1337"
       },
       {
         "text": "To use a book, pick it up on your cursor and click it onto a sword or armor piece in your inventory. Sharpness and Knockback only go on swords, Feather Falling only on boots, and Protection, Blast Protection and Thorns only on armor. If the book's level matches the item's current level, the item goes up 1 level.",
-        "src": "games/logic/MineBattle.java:1369-1393, games/logic/MineBattle.java:1470-1512"
+        "src": "games/logic/MineBattle.java:1382-1406, games/logic/MineBattle.java:1483-1525"
       },
       {
         "text": "Copper changes your max health by 1 heart, up or down on a coin flip. The change stacks each time you mine copper and lasts until you are eliminated or the game ends.",
-        "src": "games/logic/MineBattle.java:1285-1288, games/logic/MineBattle.java:1395-1414, games/logic/MineBattle.java:499-510"
+        "src": "games/logic/MineBattle.java:1297-1300, games/logic/MineBattle.java:1408-1427, games/logic/MineBattle.java:505-516"
       },
       {
         "text": "Gold ore lets you see every other living player within 25 blocks for 3 seconds. They glow for 3 seconds and hear a wither sound. It does nothing while an all-player reveal is already running.",
-        "src": "games/logic/MineBattle.java:1289-1302, games/logic/MineBattle.java:797-809"
+        "src": "games/logic/MineBattle.java:1301-1314, games/logic/MineBattle.java:806-818"
       },
       {
         "text": "Emerald gives you a random potion effect, or raises one you already have by 1 level: Absorption (up to V), Haste (up to III), Resistance (up to II), and Strength, Fire Resistance, Invisibility, Jump Boost and Speed (level I only). Once every effect is at its max you get a \"Caution!\" warning, and mining another emerald after that kills you.",
-        "src": "games/logic/MineBattle.java:1326-1329, games/logic/MineBattle.java:1416-1468"
+        "src": "games/logic/MineBattle.java:1338-1341, games/logic/MineBattle.java:1429-1481"
       },
       {
         "text": "Placing TNT lights it straight away with a 2 second fuse. You can also place the gray stained glass you get from cobbled deepslate.",
-        "src": "games/logic/MineBattle.java:1218-1240"
+        "src": "games/logic/MineBattle.java:1230-1252"
       },
       {
         "text": "When you die you are eliminated: everything in your inventory without Curse of Vanishing drops where you died, and you become a spectator (spectator mode, invisible to the players still fighting). Spectators who fly more than 200 blocks from the arena are pulled back.",
-        "src": "games/logic/MineBattle.java:1050-1071, games/logic/MineBattle.java:436-453, games/logic/MineBattle.java:1136-1156, games/logic/MineBattle.java:462-497"
+        "src": "games/logic/MineBattle.java:1061-1083, games/logic/MineBattle.java:442-459, games/logic/MineBattle.java:1148-1168, games/logic/MineBattle.java:468-503"
       },
       {
         "text": "The player who killed you gets Regeneration III for 5 seconds and a \"+1 kill\" message with their kill total.",
-        "src": "games/logic/MineBattle.java:455-458, games/logic/MineBattle.java:1158-1165"
+        "src": "games/logic/MineBattle.java:461-464, games/logic/MineBattle.java:1170-1177"
       },
       {
         "text": "The game ends as soon as 1 or no players are left alive, or when the time limit (6 minutes by default) runs out. Everyone sees a \"Game Over\" title, the top 5 by points are listed in chat, the arena is removed and you are sent back to the MineBattle lobby with your own inventory.",
-        "src": "games/logic/MineBattle.java:281, games/interfaces/Minigame.java:285-291, games/logic/MineBattle.java:313-369, games/models/Scoreboard.java:59-107, configurable/sectors/MineBattleDefinition.java:12"
+        "src": "games/logic/MineBattle.java:286, games/interfaces/Minigame.java:367-373, games/logic/MineBattle.java:318-374, games/models/Scoreboard.java:59-110, configurable/sectors/game/MineBattleDefinition.java:14"
       }
     ],
     "scoring": [
       {
         "text": "You get 1 point for every full 60 seconds you stay alive. The clock only runs once the arena is ready, and spectators do not earn it.",
-        "src": "games/logic/MineBattle.java:119, games/logic/MineBattle.java:401, games/logic/MineBattle.java:414-421, games/logic/MineBattle.java:274-280, utility/scheduler/AsynchronousRunnable.java:34-36, configurable/sectors/MineBattleDefinition.java:13"
+        "src": "games/logic/MineBattle.java:121, games/logic/MineBattle.java:407, games/logic/MineBattle.java:420-427, games/logic/MineBattle.java:279-285, utility/scheduler/AsynchronousRunnable.java:34-36, configurable/sectors/game/MineBattleDefinition.java:15"
       },
       {
         "text": "You get 2 points for each kill. The kill goes to the player who caused the death, so TNT you placed is credited to you (the game sets you as the TNT's source). Killing yourself scores nothing.",
-        "src": "games/logic/MineBattle.java:120, games/logic/MineBattle.java:1063-1070, games/logic/MineBattle.java:1158-1165, games/logic/MineBattle.java:1236"
+        "src": "games/logic/MineBattle.java:122, games/logic/MineBattle.java:1074-1082, games/logic/MineBattle.java:1170-1177, games/logic/MineBattle.java:1248"
       },
       {
         "text": "Nothing else gives points. Mining, being the last player alive and lasting until the timer ends are not rewarded on their own.",
-        "src": "games/logic/MineBattle.java:1242-1357, games/logic/MineBattle.java:273-282"
+        "src": "games/logic/MineBattle.java:1254-1370, games/logic/MineBattle.java:278-287"
       },
       {
         "text": "Your points from each game are also added to your all-time MineBattle total, which feeds a top 10 MineBattle leaderboard.",
-        "src": "games/logic/MineBattle.java:199-204, manager/LeaderboardCacheManager.java:42-52, placeholders/games/MineBattlePositionPlaceholder.java:17-25"
+        "src": "games/logic/MineBattle.java:201-206, manager/LeaderboardCacheManager.java:42-52, placeholders/games/MineBattlePositionPlaceholder.java:17-25"
       }
     ],
     "tokens": [
       {
         "text": "Tokens are paid when the game ends, to everyone who took part, including players who were eliminated and are spectating. You get 1 token per point, capped at 12.",
-        "src": "games/interfaces/InventoryUnifiedMinigame.java:73-90, games/logic/MineBattle.java:199-204, games/logic/MineBattle.java:184, games/tokenformula/FlatIntTokenFormula.java:13-20"
-      },
-      {
-        "text": "If you leave with /event quit after the game has started, you are paid right away for the points you have so far.",
-        "src": "games/interfaces/InventoryUnifiedMinigame.java:100-118, commands/modules/minigame/MinigameQuitCommand.java:37"
+        "src": "games/interfaces/InventoryUnifiedMinigame.java:73-88, games/logic/MineBattle.java:201-206, games/logic/MineBattle.java:186, games/tokenformula/FlatIntTokenFormula.java:13-20"
       },
       {
         "text": "0 points means 0 tokens, so someone killed in their first minute without a kill gets nothing.",
@@ -100,11 +96,11 @@
       },
       {
         "text": "Example: you survive 4 minutes, get 1 kill, then die. That is 4 + 2 = 6 points, so 6 tokens. Example: you survive the whole default 6 minute game (5 survival points) and get 4 kills (8 points). That is 13 points, capped to 12 tokens.",
-        "src": "games/logic/MineBattle.java:119-120, games/logic/MineBattle.java:184, games/tokenformula/FlatIntTokenFormula.java:18-20"
+        "src": "games/logic/MineBattle.java:121-122, games/logic/MineBattle.java:186, games/tokenformula/FlatIntTokenFormula.java:18-20"
       },
       {
         "text": "Staff can start a game with a token multiplier, a flat payout for everyone, or no tokens at all, and the server has its own multiplier on top (rounded up). A single payout is capped at 20 tokens, but the chat message shows the amount before that cap.",
-        "src": "games/interfaces/TokenPayout.java:30-35, games/MinigameManager.java:86-93, items/TokenExchanging.java:34-54"
+        "src": "games/interfaces/TokenPayout.java:30-35, games/MinigameManager.java:49, games/MinigameManager.java:67-68, games/interfaces/Minigame.java:633-640, items/TokenExchanging.java:34-54"
       },
       {
         "text": "You can only be paid once per game.",
@@ -115,175 +111,179 @@
       {
         "label": "Time limit",
         "value": "6 minutes (360 seconds) by default",
-        "src": "configurable/sectors/MineBattleDefinition.java:12, games/logic/MineBattle.java:165"
+        "src": "configurable/sectors/game/MineBattleDefinition.java:14, games/logic/MineBattle.java:167"
       },
       {
         "label": "Minimum players",
         "value": "2",
-        "src": "games/interfaces/Minigame.java:130-146, games/interfaces/Minigame.java:420-423"
+        "src": "games/interfaces/Minigame.java:143-159, games/interfaces/Minigame.java:603-606"
       },
       {
         "label": "Survival points",
         "value": "1 point per 60 seconds alive (at most 5 in a default 6 minute game)",
-        "src": "games/logic/MineBattle.java:119, games/logic/MineBattle.java:401, games/logic/MineBattle.java:414-421, games/logic/MineBattle.java:251-259"
+        "src": "games/logic/MineBattle.java:121, games/logic/MineBattle.java:407, games/logic/MineBattle.java:420-427, games/logic/MineBattle.java:256-264"
       },
       {
         "label": "Kill points",
         "value": "2 points per kill",
-        "src": "games/logic/MineBattle.java:120, games/logic/MineBattle.java:1162"
+        "src": "games/logic/MineBattle.java:122, games/logic/MineBattle.java:1174"
       },
       {
         "label": "Token cap",
         "value": "12 tokens",
-        "src": "games/logic/MineBattle.java:184"
+        "src": "games/logic/MineBattle.java:186"
       },
       {
         "label": "Sight range",
         "value": "10 blocks with a clear line of sight, always visible within 2 blocks (defaults)",
-        "src": "configurable/sectors/MineBattleDefinition.java:14-15, games/logic/MineBattle.java:691-698"
+        "src": "configurable/sectors/game/MineBattleDefinition.java:16-17, games/logic/MineBattle.java:700-707"
       },
       {
         "label": "Kill reward",
         "value": "Regeneration III for 5 seconds",
-        "src": "games/logic/MineBattle.java:457"
+        "src": "games/logic/MineBattle.java:463"
       },
       {
         "label": "TNT",
         "value": "2 second fuse, deals 75% of normal damage to players",
-        "src": "games/logic/MineBattle.java:1235, games/logic/MineBattle.java:992-995"
+        "src": "games/logic/MineBattle.java:1247, games/logic/MineBattle.java:1003-1006"
       },
       {
         "label": "Gold ore reveal",
         "value": "Players within 25 blocks, for 3 seconds",
-        "src": "games/logic/MineBattle.java:1296-1299"
+        "src": "games/logic/MineBattle.java:1308-1311"
       },
       {
         "label": "Copper",
         "value": "Max health +1 or -1 heart (50/50), stacking",
-        "src": "games/logic/MineBattle.java:1404-1408"
+        "src": "games/logic/MineBattle.java:1417-1421"
       },
       {
         "label": "Emeralds before the warning",
         "value": "15 (the 16th kills you)",
-        "src": "games/logic/MineBattle.java:1419-1427, games/logic/MineBattle.java:1460-1466"
+        "src": "games/logic/MineBattle.java:1432-1440, games/logic/MineBattle.java:1473-1479"
       },
       {
         "label": "Book level caps",
         "value": "Sharpness V, Knockback II, Feather Falling IV, Protection IV, Blast Protection IV, Thorns III",
-        "src": "games/logic/MineBattle.java:1384-1390"
+        "src": "games/logic/MineBattle.java:1397-1403"
       },
       {
         "label": "Arena width",
         "value": "29 blocks for 2 players, 41 for 5, 55 for 10, and the 65 block max from 15 players, 32 blocks tall (defaults)",
-        "src": "games/logic/MineBattle.java:512-527, games/logic/MineBattle.java:1576-1577, configurable/sectors/MineBattleDefinition.java:23-25, configurable/sectors/MineBattleDefinition.java:50-51"
+        "src": "games/logic/MineBattle.java:518-533, games/logic/MineBattle.java:1589-1590, configurable/sectors/game/MineBattleDefinition.java:26-28, configurable/sectors/game/MineBattleDefinition.java:53-54"
       },
       {
         "label": "Arena build bar",
         "value": "5 seconds",
-        "src": "games/logic/MineBattle.java:251-256"
+        "src": "games/logic/MineBattle.java:256-261"
       },
       {
         "label": "Queue",
         "value": "90 seconds unless staff pick another length",
-        "src": "games/interfaces/Minigame.java:113-115, games/MinigameManager.java:95-97"
+        "src": "games/interfaces/Minigame.java:126-128, games/MinigameManager.java:81-83"
       }
     ],
     "tips": [
       {
         "text": "A kill is worth as much as 2 minutes of survival, and survival tops out around 5 points in a default game, so you need kills to get near the 12 token cap.",
-        "src": "games/logic/MineBattle.java:119-120, games/logic/MineBattle.java:184"
+        "src": "games/logic/MineBattle.java:121-122, games/logic/MineBattle.java:186"
       },
       {
         "text": "Only solid, opaque blocks block sight. The gray stained glass from cobbled deepslate does not hide you, so wall yourself in with deepslate instead.",
-        "src": "games/logic/MineBattle.java:790, games/logic/MineBattle.java:1258-1261"
+        "src": "games/logic/MineBattle.java:799, games/logic/MineBattle.java:1270-1273"
       },
       {
         "text": "Mine ores by hand. Blocks destroyed by TNT drop nothing, and ore rewards only come from breaking the block yourself.",
-        "src": "games/logic/MineBattle.java:1194-1200, games/logic/MineBattle.java:1242-1257"
+        "src": "games/logic/MineBattle.java:1206-1212, games/logic/MineBattle.java:1254-1269"
       },
       {
         "text": "Two books of the same enchantment and level add up: put Sharpness II on a sword that already has Sharpness II and it becomes Sharpness III.",
-        "src": "games/logic/MineBattle.java:1494-1500"
+        "src": "games/logic/MineBattle.java:1507-1513"
       },
       {
         "text": "Your starting sword and pickaxe never drop, but everything you mined does. Killing a well geared player leaves their armor and books on the ground for you.",
-        "src": "games/logic/MineBattle.java:107-114, games/logic/MineBattle.java:1136-1156"
+        "src": "games/logic/MineBattle.java:109-116, games/logic/MineBattle.java:1148-1168"
       },
       {
         "text": "If you suddenly glow and hear a wither sound, someone within 25 blocks mined gold ore and can see you for the next 3 seconds.",
-        "src": "games/logic/MineBattle.java:1296-1300"
+        "src": "games/logic/MineBattle.java:1308-1312"
       },
       {
         "text": "Stop mining emeralds once you see the \"Caution!\" message. The next one kills you.",
-        "src": "games/logic/MineBattle.java:1460-1466"
+        "src": "games/logic/MineBattle.java:1473-1479"
       },
       {
         "text": "Copper is a gamble: half the time it takes a heart away.",
-        "src": "games/logic/MineBattle.java:1404"
+        "src": "games/logic/MineBattle.java:1417"
       }
     ],
     "quirks": [
       {
         "text": "The \"Game Over\" title names whoever has the most points as the winner, not the last player alive.",
-        "src": "games/logic/MineBattle.java:358, games/models/Scoreboard.java:79-91"
+        "src": "games/logic/MineBattle.java:363, games/models/Scoreboard.java:87-98"
       },
       {
         "text": "Emerald effects are meant to last until the game ends, but their timer starts when the game is announced, not when it starts. With the default 90 second queue they wear off about 80 seconds before the time limit, and an emerald mined in the last 90 seconds gives an effect that lasts only 10 seconds.",
-        "src": "games/logic/MineBattle.java:167, games/logic/MineBattle.java:960-964, games/logic/MineBattle.java:1445-1448, games/MinigameManager.java:71-83"
+        "src": "games/logic/MineBattle.java:169, games/logic/MineBattle.java:971-975, games/logic/MineBattle.java:1458-1461, games/MinigameManager.java:58, games/MinigameManager.java:78"
       },
       {
         "text": "Protection and Blast Protection can both go on the same armor piece, which normal Minecraft does not allow.",
-        "src": "games/logic/MineBattle.java:1387-1388, games/logic/MineBattle.java:1509"
+        "src": "games/logic/MineBattle.java:1400-1401, games/logic/MineBattle.java:1522"
       },
       {
         "text": "The Curse of Vanishing book can be put on any sword or armor piece, and that item then stays out of your death drops.",
-        "src": "games/logic/MineBattle.java:1321, games/logic/MineBattle.java:1390, games/logic/MineBattle.java:1141"
+        "src": "games/logic/MineBattle.java:1333, games/logic/MineBattle.java:1403, games/logic/MineBattle.java:1153"
       },
       {
         "text": "Books cannot go on the pickaxe. Clicking a book onto anything other than a sword or armor is treated as a normal inventory click.",
-        "src": "games/logic/MineBattle.java:1376-1378"
+        "src": "games/logic/MineBattle.java:1389-1391"
       },
       {
         "text": "The \"Time is up!\" message never shows. The game stops on its own clock about a second before the green \"Time Left\" bar reaches 0, and stopping the bar skips that message.",
-        "src": "games/logic/MineBattle.java:371-383, games/logic/MineBattle.java:316-320, games/interfaces/Minigame.java:285-291, games/models/CountdownBossBar.java:74-83"
+        "src": "games/logic/MineBattle.java:376-388, games/logic/MineBattle.java:321-325, games/interfaces/Minigame.java:367-373, games/models/CountdownBossBar.java:75-84"
       },
       {
         "text": "After the 10 second blue \"Game Over\" bar you are supposed to be sent to the event drop-off point with a \"This minigame has concluded.\" message, but the player list is already cleared by then, so you stay in the MineBattle lobby and get no message.",
-        "src": "games/logic/MineBattle.java:329-331, games/logic/MineBattle.java:358-368, games/interfaces/Minigame.java:185-211"
+        "src": "games/logic/MineBattle.java:334-336, games/logic/MineBattle.java:363-373, games/interfaces/Minigame.java:214-244"
       },
       {
         "text": "There is unused code for earning survival points gradually over the whole time limit. It does the maths but never adds the points, so only the 1 point per minute counts.",
-        "src": "games/logic/MineBattle.java:1167-1192"
+        "src": "games/logic/MineBattle.java:1179-1204"
       }
     ],
     "config": [
       {
         "text": "The time limit is 360 seconds by default.",
-        "src": "configurable/sectors/MineBattleDefinition.java:12"
+        "src": "configurable/sectors/game/MineBattleDefinition.java:14"
       },
       {
         "text": "Sight range is 10 blocks with line of sight and 2 blocks without, by default.",
-        "src": "configurable/sectors/MineBattleDefinition.java:14-15"
+        "src": "configurable/sectors/game/MineBattleDefinition.java:16-17"
       },
       {
         "text": "Timed reveals are off by default. When on, every living player glows and is visible to all for 3 seconds at half time, 5 seconds with a quarter left, 10 seconds with an eighth left, and for the rest of the game with a sixteenth left (22.5 seconds in a 6 minute game).",
-        "src": "configurable/sectors/MineBattleDefinition.java:17, games/logic/MineBattle.java:95-105, games/logic/MineBattle.java:811-876"
+        "src": "configurable/sectors/game/MineBattleDefinition.java:19, games/logic/MineBattle.java:97-107, games/logic/MineBattle.java:820-887"
       },
       {
         "text": "A shrinking world border is off by default. When on, it starts just outside the arena and shrinks to 5 blocks wide over the time limit, dealing 3.5 damage per second for each block you are outside it.",
-        "src": "configurable/sectors/MineBattleDefinition.java:18, games/logic/MineBattle.java:878-919"
+        "src": "configurable/sectors/game/MineBattleDefinition.java:20, games/logic/MineBattle.java:889-930"
       },
       {
         "text": "By default the arena is 80% plain deepslate, 5% coal, 3.92% cobbled deepslate, 3% iron, 2.2% each copper and redstone, 1.2% each gold and lapis, 0.6% each diamond and emerald, and 0.04% each ancient debris and raw gold block.",
-        "src": "configurable/sectors/MineBattleDefinition.java:27-40"
+        "src": "configurable/sectors/game/MineBattleDefinition.java:30-43"
       },
       {
         "text": "Arena radius (10 to 32 blocks), height (32), spacing between spawn pockets (12 blocks) and padding from the walls (3 blocks) are defaults the server can change.",
-        "src": "configurable/sectors/MineBattleDefinition.java:23-25, configurable/sectors/MineBattleDefinition.java:50-51"
+        "src": "configurable/sectors/game/MineBattleDefinition.java:26-28, configurable/sectors/game/MineBattleDefinition.java:53-54"
       },
       {
         "text": "If the server has MineBattle structure files installed, each player has a 50% chance that a random structure is placed in their spawn pocket, and they spawn in an extra empty pocket instead. Without those files there are no structures.",
-        "src": "games/logic/MineBattle.java:1526-1566, games/logic/MineBattle.java:236-245"
+        "src": "games/logic/MineBattle.java:1539-1579, games/logic/MineBattle.java:241-250"
+      },
+      {
+        "text": "MineBattle uses the shared minigame AFK check: if the server's AFK tracker sees you idle for 6 minutes you get a warning, and after 7 minutes you are removed with no tokens. With the default 6 minute time limit MineBattle always ends first, so this only matters if staff set a longer limit.",
+        "src": "games/interfaces/Minigame.java:367-380, games/interfaces/Minigame.java:382-408, games/interfaces/Minigame.java:458-464, games/interfaces/models/InactivitySettings.java:17-18, games/interfaces/models/InactivitySettings.java:37-39, games/interfaces/InventoryUnifiedMinigame.java:112-114, configurable/sectors/game/MineBattleDefinition.java:14"
       }
     ],
     "storyboard": {
@@ -298,17 +298,17 @@
         {
           "caption": "Dig out and gear up",
           "sub": "You start sealed in deepslate. Ores give you gear, and every full minute alive is 1 point.",
-          "src": "games/logic/MineBattle.java:568-659, games/logic/MineBattle.java:1242-1284, games/logic/MineBattle.java:119, games/logic/MineBattle.java:414-421"
+          "src": "games/logic/MineBattle.java:576-667, games/logic/MineBattle.java:1254-1296, games/logic/MineBattle.java:121, games/logic/MineBattle.java:420-427"
         },
         {
           "caption": "Find a player and fight",
           "sub": "You see players within 10 blocks if nothing solid is between you. A kill is 2 points.",
-          "src": "games/logic/MineBattle.java:676-701, games/logic/MineBattle.java:754-795, games/logic/MineBattle.java:120, games/logic/MineBattle.java:1158-1165"
+          "src": "games/logic/MineBattle.java:685-710, games/logic/MineBattle.java:763-804, games/logic/MineBattle.java:122, games/logic/MineBattle.java:1170-1177"
         },
         {
           "caption": "1 token per point, up to 12",
           "sub": "4 minutes alive and 1 kill is 4 + 2 = 6 tokens. You need kills to get near 12.",
-          "src": "games/logic/MineBattle.java:119-120, games/logic/MineBattle.java:184, games/tokenformula/FlatIntTokenFormula.java:18-20"
+          "src": "games/logic/MineBattle.java:121-122, games/logic/MineBattle.java:186, games/tokenformula/FlatIntTokenFormula.java:18-20"
         }
       ]
     }
@@ -326,7 +326,7 @@
       },
       {
         "text": "At the start, players are shuffled and split into 2 teams, taking turns, so the teams differ by at most 1 player. The matchup is picked at random: Red Team vs Blue Team, Team KitKat vs Team Oreo, or Team Mayo vs Team Mustard. You wear a leather chestplate in your team's colour.",
-        "src": "games/logic/Soccer.java:172-176, games/logic/Soccer.java:229-240, games/logic/Soccer.java:1240-1252, games/logic/Soccer.java:1297-1309, games/logic/Soccer.java:1116-1121"
+        "src": "games/logic/Soccer.java:172-176, games/logic/Soccer.java:229-240, games/logic/Soccer.java:1243-1255, games/logic/Soccer.java:1300-1312, games/logic/Soccer.java:1119-1124"
       },
       {
         "text": "With a big crowd, more than 1 ball is used and chat announces how many are in play.",
@@ -334,23 +334,23 @@
       },
       {
         "text": "Each round starts with everyone teleported near their team's start point and frozen in place (no walking or jumping) for a countdown: 5 seconds before the first round, 3 before the rest. On \"GO!\" the balls appear and the 90 second round clock starts.",
-        "src": "games/logic/Soccer.java:252, games/logic/Soccer.java:622-654, games/logic/Soccer.java:575-583, games/logic/Soccer.java:599-619, games/logic/Soccer.java:1148-1155"
+        "src": "games/logic/Soccer.java:252, games/logic/Soccer.java:622-654, games/logic/Soccer.java:575-583, games/logic/Soccer.java:599-619, games/logic/Soccer.java:1151-1158"
       },
       {
         "text": "During the game you have Speed IV and Strength II and your hunger is kept full. Your action bar shows the speed of the nearest ball, your own speed, and your latest play.",
-        "src": "games/logic/Soccer.java:1079-1081, games/logic/Soccer.java:1096-1114"
+        "src": "games/logic/Soccer.java:1082-1084, games/logic/Soccer.java:1099-1117"
       },
       {
         "text": "You move the ball by running into it. The faster you are running at it, the harder it goes, and if several players touch it at once the one running at it fastest gets the push.",
-        "src": "games/logic/Soccer.java:751-822"
+        "src": "games/logic/Soccer.java:751-823"
       },
       {
         "text": "You can only punch the ball when you are within 9 blocks (by default) of your own goal. Anywhere else the punch does nothing and you see \"You can only punch the ball near your own goal!\".",
-        "src": "games/logic/Soccer.java:524-544, games/logic/Soccer.java:1210-1213, configurable/sectors/SulfurSoccerDefinition.java:10"
+        "src": "games/logic/Soccer.java:524-544, games/logic/Soccer.java:1213-1216, configurable/sectors/game/SulfurSoccerDefinition.java:13"
       },
       {
         "text": "Particles mark both goals for you: red dust on the goal you defend, green dust on the goal you attack. Only you see your markers.",
-        "src": "games/logic/Soccer.java:128-129, games/logic/Soccer.java:491-506, games/logic/Soccer.java:1116-1117"
+        "src": "games/logic/Soccer.java:128-129, games/logic/Soccer.java:491-506, games/logic/Soccer.java:1119-1120"
       },
       {
         "text": "A round ends when a ball goes into a goal, when a ball leaves the pitch, or when the 90 seconds run out. After a goal or a timed out round, everyone within 35 blocks of that spot is launched away from it, and the next round starts 3.5 seconds later. After a ball leaves the pitch, the next countdown starts straight away.",
@@ -361,18 +361,22 @@
         "src": "games/logic/Soccer.java:556-565"
       },
       {
+        "text": "If the server's AFK tracker sees you idle for 6 minutes, you get an \"Are you still there?\" title and a red \"You are AFK!\" bar counting down. Move within 1 minute or you are removed from the game. Bedrock players are not checked.",
+        "src": "games/interfaces/Minigame.java:367-380, games/interfaces/Minigame.java:382-408, games/interfaces/Minigame.java:410-448, games/interfaces/Minigame.java:458-464, games/interfaces/models/InactivitySettings.java:17-18, games/interfaces/models/InactivitySettings.java:37-39, utility/SoftSleepyAPI.java:22-25"
+      },
+      {
         "text": "The game ends when a team reaches 30 points, or after 20 minutes. Everyone sees a \"Game Over\" title naming the leading team, team scores are listed in chat, your chestplate is removed and you are sent back to the Soccer spawn.",
-        "src": "games/logic/Soccer.java:324-328, games/logic/Soccer.java:156, games/interfaces/Minigame.java:285-291, games/logic/Soccer.java:402-428, games/models/Scoreboard.java:79-107"
+        "src": "games/logic/Soccer.java:324-328, games/logic/Soccer.java:156, games/interfaces/Minigame.java:367-373, games/logic/Soccer.java:402-428, games/models/Scoreboard.java:87-110"
       }
     ],
     "scoring": [
       {
         "text": "Goal: when a ball goes into a goal, the last player who touched it decides who scores. If it is the other team's goal, your team gets 10 points and you get a Goal play. If it is your own goal, the other team gets 10 points.",
-        "src": "games/logic/Soccer.java:880-907, games/logic/Soccer.java:1215-1230, games/logic/Soccer.java:280-284, games/logic/Soccer.java:107"
+        "src": "games/logic/Soccer.java:883-910, games/logic/Soccer.java:1218-1233, games/logic/Soccer.java:280-284, games/logic/Soccer.java:107"
       },
       {
         "text": "Round on plays: if the 90 seconds run out with no goal, the team that made more plays that round gets 10 points. If both teams made the same number, nobody scores.",
-        "src": "games/logic/Soccer.java:336-359, games/logic/Soccer.java:110, games/logic/Soccer.java:1139"
+        "src": "games/logic/Soccer.java:336-359, games/logic/Soccer.java:110, games/logic/Soccer.java:1142"
       },
       {
         "text": "Out of bounds: if a ball leaves the pitch, the team of the last player to touch it loses 2 points. A team never drops below 0, and the other team gets nothing.",
@@ -380,15 +384,15 @@
       },
       {
         "text": "Plays are your personal score. Each of these is worth 1 play to you and 1 to your team's count for the round: First touch (the first bump on a fresh ball), Air hit (bumping the ball while it is in the air), Save (touching the ball while it is within 2 blocks of your own goal or flying at it from up to 12 blocks away, by bump or punch), Power kick (the ball reaches 40 blocks per second within 0.6 seconds of your bump or punch) and Goal.",
-        "src": "games/logic/Soccer.java:1129-1142, games/logic/Soccer.java:922-935, games/logic/Soccer.java:473-489, games/logic/Soccer.java:547-553, games/logic/Soccer.java:943-962, games/logic/Soccer.java:1226, games/logic/Soccer.java:1280-1295"
+        "src": "games/logic/Soccer.java:1132-1145, games/logic/Soccer.java:925-938, games/logic/Soccer.java:473-489, games/logic/Soccer.java:547-553, games/logic/Soccer.java:946-965, games/logic/Soccer.java:1229, games/logic/Soccer.java:1283-1298"
       },
       {
         "text": "The same play again within 0.75 seconds does not count, but different plays from one touch all count, for example a First touch that is also an Air hit.",
-        "src": "games/logic/Soccer.java:113, games/logic/Soccer.java:1130-1134, games/logic/Soccer.java:922-933"
+        "src": "games/logic/Soccer.java:113, games/logic/Soccer.java:1133-1137, games/logic/Soccer.java:925-936"
       },
       {
         "text": "With more than 1 ball, only the first goal or out of bounds in a round counts. The other balls are removed, and a goal another ball scores after that does nothing.",
-        "src": "games/logic/Soccer.java:147-148, games/logic/Soccer.java:715-718, games/logic/Soccer.java:896-899"
+        "src": "games/logic/Soccer.java:147-148, games/logic/Soccer.java:715-718, games/logic/Soccer.java:899-902"
       },
       {
         "text": "Your plays are added to your all-time Soccer total, which feeds a top 10 Soccer leaderboard. They are not shown on the end screen.",
@@ -398,15 +402,15 @@
     "tokens": [
       {
         "text": "Tokens are paid when the game ends to every player still in it: 3 tokens, plus 1 for every 2 plays you made (rounded down), plus 2 if your team is ahead when the game ends, with a minimum of 3 and a maximum of 15.",
-        "src": "games/tokenformula/SoccerTokenFormula.java:8-17, games/logic/Soccer.java:187-201, games/interfaces/InventoryUnifiedMinigame.java:73-90"
+        "src": "games/tokenformula/SoccerTokenFormula.java:8-17, games/logic/Soccer.java:187-201, games/interfaces/InventoryUnifiedMinigame.java:73-88"
       },
       {
         "text": "The winning bonus only goes to a team that is strictly ahead. If the scores are level, or nobody has any points, nobody gets the bonus.",
         "src": "games/logic/Soccer.java:444-459"
       },
       {
-        "text": "Leaving early, with /event quit or by disconnecting, gives up all your tokens for that game.",
-        "src": "games/logic/Soccer.java:209-216, games/logic/Soccer.java:187-192, games/interfaces/InventoryUnifiedMinigame.java:100-118"
+        "text": "Leaving early, with /event quit, by disconnecting or by being removed for being AFK, gives up all your tokens for that game.",
+        "src": "games/logic/Soccer.java:209-216, games/logic/Soccer.java:187-192, games/interfaces/InventoryUnifiedMinigame.java:99-117, games/interfaces/Minigame.java:458-464"
       },
       {
         "text": "Example: 7 plays on the losing team is 3 + 3 = 6 tokens. 12 plays on the winning team is 3 + 6 + 2 = 11 tokens. 0 plays still gets 3 tokens. 24 or more plays on the winning team hits the 15 token cap.",
@@ -414,7 +418,7 @@
       },
       {
         "text": "Staff can start a game with a token multiplier, a flat payout for everyone, or no tokens at all, and the server has its own multiplier on top (rounded up). A single payout is capped at 20 tokens, but the chat message shows the amount before that cap.",
-        "src": "games/interfaces/TokenPayout.java:30-35, games/MinigameManager.java:86-93, items/TokenExchanging.java:34-54"
+        "src": "games/interfaces/TokenPayout.java:30-35, games/MinigameManager.java:49, games/MinigameManager.java:67-68, games/interfaces/Minigame.java:633-640, items/TokenExchanging.java:34-54"
       },
       {
         "text": "You can only be paid once per game.",
@@ -470,17 +474,17 @@
       {
         "label": "Punch range",
         "value": "9 blocks from your own goal (default)",
-        "src": "configurable/sectors/SulfurSoccerDefinition.java:10, games/logic/Soccer.java:1210-1213"
+        "src": "configurable/sectors/game/SulfurSoccerDefinition.java:13, games/logic/Soccer.java:1213-1216"
       },
       {
         "label": "Body push strength",
         "value": "About 7 blocks per second standing, up to 32 blocks per second at a full run",
-        "src": "games/logic/Soccer.java:666-668, games/logic/Soccer.java:813-817, games/logic/Soccer.java:122-123"
+        "src": "games/logic/Soccer.java:666-668, games/logic/Soccer.java:814-818, games/logic/Soccer.java:122-123"
       },
       {
         "label": "Power kick",
         "value": "Ball at 40 blocks per second within 0.6 seconds of your touch",
-        "src": "games/logic/Soccer.java:122-124, games/logic/Soccer.java:949-962"
+        "src": "games/logic/Soccer.java:122-124, games/logic/Soccer.java:952-965"
       },
       {
         "label": "Save zone",
@@ -490,12 +494,12 @@
       {
         "label": "Same play cooldown",
         "value": "0.75 seconds",
-        "src": "games/logic/Soccer.java:113, games/logic/Soccer.java:1132"
+        "src": "games/logic/Soccer.java:113, games/logic/Soccer.java:1135"
       },
       {
         "label": "Your effects",
         "value": "Speed IV and Strength II",
-        "src": "games/logic/Soccer.java:1079-1080"
+        "src": "games/logic/Soccer.java:1082-1083"
       },
       {
         "label": "Tokens",
@@ -506,15 +510,15 @@
     "tips": [
       {
         "text": "A round with no goal still gives 10 points, the same as a goal, to the team with more plays. When a goal is not coming, keep getting touches (first touches, air hits, saves) before the 90 seconds run out.",
-        "src": "games/logic/Soccer.java:336-359, games/logic/Soccer.java:1139"
+        "src": "games/logic/Soccer.java:336-359, games/logic/Soccer.java:1142"
       },
       {
         "text": "Stand in the ball's path to stop it. A ball moving under 40 blocks per second stops when it reaches a player and counts as that player's touch. Faster shots pass straight through players.",
-        "src": "games/logic/Soccer.java:824-878"
+        "src": "games/logic/Soccer.java:825-881"
       },
       {
         "text": "A body push tops out at 32 blocks per second, below the 40 a Power kick needs, so a push on its own will not earn one.",
-        "src": "games/logic/Soccer.java:668, games/logic/Soccer.java:122, games/logic/Soccer.java:813-817"
+        "src": "games/logic/Soccer.java:668, games/logic/Soccer.java:122, games/logic/Soccer.java:814-818"
       },
       {
         "text": "Defenders can punch and attackers cannot, since punching only works near your own goal. A punch that stops a ball heading for your goal also counts as a Save.",
@@ -522,7 +526,7 @@
       },
       {
         "text": "The last touch decides everything: who scores, whether it is an own goal, and which team pays the out of bounds penalty. Be careful clearing the ball near your own goal or the sidelines.",
-        "src": "games/logic/Soccer.java:890-902, games/logic/Soccer.java:1220-1222, games/logic/Soccer.java:721-731"
+        "src": "games/logic/Soccer.java:893-905, games/logic/Soccer.java:1223-1225, games/logic/Soccer.java:721-731"
       },
       {
         "text": "Stay until the end. Everyone still in the game gets at least 3 tokens, and leaving gives up all of them.",
@@ -530,13 +534,13 @@
       },
       {
         "text": "Run at the ball rather than walking into it: your speed towards it sets how hard it goes, and in a crowd the fastest runner wins the push.",
-        "src": "games/logic/Soccer.java:794-808, games/logic/Soccer.java:813-822"
+        "src": "games/logic/Soccer.java:795-809, games/logic/Soccer.java:814-823"
       }
     ],
     "quirks": [
       {
         "text": "An own goal's chat message says \"-10 points\", but your team does not lose anything. The other team gains 10 points instead.",
-        "src": "games/logic/Soccer.java:1220-1222, games/logic/Soccer.java:280-284"
+        "src": "games/logic/Soccer.java:1223-1225, games/logic/Soccer.java:280-284"
       },
       {
         "text": "If a team that has 0 points knocks the ball out, chat still prints a \"Penalty\" line, but it shows 0 points.",
@@ -544,23 +548,23 @@
       },
       {
         "text": "If the ball reaches a goal before anyone has touched it, nothing happens and play goes on.",
-        "src": "games/logic/Soccer.java:890-894"
+        "src": "games/logic/Soccer.java:893-897"
       },
       {
         "text": "Goals are checked once per tick rather than along the ball's path, so the ball has to actually be inside the goal at one of those checks to count.",
-        "src": "games/logic/Soccer.java:691-713, games/logic/Soccer.java:844-845"
+        "src": "games/logic/Soccer.java:691-713, games/logic/Soccer.java:845-846"
       },
       {
         "text": "The \"Game Over\" title always names a winner. On a tie it names one of the teams anyway (but nobody gets the winning bonus), and if no team ever scored it says \"Unknown has won!\".",
-        "src": "games/logic/Soccer.java:412, games/models/Scoreboard.java:79-91, games/logic/Soccer.java:444-459"
+        "src": "games/logic/Soccer.java:412, games/models/Scoreboard.java:87-98, games/logic/Soccer.java:444-459"
       },
       {
         "text": "The code has a \"Times up, game over!\" message for the 20 minute limit, but it never shows because the game stops before it can run.",
-        "src": "games/logic/Soccer.java:397-399, games/interfaces/Minigame.java:285-291"
+        "src": "games/logic/Soccer.java:397-399, games/interfaces/Minigame.java:367-373"
       },
       {
         "text": "After the 15 second blue \"Game Over\" bar you are supposed to be sent to the event drop-off point with a \"This minigame has concluded.\" message, but the player list is already cleared by then, so you stay at the Soccer spawn and get no message.",
-        "src": "games/logic/Soccer.java:412-427, games/interfaces/Minigame.java:185-211"
+        "src": "games/logic/Soccer.java:412-427, games/interfaces/Minigame.java:214-244"
       },
       {
         "text": "The game can start with just 1 player. The code marks this as a placeholder to be raised to 2.",
@@ -570,11 +574,11 @@
     "config": [
       {
         "text": "Punch range is 9 blocks from your own goal by default.",
-        "src": "configurable/sectors/SulfurSoccerDefinition.java:10"
+        "src": "configurable/sectors/game/SulfurSoccerDefinition.java:13"
       },
       {
         "text": "Each map sets its own pitch edges, goals, team start points and ball spawn, so pitch size and goal size depend on the map.",
-        "src": "configurable/sectors/SulfurSoccerDefinition.java:11-18"
+        "src": "configurable/sectors/game/SulfurSoccerDefinition.java:14-27"
       },
       {
         "text": "Extra balls spawn in a ring around the centre spot, 18% of the pitch's shorter side away, kept between 3 and 12 blocks.",
@@ -582,7 +586,7 @@
       },
       {
         "text": "Soccer is in the default list for automatic games (with Bomberman and Incursion), but automatic games are switched off by default.",
-        "src": "configurable/Config.java:31, configurable/Config.java:52-56"
+        "src": "configurable/Config.java:20, configurable/Config.java:45-49"
       }
     ],
     "storyboard": {
@@ -599,12 +603,12 @@
         {
           "caption": "Run into the ball",
           "sub": "The faster you run at it, the harder it goes. Touches like a First touch or a Save are plays.",
-          "src": "games/logic/Soccer.java:751-822, games/logic/Soccer.java:1129-1142"
+          "src": "games/logic/Soccer.java:751-823, games/logic/Soccer.java:1132-1145"
         },
         {
           "caption": "A goal is 10 points",
           "sub": "The first team to 30 wins. If 90 seconds pass with no goal, the team with more plays gets 10.",
-          "src": "games/logic/Soccer.java:880-907, games/logic/Soccer.java:280-284, games/logic/Soccer.java:324-328, games/logic/Soccer.java:336-359"
+          "src": "games/logic/Soccer.java:883-910, games/logic/Soccer.java:280-284, games/logic/Soccer.java:324-328, games/logic/Soccer.java:336-359"
         },
         {
           "caption": "3 tokens + 1 per 2 plays",

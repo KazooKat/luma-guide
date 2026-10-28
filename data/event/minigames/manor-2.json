@@ -1,0 +1,394 @@
+[
+  {
+    "key": "manor-2",
+    "constant": "MANOR_2",
+    "name": "Manor 2",
+    "summary": "Hide and seek in the dark. Invisible Ghosts grab Hunters to kill them, while Hunters use a flashlight to find hidden artifacts and to light up Ghosts until they die. Ghosts win by killing every Hunter, Hunters win by killing every Ghost, and after 5 minutes it's a tie.",
+    "tokenLine": "2 to 8 by score, +1 if your team wins",
+    "storyboard": {
+      "values": {
+        "beamBlocks": 8,
+        "beamDegrees": 37,
+        "artifactPoints": 50,
+        "artifactsFound": 2,
+        "grabSeconds": 2.5,
+        "ghostKillSeconds": 2.5,
+        "ghostKillPoints": 200,
+        "gameMinutes": 5,
+        "minScore": 100,
+        "maxScore": 700,
+        "minTokens": 2,
+        "maxTokens": 8,
+        "winBonus": 1
+      },
+      "beats": [
+        {
+          "caption": "Sweep your flashlight for artifacts",
+          "sub": "Hold right click to shine it 8 blocks. It reveals hidden artifacts, and each one you click is 50 points.",
+          "src": "games/logic/manor2/light/Flashlight.java:49, games/logic/manor2/light/Flashlight.java:176-178, games/logic/manor2/artifact/ArtifactManager.java:146-162, games/logic/manor2/Manor2.java:457-474, games/logic/manor2/ManorScoreboard.java:77-87, configurable/sectors/game/Manor2Definition.java:44-45"
+        },
+        {
+          "caption": "Light the Ghost for 2.5 seconds",
+          "sub": "A grab kills a Hunter in 2.5 seconds, but your light breaks it. Hunters share 200 points for the kill.",
+          "src": "games/logic/manor2/attack/Grab.java:30, games/logic/manor2/attack/Grab.java:99-105, games/logic/manor2/light/GhostVisibility.java:92-98, configurable/sectors/game/Manor2Definition.java:34-35, games/logic/manor2/ManorScoreboard.java:55-65, configurable/sectors/game/Manor2Definition.java:42-43"
+        },
+        {
+          "caption": "2 to 8 Soul Orbs, +1 if your side wins",
+          "sub": "In a full 5 minute game, 100 points or less pays 2 and 700 or more pays 8. A tie on 300 points pays 4.",
+          "src": "games/tokenformula/ScoreRangeTokenFormula.java:10-12, games/tokenformula/ScoreRangeTokenFormula.java:26-34, games/tokenformula/Manor2TokenFormula.java:9-11, games/tokenformula/Manor2TokenFormula.java:21-29, games/logic/manor2/Manor2.java:143-149"
+        }
+      ]
+    },
+    "howToPlay": [
+      {
+        "text": "Join with /event join while the queue is open. At least 2 players are needed. You're sent to the Manor 2 lobby, and chat gives you a 'Click here for more info' link to the game's How to Play page.",
+        "src": "games/interfaces/Minigame.java:254-301, games/interfaces/Minigame.java:344-345, games/interfaces/Minigame.java:140-159, games/interfaces/Minigame.java:603-606, games/logic/manor2/Manor2.java:296-301, games/logic/manor2/Manor2.java:303-331"
+      },
+      {
+        "text": "When the game starts your inventory is saved and cleared, and you get it back at the end. Your hunger is kept full the whole game.",
+        "src": "games/interfaces/InventoryUnifiedMinigame.java:38-71, games/interfaces/InventoryUnifiedMinigame.java:73-88, games/logic/manor2/Manor2.java:222-229"
+      },
+      {
+        "text": "Players are shuffled and 1 in every 10 (rounded up) becomes a Ghost, so 2 to 10 players have 1 Ghost and 11 to 20 have 2. Everyone else is a Hunter. Each side starts at its own spawn points, and a title tells you your role.",
+        "src": "games/logic/manor2/Manor2.java:151-190, configurable/sectors/game/Manor2Definition.java:32-33, games/logic/manor2/ManorTeam.java:12-13, games/logic/manor2/ManorTeam.java:36-43"
+      },
+      {
+        "text": "Ghosts are invisible, and Hunters can't see them at all unless light is on them. Ghosts see a glowing outline on every Hunter within 20 blocks.",
+        "src": "games/logic/manor2/light/GhostVisibility.java:99-127, games/logic/manor2/Manor2.java:253-261, configurable/sectors/game/Manor2Definition.java:38-39, games/logic/manor2/roles/Ghost.java:76-90, games/logic/manor2/roles/GhostHunter.java:70-95"
+      },
+      {
+        "text": "Ghosts start with 3 cookies and get 1 more for every kill. Eating one gives Speed I for 3 seconds, with 10 seconds between cookies.",
+        "src": "games/logic/manor2/roles/Ghost.java:42-43, games/logic/manor2/roles/Ghost.java:84-86, games/logic/manor2/roles/Ghost.java:118-147, games/logic/manor2/attack/Grab.java:107-118, games/logic/manor2/Manor2.java:444-455"
+      },
+      {
+        "text": "To kill, a Ghost left clicks a Hunter. Both are frozen in place, the Hunter's view is turned to face the Ghost, and after 2.5 seconds the Hunter dies. During a grab the Ghost is fully visible.",
+        "src": "games/logic/manor2/Manor2.java:407-413, games/logic/manor2/attack/GhostAttacks.java:28-36, games/logic/manor2/attack/GhostAttacks.java:73-82, games/logic/manor2/attack/Grab.java:30, games/logic/manor2/attack/Grab.java:59-97, games/logic/manor2/attack/Grab.java:107-118"
+      },
+      {
+        "text": "A Ghost can't start a grab while it's fully exposed by light, while it's on cooldown, or on a Hunter who was just freed from another grab.",
+        "src": "games/logic/manor2/attack/GhostAttacks.java:73-88, games/logic/manor2/attack/Grab.java:34-39, games/logic/manor2/attack/Grab.java:120-142"
+      },
+      {
+        "text": "Hunters get a Flashlight in slot 1 and red and black leather armour. Hold right click to shine it. Hunters can't hit each other, can't see other Hunters or their light, and don't hear a teammate being grabbed.",
+        "src": "games/logic/manor2/roles/GhostHunter.java:70-95, games/logic/manor2/roles/GhostHunter.java:40-47, games/logic/manor2/light/Flashlight.java:176-178, games/logic/manor2/light/Flashlight.java:231-242, games/logic/manor2/Manor2.java:240-251, games/logic/manor2/Manor2.java:415-422, games/logic/manor2/attack/Grab.java:157-170"
+      },
+      {
+        "text": "The beam reaches 8 blocks and is stopped by solid blocks. When it hits a Ghost, Hunters within 20 blocks can see that Ghost. A hit at the very edge of the beam only shows a glowing outline, and anything closer to the middle fully exposes it.",
+        "src": "games/logic/manor2/light/Flashlight.java:49, games/logic/manor2/light/Flashlight.java:99-117, utility/latency/tracing/Tracing.java:66-105, games/logic/manor2/light/LightHit.java:7-19, games/logic/manor2/light/GhostVisibility.java:34-39, games/logic/manor2/light/GhostVisibility.java:123-127, games/logic/manor2/light/GhostVisibility.java:200-204"
+      },
+      {
+        "text": "Every tick of light that fully exposes a Ghost counts toward killing it. 2.5 seconds of it in total, from any Hunters, kills the Ghost.",
+        "src": "games/logic/manor2/light/GhostVisibility.java:62-68, games/logic/manor2/light/GhostVisibility.java:92-98, configurable/sectors/game/Manor2Definition.java:34-35, games/logic/manor2/Manor2.java:90, utility/scheduler/AsynchronousRunnable.java:34-35"
+      },
+      {
+        "text": "A Ghost stays revealed for 3 seconds after the light leaves it. After that its kill progress fades at the same rate it built up.",
+        "src": "games/logic/manor2/light/GhostVisibility.java:34, games/logic/manor2/light/GhostVisibility.java:70-98, games/logic/manor2/light/GhostVisibility.java:131-143"
+      },
+      {
+        "text": "The map's own light reveals Ghosts too: standing in block light of 8 or more fully exposes them, and 6 or 7 shows an outline. This light doesn't count toward killing them.",
+        "src": "games/logic/manor2/light/GhostVisibility.java:37-38, games/logic/manor2/light/GhostVisibility.java:99-104, games/logic/manor2/light/GhostVisibility.java:189-198, games/logic/manor2/light/GhostVisibility.java:95-98"
+      },
+      {
+        "text": "Artifacts are hidden around the map. A Hunter's flashlight reveals any within 8 blocks that it has a clear line to, and a glowing item appears with 'Click on the artifact to get it'. Click it to collect it. A revealed artifact hides again after 10 seconds without light.",
+        "src": "games/logic/manor2/light/Flashlight.java:120-126, games/logic/manor2/artifact/ArtifactManager.java:45-46, games/logic/manor2/artifact/ArtifactManager.java:146-162, games/logic/manor2/artifact/ArtifactManager.java:210-238, games/logic/manor2/artifact/ArtifactEntity.java:34-48, games/logic/manor2/artifact/ArtifactEntity.java:62-77, games/logic/manor2/Manor2.java:432-474"
+      },
+      {
+        "text": "When an artifact is collected, a new one appears somewhere with no Hunter within 10 blocks.",
+        "src": "games/logic/manor2/artifact/ArtifactManager.java:44, games/logic/manor2/artifact/ArtifactManager.java:74-79, games/logic/manor2/artifact/ArtifactManager.java:100-116, games/logic/manor2/artifact/ArtifactManager.java:118-121, games/logic/manor2/artifact/ArtifactManager.java:245-253"
+      },
+      {
+        "text": "A Hunter within 10 blocks of a Ghost gets colder (frost on the screen) and their flashlight flickers or blacks out, more the closer the Ghost is. The frost does no damage.",
+        "src": "games/logic/manor2/roles/GhostHunter.java:24-25, games/logic/manor2/roles/GhostHunter.java:40-47, games/logic/manor2/roles/GhostHunter.java:97-115, games/logic/manor2/light/Flashlight.java:41-44, games/logic/manor2/light/Flashlight.java:187-204, games/logic/manor2/Manor2.java:391-397"
+      },
+      {
+        "text": "When you die, Hunter or Ghost, your soul is bound to an artifact: you shrink to about 1 block tall, turn invisible, and are moved to a spot where an artifact was collected, boxed in by a world border ('Hide from hunters!'). If no spot is free yet, you see 'Waiting for a safe region...' until one is.",
+        "src": "games/logic/manor2/roles/Ghost.java:63-73, games/logic/manor2/roles/GhostHunter.java:56-67, games/logic/manor2/roles/Artifact.java:29-33, games/logic/manor2/roles/Artifact.java:54-93, games/logic/manor2/roles/Artifact.java:107-123, games/logic/manor2/artifact/ArtifactManager.java:188-208"
+      },
+      {
+        "text": "If a Hunter's beam finds you as an artifact, you're frozen and an artifact item with an enchanted glint appears on you. If they click it you're out and become a spectator. If the light leaves you alone for 10 seconds, you can move again.",
+        "src": "games/logic/manor2/artifact/ArtifactManager.java:168-186, games/logic/manor2/artifact/ArtifactManager.java:74-94, games/logic/manor2/artifact/ArtifactEntity.java:34-48, games/logic/manor2/artifact/ArtifactManager.java:118-144, games/logic/manor2/roles/Artifact.java:95-105, games/logic/manor2/roles/Artifact.java:147-162"
+      },
+      {
+        "text": "Spectators are hidden from everyone in the game. Your hotbar fills with the heads of up to 9 top scorers who are still playing, refreshed every 10 seconds, and eating a head teleports you to that player.",
+        "src": "games/logic/manor2/roles/Spectator.java:48, games/logic/manor2/roles/Spectator.java:61-84, games/logic/manor2/roles/Spectator.java:91-115, games/logic/manor2/roles/Spectator.java:127-158, games/logic/manor2/roles/Spectator.java:160-183, games/logic/manor2/Manor2.java:444-455"
+      },
+      {
+        "text": "Leaving the play area shows 'Out of bounds', and after 5 seconds outside you die.",
+        "src": "games/logic/manor2/attack/OutsideBoundsEffect.java:24-28, games/logic/manor2/attack/OutsideBoundsEffect.java:32, games/logic/manor2/attack/OutsideBoundsEffect.java:41-75"
+      },
+      {
+        "text": "Ghosts and Hunters who go AFK get a warning at 30 seconds and are removed at 45 seconds, with no Soul Orbs.",
+        "src": "games/logic/manor2/Manor2.java:137-141, games/interfaces/Minigame.java:382-408, games/interfaces/Minigame.java:458-464, games/interfaces/InventoryUnifiedMinigame.java:100-117, games/interfaces/models/InactivitySettings.java:47-49"
+      },
+      {
+        "text": "Hunters win when every Ghost is dead and Ghosts win when every Hunter is dead. If neither happens in 5 minutes it's a tie. Everyone goes back to the lobby, the top 5 scores are posted with each player's team, and you're told your own place.",
+        "src": "games/logic/manor2/Manor2.java:211-238, games/logic/manor2/Manor2.java:263-294, configurable/sectors/game/Manor2Definition.java:31, games/logic/manor2/ManorScoreboard.java:43-45, games/logic/manor2/ManorScoreboard.java:99-132"
+      }
+    ],
+    "scoring": [
+      {
+        "text": "Ghosts get 100 points for each Hunter they kill.",
+        "src": "games/logic/manor2/ManorScoreboard.java:67-75, games/logic/manor2/attack/Grab.java:107-118, configurable/sectors/game/Manor2Definition.java:40-41"
+      },
+      {
+        "text": "Hunters share 200 points for each Ghost killed, split by how much of the killing light each one gave. Chat names every Hunter who gave more than 15% of it.",
+        "src": "games/logic/manor2/ManorScoreboard.java:46, games/logic/manor2/ManorScoreboard.java:55-65, games/logic/manor2/ManorScoreboard.java:150-156, games/logic/manor2/ManorScoreboard.java:166-181, games/logic/manor2/light/GhostVisibility.java:62-68, configurable/sectors/game/Manor2Definition.java:42-43"
+      },
+      {
+        "text": "Hunters get 50 points for each artifact they collect, including dead players bound to artifacts.",
+        "src": "games/logic/manor2/ManorScoreboard.java:77-97, games/logic/manor2/Manor2.java:457-474, configurable/sectors/game/Manor2Definition.java:44-45"
+      },
+      {
+        "text": "Dead players earn 75 points a minute (counted continuously) while hidden as an artifact, from the moment they're placed until they're found or the game ends.",
+        "src": "games/logic/manor2/roles/Artifact.java:67-71, games/logic/manor2/roles/Artifact.java:139-143, games/logic/manor2/roles/Artifact.java:155-157, configurable/sectors/game/Manor2Definition.java:48-49"
+      },
+      {
+        "text": "Your score is also added to your all-time Manor 2 total, which feeds the server's top 10 leaderboard.",
+        "src": "games/logic/manor2/Manor2.java:148, model/EventPlayer.java:168-170, manager/LeaderboardCacheManager.java:39-54, placeholders/games/Manor2PositionPlaceholder.java:20-27, placeholders/PlaceholderModule.java:10-16"
+      }
+    ],
+    "tokens": [
+      {
+        "text": "You're paid Soul Orbs once, when the game ends: 2 to 8 based on your score, plus 1 if your team won. A tie pays no win bonus.",
+        "src": "games/logic/manor2/Manor2.java:143-149, games/tokenformula/ScoreRangeTokenFormula.java:10-12, games/tokenformula/ScoreRangeTokenFormula.java:26-34, games/interfaces/InventoryUnifiedMinigame.java:73-88, games/interfaces/TokenFormula.java:35-48, items/TokenExchanging.java:77"
+      },
+      {
+        "text": "You keep your side when you die, so dead players still get the win bonus.",
+        "src": "games/logic/manor2/Manor2.java:145, games/logic/manor2/Manor2.java:163-171, games/logic/manor2/ManorScoreboard.java:142-148"
+      },
+      {
+        "text": "The score you need depends on how long the game ran. In a full 5 minute game, 100 points or less gives 2 and 700 or more gives 8, so about 1 Soul Orb per 100 points in between. A shorter game scales this down with the time played (at 4 minutes it's 80 to 560), but never below the 2.5 minute level of 50 to 350.",
+        "src": "games/tokenformula/Manor2TokenFormula.java:9-11, games/tokenformula/Manor2TokenFormula.java:21-29, games/tokenformula/ScoreRangeTokenFormula.java:26-34, games/interfaces/Minigame.java:178"
+      },
+      {
+        "text": "Example: a full 5 minute game ends in a tie. A Hunter on 300 points (6 artifacts) gets 2 + 2 = 4 Soul Orbs.",
+        "src": "configurable/sectors/game/Manor2Definition.java:44-45, games/tokenformula/Manor2TokenFormula.java:9-11, games/tokenformula/ScoreRangeTokenFormula.java:26-34"
+      },
+      {
+        "text": "Example: a Ghost kills all 5 Hunters in 2 minutes. That counts as 2.5 minutes, so the Ghost's 500 points are past the top of 350: 8 + 1 for the win = 9 Soul Orbs. A Hunter who ends that game on 50 points gets 2.",
+        "src": "configurable/sectors/game/Manor2Definition.java:40-41, configurable/sectors/game/Manor2Definition.java:44-45, games/tokenformula/Manor2TokenFormula.java:21-29, games/tokenformula/ScoreRangeTokenFormula.java:26-34"
+      },
+      {
+        "text": "Staff can start a game with a token multiplier (the result is rounded, so 6 Soul Orbs at 1.5x becomes 9), a flat amount for everyone, or none at all. Chat says which when the game is announced.",
+        "src": "games/interfaces/TokenPayout.java:30-36, games/MinigameManager.java:68, games/interfaces/Minigame.java:346, games/interfaces/Minigame.java:633-640"
+      },
+      {
+        "text": "After that, the server-wide token multiplier (1 by default) is applied and rounded up, and a single payout can't give more than 20 Soul Orbs.",
+        "src": "items/TokenExchanging.java:38, items/TokenExchanging.java:46, configurable/Config.java:33-34"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Minimum players",
+        "value": "2",
+        "src": "games/interfaces/Minigame.java:140-159, games/interfaces/Minigame.java:603-606"
+      },
+      {
+        "label": "Ghosts",
+        "value": "1 per 10 players, rounded up",
+        "src": "games/logic/manor2/Manor2.java:155, configurable/sectors/game/Manor2Definition.java:32-33"
+      },
+      {
+        "label": "Game time",
+        "value": "5 minutes, then a tie",
+        "src": "configurable/sectors/game/Manor2Definition.java:31, games/logic/manor2/Manor2.java:128-129, games/logic/manor2/Manor2.java:211-216"
+      },
+      {
+        "label": "Grab",
+        "value": "2.5 seconds to kill a Hunter",
+        "src": "games/logic/manor2/attack/Grab.java:30, games/logic/manor2/attack/Grab.java:70-82"
+      },
+      {
+        "label": "Killing a Ghost",
+        "value": "2.5 seconds of full light in total",
+        "src": "configurable/sectors/game/Manor2Definition.java:34-35, games/logic/manor2/light/GhostVisibility.java:92-98"
+      },
+      {
+        "label": "Ghost stays revealed",
+        "value": "3 seconds after the light leaves",
+        "src": "games/logic/manor2/light/GhostVisibility.java:34, games/logic/manor2/light/GhostVisibility.java:79-83"
+      },
+      {
+        "label": "Flashlight beam",
+        "value": "8 blocks long, about 37 degrees wide at full battery down to about 24 near empty",
+        "src": "games/logic/manor2/light/Flashlight.java:39-40, games/logic/manor2/light/Flashlight.java:49, games/logic/manor2/light/Flashlight.java:99-104, games/logic/manor2/light/Flashlight.java:180-185, utility/latency/tracing/Tracing.java:72"
+      },
+      {
+        "label": "Flashlight battery",
+        "value": "40 seconds of use, refills from empty in 20 seconds",
+        "src": "games/logic/manor2/light/Flashlight.java:45-47, games/logic/manor2/light/Flashlight.java:79-97"
+      },
+      {
+        "label": "Artifact reveal",
+        "value": "Within 8 blocks (less on diagonals) and about 40 degrees of where you look, with a clear line",
+        "src": "games/logic/manor2/artifact/ArtifactManager.java:46, games/logic/manor2/artifact/ArtifactManager.java:146-162, games/logic/manor2/artifact/ArtifactManager.java:229-238"
+      },
+      {
+        "label": "Seeing each other",
+        "value": "Hunters see a revealed Ghost within 20 blocks, Ghosts see Hunter outlines within 20 blocks",
+        "src": "games/logic/manor2/light/GhostVisibility.java:39, games/logic/manor2/light/GhostVisibility.java:123-127, configurable/sectors/game/Manor2Definition.java:38-39, games/logic/manor2/Manor2.java:253-261"
+      },
+      {
+        "label": "Haunting",
+        "value": "Frost and flicker within 10 blocks of a Ghost",
+        "src": "games/logic/manor2/roles/GhostHunter.java:25, games/logic/manor2/roles/GhostHunter.java:105-115"
+      },
+      {
+        "label": "Map light",
+        "value": "Block light 8+ exposes a Ghost, 6 or 7 shows an outline",
+        "src": "games/logic/manor2/light/GhostVisibility.java:37-38, games/logic/manor2/light/GhostVisibility.java:189-198"
+      },
+      {
+        "label": "Breaking a grab",
+        "value": "Under 1 second of another Hunter's full battery beam aimed straight at the Ghost",
+        "src": "games/logic/manor2/attack/Grab.java:31-32, games/logic/manor2/attack/Grab.java:77-80, games/logic/manor2/attack/Grab.java:99-105, games/logic/manor2/light/LightHit.java:7-14, games/logic/manor2/light/Flashlight.java:180-185"
+      },
+      {
+        "label": "After a grab ends",
+        "value": "Ghost waits 5 s after a kill, 10 s if broken free, 5 s if it let go; a freed Hunter can't be grabbed for 3 s",
+        "src": "games/logic/manor2/attack/Grab.java:34-39, games/logic/manor2/attack/Grab.java:107-142"
+      },
+      {
+        "label": "Ghost exposed after a grab",
+        "value": "3 s if broken free, 1 s if it let go",
+        "src": "games/logic/manor2/attack/Grab.java:37-38, games/logic/manor2/attack/Grab.java:120-142"
+      },
+      {
+        "label": "Cookies",
+        "value": "3 at start, +1 per kill, Speed I for 3 s, 10 s apart",
+        "src": "games/logic/manor2/roles/Ghost.java:42-43, games/logic/manor2/roles/Ghost.java:84-86, games/logic/manor2/roles/Ghost.java:118-147"
+      },
+      {
+        "label": "Artifact",
+        "value": "50 points, hides again after 10 s without light",
+        "src": "configurable/sectors/game/Manor2Definition.java:44-45, games/logic/manor2/artifact/ArtifactEntity.java:34-48"
+      },
+      {
+        "label": "Dead player artifact",
+        "value": "75 points a minute until found",
+        "src": "configurable/sectors/game/Manor2Definition.java:48-49, games/logic/manor2/roles/Artifact.java:139-143"
+      },
+      {
+        "label": "Out of bounds",
+        "value": "5 seconds, then you die",
+        "src": "games/logic/manor2/attack/OutsideBoundsEffect.java:32, games/logic/manor2/attack/OutsideBoundsEffect.java:48-70"
+      },
+      {
+        "label": "AFK",
+        "value": "Warning at 30 s, removed at 45 s (Ghosts and Hunters)",
+        "src": "games/logic/manor2/Manor2.java:137-141, games/interfaces/models/InactivitySettings.java:47-49"
+      },
+      {
+        "label": "Soul Orbs",
+        "value": "2 to 8, +1 for a win",
+        "src": "games/tokenformula/ScoreRangeTokenFormula.java:10-12, games/tokenformula/ScoreRangeTokenFormula.java:26-34"
+      }
+    ],
+    "tips": [
+      {
+        "text": "Turn off fullbright or gamma mods, as the game's own How to Play page asks. Ghosts stay hidden either way, and the mod only stops you seeing where your own beam reaches.",
+        "src": "games/logic/manor2/Manor2.java:308-315, games/logic/manor2/light/GhostVisibility.java:123-127"
+      },
+      {
+        "text": "Hunters: the battery refills twice as fast as it drains, so short bursts beat holding it down. The beam also gets dimmer and narrower as the battery drops.",
+        "src": "games/logic/manor2/light/Flashlight.java:45-47, games/logic/manor2/light/Flashlight.java:79-97, games/logic/manor2/light/Flashlight.java:99-104, games/logic/manor2/light/Flashlight.java:180-185"
+      },
+      {
+        "text": "Hunters: frost creeping onto your screen or a flickering flashlight means a Ghost is within 10 blocks.",
+        "src": "games/logic/manor2/roles/GhostHunter.java:97-115, games/logic/manor2/light/Flashlight.java:187-204"
+      },
+      {
+        "text": "Listen for a breeze whirl. Every Ghost makes one every 4 seconds.",
+        "src": "games/logic/manor2/roles/Ghost.java:39-40, games/logic/manor2/roles/Ghost.java:169-175"
+      },
+      {
+        "text": "Hunters: artifacts are revealed in a wider cone than your beam, so sweep your view around a room to find them.",
+        "src": "games/logic/manor2/artifact/ArtifactManager.java:46, games/logic/manor2/artifact/ArtifactManager.java:146-162, games/logic/manor2/artifact/ArtifactManager.java:229-238, utility/latency/tracing/Tracing.java:72"
+      },
+      {
+        "text": "Hunters: a Ghost that is grabbing someone is fully visible. Shine your light on it to break the grab, and the same light counts toward killing it.",
+        "src": "games/logic/manor2/attack/Grab.java:59-61, games/logic/manor2/attack/Grab.java:86, games/logic/manor2/attack/Grab.java:99-105, games/logic/manor2/light/GhostVisibility.java:62-68, games/logic/manor2/light/GhostVisibility.java:92-98"
+      },
+      {
+        "text": "Grabbed? Your own light can't break you free, but your view is locked onto the Ghost and your light still counts toward killing it.",
+        "src": "games/logic/manor2/attack/Grab.java:88-92, games/logic/manor2/attack/Grab.java:99-105, games/logic/manor2/light/GhostVisibility.java:62-68, games/logic/manor2/light/Flashlight.java:105-117"
+      },
+      {
+        "text": "Ghosts: stay out of lit areas. Block light of 8 or more exposes you, stops you grabbing, and lets Hunters see you from 20 blocks.",
+        "src": "games/logic/manor2/light/GhostVisibility.java:189-198, games/logic/manor2/light/GhostVisibility.java:123-127, games/logic/manor2/attack/GhostAttacks.java:73-76"
+      },
+      {
+        "text": "Ghosts: your health bar shows how close the light is to killing you. It drops as kill progress builds and refills as it fades, and the light never takes you below half a heart.",
+        "src": "games/logic/manor2/light/GhostVisibility.java:42, games/logic/manor2/light/GhostVisibility.java:92-93, games/logic/manor2/light/GhostVisibility.java:121, games/logic/manor2/light/GhostVisibility.java:158-168"
+      },
+      {
+        "text": "Ghosts: if light lands on you mid grab, letting go with your swap hands key (F by default) costs a 5 second cooldown and 1 second exposed. Being broken free costs 10 seconds, 3 seconds exposed and a knockback.",
+        "src": "games/logic/manor2/attack/GhostAttacks.java:38-46, games/logic/manor2/Manor2.java:424-430, games/logic/manor2/attack/Grab.java:34-38, games/logic/manor2/attack/Grab.java:120-142"
+      },
+      {
+        "text": "Dead? Hide well. As an artifact you earn 75 points a minute until a Hunter finds you, and you still get the win bonus if your side wins.",
+        "src": "games/logic/manor2/roles/Artifact.java:139-143, configurable/sectors/game/Manor2Definition.java:48-49, games/logic/manor2/Manor2.java:145"
+      },
+      {
+        "text": "Hunters: an artifact with an enchanted glint is a dead player. Collecting it scores you 50 and stops them earning artifact points.",
+        "src": "games/logic/manor2/artifact/ArtifactManager.java:168-186, games/logic/manor2/artifact/ArtifactEntity.java:62-70, games/logic/manor2/ManorScoreboard.java:89-97, games/logic/manor2/roles/Artifact.java:95-105, games/logic/manor2/roles/Artifact.java:139-143"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "The 'Time Remaining' bar starts at 310 seconds, but the game ends in a tie when it reaches about 10.",
+        "src": "games/logic/manor2/Manor2.java:92, games/logic/manor2/Manor2.java:128-129, games/logic/manor2/Manor2.java:202-216, games/models/CountdownBossBar.java:155-163, games/models/CountdownBossBar.java:199-201"
+      },
+      {
+        "text": "The How to Play page says revealed Ghosts can't kill, but only full exposure stops a grab. A Ghost showing just an outline can still grab you.",
+        "src": "games/logic/manor2/Manor2.java:316-320, games/logic/manor2/attack/GhostAttacks.java:73-76, games/logic/manor2/light/GhostVisibility.java:200-204"
+      },
+      {
+        "text": "The config has a separate 75 point setting for finding a dead player's artifact, but the code gives the normal artifact score (50) instead.",
+        "src": "games/logic/manor2/ManorScoreboard.java:89-92, configurable/sectors/game/Manor2Definition.java:46-47"
+      },
+      {
+        "text": "A new Ghost is only picked when a Ghost leaves the game, not when one dies. A random dead player becomes the Ghost (or a random Hunter if nobody is dead and more than 1 Hunter is left), chat says '<name> has risen as a ghost!', and they count as a Ghost for the win bonus.",
+        "src": "games/logic/manor2/Manor2.java:333-389"
+      },
+      {
+        "text": "The Flashlight is a trident made to look like a spyglass, and throwing it is blocked.",
+        "src": "games/logic/manor2/light/Flashlight.java:274-277, games/logic/manor2/Manor2.java:399-405"
+      }
+    ],
+    "config": [
+      {
+        "text": "Each Manor 2 map sets its own lobby, Hunter and Ghost spawn points and play area, and a random map is picked when the game starts. Manor 2 isn't in the default list of games that start automatically.",
+        "src": "configurable/sectors/game/Manor2Definition.java:24-30, games/constants/MinigameConstant.java:68, games/constants/MinigameConstant.java:90-103, games/MinigameManager.java:37-43, configurable/Config.java:44-49"
+      },
+      {
+        "text": "By default a game lasts 5 minutes, there is 1 Ghost per 10 players, 2.5 seconds of light kills a Ghost, and Ghosts see Hunter outlines from 20 blocks.",
+        "src": "configurable/sectors/game/Manor2Definition.java:31-39"
+      },
+      {
+        "text": "Default points: 100 per Hunter killed, 200 per Ghost killed, 50 per artifact, and 75 a minute as a dead player's artifact. The 2 to 8 Soul Orb range, the win bonus and the 100 to 700 score range are fixed in code.",
+        "src": "configurable/sectors/game/Manor2Definition.java:40-49, games/tokenformula/ScoreRangeTokenFormula.java:10-12, games/tokenformula/Manor2TokenFormula.java:9-11"
+      },
+      {
+        "text": "Playing on as an artifact after dying is on by default. With it off, dead players go straight to spectating.",
+        "src": "configurable/sectors/game/Manor2Definition.java:52-53, games/logic/manor2/roles/Ghost.java:63-73, games/logic/manor2/roles/GhostHunter.java:56-67"
+      },
+      {
+        "text": "The play area is split into areas about 12 blocks wide, and the share of them holding an artifact grows with the number of Hunters: 25% plus 1/30 for each Hunter (plus 1), up to all of them at 22 or more Hunters.",
+        "src": "configurable/sectors/game/Manor2Definition.java:50-55, games/logic/manor2/artifact/ArtifactManager.java:74-79, games/logic/manor2/artifact/ArtifactManager.java:255-289, games/logic/manor2/artifact/ArtifactManager.java:291-310"
+      },
+      {
+        "text": "There is a 'hunter death time' setting (25 ticks), but nothing uses it: a grab always takes 2.5 seconds.",
+        "src": "configurable/sectors/game/Manor2Definition.java:36-37, games/logic/manor2/attack/Grab.java:30"
+      },
+      {
+        "text": "Lag compensation is switched on by default, but its rewind cap is set to 300 nanoseconds, so in practice flashlight hits aren't rewound for your ping.",
+        "src": "configurable/sectors/game/Manor2Definition.java:118-125, games/logic/manor2/Manor2.java:132-134, utility/latency/LatencyHandler.java:9-16"
+      },
+      {
+        "text": "The 15 normal artifact items (Precious Gold, Heavy Anvil, Old Beef Jerky and more) and the 6 dead player artifact items are set per map.",
+        "src": "configurable/sectors/game/Manor2Definition.java:84-110"
+      }
+    ]
+  }
+]

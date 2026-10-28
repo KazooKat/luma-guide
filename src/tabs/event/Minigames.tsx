@@ -114,7 +114,10 @@ export function MinigameDetail({ slug }: { slug: string }) {
           <Sources notes={notes} commit={EVENT.commit} repo={EVENTS_REPO} />
         </>
       ) : (
-        <p class="explain-line">This game's guide isn't written yet. Its token formula is <Src src={g.formula.src}>here in the code</Src>.</p>
+        <p class="explain-line">
+          This game's guide isn't written yet.{' '}
+          {g.formula ? <>Its token formula is <Src src={g.formula.src}>here in the code</Src>.</> : <>Its <Src src={g.src}>code</Src> has no token formula, so it pays no tokens.</>}
+        </p>
       )}
     </section>
   );

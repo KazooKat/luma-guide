@@ -19,12 +19,12 @@
         {
           "caption": "Hit an enemy 3 times to freeze them",
           "sub": "Hits deal no damage. The hit that freezes them scores you 6 points.",
-          "src": "games/logic/FreezeTag.java:279, games/logic/FreezeTag.java:334-348, configurable/sectors/FreezeTagDefinition.java:22, configurable/sectors/FreezeTagDefinition.java:28"
+          "src": "games/logic/FreezeTag.java:279, games/logic/FreezeTag.java:334-348, configurable/sectors/game/FreezeTagDefinition.java:29, configurable/sectors/game/FreezeTagDefinition.java:35"
         },
         {
           "caption": "4 hits frees a frozen teammate",
           "sub": "That scores you 4 points. A round ends when every player on one team is frozen.",
-          "src": "games/logic/FreezeTag.java:314-331, configurable/sectors/FreezeTagDefinition.java:23, configurable/sectors/FreezeTagDefinition.java:29, games/logic/FreezeTag.java:170-178"
+          "src": "games/logic/FreezeTag.java:314-331, configurable/sectors/game/FreezeTagDefinition.java:30, configurable/sectors/game/FreezeTagDefinition.java:36, games/logic/FreezeTag.java:170-178"
         },
         {
           "caption": "14 tokens if your team wins, 11 if not",
@@ -36,11 +36,11 @@
     "howToPlay": [
       {
         "text": "When the game starts, players are shuffled and split into 2 teams (Scarlet and Ivory by default). With an odd number of players the second team gets the extra player. You get a leather chestplate and a glow in your team colour, and you are sent to your team's spawn.",
-        "src": "games/logic/FreezeTag.java:85-106, configurable/sectors/FreezeTagDefinition.java:19-20"
+        "src": "games/logic/FreezeTag.java:85-106, configurable/sectors/game/FreezeTagDefinition.java:26-27"
       },
       {
         "text": "Hits never deal damage. Hit an enemy 3 times to freeze them. Each hit before the last one knocks them back a little.",
-        "src": "games/logic/FreezeTag.java:279, games/logic/FreezeTag.java:334-348, games/logic/FreezeTag.java:381-395, configurable/sectors/FreezeTagDefinition.java:22"
+        "src": "games/logic/FreezeTag.java:279, games/logic/FreezeTag.java:334-348, games/logic/FreezeTag.java:381-395, configurable/sectors/game/FreezeTagDefinition.java:29"
       },
       {
         "text": "A frozen player is locked in a block of ice and glows. They can still look around, but any movement snaps them back to where they were frozen. Their teammates get a chat message asking them to unfreeze them.",
@@ -48,7 +48,7 @@
       },
       {
         "text": "Hit a frozen teammate 4 times to unfreeze them. The ice cracks a bit more with each hit.",
-        "src": "games/logic/FreezeTag.java:314-331, games/logic/FreezeTag.java:480-497, configurable/sectors/FreezeTagDefinition.java:23"
+        "src": "games/logic/FreezeTag.java:314-331, games/logic/FreezeTag.java:480-497, configurable/sectors/game/FreezeTagDefinition.java:30"
       },
       {
         "text": "Hitting a teammate who isn't frozen but has taken freeze hits heals them by 1 hit.",
@@ -56,7 +56,7 @@
       },
       {
         "text": "While you are frozen you can't freeze enemies or unfreeze teammates, but by default you can still heal teammates who come to you.",
-        "src": "games/logic/FreezeTag.java:293-312, configurable/sectors/FreezeTagDefinition.java:25-27"
+        "src": "games/logic/FreezeTag.java:293-312, configurable/sectors/game/FreezeTagDefinition.java:32-34"
       },
       {
         "text": "Your action bar shows how many players on each team are frozen, and in the middle either your hearts (hits left before you freeze) or, while frozen, the snowflakes left until you are free.",
@@ -68,21 +68,21 @@
       },
       {
         "text": "The match ends when a team reaches 2 round wins, or when the 6 minute timer runs out. The timer is for the whole match, not each round. On time out the team with more round wins wins, and if round wins are tied the team with more unfrozen players at that moment wins. If that is also equal it's a tie.",
-        "src": "games/logic/FreezeTag.java:77, games/logic/FreezeTag.java:115-121, games/logic/FreezeTag.java:582-598, games/logic/FreezeTag.java:645-670, configurable/sectors/FreezeTagDefinition.java:21, configurable/sectors/FreezeTagDefinition.java:24"
+        "src": "games/logic/FreezeTag.java:77, games/logic/FreezeTag.java:115-121, games/logic/FreezeTag.java:582-598, games/logic/FreezeTag.java:645-670, configurable/sectors/game/FreezeTagDefinition.java:28, configurable/sectors/game/FreezeTagDefinition.java:31"
       },
       {
-        "text": "Your inventory is saved and cleared when the game starts and given back at the end. After the Game Over title you are sent back to the lobby 10 seconds later.",
-        "src": "games/interfaces/InventoryUnifiedMinigame.java:38-62, games/interfaces/InventoryUnifiedMinigame.java:74-91, games/logic/FreezeTag.java:140-152"
+        "text": "Your inventory is saved and cleared when the game starts and given back at the end. After the Game Over title you stay where you are in the arena.",
+        "src": "games/interfaces/InventoryUnifiedMinigame.java:38-62, games/interfaces/InventoryUnifiedMinigame.java:74-88, games/logic/FreezeTag.java:140-152, games/interfaces/Minigame.java:218, games/interfaces/Minigame.java:244"
       }
     ],
     "scoring": [
       {
         "text": "You score 6 points for the hit that freezes an enemy. Only the hit that completes the freeze scores, not the hits before it.",
-        "src": "games/logic/FreezeTag.java:335-348, configurable/sectors/FreezeTagDefinition.java:28"
+        "src": "games/logic/FreezeTag.java:335-348, configurable/sectors/game/FreezeTagDefinition.java:35"
       },
       {
         "text": "You score 4 points for the hit that unfreezes a teammate.",
-        "src": "games/logic/FreezeTag.java:314-322, configurable/sectors/FreezeTagDefinition.java:29"
+        "src": "games/logic/FreezeTag.java:314-322, configurable/sectors/game/FreezeTagDefinition.java:36"
       },
       {
         "text": "Healing scores nothing, and you never lose points.",
@@ -90,7 +90,7 @@
       },
       {
         "text": "At the end your score is added to your all-time Freeze Tag leaderboard total.",
-        "src": "games/logic/FreezeTag.java:568, model/EventPlayer.java:171-173"
+        "src": "games/logic/FreezeTag.java:568, model/EventPlayer.java:168-170"
       }
     ],
     "tokens": [
@@ -104,11 +104,11 @@
       },
       {
         "text": "Worked example with the default points (6 per freeze, 4 per unfreeze): on the winning team you get 19 tokens with 0 points, 17 with 4 points, and 14 with 6 or more. On the losing team, or when nobody wins, that is 16, 14, and 11.",
-        "src": "games/tokenformula/Paintball2_1TokenFormula.java:11-21, configurable/sectors/FreezeTagDefinition.java:28-29"
+        "src": "games/tokenformula/Paintball2_1TokenFormula.java:11-21, configurable/sectors/game/FreezeTagDefinition.java:35-36"
       },
       {
         "text": "A staff multiplier is applied to that number and rounded, then the server-wide multiplier (1 by default) is applied and rounded up. Any single payout above 20 is cut to 20.",
-        "src": "games/interfaces/TokenPayout.java:30-36, items/TokenExchanging.java:38-47, configurable/Config.java:43"
+        "src": "games/interfaces/TokenPayout.java:30-36, items/TokenExchanging.java:38-47, configurable/Config.java:34"
       }
     ],
     "numbers": [
@@ -120,32 +120,32 @@
       {
         "label": "Match time limit",
         "value": "6 minutes (360 seconds)",
-        "src": "configurable/sectors/FreezeTagDefinition.java:21, games/logic/FreezeTag.java:77"
+        "src": "configurable/sectors/game/FreezeTagDefinition.java:28, games/logic/FreezeTag.java:77"
       },
       {
         "label": "Round wins to win the match",
         "value": "2",
-        "src": "configurable/sectors/FreezeTagDefinition.java:24"
+        "src": "configurable/sectors/game/FreezeTagDefinition.java:31"
       },
       {
         "label": "Hits to freeze an enemy",
         "value": "3",
-        "src": "configurable/sectors/FreezeTagDefinition.java:22"
+        "src": "configurable/sectors/game/FreezeTagDefinition.java:29"
       },
       {
         "label": "Hits to unfreeze a teammate",
         "value": "4",
-        "src": "configurable/sectors/FreezeTagDefinition.java:23"
+        "src": "configurable/sectors/game/FreezeTagDefinition.java:30"
       },
       {
         "label": "Points per freeze",
         "value": "6",
-        "src": "configurable/sectors/FreezeTagDefinition.java:28"
+        "src": "configurable/sectors/game/FreezeTagDefinition.java:35"
       },
       {
         "label": "Points per unfreeze",
         "value": "4",
-        "src": "configurable/sectors/FreezeTagDefinition.java:29"
+        "src": "configurable/sectors/game/FreezeTagDefinition.java:36"
       },
       {
         "label": "Break between rounds",
@@ -165,7 +165,7 @@
       },
       {
         "text": "If you have taken freeze hits, let a teammate hit you: each hit takes 1 off. By default even a frozen teammate can do this, so standing next to a frozen teammate is a way to heal.",
-        "src": "games/logic/FreezeTag.java:306-311, games/logic/FreezeTag.java:349-371, configurable/sectors/FreezeTagDefinition.java:27"
+        "src": "games/logic/FreezeTag.java:306-311, games/logic/FreezeTag.java:349-371, configurable/sectors/game/FreezeTagDefinition.java:34"
       },
       {
         "text": "A round only ends when every player on a team is frozen at the same time, so as long as you keep unfreezing teammates your team can't lose the round.",
@@ -178,8 +178,8 @@
         "src": "games/logic/FreezeTag.java:63, games/logic/FreezeTag.java:80, games/logic/FreezeTag.java:567, games/tokenformula/FreezeTagTokenFormula.java:10-18, games/tokenformula/Paintball2_1TokenFormula.java:11-21"
       },
       {
-        "text": "The map settings minimumTokens (5) and tokensPerPoint (1) look like they control the payout, but nothing reads them.",
-        "src": "configurable/sectors/FreezeTagDefinition.java:30-31, games/logic/FreezeTag.java:80"
+        "text": "The server settings minimumTokens (5) and tokensPerPoint (1) look like they control the payout, but nothing reads them.",
+        "src": "configurable/sectors/game/FreezeTagDefinition.java:37-38, games/logic/FreezeTag.java:80"
       },
       {
         "text": "When the timer runs out with round wins tied, the Game Over title picks the winner by who has more unfrozen players. Tokens are worked out after everyone has been unfrozen, so the winner's 14 base goes to the team with more players left in the game (or to nobody if the teams are the same size). The team named on screen can miss out on the winner's tokens.",
@@ -192,20 +192,28 @@
       {
         "text": "The check that ends a round skips a team with no players, so if everyone on one team leaves, the round can't end by freezing and the match runs until the timer.",
         "src": "games/logic/FreezeTag.java:170-178"
+      },
+      {
+        "text": "After the Game Over title a 10 second bar runs that is meant to send everyone to the lobby, but by then the game has already emptied its player list, so nobody is moved.",
+        "src": "games/logic/FreezeTag.java:142-152, games/interfaces/Minigame.java:218, games/interfaces/Minigame.java:244"
       }
     ],
     "config": [
       {
         "text": "Team names and colours are Scarlet (red) and Ivory (white) by default.",
-        "src": "configurable/sectors/FreezeTagDefinition.java:19-20"
+        "src": "configurable/sectors/game/FreezeTagDefinition.java:26-27"
       },
       {
-        "text": "The time limit (360 seconds), hits to freeze (3), hits to unfreeze (4), round wins needed (2), and points per freeze and unfreeze (6 and 4) are map settings, so the live values may differ. Because the token payout depends on your score, changing the points also changes who gets the bonus.",
-        "src": "configurable/sectors/FreezeTagDefinition.java:21-24, configurable/sectors/FreezeTagDefinition.java:28-29, games/tokenformula/Paintball2_1TokenFormula.java:11-21"
+        "text": "The time limit (360 seconds), hits to freeze (3), hits to unfreeze (4), round wins needed (2), and points per freeze and unfreeze (6 and 4) are server settings, so the live values may differ. Because the token payout depends on your score, changing the points also changes who gets the bonus.",
+        "src": "configurable/sectors/game/FreezeTagDefinition.java:28-31, configurable/sectors/game/FreezeTagDefinition.java:35-36, games/tokenformula/Paintball2_1TokenFormula.java:11-21"
       },
       {
-        "text": "By default frozen players can't freeze enemies or unfreeze teammates but can heal. Each of these 3 rules is a map setting.",
-        "src": "configurable/sectors/FreezeTagDefinition.java:25-27"
+        "text": "By default frozen players can't freeze enemies or unfreeze teammates but can heal. Each of these 3 rules is a server setting.",
+        "src": "configurable/sectors/game/FreezeTagDefinition.java:32-34"
+      },
+      {
+        "text": "The team spawns and the arena are set per map.",
+        "src": "configurable/sectors/game/FreezeTagDefinition.java:20-25"
       }
     ]
   },
@@ -229,12 +237,12 @@
         {
           "caption": "Throw paintballs to paint blocks",
           "sub": "Each block you paint that isn't your team's colour yet scores 1 point, even ones the other team painted.",
-          "src": "games/logic/Paintball2_1.java:300-306, games/logic/Paintball2_1.java:456-469"
+          "src": "games/logic/Paintball2_1.java:300-306, games/logic/Paintball2_1.java:454-467"
         },
         {
           "caption": "Most paint points after 3 minutes wins",
           "sub": "When they paint over your blocks, your team keeps the points it already got.",
-          "src": "games/logic/Paintball2_1.java:82, games/logic/Paintball2_1.java:168-169, games/logic/Paintball2_1.java:466-469, games/models/Scoreboard.java:23-25"
+          "src": "games/logic/Paintball2_1.java:82, games/logic/Paintball2_1.java:168-169, games/logic/Paintball2_1.java:464-467, games/models/Scoreboard.java:23-25"
         },
         {
           "caption": "14 tokens if your team wins, 11 if not",
@@ -246,27 +254,27 @@
     "howToPlay": [
       {
         "text": "Players are split into 2 teams (the second team gets the extra player if the count is odd), and the teams get a random colour pair such as Red and Blue. Your inventory is saved and cleared, you get a stack of 16 paintballs in your team colour, and you glow in that colour.",
-        "src": "games/logic/Paintball2_1.java:93-115, games/logic/Paintball2_1.java:504-514, games/logic/Paintball2_1.java:614-665, games/interfaces/InventoryUnifiedMinigame.java:38-62"
+        "src": "games/logic/Paintball2_1.java:93-115, games/logic/Paintball2_1.java:502-512, games/logic/Paintball2_1.java:612-666, games/interfaces/InventoryUnifiedMinigame.java:38-62"
       },
       {
         "text": "Throwing a paintball paints the block it lands on, and also paints the block you are standing on when you throw.",
-        "src": "games/logic/Paintball2_1.java:300-306, games/logic/Paintball2_1.java:431-439"
+        "src": "games/logic/Paintball2_1.java:300-306, games/logic/Paintball2_1.java:429-437"
       },
       {
         "text": "Paintballs fly at 40% of a normal snowball's speed, and by default you can throw one every 0.2 seconds.",
-        "src": "games/logic/Paintball2_1.java:286-300, configurable/sectors/Paintball2_1Definition.java:35"
+        "src": "games/logic/Paintball2_1.java:286-300, configurable/sectors/game/Paintball2_1Definition.java:44"
       },
       {
         "text": "You never run out: each time one of your paintballs lands, your hand is reset to a full stack, and an empty hand is refilled every second.",
-        "src": "games/logic/Paintball2_1.java:236-238, games/logic/Paintball2_1.java:396"
+        "src": "games/logic/Paintball2_1.java:236-238, games/logic/Paintball2_1.java:394"
       },
       {
         "text": "A paintball that hits an enemy deals 12 damage (6 hearts). Teammates can't be hit.",
-        "src": "games/logic/Paintball2_1.java:413-429"
+        "src": "games/logic/Paintball2_1.java:411-427"
       },
       {
         "text": "When you knock out an enemy, your team paints a ball of blocks around where they fell and you get a kill. Knocked out players don't really die: they are put back at full health at their team spawn.",
-        "src": "games/logic/Paintball2_1.java:341-372"
+        "src": "games/logic/Paintball2_1.java:341-370"
       },
       {
         "text": "You have Regeneration II and glowing, refreshed every second. Standing in water knocks you out and sends you back to your spawn.",
@@ -278,33 +286,33 @@
       },
       {
         "text": "After 3 minutes you see the Game Over title with the winning team and both team scores, you are sent back to the spawn, and your inventory is given back.",
-        "src": "games/logic/Paintball2_1.java:82, games/logic/Paintball2_1.java:128-155, games/models/Scoreboard.java:79-107, games/interfaces/InventoryUnifiedMinigame.java:74-91"
+        "src": "games/logic/Paintball2_1.java:82, games/logic/Paintball2_1.java:128-155, games/models/Scoreboard.java:87-110, games/interfaces/InventoryUnifiedMinigame.java:74-88"
       }
     ],
     "scoring": [
       {
         "text": "You and your team get 1 point for every block you paint that isn't already your team's colour. That counts fresh blocks and blocks the other team painted.",
-        "src": "games/logic/Paintball2_1.java:456-469"
+        "src": "games/logic/Paintball2_1.java:454-467"
       },
       {
         "text": "Painting a block your team already owns gives nothing.",
-        "src": "games/logic/Paintball2_1.java:461-464"
+        "src": "games/logic/Paintball2_1.java:459-462"
       },
       {
         "text": "Points are never taken away. When the other team paints over your block, your team keeps the point it already got for it.",
-        "src": "games/logic/Paintball2_1.java:466-469, games/models/Scoreboard.java:23-25"
+        "src": "games/logic/Paintball2_1.java:464-467, games/models/Scoreboard.java:23-25"
       },
       {
         "text": "Some blocks can't be painted: barriers, ladders, air, non-solid blocks, doors, trapdoors, fence gates, buttons, levers, signs, pressure plates, and blocks with water right above them.",
-        "src": "games/logic/Paintball2_1.java:67, games/logic/Paintball2_1.java:431-439, games/logic/Paintball2_1.java:456-459, configurable/sectors/Paintball2_1Definition.java:22-32"
+        "src": "games/logic/Paintball2_1.java:67, games/logic/Paintball2_1.java:429-437, games/logic/Paintball2_1.java:454-457, configurable/sectors/game/Paintball2_1Definition.java:29-39"
       },
       {
         "text": "A knockout paints a whole ball of blocks around the victim, and each of those blocks scores 1 point under the same rules.",
-        "src": "games/logic/Paintball2_1.java:352, games/logic/Paintball2_1.java:441-454"
+        "src": "games/logic/Paintball2_1.java:350, games/logic/Paintball2_1.java:439-452"
       },
       {
         "text": "Kills are counted on your action bar but are worth no points on their own.",
-        "src": "games/logic/Paintball2_1.java:213-215, games/logic/Paintball2_1.java:353, games/logic/Paintball2_1.java:582-584"
+        "src": "games/logic/Paintball2_1.java:213-215, games/logic/Paintball2_1.java:351, games/logic/Paintball2_1.java:581-583"
       },
       {
         "text": "Your points are added to your all-time Paintball 2.1 leaderboard total.",
@@ -314,7 +322,7 @@
     "tokens": [
       {
         "text": "Tokens are paid once, when the game ends, to everyone still on a team, even with 0 points. If you leave early you are removed from your team and get nothing.",
-        "src": "games/logic/Paintball2_1.java:162-183, games/logic/Paintball2_1.java:252-258"
+        "src": "games/logic/Paintball2_1.java:162-183, games/logic/Paintball2_1.java:253-258"
       },
       {
         "text": "You get 14 tokens if your team won and 11 if it lost. On each team, the first 5 players the game counts get a bonus on top: 4 for the 1st and 3 for the 2nd to 5th.",
@@ -326,7 +334,7 @@
       },
       {
         "text": "A staff multiplier is applied to that number and rounded, then the server-wide multiplier (1 by default) is applied and rounded up. Any single payout above 20 is cut to 20.",
-        "src": "games/interfaces/TokenPayout.java:30-36, items/TokenExchanging.java:38-47, configurable/Config.java:43"
+        "src": "games/interfaces/TokenPayout.java:30-36, items/TokenExchanging.java:38-47, configurable/Config.java:34"
       }
     ],
     "numbers": [
@@ -338,12 +346,12 @@
       {
         "label": "Paintballs per stack",
         "value": "16 (refilled)",
-        "src": "games/logic/Paintball2_1.java:507, games/logic/Paintball2_1.java:396"
+        "src": "games/logic/Paintball2_1.java:505, games/logic/Paintball2_1.java:394"
       },
       {
         "label": "Throw cooldown",
         "value": "0.2 seconds (4 ticks)",
-        "src": "configurable/sectors/Paintball2_1Definition.java:35, games/logic/Paintball2_1.java:286"
+        "src": "configurable/sectors/game/Paintball2_1Definition.java:44, games/logic/Paintball2_1.java:286"
       },
       {
         "label": "Paintball speed",
@@ -353,7 +361,7 @@
       {
         "label": "Hit damage",
         "value": "12 (6 hearts)",
-        "src": "games/logic/Paintball2_1.java:427"
+        "src": "games/logic/Paintball2_1.java:425"
       },
       {
         "label": "Regeneration",
@@ -363,7 +371,7 @@
       {
         "label": "Points per painted block",
         "value": "1",
-        "src": "games/logic/Paintball2_1.java:468-469"
+        "src": "games/logic/Paintball2_1.java:466-467"
       },
       {
         "label": "Tokens",
@@ -378,11 +386,11 @@
       },
       {
         "text": "Painting over the other team's blocks is worth the same 1 point as a fresh block, and your team never loses points when they paint over yours. The winner is the team that painted the most over the whole game, not the team holding more of the map at the end.",
-        "src": "games/logic/Paintball2_1.java:456-469, games/logic/Paintball2_1.java:168-169, games/models/Scoreboard.java:45-51"
+        "src": "games/logic/Paintball2_1.java:454-467, games/logic/Paintball2_1.java:168-169, games/models/Scoreboard.java:45-51"
       },
       {
         "text": "A knockout paints a whole ball of blocks at once. 2 hits (24 damage against 20 health) knock out an enemy, as long as they haven't healed much in between.",
-        "src": "games/logic/Paintball2_1.java:352, games/logic/Paintball2_1.java:427, games/logic/Paintball2_1.java:69"
+        "src": "games/logic/Paintball2_1.java:350, games/logic/Paintball2_1.java:425, games/logic/Paintball2_1.java:69"
       },
       {
         "text": "Your tokens don't depend on your own score, only on whether your team wins (3 tokens more), so helping your team out-paint the other one is what pays.",
@@ -392,11 +400,11 @@
     "quirks": [
       {
         "text": "The bonus is meant to go to each team's top 5 scorers, but the game puts the sorted list into an unordered map before counting positions. Which 5 players get the bonus is effectively arbitrary and doesn't follow your score.",
-        "src": "games/logic/Paintball2_1.java:171-180, games/logic/Paintball2_1.java:539-543"
+        "src": "games/logic/Paintball2_1.java:171-180, games/logic/Paintball2_1.java:537-541"
       },
       {
         "text": "The action bar percentages show how much of the currently painted map each team holds, but the winner is decided by total paint points, which count every block ever painted. The team ahead on the action bar can still lose.",
-        "src": "games/logic/Paintball2_1.java:186-199, games/logic/Paintball2_1.java:456-469, games/logic/Paintball2_1.java:168-169"
+        "src": "games/logic/Paintball2_1.java:186-199, games/logic/Paintball2_1.java:454-467, games/logic/Paintball2_1.java:168-169"
       },
       {
         "text": "The token formula has a cap of 25, but the most it can ever give is 18.",
@@ -404,7 +412,7 @@
       },
       {
         "text": "Paint isn't real: the blocks don't change, and the paint is only shown to players who are inside the arena when it's painted.",
-        "src": "games/logic/Paintball2_1.java:471-474"
+        "src": "games/logic/Paintball2_1.java:469-472"
       },
       {
         "text": "If both teams end on the same points, one of them is still named the winner and paid as one.",
@@ -417,16 +425,16 @@
     ],
     "config": [
       {
-        "text": "The blocks that can't be painted (by default doors, trapdoors, fence gates, buttons, levers, signs, and pressure plates) are a map setting.",
-        "src": "configurable/sectors/Paintball2_1Definition.java:22-32"
+        "text": "The blocks that can't be painted (by default doors, trapdoors, fence gates, buttons, levers, signs, and pressure plates) are a server setting.",
+        "src": "configurable/sectors/game/Paintball2_1Definition.java:29-39"
       },
       {
-        "text": "The throw cooldown is 4 ticks by default and is set per map.",
-        "src": "configurable/sectors/Paintball2_1Definition.java:35"
+        "text": "The throw cooldown is 4 ticks by default and is a server setting.",
+        "src": "configurable/sectors/game/Paintball2_1Definition.java:44"
       },
       {
         "text": "Team spawns, the beds shown in team colours, and the arena are set per map. The 3 minute length is fixed in the code.",
-        "src": "configurable/sectors/Paintball2_1Definition.java:18-21, configurable/sectors/Paintball2_1Definition.java:33-34, games/logic/Paintball2_1.java:82, games/logic/Paintball2_1.java:516-535"
+        "src": "configurable/sectors/game/Paintball2_1Definition.java:23-28, configurable/sectors/game/Paintball2_1Definition.java:40-43, games/logic/Paintball2_1.java:82, games/logic/Paintball2_1.java:514-533"
       }
     ]
   },
@@ -448,7 +456,7 @@
         {
           "caption": "Race 3 laps through the checkpoints",
           "sub": "Drive through every checkpoint, then cross the finish line to complete a lap.",
-          "src": "games/logic/BoatRace2.java:270-310, configurable/sectors/BoatRace2Definition.java:16"
+          "src": "games/logic/BoatRace2.java:270-310, configurable/sectors/game/BoatRace2Definition.java:20"
         },
         {
           "caption": "Every lap scores on your place",
@@ -458,7 +466,7 @@
         {
           "caption": "3 tokens a lap in the top 5, else 2",
           "sub": "You are paid at every lap crossing, so a 3 lap race pays 6 to 9 tokens.",
-          "src": "games/tokenformula/BoatRace2TokenFormula.java:12-14, games/logic/BoatRace2.java:334, configurable/sectors/BoatRace2Definition.java:16"
+          "src": "games/tokenformula/BoatRace2TokenFormula.java:12-14, games/logic/BoatRace2.java:334, configurable/sectors/game/BoatRace2Definition.java:20"
         }
       ]
     },
@@ -481,14 +489,14 @@
       },
       {
         "text": "After your last lap (3 by default) you get a Finished title with your place, chat announces it, and you are moved to the spectator area. Outside a boat inside the race area you get Speed V.",
-        "src": "games/logic/BoatRace2.java:338-345, games/logic/BoatRace2.java:58, games/logic/BoatRace2.java:158-164, configurable/sectors/BoatRace2Definition.java:16"
+        "src": "games/logic/BoatRace2.java:338-345, games/logic/BoatRace2.java:58, games/logic/BoatRace2.java:158-164, configurable/sectors/game/BoatRace2Definition.java:20"
       },
       {
         "text": "The race ends when every racer still online has finished, or after 5 minutes. Anyone still racing then is given their current place but earns nothing more.",
         "src": "games/logic/BoatRace2.java:79, games/logic/BoatRace2.java:167-176, games/logic/BoatRace2.java:399-412"
       },
       {
-        "text": "At the end you see the Game Over title and the points table, you are sent back to the spawn, and 15 seconds later to the drop-off point.",
+        "text": "At the end you see the Game Over title and the points table, and you are sent back to the spawn.",
         "src": "games/logic/BoatRace2.java:180-196"
       }
     ],
@@ -517,7 +525,7 @@
       },
       {
         "text": "Worked example with 3 laps: 9 tokens if you are top 5 at every crossing, 6 if you never are, and 7 or 8 in between.",
-        "src": "games/tokenformula/BoatRace2TokenFormula.java:12-14, configurable/sectors/BoatRace2Definition.java:16"
+        "src": "games/tokenformula/BoatRace2TokenFormula.java:12-14, configurable/sectors/game/BoatRace2Definition.java:20"
       },
       {
         "text": "If you leave mid-race you keep the tokens from laps you already completed. Laps not completed pay nothing.",
@@ -532,7 +540,7 @@
       {
         "label": "Laps",
         "value": "3",
-        "src": "configurable/sectors/BoatRace2Definition.java:16"
+        "src": "configurable/sectors/game/BoatRace2Definition.java:20"
       },
       {
         "label": "Time limit",
@@ -552,7 +560,7 @@
       {
         "label": "Tokens per race (3 laps)",
         "value": "6 to 9",
-        "src": "games/tokenformula/BoatRace2TokenFormula.java:12-14, configurable/sectors/BoatRace2Definition.java:16"
+        "src": "games/tokenformula/BoatRace2TokenFormula.java:12-14, configurable/sectors/game/BoatRace2Definition.java:20"
       },
       {
         "label": "Boat",
@@ -582,25 +590,29 @@
     "quirks": [
       {
         "text": "The Game Over title names the player with the most total points, not the first across the line. Since points come from every lap, a player who led the early laps can be named the winner over the player who finished first.",
-        "src": "games/models/Scoreboard.java:79-91, games/logic/BoatRace2.java:180, games/logic/BoatRace2.java:322-327"
+        "src": "games/models/Scoreboard.java:53-57, games/models/Scoreboard.java:87-98, games/logic/BoatRace2.java:180, games/logic/BoatRace2.java:322-327"
       },
       {
         "text": "When staff run a flat payout game (the broadcast says everyone gets a set number of tokens, regardless of score), Boat Race pays that flat amount on every lap, so a full race pays 3 times the announced amount.",
-        "src": "games/MinigameManager.java:86-93, games/interfaces/TokenPayout.java:32, games/logic/BoatRace2.java:87, games/logic/BoatRace2.java:334"
+        "src": "commands/modules/minigame/MinigameStartCommand.java:161-172, games/interfaces/Minigame.java:346, games/interfaces/Minigame.java:635-638, games/interfaces/TokenPayout.java:32, games/logic/BoatRace2.java:87, games/logic/BoatRace2.java:334"
       },
       {
         "text": "Everyone races in a bamboo raft. The code has a random boat type, but it's switched off.",
         "src": "games/logic/BoatRace2.java:130, games/logic/BoatRace2.java:606-618"
+      },
+      {
+        "text": "A 15 second Game Over bar after the race is meant to send everyone to the drop-off point, but by then the game has already emptied its player list, so nobody is moved.",
+        "src": "games/logic/BoatRace2.java:183-195, games/interfaces/Minigame.java:218, games/interfaces/Minigame.java:244"
       }
     ],
     "config": [
       {
-        "text": "The number of laps is 3 by default and set per map, which also changes the token total.",
-        "src": "configurable/sectors/BoatRace2Definition.java:16"
+        "text": "The number of laps is 3 by default and is a server setting, which also changes the token total.",
+        "src": "configurable/sectors/game/BoatRace2Definition.java:20"
       },
       {
         "text": "The checkpoints (2 plus the finish line by default), starting spots, overflow point, and spectator area are set per map.",
-        "src": "configurable/sectors/BoatRace2Definition.java:14-21"
+        "src": "configurable/sectors/game/BoatRace2Definition.java:18-30"
       },
       {
         "text": "The 5 minute limit is fixed in the code.",
@@ -625,17 +637,17 @@
         {
           "caption": "Stay away from the Tagger",
           "sub": "As a Runner you get 1 point for every 30 seconds in a row you go without being tagged.",
-          "src": "games/logic/TNTTag.java:384-396"
+          "src": "games/logic/TNTTag.java:386-398"
         },
         {
           "caption": "A tag hands you the TNT",
           "sub": "Tag someone to pass it on. A tag resets your count, and Taggers explode when the 90 second round ends.",
-          "src": "games/logic/TNTTag.java:271-302, games/logic/TNTTag.java:355-359, games/logic/TNTTag.java:46, games/logic/TNTTag.java:227-263"
+          "src": "games/logic/TNTTag.java:271-302, games/logic/TNTTag.java:357-361, games/logic/TNTTag.java:46, games/logic/TNTTag.java:227-263"
         },
         {
           "caption": "1 token per point",
           "sub": "Paid when the game ends. Never tagged in all 3 rounds is 9 points, so up to 9 tokens.",
-          "src": "games/tokenformula/TNTTagTokenFormula.java:7-8, games/logic/TNTTag.java:46-47, games/logic/TNTTag.java:128-133, games/logic/TNTTag.java:384-396"
+          "src": "games/tokenformula/TNTTagTokenFormula.java:7-8, games/logic/TNTTag.java:46-47, games/logic/TNTTag.java:128-133, games/logic/TNTTag.java:386-398"
         }
       ]
     },
@@ -646,7 +658,7 @@
       },
       {
         "text": "Runners get Speed II and glow. Taggers get Speed IV, Dolphin's Grace, a TNT block on their head, and red leather armour.",
-        "src": "games/logic/TNTTag.java:347-372, games/logic/TNTTag.java:400-438"
+        "src": "games/logic/TNTTag.java:349-374, games/logic/TNTTag.java:402-440"
       },
       {
         "text": "As a Tagger, hit a Runner to pass the TNT: you become a Runner and they become the Tagger. Hits deal no damage, and both players have to be inside the arena.",
@@ -654,7 +666,7 @@
       },
       {
         "text": "Each round lasts 90 seconds. When it ends, every Tagger explodes and becomes a Spectator: invisible, hidden from other players, and given Speed V. Spectators can leave with /event quit.",
-        "src": "games/logic/TNTTag.java:46, games/logic/TNTTag.java:227-263, games/logic/TNTTag.java:474-533"
+        "src": "games/logic/TNTTag.java:46, games/logic/TNTTag.java:227-263, games/logic/TNTTag.java:476-535"
       },
       {
         "text": "The next round starts straight away and everyone still playing is teleported near the spawn. The game ends after 3 rounds, or early if fewer than 2 Runners are left after a round.",
@@ -672,19 +684,19 @@
     "scoring": [
       {
         "text": "As a Runner you get 1 point for every 30 seconds in a row that you go without being tagged.",
-        "src": "games/logic/TNTTag.java:384-396"
+        "src": "games/logic/TNTTag.java:386-398"
       },
       {
         "text": "Getting tagged resets that count: when you pass the TNT on and become a Runner again, you start from 0.",
-        "src": "games/logic/TNTTag.java:299-300, games/logic/TNTTag.java:355-359"
+        "src": "games/logic/TNTTag.java:299-300, games/logic/TNTTag.java:357-361"
       },
       {
         "text": "If you are never tagged, your count carries over from one round to the next.",
-        "src": "games/logic/TNTTag.java:252-260, games/logic/TNTTag.java:385-396"
+        "src": "games/logic/TNTTag.java:252-260, games/logic/TNTTag.java:387-398"
       },
       {
         "text": "Taggers and Spectators earn nothing.",
-        "src": "games/logic/TNTTag.java:457-471, games/logic/TNTTag.java:519-533"
+        "src": "games/logic/TNTTag.java:459-473, games/logic/TNTTag.java:521-535"
       },
       {
         "text": "Your points are added to your all-time TNT Tag leaderboard total.",
@@ -694,7 +706,7 @@
     "tokens": [
       {
         "text": "You get 1 token per point, paid when the game ends. Spectators are paid too, for the points they earned before they exploded.",
-        "src": "games/tokenformula/TNTTagTokenFormula.java:7-8, games/logic/TNTTag.java:128-133, games/interfaces/InventoryUnifiedMinigame.java:74-91"
+        "src": "games/tokenformula/TNTTagTokenFormula.java:7-8, games/logic/TNTTag.java:128-133, games/interfaces/InventoryUnifiedMinigame.java:74-88"
       },
       {
         "text": "0 points pays nothing.",
@@ -702,11 +714,11 @@
       },
       {
         "text": "If you leave after the game has started, you are paid for the points you have at that moment.",
-        "src": "games/interfaces/InventoryUnifiedMinigame.java:100-118, games/logic/TNTTag.java:128-133"
+        "src": "games/interfaces/InventoryUnifiedMinigame.java:99-117, games/logic/TNTTag.java:128-133"
       },
       {
         "text": "Worked example: a Runner who is never tagged in all 3 rounds (270 seconds) earns up to 9 points, so up to 9 tokens. A Runner tagged once in the middle of each round loses the progress toward the next point every time.",
-        "src": "games/logic/TNTTag.java:46-47, games/logic/TNTTag.java:384-396, games/tokenformula/TNTTagTokenFormula.java:7-8"
+        "src": "games/logic/TNTTag.java:46-47, games/logic/TNTTag.java:386-398, games/tokenformula/TNTTagTokenFormula.java:7-8"
       }
     ],
     "numbers": [
@@ -723,7 +735,7 @@
       {
         "label": "Point timer",
         "value": "1 point per 30 seconds untagged",
-        "src": "games/logic/TNTTag.java:389-395"
+        "src": "games/logic/TNTTag.java:391-397"
       },
       {
         "label": "Taggers per round",
@@ -733,22 +745,22 @@
       {
         "label": "Most points per game",
         "value": "9",
-        "src": "games/logic/TNTTag.java:46-47, games/logic/TNTTag.java:389-395"
+        "src": "games/logic/TNTTag.java:46-47, games/logic/TNTTag.java:391-397"
       },
       {
         "label": "Runner effects",
         "value": "Speed II, glowing",
-        "src": "games/logic/TNTTag.java:349-350"
+        "src": "games/logic/TNTTag.java:351-352"
       },
       {
         "label": "Tagger effects",
         "value": "Speed IV, Dolphin's Grace",
-        "src": "games/logic/TNTTag.java:402-403"
+        "src": "games/logic/TNTTag.java:404-405"
       },
       {
         "label": "Spectator effects",
         "value": "Speed V, invisibility",
-        "src": "games/logic/TNTTag.java:476-477"
+        "src": "games/logic/TNTTag.java:478-479"
       }
     ],
     "tips": [
@@ -762,7 +774,7 @@
       },
       {
         "text": "Points only come from long untagged stretches, and every tag resets your count, so staying away from the Tagger matters more than anything else.",
-        "src": "games/logic/TNTTag.java:384-396, games/logic/TNTTag.java:299-300"
+        "src": "games/logic/TNTTag.java:386-398, games/logic/TNTTag.java:299-300"
       }
     ],
     "quirks": [
@@ -777,12 +789,12 @@
     ],
     "config": [
       {
-        "text": "The default config has no TNT Tag maps, so the game can't be started unless the server has added one. A map only sets the spawn point and the arena.",
-        "src": "configurable/Config.java:126-127, configurable/sectors/MinigameDefinition.java:14-15, games/MinigameManager.java:43-47"
+        "text": "A fresh server only has an empty default TNT Tag map with no arena or spawn set, so the game can't start until staff set one up. A map only sets the spawn point and the arena.",
+        "src": "configurable/ConfigManager.java:133-135, configurable/sectors/MinigameDefinition.java:17-20, games/logic/TNTTag.java:60-62, games/MinigameManager.java:57-77"
       },
       {
         "text": "The round length, number of rounds, tagger ratio, and 30 second point timer are fixed in the code.",
-        "src": "games/logic/TNTTag.java:46-48, games/logic/TNTTag.java:205, games/logic/TNTTag.java:391"
+        "src": "games/logic/TNTTag.java:46-48, games/logic/TNTTag.java:205, games/logic/TNTTag.java:393"
       }
     ]
   },
@@ -803,32 +815,32 @@
         {
           "caption": "Run from the Nabbit",
           "sub": "It catches you with 3 hits. Each carrot you walk over has a 1 in 10 chance to give 1 point.",
-          "src": "games/models/NabbitPlayer.java:112-128, games/logic/TheNabbits.java:243-265, games/logic/TheNabbits.java:300-315"
+          "src": "games/models/NabbitPlayer.java:112-128, games/logic/TheNabbits.java:245-267, games/logic/TheNabbits.java:302-317"
         },
         {
           "caption": "Caught? Become a Nabbit or Rabbit",
           "sub": "It's 50/50. Nabbits score 1 point per catch, and everyone scores 2 points per full minute.",
-          "src": "games/models/NabbitPlayer.java:130-134, games/logic/TheNabbits.java:243-262, games/logic/TheNabbits.java:141-149"
+          "src": "games/models/NabbitPlayer.java:130-134, games/logic/TheNabbits.java:245-264, games/logic/TheNabbits.java:143-151"
         },
         {
           "caption": "The end payout is broken",
           "sub": "It should pay 1 token per point, up to 10, but players still in at the end get no tokens in this version.",
-          "src": "games/logic/TheNabbits.java:185, games/logic/TheNabbits.java:208-217, games/tokenformula/TheNabbitsTokenFormula.java:8, games/interfaces/Minigame.java:185-195"
+          "src": "games/logic/TheNabbits.java:187, games/logic/TheNabbits.java:210-219, games/tokenformula/TheNabbitsTokenFormula.java:8, games/interfaces/Minigame.java:214-227"
         }
       ]
     },
     "howToPlay": [
       {
         "text": "Everyone starts as Fleeing and is sent to a random spot in the play areas, and your inventory is saved and cleared. One random player becomes The Nabbit, and chat tells everyone to run.",
-        "src": "games/logic/TheNabbits.java:89-99, games/interfaces/InventoryUnifiedMinigame.java:38-62"
+        "src": "games/logic/TheNabbits.java:91-101, games/interfaces/InventoryUnifiedMinigame.java:38-62"
       },
       {
         "text": "Nabbits glow dark purple and have Speed I, refreshed every second.",
-        "src": "games/logic/TheNabbits.java:139-145, games/models/NabbitPlayer.java:227-233"
+        "src": "games/logic/TheNabbits.java:141-147, games/models/NabbitPlayer.java:227-233"
       },
       {
         "text": "A Nabbit catches a Fleeing player by hitting them 3 times. Stars on the action bar show how many hits you have taken. Hits deal no damage.",
-        "src": "games/models/NabbitPlayer.java:112-128, games/models/NabbitPlayer.java:207-218, games/logic/TheNabbits.java:243-265, games/logic/TheNabbits.java:278-289"
+        "src": "games/models/NabbitPlayer.java:112-128, games/models/NabbitPlayer.java:207-218, games/logic/TheNabbits.java:245-267, games/logic/TheNabbits.java:280-291"
       },
       {
         "text": "A caught player has a 50% chance to become a Nabbit and a 50% chance to become a Rabbit (disguised as a small rabbit).",
@@ -836,66 +848,66 @@
       },
       {
         "text": "Rabbits can't be caught and can't hit Nabbits. Their job is collecting carrots.",
-        "src": "games/logic/TheNabbits.java:238-241, games/models/NabbitPlayer.java:113-115, games/models/NabbitPlayer.java:201"
+        "src": "games/logic/TheNabbits.java:240-243, games/models/NabbitPlayer.java:113-115, games/models/NabbitPlayer.java:201"
       },
       {
         "text": "2 carrots spawn every second at random spots. Fleeing players and Rabbits pick them up by walking over them (they don't go into your inventory). Nabbits can't pick them up.",
-        "src": "games/logic/TheNabbits.java:126-127, games/logic/TheNabbits.java:291-319, games/logic/TheNabbits.java:336-349"
+        "src": "games/logic/TheNabbits.java:128-129, games/logic/TheNabbits.java:293-321, games/logic/TheNabbits.java:338-351"
       },
       {
         "text": "Every 15 seconds all Fleeing players glow for 1 second in a random colour, showing where they are. Your action bar counts down to the next reveal.",
-        "src": "games/logic/TheNabbits.java:129-136, games/logic/TheNabbits.java:150-151, games/models/NabbitPlayer.java:194-205, games/models/NabbitPlayer.java:235-240"
+        "src": "games/logic/TheNabbits.java:131-138, games/logic/TheNabbits.java:152-153, games/models/NabbitPlayer.java:194-205, games/models/NabbitPlayer.java:235-240"
       },
       {
         "text": "Throwing projectiles and eating chorus fruit are blocked.",
-        "src": "games/logic/TheNabbits.java:321-333, games/logic/TheNabbits.java:351-362"
+        "src": "games/logic/TheNabbits.java:323-335, games/logic/TheNabbits.java:353-364"
       },
       {
         "text": "If every Nabbit goes offline, a random Fleeing player or Rabbit becomes the new Nabbit.",
-        "src": "games/logic/TheNabbits.java:112-124"
+        "src": "games/logic/TheNabbits.java:114-126"
       },
       {
         "text": "The game ends with Nabbits Win when no Fleeing players are left, or with Fleeing Players Win after 6 minutes.",
-        "src": "games/logic/TheNabbits.java:79, games/logic/TheNabbits.java:154, games/logic/TheNabbits.java:157-177, games/logic/TheNabbits.java:392-400"
+        "src": "games/logic/TheNabbits.java:81, games/logic/TheNabbits.java:156, games/logic/TheNabbits.java:159-179, games/logic/TheNabbits.java:394-402"
       }
     ],
     "scoring": [
       {
         "text": "Nabbits score 1 point for each player they catch.",
-        "src": "games/logic/TheNabbits.java:243-262"
+        "src": "games/logic/TheNabbits.java:245-264"
       },
       {
         "text": "Everyone, in every role, scores 2 points for each full minute in the game.",
-        "src": "games/logic/TheNabbits.java:141-149"
+        "src": "games/logic/TheNabbits.java:143-151"
       },
       {
         "text": "Fleeing players and Rabbits: each carrot picked up has a 1 in 10 chance to give 1 point.",
-        "src": "games/logic/TheNabbits.java:300-315"
+        "src": "games/logic/TheNabbits.java:302-317"
       },
       {
         "text": "Winning gives no extra points.",
-        "src": "games/logic/TheNabbits.java:157-195"
+        "src": "games/logic/TheNabbits.java:159-197"
       }
     ],
     "tokens": [
       {
         "text": "The token formula pays 1 token per point, up to 10.",
-        "src": "games/tokenformula/TheNabbitsTokenFormula.java:8, games/logic/TheNabbits.java:208-217"
+        "src": "games/tokenformula/TheNabbitsTokenFormula.java:8, games/logic/TheNabbits.java:210-219"
       },
       {
         "text": "In this version, players still in the game when it ends are not paid. The game clears its player list before the end-of-game payout looks you up, so you get no tokens and no leaderboard score.",
-        "src": "games/logic/TheNabbits.java:185, games/logic/TheNabbits.java:208-213, games/interfaces/Minigame.java:185-195, games/interfaces/InventoryUnifiedMinigame.java:74-91"
+        "src": "games/logic/TheNabbits.java:187, games/logic/TheNabbits.java:210-215, games/interfaces/Minigame.java:214-227, games/interfaces/InventoryUnifiedMinigame.java:74-88"
       },
       {
         "text": "As written, time points alone (2 per minute) would reach the 10 token cap after 5 minutes.",
-        "src": "games/logic/TheNabbits.java:147-148, games/tokenformula/TheNabbitsTokenFormula.java:8"
+        "src": "games/logic/TheNabbits.java:149-150, games/tokenformula/TheNabbitsTokenFormula.java:8"
       }
     ],
     "numbers": [
       {
         "label": "Game length",
         "value": "6 minutes",
-        "src": "games/logic/TheNabbits.java:79"
+        "src": "games/logic/TheNabbits.java:81"
       },
       {
         "label": "Hits to catch",
@@ -905,27 +917,27 @@
       {
         "label": "Location reveal",
         "value": "Every 15 seconds, 1 second of glowing",
-        "src": "games/logic/TheNabbits.java:44, games/models/NabbitPlayer.java:53-60"
+        "src": "games/logic/TheNabbits.java:46, games/models/NabbitPlayer.java:53-60"
       },
       {
         "label": "Carrots spawned",
         "value": "2 per second",
-        "src": "games/logic/TheNabbits.java:127"
+        "src": "games/logic/TheNabbits.java:129"
       },
       {
         "label": "Carrot point chance",
         "value": "1 in 10",
-        "src": "games/logic/TheNabbits.java:313"
+        "src": "games/logic/TheNabbits.java:315"
       },
       {
         "label": "Time points",
         "value": "2 per minute",
-        "src": "games/logic/TheNabbits.java:147-148"
+        "src": "games/logic/TheNabbits.java:149-150"
       },
       {
         "label": "Points per catch",
         "value": "1",
-        "src": "games/logic/TheNabbits.java:260"
+        "src": "games/logic/TheNabbits.java:262"
       },
       {
         "label": "Caught player becomes",
@@ -941,7 +953,7 @@
     "tips": [
       {
         "text": "Nabbits always glow, so you can always see where they are. Fleeing players only show up during the reveal every 15 seconds, so be out of a Nabbit's sight when your action bar countdown hits 0.",
-        "src": "games/models/NabbitPlayer.java:227-233, games/logic/TheNabbits.java:129-136, games/logic/TheNabbits.java:150-151"
+        "src": "games/models/NabbitPlayer.java:227-233, games/logic/TheNabbits.java:131-138, games/logic/TheNabbits.java:152-153"
       },
       {
         "text": "Hits on you never reset, so 2 hits taken early still count later in the game.",
@@ -949,13 +961,13 @@
       },
       {
         "text": "As a Nabbit, 1 catch is worth as much as 10 carrots on average.",
-        "src": "games/logic/TheNabbits.java:260, games/logic/TheNabbits.java:313-315"
+        "src": "games/logic/TheNabbits.java:262, games/logic/TheNabbits.java:315-317"
       }
     ],
     "quirks": [
       {
         "text": "End-of-game payout is broken in this version: the game empties its player list before paying, so nobody still playing at the end receives tokens or leaderboard score, even though the points table is shown.",
-        "src": "games/logic/TheNabbits.java:159-185, games/logic/TheNabbits.java:208-217, games/interfaces/Minigame.java:185-195"
+        "src": "games/logic/TheNabbits.java:161-187, games/logic/TheNabbits.java:210-219, games/interfaces/Minigame.java:214-227"
       },
       {
         "text": "Each role has a score multiplier in the code (1.2 for The Nabbit, 0.8 for other Nabbits, 0.5 for Rabbits, 1.0 for Fleeing), but nothing uses it.",
@@ -963,25 +975,25 @@
       },
       {
         "text": "The Rabbit title says \"Collect carrots to score points\", but each carrot only has a 1 in 10 chance to give a point.",
-        "src": "games/models/NabbitPlayer.java:279-282, games/logic/TheNabbits.java:313-315"
+        "src": "games/models/NabbitPlayer.java:279-282, games/logic/TheNabbits.java:315-317"
       },
       {
         "text": "Time points go to every role, so getting caught doesn't cost you the 2 points per minute.",
-        "src": "games/logic/TheNabbits.java:141-149"
+        "src": "games/logic/TheNabbits.java:143-151"
       }
     ],
     "config": [
       {
-        "text": "The default config has no Nabbits maps, so the game can't be started unless the server has added one.",
-        "src": "configurable/Config.java:133-134, games/MinigameManager.java:43-47"
+        "text": "A fresh server only has an empty default Nabbits map with no arena or spawn set, so the game can't start until staff set one up. It also won't start unless the server has the LibsDisguises plugin, which the Rabbit disguise uses.",
+        "src": "configurable/ConfigManager.java:133-135, games/logic/TheNabbits.java:42, games/logic/TheNabbits.java:82-84, games/MinigameManager.java:57-77, games/models/NabbitPlayer.java:170-178"
       },
       {
         "text": "A map sets the spawn, the arena, and the play areas (2 by default) where players and carrots spawn.",
-        "src": "configurable/sectors/TheNabbitsMinigameDefinition.java:14-16, games/logic/TheNabbits.java:364-374"
+        "src": "configurable/sectors/game/TheNabbitsMinigameDefinition.java:17-22, games/logic/TheNabbits.java:366-376"
       },
       {
         "text": "The 6 minute length, 3 hits to catch, and 15 second reveal are fixed in the code.",
-        "src": "games/logic/TheNabbits.java:44, games/logic/TheNabbits.java:79, games/models/NabbitPlayer.java:29"
+        "src": "games/logic/TheNabbits.java:46, games/logic/TheNabbits.java:81, games/models/NabbitPlayer.java:29"
       }
     ]
   }

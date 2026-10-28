@@ -34,7 +34,14 @@
         32,
         33
       ],
-      "defaultItem": "Place/Cobblestone"
+      "defaultItem": "Place/Cobblestone",
+      "payChange": {
+        "announced": "2026-10-28",
+        "due": "the weekend of Oct 31",
+        "lines": [
+          "Every Builder action gets +5% pay."
+        ]
+      }
     },
     "Cook": {
       "icon": "smoker",
@@ -81,7 +88,15 @@
         61,
         85
       ],
-      "defaultItem": "Break/Wheat"
+      "defaultItem": "Break/Wheat",
+      "payChange": {
+        "announced": "2026-10-28",
+        "due": "the weekend of Oct 31",
+        "lines": [
+          "Lily Pad pay goes back up to about 40% of its pay before the nerf, and its XP to about 30%. That works out to about 4.6 times the pay and 2 times the XP of the Lily Pad numbers below.",
+          "Using other players to place or break blocks for you will count as getting around the automation rules."
+        ]
+      }
     },
     "Fisherman": {
       "icon": "fishing_rod",
@@ -106,7 +121,15 @@
         23,
         24
       ],
-      "defaultItem": "Kill/Zombie"
+      "defaultItem": "Kill/Zombie",
+      "payChange": {
+        "announced": "2026-10-28",
+        "due": "the weekend of Oct 31",
+        "lines": [
+          "Every mob gets its original base pay back except Withers and Magma Cubes, which keep their nerf for now. The announcement sums it up as \"+10% pay + exp for all actions, +10% pay + exp for wither skeletons\".",
+          "Withers keep their FarmControl limit of 8 per 50 blocks. The Magma Cube limit may go up or down depending on the farms staff see, but Magma Cubes should stay a good way to level Hunter."
+        ]
+      }
     },
     "Lumberjack": {
       "icon": "diamond_axe",

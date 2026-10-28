@@ -23,6 +23,8 @@ export interface Job {
   xpOffset: number;
   /** Levels this job's /jobs browse was read at (more than one = scaling checked). */
   readLevels: number[];
+  /** A pay change staff announced that hasn't been read in game yet. Remove it once the new pay is read. */
+  payChange?: { announced: string; due: string; lines: string[] };
   level: number | null;
   source: string | null;
   items: JobItem[];
@@ -156,7 +158,8 @@ export interface EventMinigame {
   name: string;
   aliases: string[];
   src: string;
-  formula: { cls: string; args: string; src: string; file: string };
+  /** null when the game's code has no token formula (it pays no tokens). */
+  formula: { cls: string; args: string; src: string; file: string } | null;
   guide: MinigameGuide | null;
 }
 
@@ -217,5 +220,27 @@ export interface EventData {
   };
   commands: { root: string; aliases: string[]; src: string; player: { name: string; usage: string; src: string }[] };
   charm: { itemId: string; src: string; requirementSrc: string };
+  /** Trick or treat candy, read from items/candy/ (null for events without it). */
+  candy: EventCandy | null;
   minigames: EventMinigame[];
+}
+
+export interface CandyEffect {
+  /** Chance per candy eaten, 0 to 1. */
+  chance: number;
+  /** The chat message the player sees, formatting stripped. */
+  message: string;
+  /** level is 1 for the base effect (amplifier + 1). */
+  potions: { type: string; seconds: number; level: number }[];
+  src: string;
+}
+
+export interface EventCandy {
+  /** Every candy rolls this chance of 1 Soul Orb first, then its own effects. */
+  soulOrbChance: number;
+  soulOrbSrc: string;
+  rollSrc: string;
+  /** On Bedrock (Floodgate) a right click eats the candy. */
+  bedrockSrc: string;
+  items: { key: string; name: string; src: string; effects: CandyEffect[] }[];
 }

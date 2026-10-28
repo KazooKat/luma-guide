@@ -56,7 +56,7 @@ export function Banners() {
       )}
       {FROM_OLD_CODE && (
         <p class="event-banner" role="note">
-          <b>From {META.sourceEvent}'s code.</b> The numbers here are read from the event plugin as it was for {META.sourceEvent}
+          <b>From {possessive(META.sourceEvent)} code.</b> The numbers here are read from the event plugin as it was for {META.sourceEvent}
           {' '}(<a href={`${EVENTS_REPO.url}/tree/${EVENTS_REF}`} target="_blank" rel="noopener noreferrer">luma-events @ {EVENTS_REF}</a>).
           {' '}They'll be re-checked once {possessive(META.name)} code is public, so some of them may change.
         </p>

@@ -1,0 +1,309 @@
+[
+  {
+    "key": "skywars",
+    "constant": "SKYWARS",
+    "name": "SkyWars",
+    "summary": "Team SkyWars on floating islands: loot copper chests, fight with what you find, and stay inside a border that starts closing 90 seconds in. The last team with anyone alive wins. You score for damage dealt, kills and time alive, and your Soul Orbs come from your own score, plus 1 if your team wins.",
+    "tokenLine": "2 + 1 per 10 points, max 8, +1 if your team wins",
+    "howToPlay": [
+      {
+        "text": "Join with /event join while the queue is open (90 seconds by default). You are sent to the SkyWars lobby. At least 2 players are needed or the game is cancelled. When it starts your inventory is saved and cleared, then given back when the game ends.",
+        "src": "games/interfaces/Minigame.java:126-159, games/interfaces/Minigame.java:344-364, games/interfaces/Minigame.java:603-606, games/MinigameManager.java:81-87, games/logic/skywars/SkyWars.java:176-180, games/interfaces/InventoryUnifiedMinigame.java:38-71, games/interfaces/InventoryUnifiedMinigame.java:73-88"
+      },
+      {
+        "text": "Each team gets its own island. If there are no more players than islands, everyone plays solo. Otherwise teams are as small as possible (players divided by islands, rounded up), players are shuffled into them so team sizes differ by at most 1, and teams are placed on random islands. The in-game guide says maps have around 12 to 16 islands.",
+        "src": "games/logic/skywars/SkyWars.java:122-124, games/logic/skywars/SkyWars.java:196-208, games/logic/skywars/SkyWars.java:149-155"
+      },
+      {
+        "text": "Your team is shown by a leather helmet in its colour (Red, Blue, Lime, Yellow and so on, 16 colours). It has Curse of Binding, so you can't take it off, and it never drops. You can always see enemy players.",
+        "src": "games/logic/skywars/SkyWarsTeam.java:39-52, games/logic/skywars/SkyWarsTeam.java:56-72, games/logic/skywars/roles/SkyWarsPlayer.java:38-67, games/logic/skywars/roles/SkyWarsPlayer.java:137-145"
+      },
+      {
+        "text": "While the arena is built your action bar shows \"Pasting Arena\" and then \"Filling Chests\" with a percentage. Then you are put on your island at full health and food and frozen for a 10 second countdown: you can look around but not walk, jump, break or place blocks, open anything or drop items, and nobody can be hurt. \"GO!\" starts the game.",
+        "src": "games/logic/skywars/SkyWars.java:219-247, games/logic/skywars/SkyWars.java:251-275, games/logic/skywars/SkyWars.java:283-286, games/logic/skywars/SkyWars.java:439-445, games/logic/skywars/SkyWars.java:516-575, games/logic/skywars/roles/SkyWarsPlayer.java:38-58"
+      },
+      {
+        "text": "Loot is in copper chests, and the more oxidized the chest, the better the loot: Copper (common), Exposed (uncommon), Weathered (rare) and Oxidized (epic). Waxed chests count the same as unwaxed ones. Every chest is filled once at the start and items are spread across random slots.",
+        "src": "games/logic/skywars/LootChests.java:56-65, games/logic/skywars/LootChests.java:140-180, games/logic/skywars/LootChests.java:203-253, games/logic/skywars/SkyWars.java:156-161"
+      },
+      {
+        "text": "By default a Copper chest always has a stack of blocks and a stone or copper weapon, then random rolls of food, copper armor, tools, snowballs, eggs and the like. Exposed chests are all random rolls, with iron gear, bows, golden apples, lava and ender pearls in the mix. Weathered always has 1 piece of iron or diamond gear and can hold TNT, cobwebs and wind charges. Oxidized always has 1 piece of diamond or netherite gear and can hold a mace, a totem or an enchanted golden apple.",
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:20-148, games/logic/skywars/LootChests.java:219-230"
+      },
+      {
+        "text": "Plain chests built into the map are spare chest spots that only appear when teams are bigger: none when everyone is solo, about a third of them with teams of 2, two thirds with teams of 3 and all of them with teams of 4 or more. They are used starting with the ones nearest the map's origin point, and the nearer one is, the better its tier (the nearest quarter of the range is Oxidized, the furthest quarter plain Copper). Unused spots are left empty.",
+        "src": "games/logic/skywars/LootChests.java:37-43, games/logic/skywars/LootChests.java:84-119, games/logic/skywars/SkyWars.java:220-226"
+      },
+      {
+        "text": "If teams end up uneven, every chest within 15 blocks of a smaller team's island spawn is bumped up 1 tier (Oxidized stays Oxidized).",
+        "src": "games/logic/skywars/SkyWars.java:210-217, games/logic/skywars/SkyWars.java:228-230, games/logic/skywars/SkyWars.java:649-662, games/logic/skywars/LootChests.java:159-161, games/logic/skywars/LootChests.java:186-201, configurable/sectors/game/skywars/SkyWarsDefinition.java:17-19"
+      },
+      {
+        "text": "You can't hurt your teammates with hits, arrows, snowballs or eggs (your action bar says \"That's your teammate.\"). Snowballs and eggs that hit an enemy knock them back a little.",
+        "src": "games/logic/skywars/SkyWars.java:451-460, games/logic/skywars/SkyWars.java:477-504, games/logic/skywars/roles/SkyWarsPlayer.java:97-105"
+      },
+      {
+        "text": "The border starts as a square around the whole map plus 2 blocks on each side, centred on the middle of the islands. 90 seconds after GO, chat says \"The border is closing in! Head towards the center.\" with a bell, and over the next 6 minutes it shrinks to 24 by 24 blocks, where it stays.",
+        "src": "games/logic/skywars/ArenaBorder.java:20-23, games/logic/skywars/ArenaBorder.java:35-63, games/logic/skywars/ArenaBorder.java:69-80, games/logic/skywars/SkyWars.java:263, games/logic/skywars/SkyWars.java:287-290"
+      },
+      {
+        "text": "Outside the border you take damage once a second: 1 plus 0.5 for every block you are past it, up to 8 (4 hearts) per hit.",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:21-24, games/logic/skywars/roles/SkyWarsPlayer.java:85-94, games/logic/skywars/ArenaBorder.java:82-87"
+      },
+      {
+        "text": "When you die, a lightning effect hits your spot and everything you carried drops there, except your team helmet. You become an invisible, flying spectator that other players can't see. You can't hurt anyone, use or open anything, or pick items up. Fly more than 700 blocks from the map or below the world and you are sent back to your team's island.",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:116-145, games/logic/skywars/roles/SkyWarsSpectator.java:24, games/logic/skywars/roles/SkyWarsSpectator.java:33-53, games/logic/skywars/roles/SkyWarsSpectator.java:78-106, games/logic/skywars/SkyWars.java:133-138, games/logic/skywars/SkyWars.java:446-449, games/logic/skywars/SkyWars.java:516-523, games/logic/skywars/SkyWars.java:577-591, configurable/sectors/game/skywars/SkyWarsDefinition.java:20-21"
+      },
+      {
+        "text": "When only one team still has a living player, that team wins. A 5 second \"Game Over\" bar names it, then everyone is sent to the lobby and gets their inventory back. The game lasts 10 minutes, counted from when the queue closes (so map setup and the countdown come out of it). If time runs out with 2 or more teams alive, chat says \"No team won this time!\"",
+        "src": "games/logic/skywars/SkyWars.java:87-88, games/logic/skywars/SkyWars.java:277-282, games/logic/skywars/SkyWars.java:394-433, games/logic/skywars/SkyWars.java:296-333, games/logic/skywars/SkyWars.java:664-668, games/interfaces/Minigame.java:178, games/interfaces/Minigame.java:366-373"
+      },
+      {
+        "text": "Most commands are blocked while you play. /event (including /event quit) and chat commands like /msg, /r and /p still work. Leaving with /event quit or logging out takes you out of the game for good.",
+        "src": "games/events/MinigameExitPreventionListener.java:38-54, configurable/Config.java:51-55, commands/modules/minigame/MinigameQuitCommand.java:33-52, games/events/MinigameInventoryRestoringQuitListener.java:22-35, games/interfaces/Minigame.java:254-257"
+      },
+      {
+        "text": "Don't go idle. While alive you get an AFK warning after 60 seconds without moving and are removed at 90 seconds. As a spectator the limits are 6 and 7 minutes. Players removed for being AFK get no Soul Orbs. Bedrock players are never removed for this.",
+        "src": "games/logic/skywars/SkyWars.java:140-143, games/interfaces/models/InactivitySettings.java:17-18, games/interfaces/models/InactivitySettings.java:26-44, games/interfaces/Minigame.java:382-403, games/interfaces/Minigame.java:458-464, games/interfaces/InventoryUnifiedMinigame.java:100-117"
+      }
+    ],
+    "scoring": [
+      {
+        "text": "Damage: 1 point for every 2 damage (1 heart) you deal to enemy players. Only damage that actually lands counts: armor reduces it, and you can't score more than the health they had left. Leftover damage carries over to your next hit.",
+        "src": "games/logic/skywars/SkyWars.java:463-475, games/logic/skywars/roles/SkyWarsPlayer.java:28, games/logic/skywars/roles/SkyWarsPlayer.java:107-114"
+      },
+      {
+        "text": "Kills: 4 points on top of the damage points. The kill goes to whoever Minecraft names as the killer. Hitting someone with a snowball or egg also makes you their killer if they die soon after, for example by falling off the map.",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:25, games/logic/skywars/roles/SkyWarsPlayer.java:116-120, games/logic/skywars/SkyWars.java:506-514, games/logic/skywars/SkyWars.java:497-502"
+      },
+      {
+        "text": "Survival: 1 point every 30 seconds while you are alive. It stops when you die.",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:26-27, games/logic/skywars/roles/SkyWarsPlayer.java:38-40, games/logic/skywars/roles/SkyWarsPlayer.java:79-84, games/logic/skywars/roles/SkyWarsRole.java:30-32"
+      },
+      {
+        "text": "Nothing takes points away, and dying keeps the points you already have.",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:116-135, games/models/Scoreboard.java:23-25"
+      },
+      {
+        "text": "At the end chat shows the top 5 scores. When you are paid, your score is also added to your all-time SkyWars leaderboard score.",
+        "src": "games/logic/skywars/SkyWars.java:319-328, games/models/Scoreboard.java:59-85, games/logic/skywars/SkyWars.java:168-174, model/EventPlayer.java:168-170, placeholders/games/SkyWarsPositionPlaceholder.java:20-27"
+      }
+    ],
+    "tokens": [
+      {
+        "text": "You are paid Soul Orbs when the game ends, once per game. Dying doesn't stop that: spectators are paid with everyone else.",
+        "src": "games/interfaces/InventoryUnifiedMinigame.java:73-88, games/interfaces/TokenFormula.java:35-48, games/logic/skywars/SkyWars.java:168-174"
+      },
+      {
+        "text": "The formula is 2 Soul Orbs plus 1 for every 10 points, rounded to the nearest whole number, up to 8 at 55 points or more. So 0 to 4 points is 2, 5 to 14 is 3, 15 to 24 is 4, and so on.",
+        "src": "games/tokenformula/SkyWarsTokenFormula.java:5-6, games/tokenformula/SkyWarsTokenFormula.java:12-14, games/tokenformula/ScoreRangeTokenFormula.java:10-12, games/tokenformula/ScoreRangeTokenFormula.java:26-34"
+      },
+      {
+        "text": "Everyone on the winning team gets 1 more, including teammates who died, for a max of 9. If time runs out with 2 or more teams alive, nobody gets the bonus.",
+        "src": "games/tokenformula/ScoreRangeTokenFormula.java:12, games/tokenformula/ScoreRangeTokenFormula.java:33, games/logic/skywars/SkyWars.java:168-172, games/logic/skywars/SkyWars.java:405-433, games/logic/skywars/roles/SkyWarsPlayer.java:129, games/interfaces/models/MinigameRoleMap.java:97-101"
+      },
+      {
+        "text": "Example: 5 minutes alive (10 points), 10 hearts of damage (10 points) and 2 kills (8 points) is 28 points, which is 2 + 3 = 5 Soul Orbs, or 6 if your team wins.",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:25-28, games/tokenformula/ScoreRangeTokenFormula.java:26-34, games/tokenformula/SkyWarsTokenFormula.java:12-14"
+      },
+      {
+        "text": "Staff can start a game with a token multiplier (rounded, so 5 at 1.5x becomes 8), a flat amount for everyone, or no tokens at all. Chat says which when the game is announced.",
+        "src": "games/interfaces/TokenPayout.java:30-40, games/interfaces/Minigame.java:344-346, games/interfaces/Minigame.java:633-640, games/MinigameManager.java:49-78"
+      },
+      {
+        "text": "After that, the server-wide token multiplier (1 by default) is applied and rounded up, and a single payout can't give more than 20.",
+        "src": "items/TokenExchanging.java:38, items/TokenExchanging.java:46, configurable/Config.java:33-34"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Queue",
+        "value": "90 seconds by default, at least 2 players",
+        "src": "games/interfaces/Minigame.java:126-128, games/MinigameManager.java:81-87, games/interfaces/Minigame.java:603-606"
+      },
+      {
+        "label": "Start countdown",
+        "value": "10 seconds frozen",
+        "src": "games/logic/skywars/SkyWars.java:89, games/logic/skywars/SkyWars.java:251-271"
+      },
+      {
+        "label": "Game length",
+        "value": "10 minutes from when the queue closes, with a 5 second Game Over bar at the end",
+        "src": "games/logic/skywars/SkyWars.java:87-88, games/logic/skywars/SkyWars.java:280-282, games/logic/skywars/SkyWars.java:409-416"
+      },
+      {
+        "label": "Border",
+        "value": "Starts shrinking 90 seconds after GO, takes 6 minutes, ends at 24 by 24 blocks",
+        "src": "games/logic/skywars/ArenaBorder.java:20-23, games/logic/skywars/ArenaBorder.java:73-80"
+      },
+      {
+        "label": "Border damage",
+        "value": "1 + 0.5 per block outside, once a second, max 8",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:21-24, games/logic/skywars/roles/SkyWarsPlayer.java:85-94"
+      },
+      {
+        "label": "Border warning",
+        "value": "Within 5 blocks of it, or 15 seconds before it reaches you",
+        "src": "games/logic/skywars/ArenaBorder.java:24-25, games/logic/skywars/ArenaBorder.java:61-62"
+      },
+      {
+        "label": "Damage",
+        "value": "1 point per 2 damage (1 heart) dealt to enemies",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:28, games/logic/skywars/roles/SkyWarsPlayer.java:107-114"
+      },
+      {
+        "label": "Kill",
+        "value": "4 points on top of damage",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:25, games/logic/skywars/roles/SkyWarsPlayer.java:118-120"
+      },
+      {
+        "label": "Survival",
+        "value": "1 point per 30 seconds alive",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:26-27, games/logic/skywars/roles/SkyWarsPlayer.java:81-84"
+      },
+      {
+        "label": "Soul Orbs",
+        "value": "2 + 1 per 10 points (rounded), max 8, +1 for the winning team",
+        "src": "games/tokenformula/ScoreRangeTokenFormula.java:10-12, games/tokenformula/ScoreRangeTokenFormula.java:26-34, games/tokenformula/SkyWarsTokenFormula.java:5-6"
+      },
+      {
+        "label": "Chest rolls",
+        "value": "Copper: 2 guaranteed + 3 to 5 random. Exposed: 4 to 6 random. Weathered: 1 guaranteed + 4 to 6. Oxidized: 1 guaranteed + 5 to 7",
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:20-148, games/logic/skywars/LootChests.java:219-230"
+      },
+      {
+        "label": "Oxidized guaranteed gear",
+        "value": "Diamond sword, chestplate, leggings or boots 19% each, diamond spear 8%, a netherite piece 15% (about 4% each)",
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:114-128, games/logic/skywars/LootChests.java:255-269"
+      },
+      {
+        "label": "Oxidized rare finds",
+        "value": "Mace, totem or enchanted golden apple: about 12% each per chest",
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:129-147, games/logic/skywars/LootChests.java:225-228, games/logic/skywars/LootChests.java:255-269"
+      },
+      {
+        "label": "Weathered guaranteed gear",
+        "value": "Iron chestplate 29%, iron sword or iron leggings 24% each, diamond boots 14%, diamond sword 10%",
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:84-93, games/logic/skywars/LootChests.java:255-269"
+      },
+      {
+        "label": "AFK",
+        "value": "Alive: warned at 60 seconds, removed at 90. Spectator: 6 and 7 minutes",
+        "src": "games/interfaces/models/InactivitySettings.java:17-18, games/logic/skywars/SkyWars.java:140-143"
+      }
+    ],
+    "tips": [
+      {
+        "text": "Staying alive the whole game is only worth about 19 points (4 Soul Orbs), so you need damage and kills to get near the 8 cap. A kill where you dealt all 20 of their health yourself is worth at least 14 points (10 for damage plus 4 for the kill), whatever armor they wear.",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:25-28, games/logic/skywars/roles/SkyWarsPlayer.java:107-114, games/logic/skywars/SkyWars.java:474, games/logic/skywars/SkyWars.java:87, games/tokenformula/ScoreRangeTokenFormula.java:26-34"
+      },
+      {
+        "text": "Knocking someone off the map gets you the 4 kill points, but you only get damage points for the hits you landed, not their fall. Beating them down with your own hits is worth more.",
+        "src": "games/logic/skywars/SkyWars.java:463-475, games/logic/skywars/roles/SkyWarsPlayer.java:116-120"
+      },
+      {
+        "text": "Go for the more oxidized chests: every Oxidized chest has a guaranteed piece of diamond or netherite gear, and every Weathered chest a guaranteed piece of iron or diamond gear.",
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:84-93, configurable/sectors/game/skywars/SkyWarsLoot.java:114-128, games/logic/skywars/LootChests.java:219-223"
+      },
+      {
+        "text": "The border ends at 24 by 24 blocks around the middle of the map about 7.5 minutes after GO, so plan to be there by then. Being 6 or more blocks outside it costs 4 damage a second, and 14 or more costs the full 8.",
+        "src": "games/logic/skywars/ArenaBorder.java:20-23, games/logic/skywars/ArenaBorder.java:50-51, games/logic/skywars/roles/SkyWarsPlayer.java:21-24, games/logic/skywars/roles/SkyWarsPlayer.java:92"
+      },
+      {
+        "text": "Chests don't get refilled, and a player who dies drops everything where they died. A fight in the middle of an island leaves their loot for you to grab, but a fall into the void takes it with them.",
+        "src": "games/logic/skywars/LootChests.java:140-180, games/logic/skywars/roles/SkyWarsPlayer.java:137-145"
+      },
+      {
+        "text": "After you die, move now and then. A spectator idle for 7 minutes is removed and gets no Soul Orbs, even though dying early still pays at the end.",
+        "src": "games/interfaces/models/InactivitySettings.java:18, games/interfaces/models/InactivitySettings.java:26-35, games/interfaces/Minigame.java:382-403, games/interfaces/InventoryUnifiedMinigame.java:112-114"
+      },
+      {
+        "text": "The win bonus is just 1 Soul Orb and only comes if your team is the last one standing before time runs out. Dead teammates still get it, so helping a teammate survive pays off for you too.",
+        "src": "games/tokenformula/ScoreRangeTokenFormula.java:12, games/logic/skywars/SkyWars.java:394-433"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "There is no live score display. You only see points in the top 5 list at the end.",
+        "src": "games/logic/skywars/SkyWars.java:277-294, games/logic/skywars/SkyWars.java:319-328, games/models/Scoreboard.java:59-85"
+      },
+      {
+        "text": "The end screen title says \"[name] has won!\" for the player with the highest score, even though the game itself is won by a team. The boss bar and chat name the winning team.",
+        "src": "games/models/Scoreboard.java:87-98, games/logic/skywars/SkyWars.java:409-433"
+      },
+      {
+        "text": "The survival clock starts when you are put on your island, before the 10 second countdown, so your first survival point comes 20 seconds after GO.",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:38-40, games/logic/skywars/SkyWars.java:244-247, games/logic/skywars/SkyWars.java:251-271"
+      },
+      {
+        "text": "A kill still counts if you died before your victim did, for example after knocking them toward the void.",
+        "src": "games/logic/skywars/roles/SkyWarsPlayer.java:116-120, games/logic/skywars/SkyWars.java:506-514"
+      },
+      {
+        "text": "No default chest has helmets, and the bound team helmet fills your head slot anyway, so the leather team helmet is the only helmet you get.",
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:20-148, games/logic/skywars/SkyWarsTeam.java:39-52"
+      },
+      {
+        "text": "Only your items are saved, not your XP. Enchanting with the Oxidized chest's enchanting table spends your own XP levels, and the game won't give them back.",
+        "src": "games/models/InventorySnapshot.java:24-30, games/models/InventorySnapshot.java:47-48, configurable/sectors/game/skywars/SkyWarsLoot.java:143-145"
+      },
+      {
+        "text": "If every other team leaves the game, your team wins straight away.",
+        "src": "games/logic/skywars/SkyWars.java:182-192, games/logic/skywars/SkyWars.java:394-419"
+      }
+    ],
+    "config": [
+      {
+        "text": "Each SkyWars map sets its lobby, schematic and origin point, and a random map is picked for each game. SkyWars isn't in the default list of games that start automatically.",
+        "src": "configurable/sectors/game/skywars/SkyWarsDefinition.java:13-16, games/constants/MinigameConstant.java:67, games/constants/MinigameConstant.java:100-103, games/MinigameManager.java:37-43, configurable/Config.java:44-49"
+      },
+      {
+        "text": "Island spawns come from marker blocks in the map, so the number of islands (and so the team size) depends on the map.",
+        "src": "games/logic/skywars/SkyWars.java:96-97, games/logic/skywars/SkyWars.java:122-125, games/logic/skywars/SkyWars.java:200"
+      },
+      {
+        "text": "Island radius for the short-handed chest upgrade (15 blocks) and the spectator range (700 blocks) are set per map.",
+        "src": "configurable/sectors/game/skywars/SkyWarsDefinition.java:17-21"
+      },
+      {
+        "text": "All 4 loot tables (what each chest tier can hold, the weights and the number of rolls) are per-map settings, so the loot and odds above are only the defaults.",
+        "src": "configurable/sectors/game/skywars/SkyWarsDefinition.java:22, configurable/sectors/game/skywars/SkyWarsLoot.java:20-168"
+      },
+      {
+        "text": "The game length, countdown, border timing and size, border damage, point values and the 0 to 60 score range for Soul Orbs are fixed in code.",
+        "src": "games/logic/skywars/SkyWars.java:87-89, games/logic/skywars/ArenaBorder.java:20-25, games/logic/skywars/roles/SkyWarsPlayer.java:21-28, games/tokenformula/SkyWarsTokenFormula.java:5-6, games/tokenformula/ScoreRangeTokenFormula.java:10-12"
+      }
+    ],
+    "storyboard": {
+      "values": {
+        "hearts": 10,
+        "killPoints": 4,
+        "kills": 2,
+        "minutesAlive": 5,
+        "survivalSeconds": 30,
+        "finalBorder": 24,
+        "baseTokens": 2,
+        "pointsPerToken": 10,
+        "maxTokens": 8,
+        "winBonus": 1
+      },
+      "beats": [
+        {
+          "caption": "Loot your island, then fight",
+          "sub": "Copper chests hold your gear. Every heart of damage you deal to an enemy is 1 point, and a kill adds 4 more.",
+          "src": "games/logic/skywars/LootChests.java:56-65, games/logic/skywars/SkyWars.java:463-475, games/logic/skywars/roles/SkyWarsPlayer.java:25-28, games/logic/skywars/roles/SkyWarsPlayer.java:107-120"
+        },
+        {
+          "caption": "The border closes in",
+          "sub": "90 seconds after GO it shrinks for 6 minutes, down to 24 by 24. Staying alive scores 1 point every 30 seconds.",
+          "src": "games/logic/skywars/ArenaBorder.java:20-23, games/logic/skywars/ArenaBorder.java:73-80, games/logic/skywars/SkyWars.java:287-290, games/logic/skywars/roles/SkyWarsPlayer.java:26-27, games/logic/skywars/roles/SkyWarsPlayer.java:79-84"
+        },
+        {
+          "caption": "Your score becomes Soul Orbs",
+          "sub": "2 + 1 per 10 points, max 8. 28 points is 5 Soul Orbs, and the last team standing gets 1 more.",
+          "src": "games/tokenformula/ScoreRangeTokenFormula.java:10-12, games/tokenformula/ScoreRangeTokenFormula.java:26-34, games/tokenformula/SkyWarsTokenFormula.java:5-6, games/logic/skywars/SkyWars.java:168-172, games/logic/skywars/SkyWars.java:405-433"
+        }
+      ]
+    }
+  }
+]

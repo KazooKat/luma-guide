@@ -105,6 +105,43 @@ playerCommands.sort((a, b) => a.name.localeCompare(b.name));
 const charm = find('commands/modules/ClaimCharmCommand.java', /getCustomItem\("([a-z0-9-]+)"\)/, 'charm item');
 const charmNeed = find('commands/modules/ClaimCharmCommand.java', /getScores\(\)\.isEmpty\(\)/, 'charm requirement');
 
+// ---- candy (trick or treating) -------------------------------------------------------------------------------
+// Each candy rolls once when eaten: a shared Soul Orb chance first, then its own effects, else nothing.
+// Older events have no candy folder, so this is optional; once the folder exists, anything unreadable fails the build.
+const CANDY_DIR = 'items/candy';
+const CI = `${CANDY_DIR}/CandyItem.kt`;
+let candy = null;
+if (existsSync(PKG + CANDY_DIR)) {
+  const orbChance = find(CI, /const val SOUL_ORB_CHANCE\s*=\s*([\d.]+)/, 'candy soul orb chance');
+  const orbGive = find(CI, /private fun giveSoulOrb/, 'candy soul orb give');
+  const pool = find(CI, /listOf\(CandyEffect\(SOUL_ORB_CHANCE/, 'candy roll pool');
+  const bedrock = find(CI, /override fun onRightClick/, 'candy bedrock right click');
+  // The Bedrock path: right click eats the candy for Floodgate players. Cite the whole function, up to its closing brace.
+  const floodgate = find(CI, /isFloodgate\) return$/, 'candy bedrock check');
+  const bedrockEnd = bedrock ? lines(CI).findIndex((l, i) => i >= bedrock.line && /^ {4}\}$/.test(l)) + 1 : 0;
+  if (bedrock && bedrockEnd < 1) errors.push(`${CI}: end of onRightClick not found`);
+  const strip = (s) => s.replace(/<[^>]+>/g, '');
+  const items = readdirSync(PKG + CANDY_DIR).filter((f) => f.endsWith('.kt') && f !== 'CandyItem.kt').sort().map((f) => {
+    const file = `${CANDY_DIR}/${f}`;
+    const key = find(file, /override val key = "([a-z-]+)"/, `candy key in ${file}`);
+    const name = find(file, /override val name = "(.+)"/, `candy name in ${file}`);
+    const effects = [];
+    for (const [i, l] of lines(file).entries()) {
+      const e = /CandyEffect\(([\d.]+),\s*"(.*?)"\)/.exec(l);
+      if (e) { effects.push({ chance: Number(e[1]), message: strip(e[2]), potions: [], src: `${file}:${i + 1}` }); continue; }
+      const p = /PotionEffect\(PotionEffectType\.([A-Z_]+),\s*20 \* (\d+),\s*(\d+)\)/.exec(l);
+      if (p && effects.length) effects.at(-1).potions.push({ type: p[1], seconds: Number(p[2]), level: Number(p[3]) + 1 });
+    }
+    if (!effects.length) errors.push(`${file}: no CandyEffect found`);
+    const written = lines(file).filter((l) => /\bCandyEffect\(/.test(l)).length;
+    if (written !== effects.length) errors.push(`${file}: ${written} CandyEffect(...) lines but only ${effects.length} read (chance or message not a literal?)`);
+    if (effects.reduce((a, e) => a + e.chance, Number(orbChance?.m[1] ?? 0)) > 1) errors.push(`${file}: effect chances add up to more than 1`);
+    return { key: key?.m[1], name: name ? strip(name.m[1]) : f, src: key?.src, effects };
+  });
+  if (!items.length) errors.push(`${CANDY_DIR}: no candy found`);
+  if (orbChance && orbGive && pool && bedrock && floodgate && bedrockEnd > 0) candy = { soulOrbChance: Number(orbChance.m[1]), soulOrbSrc: span(orbChance, orbGive), rollSrc: pool.src, bedrockSrc: `${CI}:${bedrock.line}-${bedrockEnd}`, items };
+}
+
 // ---- minigames -----------------------------------------------------------------------------------------------
 const MC = 'games/constants/MinigameConstant.java';
 const constants = findAll(MC, /^\s+([A-Z_0-9]+)\((.+?),\s*"([^"]+)"((?:,\s*"[^"]+")+)\)[,;]?\s*$/).map(({ m, src }) => {
@@ -112,12 +149,24 @@ const constants = findAll(MC, /^\s+([A-Z_0-9]+)\((.+?),\s*"([^"]+)"((?:,\s*"[^"]
   return { constant: m[1], name: m[3], aliases: [...m[4].matchAll(/"([^"]+)"/g)].map((a) => a[1]), cls: cls?.[1] ?? cls?.[2], src };
 });
 if (constants.length < 1) errors.push(`${MC}: no minigames found`);
+// Game classes live in games/logic/ or a subfolder of it (games/logic/skywars/SkyWars.java).
+const logicFiles = new Map();
+(function walk(dir) {
+  for (const e of readdirSync(PKG + dir, { withFileTypes: true })) {
+    if (e.isDirectory()) walk(`${dir}/${e.name}`);
+    else if (e.name.endsWith('.java')) logicFiles.set(e.name.slice(0, -5), logicFiles.has(e.name.slice(0, -5)) ? null : `${dir}/${e.name}`);
+  }
+})('games/logic');
 for (const c of constants) {
-  const file = `games/logic/${c.cls}.java`;
-  const f = findAll(file, /new (\w+TokenFormula)\((.*)\);/)[0];
+  const file = logicFiles.get(c.cls) ?? `games/logic/${c.cls}.java`;
+  if (logicFiles.get(c.cls) === null) errors.push(`games/logic: more than one ${c.cls}.java`);
+  // Either `new XTokenFormula(args)` or, for the score range games, the factory `XTokenFormula.formula(args)`.
+  const f = findAll(file, /(?:new (\w+TokenFormula)|\b(\w+TokenFormula)\.formula)\((.*)\);/).map(({ m, src }) => ({ m: [m[0], m[1] ?? m[2], m[3]], src }))[0];
   c.formula = f ? { cls: f.m[1], args: f.m[2].trim(), src: f.src, file: `games/tokenformula/${f.m[1]}.java` } : null;
-  if (!f) errors.push(`${file}: no token formula found for ${c.constant}`);
-  else if (!lines(c.formula.file)) errors.push(`${c.formula.file} not found`);
+  // A game whose class never mentions a TokenFormula pays no tokens (Mob Arena in the Lumares code); anything else is a moved pattern.
+  if (!f && (lines(file) ?? []).some((l) => /TokenFormula/.test(l))) errors.push(`${file}: no token formula found for ${c.constant}`);
+  else if (!f && !lines(file)) errors.push(`${file} not found for ${c.constant}`);
+  else if (f && !lines(c.formula.file)) errors.push(`${c.formula.file} not found`);
 }
 
 // ---- hand-written guides -------------------------------------------------------------------------------------
@@ -245,6 +294,7 @@ const out = {
     player: playerCommands,
   },
   charm: { itemId: charm.m[1], src: charm.src, requirementSrc: charmNeed.src },
+  candy,
   minigames: constants.map((c) => {
     const g = [...guides.values()].find((x) => x.constant === c.constant);
     return { key: g?.key ?? c.constant.toLowerCase().replace(/_/g, '-'), constant: c.constant, name: c.name, aliases: c.aliases, src: c.src, formula: c.formula, guide: g ?? null };

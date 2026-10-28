@@ -4,7 +4,7 @@
   "listed": true,
   "name": "Luma Nightmares",
   "nameConfirmed": true,
-  "sourceEvent": "Lumarine 2026",
+  "sourceEvent": "Luma Nightmares",
   "command": "lumares",
   "dates": {
     "start": "2026-10-15",
@@ -17,21 +17,8 @@
     "earnedBy": "working jobs, exploring the Lumares map and playing minigames"
   },
   "charmItemId": null,
-  "activeGames": [],
-  "newGames": [
-    {
-      "name": "Manor 2",
-      "summary": "A ground up rewrite of Manor. You spawn as a Ghost or a Hunter: Ghosts hunt down and kill every Hunter, and Hunters find artifacts and kill the Ghost with their flashlight."
-    },
-    {
-      "name": "SkyWars",
-      "summary": "Luma's take on the classic minigame, with a border that closes in over time."
-    },
-    {
-      "name": "Copycat",
-      "summary": "A casual memory game with no PvP. Memorize a build in 16 seconds, then restore the parts of it that were removed."
-    }
-  ],
+  "activeGames": ["manor-2", "skywars", "copycat"],
+  "newGames": [],
   "trickOrTreat": {
     "cooldownHours": 40,
     "reward": "candy",

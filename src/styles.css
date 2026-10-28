@@ -350,6 +350,7 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
 .rarity-name { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; white-space: nowrap; }
 .swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
 .source-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.source-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .source { border: 1px solid var(--border); border-radius: 14px; padding: 18px; display: grid; gap: 10px; align-content: start; font-size: 15px; color: var(--text-2); }
 .source-head { display: flex; align-items: center; gap: 10px; }
 .source-head h4 { margin: 0; font-size: 17px; color: var(--text); }
@@ -557,6 +558,9 @@ code { font-family: var(--mono); color: var(--text); background: var(--surface-2
 .odds-row.mg-row { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr) 90px; }
 .odds-row.mg-row .soft { font-size: 14px; color: var(--text-2); }
 .odds-row.shop-row { grid-template-columns: minmax(0, 1fr) 100px 80px; }
+.odds-row.candy-row { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.8fr) 72px; }
+.candy-row .src-link { white-space: normal; }
+.candy-row .soft { display: grid; gap: 2px; font-size: 14px; color: var(--text-2); }
 
 /* Job token odds per hour (event Tokens page) */
 .tok-tiles { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 12px; }
@@ -649,7 +653,7 @@ small.block { display: block; }
 
 @media (max-width: 1000px) {
   .job-grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
-  .job-layout, .pair, .bloom-grid, .source-grid, .detail-grid, .callouts.two, .upgrade-how { grid-template-columns: 1fr; }
+  .job-layout, .pair, .bloom-grid, .source-grid, .source-grid.four, .detail-grid, .callouts.two, .upgrade-how { grid-template-columns: 1fr; }
   .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .rarity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .plan-col { position: static; order: -1; }
@@ -682,6 +686,8 @@ small.block { display: block; }
   .odds-row.mg-row { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); }
   .odds-row.shop-row { grid-template-columns: minmax(0, 1fr) 56px 52px; }
   .odds-row.shop-row > :last-child { display: block; } /* the limit matters more than the bars other tables drop */
+  .odds-row.candy-row { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr) 48px; }
+  .odds-row.candy-row > :last-child { display: block; }
   .tok-tiles { grid-template-columns: 1fr; }
   .odds-row.job-hour { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
   .odds-row.job-hour > :nth-child(3) { display: none; }

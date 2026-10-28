@@ -8,86 +8,90 @@
     "howToPlay": [
       {
         "text": "Join with /event join while the queue is open (90 seconds by default). Panel Party can start with just 1 player. Your inventory is saved and cleared when the game starts and given back when it ends.",
-        "src": "games/MinigameManager.java:63, games/MinigameManager.java:95-97, games/logic/PanelParty.java:130-133, games/interfaces/InventoryUnifiedMinigame.java:38-62, games/interfaces/InventoryUnifiedMinigame.java:73-91"
+        "src": "games/interfaces/Minigame.java:344-345, games/MinigameManager.java:81-83, games/logic/PanelParty.java:129-132, games/interfaces/InventoryUnifiedMinigame.java:38-62, games/interfaces/InventoryUnifiedMinigame.java:73-88"
       },
       {
         "text": "Everyone is teleported to the same spot near the middle of the first panel. You can't place or break blocks during the game.",
-        "src": "games/logic/PanelParty.java:167-175, games/logic/PanelParty.java:413-432"
+        "src": "games/logic/PanelParty.java:166-174, games/logic/PanelParty.java:412-431"
       },
       {
         "text": "Each round is a new panel (a floor pattern). The map has a list of panel designs, they are shuffled at the start, and each one is played once, so the game has as many rounds as the map has designs.",
-        "src": "games/logic/PanelParty.java:105-107, games/logic/PanelParty.java:113, games/logic/PanelParty.java:123, games/logic/PanelParty.java:708-715"
+        "src": "games/logic/PanelParty.java:105-107, games/logic/PanelParty.java:113, games/logic/PanelParty.java:122, games/logic/PanelParty.java:710-717"
       },
       {
         "text": "When a round starts, chat and your action bar show \"Stand on: <block>\" in that block's color, and a bossbar shows the panel's name and round number while it counts down. In green and yellow rounds you are also handed the called block so you can see it.",
-        "src": "games/logic/PanelParty.java:725-731, games/logic/PanelParty.java:203-220, games/logic/PanelParty.java:735-740, games/logic/PanelParty.java:743-758, games/logic/PanelParty.java:862-863"
+        "src": "games/logic/PanelParty.java:727-733, games/logic/PanelParty.java:202-219, games/logic/PanelParty.java:737-742, games/logic/PanelParty.java:745-760, games/logic/PanelParty.java:864-865"
       },
       {
         "text": "When the bossbar runs out, every block that isn't the called block is removed and a 5 second \"Don't move!\" bar starts. You need to be standing on the called block by then. After that the next panel is pasted and the next round starts.",
-        "src": "games/logic/PanelParty.java:759-789, games/logic/PanelParty.java:674, games/logic/PanelParty.java:240-248"
+        "src": "games/logic/PanelParty.java:761-791, games/logic/PanelParty.java:676, games/logic/PanelParty.java:239-247"
       },
       {
         "text": "The rounds get harder in 4 equal parts of the game: the first quarter of rounds are green (11 seconds to find the block), then yellow (7 seconds), then red (6 seconds), then purple (4 seconds).",
-        "src": "games/logic/PanelParty.java:862-865, games/logic/PanelParty.java:894-906"
+        "src": "games/logic/PanelParty.java:864-867, games/logic/PanelParty.java:896-908"
       },
       {
         "text": "Purple rounds are PvP rounds. During their \"Don't move! (PvP)\" phase, players who are still in can hit each other. At any other time, hits between players are cancelled.",
-        "src": "games/logic/PanelParty.java:746-750, games/logic/PanelParty.java:563-570, games/logic/PanelParty.java:865"
+        "src": "games/logic/PanelParty.java:748-752, games/logic/PanelParty.java:565-572, games/logic/PanelParty.java:867"
       },
       {
         "text": "You are eliminated if you fall 50 blocks below the panel or die. You then become a spectator: you're teleported 10 blocks above the middle, you can fly, you're invisible, and players still in the game can't see you. Chat shows a random elimination message such as \"<name> chose a bad block.\"",
-        "src": "games/logic/PanelParty.java:474, games/logic/PanelParty.java:483, games/logic/PanelParty.java:519-521, games/logic/PanelParty.java:401-410, games/logic/PanelParty.java:541-561, games/logic/PanelParty.java:65-72, games/logic/PanelParty.java:602-629, games/logic/PanelParty.java:653-664"
+        "src": "games/logic/PanelParty.java:476, games/logic/PanelParty.java:485, games/logic/PanelParty.java:521-523, games/logic/PanelParty.java:400-409, games/logic/PanelParty.java:543-563, games/logic/PanelParty.java:65-72, games/logic/PanelParty.java:604-631, games/logic/PanelParty.java:655-666"
       },
       {
         "text": "The game ends when 1 player (or nobody) is left, with \"<name> was the last player standing!\", or when the last panel is done (\"No more panels left to play!\"). The top 5 scores are then shown in chat, and after a 10 second \"Game Over\" bar you are sent back.",
-        "src": "games/logic/PanelParty.java:572-583, games/logic/PanelParty.java:389-398, games/logic/PanelParty.java:269-292, games/models/Scoreboard.java:59-77"
+        "src": "games/logic/PanelParty.java:574-585, games/logic/PanelParty.java:388-397, games/logic/PanelParty.java:268-291, games/models/Scoreboard.java:59-77"
       }
     ],
     "scoring": [
       {
         "text": "Every player still in when a round's \"Don't move!\" bar ends gets points: 1 for a green or yellow round and 2 for a red or purple round.",
-        "src": "games/logic/PanelParty.java:228-231, games/logic/PanelParty.java:862-865"
+        "src": "games/logic/PanelParty.java:227-230, games/logic/PanelParty.java:864-867"
       },
       {
         "text": "The last player standing gets 1 bonus point.",
-        "src": "games/logic/PanelParty.java:573-578"
+        "src": "games/logic/PanelParty.java:575-580"
       },
       {
         "text": "Being eliminated earns nothing. A line that would have given 1 point on elimination is commented out.",
-        "src": "games/logic/PanelParty.java:555"
+        "src": "games/logic/PanelParty.java:557"
       },
       {
         "text": "Points decide the end-of-game ranking and are added to your all-time Panel Party leaderboard score, but they don't decide your tokens. Tokens count panels survived instead (see below).",
-        "src": "games/logic/PanelParty.java:136-145, model/EventPlayer.java:171-173, placeholders/PlaceholderModule.java:10-16"
+        "src": "games/logic/PanelParty.java:135-144, model/EventPlayer.java:168-170, placeholders/PlaceholderModule.java:10-16"
       }
     ],
     "tokens": [
       {
         "text": "You are paid once, when the game ends, and spectators who were eliminated are paid too. If you leave with /event quit during the game, you are paid right then for what you have survived so far.",
-        "src": "games/interfaces/InventoryUnifiedMinigame.java:73-91, games/interfaces/InventoryUnifiedMinigame.java:100-118, games/interfaces/TokenFormula.java:35-48"
+        "src": "games/interfaces/InventoryUnifiedMinigame.java:73-88, games/interfaces/InventoryUnifiedMinigame.java:99-117, games/interfaces/TokenFormula.java:35-48"
+      },
+      {
+        "text": "If the server sees you AFK for 6 minutes, a warning bossbar counts you down, and at 7 minutes you are removed from the game and get no tokens. This also counts while you spectate after being knocked out, so move now and then. Bedrock players are skipped.",
+        "src": "games/interfaces/Minigame.java:379, games/interfaces/Minigame.java:382-408, games/interfaces/Minigame.java:458-464, games/interfaces/models/InactivitySettings.java:18, games/interfaces/models/InactivitySettings.java:26-29, games/interfaces/models/InactivitySettings.java:37-39, games/interfaces/InventoryUnifiedMinigame.java:112-114, utility/SoftSleepyAPI.java:22-25"
       },
       {
         "text": "Tokens = panels survived divided by 2 (rounded down), plus 1 for each purple panel survived, up to 13.",
-        "src": "games/logic/PanelParty.java:111-112, games/logic/PanelParty.java:136-143, games/logic/PanelParty.java:232-237, games/tokenformula/PanelPartyTokenFormula.java:17-21"
+        "src": "games/logic/PanelParty.java:111-112, games/logic/PanelParty.java:135-142, games/logic/PanelParty.java:231-236, games/tokenformula/PanelPartyTokenFormula.java:17-21"
       },
       {
         "text": "Example with a 12-panel map: rounds 1-3 are green, 4-6 yellow, 7-9 red and 10-12 purple. If you survive all 12, you get 12 / 2 = 6 plus 3 for the purple panels, so 9 tokens. If you fall in round 8, you survived 7 panels, so 7 / 2 = 3 tokens.",
-        "src": "games/logic/PanelParty.java:894-906, games/tokenformula/PanelPartyTokenFormula.java:17-21"
+        "src": "games/logic/PanelParty.java:896-908, games/tokenformula/PanelPartyTokenFormula.java:17-21"
       },
       {
         "text": "Winning doesn't add tokens. The last-player bonus only goes to the scoreboard.",
-        "src": "games/logic/PanelParty.java:577, games/logic/PanelParty.java:136-143"
+        "src": "games/logic/PanelParty.java:579, games/logic/PanelParty.java:135-142"
       },
       {
         "text": "Staff can start a game with a token multiplier (applied after the 13 cap), a flat amount for everyone, or no tokens, and chat announces it. Then the server-wide multiplier is applied, rounded up, and you get at most 20 tokens from one payout.",
-        "src": "games/interfaces/TokenFormula.java:36, games/interfaces/TokenPayout.java:30-36, games/MinigameManager.java:64, games/MinigameManager.java:86-93, items/TokenExchanging.java:38-52"
+        "src": "games/interfaces/TokenFormula.java:36, games/interfaces/TokenPayout.java:30-36, games/interfaces/Minigame.java:346, games/interfaces/Minigame.java:632-640, items/TokenExchanging.java:38-52"
       }
     ],
     "numbers": [
       {
         "label": "Minimum players",
         "value": "1",
-        "src": "games/logic/PanelParty.java:130-133"
+        "src": "games/logic/PanelParty.java:129-132"
       },
       {
         "label": "Rounds",
@@ -97,37 +101,37 @@
       {
         "label": "Green rounds",
         "value": "11 seconds, 1 point, block shown in your hand",
-        "src": "games/logic/PanelParty.java:862"
+        "src": "games/logic/PanelParty.java:864"
       },
       {
         "label": "Yellow rounds",
         "value": "7 seconds, 1 point, block shown in your hand",
-        "src": "games/logic/PanelParty.java:863"
+        "src": "games/logic/PanelParty.java:865"
       },
       {
         "label": "Red rounds",
         "value": "6 seconds, 2 points",
-        "src": "games/logic/PanelParty.java:864"
+        "src": "games/logic/PanelParty.java:866"
       },
       {
         "label": "Purple rounds",
         "value": "4 seconds, 2 points, PvP, 1 extra token each",
-        "src": "games/logic/PanelParty.java:865, games/tokenformula/PanelPartyTokenFormula.java:19"
+        "src": "games/logic/PanelParty.java:867, games/tokenformula/PanelPartyTokenFormula.java:19"
       },
       {
         "label": "\"Don't move!\" phase",
         "value": "5 seconds",
-        "src": "games/logic/PanelParty.java:674, games/logic/PanelParty.java:778-779"
+        "src": "games/logic/PanelParty.java:676, games/logic/PanelParty.java:780-781"
       },
       {
         "label": "Elimination depth",
         "value": "50 blocks below the panel",
-        "src": "games/logic/PanelParty.java:474, games/logic/PanelParty.java:483, games/logic/PanelParty.java:519"
+        "src": "games/logic/PanelParty.java:476, games/logic/PanelParty.java:485, games/logic/PanelParty.java:521"
       },
       {
         "label": "Blocks needed for a block to be called (green and yellow)",
         "value": "10 within the playable area",
-        "src": "games/logic/PanelParty.java:675, games/logic/PanelParty.java:804-822"
+        "src": "games/logic/PanelParty.java:677, games/logic/PanelParty.java:806-824"
       },
       {
         "label": "Wool panels chance",
@@ -148,19 +152,19 @@
     "tips": [
       {
         "text": "Green and yellow rounds only call blocks that cover at least 10 blocks of the playable area. From the red rounds on, any block in the playable area can be called, even one that appears only once, so expect much smaller targets late in the game.",
-        "src": "games/logic/PanelParty.java:804-822, games/logic/PanelParty.java:864-865"
+        "src": "games/logic/PanelParty.java:806-824, games/logic/PanelParty.java:866-867"
       },
       {
         "text": "In red and purple rounds you aren't handed the block, so read the \"Stand on\" text in your action bar.",
-        "src": "games/logic/PanelParty.java:735-740, games/logic/PanelParty.java:203-220, games/logic/PanelParty.java:864-865"
+        "src": "games/logic/PanelParty.java:737-742, games/logic/PanelParty.java:202-219, games/logic/PanelParty.java:866-867"
       },
       {
         "text": "Purple panels are worth the most: 2 points and 1 full token each, on top of the usual 1 token per 2 panels. Making it into the last quarter of rounds is the biggest jump in pay.",
-        "src": "games/logic/PanelParty.java:229-237, games/tokenformula/PanelPartyTokenFormula.java:17-21"
+        "src": "games/logic/PanelParty.java:228-236, games/tokenformula/PanelPartyTokenFormula.java:17-21"
       },
       {
         "text": "In purple rounds other players can hit you while the floor is gone, so keep away from other players during the \"Don't move! (PvP)\" bar.",
-        "src": "games/logic/PanelParty.java:563-570, games/logic/PanelParty.java:750"
+        "src": "games/logic/PanelParty.java:565-572, games/logic/PanelParty.java:752"
       }
     ],
     "quirks": [
@@ -170,41 +174,41 @@
       },
       {
         "text": "The game ends as soon as 1 player is left, and the round in progress isn't counted. So the winner usually ends with the same number of panels survived, and the same tokens, as the last player to fall.",
-        "src": "games/logic/PanelParty.java:572-583, games/logic/PanelParty.java:190-193, games/logic/PanelParty.java:228-238"
+        "src": "games/logic/PanelParty.java:574-585, games/logic/PanelParty.java:189-192, games/logic/PanelParty.java:227-237"
       },
       {
         "text": "If several players reach the end of the last panel, the game ends with \"No more panels left to play!\" and nobody gets the last-player bonus point.",
-        "src": "games/logic/PanelParty.java:389-392, games/logic/PanelParty.java:572-578"
+        "src": "games/logic/PanelParty.java:388-391, games/logic/PanelParty.java:574-580"
       },
       {
         "text": "In about 30% of games, the colored terracotta in every panel is swapped for wool of the same color, so you are told to stand on wool instead. Plain terracotta stays as it is. The code calls this \"glazed\", but the swap is to wool.",
-        "src": "games/logic/PanelParty.java:62-64, games/logic/PanelParty.java:116, games/logic/PanelParty.java:304-339, games/interfaces/structures/GenericStructure.java:58-60, games/interfaces/structures/GenericStructure.java:76-77"
+        "src": "games/logic/PanelParty.java:62-64, games/logic/PanelParty.java:116, games/logic/PanelParty.java:303-338, games/interfaces/structures/GenericStructure.java:69-71, games/interfaces/structures/GenericStructure.java:87-88"
       },
       {
         "text": "The bossbar names each panel after its design file in quotes, with \"and\" shown as \"&\".",
-        "src": "games/logic/PanelParty.java:743-745, games/logic/PanelParty.java:851-856"
+        "src": "games/logic/PanelParty.java:745-747, games/logic/PanelParty.java:853-858"
       },
       {
         "text": "There is code for a round type that gives Jump Boost, but none of the 4 round types use it.",
-        "src": "games/logic/PanelParty.java:504-510, games/logic/PanelParty.java:862-865, games/logic/PanelParty.java:913"
+        "src": "games/logic/PanelParty.java:506-512, games/logic/PanelParty.java:864-867, games/logic/PanelParty.java:915"
       }
     ],
     "config": [
       {
         "text": "The list of panel designs is set per map (empty by default), and it sets how many rounds there are.",
-        "src": "configurable/sectors/PanelPartyMinigameDefinition.java:19, games/logic/PanelParty.java:105-113"
+        "src": "configurable/sectors/game/PanelPartyMinigameDefinition.java:25, games/logic/PanelParty.java:105-113"
       },
       {
         "text": "The playable area used to pick which blocks can be called is 64 by 64 blocks by default (a radius of 32).",
-        "src": "configurable/sectors/PanelPartyMinigameDefinition.java:15, games/logic/PanelParty.java:825-828"
+        "src": "configurable/sectors/game/PanelPartyMinigameDefinition.java:21, games/logic/PanelParty.java:827-830"
       },
       {
         "text": "Super speed is on by default: you get Speed with an amplifier of 255, refreshed every tick. If a map turns it off, all your potion effects are cleared every tick instead.",
-        "src": "configurable/sectors/PanelPartyMinigameDefinition.java:16-17, games/logic/PanelParty.java:502-517"
+        "src": "configurable/sectors/game/PanelPartyMinigameDefinition.java:22-23, games/logic/PanelParty.java:504-519"
       },
       {
         "text": "The server-wide token multiplier is 1.0 by default.",
-        "src": "configurable/Config.java:42-43, items/TokenExchanging.java:38"
+        "src": "configurable/Config.java:33-34, items/TokenExchanging.java:38"
       }
     ],
     "storyboard": {
@@ -220,17 +224,17 @@
         {
           "caption": "Stand on the called block",
           "sub": "Each round names 1 block. Get onto it before the bar runs out: 11 seconds at first, 4 at the end.",
-          "src": "games/logic/PanelParty.java:725-731, games/logic/PanelParty.java:743-758, games/logic/PanelParty.java:862-865"
+          "src": "games/logic/PanelParty.java:727-733, games/logic/PanelParty.java:745-760, games/logic/PanelParty.java:864-867"
         },
         {
           "caption": "Every other block is removed",
           "sub": "For 5 seconds only the called block is left. Anyone not standing on it falls and is out.",
-          "src": "games/logic/PanelParty.java:759-789, games/logic/PanelParty.java:674, games/logic/PanelParty.java:474, games/logic/PanelParty.java:483"
+          "src": "games/logic/PanelParty.java:761-791, games/logic/PanelParty.java:676, games/logic/PanelParty.java:476, games/logic/PanelParty.java:485"
         },
         {
           "caption": "1 token per 2 panels survived",
           "sub": "Plus 1 per purple panel, up to 13. Surviving a 12-panel map pays 9. Winning adds nothing.",
-          "src": "games/tokenformula/PanelPartyTokenFormula.java:17-21, games/logic/PanelParty.java:111-112, games/logic/PanelParty.java:894-906, games/logic/PanelParty.java:577"
+          "src": "games/tokenformula/PanelPartyTokenFormula.java:17-21, games/logic/PanelParty.java:111-112, games/logic/PanelParty.java:896-908, games/logic/PanelParty.java:579"
         }
       ]
     }
@@ -244,23 +248,23 @@
     "howToPlay": [
       {
         "text": "Join with /event join while the queue is open (90 seconds by default). At least 2 players are needed. Your inventory is saved and cleared when the game starts and given back when it ends.",
-        "src": "games/MinigameManager.java:63, games/MinigameManager.java:95-97, games/interfaces/Minigame.java:130-146, games/interfaces/Minigame.java:420-423, games/logic/Towers.java:254-258, games/interfaces/InventoryUnifiedMinigame.java:38-62, games/interfaces/InventoryUnifiedMinigame.java:73-91"
+        "src": "games/interfaces/Minigame.java:344-345, games/MinigameManager.java:81-83, games/interfaces/Minigame.java:143-159, games/interfaces/Minigame.java:603-606, games/logic/Towers.java:254-258, games/interfaces/InventoryUnifiedMinigame.java:38-62, games/interfaces/InventoryUnifiedMinigame.java:73-88"
       },
       {
         "text": "Each player gets their own pillar: a column of bedrock from just under your spawn down to the bottom of the world. The first pillar is at the center and the rest are placed in rings around it, at least 20 blocks apart. Your health and hunger are filled at the start.",
-        "src": "games/logic/Towers.java:124-151, games/logic/Towers.java:625-643, games/interfaces/structures/BoundCircularStructureGrid.java:51-90, games/interfaces/structures/BoundCircularStructureGrid.java:147-158"
+        "src": "games/logic/Towers.java:124-151, games/logic/Towers.java:627-645, games/interfaces/structures/BoundCircularStructureGrid.java:51-90, games/interfaces/structures/BoundCircularStructureGrid.java:147-158"
       },
       {
         "text": "A 3 second \"Get ready!\" countdown plays, then \"Go!\". Until then you are slowed so you can't move and you can't jump.",
-        "src": "games/logic/Towers.java:153-164, games/logic/Towers.java:635, games/logic/Towers.java:372-378"
+        "src": "games/logic/Towers.java:153-164, games/logic/Towers.java:637, games/logic/Towers.java:372-378"
       },
       {
         "text": "At \"Go!\" and then every 9 seconds (the \"Next drop in\" bar), every player still in gets an item dropped at their eyes, and chat says \"You got: <item> x<amount>\".",
-        "src": "games/logic/Towers.java:157, games/logic/Towers.java:193-196, games/logic/Towers.java:535-551, games/logic/Towers.java:553-581, games/logic/Towers.java:645-649"
+        "src": "games/logic/Towers.java:157, games/logic/Towers.java:193-196, games/logic/Towers.java:535-551, games/logic/Towers.java:553-581, games/logic/Towers.java:647-651"
       },
       {
         "text": "Most drops (79%) are 3 or 4 of a random solid block. About 12% are one of 10 kits: TNT (3 TNT and a redstone torch), food (an enchanted golden apple, 6 cooked beef and 3 cakes), a bow with 3 arrows, 3 wind charges, an ender pearl with an end crystal, 3 cobwebs, 15 eggs (5 of each color), a diamond sword kit (3 diamonds, a stick and an oak log), a happy ghast egg with a green harness, or a warden egg with a sculk catalyst. The other 9% is 1 random item from a pool of tools, weapons, armor, spawn eggs, beds and similar.",
-        "src": "games/logic/Towers.java:557-575, configurable/sectors/TowersItems.java:18-36"
+        "src": "games/logic/Towers.java:557-575, configurable/sectors/game/towers/TowersItems.java:19-37"
       },
       {
         "text": "Right-click a spawn egg in the air to throw it. The mob spawns where the egg lands and counts as yours.",
@@ -272,25 +276,25 @@
       },
       {
         "text": "You are out when you die, from any cause. The death message is shown to the game, you stay alive as an invisible flying spectator, and you can't interact, drop items or pick items up. Spectators who drift below the arena are pulled back above it.",
-        "src": "games/logic/Towers.java:270-281, games/logic/Towers.java:674-684, games/logic/Towers.java:515-523, games/logic/Towers.java:715-804, games/logic/Towers.java:324-335, games/logic/Towers.java:421-444, games/logic/Towers.java:496-512"
+        "src": "games/logic/Towers.java:270-281, games/logic/Towers.java:676-686, games/logic/Towers.java:515-523, games/logic/Towers.java:717-806, games/logic/Towers.java:324-335, games/logic/Towers.java:421-444, games/logic/Towers.java:496-512"
       },
       {
         "text": "The game ends when 1 player (or nobody) is left, or when the 8 minute timer in your action bar runs out. Scores are shown, a 15 second \"Game Over\" bar runs, and the whole arena is cleared.",
-        "src": "games/logic/Towers.java:168-175, games/logic/Towers.java:99, games/logic/Towers.java:669-670, games/logic/Towers.java:200-251"
+        "src": "games/logic/Towers.java:168-175, games/logic/Towers.java:99, games/logic/Towers.java:671-672, games/logic/Towers.java:200-251"
       },
       {
         "text": "In the Escalation version (called \"Escalation Towers\"), the bar adds \"The floor will rise!\", red particles mark the floor height, and the floor rises 1 block with every item drop. While you are at or below it, you take 5 damage (2.5 hearts) every 0.1 seconds, and your action bar shows \"Floor: <your height>/<floor height>\".",
-        "src": "games/logic/Towers.java:99, games/logic/Towers.java:110, games/logic/Towers.java:183-191, games/logic/Towers.java:536-548, games/logic/Towers.java:658-662, games/logic/Towers.java:669, games/logic/Towers.java:76, utility/scheduler/AsynchronousRunnable.java:34-35"
+        "src": "games/logic/Towers.java:99, games/logic/Towers.java:110, games/logic/Towers.java:183-191, games/logic/Towers.java:536-548, games/logic/Towers.java:660-664, games/logic/Towers.java:671, games/logic/Towers.java:76, utility/scheduler/AsynchronousRunnable.java:34-35"
       }
     ],
     "scoring": [
       {
         "text": "Kill: 1 point for whoever last damaged the player who died, whether that was them or a mob they threw. The killer also gets the victim's whole inventory dropped at their feet.",
-        "src": "games/logic/Towers.java:284-322, games/logic/Towers.java:691-706"
+        "src": "games/logic/Towers.java:284-322, games/logic/Towers.java:693-708"
       },
       {
         "text": "Dying: 1 point for you.",
-        "src": "games/logic/Towers.java:686-689"
+        "src": "games/logic/Towers.java:688-691"
       },
       {
         "text": "Lasting to the end: 1 point for every player still in.",
@@ -298,7 +302,7 @@
       },
       {
         "text": "So your final score is your kills plus 1. Your score is also added to your all-time Towers leaderboard score.",
-        "src": "games/logic/Towers.java:113-119, model/EventPlayer.java:171-173"
+        "src": "games/logic/Towers.java:113-119, model/EventPlayer.java:168-170"
       }
     ],
     "tokens": [
@@ -308,22 +312,26 @@
       },
       {
         "text": "Examples: no kills gets you 1 token whether you die first or win. 3 kills and then a death gets you 4. 8 kills or more gets you the cap of 9.",
-        "src": "games/logic/Towers.java:200-203, games/logic/Towers.java:686-696, games/tokenformula/FlatIntTokenFormula.java:17-20"
+        "src": "games/logic/Towers.java:200-203, games/logic/Towers.java:688-698, games/tokenformula/FlatIntTokenFormula.java:17-20"
       },
       {
         "text": "You are paid once, when the game ends, and spectators are paid too. If you leave with /event quit while still alive, you are paid right then, but only for your kills, since you haven't earned the death or survival point yet.",
-        "src": "games/interfaces/InventoryUnifiedMinigame.java:73-91, games/interfaces/InventoryUnifiedMinigame.java:100-118, games/logic/Towers.java:200-203, games/logic/Towers.java:686-689"
+        "src": "games/interfaces/InventoryUnifiedMinigame.java:73-88, games/interfaces/InventoryUnifiedMinigame.java:99-117, games/logic/Towers.java:200-203, games/logic/Towers.java:688-691"
+      },
+      {
+        "text": "If the server sees you AFK for 6 minutes, a warning bossbar counts you down, and at 7 minutes you are removed from the game and get no tokens. This also counts while you spectate after dying, so move now and then. Bedrock players are skipped.",
+        "src": "games/interfaces/Minigame.java:379, games/interfaces/Minigame.java:382-408, games/interfaces/Minigame.java:458-464, games/interfaces/models/InactivitySettings.java:18, games/interfaces/models/InactivitySettings.java:26-29, games/interfaces/models/InactivitySettings.java:37-39, games/interfaces/InventoryUnifiedMinigame.java:112-114, utility/SoftSleepyAPI.java:22-25"
       },
       {
         "text": "Staff can start a game with a token multiplier (applied after the 9 cap), a flat amount for everyone, or no tokens, and chat announces it. Then the server-wide multiplier is applied, rounded up, and you get at most 20 tokens from one payout.",
-        "src": "games/interfaces/TokenFormula.java:36, games/interfaces/TokenPayout.java:30-36, games/MinigameManager.java:64, games/MinigameManager.java:86-93, items/TokenExchanging.java:38-52"
+        "src": "games/interfaces/TokenFormula.java:36, games/interfaces/TokenPayout.java:30-36, games/interfaces/Minigame.java:346, games/interfaces/Minigame.java:632-640, items/TokenExchanging.java:38-52"
       }
     ],
     "numbers": [
       {
         "label": "Minimum players",
         "value": "2",
-        "src": "games/interfaces/Minigame.java:420-423"
+        "src": "games/interfaces/Minigame.java:603-606"
       },
       {
         "label": "Game length",
@@ -353,7 +361,7 @@
       {
         "label": "Points",
         "value": "1 per kill, plus 1 for dying or surviving",
-        "src": "games/logic/Towers.java:686-696, games/logic/Towers.java:200-203"
+        "src": "games/logic/Towers.java:688-698, games/logic/Towers.java:200-203"
       },
       {
         "label": "Token cap",
@@ -363,17 +371,17 @@
       {
         "label": "Escalation floor",
         "value": "Starts 10 blocks below the pillar tops, rises 1 block per drop, 5 damage every 0.1 seconds",
-        "src": "games/logic/Towers.java:110, games/logic/Towers.java:548, games/logic/Towers.java:658-661, games/logic/Towers.java:76"
+        "src": "games/logic/Towers.java:110, games/logic/Towers.java:548, games/logic/Towers.java:660-663, games/logic/Towers.java:76"
       }
     ],
     "tips": [
       {
         "text": "Lasting to the end is worth the same 1 point as dying, so kills are the only way to earn more than 1 token.",
-        "src": "games/logic/Towers.java:200-203, games/logic/Towers.java:686-696"
+        "src": "games/logic/Towers.java:200-203, games/logic/Towers.java:688-698"
       },
       {
         "text": "Kill credit goes to the last player who damaged someone, and it isn't cleared over time. A hit that knocks a player off their tower counts as your kill when they die.",
-        "src": "games/logic/Towers.java:318-321, games/logic/Towers.java:691-698"
+        "src": "games/logic/Towers.java:318-321, games/logic/Towers.java:693-700"
       },
       {
         "text": "Throw spawn eggs by right-clicking the air. Using one on a block spawns a normal mob that isn't tied to you, so its hits give you no kill credit.",
@@ -381,21 +389,21 @@
       },
       {
         "text": "The diamond sword kit is a crafting kit: turn the log into planks and a crafting table, then craft a diamond sword from 2 diamonds and the stick.",
-        "src": "configurable/sectors/TowersItems.java:26, games/logic/Towers.java:389-390"
+        "src": "configurable/sectors/game/towers/TowersItems.java:27, games/logic/Towers.java:389-390"
       },
       {
         "text": "Drops are thrown at your eye position as an item rather than put straight into your inventory, so stay on your tower when the \"Next drop in\" bar runs out.",
-        "src": "games/logic/Towers.java:645-649"
+        "src": "games/logic/Towers.java:647-651"
       }
     ],
     "quirks": [
       {
         "text": "The \"has won!\" title at the end names the player with the most points, which is the player with the most kills, not necessarily the last one standing.",
-        "src": "games/models/Scoreboard.java:79-91, games/logic/Towers.java:237"
+        "src": "games/models/Scoreboard.java:87-98, games/logic/Towers.java:237"
       },
       {
         "text": "If the player who last hit you has already left the game, nobody gets the kill and your items are lost instead of going to anyone.",
-        "src": "games/logic/Towers.java:261-265, games/logic/Towers.java:677-678, games/logic/Towers.java:695-705"
+        "src": "games/logic/Towers.java:261-265, games/logic/Towers.java:679-680, games/logic/Towers.java:697-707"
       },
       {
         "text": "A mob thrown by a player who is now out (or a tagged mob whose owner is gone) dies as soon as it hits someone.",
@@ -403,29 +411,29 @@
       },
       {
         "text": "The random single-item pool includes every spawn egg in the game, so a large share of those drops are spawn eggs.",
-        "src": "configurable/sectors/TowersItems.java:31-35, configurable/sectors/TowersItems.java:43-57"
+        "src": "configurable/sectors/game/towers/TowersItems.java:32-36, configurable/sectors/game/towers/TowersItems.java:44-58"
       },
       {
         "text": "Map configs have Ivory and Scarlet center points that Towers never uses, and there is a separate Towers token formula with a cap of 15 that the game doesn't use (it uses the 9 cap).",
-        "src": "configurable/sectors/TowersDefinition.java:16-17, games/tokenformula/TowersTokenFormula.java:5-9, games/logic/Towers.java:108"
+        "src": "configurable/sectors/game/towers/TowersDefinition.java:23-25, games/tokenformula/TowersTokenFormula.java:5-9, games/logic/Towers.java:108"
       }
     ],
     "config": [
       {
         "text": "Escalation mode is off by default, so the regular game is plain Towers.",
-        "src": "configurable/sectors/TowersDefinition.java:18, games/logic/Towers.java:99"
+        "src": "configurable/sectors/game/towers/TowersDefinition.java:26, games/logic/Towers.java:99"
       },
       {
         "text": "Pillars must fit within 250 blocks of the center by default.",
-        "src": "configurable/sectors/TowersDefinition.java:14, games/interfaces/structures/BoundCircularStructureGrid.java:92-101"
+        "src": "configurable/sectors/game/towers/TowersDefinition.java:19, games/interfaces/structures/BoundCircularStructureGrid.java:92-101"
       },
       {
         "text": "The 10 kits and the single-item pool are the defaults and can be changed per map.",
-        "src": "configurable/sectors/TowersDefinition.java:19, configurable/sectors/TowersItems.java:18-36"
+        "src": "configurable/sectors/game/towers/TowersDefinition.java:27, configurable/sectors/game/towers/TowersItems.java:19-37"
       },
       {
         "text": "The server-wide token multiplier is 1.0 by default.",
-        "src": "configurable/Config.java:42-43, items/TokenExchanging.java:38"
+        "src": "configurable/Config.java:33-34, items/TokenExchanging.java:38"
       }
     ],
     "storyboard": {
@@ -446,12 +454,12 @@
         {
           "caption": "Knock players off their towers",
           "sub": "When a player dies, whoever hit them last gets the kill and their whole inventory.",
-          "src": "games/logic/Towers.java:284-322, games/logic/Towers.java:691-706"
+          "src": "games/logic/Towers.java:284-322, games/logic/Towers.java:693-708"
         },
         {
           "caption": "Your tokens are your kills + 1",
           "sub": "The +1 is for dying or for lasting to the end, so only kills earn more. Up to 9.",
-          "src": "games/logic/Towers.java:200-203, games/logic/Towers.java:686-696, games/logic/Towers.java:108, games/tokenformula/FlatIntTokenFormula.java:17-20"
+          "src": "games/logic/Towers.java:200-203, games/logic/Towers.java:688-698, games/logic/Towers.java:108, games/tokenformula/FlatIntTokenFormula.java:17-20"
         }
       ]
     }
@@ -465,210 +473,218 @@
     "howToPlay": [
       {
         "text": "Join with /event join while the queue is open (90 seconds by default). At least 2 players are needed. You wait in the lobby, and your inventory is saved and cleared when the game starts and given back when it ends.",
-        "src": "games/MinigameManager.java:63, games/MinigameManager.java:95-97, games/interfaces/Minigame.java:130-146, games/interfaces/Minigame.java:420-423, games/logic/TNTRun.java:241-244, games/interfaces/InventoryUnifiedMinigame.java:38-62, games/interfaces/InventoryUnifiedMinigame.java:73-91"
+        "src": "games/interfaces/Minigame.java:344-345, games/MinigameManager.java:81-83, games/interfaces/Minigame.java:143-159, games/interfaces/Minigame.java:603-606, games/logic/TNTRun.java:245-248, games/interfaces/InventoryUnifiedMinigame.java:38-62, games/interfaces/InventoryUnifiedMinigame.java:73-88"
       },
       {
         "text": "The arena is rebuilt from scratch, then everyone is teleported in and a 10 second \"Starting in\" bar runs. When it ends, chat says \"TNT Run started!\" and the floor starts to fall apart.",
-        "src": "games/logic/TNTRun.java:153-171, games/logic/TNTRun.java:254-271"
+        "src": "games/logic/TNTRun.java:164-172, games/logic/TNTRun.java:258-275"
       },
       {
         "text": "Any block affected by gravity (like sand or gravel) that you step on disappears 1 second later, and if there is TNT directly under it, the TNT goes too. Other blocks never disappear. Standing still doesn't stop it, because the game also marks the blocks under your feet 4 times a second.",
-        "src": "games/logic/TNTRun.java:351-370, games/logic/TNTRun.java:343-348, games/logic/TNTRun.java:311-341, games/logic/TNTRun.java:288-309, games/logic/TNTRun.java:424"
+        "src": "games/logic/TNTRun.java:356-375, games/logic/TNTRun.java:348-353, games/logic/TNTRun.java:316-346, games/logic/TNTRun.java:292-314, games/logic/TNTRun.java:429"
       },
       {
         "text": "Powerups appear on the floor as small spinning items. Walk into one to pick it up, then right-click it to use it.",
-        "src": "games/logic/TNTRun.java:600-618, games/logic/TNTRun.java:668-685, games/logic/TNTRun.java:687-718, games/logic/TNTRun.java:720-746, games/logic/TNTRun.java:558-564"
+        "src": "games/logic/TNTRun.java:604-621, games/logic/TNTRun.java:687-703, games/logic/TNTRun.java:705-735, games/logic/TNTRun.java:737-763, games/logic/TNTRun.java:562-568"
       },
       {
         "text": "The powerups are Slow Falling (phantom membrane), Jump & Speed (rabbit foot), Small Updraft (feather) and Big Updraft (firework rocket), which launch you upward, and Temporary Platform (bedrock), which puts a 3 by 3 bedrock platform under you.",
-        "src": "games/logic/TNTRun.java:498-543, games/interfaces/packet/BlockAnimationPlatform.java:62-96, games/interfaces/packet/BlockAnimationPlatformConfig.java:16-25"
+        "src": "games/logic/TNTRun.java:503-548, games/interfaces/packet/BlockAnimationPlatform.java:62-96, games/interfaces/packet/BlockAnimationPlatformConfig.java:16-25"
+      },
+      {
+        "text": "When the game starts you are also handed 1 of each of the 5 powerups, but they only work once \"TNT Run started!\" shows.",
+        "src": "games/logic/TNTRun.java:152-161, games/logic/TNTRun.java:772-784, games/logic/TNTRun.java:737-745, games/logic/TNTRun.java:268-270"
       },
       {
         "text": "You are out when you drop below the elimination height. Chat says \"You have been eliminated!\", you're sent back into the arena as a flying spectator, and you're invisible and hidden from the other players.",
-        "src": "games/logic/TNTRun.java:419-421, games/logic/TNTRun.java:431-439, games/logic/TNTRun.java:442-495"
+        "src": "games/logic/TNTRun.java:424-426, games/logic/TNTRun.java:436-444, games/logic/TNTRun.java:447-500"
       },
       {
         "text": "The game ends when 1 player (or nobody) is left, or when the \"Time Left\" bar runs out (\"Time is up!\"). The top 5 scores are shown, then a 10 second \"Game Over\" bar runs before you are sent back.",
-        "src": "games/logic/TNTRun.java:193-195, games/logic/TNTRun.java:273-286, games/logic/TNTRun.java:223-237, games/models/Scoreboard.java:59-77"
+        "src": "games/logic/TNTRun.java:197-199, games/logic/TNTRun.java:277-290, games/logic/TNTRun.java:227-241, games/models/Scoreboard.java:59-77"
       }
     ],
     "scoring": [
       {
         "text": "You get 1 point every 0.25 seconds you are still in the game, so 4 points per second.",
-        "src": "games/logic/TNTRun.java:113, games/logic/TNTRun.java:185-191, games/logic/TNTRun.java:426-427, utility/scheduler/AsynchronousRunnable.java:34-35"
+        "src": "games/logic/TNTRun.java:110, games/logic/TNTRun.java:189-195, games/logic/TNTRun.java:431-432, utility/scheduler/AsynchronousRunnable.java:34-35"
       },
       {
         "text": "Points start as soon as the arena is ready, so the 10 second \"Starting in\" countdown already gives everyone about 40 points.",
-        "src": "games/logic/TNTRun.java:162-170, games/logic/TNTRun.java:175-191, games/logic/TNTRun.java:407-428, games/logic/TNTRun.java:259-267"
+        "src": "games/logic/TNTRun.java:164-172, games/logic/TNTRun.java:177-195, games/logic/TNTRun.java:412-433, games/logic/TNTRun.java:263-271"
       },
       {
         "text": "Your score stops when you are eliminated. There is no bonus for winning, so your score is simply how long you lasted.",
-        "src": "games/logic/TNTRun.java:483-495, games/logic/TNTRun.java:145-149"
+        "src": "games/logic/TNTRun.java:488-500, games/logic/TNTRun.java:142-146"
       },
       {
         "text": "Your score is also added to your all-time TNT Run leaderboard score.",
-        "src": "games/logic/TNTRun.java:148, model/EventPlayer.java:171-173"
+        "src": "games/logic/TNTRun.java:145, model/EventPlayer.java:168-170"
       }
     ],
     "tokens": [
       {
         "text": "Tokens = your score divided by 90, rounded down, up to 12. Since you score 4 points a second, that's 1 token for every 22.5 seconds you last.",
-        "src": "games/logic/TNTRun.java:100, games/logic/TNTRun.java:145-147, games/tokenformula/DivisibleTokenFormula.java:21-28"
+        "src": "games/logic/TNTRun.java:97, games/logic/TNTRun.java:142-144, games/tokenformula/DivisibleTokenFormula.java:21-28"
       },
       {
         "text": "Examples: out 1 minute after \"TNT Run started!\" is about 40 + 240 = 280 points, so 3 tokens. Lasting 2 minutes is about 520 points, so 5 tokens. The cap of 12 needs 1,080 points, about 4 minutes 20 seconds after the start.",
-        "src": "games/tokenformula/DivisibleTokenFormula.java:21-28, games/logic/TNTRun.java:100, games/logic/TNTRun.java:426-427"
+        "src": "games/tokenformula/DivisibleTokenFormula.java:21-28, games/logic/TNTRun.java:97, games/logic/TNTRun.java:431-432"
       },
       {
         "text": "You are paid once, when the game ends, and eliminated spectators are paid too. If you leave with /event quit during the game, you are paid right then for your score so far.",
-        "src": "games/interfaces/InventoryUnifiedMinigame.java:73-91, games/interfaces/InventoryUnifiedMinigame.java:100-118, games/interfaces/TokenFormula.java:35-48"
+        "src": "games/interfaces/InventoryUnifiedMinigame.java:73-88, games/interfaces/InventoryUnifiedMinigame.java:99-117, games/interfaces/TokenFormula.java:35-48"
       },
       {
         "text": "Staff can start a game with a token multiplier (applied after the 12 cap), a flat amount for everyone, or no tokens, and chat announces it. Then the server-wide multiplier is applied, rounded up, and you get at most 20 tokens from one payout.",
-        "src": "games/interfaces/TokenFormula.java:36, games/interfaces/TokenPayout.java:30-36, games/MinigameManager.java:64, games/MinigameManager.java:86-93, items/TokenExchanging.java:38-52"
+        "src": "games/interfaces/TokenFormula.java:36, games/interfaces/TokenPayout.java:30-36, games/interfaces/Minigame.java:346, games/interfaces/Minigame.java:632-640, items/TokenExchanging.java:38-52"
       }
     ],
     "numbers": [
       {
         "label": "Minimum players",
         "value": "2",
-        "src": "games/interfaces/Minigame.java:420-423"
+        "src": "games/interfaces/Minigame.java:603-606"
       },
       {
         "label": "Block delay",
         "value": "1 second (20 ticks) after you first step on it",
-        "src": "configurable/sectors/TNTRunDefinition.java:16, games/logic/TNTRun.java:343-348"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:19, games/logic/TNTRun.java:348-353"
       },
       {
         "label": "Score rate",
         "value": "4 points per second",
-        "src": "games/logic/TNTRun.java:185-191, utility/scheduler/AsynchronousRunnable.java:34-35"
+        "src": "games/logic/TNTRun.java:189-195, utility/scheduler/AsynchronousRunnable.java:34-35"
       },
       {
         "label": "Points per token",
         "value": "90 (22.5 seconds)",
-        "src": "games/logic/TNTRun.java:100"
+        "src": "games/logic/TNTRun.java:97"
       },
       {
         "label": "Token cap",
         "value": "12",
-        "src": "games/logic/TNTRun.java:100"
+        "src": "games/logic/TNTRun.java:97"
       },
       {
         "label": "Start countdown",
         "value": "10 seconds",
-        "src": "games/logic/TNTRun.java:259-264"
+        "src": "games/logic/TNTRun.java:263-268"
       },
       {
         "label": "Game length",
         "value": "7 minutes at most (the \"Time Left\" bar starts at 410 seconds)",
-        "src": "games/logic/TNTRun.java:113, games/logic/TNTRun.java:273-279"
+        "src": "games/logic/TNTRun.java:110, games/logic/TNTRun.java:277-283"
       },
       {
         "label": "Elimination height",
         "value": "Below Y 0",
-        "src": "configurable/sectors/TNTRunDefinition.java:17, games/logic/TNTRun.java:419"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:20, games/logic/TNTRun.java:424"
       },
       {
         "label": "Powerups on the map",
         "value": "New ones stop spawning once 36 are out",
-        "src": "configurable/sectors/TNTRunDefinition.java:20, games/logic/TNTRun.java:180-182"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:23, games/logic/TNTRun.java:182-186"
       },
       {
         "label": "Powerup odds",
         "value": "Slow Falling 33%, Jump & Speed 28%, Small Updraft 22%, Temporary Platform 11%, Big Updraft 6%",
-        "src": "configurable/sectors/TNTRunDefinition.java:33-39, games/logic/TNTRun.java:577-597"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:37-43, games/logic/TNTRun.java:581-601"
       },
       {
         "label": "Slow Falling",
         "value": "7 seconds",
-        "src": "configurable/sectors/TNTRunDefinition.java:24, games/logic/TNTRun.java:519-525"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:27, games/logic/TNTRun.java:524-530"
       },
       {
         "label": "Jump & Speed",
         "value": "Jump Boost II and Speed I for 7 seconds",
-        "src": "configurable/sectors/TNTRunDefinition.java:25, games/logic/TNTRun.java:527-534"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:28, games/logic/TNTRun.java:532-539"
       },
       {
         "label": "Temporary Platform",
         "value": "3 by 3 bedrock for 7 seconds, cracking during the last 2",
-        "src": "configurable/sectors/TNTRunDefinition.java:26, games/logic/TNTRun.java:133-134, games/interfaces/packet/BlockAnimationPlatform.java:105-113"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:29, games/logic/TNTRun.java:131, games/interfaces/packet/BlockAnimationPlatform.java:105-113"
       },
       {
         "label": "Updraft strength",
         "value": "Small 0.9, Big 1.6 (upward speed)",
-        "src": "configurable/sectors/TNTRunDefinition.java:27-28, games/logic/TNTRun.java:499-518"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:30-31, games/logic/TNTRun.java:504-523"
       },
       {
         "label": "Updraft cooldown",
         "value": "1 second, shared by both updrafts",
-        "src": "configurable/sectors/TNTRunDefinition.java:29, games/logic/TNTRun.java:769-778"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:32, games/logic/TNTRun.java:786-795"
       }
     ],
     "tips": [
       {
         "text": "Keep moving onto fresh blocks. Each block lasts 1 second from the moment you first touch it, and stepping back onto it doesn't reset that.",
-        "src": "games/logic/TNTRun.java:343-348, games/logic/TNTRun.java:288-309"
+        "src": "games/logic/TNTRun.java:348-353, games/logic/TNTRun.java:292-314"
       },
       {
         "text": "Score is only time alive, so surviving is the whole game. Every 22.5 seconds you last is another token.",
-        "src": "games/logic/TNTRun.java:426-427, games/logic/TNTRun.java:100"
+        "src": "games/logic/TNTRun.java:431-432, games/logic/TNTRun.java:97"
       },
       {
         "text": "Temporary Platform is the only safe ground: bedrock isn't a gravity block, so it doesn't crumble for its 7 seconds. Watch for the cracking in the last 2.",
-        "src": "games/logic/TNTRun.java:536-542, games/logic/TNTRun.java:366-367, games/interfaces/packet/BlockAnimationPlatformConfig.java:16-25, games/logic/TNTRun.java:134"
+        "src": "games/logic/TNTRun.java:541-547, games/logic/TNTRun.java:371-372, games/interfaces/packet/BlockAnimationPlatformConfig.java:16-25, games/logic/TNTRun.java:131"
+      },
+      {
+        "text": "Your starting powerups are a safety net. Save the Temporary Platform and the updrafts for when the floor under you is about to run out.",
+        "src": "games/logic/TNTRun.java:152-161, games/logic/TNTRun.java:503-548"
       },
       {
         "text": "Both updrafts share a 1 second cooldown. If you use one too soon you hear a low note and keep the item, so you can just try again.",
-        "src": "games/logic/TNTRun.java:769-778, games/logic/TNTRun.java:744-745"
+        "src": "games/logic/TNTRun.java:786-795, games/logic/TNTRun.java:761-762"
       },
       {
         "text": "You can only pick up a powerup by walking onto a floor block next to it, not while you're in the air or on a bedrock platform.",
-        "src": "games/logic/TNTRun.java:363-373, games/logic/TNTRun.java:687-696"
+        "src": "games/logic/TNTRun.java:368-378, games/logic/TNTRun.java:705-714"
       }
     ],
     "quirks": [
       {
         "text": "The 10 second countdown already counts toward your score, while the elimination check only turns on after it.",
-        "src": "games/logic/TNTRun.java:175-191, games/logic/TNTRun.java:419-427, games/logic/TNTRun.java:259-267"
+        "src": "games/logic/TNTRun.java:177-195, games/logic/TNTRun.java:424-432, games/logic/TNTRun.java:263-271"
       },
       {
         "text": "The 7 minute limit counts from the moment the game starts, before the arena is built, but the \"Time Left\" bar only starts after the countdown. So the game can end a little before the bar reaches 0.",
-        "src": "games/interfaces/Minigame.java:158-163, games/interfaces/Minigame.java:286-291, games/logic/TNTRun.java:113, games/logic/TNTRun.java:273-279"
+        "src": "games/interfaces/Minigame.java:178, games/interfaces/Minigame.java:186, games/interfaces/Minigame.java:369-373, games/logic/TNTRun.java:110, games/logic/TNTRun.java:277-283"
       },
       {
-        "text": "Powerups can appear on any floor layer, not just the top one: any air block sitting on a gravity block can get one.",
-        "src": "games/logic/TNTRun.java:633-656"
+        "text": "Powerups can appear on any floor layer, not just the top one: any open spot (not a slab) sitting on top of a gravity block can get one.",
+        "src": "games/logic/TNTRun.java:639-650, games/logic/TNTRun.java:666-675"
       },
       {
         "text": "A code comment says the token formula still needs fixing.",
-        "src": "games/logic/TNTRun.java:99-100"
+        "src": "games/logic/TNTRun.java:96-97"
       },
       {
         "text": "The game's damage protection only works while the join queue is open, not during play.",
-        "src": "games/events/MinigamePreventDamageListener.java:19-29, games/logic/TNTRun.java:113-114"
+        "src": "games/events/MinigamePreventDamageListener.java:24-34, games/logic/TNTRun.java:110-111"
       }
     ],
     "config": [
       {
         "text": "By default the block delay is 1 second and the elimination height is Y 0.",
-        "src": "configurable/sectors/TNTRunDefinition.java:16-17"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:19-20"
       },
       {
         "text": "Powerup odds, how many can be out at once (36), and the spawn attempts per tick are set per map.",
-        "src": "configurable/sectors/TNTRunDefinition.java:19-22, configurable/sectors/TNTRunDefinition.java:33-39"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:22-25, configurable/sectors/game/TNTRunDefinition.java:37-43"
       },
       {
         "text": "Powerup durations (7 seconds each), updraft strengths and the updraft cooldown are set per map.",
-        "src": "configurable/sectors/TNTRunDefinition.java:24-29"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:27-32"
       },
       {
         "text": "The arena layout comes from a map file (tntrun.schem by default).",
-        "src": "configurable/sectors/TNTRunDefinition.java:31"
+        "src": "configurable/sectors/game/TNTRunDefinition.java:35"
       },
       {
         "text": "The server-wide token multiplier is 1.0 by default.",
-        "src": "configurable/Config.java:42-43, items/TokenExchanging.java:38"
+        "src": "configurable/Config.java:33-34, items/TokenExchanging.java:38"
       }
     ],
     "storyboard": {
@@ -682,17 +698,17 @@
         {
           "caption": "Keep running",
           "sub": "You score 4 points every second you are still in the game.",
-          "src": "games/logic/TNTRun.java:185-191, utility/scheduler/AsynchronousRunnable.java:34-35"
+          "src": "games/logic/TNTRun.java:189-195, utility/scheduler/AsynchronousRunnable.java:34-35"
         },
         {
           "caption": "The floor falls behind you",
           "sub": "Each block you step on disappears 1 second later, so keep moving onto fresh ones.",
-          "src": "games/logic/TNTRun.java:343-348, games/logic/TNTRun.java:351-370"
+          "src": "games/logic/TNTRun.java:348-353, games/logic/TNTRun.java:356-375"
         },
         {
           "caption": "Every 90 points is 1 token",
           "sub": "That's 1 token for every 22.5 seconds you last, up to 12.",
-          "src": "games/logic/TNTRun.java:100, games/tokenformula/DivisibleTokenFormula.java:21-28"
+          "src": "games/logic/TNTRun.java:97, games/tokenformula/DivisibleTokenFormula.java:21-28"
         }
       ]
     }

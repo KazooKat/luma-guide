@@ -10,6 +10,7 @@ import { Plan } from './jobs/Plan';
 import { resolveRate } from './jobs/rate';
 import { HoursChart, Milestones } from './jobs/HoursChart';
 import { Perks } from './jobs/Perks';
+import { PayChange } from './jobs/PayChange';
 import { fmtOffset, ScaleMark, ScalingBadge } from './jobs/ScalingBadge';
 import { resolveChain } from './jobs/BrewSetup';
 import { materialOf, shortestChainTo } from '../lib/brewing';
@@ -128,6 +129,8 @@ function JobView({ job }: { job: Job }) {
           </div>
         </div>
       </section>
+
+      <PayChange job={job} />
 
       <div class="job-layout">
         <ItemTable job={job} level={from} selectedKey={itemKey(item)} onSelect={selectItem} />
