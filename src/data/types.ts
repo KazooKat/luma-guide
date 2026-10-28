@@ -222,6 +222,8 @@ export interface EventData {
   charm: { itemId: string; src: string; requirementSrc: string };
   /** Trick or treat candy, read from items/candy/ (null for events without it). */
   candy: EventCandy | null;
+  /** SkyWars default loot tables, read from SkyWarsLoot.java (null for events without SkyWars). */
+  skywarsLoot: { pools: import('../lib/loot').LootPool[]; rollSrc: string; pickSrc: string } | null;
   minigames: EventMinigame[];
 }
 

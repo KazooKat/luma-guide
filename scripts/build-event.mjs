@@ -39,6 +39,13 @@ function findAll(file, re) {
   return (lines(file) ?? []).flatMap((l, i) => { const m = re.exec(l); return m ? [{ m, line: i + 1, src: `${file}:${i + 1}` }] : []; });
 }
 const num = (s) => Number(String(s).replace(/_/g, ''));
+/** "file:a-b" from a method's first line (a find() result) to its closing brace at 4 spaces of indent, or null. */
+function methodSpan(file, head, what) {
+  if (!head) return null;
+  const end = lines(file).findIndex((l, i) => i >= head.line && /^ {4}\}\s*$/.test(l)) + 1;
+  if (end < 1) { errors.push(`${what}: end of method not found in ${file}`); return null; }
+  return `${file}:${head.line}-${end}`;
+}
 const span = (a, b) => (a && b ? `${a.src.split(':')[0]}:${Math.min(a.line, b.line)}-${Math.max(a.line, b.line)}` : a?.src ?? b?.src ?? '');
 
 // ---- tokens --------------------------------------------------------------------------------------------------
@@ -118,8 +125,7 @@ if (existsSync(PKG + CANDY_DIR)) {
   const bedrock = find(CI, /override fun onRightClick/, 'candy bedrock right click');
   // The Bedrock path: right click eats the candy for Floodgate players. Cite the whole function, up to its closing brace.
   const floodgate = find(CI, /isFloodgate\) return$/, 'candy bedrock check');
-  const bedrockEnd = bedrock ? lines(CI).findIndex((l, i) => i >= bedrock.line && /^ {4}\}$/.test(l)) + 1 : 0;
-  if (bedrock && bedrockEnd < 1) errors.push(`${CI}: end of onRightClick not found`);
+  const bedrockSrc = methodSpan(CI, bedrock, 'candy bedrock right click');
   const strip = (s) => s.replace(/<[^>]+>/g, '');
   const items = readdirSync(PKG + CANDY_DIR).filter((f) => f.endsWith('.kt') && f !== 'CandyItem.kt').sort().map((f) => {
     const file = `${CANDY_DIR}/${f}`;
@@ -139,7 +145,56 @@ if (existsSync(PKG + CANDY_DIR)) {
     return { key: key?.m[1], name: name ? strip(name.m[1]) : f, src: key?.src, effects };
   });
   if (!items.length) errors.push(`${CANDY_DIR}: no candy found`);
-  if (orbChance && orbGive && pool && bedrock && floodgate && bedrockEnd > 0) candy = { soulOrbChance: Number(orbChance.m[1]), soulOrbSrc: span(orbChance, orbGive), rollSrc: pool.src, bedrockSrc: `${CI}:${bedrock.line}-${bedrockEnd}`, items };
+  if (orbChance && orbGive && pool && floodgate && bedrockSrc) candy = { soulOrbChance: Number(orbChance.m[1]), soulOrbSrc: span(orbChance, orbGive), rollSrc: pool.src, bedrockSrc, items };
+}
+
+// ---- SkyWars loot tables -------------------------------------------------------------------------------------
+// The 4 default loot pools from SkyWarsLoot.java. A package inside an `entry("x", Map.ofEntries(` category is one of
+// that category's guaranteed picks; every other package in a pool is a random roll. Optional (older events have no
+// SkyWars); once the file exists, every LootPackage must be read or the build fails.
+const SWL = 'configurable/sectors/game/skywars/SkyWarsLoot.java';
+const SWC = 'games/logic/skywars/LootChests.java';
+let skywarsLoot = null;
+if (lines(SWL)) {
+  const pools = [];
+  let pool = null;
+  let category = null;
+  for (const [i, l] of lines(SWL).entries()) {
+    const start = /private LootPool (\w+) = new LootPool\(/.exec(l);
+    if (start) { pool = { name: start[1], guaranteed: [], random: [], minRolls: null, maxRolls: null, start: i + 1 }; continue; }
+    if (!pool) continue;
+    const cat = /entry\("(\w+)",\s*Map\.ofEntries\(/.exec(l);
+    if (cat) { category = { name: cat[1], packages: [] }; pool.guaranteed.push(category); continue; }
+    const pkg = /entry\("(\w+)",\s*new LootPackage\((\d+),\s*(.*)\)\),?\s*$/.exec(l);
+    if (pkg) {
+      const items = [...pkg[3].matchAll(/of\(Material\.([A-Z_]+)(?:,\s*(\d+))?\)/g)].map((m) => ({ material: m[1].toLowerCase(), count: Number(m[2] ?? 1) }));
+      if (!items.length) errors.push(`${SWL}:${i + 1}: loot package "${pkg[1]}" has no items`);
+      (category ? category.packages : pool.random).push({ key: pkg[1], weight: Number(pkg[2]), items, src: `${SWL}:${i + 1}` });
+      continue;
+    }
+    if (category && /^\s*\)\),?\s*$/.test(l)) { category = null; continue; }
+    const rolls = /^\s+(\d+),\s*(\d+)\s*$/.exec(l);
+    if (rolls) { pool.minRolls = Number(rolls[1]); pool.maxRolls = Number(rolls[2]); continue; }
+    if (/^\s{4}\);\s*$/.test(l)) { pool.src = `${SWL}:${pool.start}-${i + 1}`; delete pool.start; pools.push(pool); pool = null; }
+  }
+  const written = lines(SWL).filter((l) => /new LootPackage\(/.test(l)).length;
+  const read = pools.reduce((a, p) => a + p.random.length + p.guaranteed.reduce((b, c) => b + c.packages.length, 0), 0);
+  if (written !== read) errors.push(`${SWL}: ${written} LootPackage lines but ${read} read`);
+  for (const p of pools) {
+    if (!p.random.length || p.minRolls == null || p.maxRolls < p.minRolls) errors.push(`${SWL}: pool ${p.name} has no random rolls or bad roll counts`);
+    for (const c of p.guaranteed) if (!c.packages.length) errors.push(`${SWL}: pool ${p.name} category ${c.name} is empty`);
+  }
+  // Which chest block uses which pool (LootChests.poolFor), most plain tier first.
+  const tiers = findAll(SWC, /case (\w+_CHEST)(?:,\s*\w+)?\s*->\s*loot\.get(\w+)\(\)/).map(({ m, src }) => ({ chest: m[1].toLowerCase(), pool: m[2].toLowerCase(), src }));
+  for (const t of tiers) if (!pools.some((p) => p.name === t.pool)) errors.push(`${SWC}: chest ${t.chest} uses unknown pool ${t.pool}`);
+  if (tiers.length !== pools.length) errors.push(`${SWC}: expected ${pools.length} chest tiers, found ${tiers.length}`);
+  const roll = find(SWC, /private List<ItemStack> roll\(/, 'SkyWars loot roll');
+  const pick = find(SWC, /private LootPackage pick\(/, 'SkyWars weighted pick');
+  const rollSrc = methodSpan(SWC, roll, 'SkyWars loot roll');
+  const pickSrc = methodSpan(SWC, pick, 'SkyWars weighted pick');
+  if (rollSrc && pickSrc && tiers.length) {
+    skywarsLoot = { pools: tiers.map((t) => ({ ...pools.find((p) => p.name === t.pool), chest: t.chest, chestSrc: t.src })), rollSrc, pickSrc };
+  }
 }
 
 // ---- minigames -----------------------------------------------------------------------------------------------
@@ -295,6 +350,7 @@ const out = {
   },
   charm: { itemId: charm.m[1], src: charm.src, requirementSrc: charmNeed.src },
   candy,
+  skywarsLoot,
   minigames: constants.map((c) => {
     const g = [...guides.values()].find((x) => x.constant === c.constant);
     return { key: g?.key ?? c.constant.toLowerCase().replace(/_/g, '-'), constant: c.constant, name: c.name, aliases: c.aliases, src: c.src, formula: c.formula, guide: g ?? null };

@@ -578,6 +578,1105 @@
    }
   ]
  },
+ "skywarsLoot": {
+  "pools": [
+   {
+    "name": "common",
+    "guaranteed": [
+     {
+      "name": "blocks",
+      "packages": [
+       {
+        "key": "cobblestone",
+        "weight": 10,
+        "items": [
+         {
+          "material": "cobblestone",
+          "count": 32
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:23"
+       },
+       {
+        "key": "planks",
+        "weight": 10,
+        "items": [
+         {
+          "material": "oak_planks",
+          "count": 32
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:24"
+       },
+       {
+        "key": "stone_bricks",
+        "weight": 6,
+        "items": [
+         {
+          "material": "stone_bricks",
+          "count": 24
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:25"
+       },
+       {
+        "key": "wool",
+        "weight": 6,
+        "items": [
+         {
+          "material": "white_wool",
+          "count": 24
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:26"
+       }
+      ]
+     },
+     {
+      "name": "weapon",
+      "packages": [
+       {
+        "key": "stone_sword",
+        "weight": 10,
+        "items": [
+         {
+          "material": "stone_sword",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:29"
+       },
+       {
+        "key": "copper_sword",
+        "weight": 8,
+        "items": [
+         {
+          "material": "copper_sword",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:30"
+       },
+       {
+        "key": "stone_axe",
+        "weight": 5,
+        "items": [
+         {
+          "material": "stone_axe",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:31"
+       },
+       {
+        "key": "copper_axe",
+        "weight": 4,
+        "items": [
+         {
+          "material": "copper_axe",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:32"
+       },
+       {
+        "key": "stone_spear",
+        "weight": 4,
+        "items": [
+         {
+          "material": "stone_spear",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:33"
+       }
+      ]
+     }
+    ],
+    "random": [
+     {
+      "key": "bread",
+      "weight": 8,
+      "items": [
+       {
+        "material": "bread",
+        "count": 6
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:37"
+     },
+     {
+      "key": "baked_potato",
+      "weight": 7,
+      "items": [
+       {
+        "material": "baked_potato",
+        "count": 8
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:38"
+     },
+     {
+      "key": "porkchop",
+      "weight": 5,
+      "items": [
+       {
+        "material": "cooked_porkchop",
+        "count": 4
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:39"
+     },
+     {
+      "key": "copper_chestplate",
+      "weight": 4,
+      "items": [
+       {
+        "material": "copper_chestplate",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:40"
+     },
+     {
+      "key": "copper_leggings",
+      "weight": 5,
+      "items": [
+       {
+        "material": "copper_leggings",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:41"
+     },
+     {
+      "key": "copper_boots",
+      "weight": 6,
+      "items": [
+       {
+        "material": "copper_boots",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:42"
+     },
+     {
+      "key": "chainmail_boots",
+      "weight": 3,
+      "items": [
+       {
+        "material": "chainmail_boots",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:43"
+     },
+     {
+      "key": "stone_pickaxe",
+      "weight": 5,
+      "items": [
+       {
+        "material": "stone_pickaxe",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:44"
+     },
+     {
+      "key": "copper_pickaxe",
+      "weight": 3,
+      "items": [
+       {
+        "material": "copper_pickaxe",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:45"
+     },
+     {
+      "key": "snowballs",
+      "weight": 6,
+      "items": [
+       {
+        "material": "snowball",
+        "count": 16
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:46"
+     },
+     {
+      "key": "eggs",
+      "weight": 5,
+      "items": [
+       {
+        "material": "egg",
+        "count": 16
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:47"
+     },
+     {
+      "key": "arrows",
+      "weight": 3,
+      "items": [
+       {
+        "material": "arrow",
+        "count": 8
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:48"
+     },
+     {
+      "key": "extra_blocks",
+      "weight": 6,
+      "items": [
+       {
+        "material": "oak_planks",
+        "count": 16
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:49"
+     },
+     {
+      "key": "water",
+      "weight": 3,
+      "items": [
+       {
+        "material": "water_bucket",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:50"
+     },
+     {
+      "key": "fishing_rod",
+      "weight": 3,
+      "items": [
+       {
+        "material": "fishing_rod",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:51"
+     },
+     {
+      "key": "xp",
+      "weight": 2,
+      "items": [
+       {
+        "material": "experience_bottle",
+        "count": 4
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:52"
+     }
+    ],
+    "minRolls": 3,
+    "maxRolls": 5,
+    "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:20-55",
+    "chest": "copper_chest",
+    "chestSrc": "games/logic/skywars/LootChests.java:59"
+   },
+   {
+    "name": "uncommon",
+    "guaranteed": [],
+    "random": [
+     {
+      "key": "iron_sword",
+      "weight": 6,
+      "items": [
+       {
+        "material": "iron_sword",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:60"
+     },
+     {
+      "key": "iron_axe",
+      "weight": 4,
+      "items": [
+       {
+        "material": "iron_axe",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:61"
+     },
+     {
+      "key": "iron_spear",
+      "weight": 3,
+      "items": [
+       {
+        "material": "iron_spear",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:62"
+     },
+     {
+      "key": "chainmail_chestplate",
+      "weight": 4,
+      "items": [
+       {
+        "material": "chainmail_chestplate",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:63"
+     },
+     {
+      "key": "chainmail_leggings",
+      "weight": 4,
+      "items": [
+       {
+        "material": "chainmail_leggings",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:64"
+     },
+     {
+      "key": "iron_leggings",
+      "weight": 3,
+      "items": [
+       {
+        "material": "iron_leggings",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:65"
+     },
+     {
+      "key": "iron_boots",
+      "weight": 4,
+      "items": [
+       {
+        "material": "iron_boots",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:66"
+     },
+     {
+      "key": "bow",
+      "weight": 5,
+      "items": [
+       {
+        "material": "bow",
+        "count": 1
+       },
+       {
+        "material": "arrow",
+        "count": 12
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:67"
+     },
+     {
+      "key": "crossbow",
+      "weight": 2,
+      "items": [
+       {
+        "material": "crossbow",
+        "count": 1
+       },
+       {
+        "material": "arrow",
+        "count": 8
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:68"
+     },
+     {
+      "key": "iron_pickaxe",
+      "weight": 4,
+      "items": [
+       {
+        "material": "iron_pickaxe",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:69"
+     },
+     {
+      "key": "golden_apple",
+      "weight": 4,
+      "items": [
+       {
+        "material": "golden_apple",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:70"
+     },
+     {
+      "key": "steak",
+      "weight": 6,
+      "items": [
+       {
+        "material": "cooked_beef",
+        "count": 8
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:71"
+     },
+     {
+      "key": "water",
+      "weight": 4,
+      "items": [
+       {
+        "material": "water_bucket",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:72"
+     },
+     {
+      "key": "lava",
+      "weight": 3,
+      "items": [
+       {
+        "material": "lava_bucket",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:73"
+     },
+     {
+      "key": "ender_pearl",
+      "weight": 2,
+      "items": [
+       {
+        "material": "ender_pearl",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:74"
+     },
+     {
+      "key": "cobweb",
+      "weight": 3,
+      "items": [
+       {
+        "material": "cobweb",
+        "count": 4
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:75"
+     },
+     {
+      "key": "wind_charge",
+      "weight": 3,
+      "items": [
+       {
+        "material": "wind_charge",
+        "count": 3
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:76"
+     },
+     {
+      "key": "snowballs",
+      "weight": 4,
+      "items": [
+       {
+        "material": "snowball",
+        "count": 16
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:77"
+     },
+     {
+      "key": "blocks",
+      "weight": 5,
+      "items": [
+       {
+        "material": "stone_bricks",
+        "count": 32
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:78"
+     },
+     {
+      "key": "xp",
+      "weight": 3,
+      "items": [
+       {
+        "material": "experience_bottle",
+        "count": 8
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:79"
+     }
+    ],
+    "minRolls": 4,
+    "maxRolls": 6,
+    "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:57-82",
+    "chest": "exposed_copper_chest",
+    "chestSrc": "games/logic/skywars/LootChests.java:60"
+   },
+   {
+    "name": "rare",
+    "guaranteed": [
+     {
+      "name": "gear",
+      "packages": [
+       {
+        "key": "iron_sword",
+        "weight": 5,
+        "items": [
+         {
+          "material": "iron_sword",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:87"
+       },
+       {
+        "key": "iron_chestplate",
+        "weight": 6,
+        "items": [
+         {
+          "material": "iron_chestplate",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:88"
+       },
+       {
+        "key": "iron_leggings",
+        "weight": 5,
+        "items": [
+         {
+          "material": "iron_leggings",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:89"
+       },
+       {
+        "key": "diamond_boots",
+        "weight": 3,
+        "items": [
+         {
+          "material": "diamond_boots",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:90"
+       },
+       {
+        "key": "diamond_sword",
+        "weight": 2,
+        "items": [
+         {
+          "material": "diamond_sword",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:91"
+       }
+      ]
+     }
+    ],
+    "random": [
+     {
+      "key": "golden_apples",
+      "weight": 6,
+      "items": [
+       {
+        "material": "golden_apple",
+        "count": 2
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:95"
+     },
+     {
+      "key": "ender_pearls",
+      "weight": 4,
+      "items": [
+       {
+        "material": "ender_pearl",
+        "count": 2
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:96"
+     },
+     {
+      "key": "bow",
+      "weight": 4,
+      "items": [
+       {
+        "material": "bow",
+        "count": 1
+       },
+       {
+        "material": "arrow",
+        "count": 16
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:97"
+     },
+     {
+      "key": "crossbow",
+      "weight": 3,
+      "items": [
+       {
+        "material": "crossbow",
+        "count": 1
+       },
+       {
+        "material": "arrow",
+        "count": 12
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:98"
+     },
+     {
+      "key": "tnt",
+      "weight": 3,
+      "items": [
+       {
+        "material": "tnt",
+        "count": 4
+       },
+       {
+        "material": "flint_and_steel",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:99"
+     },
+     {
+      "key": "cobweb",
+      "weight": 4,
+      "items": [
+       {
+        "material": "cobweb",
+        "count": 6
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:100"
+     },
+     {
+      "key": "lava",
+      "weight": 4,
+      "items": [
+       {
+        "material": "lava_bucket",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:101"
+     },
+     {
+      "key": "water",
+      "weight": 3,
+      "items": [
+       {
+        "material": "water_bucket",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:102"
+     },
+     {
+      "key": "wind_charges",
+      "weight": 4,
+      "items": [
+       {
+        "material": "wind_charge",
+        "count": 6
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:103"
+     },
+     {
+      "key": "diamond_pickaxe",
+      "weight": 2,
+      "items": [
+       {
+        "material": "diamond_pickaxe",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:104"
+     },
+     {
+      "key": "diamond_axe",
+      "weight": 2,
+      "items": [
+       {
+        "material": "diamond_axe",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:105"
+     },
+     {
+      "key": "trident",
+      "weight": 1,
+      "items": [
+       {
+        "material": "trident",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:106"
+     },
+     {
+      "key": "steak",
+      "weight": 5,
+      "items": [
+       {
+        "material": "cooked_beef",
+        "count": 12
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:107"
+     },
+     {
+      "key": "obsidian",
+      "weight": 2,
+      "items": [
+       {
+        "material": "obsidian",
+        "count": 8
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:108"
+     },
+     {
+      "key": "xp",
+      "weight": 4,
+      "items": [
+       {
+        "material": "experience_bottle",
+        "count": 12
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:109"
+     }
+    ],
+    "minRolls": 4,
+    "maxRolls": 6,
+    "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:84-112",
+    "chest": "weathered_copper_chest",
+    "chestSrc": "games/logic/skywars/LootChests.java:61"
+   },
+   {
+    "name": "epic",
+    "guaranteed": [
+     {
+      "name": "gear",
+      "packages": [
+       {
+        "key": "diamond_sword",
+        "weight": 5,
+        "items": [
+         {
+          "material": "diamond_sword",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:117"
+       },
+       {
+        "key": "diamond_chestplate",
+        "weight": 5,
+        "items": [
+         {
+          "material": "diamond_chestplate",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:118"
+       },
+       {
+        "key": "diamond_leggings",
+        "weight": 5,
+        "items": [
+         {
+          "material": "diamond_leggings",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:119"
+       },
+       {
+        "key": "diamond_boots",
+        "weight": 5,
+        "items": [
+         {
+          "material": "diamond_boots",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:120"
+       },
+       {
+        "key": "diamond_spear",
+        "weight": 2,
+        "items": [
+         {
+          "material": "diamond_spear",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:121"
+       },
+       {
+        "key": "netherite_sword",
+        "weight": 1,
+        "items": [
+         {
+          "material": "netherite_sword",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:123"
+       },
+       {
+        "key": "netherite_chestplate",
+        "weight": 1,
+        "items": [
+         {
+          "material": "netherite_chestplate",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:124"
+       },
+       {
+        "key": "netherite_leggings",
+        "weight": 1,
+        "items": [
+         {
+          "material": "netherite_leggings",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:125"
+       },
+       {
+        "key": "netherite_boots",
+        "weight": 1,
+        "items": [
+         {
+          "material": "netherite_boots",
+          "count": 1
+         }
+        ],
+        "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:126"
+       }
+      ]
+     }
+    ],
+    "random": [
+     {
+      "key": "golden_apples",
+      "weight": 6,
+      "items": [
+       {
+        "material": "golden_apple",
+        "count": 3
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:130"
+     },
+     {
+      "key": "enchanted_golden_apple",
+      "weight": 1,
+      "items": [
+       {
+        "material": "enchanted_golden_apple",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:131"
+     },
+     {
+      "key": "totem",
+      "weight": 1,
+      "items": [
+       {
+        "material": "totem_of_undying",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:132"
+     },
+     {
+      "key": "ender_pearls",
+      "weight": 5,
+      "items": [
+       {
+        "material": "ender_pearl",
+        "count": 3
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:133"
+     },
+     {
+      "key": "mace",
+      "weight": 1,
+      "items": [
+       {
+        "material": "mace",
+        "count": 1
+       },
+       {
+        "material": "wind_charge",
+        "count": 4
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:134"
+     },
+     {
+      "key": "wind_charges",
+      "weight": 4,
+      "items": [
+       {
+        "material": "wind_charge",
+        "count": 8
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:135"
+     },
+     {
+      "key": "bow",
+      "weight": 3,
+      "items": [
+       {
+        "material": "bow",
+        "count": 1
+       },
+       {
+        "material": "arrow",
+        "count": 24
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:136"
+     },
+     {
+      "key": "crossbow",
+      "weight": 3,
+      "items": [
+       {
+        "material": "crossbow",
+        "count": 1
+       },
+       {
+        "material": "arrow",
+        "count": 16
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:137"
+     },
+     {
+      "key": "tnt",
+      "weight": 4,
+      "items": [
+       {
+        "material": "tnt",
+        "count": 8
+       },
+       {
+        "material": "flint_and_steel",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:138"
+     },
+     {
+      "key": "cobweb",
+      "weight": 4,
+      "items": [
+       {
+        "material": "cobweb",
+        "count": 8
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:139"
+     },
+     {
+      "key": "lava",
+      "weight": 3,
+      "items": [
+       {
+        "material": "lava_bucket",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:140"
+     },
+     {
+      "key": "diamond_axe",
+      "weight": 3,
+      "items": [
+       {
+        "material": "diamond_axe",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:141"
+     },
+     {
+      "key": "obsidian",
+      "weight": 2,
+      "items": [
+       {
+        "material": "obsidian",
+        "count": 12
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:142"
+     },
+     {
+      "key": "lapis",
+      "weight": 3,
+      "items": [
+       {
+        "material": "lapis_lazuli",
+        "count": 12
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:143"
+     },
+     {
+      "key": "xp",
+      "weight": 4,
+      "items": [
+       {
+        "material": "experience_bottle",
+        "count": 24
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:144"
+     },
+     {
+      "key": "enchanting_table",
+      "weight": 1,
+      "items": [
+       {
+        "material": "enchanting_table",
+        "count": 1
+       }
+      ],
+      "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:145"
+     }
+    ],
+    "minRolls": 5,
+    "maxRolls": 7,
+    "src": "configurable/sectors/game/skywars/SkyWarsLoot.java:114-148",
+    "chest": "oxidized_copper_chest",
+    "chestSrc": "games/logic/skywars/LootChests.java:62"
+   }
+  ],
+  "rollSrc": "games/logic/skywars/LootChests.java:219-230",
+  "pickSrc": "games/logic/skywars/LootChests.java:255-269"
+ },
  "minigames": [
   {
    "key": "paintball",

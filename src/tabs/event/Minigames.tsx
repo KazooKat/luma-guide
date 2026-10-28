@@ -4,6 +4,7 @@ import { makeNotes, Sources } from '../items/Writeup';
 import { EVENT, EVENTS_REPO, GAME_COUNT, isActive, NEW_GAMES, PREVIEW, Src, VISIBLE_GAMES } from './common';
 import { SCENES } from './storyboard/scenes';
 import { StoryboardPlayer } from './storyboard/Storyboard';
+import { SkyWarsLoot } from './SkyWarsLoot';
 
 function Badge({ g }: { g: EventMinigame }) {
   if (isActive(g)) return <span class="badge good">In this event</span>;
@@ -79,6 +80,14 @@ export function MinigameDetail({ slug }: { slug: string }) {
       </div>
     );
   }
+  // SkyWars only: the full chest loot tables, cited after the steps since it sits under them.
+  const lootData = g.key === 'skywars' && w ? EVENT.skywarsLoot : null;
+  const loot = lootData ? (
+    <SkyWarsLoot
+      pools={lootData.pools}
+      cite={notes.cite([...lootData.pools.map((p) => p.src), ...lootData.pools.map((p) => p.chestSrc), lootData.rollSrc, lootData.pickSrc].join(', '))}
+    />
+  ) : null;
   const scoring = block('Scoring', w?.scoring);
   const tokens = block('Tokens', w?.tokens);
   const numbers = w?.numbers?.length ? (
@@ -107,6 +116,7 @@ export function MinigameDetail({ slug }: { slug: string }) {
           <p class="writeup-summary">{w.summary}</p>
           {story}
           {steps}
+          {loot}
           {(scoring || tokens) && <div class="pair">{scoring}{tokens}</div>}
           {numbers}
           {tips}

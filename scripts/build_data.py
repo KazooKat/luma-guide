@@ -127,7 +127,10 @@ EXTRA_ICONS = ["furnace", "smoker", "blast_furnace", "brewing_stand", "netherite
                "crossbow", "coal_block", "iron_ingot", "gold_ingot", "diamond", "netherite_scrap", "prismarine_shard",
                "ender_eye", "amethyst_cluster", "charcoal", "zombie_head", "firework_star", "writable_book", "experience_bottle", "emerald",
                # brewing chains
-               "potion", "splash_potion", "lingering_potion", "slime_ball"]
+               "potion", "splash_potion", "lingering_potion", "slime_ball",
+               # SkyWars loot tables (event page); src/lib/loot.test.ts fails if a loot item has no icon
+               "chainmail_boots", "chainmail_chestplate", "chainmail_leggings", "copper_sword", "copper_axe", "stone_spear",
+               "snowball", "arrow", "wind_charge", "flint_and_steel", "enchanted_golden_apple", "totem_of_undying"]
 
 
 def slug(name):
