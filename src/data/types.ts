@@ -224,6 +224,8 @@ export interface EventData {
   candy: EventCandy | null;
   /** SkyWars default loot tables, read from SkyWarsLoot.java (null for events without SkyWars). */
   skywarsLoot: { pools: import('../lib/loot').LootPool[]; rollSrc: string; pickSrc: string } | null;
+  /** Per-game formula constants read from the code (Copycat rounds, Manor 2 payouts, the shared score range). */
+  gameMath: import('../lib/gameMath').GameMath;
   minigames: EventMinigame[];
 }
 

@@ -1677,6 +1677,109 @@
   "rollSrc": "games/logic/skywars/LootChests.java:219-230",
   "pickSrc": "games/logic/skywars/LootChests.java:255-269"
  },
+ "gameMath": {
+  "scoreRange": {
+   "MIN_TOKENS": {
+    "value": 2,
+    "src": "games/tokenformula/ScoreRangeTokenFormula.java:10"
+   },
+   "MAX_TOKENS": {
+    "value": 8,
+    "src": "games/tokenformula/ScoreRangeTokenFormula.java:11"
+   },
+   "WIN_BONUS": {
+    "value": 1,
+    "src": "games/tokenformula/ScoreRangeTokenFormula.java:12"
+   },
+   "src": "games/tokenformula/ScoreRangeTokenFormula.java:27-34"
+  },
+  "copycat": {
+   "MIN_HIDDEN_FRACTION": {
+    "value": 0.25,
+    "src": "games/logic/copycat/Copycat.java:111"
+   },
+   "MAX_HIDDEN_FRACTION": {
+    "value": 0.5,
+    "src": "games/logic/copycat/Copycat.java:112"
+   },
+   "HARDEST_ROUND": {
+    "value": 10,
+    "src": "games/logic/copycat/Copycat.java:113"
+   },
+   "TIME_SCALE_PER_ROUND": {
+    "value": 0.010582010582010594,
+    "src": "games/logic/copycat/Copycat.java:115"
+   },
+   "MIN_TIME_SCALE": {
+    "value": 0.5,
+    "src": "games/logic/copycat/Copycat.java:116"
+   },
+   "START_REQUIRED_ACCURACY": {
+    "value": 0.3,
+    "src": "games/logic/copycat/Copycat.java:120"
+   },
+   "MIN_REQUIRED_STEP": {
+    "value": 0.01,
+    "src": "games/logic/copycat/Copycat.java:121"
+   },
+   "MAX_REQUIRED_STEP": {
+    "value": 0.03,
+    "src": "games/logic/copycat/Copycat.java:122"
+   },
+   "MAX_REQUIRED_ACCURACY": {
+    "value": 0.75,
+    "src": "games/logic/copycat/Copycat.java:125"
+   },
+   "MIN_BUILD_SECONDS": {
+    "value": 15,
+    "src": "games/logic/copycat/Round.java:8"
+   },
+   "FULL_FRACTION_BLOCKS": {
+    "value": 60,
+    "src": "games/logic/copycat/Round.java:9"
+   },
+   "MIN_SIZE_SCALE": {
+    "value": 0.4,
+    "src": "games/logic/copycat/Round.java:10"
+   },
+   "buildSecondsPerBlock": {
+    "value": 2.5,
+    "src": "configurable/sectors/game/CopycatDefinition.java:23"
+   },
+   "maxRounds": {
+    "value": 20,
+    "src": "configurable/sectors/game/CopycatDefinition.java:24"
+   },
+   "MIN_ROUNDS": {
+    "value": 0,
+    "src": "games/tokenformula/CopycatTokenFormula.java:5"
+   },
+   "MAX_ROUNDS": {
+    "value": 8,
+    "src": "games/tokenformula/CopycatTokenFormula.java:6"
+   },
+   "src": "games/logic/copycat/Copycat.java:372-375, games/logic/copycat/Copycat.java:377-379, games/logic/copycat/Copycat.java:381-388, games/logic/copycat/Round.java:39-44, games/logic/copycat/Round.java:46-49, games/logic/copycat/Round.java:51-54"
+  },
+  "manor2": {
+   "MIN_SCORE": {
+    "value": 100,
+    "src": "games/tokenformula/Manor2TokenFormula.java:9"
+   },
+   "MAX_SCORE": {
+    "value": 700,
+    "src": "games/tokenformula/Manor2TokenFormula.java:10"
+   },
+   "EXPECTED_PLAYTIME": {
+    "value": 300000,
+    "src": "games/tokenformula/Manor2TokenFormula.java:11"
+   },
+   "duration": {
+    "value": 300000,
+    "src": "configurable/sectors/game/Manor2Definition.java:31"
+   },
+   "src": "games/tokenformula/Manor2TokenFormula.java:21-30"
+  }
+ },
  "minigames": [
   {
    "key": "paintball",

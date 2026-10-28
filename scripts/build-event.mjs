@@ -197,6 +197,54 @@ if (lines(SWL)) {
   }
 }
 
+// ---- per-game math (Copycat rounds, Manor 2 payouts) ---------------------------------------------------------
+// Constants read from the code, so the page's tables are worked out from the same numbers the plugin uses.
+// A value may be an arithmetic expression over numbers and constants declared earlier in the same file ("1.9 / 2.1",
+// "1000 * 60 * 5", "(1.0 - TIME_SCALE_AT_ROUND_TEN) / 9.0"); anything else fails the build.
+const constCache = new Map();
+function constant(file, name, what = `${name} in ${file}`) {
+  const key = `${file}#${name}`;
+  if (constCache.has(key)) return constCache.get(key);
+  const hit = find(file, new RegExp(`(?:static final (?:int|long|double)|private (?:int|long|double)) ${name}\\s*=\\s*(.+?);`), what);
+  let value = null;
+  if (hit) {
+    const expr = hit.m[1].replace(/\b([A-Z][A-Z0-9_]+)\b/g, (n) => String(constant(file, n, `${n} (used by ${name}) in ${file}`)?.value ?? NaN));
+    if (/^[\d\s.+\-*/()]+$/.test(expr)) value = Function(`"use strict"; return (${expr});`)();
+    if (!Number.isFinite(value)) { errors.push(`${what}: can't evaluate "${hit.m[1]}"`); value = null; }
+  }
+  const out = value == null ? null : { value, src: hit.src };
+  constCache.set(key, out);
+  return out;
+}
+const pickConstants = (file, names) => Object.fromEntries(names.map((n) => [n, constant(file, n)]));
+const allRead = (o) => Object.values(o).every(Boolean);
+
+const SRF = 'games/tokenformula/ScoreRangeTokenFormula.java';
+const scoreRange = lines(SRF) ? pickConstants(SRF, ['MIN_TOKENS', 'MAX_TOKENS', 'WIN_BONUS']) : null;
+const scoreRangeTokens = find(SRF, /protected int tokens\(/, 'score range tokens');
+const gameMath = { scoreRange: null, copycat: null, manor2: null };
+if (scoreRange && allRead(scoreRange) && scoreRangeTokens) {
+  gameMath.scoreRange = { ...scoreRange, src: methodSpan(SRF, scoreRangeTokens, 'score range tokens') };
+  const CC = 'games/logic/copycat/Copycat.java', CR = 'games/logic/copycat/Round.java', CD = 'configurable/sectors/game/CopycatDefinition.java', CT = 'games/tokenformula/CopycatTokenFormula.java';
+  if (lines(CC) && lines(CR) && lines(CD) && lines(CT)) {
+    const c = {
+      ...pickConstants(CC, ['MIN_HIDDEN_FRACTION', 'MAX_HIDDEN_FRACTION', 'HARDEST_ROUND', 'TIME_SCALE_PER_ROUND', 'MIN_TIME_SCALE', 'START_REQUIRED_ACCURACY', 'MIN_REQUIRED_STEP', 'MAX_REQUIRED_STEP', 'MAX_REQUIRED_ACCURACY']),
+      ...pickConstants(CR, ['MIN_BUILD_SECONDS', 'FULL_FRACTION_BLOCKS', 'MIN_SIZE_SCALE']),
+      buildSecondsPerBlock: constant(CD, 'buildSecondsPerBlock'), maxRounds: constant(CD, 'maxRounds'),
+      ...pickConstants(CT, ['MIN_ROUNDS', 'MAX_ROUNDS']),
+    };
+    const fns = ['hiddenFraction', 'timeScale', 'requiredAccuracy'].map((n) => methodSpan(CC, find(CC, new RegExp(`static double ${n}\\(`), `Copycat ${n}`), `Copycat ${n}`));
+    const roundFns = ['hiddenCount', 'sizeScale', 'buildSeconds'].map((n) => methodSpan(CR, find(CR, new RegExp(`static (?:int|double) ${n}\\(`), `Round ${n}`), `Round ${n}`));
+    if (allRead(c) && fns.every(Boolean) && roundFns.every(Boolean)) gameMath.copycat = { ...c, src: [...fns, ...roundFns].join(', ') };
+  }
+  const MT = 'games/tokenformula/Manor2TokenFormula.java', MD = 'configurable/sectors/game/Manor2Definition.java';
+  if (lines(MT) && lines(MD)) {
+    const m = { ...pickConstants(MT, ['MIN_SCORE', 'MAX_SCORE', 'EXPECTED_PLAYTIME']), duration: constant(MD, 'duration') };
+    const supplier = methodSpan(MT, find(MT, /rangeSupplier\(Manor2 manor2\)/, 'Manor 2 range supplier'), 'Manor 2 range supplier');
+    if (allRead(m) && supplier) gameMath.manor2 = { ...m, src: supplier };
+  }
+}
+
 // ---- minigames -----------------------------------------------------------------------------------------------
 const MC = 'games/constants/MinigameConstant.java';
 const constants = findAll(MC, /^\s+([A-Z_0-9]+)\((.+?),\s*"([^"]+)"((?:,\s*"[^"]+")+)\)[,;]?\s*$/).map(({ m, src }) => {
@@ -351,6 +399,7 @@ const out = {
   charm: { itemId: charm.m[1], src: charm.src, requirementSrc: charmNeed.src },
   candy,
   skywarsLoot,
+  gameMath,
   minigames: constants.map((c) => {
     const g = [...guides.values()].find((x) => x.constant === c.constant);
     return { key: g?.key ?? c.constant.toLowerCase().replace(/_/g, '-'), constant: c.constant, name: c.name, aliases: c.aliases, src: c.src, formula: c.formula, guide: g ?? null };

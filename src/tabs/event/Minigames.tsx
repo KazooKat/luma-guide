@@ -5,6 +5,7 @@ import { EVENT, EVENTS_REPO, GAME_COUNT, isActive, NEW_GAMES, PREVIEW, Src, VISI
 import { SCENES } from './storyboard/scenes';
 import { StoryboardPlayer } from './storyboard/Storyboard';
 import { SkyWarsLoot } from './SkyWarsLoot';
+import { CopycatRounds, Manor2Payouts } from './GameTables';
 
 function Badge({ g }: { g: EventMinigame }) {
   if (isActive(g)) return <span class="badge good">In this event</span>;
@@ -90,6 +91,12 @@ export function MinigameDetail({ slug }: { slug: string }) {
   ) : null;
   const scoring = block('Scoring', w?.scoring);
   const tokens = block('Tokens', w?.tokens);
+  // Copycat and Manor 2: a worked-out table from the game's own formulas, shown under scoring and tokens.
+  const gm = EVENT.gameMath;
+  const table = !w || !gm.scoreRange ? null
+    : g.key === 'copycat' && gm.copycat ? <CopycatRounds c={gm.copycat} sr={gm.scoreRange} cite={notes.cite(`${gm.copycat.src}, ${gm.scoreRange.src}`)} />
+    : g.key === 'manor-2' && gm.manor2 ? <Manor2Payouts m={gm.manor2} sr={gm.scoreRange} cite={notes.cite(`${gm.manor2.src}, ${gm.scoreRange.src}`)} />
+    : null;
   const numbers = w?.numbers?.length ? (
     <div class="wu-block">
       <h3>Numbers</h3>
@@ -118,6 +125,7 @@ export function MinigameDetail({ slug }: { slug: string }) {
           {steps}
           {loot}
           {(scoring || tokens) && <div class="pair">{scoring}{tokens}</div>}
+          {table}
           {numbers}
           {tips}
           {(quirks || config) && <div class={quirks && config ? 'callouts two' : 'callouts'}>{quirks}{config}</div>}

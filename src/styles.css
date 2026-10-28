@@ -736,3 +736,23 @@ small.block { display: block; }
   .odds-row.loot-random > :last-child { display: block; }
   .odds-row.loot-random > :nth-child(2) { display: none; }
 }
+
+/* Copycat rounds and Manor 2 payouts (src/tabs/event/GameTables.tsx) */
+.game-table { display: grid; gap: 12px; }
+.gt-table { display: grid; gap: 2px; font-variant-numeric: tabular-nums; }
+.gt-row { display: grid; gap: 4px; align-items: center; }
+.gt-table.copycat .gt-row { grid-template-columns: 64px repeat(4, minmax(0, 1fr)); }
+.gt-table.manor .gt-row { grid-template-columns: 64px repeat(6, minmax(0, 1fr)); }
+.gt-row.head { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); padding-bottom: 4px; align-items: end; }
+.gt-row > span { text-align: center; padding: 6px 4px; border-radius: 8px; }
+.gt-row .gt-key { font-weight: 600; color: var(--text-2); }
+.gt-heat { font-weight: 600; }
+.gt-short { display: none; }
+@media (max-width: 640px) {
+  .gt-table.copycat .gt-row, .gt-table.manor .gt-row { grid-template-columns: 40px repeat(var(--cols, 4), minmax(0, 1fr)); gap: 2px; }
+  .gt-table.manor .gt-row { --cols: 6; }
+  .gt-row.head { font-size: 10px; letter-spacing: 0.02em; text-transform: none; }
+  .gt-row.head .gt-long { display: none; }
+  .gt-row.head .gt-short { display: inline; }
+  .gt-row > span { padding: 5px 2px; font-size: 13px; }
+}
