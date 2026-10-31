@@ -99,7 +99,7 @@ const rootCmd = find(CM, /name\s*=\s*"(\w+)"/, 'root command');
 const aliases = find(CM, /aliases\s*=\s*\{(.*?)\}/, 'root aliases');
 const playerCommands = [];
 for (const dir of ['commands/modules', 'commands/modules/minigame']) {
-  for (const f of readdirSync(PKG + dir).filter((f) => f.endsWith('.java'))) {
+  for (const f of readdirSync(PKG + dir).filter((f) => f.endsWith('.java')).sort()) {
     const file = `${dir}/${f}`;
     const text = lines(file).join('\n');
     if (!/permission\s*=\s*"lumaevents\.default"/.test(text)) continue;
@@ -255,7 +255,7 @@ if (constants.length < 1) errors.push(`${MC}: no minigames found`);
 // Game classes live in games/logic/ or a subfolder of it (games/logic/skywars/SkyWars.java).
 const logicFiles = new Map();
 (function walk(dir) {
-  for (const e of readdirSync(PKG + dir, { withFileTypes: true })) {
+  for (const e of readdirSync(PKG + dir, { withFileTypes: true }).sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0))) {
     if (e.isDirectory()) walk(`${dir}/${e.name}`);
     else if (e.name.endsWith('.java')) logicFiles.set(e.name.slice(0, -5), logicFiles.has(e.name.slice(0, -5)) ? null : `${dir}/${e.name}`);
   }

@@ -20,7 +20,7 @@ const WRITE = process.argv.includes('--write');
 const args = process.argv.slice(2).filter((a) => a !== '--write');
 const files = args.length
   ? args
-  : readdirSync(root('data/writeups')).filter((f) => f.endsWith('.json')).map((f) => root(`data/writeups/${f}`));
+  : readdirSync(root('data/writeups')).filter((f) => f.endsWith('.json')).sort().map((f) => root(`data/writeups/${f}`));
 
 const errors = [];
 const all = [];

@@ -224,6 +224,77 @@
  ],
  "items": [
   {
+   "id": "clownmask",
+   "section": "CARNIVAL_2024",
+   "material": "PLAYER_HEAD",
+   "icon": "player_head",
+   "glint": true,
+   "name": "<b><#FA909D>C<#F8C2AE>l<#F6F4BE>o<#F7CED4>w<#F7A8E9>n <#EBC1C9>M<#DDFF92>a<#C2ECC9>s<#A7D9FF>k</b>",
+   "enchants": [
+    "<gray>Protection VII",
+    "<gray>Respiration IV",
+    "<gray>Aqua Affinity II"
+   ],
+   "lore": [
+    "<gray>Unbreakable",
+    "<dark_gray>Fortitude",
+    "",
+    "Disguise yourself in this",
+    "neat mask!",
+    "",
+    "Wearing this mask grants",
+    "an extra <#FA909D>3</#FA909D> hearts.",
+    "",
+    "<red>Same stats as Netherite</red>",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><#8EC4F7>C<#B4B7E8>a<#D9A9DA>r<#FF9CCB>n<#F2BAB6>i<#E4D7A2>v<#D7F58D>a<#E4F88C>l <#FFFE8A>2<#FFF07E>0<#FFE171>2<#FFD365>4</b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<gray>Unbreakable",
+    "<dark_gray>Fortitude"
+   ],
+   "enchantList": [
+    "Protection VII",
+    "Respiration IV",
+    "Aqua Affinity II"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/armor/ClownMaskItem.kt",
+   "cls": "ClownMaskItem",
+   "note": "Head texture varies: one of the clownMasks base64 textures from HeadsYml is picked at random when the item is made; all other fields are fixed."
+  },
+  {
+   "id": "pridecrown",
+   "section": "PRIDE_2025",
+   "material": "LARGE_AMETHYST_BUD",
+   "icon": "large_amethyst_bud",
+   "glint": true,
+   "name": "<b><gradient:#ff6666:#ffbd55:#ffff66:#9de24f:#87cefa>Pride</gradient></b> <white><b>Crown</b></white>",
+   "enchants": [
+    "<gray>Protection VIII"
+   ],
+   "lore": [
+    "",
+    "<gray>Legends whisper the <b><gradient:#ff6666:#ffbd55:#ffff66:#9de24f:#87cefa>Pride</gradient></b> <white><b>Crown</b></white>",
+    "<gray>reveals unseen beauty within, coaxing",
+    "<gray>a blossoming of confidence and charm",
+    "<gray>that captivates all who witness it.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><#FF6666>P<#FF925E>r<#FFBD55>i<#FFD35B>d<#FFE960>e <#CEF15B>2<#9DE24F>0<#92D8A5>2<#87CEFA>5</b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Protection VIII"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/armor/PrideCrownItem.kt",
+   "cls": "PrideCrownItem"
+  },
+  {
    "id": "aestiva-barillas",
    "section": "LUMARINE_2026",
    "material": "NETHERITE_BOOTS",
@@ -688,48 +759,6 @@
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/armor/chestplate/ParadoxCuirassItem.kt",
    "cls": "ParadoxCuirassItem"
-  },
-  {
-   "id": "clownmask",
-   "section": "CARNIVAL_2024",
-   "material": "PLAYER_HEAD",
-   "icon": "player_head",
-   "glint": true,
-   "name": "<b><#FA909D>C<#F8C2AE>l<#F6F4BE>o<#F7CED4>w<#F7A8E9>n <#EBC1C9>M<#DDFF92>a<#C2ECC9>s<#A7D9FF>k</b>",
-   "enchants": [
-    "<gray>Protection VII",
-    "<gray>Respiration IV",
-    "<gray>Aqua Affinity II"
-   ],
-   "lore": [
-    "<gray>Unbreakable",
-    "<dark_gray>Fortitude",
-    "",
-    "Disguise yourself in this",
-    "neat mask!",
-    "",
-    "Wearing this mask grants",
-    "an extra <#FA909D>3</#FA909D> hearts.",
-    "",
-    "<red>Same stats as Netherite</red>",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><#8EC4F7>C<#B4B7E8>a<#D9A9DA>r<#FF9CCB>n<#F2BAB6>i<#E4D7A2>v<#D7F58D>a<#E4F88C>l <#FFFE8A>2<#FFF07E>0<#FFE171>2<#FFD365>4</b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<gray>Unbreakable",
-    "<dark_gray>Fortitude"
-   ],
-   "enchantList": [
-    "Protection VII",
-    "Respiration IV",
-    "Aqua Affinity II"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/armor/ClownMaskItem.kt",
-   "cls": "ClownMaskItem",
-   "note": "Head texture varies: one of the clownMasks base64 textures from HeadsYml is picked at random when the item is made; all other fields are fixed."
   },
   {
    "id": "amorceralytras",
@@ -1594,35 +1623,6 @@
    "cls": "WonderBeanieItem"
   },
   {
-   "id": "pridecrown",
-   "section": "PRIDE_2025",
-   "material": "LARGE_AMETHYST_BUD",
-   "icon": "large_amethyst_bud",
-   "glint": true,
-   "name": "<b><gradient:#ff6666:#ffbd55:#ffff66:#9de24f:#87cefa>Pride</gradient></b> <white><b>Crown</b></white>",
-   "enchants": [
-    "<gray>Protection VIII"
-   ],
-   "lore": [
-    "",
-    "<gray>Legends whisper the <b><gradient:#ff6666:#ffbd55:#ffff66:#9de24f:#87cefa>Pride</gradient></b> <white><b>Crown</b></white>",
-    "<gray>reveals unseen beauty within, coaxing",
-    "<gray>a blossoming of confidence and charm",
-    "<gray>that captivates all who witness it.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><#FF6666>P<#FF925E>r<#FFBD55>i<#FFD35B>d<#FFE960>e <#CEF15B>2<#9DE24F>0<#92D8A5>2<#87CEFA>5</b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [],
-   "enchantList": [
-    "Protection VIII"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/armor/PrideCrownItem.kt",
-   "cls": "PrideCrownItem"
-  },
-  {
    "id": "bouquet-trousers",
    "section": "VALENTIDE_2025",
    "material": "NETHERITE_LEGGINGS",
@@ -1698,94 +1698,6 @@
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/armor/trousers/WitchingStocksItem.kt",
    "cls": "WitchingStocksItem"
-  },
-  {
-   "id": "architects-compass",
-   "section": "LUMARINE_2026",
-   "material": "COMPASS",
-   "icon": "compass",
-   "glint": true,
-   "name": "<b><gradient:#FC8EAC:#7FFFD4:#FF5C00>Architect's Compass</gradient></b>",
-   "enchants": [
-    "<gray>Knockback II",
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "<#FC8EAC>Concentric",
-    "",
-    "<#FC8EAC>\"Draw the perfect ring!\"",
-    "",
-    "Hold in your <#FC8EAC>off-hand</#FC8EAC>",
-    "beside a <#CDA9FF>Builder's Wand</#CDA9FF>",
-    "to draw circles instead",
-    "of paths.",
-    "",
-    "<#FC8EAC>Right-click</#FC8EAC> a block to",
-    "center a circle on you,",
-    "then look outward to set",
-    "the radius. <#FC8EAC>Left-click</#FC8EAC>",
-    "to confirm or press your",
-    "<#FC8EAC>swap key (F)</#FC8EAC> to cancel.",
-    "",
-    "<red>Cooldown: 11s",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1e8abf:#9be4df:#f8898a:#EDB172:#ffe494>Lumarine 2026</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#FC8EAC>Concentric"
-   ],
-   "enchantList": [
-    "Knockback II",
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/builderswand/ArchitectsCompassItem.kt",
-   "cls": "ArchitectsCompassItem"
-  },
-  {
-   "id": "builders-wand",
-   "section": "LUMARINE_2026",
-   "material": "BREEZE_ROD",
-   "icon": "breeze_rod",
-   "glint": true,
-   "name": "<b><gradient:#7D9FFC:#CDA9FF:#E28BDC:#F56868>Builder's Wand</gradient></b>",
-   "enchants": [
-    "<gray>Knockback II",
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "<#CDA9FF>Architex",
-    "",
-    "<#CDA9FF>\"It's essential!\"",
-    "",
-    "<#CDA9FF>Right-click</#CDA9FF> to enter",
-    "build mode. <#CDA9FF>Left-click</#CDA9FF>",
-    "to confirm a selection",
-    "or press your <#CDA9FF>swap</#CDA9FF>",
-    "<#CDA9FF>key (F)</#CDA9FF> to cancel.",
-    "",
-    "<#CDA9FF>Left-click</#CDA9FF> a direction",
-    "based-block to rotate",
-    "it to its next face.",
-    "",
-    "<red>Cooldown: 4s",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1e8abf:#9be4df:#f8898a:#EDB172:#ffe494>Lumarine 2026</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#CDA9FF>Architex"
-   ],
-   "enchantList": [
-    "Knockback II",
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/builderswand/BuildersWandItem.kt",
-   "cls": "BuildersWandItem"
   },
   {
    "id": "carnivallollipop",
@@ -1933,6 +1845,695 @@
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/ChikosCharmItem.kt",
    "cls": "ChikosCharmItem",
    "note": "Material varies: a random dye from the minecraft:dyes item tag (any of the 16 dye colours) is picked when the item is made; White Dye is shown."
+  },
+  {
+   "id": "crimson-rune-item",
+   "section": "SUMMER_2025",
+   "material": "NETHER_BRICK",
+   "icon": "nether_brick",
+   "glint": true,
+   "name": "<b><#CE5F03>C<#C95609>r<#C44E10>i<#BF4516>m<#BA3C1C>s<#C65B1B>o<#D17B1B>n <#D4831B>R<#CC6B1B>u<#C3541C>n<#BA3C1C>e",
+   "enchants": [
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "",
+    "<gray>A rune made from crimson clay,",
+    "<gray>baked in the sun for an age.",
+    "",
+    "<gray>It grants its holder immunity",
+    "<gray>from the heat.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#ff4e50:#fc913a:#f9d62e:#eae374:#97c753>Lumalympics 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/CrimsonRuneItem.kt",
+   "cls": "CrimsonRuneItem"
+  },
+  {
+   "id": "crown-jewel-of-elsewhere",
+   "section": "WONDERLAND_2026",
+   "material": "ENDER_PEARL",
+   "icon": "ender_pearl",
+   "glint": true,
+   "name": "<b><gradient:#5d85dc:#E56A91:#F3AA4C:#CA51CB>Crown Jewel of Elsewhere</gradient></b>",
+   "enchants": [],
+   "lore": [
+    "<gradient:#5d85dc:#CA51CB>Slip Between Worlds</gradient>",
+    "<gray>Unbreaking</gray>",
+    "",
+    "A pearl that has slipped between",
+    "worlds, always returning to",
+    "its bearer's hand.",
+    "",
+    "May occasionally",
+    "bring company.",
+    "",
+    "<red>Cooldown: 3s",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#5d85dc:#E56A91:#F3AA4C:#CA51CB>Wonderland '26</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<gradient:#5d85dc:#CA51CB>Slip Between Worlds</gradient>",
+    "<gray>Unbreaking</gray>"
+   ],
+   "enchantList": [
+    "Loyalty V"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/CrownJewelOfElsewhereItem.kt",
+   "cls": "CrownJewelOfElsewhereItem"
+  },
+  {
+   "id": "hearthglow-lantern",
+   "section": "VALENTIDE_2026",
+   "material": "COPPER_LANTERN",
+   "icon": "copper_lantern",
+   "glint": true,
+   "name": "<b><gradient:#F6D6B8:#F1C48D:#F7B6A6:#E9B7D8>Hearthglow Lantern</gradient></b>",
+   "enchants": [],
+   "lore": [
+    "<#F1C48D>Lumenwake",
+    "",
+    "A lantern with a gentle",
+    "and homey warmth.",
+    "",
+    "<#F1C48D>While held</#F1C48D>, nearby entities",
+    "within 5 blocks begin to",
+    "glow softly.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#954381:#ee78c0:#ec6e95:#cb354e>Valentide 2026</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#F1C48D>Lumenwake"
+   ],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/HearthglowLanternItem.kt",
+   "cls": "HearthglowLanternItem"
+  },
+  {
+   "id": "hearty-shroom",
+   "section": "SUMMER_2025",
+   "material": "RED_MUSHROOM",
+   "icon": "red_mushroom",
+   "glint": true,
+   "name": "<b><gradient:#7c0b03:#9b101e:#bd2a2a:#fffdd3:#fff5bd:#ffe9a1>Hearty Shroom</gradient></b>",
+   "enchants": [],
+   "lore": [
+    "",
+    "A mushroom with a rich",
+    "scent. Holding it out will",
+    "boost your number of",
+    "<#bd2a2a>hearts</#bd2a2a>.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#ff4e50:#fc913a:#f9d62e:#eae374:#97c753>Lumalympics 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/HeartyShroomItem.kt",
+   "cls": "HeartyShroomItem"
+  },
+  {
+   "id": "lodestar-compass",
+   "section": "LUMARINE_2026",
+   "material": "COMPASS",
+   "icon": "compass",
+   "glint": true,
+   "name": "<b><gradient:#FFBCE2:#FAEDCB:#DBCDF0>Lodestar Compass</gradient></b>",
+   "enchants": [
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "<#DBCDF0>Climate Point",
+    "",
+    "<#DBCDF0>Left-click</#DBCDF0> to scan biomes",
+    "within <#DBCDF0>1,000</#DBCDF0> blocks.",
+    "",
+    "<#DBCDF0>Right-click</#DBCDF0> to read the",
+    "next biome found.",
+    "",
+    "<dark_gray>No biomes scanned yet.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1e8abf:#9be4df:#f8898a:#EDB172:#ffe494>Lumarine 2026</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#DBCDF0>Climate Point"
+   ],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/LodestarCompassItem.kt",
+   "cls": "LodestarCompassItem",
+   "note": "Fresh (unscanned) state shown; after scanning, the last line is replaced by \"Watching <biome>\", an optional \"Charted by <origin>\" line and \"N of M scanned\". SCAN_RADIUS = 1000 formatted with \"%,d\" (assumes an English-style default locale)."
+  },
+  {
+   "id": "prism-pearl",
+   "section": "PRIDE_2026",
+   "material": "ENDER_PEARL",
+   "icon": "ender_pearl",
+   "glint": true,
+   "name": "<b><gradient:#ff3b3b:#ff8848:#feff5d:#aaff59:#84ffd7>Prism Pearl</gradient></b>",
+   "enchants": [
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "<#feff5d>Flair",
+    "",
+    "A pearl with a strange",
+    "<#feff5d>connection</#feff5d> to passive",
+    "creatures.",
+    "",
+    "Right-click to <#feff5d>summon</#feff5d>",
+    "the nearest passive",
+    "mob to your side.",
+    "",
+    "<red>5s Cooldown",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#e40303:#ff8c00:#ffed00:#008026:#004dff>Pride 2026</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#feff5d>Flair"
+   ],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/PrismPearlItem.kt",
+   "cls": "PrismPearlItem"
+  },
+  {
+   "id": "recall-compass",
+   "section": "VALENTIDE_2026",
+   "material": "COMPASS",
+   "icon": "compass",
+   "glint": true,
+   "name": "<b><gradient:#F6C1D1:#E8B7E8:#D7C2F2:#F4B6C2>Recall Compass</gradient></b>",
+   "enchants": [],
+   "lore": [
+    "<#D7C2F2>Attunement",
+    "",
+    "A compass humming with",
+    "soft magical energy.",
+    "",
+    "<#D7C2F2>Sneak</#D7C2F2> + <#D7C2F2>right-click</#D7C2F2>",
+    "to recall to your",
+    "spawn point.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#954381:#ee78c0:#ec6e95:#cb354e>Valentide 2026</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#D7C2F2>Attunement"
+   ],
+   "enchantList": [
+    "Loyalty X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/RecallCompassItem.kt",
+   "cls": "RecallCompassItem"
+  },
+  {
+   "id": "seagull-feather",
+   "section": "WONDERLAND_2026",
+   "material": "FEATHER",
+   "icon": "feather",
+   "glint": true,
+   "name": "<aqua><b>Seagull Feather",
+   "enchants": [
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "",
+    "This beautiful seagull feather",
+    "shines in the light!",
+    "",
+    "Holding this feather in your",
+    "offhand will give a speed boost.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#5d85dc:#E56A91:#F3AA4C:#CA51CB>Wonderland '26</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/SeagullFeatherItem.kt",
+   "cls": "SeagullFeatherItem"
+  },
+  {
+   "id": "smugglers-cask",
+   "section": "LUMARINE_2026",
+   "material": "BARREL",
+   "icon": "barrel",
+   "glint": true,
+   "name": "<b><gradient:#8c5a2b:#b07d43:#d9a566:#b07d43:#6f4520>Smuggler's Cask</gradient></b>",
+   "enchants": [
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "<#d9a566>Stowaway",
+    "",
+    "Half the contraband in",
+    "the harbour crossed the",
+    "docks inside one of these.",
+    "",
+    "Wear it on your head and",
+    "<#d9a566>sneak</#d9a566> to hide from hostile",
+    "mobs and angry guards.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1e8abf:#9be4df:#f8898a:#EDB172:#ffe494>Lumarine 2026</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#d9a566>Stowaway"
+   ],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/SmugglersCaskItem.kt",
+   "cls": "SmugglersCaskItem"
+  },
+  {
+   "id": "sowing-bundle",
+   "section": "WONDERLAND_2026",
+   "material": "BROWN_BUNDLE",
+   "icon": "brown_bundle",
+   "glint": true,
+   "name": "<b><gradient:#7ABF6A:#C2A05C:#E8B84B>Sowing Bundle</gradient></b>",
+   "enchants": [],
+   "lore": [
+    "<gradient:#7ABF6A:#E8B84B>Broadcast Sow</gradient>",
+    "",
+    "Seeds spill faster than",
+    "fingers can follow.",
+    "",
+    "<#B1BB57>Right-click</#B1BB57> farmland while",
+    "holding seeds inside to sow",
+    "the surrounding farmland.",
+    "",
+    "<red>Cooldown: 1s per seed sown",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#7B859D:#996779:#A7957B:#6B496B>Wonderland '26</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<gradient:#7ABF6A:#E8B84B>Broadcast Sow</gradient>"
+   ],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/SowingBundleItem.kt",
+   "cls": "SowingBundleItem"
+  },
+  {
+   "id": "sticky-taffy",
+   "section": "HALLOWEEN_2025",
+   "material": "LIGHT_BLUE_DYE",
+   "icon": "light_blue_dye",
+   "glint": true,
+   "name": "<b><gradient:#f9e1f5:#c8d1ff:#d3caff:#dbecb1:#ffd6a5>Sticky Taffy</gradient></b>",
+   "enchants": [
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "<#d3caff>Sticky Items",
+    "",
+    "A sticky taffy that can",
+    "be held to store items",
+    "in a single shulker box",
+    "when your inventory is",
+    "too full to pick them up.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#602749:#b14623:#f6921d>Lumaween 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#d3caff>Sticky Items"
+   ],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/StickyTaffyItem.kt",
+   "cls": "StickyTaffyItem"
+  },
+  {
+   "id": "sweet-lollipop",
+   "section": "HALLOWEEN_2025",
+   "material": "ALLIUM",
+   "icon": "allium",
+   "glint": true,
+   "name": "<b><gradient:#ffc8de:#d4b1ff:#ffa2df:#ff92d9:#ee35ae>Sweet Lollipop</gradient></b>",
+   "enchants": [
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "<#d4b1ff>Haste II",
+    "",
+    "A lollipop so sweet,",
+    "it feels like a sugar",
+    "cloud exploded in your",
+    "mouth.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#602749:#b14623:#f6921d>Lumaween 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#d4b1ff>Haste II"
+   ],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/SweetLollipopItem.kt",
+   "cls": "SweetLollipopItem"
+  },
+  {
+   "id": "sweet-summer-honey",
+   "section": "SUMMER_2025",
+   "material": "HONEY_BOTTLE",
+   "icon": "honey_bottle",
+   "glint": true,
+   "name": "<b><gradient:#ed8c00:#ffbe42:#cc5d01:#ffb100:#e8763c>Sweet Summer Honey</gradient></b>",
+   "enchants": [
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "<#ffb100>Pure Bliss",
+    "",
+    "A sweet, sticky honey that",
+    "just really raises your blood",
+    "sugar levels.",
+    "",
+    "Holding this bottle will give",
+    "you a <#cc5d01>haste</#cc5d01> and <#cc5d01>speed</#cc5d01> boost.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#ff4e50:#fc913a:#f9d62e:#eae374:#97c753>Lumalympics 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#ffb100>Pure Bliss"
+   ],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/SweetSummerHoneyItem.kt",
+   "cls": "SweetSummerHoneyItem"
+  },
+  {
+   "id": "tidewarden-barding",
+   "section": "LUMARINE_2026",
+   "material": "DIAMOND_NAUTILUS_ARMOR",
+   "icon": "diamond_nautilus_armor",
+   "glint": true,
+   "name": "<b><gradient:#1e8abf:#9be4df:#f8898a>Tidewarden Barding</gradient></b>",
+   "enchants": [
+    "<gray>Aqua Affinity X"
+   ],
+   "lore": [
+    "<#9be4df>Unsinkable",
+    "",
+    "Fit this to a <#9be4df>nautilus</#9be4df>",
+    "to bind it to the tide.",
+    "",
+    "It will take no harm, and",
+    "it will not wander off",
+    "into the deep.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1e8abf:#9be4df:#f8898a:#EDB172:#ffe494>Lumarine 2026</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#9be4df>Unsinkable"
+   ],
+   "enchantList": [
+    "Aqua Affinity X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/TidewardenBardingItem.kt",
+   "cls": "TidewardenBardingItem"
+  },
+  {
+   "id": "verdigris-idol",
+   "section": "WONDERLAND_2026",
+   "material": "COPPER_GOLEM_STATUE",
+   "icon": "copper_golem_statue",
+   "glint": true,
+   "name": "<b><gradient:#57C78A:#42BFB8:#2E9FD4>Verdigris Idol</gradient></b>",
+   "enchants": [],
+   "lore": [
+    "<gradient:#57C78A:#2E9FD4>Mineral Attunement</gradient>",
+    "",
+    "Forged in an age of living metal.",
+    "Its duty has not yet faded away.",
+    "",
+    "<#42BFB8>Hold</#42BFB8> to transmute mined Stone",
+    "and Deepslate to Raw Copper.",
+    "",
+    "<red>Oxidizes as its power is used.</red>",
+    "<gray> ┗ Deoxidize with Fire Charges.</gray>",
+    "",
+    "<#57C78A>✦ Unoxidized <gray>(50% efficiency)",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#5d85dc:#E56A91:#F3AA4C:#CA51CB>Wonderland '26</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<gradient:#57C78A:#2E9FD4>Mineral Attunement</gradient>"
+   ],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/VerdigrisIdolItem.kt",
+   "cls": "VerdigrisIdolItem",
+   "note": "Changes with use: the item is created at the Unoxidized stage (shown) and oxidises through Exposed (25%, EXPOSED_COPPER_GOLEM_STATUE), Weathered (10%, WEATHERED_COPPER_GOLEM_STATUE) and Fully Oxidized (0%, OXIDIZED_COPPER_GOLEM_STATUE), which swaps the material and the last lore line."
+  },
+  {
+   "id": "windforged-rocket",
+   "section": "CHRISTMAS_2025",
+   "material": "FIREWORK_ROCKET",
+   "icon": "firework_rocket",
+   "glint": true,
+   "name": "<b><gradient:#E90000:#E90000>Wind</gradient><gradient:#E90000:#FFFFFF>forged Roc</gradient><gradient:#FFFFFF:#FFFFFF>ket</gradient></b>",
+   "enchants": [
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "<#D42424>Boundless Boost",
+    "",
+    "Forged from Zephyr's breath",
+    "Soars on western skies",
+    "But wails in the <red>Nether</red>",
+    "",
+    "Must rest after <red>3 surges</red>",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1d7240:#5e9f52:#e4ba58:#f2b054:#f06f3f:#ee4631:#e4352b:#a61e20>Christmas 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#D42424>Boundless Boost"
+   ],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/WindforgedRocketItem.kt",
+   "cls": "WindforgedRocketItem"
+  },
+  {
+   "id": "wintervault",
+   "section": "WINTER_2024",
+   "material": "BREEZE_ROD",
+   "icon": "breeze_rod",
+   "glint": true,
+   "name": "<b><#CBD8E8>W<#B3B1CA>i<#9B8AAC>n<#C9ACBB>t<#F7CEC9>e<#F5D7C7>r <#F0E8C3>V<#DFE1B2>a<#CDDAA0>u<#B0D6B4>l<#93D2C8>t</b>",
+   "enchants": [
+    "<gray>Knockback IV",
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "<#CCD8E9>Launch I",
+    "",
+    "Right-click to be propelled",
+    "into the air.",
+    "",
+    "<red>Cooldown: 15s",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><#CCD8E9>Winter 2024</b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#CCD8E9>Launch I"
+   ],
+   "enchantList": [
+    "Knockback IV",
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/WinterVaultItem.kt",
+   "cls": "WinterVaultItem"
+  },
+  {
+   "id": "wonder-apple",
+   "section": "WONDERLAND_2026",
+   "material": "GOLDEN_APPLE",
+   "icon": "golden_apple",
+   "glint": true,
+   "name": "<b><gradient:#A26EDA:#E56A91:#F3AA4C:#E92F5C>Wonder Apple</gradient></b>",
+   "enchants": [
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "<#E56A91>Haste II",
+    "",
+    "A delicious apple that",
+    "appears causes weird",
+    "effects when <#E56A91>eaten</#E56A91>.",
+    "",
+    "While <#E56A91>held</#E56A91> in the",
+    "offhand, you gain a",
+    "Haste II boost.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#5d85dc:#E56A91:#F3AA4C:#CA51CB>Wonderland '26</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#E56A91>Haste II"
+   ],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/WonderAppleItem.kt",
+   "cls": "WonderAppleItem"
+  },
+  {
+   "id": "architects-compass",
+   "section": "LUMARINE_2026",
+   "material": "COMPASS",
+   "icon": "compass",
+   "glint": true,
+   "name": "<b><gradient:#FC8EAC:#7FFFD4:#FF5C00>Architect's Compass</gradient></b>",
+   "enchants": [
+    "<gray>Knockback II",
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "<#FC8EAC>Concentric",
+    "",
+    "<#FC8EAC>\"Draw the perfect ring!\"",
+    "",
+    "Hold in your <#FC8EAC>off-hand</#FC8EAC>",
+    "beside a <#CDA9FF>Builder's Wand</#CDA9FF>",
+    "to draw circles instead",
+    "of paths.",
+    "",
+    "<#FC8EAC>Right-click</#FC8EAC> a block to",
+    "center a circle on you,",
+    "then look outward to set",
+    "the radius. <#FC8EAC>Left-click</#FC8EAC>",
+    "to confirm or press your",
+    "<#FC8EAC>swap key (F)</#FC8EAC> to cancel.",
+    "",
+    "<red>Cooldown: 11s",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1e8abf:#9be4df:#f8898a:#EDB172:#ffe494>Lumarine 2026</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#FC8EAC>Concentric"
+   ],
+   "enchantList": [
+    "Knockback II",
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/builderswand/ArchitectsCompassItem.kt",
+   "cls": "ArchitectsCompassItem"
+  },
+  {
+   "id": "builders-wand",
+   "section": "LUMARINE_2026",
+   "material": "BREEZE_ROD",
+   "icon": "breeze_rod",
+   "glint": true,
+   "name": "<b><gradient:#7D9FFC:#CDA9FF:#E28BDC:#F56868>Builder's Wand</gradient></b>",
+   "enchants": [
+    "<gray>Knockback II",
+    "<gray>Unbreaking X"
+   ],
+   "lore": [
+    "<#CDA9FF>Architex",
+    "",
+    "<#CDA9FF>\"It's essential!\"",
+    "",
+    "<#CDA9FF>Right-click</#CDA9FF> to enter",
+    "build mode. <#CDA9FF>Left-click</#CDA9FF>",
+    "to confirm a selection",
+    "or press your <#CDA9FF>swap</#CDA9FF>",
+    "<#CDA9FF>key (F)</#CDA9FF> to cancel.",
+    "",
+    "<#CDA9FF>Left-click</#CDA9FF> a direction",
+    "based-block to rotate",
+    "it to its next face.",
+    "",
+    "<red>Cooldown: 4s",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1e8abf:#9be4df:#f8898a:#EDB172:#ffe494>Lumarine 2026</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#CDA9FF>Architex"
+   ],
+   "enchantList": [
+    "Knockback II",
+    "Unbreaking X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/builderswand/BuildersWandItem.kt",
+   "cls": "BuildersWandItem"
   },
   {
    "id": "echo-pearl",
@@ -2332,167 +2933,6 @@
    "cls": "StPatricksHelmetItem"
   },
   {
-   "id": "crimson-rune-item",
-   "section": "SUMMER_2025",
-   "material": "NETHER_BRICK",
-   "icon": "nether_brick",
-   "glint": true,
-   "name": "<b><#CE5F03>C<#C95609>r<#C44E10>i<#BF4516>m<#BA3C1C>s<#C65B1B>o<#D17B1B>n <#D4831B>R<#CC6B1B>u<#C3541C>n<#BA3C1C>e",
-   "enchants": [
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "",
-    "<gray>A rune made from crimson clay,",
-    "<gray>baked in the sun for an age.",
-    "",
-    "<gray>It grants its holder immunity",
-    "<gray>from the heat.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#ff4e50:#fc913a:#f9d62e:#eae374:#97c753>Lumalympics 2025</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/CrimsonRuneItem.kt",
-   "cls": "CrimsonRuneItem"
-  },
-  {
-   "id": "crown-jewel-of-elsewhere",
-   "section": "WONDERLAND_2026",
-   "material": "ENDER_PEARL",
-   "icon": "ender_pearl",
-   "glint": true,
-   "name": "<b><gradient:#5d85dc:#E56A91:#F3AA4C:#CA51CB>Crown Jewel of Elsewhere</gradient></b>",
-   "enchants": [],
-   "lore": [
-    "<gradient:#5d85dc:#CA51CB>Slip Between Worlds</gradient>",
-    "<gray>Unbreaking</gray>",
-    "",
-    "A pearl that has slipped between",
-    "worlds, always returning to",
-    "its bearer's hand.",
-    "",
-    "May occasionally",
-    "bring company.",
-    "",
-    "<red>Cooldown: 3s",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#5d85dc:#E56A91:#F3AA4C:#CA51CB>Wonderland '26</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<gradient:#5d85dc:#CA51CB>Slip Between Worlds</gradient>",
-    "<gray>Unbreaking</gray>"
-   ],
-   "enchantList": [
-    "Loyalty V"
-   ],
-   "enchantsHidden": true,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/CrownJewelOfElsewhereItem.kt",
-   "cls": "CrownJewelOfElsewhereItem"
-  },
-  {
-   "id": "hearthglow-lantern",
-   "section": "VALENTIDE_2026",
-   "material": "COPPER_LANTERN",
-   "icon": "copper_lantern",
-   "glint": true,
-   "name": "<b><gradient:#F6D6B8:#F1C48D:#F7B6A6:#E9B7D8>Hearthglow Lantern</gradient></b>",
-   "enchants": [],
-   "lore": [
-    "<#F1C48D>Lumenwake",
-    "",
-    "A lantern with a gentle",
-    "and homey warmth.",
-    "",
-    "<#F1C48D>While held</#F1C48D>, nearby entities",
-    "within 5 blocks begin to",
-    "glow softly.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#954381:#ee78c0:#ec6e95:#cb354e>Valentide 2026</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#F1C48D>Lumenwake"
-   ],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": true,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/HearthglowLanternItem.kt",
-   "cls": "HearthglowLanternItem"
-  },
-  {
-   "id": "hearty-shroom",
-   "section": "SUMMER_2025",
-   "material": "RED_MUSHROOM",
-   "icon": "red_mushroom",
-   "glint": true,
-   "name": "<b><gradient:#7c0b03:#9b101e:#bd2a2a:#fffdd3:#fff5bd:#ffe9a1>Hearty Shroom</gradient></b>",
-   "enchants": [],
-   "lore": [
-    "",
-    "A mushroom with a rich",
-    "scent. Holding it out will",
-    "boost your number of",
-    "<#bd2a2a>hearts</#bd2a2a>.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#ff4e50:#fc913a:#f9d62e:#eae374:#97c753>Lumalympics 2025</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": true,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/HeartyShroomItem.kt",
-   "cls": "HeartyShroomItem"
-  },
-  {
-   "id": "lodestar-compass",
-   "section": "LUMARINE_2026",
-   "material": "COMPASS",
-   "icon": "compass",
-   "glint": true,
-   "name": "<b><gradient:#FFBCE2:#FAEDCB:#DBCDF0>Lodestar Compass</gradient></b>",
-   "enchants": [
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "<#DBCDF0>Climate Point",
-    "",
-    "<#DBCDF0>Left-click</#DBCDF0> to scan biomes",
-    "within <#DBCDF0>1,000</#DBCDF0> blocks.",
-    "",
-    "<#DBCDF0>Right-click</#DBCDF0> to read the",
-    "next biome found.",
-    "",
-    "<dark_gray>No biomes scanned yet.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1e8abf:#9be4df:#f8898a:#EDB172:#ffe494>Lumarine 2026</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#DBCDF0>Climate Point"
-   ],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/LodestarCompassItem.kt",
-   "cls": "LodestarCompassItem",
-   "note": "Fresh (unscanned) state shown; after scanning, the last line is replaced by \"Watching <biome>\", an optional \"Charted by <origin>\" line and \"N of M scanned\". SCAN_RADIUS = 1000 formatted with \"%,d\" (assumes an English-style default locale)."
-  },
-  {
    "id": "bookofknowledge",
    "section": "CARNIVAL_2024",
    "material": "BOOK",
@@ -2809,75 +3249,6 @@
    "cls": "ReformationPouchBundleItem"
   },
   {
-   "id": "prism-pearl",
-   "section": "PRIDE_2026",
-   "material": "ENDER_PEARL",
-   "icon": "ender_pearl",
-   "glint": true,
-   "name": "<b><gradient:#ff3b3b:#ff8848:#feff5d:#aaff59:#84ffd7>Prism Pearl</gradient></b>",
-   "enchants": [
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "<#feff5d>Flair",
-    "",
-    "A pearl with a strange",
-    "<#feff5d>connection</#feff5d> to passive",
-    "creatures.",
-    "",
-    "Right-click to <#feff5d>summon</#feff5d>",
-    "the nearest passive",
-    "mob to your side.",
-    "",
-    "<red>5s Cooldown",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#e40303:#ff8c00:#ffed00:#008026:#004dff>Pride 2026</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#feff5d>Flair"
-   ],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/PrismPearlItem.kt",
-   "cls": "PrismPearlItem"
-  },
-  {
-   "id": "recall-compass",
-   "section": "VALENTIDE_2026",
-   "material": "COMPASS",
-   "icon": "compass",
-   "glint": true,
-   "name": "<b><gradient:#F6C1D1:#E8B7E8:#D7C2F2:#F4B6C2>Recall Compass</gradient></b>",
-   "enchants": [],
-   "lore": [
-    "<#D7C2F2>Attunement",
-    "",
-    "A compass humming with",
-    "soft magical energy.",
-    "",
-    "<#D7C2F2>Sneak</#D7C2F2> + <#D7C2F2>right-click</#D7C2F2>",
-    "to recall to your",
-    "spawn point.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#954381:#ee78c0:#ec6e95:#cb354e>Valentide 2026</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#D7C2F2>Attunement"
-   ],
-   "enchantList": [
-    "Loyalty X"
-   ],
-   "enchantsHidden": true,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/RecallCompassItem.kt",
-   "cls": "RecallCompassItem"
-  },
-  {
    "id": "big-dandelion",
    "section": "HALLOWEEN_2025",
    "material": "DANDELION",
@@ -3016,377 +3387,6 @@
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/scale/MiniPoppyItem.kt",
    "cls": "MiniPoppyItem"
-  },
-  {
-   "id": "seagull-feather",
-   "section": "WONDERLAND_2026",
-   "material": "FEATHER",
-   "icon": "feather",
-   "glint": true,
-   "name": "<aqua><b>Seagull Feather",
-   "enchants": [
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "",
-    "This beautiful seagull feather",
-    "shines in the light!",
-    "",
-    "Holding this feather in your",
-    "offhand will give a speed boost.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#5d85dc:#E56A91:#F3AA4C:#CA51CB>Wonderland '26</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/SeagullFeatherItem.kt",
-   "cls": "SeagullFeatherItem"
-  },
-  {
-   "id": "smugglers-cask",
-   "section": "LUMARINE_2026",
-   "material": "BARREL",
-   "icon": "barrel",
-   "glint": true,
-   "name": "<b><gradient:#8c5a2b:#b07d43:#d9a566:#b07d43:#6f4520>Smuggler's Cask</gradient></b>",
-   "enchants": [
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "<#d9a566>Stowaway",
-    "",
-    "Half the contraband in",
-    "the harbour crossed the",
-    "docks inside one of these.",
-    "",
-    "Wear it on your head and",
-    "<#d9a566>sneak</#d9a566> to hide from hostile",
-    "mobs and angry guards.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1e8abf:#9be4df:#f8898a:#EDB172:#ffe494>Lumarine 2026</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#d9a566>Stowaway"
-   ],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/SmugglersCaskItem.kt",
-   "cls": "SmugglersCaskItem"
-  },
-  {
-   "id": "sowing-bundle",
-   "section": "WONDERLAND_2026",
-   "material": "BROWN_BUNDLE",
-   "icon": "brown_bundle",
-   "glint": true,
-   "name": "<b><gradient:#7ABF6A:#C2A05C:#E8B84B>Sowing Bundle</gradient></b>",
-   "enchants": [],
-   "lore": [
-    "<gradient:#7ABF6A:#E8B84B>Broadcast Sow</gradient>",
-    "",
-    "Seeds spill faster than",
-    "fingers can follow.",
-    "",
-    "<#B1BB57>Right-click</#B1BB57> farmland while",
-    "holding seeds inside to sow",
-    "the surrounding farmland.",
-    "",
-    "<red>Cooldown: 1s per seed sown",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#7B859D:#996779:#A7957B:#6B496B>Wonderland '26</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<gradient:#7ABF6A:#E8B84B>Broadcast Sow</gradient>"
-   ],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": true,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/SowingBundleItem.kt",
-   "cls": "SowingBundleItem"
-  },
-  {
-   "id": "sticky-taffy",
-   "section": "HALLOWEEN_2025",
-   "material": "LIGHT_BLUE_DYE",
-   "icon": "light_blue_dye",
-   "glint": true,
-   "name": "<b><gradient:#f9e1f5:#c8d1ff:#d3caff:#dbecb1:#ffd6a5>Sticky Taffy</gradient></b>",
-   "enchants": [
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "<#d3caff>Sticky Items",
-    "",
-    "A sticky taffy that can",
-    "be held to store items",
-    "in a single shulker box",
-    "when your inventory is",
-    "too full to pick them up.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#602749:#b14623:#f6921d>Lumaween 2025</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#d3caff>Sticky Items"
-   ],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/StickyTaffyItem.kt",
-   "cls": "StickyTaffyItem"
-  },
-  {
-   "id": "sweet-lollipop",
-   "section": "HALLOWEEN_2025",
-   "material": "ALLIUM",
-   "icon": "allium",
-   "glint": true,
-   "name": "<b><gradient:#ffc8de:#d4b1ff:#ffa2df:#ff92d9:#ee35ae>Sweet Lollipop</gradient></b>",
-   "enchants": [
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "<#d4b1ff>Haste II",
-    "",
-    "A lollipop so sweet,",
-    "it feels like a sugar",
-    "cloud exploded in your",
-    "mouth.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#602749:#b14623:#f6921d>Lumaween 2025</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#d4b1ff>Haste II"
-   ],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/SweetLollipopItem.kt",
-   "cls": "SweetLollipopItem"
-  },
-  {
-   "id": "sweet-summer-honey",
-   "section": "SUMMER_2025",
-   "material": "HONEY_BOTTLE",
-   "icon": "honey_bottle",
-   "glint": true,
-   "name": "<b><gradient:#ed8c00:#ffbe42:#cc5d01:#ffb100:#e8763c>Sweet Summer Honey</gradient></b>",
-   "enchants": [
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "<#ffb100>Pure Bliss",
-    "",
-    "A sweet, sticky honey that",
-    "just really raises your blood",
-    "sugar levels.",
-    "",
-    "Holding this bottle will give",
-    "you a <#cc5d01>haste</#cc5d01> and <#cc5d01>speed</#cc5d01> boost.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#ff4e50:#fc913a:#f9d62e:#eae374:#97c753>Lumalympics 2025</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#ffb100>Pure Bliss"
-   ],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/SweetSummerHoneyItem.kt",
-   "cls": "SweetSummerHoneyItem"
-  },
-  {
-   "id": "tidewarden-barding",
-   "section": "LUMARINE_2026",
-   "material": "DIAMOND_NAUTILUS_ARMOR",
-   "icon": "diamond_nautilus_armor",
-   "glint": true,
-   "name": "<b><gradient:#1e8abf:#9be4df:#f8898a>Tidewarden Barding</gradient></b>",
-   "enchants": [
-    "<gray>Aqua Affinity X"
-   ],
-   "lore": [
-    "<#9be4df>Unsinkable",
-    "",
-    "Fit this to a <#9be4df>nautilus</#9be4df>",
-    "to bind it to the tide.",
-    "",
-    "It will take no harm, and",
-    "it will not wander off",
-    "into the deep.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1e8abf:#9be4df:#f8898a:#EDB172:#ffe494>Lumarine 2026</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#9be4df>Unsinkable"
-   ],
-   "enchantList": [
-    "Aqua Affinity X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/TidewardenBardingItem.kt",
-   "cls": "TidewardenBardingItem"
-  },
-  {
-   "id": "verdigris-idol",
-   "section": "WONDERLAND_2026",
-   "material": "COPPER_GOLEM_STATUE",
-   "icon": "copper_golem_statue",
-   "glint": true,
-   "name": "<b><gradient:#57C78A:#42BFB8:#2E9FD4>Verdigris Idol</gradient></b>",
-   "enchants": [],
-   "lore": [
-    "<gradient:#57C78A:#2E9FD4>Mineral Attunement</gradient>",
-    "",
-    "Forged in an age of living metal.",
-    "Its duty has not yet faded away.",
-    "",
-    "<#42BFB8>Hold</#42BFB8> to transmute mined Stone",
-    "and Deepslate to Raw Copper.",
-    "",
-    "<red>Oxidizes as its power is used.</red>",
-    "<gray> ┗ Deoxidize with Fire Charges.</gray>",
-    "",
-    "<#57C78A>✦ Unoxidized <gray>(50% efficiency)",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#5d85dc:#E56A91:#F3AA4C:#CA51CB>Wonderland '26</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<gradient:#57C78A:#2E9FD4>Mineral Attunement</gradient>"
-   ],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": true,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/VerdigrisIdolItem.kt",
-   "cls": "VerdigrisIdolItem",
-   "note": "Changes with use: the item is created at the Unoxidized stage (shown) and oxidises through Exposed (25%, EXPOSED_COPPER_GOLEM_STATUE), Weathered (10%, WEATHERED_COPPER_GOLEM_STATUE) and Fully Oxidized (0%, OXIDIZED_COPPER_GOLEM_STATUE), which swaps the material and the last lore line."
-  },
-  {
-   "id": "windforged-rocket",
-   "section": "CHRISTMAS_2025",
-   "material": "FIREWORK_ROCKET",
-   "icon": "firework_rocket",
-   "glint": true,
-   "name": "<b><gradient:#E90000:#E90000>Wind</gradient><gradient:#E90000:#FFFFFF>forged Roc</gradient><gradient:#FFFFFF:#FFFFFF>ket</gradient></b>",
-   "enchants": [
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "<#D42424>Boundless Boost",
-    "",
-    "Forged from Zephyr's breath",
-    "Soars on western skies",
-    "But wails in the <red>Nether</red>",
-    "",
-    "Must rest after <red>3 surges</red>",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1d7240:#5e9f52:#e4ba58:#f2b054:#f06f3f:#ee4631:#e4352b:#a61e20>Christmas 2025</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#D42424>Boundless Boost"
-   ],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/WindforgedRocketItem.kt",
-   "cls": "WindforgedRocketItem"
-  },
-  {
-   "id": "wintervault",
-   "section": "WINTER_2024",
-   "material": "BREEZE_ROD",
-   "icon": "breeze_rod",
-   "glint": true,
-   "name": "<b><#CBD8E8>W<#B3B1CA>i<#9B8AAC>n<#C9ACBB>t<#F7CEC9>e<#F5D7C7>r <#F0E8C3>V<#DFE1B2>a<#CDDAA0>u<#B0D6B4>l<#93D2C8>t</b>",
-   "enchants": [
-    "<gray>Knockback IV",
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "<#CCD8E9>Launch I",
-    "",
-    "Right-click to be propelled",
-    "into the air.",
-    "",
-    "<red>Cooldown: 15s",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><#CCD8E9>Winter 2024</b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#CCD8E9>Launch I"
-   ],
-   "enchantList": [
-    "Knockback IV",
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/WinterVaultItem.kt",
-   "cls": "WinterVaultItem"
-  },
-  {
-   "id": "wonder-apple",
-   "section": "WONDERLAND_2026",
-   "material": "GOLDEN_APPLE",
-   "icon": "golden_apple",
-   "glint": true,
-   "name": "<b><gradient:#A26EDA:#E56A91:#F3AA4C:#E92F5C>Wonder Apple</gradient></b>",
-   "enchants": [
-    "<gray>Unbreaking X"
-   ],
-   "lore": [
-    "<#E56A91>Haste II",
-    "",
-    "A delicious apple that",
-    "appears causes weird",
-    "effects when <#E56A91>eaten</#E56A91>.",
-    "",
-    "While <#E56A91>held</#E56A91> in the",
-    "offhand, you gain a",
-    "Haste II boost.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#5d85dc:#E56A91:#F3AA4C:#CA51CB>Wonderland '26</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#E56A91>Haste II"
-   ],
-   "enchantList": [
-    "Unbreaking X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/WonderAppleItem.kt",
-   "cls": "WonderAppleItem"
   },
   {
    "id": "carnivalfishingrod",
@@ -3904,6 +3904,87 @@
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/playground/event/WonderlandCharmItem.kt",
    "cls": "WonderlandCharmItem"
+  },
+  {
+   "id": "horizons-toolkit",
+   "section": "WONDERLAND_2026",
+   "material": "NETHERITE_PICKAXE",
+   "icon": "netherite_pickaxe",
+   "glint": true,
+   "name": "<b><gradient:#DE5264:#E27589:#F1A767:#ECC075:#A7A8D9:#414F86>Horizon's Toolkit</gradient></b>",
+   "enchants": [
+    "<gray>Sharpness V",
+    "<gray>Looting IV",
+    "<gray>Efficiency VI",
+    "<gray>Unbreaking VI",
+    "<gray>Mending"
+   ],
+   "lore": [
+    "<#DE5264>Mix",
+    "",
+    "A <#DE5264>multitool</#DE5264> with the",
+    "malleable ability to",
+    "be combined with other",
+    "items to gain their",
+    "abilities.",
+    "",
+    "<#DE5264>Mix</#DE5264> this tool with",
+    "any other item to in-",
+    "herit its abilities.",
+    "",
+    "<red>Mixing is irreversible.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#7B859D:#996779:#A7957B:#6B496B>Wonderland '26</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#DE5264>Mix"
+   ],
+   "enchantList": [
+    "Sharpness V",
+    "Looting IV",
+    "Efficiency VI",
+    "Unbreaking VI",
+    "Mending"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/tools/HorizonsToolkitItem.kt",
+   "cls": "HorizonsToolkitItem"
+  },
+  {
+   "id": "prospectors-spyglass",
+   "section": "LUMARINE_2026",
+   "material": "SPYGLASS",
+   "icon": "spyglass",
+   "glint": true,
+   "name": "<b><gradient:#1e8abf:#9be4df:#EDB172:#ffe494>Prospector's Spyglass</gradient></b>",
+   "enchants": [
+    "<gray>Piercing X"
+   ],
+   "lore": [
+    "<#9be4df>Assay",
+    "",
+    "<#9be4df>Scope in</#9be4df> to reveal ores",
+    "through solid ground.",
+    "",
+    "Reaches far further than",
+    "a mattock, but only ever",
+    "where you point it.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1e8abf:#9be4df:#f8898a:#EDB172:#ffe494>Lumarine 2026</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [
+    "<#9be4df>Assay"
+   ],
+   "enchantList": [
+    "Piercing X"
+   ],
+   "enchantsHidden": false,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/tools/ProspectorsSpyglassItem.kt",
+   "cls": "ProspectorsSpyglassItem"
   },
   {
    "id": "belovedfallow",
@@ -4603,53 +4684,6 @@
    "enchantsHidden": false,
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/tools/hatchet/SpringHatchetItem.kt",
    "cls": "SpringHatchetItem"
-  },
-  {
-   "id": "horizons-toolkit",
-   "section": "WONDERLAND_2026",
-   "material": "NETHERITE_PICKAXE",
-   "icon": "netherite_pickaxe",
-   "glint": true,
-   "name": "<b><gradient:#DE5264:#E27589:#F1A767:#ECC075:#A7A8D9:#414F86>Horizon's Toolkit</gradient></b>",
-   "enchants": [
-    "<gray>Sharpness V",
-    "<gray>Looting IV",
-    "<gray>Efficiency VI",
-    "<gray>Unbreaking VI",
-    "<gray>Mending"
-   ],
-   "lore": [
-    "<#DE5264>Mix",
-    "",
-    "A <#DE5264>multitool</#DE5264> with the",
-    "malleable ability to",
-    "be combined with other",
-    "items to gain their",
-    "abilities.",
-    "",
-    "<#DE5264>Mix</#DE5264> this tool with",
-    "any other item to in-",
-    "herit its abilities.",
-    "",
-    "<red>Mixing is irreversible.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#7B859D:#996779:#A7957B:#6B496B>Wonderland '26</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#DE5264>Mix"
-   ],
-   "enchantList": [
-    "Sharpness V",
-    "Looting IV",
-    "Efficiency VI",
-    "Unbreaking VI",
-    "Mending"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/tools/HorizonsToolkitItem.kt",
-   "cls": "HorizonsToolkitItem"
   },
   {
    "id": "aurai-gale-mattock",
@@ -5780,40 +5814,6 @@
    "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/tools/nests/SplitSoulMultiToolItemNest.kt",
    "cls": "SplitSoulMultiToolItem",
    "note": "Personality varies: one of 4 personalities (Pleasant #BB91F5, Lazy #EEF581, Sad #1194FE, Upset #FB0843) is picked at random when the item is made and sets the accent colour of the enchant, tagline and lore; Pleasant is shown."
-  },
-  {
-   "id": "prospectors-spyglass",
-   "section": "LUMARINE_2026",
-   "material": "SPYGLASS",
-   "icon": "spyglass",
-   "glint": true,
-   "name": "<b><gradient:#1e8abf:#9be4df:#EDB172:#ffe494>Prospector's Spyglass</gradient></b>",
-   "enchants": [
-    "<gray>Piercing X"
-   ],
-   "lore": [
-    "<#9be4df>Assay",
-    "",
-    "<#9be4df>Scope in</#9be4df> to reveal ores",
-    "through solid ground.",
-    "",
-    "Reaches far further than",
-    "a mattock, but only ever",
-    "where you point it.",
-    "",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
-    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1e8abf:#9be4df:#f8898a:#EDB172:#ffe494>Lumarine 2026</gradient></b>",
-    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
-   ],
-   "abilities": [
-    "<#9be4df>Assay"
-   ],
-   "enchantList": [
-    "Piercing X"
-   ],
-   "enchantsHidden": false,
-   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/tools/ProspectorsSpyglassItem.kt",
-   "cls": "ProspectorsSpyglassItem"
   },
   {
    "id": "aquamax-angler",

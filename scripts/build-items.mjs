@@ -38,8 +38,9 @@ const EVENTS = [...TIERS.values()].filter((t) => !NON_EVENT.has(t.key));
 if (EVENTS.length < 10) throw new Error(`only ${EVENTS.length} event tiers parsed from Tier.java`);
 
 // ---------- source walk ----------
+// Sorted so the output order (the Items grid order) doesn't depend on the filesystem's listing order.
 function walk(dir) {
-  return readdirSync(dir).flatMap((n) => {
+  return readdirSync(dir).sort().flatMap((n) => {
     const p = join(dir, n);
     return statSync(p).isDirectory() ? walk(p) : p.endsWith('.kt') ? [p] : [];
   });
@@ -83,7 +84,7 @@ function siblingDecls(file) {
   const dir = file.slice(0, file.lastIndexOf('/'));
   if (!siblingCache.has(dir)) {
     const decls = new Map();
-    for (const f of readdirSync(join(PKG, dir)).filter((n) => n.endsWith('.kt'))) {
+    for (const f of readdirSync(join(PKG, dir)).filter((n) => n.endsWith('.kt')).sort()) {
       const toks = lex(readFileSync(join(PKG, dir, f), 'utf8'));
       const cls = classRanges(toks);
       for (const [name, list] of collectVals(toks)) {
