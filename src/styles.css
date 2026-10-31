@@ -756,3 +756,15 @@ small.block { display: block; }
   .gt-row.head .gt-short { display: inline; }
   .gt-row > span { padding: 5px 2px; font-size: 13px; }
 }
+
+/* Archive of Astralis re-roll table: the average cost is the column that matters, so phones drop nothing but bar width */
+.odds-row.reroll-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) 90px; }
+@media (max-width: 640px) {
+  .odds-row.reroll-row { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) 64px; }
+  .odds-row.reroll-row > :last-child { display: block; }
+}
+
+/* Archive of Astralis books on the Jobs page */
+.books { display: grid; gap: 10px; padding-top: 16px; border-top: 1px solid var(--border); }
+.books-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 520px; }
+.books-row .field select { width: 100%; }

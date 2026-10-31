@@ -599,5 +599,25 @@
     "config": [
       { "text": "Claims and PvP aren't checked by the item. Whether other players are hurt depends on the server's protection settings.", "src": "items/weapons/shield/FrozenFlareShieldItem.kt:44-54" }
     ]
+  },
+  {
+    "key": "archive-of-astralis",
+    "items": ["archive-of-astralis-alchemist", "archive-of-astralis-blacksmith", "archive-of-astralis-builder", "archive-of-astralis-cook", "archive-of-astralis-digger", "archive-of-astralis-farmer", "archive-of-astralis-fisherman", "archive-of-astralis-hunter", "archive-of-astralis-lumberjack", "archive-of-astralis-miner"],
+    "summary": "A book that permanently boosts one job's XP and money while you hold it. There is one book for each of the 10 jobs, and each book's boost is between 2% and 5%.",
+    "use": [
+      { "text": "Hold the book in your main hand or off hand while you work its job. Every payment and every bit of job XP from that job is multiplied by (1 + boost / 100), so a 5% book turns 100 into 105.", "src": "items/misc/jobs/ArchiveOfAstralisItemNest.kt:75-87, events/item/JobsListeners.kt:36, events/item/JobsListeners.kt:48, util/extensions/PlayerUtil.kt:171-185" }
+    ],
+    "numbers": [
+      { "label": "Boost", "value": "2% to 5% to both job XP and job money, set when the book is made", "src": "items/misc/jobs/ArchiveOfAstralisItemNest.kt:35-38, items/misc/jobs/ArchiveOfAstralisItemNest.kt:54, items/misc/jobs/ArchiveOfAstralisItemNest.kt:73-86" },
+      { "label": "Jobs", "value": "Alchemist, Blacksmith, Builder, Cook, Digger, Farmer, Fisherman, Hunter, Lumberjack, Miner (one book each)", "src": "items/misc/jobs/ArchiveOfAstralisItemNest.kt:20-29, items/misc/jobs/ArchiveOfAstralisItemNest.kt:99-109" }
+    ],
+    "details": [
+      { "text": "A book only boosts its own job. A Farmer book does nothing for Miner pay, even while you're doing both.", "src": "items/misc/jobs/ArchiveOfAstralisItemNest.kt:78, items/misc/jobs/ArchiveOfAstralisItemNest.kt:84" },
+      { "text": "The plugin checks your armor slots as well as both hands, and checks each slot on its own. So books stack: one in each hand plus one on your head (with /hat) gives 3 boosts that multiply together, for example 5%, 5% and 5% is about 15.8%. Only books for the same job stack on that job.", "src": "events/item/JobsListeners.kt:36, events/item/JobsListeners.kt:48, util/extensions/PlayerUtil.kt:171-185, events/item/ItemListener.kt:88-106" },
+      { "text": "The boost multiplies the payment Jobs is about to give you. The Jobs calculator can include your books in its numbers.", "src": "events/item/JobsListeners.kt:39-48" }
+    ],
+    "quirks": [
+      { "text": "Books do nothing while mcMMO Tree Feller is active, for any job.", "src": "items/misc/jobs/ArchiveOfAstralisItemNest.kt:64-68, events/item/JobsListeners.kt:35, events/item/JobsListeners.kt:47-49, events/item/ItemListener.kt:210-218" }
+    ]
   }
 ]

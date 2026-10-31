@@ -8,6 +8,7 @@ import { materialName } from '../../lib/itemSearch';
 import { plain } from '../../lib/minimessage';
 import { BY_ID, DATA, ITEMS, SECTIONS, sectionGradient, TierChip } from './common';
 import type { GlossaryItem, Writeup, WriteupsData } from '../../data/types';
+import { ArchiveObtain } from './ArchiveObtain';
 import { AstralUpgrades } from './AstralUpgrades';
 import { KamoriWriteup } from './KamoriWriteup';
 import { WriteupView } from './Writeup';
@@ -30,6 +31,7 @@ function useWriteups() {
   return { data, failed };
 }
 
+const ARCHIVE_PREFIX = 'archive-of-astralis-';
 const ORB_SETS = new Set(ASTRAL_ORB_SETS.map((s) => `${s.set.toLowerCase()}-set`));
 
 function Fact({ label, wide, children }: { label: string; wide?: 'always' | 'phone'; children: ComponentChildren }) {
@@ -137,6 +139,7 @@ export function ItemDetail({ id }: { id: string }) {
         </section>
       )}
       {item.upgrades && <AstralUpgrades item={item} commit={DATA.source.commit} />}
+      {item.id.startsWith(ARCHIVE_PREFIX) && <ArchiveObtain job={item.id.slice(ARCHIVE_PREFIX.length)} />}
     </>
   );
 }

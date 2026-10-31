@@ -38,6 +38,8 @@ interface Props {
   item: JobItem;
   /** Set when the item is brewed: the whole chain being planned. */
   chain: BrewChain | null;
+  /** Archive of Astralis multiplier on XP and money (1 = no books). */
+  boost: number;
   from: number;
   to: number;
   hoursPerDay: number;
@@ -47,7 +49,7 @@ interface Props {
   set: (p: Partial<JobPrefs>) => void;
 }
 
-export function Plan({ job, item, chain, from, to, hoursPerDay, rate, plan, prefs, set }: Props) {
+export function Plan({ job, item, chain, boost, from, to, hoursPerDay, rate, plan, prefs, set }: Props) {
   const next = plan.rows[0];
   const num = (e: Event) => Number((e.currentTarget as HTMLInputElement).value);
   return (
@@ -59,7 +61,7 @@ export function Plan({ job, item, chain, from, to, hoursPerDay, rate, plan, pref
           <Icon id={item.icon} size={36} />
           <div>
             <b>{potionName(chain.steps[chain.steps.length - 1].to)}</b>
-            <span>{chain.steps.length}-brew chain · {fmtMoney(moneyAt(chain.moneyBase, from))} and {fmt2(xpAt(chain.xpBase, from, job.xpOffset))} XP per brew on average at level {from}</span>
+            <span>{chain.steps.length}-brew chain · {fmtMoney(moneyAt(chain.moneyBase, from) * boost)} and {fmt2(xpAt(chain.xpBase, from, job.xpOffset) * boost)} XP per brew on average at level {from}</span>
           </div>
         </div>
       ) : (
@@ -67,13 +69,13 @@ export function Plan({ job, item, chain, from, to, hoursPerDay, rate, plan, pref
           <Icon id={item.icon} size={36} />
           <div>
             <b>{item.item}</b>
-            <span>{item.action} · {fmtMoney(moneyAt(item.moneyBase, from))} and {fmt2(xpAt(item.xpBase, from, job.xpOffset))} XP each at level {from}</span>
+            <span>{item.action} · {fmtMoney(moneyAt(item.moneyBase, from) * boost)} and {fmt2(xpAt(item.xpBase, from, job.xpOffset) * boost)} XP each at level {from}{boost > 1 ? ' with your books' : ''}</span>
           </div>
         </div>
       )}
 
       {chain ? (
-        <BrewSetup job={job} chain={chain} level={from} prefs={prefs} perHour={rate.perHour} set={set} />
+        <BrewSetup job={job} chain={chain} level={from} prefs={prefs} perHour={rate.perHour} boost={boost} set={set} />
       ) : item.action === 'Fish' ? (
         <FishingSetup prefs={prefs} set={set} />
       ) : rate.machines.length ? (

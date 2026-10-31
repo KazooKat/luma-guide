@@ -8929,6 +8929,306 @@
    "cls": "UnstableEggItem"
   },
   {
+   "id": "archive-of-astralis-alchemist",
+   "section": "CHRISTMAS_2025",
+   "material": "BOOK",
+   "icon": "book",
+   "glint": true,
+   "name": "<b><#7b66fb>Archive</#7b66fb></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+   "enchants": [],
+   "lore": [
+    "A mysterious book",
+    "inscribed with words",
+    "you can't quite make",
+    "out...",
+    "",
+    "Permanent <#7b66fb>3%</#7b66fb> Alchemist",
+    "boost while held.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1d7240:#5e9f52:#e4ba58:#f2b054:#f06f3f:#ee4631:#e4352b:#a61e20>Christmas 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "cls": "AlchemistArchiveOfAstralisItem",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "id": "archive-of-astralis-blacksmith",
+   "section": "CHRISTMAS_2025",
+   "material": "BOOK",
+   "icon": "book",
+   "glint": true,
+   "name": "<b><#8B8B8B>Archive</#8B8B8B></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+   "enchants": [],
+   "lore": [
+    "A mysterious book",
+    "inscribed with words",
+    "you can't quite make",
+    "out...",
+    "",
+    "Permanent <#8B8B8B>3%</#8B8B8B> Blacksmith",
+    "boost while held.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1d7240:#5e9f52:#e4ba58:#f2b054:#f06f3f:#ee4631:#e4352b:#a61e20>Christmas 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "cls": "BlacksmithArchiveOfAstralisItem",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "id": "archive-of-astralis-builder",
+   "section": "CHRISTMAS_2025",
+   "material": "BOOK",
+   "icon": "book",
+   "glint": true,
+   "name": "<b><#58d9a3>Archive</#58d9a3></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+   "enchants": [],
+   "lore": [
+    "A mysterious book",
+    "inscribed with words",
+    "you can't quite make",
+    "out...",
+    "",
+    "Permanent <#58d9a3>3%</#58d9a3> Builder",
+    "boost while held.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1d7240:#5e9f52:#e4ba58:#f2b054:#f06f3f:#ee4631:#e4352b:#a61e20>Christmas 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "cls": "BuilderArchiveOfAstralisItem",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "id": "archive-of-astralis-cook",
+   "section": "CHRISTMAS_2025",
+   "material": "BOOK",
+   "icon": "book",
+   "glint": true,
+   "name": "<b><#ffa675>Archive</#ffa675></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+   "enchants": [],
+   "lore": [
+    "A mysterious book",
+    "inscribed with words",
+    "you can't quite make",
+    "out...",
+    "",
+    "Permanent <#ffa675>3%</#ffa675> Cook",
+    "boost while held.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1d7240:#5e9f52:#e4ba58:#f2b054:#f06f3f:#ee4631:#e4352b:#a61e20>Christmas 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "cls": "CookArchiveOfAstralisItem",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "id": "archive-of-astralis-digger",
+   "section": "CHRISTMAS_2025",
+   "material": "BOOK",
+   "icon": "book",
+   "glint": true,
+   "name": "<b><#fff27f>Archive</#fff27f></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+   "enchants": [],
+   "lore": [
+    "A mysterious book",
+    "inscribed with words",
+    "you can't quite make",
+    "out...",
+    "",
+    "Permanent <#fff27f>3%</#fff27f> Digger",
+    "boost while held.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1d7240:#5e9f52:#e4ba58:#f2b054:#f06f3f:#ee4631:#e4352b:#a61e20>Christmas 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "cls": "DiggerArchiveOfAstralisItem",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "id": "archive-of-astralis-farmer",
+   "section": "CHRISTMAS_2025",
+   "material": "BOOK",
+   "icon": "book",
+   "glint": true,
+   "name": "<b><#8eff99>Archive</#8eff99></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+   "enchants": [],
+   "lore": [
+    "A mysterious book",
+    "inscribed with words",
+    "you can't quite make",
+    "out...",
+    "",
+    "Permanent <#8eff99>3%</#8eff99> Farmer",
+    "boost while held.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1d7240:#5e9f52:#e4ba58:#f2b054:#f06f3f:#ee4631:#e4352b:#a61e20>Christmas 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "cls": "FarmerArchiveOfAstralisItem",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "id": "archive-of-astralis-fisherman",
+   "section": "CHRISTMAS_2025",
+   "material": "BOOK",
+   "icon": "book",
+   "glint": true,
+   "name": "<b><#6db0ff>Archive</#6db0ff></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+   "enchants": [],
+   "lore": [
+    "A mysterious book",
+    "inscribed with words",
+    "you can't quite make",
+    "out...",
+    "",
+    "Permanent <#6db0ff>3%</#6db0ff> Fisherman",
+    "boost while held.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1d7240:#5e9f52:#e4ba58:#f2b054:#f06f3f:#ee4631:#e4352b:#a61e20>Christmas 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "cls": "FishermanArchiveOfAstralisItem",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "id": "archive-of-astralis-hunter",
+   "section": "CHRISTMAS_2025",
+   "material": "BOOK",
+   "icon": "book",
+   "glint": true,
+   "name": "<b><#ff4b3f>Archive</#ff4b3f></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+   "enchants": [],
+   "lore": [
+    "A mysterious book",
+    "inscribed with words",
+    "you can't quite make",
+    "out...",
+    "",
+    "Permanent <#ff4b3f>3%</#ff4b3f> Hunter",
+    "boost while held.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1d7240:#5e9f52:#e4ba58:#f2b054:#f06f3f:#ee4631:#e4352b:#a61e20>Christmas 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "cls": "HunterArchiveOfAstralisItem",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "id": "archive-of-astralis-lumberjack",
+   "section": "CHRISTMAS_2025",
+   "material": "BOOK",
+   "icon": "book",
+   "glint": true,
+   "name": "<b><#bcf067>Archive</#bcf067></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+   "enchants": [],
+   "lore": [
+    "A mysterious book",
+    "inscribed with words",
+    "you can't quite make",
+    "out...",
+    "",
+    "Permanent <#bcf067>3%</#bcf067> Lumberjack",
+    "boost while held.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1d7240:#5e9f52:#e4ba58:#f2b054:#f06f3f:#ee4631:#e4352b:#a61e20>Christmas 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "cls": "LumberjackArchiveOfAstralisItem",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "id": "archive-of-astralis-miner",
+   "section": "CHRISTMAS_2025",
+   "material": "BOOK",
+   "icon": "book",
+   "glint": true,
+   "name": "<b><#CD8EFF>Archive</#CD8EFF></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+   "enchants": [],
+   "lore": [
+    "A mysterious book",
+    "inscribed with words",
+    "you can't quite make",
+    "out...",
+    "",
+    "Permanent <#CD8EFF>3%</#CD8EFF> Miner",
+    "boost while held.",
+    "",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>",
+    "<#EEE1D5>Tier •</#EEE1D5> <b><gradient:#1d7240:#5e9f52:#e4ba58:#f2b054:#f06f3f:#ee4631:#e4352b:#a61e20>Christmas 2025</gradient></b>",
+    "<#EEE1D5><st>       </st>⋆⁺₊⋆ ★ ⋆⁺₊⋆<st>       </st></#EEE1D5>"
+   ],
+   "abilities": [],
+   "enchantList": [
+    "Unbreaking X"
+   ],
+   "enchantsHidden": true,
+   "source": "https://github.com/LumaLibre/LumaItems/blob/19587d5/src/main/java/dev/lumas/lumaitems/items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "cls": "MinerArchiveOfAstralisItem",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
    "id": "archael-set-elytra",
    "section": "ASTRAL",
    "set": "archael-set",

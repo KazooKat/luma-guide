@@ -13,6 +13,8 @@ import { Perks } from './jobs/Perks';
 import { PayChange } from './jobs/PayChange';
 import { fmtOffset, ScaleMark, ScalingBadge } from './jobs/ScalingBadge';
 import { resolveChain } from './jobs/BrewSetup';
+import { ArchiveBooks, boostLabel } from './jobs/ArchiveBooks';
+import { archiveMultiplier } from '../lib/archives';
 import { materialOf, shortestChainTo } from '../lib/brewing';
 
 const DATA = jobsData as JobsData;
@@ -86,9 +88,11 @@ function JobView({ job }: { job: Job }) {
   // Brewing plans a whole chain: each brew pays for its own ingredient, so use the chain's average per brew.
   const chain = useMemo(() => (item?.action === 'Brew' ? resolveChain(job, item, prefs.brewChain) : null), [job, item, prefs.brewChain]);
   const basis = chain ?? item;
+  // Archive of Astralis books multiply every payment and XP gain for this job.
+  const boost = archiveMultiplier(Array.isArray(prefs.archives) ? prefs.archives : []);
   const plan = useMemo(
-    () => (basis && rate ? planLevels({ xpBase: basis.xpBase, xpOffset: job.xpOffset, moneyBase: basis.moneyBase, from, to, xpInto, actionsPerHour: rate.perHour }) : null),
-    [basis, rate?.perHour, from, to, xpInto],
+    () => (basis && rate ? planLevels({ xpBase: basis.xpBase * boost, xpOffset: job.xpOffset, moneyBase: basis.moneyBase * boost, from, to, xpInto, actionsPerHour: rate.perHour }) : null),
+    [basis, rate?.perHour, from, to, xpInto, boost],
   );
   const selectItem = (key: string) => {
     const picked = job.items.find((i) => itemKey(i) === key);
@@ -128,14 +132,15 @@ function JobView({ job }: { job: Job }) {
             </label>
           </div>
         </div>
+        <ArchiveBooks job={job} prefs={prefs} set={set} />
       </section>
 
       <PayChange job={job} />
 
       <div class="job-layout">
-        <ItemTable job={job} level={from} selectedKey={itemKey(item)} onSelect={selectItem} />
+        <ItemTable job={job} level={from} boost={boost} selectedKey={itemKey(item)} onSelect={selectItem} />
         <div class="plan-col">
-          <Plan job={job} item={item} chain={chain} from={from} to={to} hoursPerDay={hoursPerDay} rate={rate} plan={plan} prefs={prefs} set={set} />
+          <Plan job={job} item={item} chain={chain} boost={boost} from={from} to={to} hoursPerDay={hoursPerDay} rate={rate} plan={plan} prefs={prefs} set={set} />
         </div>
       </div>
 
@@ -159,7 +164,7 @@ function JobView({ job }: { job: Job }) {
           </p>
           <p>
             The server's Jobs config isn't public, so these formulas are fitted from in-game readings. Game values are rounded to 2 decimals, so projections can be off by about half a percent.
-            Rank multipliers, boosts, events and payment caps aren't included. Machine rates assume vanilla timings and machines that never sit idle.
+            Archive of Astralis books you pick above are included{boost > 1 ? <> ({boostLabel(boost)} on both XP and money)</> : null}. Rank multipliers, other boosts, events and payment caps aren't, and the readings these formulas come from were taken without books. Machine rates assume vanilla timings and machines that never sit idle.
           </p>
           {job.job === 'Alchemist' && (
             <p>

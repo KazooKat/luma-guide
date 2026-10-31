@@ -46,10 +46,12 @@ interface Props {
   level: number;
   prefs: JobPrefs;
   perHour: number;
+  /** Archive of Astralis multiplier on XP and money (1 = no books). */
+  boost: number;
   set: (p: Partial<JobPrefs>) => void;
 }
 
-export function BrewSetup({ job, chain, level, prefs, perHour, set }: Props) {
+export function BrewSetup({ job, chain, level, prefs, perHour, boost, set }: Props) {
   const stand = MACHINES.brewing_stand;
   const stands = Math.max(0, prefs.machines[stand.id] ?? stand.defaultCount);
   const alchemy = prefs.alchemyLevel;
@@ -61,7 +63,7 @@ export function BrewSetup({ job, chain, level, prefs, perHour, set }: Props) {
   const options = nextSteps(last);
   const locked = chain.steps.filter((s) => (ingredientTier(s.material) ?? 99) > tier);
   const perChain = chain.steps.reduce(
-    (a, s) => ({ money: a.money + (s.paid ? moneyAt(s.paid.moneyBase, level) : 0), xp: a.xp + (s.paid ? xpAt(s.paid.xpBase, level, job.xpOffset) : 0) }),
+    (a, s) => ({ money: a.money + (s.paid ? moneyAt(s.paid.moneyBase, level) * boost : 0), xp: a.xp + (s.paid ? xpAt(s.paid.xpBase, level, job.xpOffset) * boost : 0) }),
     { money: 0, xp: 0 },
   );
   const num = (e: Event) => Number((e.currentTarget as HTMLInputElement).value);
@@ -111,7 +113,7 @@ export function BrewSetup({ job, chain, level, prefs, perHour, set }: Props) {
                 </small>
               </span>
               <span class="chain-pay mono">
-                {s.paid ? <>{fmtMoney(moneyAt(s.paid.moneyBase, level))}<small>{fmt2(xpAt(s.paid.xpBase, level, job.xpOffset))} XP</small></> : <small>no Jobs pay</small>}
+                {s.paid ? <>{fmtMoney(moneyAt(s.paid.moneyBase, level) * boost)}<small>{fmt2(xpAt(s.paid.xpBase, level, job.xpOffset) * boost)} XP</small></> : <small>no Jobs pay</small>}
               </span>
               {isLast && chain.steps.length > 1 ? (
                 <button class="chain-remove" aria-label={`Remove ${ingredientName(s.material)}`} title="Remove this step"

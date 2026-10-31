@@ -11,11 +11,13 @@ const PAGE = 12;
 interface Props {
   job: Job;
   level: number;
+  /** Archive of Astralis multiplier on XP and money (1 = no books). */
+  boost: number;
   selectedKey: string;
   onSelect: (key: string) => void;
 }
 
-export function ItemTable({ job, level, selectedKey, onSelect }: Props) {
+export function ItemTable({ job, level, boost, selectedKey, onSelect }: Props) {
   const [query, setQuery] = useState('');
   const [action, setAction] = useState<string | null>(null);
   const [category, setCategory] = useState<string | null>(null);
@@ -33,9 +35,9 @@ export function ItemTable({ job, level, selectedKey, onSelect }: Props) {
     const q = query.trim().toLowerCase();
     return job.items
       .filter((i) => (!action || i.action === action) && (!category || i.category === category) && (!q || i.item.toLowerCase().includes(q)))
-      .map((i) => ({ i, money: moneyAt(i.moneyBase, level), xp: xpAt(i.xpBase, level, job.xpOffset) }))
+      .map((i) => ({ i, money: moneyAt(i.moneyBase, level) * boost, xp: xpAt(i.xpBase, level, job.xpOffset) * boost }))
       .sort((a, b) => b[sort] - a[sort] || a.i.item.localeCompare(b.i.item));
-  }, [job, level, query, action, category, sort]);
+  }, [job, level, boost, query, action, category, sort]);
 
   // Keep the row being planned with visible even when it sits below the cut.
   const visible = useMemo(() => {
@@ -48,7 +50,7 @@ export function ItemTable({ job, level, selectedKey, onSelect }: Props) {
     <section class="card" aria-label={`What ${job.job} pays`}>
       <div class="card-title">
         <h3>What {job.job} pays</h3>
-        <span>per action, at your level ({level})</span>
+        <span>per action, at your level ({level}){boost > 1 ? ' with your books' : ''}</span>
       </div>
       <div class="table-tools">
         <input class="search" type="search" placeholder={`Search ${job.items.length} items`} aria-label="Search items"

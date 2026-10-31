@@ -24,6 +24,8 @@ export interface JobPrefs {
   raining: boolean;
   boat: boolean;
   handlingSeconds: number;
+  /** Archive of Astralis % held in main hand, off hand and head (/hat); 0 = no book. */
+  archives: number[];
 }
 
 export function defaultJobPrefs(job: Job): JobPrefs {
@@ -32,6 +34,7 @@ export function defaultJobPrefs(job: Job): JobPrefs {
     itemKey: job.defaultItem ?? (job.items[0] ? itemKey(job.items[0]) : ''),
     handRate: job.defaultRate, machines: {},
     alchemyLevel: 0, brewChain: [], fishingLevel: 0, lure: 3, raining: false, boat: false, handlingSeconds: 1.5,
+    archives: [0, 0, 0],
   };
 }
 

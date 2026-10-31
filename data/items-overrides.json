@@ -1511,6 +1511,316 @@
     "addSpace": true
    },
    "tierKey": "LUMARINE_2026"
+  },
+  {
+   "cls": "AlchemistArchiveOfAstralisItem",
+   "file": "items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "fields": {
+    "name": "<b><#7b66fb>Archive</#7b66fb></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+    "customEnchants": [],
+    "lore": [
+     "A mysterious book",
+     "inscribed with words",
+     "you can't quite make",
+     "out...",
+     "",
+     "Permanent <#7b66fb>3%</#7b66fb> Alchemist",
+     "boost while held."
+    ],
+    "taglines": [],
+    "material": "BOOK",
+    "id": "archive-of-astralis-alchemist",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": false
+   },
+   "tierKey": "CHRISTMAS_2025",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "cls": "BlacksmithArchiveOfAstralisItem",
+   "file": "items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "fields": {
+    "name": "<b><#8B8B8B>Archive</#8B8B8B></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+    "customEnchants": [],
+    "lore": [
+     "A mysterious book",
+     "inscribed with words",
+     "you can't quite make",
+     "out...",
+     "",
+     "Permanent <#8B8B8B>3%</#8B8B8B> Blacksmith",
+     "boost while held."
+    ],
+    "taglines": [],
+    "material": "BOOK",
+    "id": "archive-of-astralis-blacksmith",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": false
+   },
+   "tierKey": "CHRISTMAS_2025",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "cls": "BuilderArchiveOfAstralisItem",
+   "file": "items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "fields": {
+    "name": "<b><#58d9a3>Archive</#58d9a3></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+    "customEnchants": [],
+    "lore": [
+     "A mysterious book",
+     "inscribed with words",
+     "you can't quite make",
+     "out...",
+     "",
+     "Permanent <#58d9a3>3%</#58d9a3> Builder",
+     "boost while held."
+    ],
+    "taglines": [],
+    "material": "BOOK",
+    "id": "archive-of-astralis-builder",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": false
+   },
+   "tierKey": "CHRISTMAS_2025",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "cls": "CookArchiveOfAstralisItem",
+   "file": "items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "fields": {
+    "name": "<b><#ffa675>Archive</#ffa675></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+    "customEnchants": [],
+    "lore": [
+     "A mysterious book",
+     "inscribed with words",
+     "you can't quite make",
+     "out...",
+     "",
+     "Permanent <#ffa675>3%</#ffa675> Cook",
+     "boost while held."
+    ],
+    "taglines": [],
+    "material": "BOOK",
+    "id": "archive-of-astralis-cook",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": false
+   },
+   "tierKey": "CHRISTMAS_2025",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "cls": "DiggerArchiveOfAstralisItem",
+   "file": "items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "fields": {
+    "name": "<b><#fff27f>Archive</#fff27f></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+    "customEnchants": [],
+    "lore": [
+     "A mysterious book",
+     "inscribed with words",
+     "you can't quite make",
+     "out...",
+     "",
+     "Permanent <#fff27f>3%</#fff27f> Digger",
+     "boost while held."
+    ],
+    "taglines": [],
+    "material": "BOOK",
+    "id": "archive-of-astralis-digger",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": false
+   },
+   "tierKey": "CHRISTMAS_2025",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "cls": "FarmerArchiveOfAstralisItem",
+   "file": "items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "fields": {
+    "name": "<b><#8eff99>Archive</#8eff99></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+    "customEnchants": [],
+    "lore": [
+     "A mysterious book",
+     "inscribed with words",
+     "you can't quite make",
+     "out...",
+     "",
+     "Permanent <#8eff99>3%</#8eff99> Farmer",
+     "boost while held."
+    ],
+    "taglines": [],
+    "material": "BOOK",
+    "id": "archive-of-astralis-farmer",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": false
+   },
+   "tierKey": "CHRISTMAS_2025",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "cls": "FishermanArchiveOfAstralisItem",
+   "file": "items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "fields": {
+    "name": "<b><#6db0ff>Archive</#6db0ff></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+    "customEnchants": [],
+    "lore": [
+     "A mysterious book",
+     "inscribed with words",
+     "you can't quite make",
+     "out...",
+     "",
+     "Permanent <#6db0ff>3%</#6db0ff> Fisherman",
+     "boost while held."
+    ],
+    "taglines": [],
+    "material": "BOOK",
+    "id": "archive-of-astralis-fisherman",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": false
+   },
+   "tierKey": "CHRISTMAS_2025",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "cls": "HunterArchiveOfAstralisItem",
+   "file": "items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "fields": {
+    "name": "<b><#ff4b3f>Archive</#ff4b3f></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+    "customEnchants": [],
+    "lore": [
+     "A mysterious book",
+     "inscribed with words",
+     "you can't quite make",
+     "out...",
+     "",
+     "Permanent <#ff4b3f>3%</#ff4b3f> Hunter",
+     "boost while held."
+    ],
+    "taglines": [],
+    "material": "BOOK",
+    "id": "archive-of-astralis-hunter",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": false
+   },
+   "tierKey": "CHRISTMAS_2025",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "cls": "LumberjackArchiveOfAstralisItem",
+   "file": "items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "fields": {
+    "name": "<b><#bcf067>Archive</#bcf067></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+    "customEnchants": [],
+    "lore": [
+     "A mysterious book",
+     "inscribed with words",
+     "you can't quite make",
+     "out...",
+     "",
+     "Permanent <#bcf067>3%</#bcf067> Lumberjack",
+     "boost while held."
+    ],
+    "taglines": [],
+    "material": "BOOK",
+    "id": "archive-of-astralis-lumberjack",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": false
+   },
+   "tierKey": "CHRISTMAS_2025",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
+  },
+  {
+   "cls": "MinerArchiveOfAstralisItem",
+   "file": "items/misc/jobs/ArchiveOfAstralisItemNest.kt",
+   "fields": {
+    "name": "<b><#CD8EFF>Archive</#CD8EFF></b> <!b><#F7FFC9>of Astralis</#F7FFC9></!b>",
+    "customEnchants": [],
+    "lore": [
+     "A mysterious book",
+     "inscribed with words",
+     "you can't quite make",
+     "out...",
+     "",
+     "Permanent <#CD8EFF>3%</#CD8EFF> Miner",
+     "boost while held."
+    ],
+    "taglines": [],
+    "material": "BOOK",
+    "id": "archive-of-astralis-miner",
+    "vanillaEnchants": [
+     [
+      "unbreaking",
+      10
+     ]
+    ],
+    "hideEnchants": true,
+    "spoofEnchants": false,
+    "addSpace": false
+   },
+   "tierKey": "CHRISTMAS_2025",
+   "note": "The boost is 2% to 5%, rolled when the book is made (3% shown). Books from Christmas 2025 presents roll 3% most often."
   }
  ],
  "astralSets": [
