@@ -1,0 +1,307 @@
+[
+  {
+    "key": "mob-arena",
+    "constant": "MOB_ARENA",
+    "name": "Mob Arena",
+    "summary": "A co-op fight against mobs: everyone holds off 3 waves of wither skeletons, creepers and bosses using their own gear. When you fall, a teammate carries your soul to the green altar to bring you back. Clear wave 3 for Victory, or lose when everyone is down at once. It pays no Soul Orbs.",
+    "tokenLine": "No Soul Orbs",
+    "storyboard": {
+      "values": {
+        "waves": 3,
+        "mobsPerPlayer": 24,
+        "reviveRadius": 3,
+        "breakSeconds": 15,
+        "soulOrbs": 0
+      },
+      "beats": [
+        {
+          "caption": "Hold off 3 waves together",
+          "sub": "Wither skeletons and creepers pour in from spawn points, 24 per player in wave 1, with a boss every wave.",
+          "src": "games/logic/mobarena/MobArenaRewrite.java:65, games/logic/mobarena/MobArenaRewrite.java:169-193, games/logic/mobarena/MobArenaRewrite.java:610-623, configurable/sectors/game/MobArenaDefinition.java:37, games/logic/mobarena/MobType.java:24-38"
+        },
+        {
+          "caption": "Carry fallen souls to the altar",
+          "sub": "When someone falls, walk over their soul and bring it within 3 blocks of the green altar to revive them.",
+          "src": "games/logic/mobarena/MobArenaRewrite.java:688-707, games/logic/mobarena/MobArenaRewrite.java:369-416, games/logic/mobarena/MobArenaRewrite.java:801-810, configurable/sectors/game/MobArenaDefinition.java:45-47"
+        },
+        {
+          "caption": "Clear wave 3 for the win",
+          "sub": "You get a 15 second break between waves. Win or lose, Mob Arena pays 0 Soul Orbs.",
+          "src": "games/logic/mobarena/MobArenaRewrite.java:158-165, games/logic/mobarena/MobArenaRewrite.java:195-221, configurable/sectors/game/MobArenaDefinition.java:33, games/interfaces/TokenFormula.java:35-48"
+        }
+      ]
+    },
+    "howToPlay": [
+      {
+        "text": "Join with /event join while the queue is open (90 seconds by default). Mob Arena needs only 1 player. There is no lobby: joining teleports you straight into the arena, and players in the arena take no damage until the game starts.",
+        "src": "commands/modules/minigame/MinigameJoinCommand.java:32-48, games/interfaces/Minigame.java:126-138, games/interfaces/Minigame.java:143-159, games/logic/mobarena/MobArenaRewrite.java:95-104, configurable/sectors/game/MobArenaDefinition.java:16-18, games/events/MinigamePreventDamageListener.java:24-34"
+      },
+      {
+        "text": "You play with your own inventory. It isn't saved, cleared or swapped for a kit, so bring your own weapons, armor, food and potions. Anything you use up is gone for real.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:64, games/logic/mobarena/MobArenaRewrite.java:80-81, games/interfaces/Minigame.java:107-123, games/interfaces/InventoryUnifiedMinigame.java:36-71"
+      },
+      {
+        "text": "When the game starts you are put in Survival mode and can't fly. A boss bar counts down 10 seconds to wave 1.",
+        "src": "games/interfaces/Minigame.java:162-173, games/logic/mobarena/MobArenaRewrite.java:106-113, games/logic/mobarena/MobArenaRewrite.java:128-134, games/logic/mobarena/MobArenaRewrite.java:682-686, configurable/sectors/game/MobArenaDefinition.java:32"
+      },
+      {
+        "text": "There are 3 waves. Each starts with a \"Wave N/3\" title, and its bosses appear straight away with a chat message and their own health bar. The regular mobs then spawn in batches every 5 seconds over 2 minutes, taking the arena's spawn points in turn and landing up to 8 blocks from each one.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:65, games/logic/mobarena/MobArenaRewrite.java:169-193, games/logic/mobarena/MobArenaRewrite.java:136-151, games/logic/mobarena/MobArenaRewrite.java:280-282, games/logic/mobarena/MobArenaRewrite.java:610-623, games/logic/mobarena/MobArenaRewrite.java:901-909, games/logic/mobarena/ArenaBoss.java:44-52, configurable/sectors/game/MobArenaDefinition.java:23-25, configurable/sectors/game/MobArenaDefinition.java:34-35, configurable/sectors/game/MobArenaDefinition.java:41"
+      },
+      {
+        "text": "Each wave has a set number of regular mobs per player: 24 in wave 1, 30 in wave 2 and 36 in wave 3. Waves 1 and 2 add 1 mini boss per 10 players (at least 1), and wave 3 adds 1 final boss. The boss bar shows how many enemies are left.",
+        "src": "configurable/sectors/game/MobArenaDefinition.java:37, games/logic/mobarena/MobArenaRewrite.java:173-176, games/logic/mobarena/MobArenaRewrite.java:610-617, games/logic/mobarena/MobArenaRewrite.java:152-154"
+      },
+      {
+        "text": "Kill everything to clear the wave, including any minions the bosses summon. A cleared wave shows \"Wave cleared!\" and gives you a 15 second break, then the next wave starts.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:152-165, games/logic/mobarena/MobArenaRewrite.java:304-310, configurable/sectors/game/MobArenaDefinition.java:33"
+      },
+      {
+        "text": "Once every mob in the wave has spawned and fewer than 5 are left, they glow so you can find them. Any of those that no player has hit for 45 seconds (2 minutes for a boss) is removed and counts as cleared.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:339-347, games/logic/mobarena/MobArenaRewrite.java:1016-1027, games/logic/mobarena/MobArenaRewrite.java:525-528, configurable/sectors/game/MobArenaDefinition.java:43"
+      },
+      {
+        "text": "Regular mobs are wither skeletons in 4 tiers, plus creepers. Basic ones (100 health) wear chainmail with a stone sword, Uncommon (150) iron, Rare (200) diamond and Elite (250) netherite. Later waves roll the stronger tiers more often, and Elites only show up in wave 3.",
+        "src": "games/logic/mobarena/MobType.java:24-35, games/logic/mobarena/MobType.java:93-116, games/logic/mobarena/MobArenaRewrite.java:146"
+      },
+      {
+        "text": "Creepers have 60 health and are 25% faster than normal. They don't explode for damage: instead they fling every player within 5 blocks away from them and vanish, which counts as cleared. Being slammed into a wall by the blast deals up to 20 damage.",
+        "src": "games/logic/mobarena/MobType.java:37-72, games/logic/mobarena/MobArenaRewrite.java:546-554, games/logic/mobarena/MobArenaRewrite.java:456-461, games/logic/mobarena/MobArenaRewrite.java:66-69, games/logic/mobarena/MobArenaRewrite.java:710-781"
+      },
+      {
+        "text": "Mobs hit 15% harder in wave 2 and 30% harder in wave 3. That covers boss abilities and wall slams too.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:615, games/logic/mobarena/MobArenaRewrite.java:532-534, games/logic/mobarena/MobArenaRewrite.java:439-454, games/logic/mobarena/MobArenaRewrite.java:463-466, games/logic/mobarena/MobArenaRewrite.java:774-776"
+      },
+      {
+        "text": "Mobs only go after players who are still fighting, chasing the nearest one within 64 blocks. They can't hurt each other and don't burn in daylight. A mob that leaves the arena is teleported back to where it spawned, and a player who leaves is sent back to the arena spawn.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:537-544, games/logic/mobarena/MobArenaRewrite.java:1031-1060, games/logic/mobarena/MobArenaRewrite.java:518-524, games/logic/mobarena/MobArenaRewrite.java:1011-1013, games/logic/mobarena/MobArenaRewrite.java:349-357"
+      },
+      {
+        "text": "Mini bosses (waves 1 and 2) are picked at random from 6: Bone Warlord (wither skeleton, 350 health), Frostbinder (stray, 280), Hexwitch (witch, 260), Brute Warlord (piglin brute, 380), Behemoth (hoglin, 400) and Infernal Ravager (ravager, 400). The wave 3 boss is The Warden or The Wither, 500 health each.",
+        "src": "games/logic/mobarena/BossType.java:19-43, games/logic/mobarena/BossType.java:77-82, games/logic/mobarena/MobArenaRewrite.java:180-191"
+      },
+      {
+        "text": "Boss health grows with the player count: +25% for every player beyond 1 per boss, so with 4 players the 400 health Behemoth has 700. Past 1024 health a boss takes less damage per hit instead, which works out the same.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:613-614, games/logic/mobarena/BossType.java:84-87, games/logic/mobarena/MobArenaRewrite.java:880-881, games/logic/mobarena/MobArenaRewrite.java:988-1001, games/logic/mobarena/MobArenaRewrite.java:529"
+      },
+      {
+        "text": "Bosses use special abilities, 1 at a time, each on its own cooldown, starting 3 seconds after they appear. Bone Warlord leaps and slams the ground and summons minions. Frostbinder fires a fan of 7 slowing arrows, freezes everyone within 6 blocks and teleports onto you. Hexwitch throws harming, poison, slowness or weakness potions at up to 3 players, teleports and summons minions. Brute Warlord leaps and slams and lets out a war cry that gives mobs within 12 blocks Speed II and Strength for 8 seconds. Behemoth charges, pounds the ground and summons minions. Infernal Ravager charges, shoots fireballs at up to 3 players and war cries. The Wither summons minions.",
+        "src": "games/logic/mobarena/BossType.java:19-41, games/logic/mobarena/ArenaBoss.java:27-33, games/logic/mobarena/ArenaBoss.java:101-116, games/logic/mobarena/Ability.java:36-291"
+      },
+      {
+        "text": "You can't die. When you would, you keep your items and XP, drop nothing and go down instead: chat says you fell, your fire, freezing and potion effects are cleared, and your soul appears where you fell (at the arena spawn if you fell out of the arena or into liquid). While down, mobs ignore you, nothing can hurt you, and you can't hit or use anything.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:478-492, games/logic/mobarena/MobArenaRewrite.java:688-707, games/logic/mobarena/MobArenaRewrite.java:784-799, games/logic/mobarena/MobArenaRewrite.java:506-516, games/logic/mobarena/MobArenaRewrite.java:537-544, games/logic/mobarena/MobArenaRewrite.java:556-562"
+      },
+      {
+        "text": "A player who is still fighting picks up a soul by walking within 1.75 blocks of it. Take it within 3 blocks of the revive altar, which is marked with green particles, and the downed player comes back at the altar with full health and Resistance V for 3 seconds. You can carry more than 1 soul, and if you fall, the souls you carry drop where you fell.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:369-416, games/logic/mobarena/MobArenaRewrite.java:784-786, games/logic/mobarena/MobArenaRewrite.java:801-810, games/logic/mobarena/MobArenaRewrite.java:703, configurable/sectors/game/MobArenaDefinition.java:19-20, configurable/sectors/game/MobArenaDefinition.java:45-47"
+      },
+      {
+        "text": "Downed players don't come back on their own between waves. Someone has to carry their soul, and the \"Wave cleared!\" message reminds you to.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:158-165, games/logic/mobarena/MobArenaRewrite.java:397-416"
+      },
+      {
+        "text": "If every player is down at the same time, the game ends in \"Defeat\". Clearing wave 3 ends it in \"Victory!\". There is no time limit. Either way all mobs are removed and everyone is sent to the server's minigame drop-off point, if one is set.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:119-126, games/logic/mobarena/MobArenaRewrite.java:158-161, games/logic/mobarena/MobArenaRewrite.java:195-221, games/logic/mobarena/MobArenaRewrite.java:80-81, games/interfaces/Minigame.java:366-373, configurable/Config.java:41-42"
+      },
+      {
+        "text": "Most commands are blocked while you play. /event (including /event quit) and chat commands like /msg, /r and /p still work, and /event quit takes you out of the game. Being idle for 6 minutes gets you an AFK warning and 7 minutes removes you. Bedrock players are never removed for this.",
+        "src": "games/interfaces/Minigame.java:107-116, games/events/MinigameExitPreventionListener.java:38-54, configurable/Config.java:51-55, commands/modules/minigame/MinigameQuitCommand.java:33-52, games/logic/mobarena/MobArenaRewrite.java:223-233, games/interfaces/models/InactivitySettings.java:17-18, games/interfaces/models/InactivitySettings.java:37-39, games/interfaces/Minigame.java:382-403, games/interfaces/Minigame.java:616-618"
+      }
+    ],
+    "scoring": [
+      {
+        "text": "There is no score. Mob Arena doesn't count kills or damage, has no top 5 list or winner, and doesn't add to any leaderboard. The whole team wins or loses together.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:494-504, games/logic/mobarena/MobArenaRewrite.java:195-221"
+      }
+    ],
+    "tokens": [
+      {
+        "text": "Mob Arena pays 0 Soul Orbs. Its code never uses a token formula, so nothing is paid when the game ends, whether you win or lose.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:64, games/logic/mobarena/MobArenaRewrite.java:195-221, games/interfaces/TokenFormula.java:35-48, games/interfaces/InventoryUnifiedMinigame.java:73-88"
+      },
+      {
+        "text": "Kills don't pay anything either: mobs drop no items and no XP.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:494-504"
+      },
+      {
+        "text": "Mob Arena doesn't record a score for you, so playing it doesn't count toward the event charm, which needs a score in at least 1 minigame.",
+        "src": "commands/modules/ClaimCharmCommand.java:45-48, model/EventPlayer.java:168-170, games/logic/mobarena/MobArenaRewrite.java:195-221"
+      },
+      {
+        "text": "A staff token multiplier or flat payout changes nothing, because there is no payout to apply it to. A flat payout is still announced in chat as everyone getting that many tokens.",
+        "src": "games/interfaces/Minigame.java:344-346, games/interfaces/Minigame.java:633-640, games/interfaces/TokenPayout.java:30-36, games/interfaces/TokenFormula.java:35-36"
+      },
+      {
+        "text": "The only Soul Orbs you might see during a game are the event's job drops, which are off by default. Whether killing arena mobs counts for the Hunter job is up to the Jobs plugin's own settings, not the event code.",
+        "src": "listeners/JobsListener.java:27-48, listeners/EventJobValue.java:17, configurable/Config.java:23"
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Players",
+        "value": "1 or more",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:95-98, games/interfaces/Minigame.java:143-159"
+      },
+      {
+        "label": "Waves",
+        "value": "3, with no time limit",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:65, games/logic/mobarena/MobArenaRewrite.java:80-81"
+      },
+      {
+        "label": "Start countdown",
+        "value": "10 seconds",
+        "src": "configurable/sectors/game/MobArenaDefinition.java:32, games/logic/mobarena/MobArenaRewrite.java:111"
+      },
+      {
+        "label": "Break between waves",
+        "value": "15 seconds",
+        "src": "configurable/sectors/game/MobArenaDefinition.java:33, games/logic/mobarena/MobArenaRewrite.java:162"
+      },
+      {
+        "label": "Regular mobs",
+        "value": "24, 30 and 36 per player in waves 1, 2 and 3",
+        "src": "configurable/sectors/game/MobArenaDefinition.java:37, games/logic/mobarena/MobArenaRewrite.java:173-176, games/logic/mobarena/MobArenaRewrite.java:616"
+      },
+      {
+        "label": "Spawning",
+        "value": "A batch every 5 seconds for 2 minutes, at most 90 regular mobs alive at once",
+        "src": "configurable/sectors/game/MobArenaDefinition.java:34-35, configurable/sectors/game/MobArenaDefinition.java:39, games/logic/mobarena/MobArenaRewrite.java:136-151, games/logic/mobarena/MobArenaRewrite.java:246-250, games/logic/mobarena/MobArenaRewrite.java:618-622"
+      },
+      {
+        "label": "Bosses",
+        "value": "Waves 1 and 2: 1 mini boss per 10 players (at least 1). Wave 3: 1 boss",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:613, games/logic/mobarena/BossType.java:77-82"
+      },
+      {
+        "label": "Boss health",
+        "value": "260 to 400 for mini bosses, 500 for the final boss, +25% per player beyond 1 per boss",
+        "src": "games/logic/mobarena/BossType.java:19-43, games/logic/mobarena/MobArenaRewrite.java:614"
+      },
+      {
+        "label": "Mob health",
+        "value": "Basic 100, Uncommon 150, Rare 200, Elite 250, Creeper 60, boss minions 75",
+        "src": "games/logic/mobarena/MobType.java:24-38, games/logic/mobarena/MobType.java:112-116, games/logic/mobarena/MobArenaRewrite.java:304-310"
+      },
+      {
+        "label": "Mob odds",
+        "value": "Wave 1: Basic 65%, Uncommon 23%, Creeper 7%, Rare 5%. Wave 2: Basic and Uncommon 36% each, Rare 18%, Creeper 11%. Wave 3: Uncommon 35%, Rare 26%, Basic 17%, Creeper 13%, Elite 9%",
+        "src": "games/logic/mobarena/MobType.java:24-38, games/logic/mobarena/MobType.java:93-110"
+      },
+      {
+        "label": "Mob damage",
+        "value": "+15% in wave 2, +30% in wave 3",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:615, games/logic/mobarena/MobArenaRewrite.java:532-534"
+      },
+      {
+        "label": "Boss abilities",
+        "value": "Leap Slam 10 damage within 4.5 blocks (every 8 seconds), Charge 12 (7s), Ground Pound 9 within 6 blocks (10s), Frost Nova 6 within 6 blocks (12s), minions up to 3 at a time and 6 alive (18s)",
+        "src": "games/logic/mobarena/Ability.java:36-79, games/logic/mobarena/Ability.java:106-128, games/logic/mobarena/Ability.java:202-258, games/logic/mobarena/Ability.java:293, games/logic/mobarena/Ability.java:305-313"
+      },
+      {
+        "label": "Creeper blast",
+        "value": "Flings players within 5 blocks, wall slams up to 20 damage",
+        "src": "games/logic/mobarena/MobType.java:49-72, games/logic/mobarena/MobArenaRewrite.java:66-69, games/logic/mobarena/MobArenaRewrite.java:774-776"
+      },
+      {
+        "label": "Souls",
+        "value": "Picked up within 1.75 blocks, revive within 3 blocks of the altar",
+        "src": "configurable/sectors/game/MobArenaDefinition.java:45-47, games/logic/mobarena/MobArenaRewrite.java:383-416"
+      },
+      {
+        "label": "Revive",
+        "value": "Full health and Resistance V for 3 seconds, at the altar",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:786, games/logic/mobarena/MobArenaRewrite.java:801-810"
+      },
+      {
+        "label": "Last mobs",
+        "value": "Under 5 left: they glow, and are removed after 45 seconds unhit (bosses 2 minutes)",
+        "src": "configurable/sectors/game/MobArenaDefinition.java:43, games/logic/mobarena/MobArenaRewrite.java:339-347, games/logic/mobarena/MobArenaRewrite.java:1022-1027"
+      },
+      {
+        "label": "AFK",
+        "value": "Warned after 6 minutes idle, removed at 7",
+        "src": "games/interfaces/models/InactivitySettings.java:17-18, games/interfaces/models/InactivitySettings.java:37-39"
+      },
+      {
+        "label": "Soul Orbs",
+        "value": "None",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:195-221, games/interfaces/TokenFormula.java:35-48"
+      }
+    ],
+    "tips": [
+      {
+        "text": "Bring your best gear. Your armor doesn't lose durability in the arena and you keep everything when you fall, but weapons still wear down and potions, food and arrows are used up for real.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:564-570, games/logic/mobarena/MobArenaRewrite.java:478-489, games/logic/mobarena/MobArenaRewrite.java:64"
+      },
+      {
+        "text": "Stick together. A downed player only comes back if someone carries their soul to the altar, and if everyone is down at the same time the game is lost.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:119-126, games/logic/mobarena/MobArenaRewrite.java:397-416"
+      },
+      {
+        "text": "Fight near the altar. It saves a long walk with a soul, and regular mobs try not to spawn within 4 blocks of the altar or of any player.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:901-940, games/logic/mobarena/MobArenaRewrite.java:397-416"
+      },
+      {
+        "text": "Kill creepers before they reach you, and keep away from walls when one is close. The blast doesn't hurt on its own, but being flung into a wall does.",
+        "src": "games/logic/mobarena/MobType.java:37-72, games/logic/mobarena/MobArenaRewrite.java:732-781"
+      },
+      {
+        "text": "Use the 15 second break between waves to carry souls back, and pick up every soul on the way. You can carry several at once and revive them all in 1 trip.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:158-165, games/logic/mobarena/MobArenaRewrite.java:383-416, configurable/sectors/game/MobArenaDefinition.java:33"
+      },
+      {
+        "text": "Bosses with minions keep summoning them every 18 seconds, and each minion adds to the enemies left in the wave. Killing the summoning boss early keeps the wave short.",
+        "src": "games/logic/mobarena/Ability.java:65-79, games/logic/mobarena/MobArenaRewrite.java:152, games/logic/mobarena/MobArenaRewrite.java:304-310"
+      },
+      {
+        "text": "Keep moving even while you're down. Downed players are still checked for AFK, and 7 minutes idle removes you.",
+        "src": "games/interfaces/models/InactivitySettings.java:18, games/interfaces/models/InactivitySettings.java:37-39, games/interfaces/Minigame.java:382-403"
+      }
+    ],
+    "quirks": [
+      {
+        "text": "Winning gives nothing extra. Victory and Defeat end the game the same way, with no payout.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:195-221"
+      },
+      {
+        "text": "Mobs that can't spawn within the wave's 2 minutes, because 90 regular mobs are already alive, are skipped. With a lot of players a wave can end with fewer mobs than its count.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:136-151, games/logic/mobarena/MobArenaRewrite.java:246-250, games/logic/mobarena/MobArenaRewrite.java:283-289"
+      },
+      {
+        "text": "Logging out doesn't take you out of the game, and you still count as fighting. While a logged-out player counts, the game can't end in Defeat. Leave with /event quit instead.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:119-126, games/logic/mobarena/MobArenaRewrite.java:223-233, commands/modules/minigame/MinigameQuitCommand.java:33-52"
+      },
+      {
+        "text": "Potions and clouds from arena mobs never affect other mobs or downed players.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:572-590"
+      }
+    ],
+    "config": [
+      {
+        "text": "Mob Arena isn't in the default list of games that start automatically, so staff start it.",
+        "src": "configurable/Config.java:44-49"
+      },
+      {
+        "text": "The arena area, its spawn point, the revive altar (the spawn point if none is set) and the mob spawn points are set per map.",
+        "src": "configurable/sectors/game/MobArenaDefinition.java:16-28, games/logic/mobarena/MobArenaRewrite.java:85-92"
+      },
+      {
+        "text": "The start countdown (10 seconds), break between waves (15), spawn window (120 seconds) and batch gap (5), mobs per player (24, 30, 36), the 90 mob cap, spawn radius (8 blocks), glow threshold (5), soul pickup range (1.75 blocks) and revive range (3 blocks) are server settings, so the live values may differ.",
+        "src": "configurable/sectors/game/MobArenaDefinition.java:32-47"
+      },
+      {
+        "text": "The Ender Dragon can only be the wave 3 boss if the server turns it on. It is off by default.",
+        "src": "configurable/sectors/game/MobArenaDefinition.java:30, games/logic/mobarena/BossType.java:77-82"
+      },
+      {
+        "text": "Mob Arena's own code doesn't stop players hurting each other, so whether friendly fire works depends on the arena's region settings on the server.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:506-535, games/events/MinigamePreventDamageListener.java:24-34"
+      },
+      {
+        "text": "The 3 waves, mob tiers and odds, the boss list and abilities, and the damage and boss health scaling are fixed in code, not the config.",
+        "src": "games/logic/mobarena/MobArenaRewrite.java:65, games/logic/mobarena/MobArenaRewrite.java:610-623, games/logic/mobarena/MobType.java:24-38, games/logic/mobarena/BossType.java:19-43, games/logic/mobarena/Ability.java:36-291"
+      }
+    ]
+  }
+]

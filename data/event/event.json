@@ -17,7 +17,7 @@
     "earnedBy": "working jobs, exploring the Lumares map and playing minigames"
   },
   "charmItemId": null,
-  "activeGames": ["manor-2", "skywars", "copycat"],
+  "activeGames": ["paintball", "boat-race", "tnt-tag", "towers", "manor", "prop-hunt", "the-nabbits", "panel-party", "minebattle", "tnt-run", "freeze-tag", "soccer", "incursion", "bomberman", "skywars", "manor-2", "mob-arena", "copycat"],
   "newGames": [],
   "trickOrTreat": {
     "cooldownHours": 40,

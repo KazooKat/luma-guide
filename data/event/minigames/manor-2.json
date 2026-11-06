@@ -30,7 +30,7 @@
         {
           "caption": "Light the Ghost for 2.5 seconds",
           "sub": "A grab kills a Hunter in 2.5 seconds, but your light breaks it. Hunters share 200 points for the kill.",
-          "src": "games/logic/manor2/attack/Grab.java:30, games/logic/manor2/attack/Grab.java:99-105, games/logic/manor2/light/GhostVisibility.java:92-98, configurable/sectors/game/Manor2Definition.java:34-35, games/logic/manor2/ManorScoreboard.java:55-65, configurable/sectors/game/Manor2Definition.java:42-43"
+          "src": "games/logic/manor2/attack/Grab.java:30, games/logic/manor2/attack/Grab.java:99-105, games/logic/manor2/light/GhostVisibility.java:101-107, configurable/sectors/game/Manor2Definition.java:34-35, games/logic/manor2/ManorScoreboard.java:55-65, configurable/sectors/game/Manor2Definition.java:42-43"
         },
         {
           "caption": "2 to 8 Soul Orbs, +1 if your side wins",
@@ -54,11 +54,11 @@
       },
       {
         "text": "Ghosts are invisible, and Hunters can't see them at all unless light is on them. Ghosts see a glowing outline on every Hunter within 20 blocks.",
-        "src": "games/logic/manor2/light/GhostVisibility.java:99-127, games/logic/manor2/Manor2.java:253-261, configurable/sectors/game/Manor2Definition.java:38-39, games/logic/manor2/roles/Ghost.java:76-90, games/logic/manor2/roles/GhostHunter.java:70-95"
+        "src": "games/logic/manor2/light/GhostVisibility.java:108-142, games/logic/manor2/Manor2.java:253-261, configurable/sectors/game/Manor2Definition.java:38-39, games/logic/manor2/roles/Ghost.java:77-91, games/logic/manor2/roles/GhostHunter.java:70-95"
       },
       {
-        "text": "Ghosts start with 3 cookies and get 1 more for every kill. Eating one gives Speed I for 3 seconds, with 10 seconds between cookies.",
-        "src": "games/logic/manor2/roles/Ghost.java:42-43, games/logic/manor2/roles/Ghost.java:84-86, games/logic/manor2/roles/Ghost.java:118-147, games/logic/manor2/attack/Grab.java:107-118, games/logic/manor2/Manor2.java:444-455"
+        "text": "Ghosts start with 3 cookies and get 1 more for every kill. Eating one is almost instant and gives Speed I for 4 seconds, with 10 seconds between cookies.",
+        "src": "games/logic/manor2/roles/Ghost.java:43-44, games/logic/manor2/roles/Ghost.java:85-87, games/logic/manor2/roles/Ghost.java:119-148, games/logic/manor2/roles/Ghost.java:160-162, games/logic/manor2/attack/Grab.java:107-118, games/logic/manor2/Manor2.java:444-455"
       },
       {
         "text": "To kill, a Ghost left clicks a Hunter. Both are frozen in place, the Hunter's view is turned to face the Ghost, and after 2.5 seconds the Hunter dies. During a grab the Ghost is fully visible.",
@@ -74,19 +74,23 @@
       },
       {
         "text": "The beam reaches 8 blocks and is stopped by solid blocks. When it hits a Ghost, Hunters within 20 blocks can see that Ghost. A hit at the very edge of the beam only shows a glowing outline, and anything closer to the middle fully exposes it.",
-        "src": "games/logic/manor2/light/Flashlight.java:49, games/logic/manor2/light/Flashlight.java:99-117, utility/latency/tracing/Tracing.java:66-105, games/logic/manor2/light/LightHit.java:7-19, games/logic/manor2/light/GhostVisibility.java:34-39, games/logic/manor2/light/GhostVisibility.java:123-127, games/logic/manor2/light/GhostVisibility.java:200-204"
+        "src": "games/logic/manor2/light/Flashlight.java:49, games/logic/manor2/light/Flashlight.java:99-117, utility/latency/tracing/Tracing.java:66-105, games/logic/manor2/light/LightHit.java:7-19, games/logic/manor2/light/GhostVisibility.java:38-43, games/logic/manor2/light/GhostVisibility.java:138-142, games/logic/manor2/light/GhostVisibility.java:228-232"
       },
       {
         "text": "Every tick of light that fully exposes a Ghost counts toward killing it. 2.5 seconds of it in total, from any Hunters, kills the Ghost.",
-        "src": "games/logic/manor2/light/GhostVisibility.java:62-68, games/logic/manor2/light/GhostVisibility.java:92-98, configurable/sectors/game/Manor2Definition.java:34-35, games/logic/manor2/Manor2.java:90, utility/scheduler/AsynchronousRunnable.java:34-35"
+        "src": "games/logic/manor2/light/GhostVisibility.java:69-75, games/logic/manor2/light/GhostVisibility.java:101-107, configurable/sectors/game/Manor2Definition.java:34-35, games/logic/manor2/Manor2.java:90, utility/scheduler/AsynchronousRunnable.java:34-35"
       },
       {
         "text": "A Ghost stays revealed for 3 seconds after the light leaves it. After that its kill progress fades at the same rate it built up.",
-        "src": "games/logic/manor2/light/GhostVisibility.java:34, games/logic/manor2/light/GhostVisibility.java:70-98, games/logic/manor2/light/GhostVisibility.java:131-143"
+        "src": "games/logic/manor2/light/GhostVisibility.java:38, games/logic/manor2/light/GhostVisibility.java:77-107, games/logic/manor2/light/GhostVisibility.java:158-170"
+      },
+      {
+        "text": "A fully exposed Ghost moves faster: about 1.5 times its normal speed, or about twice its normal speed while a flashlight is fully on it. It goes back to normal speed once it's hidden or only outlined.",
+        "src": "games/logic/manor2/light/GhostVisibility.java:48-49, games/logic/manor2/light/GhostVisibility.java:77-87, games/logic/manor2/light/GhostVisibility.java:108-127, games/logic/manor2/light/GhostVisibility.java:146-156"
       },
       {
         "text": "The map's own light reveals Ghosts too: standing in block light of 8 or more fully exposes them, and 6 or 7 shows an outline. This light doesn't count toward killing them.",
-        "src": "games/logic/manor2/light/GhostVisibility.java:37-38, games/logic/manor2/light/GhostVisibility.java:99-104, games/logic/manor2/light/GhostVisibility.java:189-198, games/logic/manor2/light/GhostVisibility.java:95-98"
+        "src": "games/logic/manor2/light/GhostVisibility.java:41-42, games/logic/manor2/light/GhostVisibility.java:108-113, games/logic/manor2/light/GhostVisibility.java:217-226, games/logic/manor2/light/GhostVisibility.java:104-107"
       },
       {
         "text": "Artifacts are hidden around the map. A Hunter's flashlight reveals any within 8 blocks that it has a clear line to, and a glowing item appears with 'Click on the artifact to get it'. Click it to collect it. A revealed artifact hides again after 10 seconds without light.",
@@ -102,7 +106,7 @@
       },
       {
         "text": "When you die, Hunter or Ghost, your soul is bound to an artifact: you shrink to about 1 block tall, turn invisible, and are moved to a spot where an artifact was collected, boxed in by a world border ('Hide from hunters!'). If no spot is free yet, you see 'Waiting for a safe region...' until one is.",
-        "src": "games/logic/manor2/roles/Ghost.java:63-73, games/logic/manor2/roles/GhostHunter.java:56-67, games/logic/manor2/roles/Artifact.java:29-33, games/logic/manor2/roles/Artifact.java:54-93, games/logic/manor2/roles/Artifact.java:107-123, games/logic/manor2/artifact/ArtifactManager.java:188-208"
+        "src": "games/logic/manor2/roles/Ghost.java:64-74, games/logic/manor2/roles/GhostHunter.java:56-67, games/logic/manor2/roles/Artifact.java:29-33, games/logic/manor2/roles/Artifact.java:54-93, games/logic/manor2/roles/Artifact.java:107-123, games/logic/manor2/artifact/ArtifactManager.java:188-208"
       },
       {
         "text": "If a Hunter's beam finds you as an artifact, you're frozen and an artifact item with an enchanted glint appears on you. If they click it you're out and become a spectator. If the light leaves you alone for 10 seconds, you can move again.",
@@ -132,7 +136,7 @@
       },
       {
         "text": "Hunters share 200 points for each Ghost killed, split by how much of the killing light each one gave. Chat names every Hunter who gave more than 15% of it.",
-        "src": "games/logic/manor2/ManorScoreboard.java:46, games/logic/manor2/ManorScoreboard.java:55-65, games/logic/manor2/ManorScoreboard.java:150-156, games/logic/manor2/ManorScoreboard.java:166-181, games/logic/manor2/light/GhostVisibility.java:62-68, configurable/sectors/game/Manor2Definition.java:42-43"
+        "src": "games/logic/manor2/ManorScoreboard.java:46, games/logic/manor2/ManorScoreboard.java:55-65, games/logic/manor2/ManorScoreboard.java:150-156, games/logic/manor2/ManorScoreboard.java:166-181, games/logic/manor2/light/GhostVisibility.java:69-75, configurable/sectors/game/Manor2Definition.java:42-43"
       },
       {
         "text": "Hunters get 50 points for each artifact they collect, including dead players bound to artifacts.",
@@ -201,12 +205,17 @@
       {
         "label": "Killing a Ghost",
         "value": "2.5 seconds of full light in total",
-        "src": "configurable/sectors/game/Manor2Definition.java:34-35, games/logic/manor2/light/GhostVisibility.java:92-98"
+        "src": "configurable/sectors/game/Manor2Definition.java:34-35, games/logic/manor2/light/GhostVisibility.java:101-107"
       },
       {
         "label": "Ghost stays revealed",
         "value": "3 seconds after the light leaves",
-        "src": "games/logic/manor2/light/GhostVisibility.java:34, games/logic/manor2/light/GhostVisibility.java:79-83"
+        "src": "games/logic/manor2/light/GhostVisibility.java:38, games/logic/manor2/light/GhostVisibility.java:88-92"
+      },
+      {
+        "label": "Exposed Ghost speed",
+        "value": "About 1.5x walk speed, about 2x while a flashlight is fully on it",
+        "src": "games/logic/manor2/light/GhostVisibility.java:48-49, games/logic/manor2/light/GhostVisibility.java:108-127, games/logic/manor2/light/GhostVisibility.java:146-156"
       },
       {
         "label": "Flashlight beam",
@@ -226,7 +235,7 @@
       {
         "label": "Seeing each other",
         "value": "Hunters see a revealed Ghost within 20 blocks, Ghosts see Hunter outlines within 20 blocks",
-        "src": "games/logic/manor2/light/GhostVisibility.java:39, games/logic/manor2/light/GhostVisibility.java:123-127, configurable/sectors/game/Manor2Definition.java:38-39, games/logic/manor2/Manor2.java:253-261"
+        "src": "games/logic/manor2/light/GhostVisibility.java:43, games/logic/manor2/light/GhostVisibility.java:138-142, configurable/sectors/game/Manor2Definition.java:38-39, games/logic/manor2/Manor2.java:253-261"
       },
       {
         "label": "Haunting",
@@ -236,7 +245,7 @@
       {
         "label": "Map light",
         "value": "Block light 8+ exposes a Ghost, 6 or 7 shows an outline",
-        "src": "games/logic/manor2/light/GhostVisibility.java:37-38, games/logic/manor2/light/GhostVisibility.java:189-198"
+        "src": "games/logic/manor2/light/GhostVisibility.java:41-42, games/logic/manor2/light/GhostVisibility.java:217-226"
       },
       {
         "label": "Breaking a grab",
@@ -255,8 +264,8 @@
       },
       {
         "label": "Cookies",
-        "value": "3 at start, +1 per kill, Speed I for 3 s, 10 s apart",
-        "src": "games/logic/manor2/roles/Ghost.java:42-43, games/logic/manor2/roles/Ghost.java:84-86, games/logic/manor2/roles/Ghost.java:118-147"
+        "value": "3 at start, +1 per kill, Speed I for 4 s, 10 s apart",
+        "src": "games/logic/manor2/roles/Ghost.java:43-44, games/logic/manor2/roles/Ghost.java:85-87, games/logic/manor2/roles/Ghost.java:119-148, games/logic/manor2/roles/Ghost.java:160-162"
       },
       {
         "label": "Artifact",
@@ -287,7 +296,7 @@
     "tips": [
       {
         "text": "Turn off fullbright or gamma mods, as the game's own How to Play page asks. Ghosts stay hidden either way, and the mod only stops you seeing where your own beam reaches.",
-        "src": "games/logic/manor2/Manor2.java:308-315, games/logic/manor2/light/GhostVisibility.java:123-127"
+        "src": "games/logic/manor2/Manor2.java:308-315, games/logic/manor2/light/GhostVisibility.java:138-142"
       },
       {
         "text": "Hunters: the battery refills twice as fast as it drains, so short bursts beat holding it down. The beam also gets dimmer and narrower as the battery drops.",
@@ -299,7 +308,7 @@
       },
       {
         "text": "Listen for a breeze whirl. Every Ghost makes one every 4 seconds.",
-        "src": "games/logic/manor2/roles/Ghost.java:39-40, games/logic/manor2/roles/Ghost.java:169-175"
+        "src": "games/logic/manor2/roles/Ghost.java:40-41, games/logic/manor2/roles/Ghost.java:173-179"
       },
       {
         "text": "Hunters: artifacts are revealed in a wider cone than your beam, so sweep your view around a room to find them.",
@@ -307,19 +316,19 @@
       },
       {
         "text": "Hunters: a Ghost that is grabbing someone is fully visible. Shine your light on it to break the grab, and the same light counts toward killing it.",
-        "src": "games/logic/manor2/attack/Grab.java:59-61, games/logic/manor2/attack/Grab.java:86, games/logic/manor2/attack/Grab.java:99-105, games/logic/manor2/light/GhostVisibility.java:62-68, games/logic/manor2/light/GhostVisibility.java:92-98"
+        "src": "games/logic/manor2/attack/Grab.java:59-61, games/logic/manor2/attack/Grab.java:86, games/logic/manor2/attack/Grab.java:99-105, games/logic/manor2/light/GhostVisibility.java:69-75, games/logic/manor2/light/GhostVisibility.java:101-107"
       },
       {
         "text": "Grabbed? Your own light can't break you free, but your view is locked onto the Ghost and your light still counts toward killing it.",
-        "src": "games/logic/manor2/attack/Grab.java:88-92, games/logic/manor2/attack/Grab.java:99-105, games/logic/manor2/light/GhostVisibility.java:62-68, games/logic/manor2/light/Flashlight.java:105-117"
+        "src": "games/logic/manor2/attack/Grab.java:88-92, games/logic/manor2/attack/Grab.java:99-105, games/logic/manor2/light/GhostVisibility.java:69-75, games/logic/manor2/light/Flashlight.java:105-117"
       },
       {
         "text": "Ghosts: stay out of lit areas. Block light of 8 or more exposes you, stops you grabbing, and lets Hunters see you from 20 blocks.",
-        "src": "games/logic/manor2/light/GhostVisibility.java:189-198, games/logic/manor2/light/GhostVisibility.java:123-127, games/logic/manor2/attack/GhostAttacks.java:73-76"
+        "src": "games/logic/manor2/light/GhostVisibility.java:217-226, games/logic/manor2/light/GhostVisibility.java:138-142, games/logic/manor2/attack/GhostAttacks.java:73-76"
       },
       {
         "text": "Ghosts: your health bar shows how close the light is to killing you. It drops as kill progress builds and refills as it fades, and the light never takes you below half a heart.",
-        "src": "games/logic/manor2/light/GhostVisibility.java:42, games/logic/manor2/light/GhostVisibility.java:92-93, games/logic/manor2/light/GhostVisibility.java:121, games/logic/manor2/light/GhostVisibility.java:158-168"
+        "src": "games/logic/manor2/light/GhostVisibility.java:46, games/logic/manor2/light/GhostVisibility.java:101-102, games/logic/manor2/light/GhostVisibility.java:136, games/logic/manor2/light/GhostVisibility.java:186-196"
       },
       {
         "text": "Ghosts: if light lands on you mid grab, letting go with your swap hands key (F by default) costs a 5 second cooldown and 1 second exposed. Being broken free costs 10 seconds, 3 seconds exposed and a knockback.",
@@ -341,7 +350,7 @@
       },
       {
         "text": "The How to Play page says revealed Ghosts can't kill, but only full exposure stops a grab. A Ghost showing just an outline can still grab you.",
-        "src": "games/logic/manor2/Manor2.java:316-320, games/logic/manor2/attack/GhostAttacks.java:73-76, games/logic/manor2/light/GhostVisibility.java:200-204"
+        "src": "games/logic/manor2/Manor2.java:316-320, games/logic/manor2/attack/GhostAttacks.java:73-76, games/logic/manor2/light/GhostVisibility.java:228-232"
       },
       {
         "text": "The config has a separate 75 point setting for finding a dead player's artifact, but the code gives the normal artifact score (50) instead.",
@@ -371,7 +380,7 @@
       },
       {
         "text": "Playing on as an artifact after dying is on by default. With it off, dead players go straight to spectating.",
-        "src": "configurable/sectors/game/Manor2Definition.java:52-53, games/logic/manor2/roles/Ghost.java:63-73, games/logic/manor2/roles/GhostHunter.java:56-67"
+        "src": "configurable/sectors/game/Manor2Definition.java:52-53, games/logic/manor2/roles/Ghost.java:64-74, games/logic/manor2/roles/GhostHunter.java:56-67"
       },
       {
         "text": "The play area is split into areas about 12 blocks wide, and the share of them holding an artifact grows with the number of Hunters: 25% plus 1/30 for each Hunter (plus 1), up to all of them at 22 or more Hunters.",
